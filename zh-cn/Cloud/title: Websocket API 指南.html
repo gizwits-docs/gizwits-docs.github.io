@@ -1,0 +1,507 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8">
+
+  <title>Websocket API 指南 - 机智云</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Websocket API 指南-机智云">
+  <meta name="keywords" content="Websocket API 指南 docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/documentation.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+        <img src="/images/logo.png" alt="logo"> 
+      </a>
+      <a class="text" href="/">文档中心</a>
+    </span>
+
+    <span class="menu pure-u-14-24">
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/zh-cn/overview/overview.html">平台概述</a></li>
+          
+        
+          
+            <li class="levelA">
+              快速入门 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/5分钟了解机智云.html">5分钟了解机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/设备快速接入.html">设备快速接入机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App快速接入机智云 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/准备工作.html">App开发准备工作</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/AndroidAppFrame.html">Android App 快速开发</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/iOSAPP快速入门.html">iOS App 快速开发</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              APP开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB has-submenu">
+                      App 开源框架 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iosframe.html">iOS 开源框架使用说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS消息推送.html">iOS 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS第三方登陆与换肤.html">iOS 第三方登录与换肤</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android开源框架使用指南.html">Android 开源框架使用说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android消息推送.html">Android 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android第三方登录与换肤.html">Android 第三方登录与换肤</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/iossdk.html">iOS SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/AndroidSDKA2.html">Android SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/APICloudWifiSDK.html">APICloud SDK</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              微信开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/了解微信应用开发.html">了解微信应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/微信应用开发教程.html">微信应用开发教程</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              设备开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/gagent_info.html">GAgent详解</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      MCU开发框架使用说明 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/DevSDK/代码自动生成工具.html">GoKit3.0代码自动生成工具</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3 DEV SDK Common版移植说明.html">GoKit3.0 DEV SDK Common版移植说明</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3.0介绍 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html">Gokit3.0系列开发套件简介</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/GoKit3硬件手册.html">Gokit3.0硬件手册</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      WiFi SOC方案 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S使用说明书.html">GoKit3.0(S)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S开发套件介绍.html">Gokit3.0(S)开发套件介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html">GoKit3.0(S)开发环境搭建</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S程序详解.html">Gokit3.0(S)源码详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3.0语音开发 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V使用说明书.html">GoKit3.0(V)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V二次开发指南.html">Gokit3.0(V)开发指南</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V词条.html">GoKit3.0(V)词条管理</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V程序详解.html">Gokit3.0(V)源码详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      调试与烧写 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/串口工具使用文档.html">串口工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/HF-LPB100串口烧写说明.html">HF-LPB100串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/HF-LPT120.html">HF-LPT120串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/MXCHIP串口烧写说明.html">MXCHIP串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ESP8266串口烧写说明.html">ESP8266串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/产测工具使用文档.html">产测工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/日志抓取教程文档.html">日志抓取教程文档</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              云平台 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/ent_dev.html">企业应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/enterprise_api.html">企业API</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+    
+    
+    <span class="pure-u-2-24"><a href="https://gizwits.kf5.com" style="color: #faeb00;">返回旧版</a></span>
+  
+    <span class="pure-u-3-24">
+      <i class="fa fa-globe" aria-hidden="true"></i> 
+      
+        <button class="lang-switch" data-lang="en-us">English</button>
+      
+    </span>
+
+  </div>
+</div>
+    <div class="body">
+  
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">目录</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Websocket API 指南</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
+      </div>
+      <p>#1. 通讯模型 </p>
+<p>浏览器（Javascript）可以通过Web Socket API与云端直接通讯。浏览器（Javascript）通过 Web Socket API，可以控制设备和实时接收设备上报的数据。 </p>
+<p><img src="/assets/zh-cn/cloud/1.jpg" alt="通信模型"></p>
+<p>#2. 通讯流程 </p>
+<p>浏览器（Javascript）通过Web Socket API与云端通讯主要包括以下的通讯过程。</p>
+<ul>
+<li>用户登陆。用户通过从Http API获得的uid和token登陆云端。</li>
+<li>接收设备上线下线消息。只有绑定设备后才能控制设备。 </li>
+<li>发送和接收设备业务逻辑数据。</li>
+<li>心跳。浏览器（Javascript）定期向云端发送心跳，云端回复心跳响应。</li>
+</ul>
+<p>#3. 约定 </p>
+<p>##3.1. 协议阅读说明 </p>
+<p>● &lt;str&gt;表示字符串占位符，&lt;int&gt;表示整型数据占位符。</p>
+<p>##3.2. 云端Web Socket服务地址 </p>
+<pre>
+ws://&lt;m2m_host&gt;:8080/ws/app/v1 
+</pre>
+其中的&lt;m2m_host&gt;为绑定设备列表中的host字段的值，如”m2m.gizwits.com”或”sandbox.gizwits.com”，请参考获取绑定设备列表HTTP API。
+
+
+##3.3. 注意事项  
+
+* 在与云端进行Web Socket交互前，用户必须已注册并已绑定了设备。 
+* 与云端交互的数据均为JSON字符串,以UTF-8的方式编码。可以通过JSON.stringify(json)把Javascript对象转化为字符串再发送给云端，或通过var res = JSON.parse(evt.data)把接收到的字符串数据转化成Javascript对象。
+* Web Socket的测试程序请使用http://&lt;m2m_host&gt;:8080/app(​&lt;m2m_host&gt;为绑定设备列表中的host字段的值)，也可以查看这个网页的源代码作为示例代码参考。
+
+
+#4. 通讯协议 
+
+
+##4.1. 用户登陆 
+
+浏览器（Javascript）必须登陆后才能和云端作进一步的交互。 
+
+浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。
+<pre>
+{
+    "cmd": "login_req",
+    "data":
+    {
+        "appid": &lt;str&gt;, 
+        "uid": &lt;str&gt;,
+        "token": &lt;str&gt;,
+        "p0_type": "attrs_v4"|"custom", ("attrs_v4" 指通过标准数据点协议的方式和云端交互，见下文“标准数据点操作”部分。"custom"表示使用自定义业务逻辑协议的方式与云端交互，见下文“浏览器与云端的数据交互”部分。) 
+        "heartbeat_interval": &lt;int&gt; (心跳的时间间隔，单位为秒，值必须小于等于180)
+    }
+}
+</pre>   
+
+<p>云端 ⇒ 浏览器。云端向浏览器回复以下的JSON字符串。</p>
+<pre>
+{
+    "cmd": "login_res",
+    "data":
+    {
+        "success": true | false （true为登陆成功，false登陆失败）
+    }
+}
+</pre>
+
+
+<h2 id="4-2-设备上线下线通知"><a href="#4-2-设备上线下线通知" class="headerlink" title="4.2. 设备上线下线通知"></a>4.2. 设备上线下线通知</h2><p>当设备上线或下线时，云端会主动发送通知到浏览器。</p>
+<p>云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知设备上线或下线。</p>
+<pre>
+{
+    "cmd": "s2c_online_status",
+    "data": 
+    {
+        "did": &lt;str&gt;,（上下线设备的did）
+        "passcode": &lt;str&gt;,（上下线设备的passcode）
+        "mac": &lt;str&gt;,（上下线设备的mac）
+        "online": true | false （true表示设备上线，false表示设备下线）
+    }
+}
+</pre>  
+
+
+<p>##4.3. 浏览器与云端的数据交互（数据透传）</p>
+<p>浏览器可以和云端交互任意符合协议的数据。协议的格式为请参考其它协议文档。<br>当用户在登 陆时参数”p0_type”的值等于”custom”时，只能以这种方式和云端交互数据。</p>
+<p>浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。 </p>
+<pre>
+{
+    "cmd": "c2s_raw",
+    "data": 
+    {
+        "did": &lt;str&gt;, （目标设备的did）
+        "raw": [&lt;byte&gt;, &lt;byte&gt;, ...] （自定义业务逻辑指令的内容，以byte数组方式传送，每个byte的范围必须为 0~255。该内容必须要以[0, 0, 0, 3, varLen(1~4B), 0, 0, 144]开头）
+    }  
+}
+</pre> 
+
+<p>若想云端往设备转发数据，raw的值需要加上以下的协议前缀再接上发往设备的数据，即[0, 0, 0, 3, varLen(1~4B), 0, 0, 144] + 发往设备的数据，其中的varLen为可变长度，由1~4个字节(B)表示本可变长度字段后一直到数据包结尾的字节数 ，如长度小于128B，直接用一个字节(B)表示长度即可，长度大于等于128B的编码解码方式请参考MQTT V3.1协议的可变长度（Remaining Length）定义。  </p>
+<p>云端 ⇒ 浏览器。当云端收到设备上传的数据后，云端向浏览器转发以下的JSON字符串，数据放在raw字段中。登陆参数​”p0_type”​的值等于​”attrs_v4”​时,设备以“透传业务指令”上报的数据会以本指令发往浏览器。</p>
+<pre>
+{
+    "cmd": "s2c_raw", 
+    "data":
+    {
+        "did": &lt;str&gt;,（数据来源设备的did）
+        "raw": [&lt;byte&gt;, &lt;byte&gt;, ...]（自定义业务逻辑指令的内容，以byte数组方式传送，每个byte的范围必须为 0~255）
+    }
+}
+</pre> 
+
+<p>若该数据为设备上报的数据，raw的值会带上一个协议前缀，即[0, 0, 0, 3, varLen(1~4B), 0, 0, 145] + 设备数据，其中的varLen为可变长度，定义请参考上文。 </p>
+<p>##4.4. 标准数据点操作（读、写、通知）</p>
+<p>当用户在登陆时参数”p0_type”的值等于”attrs_v4”时，云端会以标准数据点协议的方式和浏览器交互。   </p>
+<p>浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串，读取目标设备当前的状态。陆参数”p0_type”​的值等于​”custom”​时不允许使用本指令。</p>
+<pre>
+{
+    "cmd": "c2s_read",
+    "data":
+    {
+        "did": &lt;str&gt;（目标设备的did）
+    }
+}
+</pre>   
+
+<p>浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串，控制目标设备（更改目标设备的状态）。登陆参数​”p0_type”​的值等于​”custom”​时不允许使用本指令。</p>
+<pre>
+{
+    "cmd": "c2s_write",
+    "data":
+    {
+        "did": &lt;str&gt;,（目标设备的did）
+        "attrs": 
+        {
+            "name1": &lt;value1&gt;, (“name1”指数据点的标识名(name)，&lt;value1&gt;指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
+            "name2": &lt;value2&gt;,
+            ...
+        }
+    }
+}
+</pre>   
+
+<p>云端 ⇒ 浏览器。设备收到读取指令或状态发生变化后，会主动发送当前状态到云端，云端向浏览器转发以下的JSON字符串。 登陆参数​”p0_type”​的值等于​”custom”​时不会收到本指令。</p>
+<pre>
+{
+    "cmd": "s2c_noti",     
+    "data": 
+    { 
+        "did": &lt;str&gt;,（数据来源设备的did）         
+        "attrs": 
+        {
+            "name1": &lt;value1&gt;, (“name1”指数据点的标识名(name)，&lt;value1&gt;指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
+            "name2": &lt;value2&gt;,
+             ...          
+        }
+    } 
+} 
+</pre>
+
+
+<p>##4.5. 心跳</p>
+<p>浏览器和云端建立Web Socket连接后，需要在登陆参数”heartbeat_interval”指定的时间间隔内，定期向云端发送心跳。云端收到后会回复心跳。</p>
+<p>浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。</p>
+<pre>
+{
+    "cmd": "ping"
+}
+</pre> 
+
+<p>云端 ⇒ 浏览器。云端向浏览器回复以下的JSON字符串。</p>
+<pre>
+{
+    "cmd": "pong"
+}
+</pre>
+
+<p>##4.6. 非法消息通知</p>
+<p>当浏览器向云端发送的消息不合法或收到设备上报的数据不合法时,云端会下发此消息通知浏览器。</p>
+<p>云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知有非法消息。</p>
+<pre>
+{
+    "cmd": "s2c_invalid_msg", 
+    "data": &lt;str&gt; ​(描述文本)
+}
+</pre>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="问题反馈">
+      <span>问题反馈</span>
+    </a>
+    <a href="#" title="返回顶部"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">机智云首页</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">关于我们</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">联系我们</a></span>
+      <span><a href="http://www.gizwits.com/talent/social" target="_blank">加入我们</a></span>
+    </p>
+    <p>&#169;2011-2016; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/documentation.js"></script>
+
+<!-- 咨询客服 -->
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+<!-- 百度统计/推广 -->
+<script>
+  // 百度站长统计代码
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement("script")
+    hm.src = "//hm.baidu.com/hm.js?c4c9e1db84e605270799d6222c5c44c8"
+    var s = document.getElementsByTagName("script")[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+
+  // 百度推广代码
+  var _hmt = _hmt || [];
+  ;(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+  </body>
+</html>
