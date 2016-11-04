@@ -278,25 +278,25 @@
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>机智云APP开源框架集成了百度推送与极光推送功能，只需修改部分代码即可快速使用。本文档就如何基于机智云APP开源框架快速集成消息推送功能，如需了解开源框架，请参考快速入门的文档。</p>
-<h1 id="快速集成极光推送"><a href="#快速集成极光推送" class="headerlink" title="快速集成极光推送"></a>快速集成极光推送</h1><h2 id="1、申请极光AppKey与Master-Secret"><a href="#1、申请极光AppKey与Master-Secret" class="headerlink" title="1、申请极光AppKey与Master Secret"></a>1、申请极光AppKey与Master Secret</h2><p>开发者需要根据框架包名在极光官网上创建应用并填写相应信息，如下所示：</p>
-<p>1.1、查看框架包名</p>
+<h1 id="快速集成极光推送"><a href="#快速集成极光推送" class="headerlink" title="快速集成极光推送"></a>快速集成极光推送</h1><h2 id="1-申请极光AppKey与Master-Secret"><a href="#1-申请极光AppKey与Master-Secret" class="headerlink" title="1.申请极光AppKey与Master Secret"></a>1.申请极光AppKey与Master Secret</h2><p>开发者需要根据框架包名在极光官网上创建应用并填写相应信息，如下所示：</p>
+<p>1).查看框架包名</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image001.png" alt="name"></p>
-<p>1.2、在极光平台创建应用</p>
+<p>2).在极光平台创建应用</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image002.png" alt="name"></p>
-<p>1.3、查看对应的AppKey和Master Secret</p>
+<p>3).查看对应的AppKey和Master Secret</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image003.png" alt="name"></p>
-<h2 id="2、在云端绑定第三方推送"><a href="#2、在云端绑定第三方推送" class="headerlink" title="2、在云端绑定第三方推送"></a>2、在云端绑定第三方推送</h2><h3 id="2-1-申请开通D3-Engine"><a href="#2-1-申请开通D3-Engine" class="headerlink" title="2.1 申请开通D3 Engine"></a>2.1 申请开通D3 Engine</h3><p>1、查看D3 Engine</p>
+<h2 id="2-在云端绑定第三方推送"><a href="#2-在云端绑定第三方推送" class="headerlink" title="2.在云端绑定第三方推送"></a>2.在云端绑定第三方推送</h2><h3 id="2-1-申请开通D3-Engine"><a href="#2-1-申请开通D3-Engine" class="headerlink" title="2.1.申请开通D3 Engine"></a>2.1.申请开通D3 Engine</h3><p>1.查看D3 Engine</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image004.png" alt="name"></p>
-<p>2、开通服务</p>
+<p>2.开通服务</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image005.png" alt="name"></p>
 <p>开通D3 Engine需要机智云审核通过，点击开通服务后需要联系机智云FAE协助审核开通。</p>
-<h3 id="2-2-云端绑定极光推送"><a href="#2-2-云端绑定极光推送" class="headerlink" title="2.2    云端绑定极光推送"></a>2.2    云端绑定极光推送</h3><p>通过审核后，可以在服务一栏看到D3 Engine，依次点击“配置”-&gt;” 编辑推送平台”</p>
+<h3 id="2-2-云端绑定极光推送"><a href="#2-2-云端绑定极光推送" class="headerlink" title="2.2.云端绑定极光推送"></a>2.2.云端绑定极光推送</h3><p>通过审核后，可以在服务一栏看到D3 Engine，依次点击“配置”-&gt;” 编辑推送平台”</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image006.png" alt="name"></p>
 <p>将在极光申请的对应信息填写到下图所示的位置，并点击绑定。</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image007.png" alt="name"></p>
 <p>下图所示表示成功绑定了极光推送</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image008.png" alt="name"></p>
-<h3 id="2-3-利用D3-Engine创建推送规则"><a href="#2-3-利用D3-Engine创建推送规则" class="headerlink" title="2.3    利用D3 Engine创建推送规则"></a>2.3    利用D3 Engine创建推送规则</h3><p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image009.png" alt="name"></p>
+<h3 id="2-3-利用D3-Engine创建推送规则"><a href="#2-3-利用D3-Engine创建推送规则" class="headerlink" title="2.3.利用D3 Engine创建推送规则"></a>2.3.利用D3 Engine创建推送规则</h3><p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image009.png" alt="name"></p>
 <p>点击项目列表-&gt;新建项目，下面将演示创建一个设备上线后给APP推送消息的规则。</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image010.png" alt="name"></p>
 <p>拖动“设备数据”框到右边空白处，并双击该栏目。</p>
@@ -309,34 +309,34 @@
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image015.png" alt="name"></p>
 <p>下图表示成功保存推送规则</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image016.png" alt="name"></p>
-<h3 id="2-4修改UIConfig-json代码"><a href="#2-4修改UIConfig-json代码" class="headerlink" title="2.4修改UIConfig.json代码"></a>2.4修改UIConfig.json代码</h3><p>1、填写机智云app_id与product_key并修改push_type</p>
+<h2 id="3-修改UIConfig-json代码"><a href="#3-修改UIConfig-json代码" class="headerlink" title="3.修改UIConfig.json代码"></a>3.修改UIConfig.json代码</h2><p>1、填写机智云app_id与product_key并修改push_type</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image017.png" alt="name"></p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image018.png" alt="name"></p>
-<h3 id="2-5-修改AndroidManifest-xml"><a href="#2-5-修改AndroidManifest-xml" class="headerlink" title="2.5    修改AndroidManifest.xml"></a>2.5    修改AndroidManifest.xml</h3><p>将图3中的APP KEY填写到AndroidManifest.xml中的对应的代码中。</p>
+<h2 id="4-修改AndroidManifest-xml"><a href="#4-修改AndroidManifest-xml" class="headerlink" title="4.修改AndroidManifest.xml"></a>4.修改AndroidManifest.xml</h2><p>将图3中的APP KEY填写到AndroidManifest.xml中的对应的代码中。</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image019.png" alt="name"></p>
-<h3 id="2-6启动虚拟设备"><a href="#2-6启动虚拟设备" class="headerlink" title="2.6启动虚拟设备"></a>2.6启动虚拟设备</h3><p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image020.png" alt="name"></p>
-<h3 id="2-7-部署APP运行"><a href="#2-7-部署APP运行" class="headerlink" title="2.7    部署APP运行"></a>2.7    部署APP运行</h3><p>通过以上步骤，该APP已具备了极光推送功能，部署到手机上后，申请帐号并登录，通过扫码即可绑定云端的虚拟设备。</p>
+<h2 id="5-启动虚拟设备"><a href="#5-启动虚拟设备" class="headerlink" title="5.启动虚拟设备"></a>5.启动虚拟设备</h2><p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image020.png" alt="name"></p>
+<h2 id="6-部署APP运行"><a href="#6-部署APP运行" class="headerlink" title="6.部署APP运行"></a>6.部署APP运行</h2><p>通过以上步骤，该APP已具备了极光推送功能，部署到手机上后，申请帐号并登录，通过扫码即可绑定云端的虚拟设备。</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image021.png" alt="name"></p>
-<h3 id="2-8测试推送功能"><a href="#2-8测试推送功能" class="headerlink" title="2.8测试推送功能"></a>2.8测试推送功能</h3><p>关闭虚拟设备后，再次开启，即可看到手机收到了推送消息。</p>
+<h2 id="7-测试推送功能"><a href="#7-测试推送功能" class="headerlink" title="7.测试推送功能"></a>7.测试推送功能</h2><p>关闭虚拟设备后，再次开启，即可看到手机收到了推送消息。</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image022.png" alt="name"></p>
-<h1 id="快速集成百度推送"><a href="#快速集成百度推送" class="headerlink" title="快速集成百度推送"></a>快速集成百度推送</h1><h2 id="1、申请百度API-KEY"><a href="#1、申请百度API-KEY" class="headerlink" title="1、申请百度API KEY"></a>1、申请百度API KEY</h2><p>根据框架包名在百度官网上创建应用并填写相应信息，如下图：</p>
+<h1 id="快速集成百度推送"><a href="#快速集成百度推送" class="headerlink" title="快速集成百度推送"></a>快速集成百度推送</h1><h2 id="1-申请百度API-KEY"><a href="#1-申请百度API-KEY" class="headerlink" title="1.申请百度API KEY"></a>1.申请百度API KEY</h2><p>根据框架包名在百度官网上创建应用并填写相应信息，如下图：</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image001.png" alt="name"></p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image023.png" alt="name"></p>
 <p>查看对应的API KEY和SECRET KEY</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image024.png" alt="name"></p>
-<h2 id="2、在云端绑定第三方登录"><a href="#2、在云端绑定第三方登录" class="headerlink" title="2、在云端绑定第三方登录"></a>2、在云端绑定第三方登录</h2><h3 id="2-1申请开通D3-Engine"><a href="#2-1申请开通D3-Engine" class="headerlink" title="2.1申请开通D3 Engine"></a>2.1申请开通D3 Engine</h3><p>该步骤可以参考<a href="#2-1-申请开通D3-Engine">这里</a>。</p>
-<h3 id="2-2云端绑定百度推送"><a href="#2-2云端绑定百度推送" class="headerlink" title="2.2云端绑定百度推送"></a>2.2云端绑定百度推送</h3><p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image006.png" alt="name"></p>
+<h2 id="2-在云端绑定第三方登录"><a href="#2-在云端绑定第三方登录" class="headerlink" title="2.在云端绑定第三方登录"></a>2.在云端绑定第三方登录</h2><h3 id="2-1-申请开通D3-Engine-1"><a href="#2-1-申请开通D3-Engine-1" class="headerlink" title="2.1.申请开通D3 Engine"></a>2.1.申请开通D3 Engine</h3><p>该步骤可以参考《快速集成极光推送》的2.1部分。</p>
+<h3 id="2-2-云端绑定百度推送"><a href="#2-2-云端绑定百度推送" class="headerlink" title="2.2.云端绑定百度推送"></a>2.2.云端绑定百度推送</h3><p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image006.png" alt="name"></p>
 <p>将百度申请的对应信息填写到下图所示的位置，并点击绑定。</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image025.png" alt="name"></p>
 <p>下图表示成功绑定了百度推送。</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image026.png" alt="name"></p>
-<h3 id="2-3-利用D3-Engine创建推送规则-1"><a href="#2-3-利用D3-Engine创建推送规则-1" class="headerlink" title="2.3    利用D3 Engine创建推送规则"></a>2.3    利用D3 Engine创建推送规则</h3><p>该步骤可以参考<a href="#2-3-利用D3-Engine创建推送规则">这里</a>。</p>
-<h3 id="2-4修改UIConfig-json代码-1"><a href="#2-4修改UIConfig-json代码-1" class="headerlink" title="2.4修改UIConfig.json代码"></a>2.4修改UIConfig.json代码</h3><p>填写app_id、app_secret、product_key，修改push_type为2，并将图24对应的key填入到对应的位置</p>
+<h3 id="2-3-利用D3-Engine创建推送规则-1"><a href="#2-3-利用D3-Engine创建推送规则-1" class="headerlink" title="2.3.利用D3 Engine创建推送规则"></a>2.3.利用D3 Engine创建推送规则</h3><p>该步骤可以参考《快速集成极光推送》的2.3部分</p>
+<h2 id="3-修改UIConfig-json代码-1"><a href="#3-修改UIConfig-json代码-1" class="headerlink" title="3.修改UIConfig.json代码"></a>3.修改UIConfig.json代码</h2><p>填写app_id、app_secret、product_key，修改push_type为2，并将图24对应的key填入到对应的位置</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image027.png" alt="name"></p>
-<h3 id="2-5启动虚拟设备"><a href="#2-5启动虚拟设备" class="headerlink" title="2.5启动虚拟设备"></a>2.5启动虚拟设备</h3><p>该步骤可以参考<a href="#2-6启动虚拟设备">这里</a>。</p>
-<h3 id="2-6部署APP运行"><a href="#2-6部署APP运行" class="headerlink" title="2.6部署APP运行"></a>2.6部署APP运行</h3><p>通过以上步骤，该APP已具备了百度推送功能，部署到手机上后，申请帐号并登录，通过扫码即可绑定云端的虚拟设备。</p>
+<h2 id="4-启动虚拟设备"><a href="#4-启动虚拟设备" class="headerlink" title="4.启动虚拟设备"></a>4.启动虚拟设备</h2><p>该步骤可以参考<a href="#2-6启动虚拟设备">这里</a>。</p>
+<h2 id="5-部署APP运行"><a href="#5-部署APP运行" class="headerlink" title="5.部署APP运行"></a>5.部署APP运行</h2><p>通过以上步骤，该APP已具备了百度推送功能，部署到手机上后，申请帐号并登录，通过扫码即可绑定云端的虚拟设备。</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image021.png" alt="name"></p>
-<h3 id="2-7测试推送功能"><a href="#2-7测试推送功能" class="headerlink" title="2.7测试推送功能"></a>2.7测试推送功能</h3><p>关闭虚拟设备后，再次开启，即可看到手机收到了推送消息。</p>
+<h2 id="6-测试推送功能"><a href="#6-测试推送功能" class="headerlink" title="6.测试推送功能"></a>6.测试推送功能</h2><p>关闭虚拟设备后，再次开启，即可看到手机收到了推送消息。</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/push/image022.png" alt="name"></p>
 <h1 id="常见问题FAQ"><a href="#常见问题FAQ" class="headerlink" title="常见问题FAQ"></a>常见问题FAQ</h1><p><strong>1、开发者一定要开通D3 Engine才能使用消息推送吗？</strong><br>解答：是的，目前D3 Engine只针对于企业开发者用户。所以，只有企业开发者才能申请开通使用。</p>
 <p><strong>2、使用极光推送按照以上步骤完成代码修改，但是却无法收到推送消息。</strong></p>
