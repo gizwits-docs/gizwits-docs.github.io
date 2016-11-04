@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8">
+
+  <title>iOS App消息推送集成指南 - 机智云</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="iOS App消息推送集成指南-机智云">
+  <meta name="keywords" content="iOS App消息推送集成指南 docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/documentation.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+        <img src="/images/logo.png" alt="logo"> 
+      </a>
+      <a class="text" href="/">文档中心</a>
+    </span>
+
+    <span class="menu pure-u-14-24">
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/zh-cn/overview/overview.html">平台概述</a></li>
+          
+        
+          
+            <li class="levelA">
+              快速入门 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/5分钟了解机智云.html">5分钟了解机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/设备快速接入.html">设备快速接入机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/AndroidAppFrame.html">Android App 开发入门</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/iOSAPP快速入门.html">iOS App 开发入门</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              APP开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB has-submenu">
+                      App 开源框架 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iosframe.html">iOS 开源框架使用说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS消息推送.html">iOS 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS第三方登陆与换肤.html">iOS 第三方登录与换肤</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android开源框架使用指南.html">Android 开源框架使用说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android消息推送.html">Android 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android第三方登录与换肤.html">Android 第三方登录与换肤</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/iossdk.html">iOS SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/AndroidSDKA2.html">Android SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/APICloudWifiSDK.html">APICloud SDK</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              微信开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/了解微信应用开发.html">了解微信应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/微信应用开发教程.html">微信应用开发教程</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              设备开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/gagent_info.html">GAgent详解</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      MCU开发框架使用说明 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/DevSDK/代码自动生成工具.html">GoKit3.0代码自动生成工具</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3 DEV SDK Common版移植说明.html">GoKit3.0 DEV SDK Common版移植说明</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3.0介绍 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html">Gokit3.0系列开发套件简介</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/GoKit3硬件手册.html">Gokit3.0硬件手册</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      WiFi SOC方案 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S使用说明书.html">GoKit3.0(S)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S开发套件介绍.html">Gokit3.0(S)开发套件介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html">GoKit3.0(S)开发环境搭建</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S程序详解.html">Gokit3.0(S)源码详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3.0语音开发 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V使用说明书.html">GoKit3.0(V)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V二次开发指南.html">Gokit3.0(V)开发指南</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V词条.html">GoKit3.0(V)词条管理</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V程序详解.html">Gokit3.0(V)源码详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      调试与烧写 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/串口工具使用文档.html">串口工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/HF-LPB100串口烧写说明.html">HF-LPB100串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/HF-LPT120.html">HF-LPT120串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/MXCHIP串口烧写说明.html">MXCHIP串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ESP8266串口烧写说明.html">ESP8266串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/产测工具使用文档.html">产测工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/日志抓取教程文档.html">日志抓取教程文档</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              云平台 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/ent_dev.html">企业应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/enterprise_api.html">企业API</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+    
+    
+    <span class="pure-u-2-24"><a href="https://gizwits.kf5.com" style="color: #faeb00;">返回旧版</a></span>
+  
+    <span class="pure-u-3-24">
+      <i class="fa fa-globe" aria-hidden="true"></i> 
+      
+        <button class="lang-switch" data-lang="en-us">English</button>
+      
+    </span>
+
+  </div>
+</div>
+    <div class="body">
+  
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">目录</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">iOS App消息推送集成指南</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
+      </div>
+      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>机智云APP开源框架集成了百度推送与极光推送功能，只需修改部分代码即可快速使用。本文档就如何基于机智云APP开源框架快速集成消息推送功能，如需了解开源框架，请参考快速入门的文档。</p>
+<h1 id="快速集成极光推送"><a href="#快速集成极光推送" class="headerlink" title="快速集成极光推送"></a>快速集成极光推送</h1><h2 id="1-申请极光AppKey与Master-Secret"><a href="#1-申请极光AppKey与Master-Secret" class="headerlink" title="1. 申请极光AppKey与Master Secret"></a>1. 申请极光AppKey与Master Secret</h2><h3 id="1-1-创建极光应用"><a href="#1-1-创建极光应用" class="headerlink" title="1.1 创建极光应用"></a>1.1 创建极光应用</h3><p>点击链接<a href="https://www.jiguang.cn/app/form创建极光应用" target="_blank" rel="external">https://www.jiguang.cn/app/form创建极光应用</a></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478096715034.png" alt="Alt text"></p>
+<p>如图，需要上传苹果开发者证书，包括开发证书和生产证书以及证书的密码。</p>
+<h3 id="1-2-申请苹果证书"><a href="#1-2-申请苹果证书" class="headerlink" title="1.2 申请苹果证书"></a>1.2 申请苹果证书</h3><p>登陆苹果开发者中心：<a href="https://developer.apple.com，" target="_blank" rel="external">https://developer.apple.com，</a> 申请并下载cer证书，双击证书从钥匙串打开，选中证书，并选择《登陆》和《我的证书》，右击证书，导出P12证书。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478096770607.png" alt="Alt text"></p>
+<p>点击《导出》会弹出以下弹框，设置证书名称及存储路径</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478096787227.png" alt="Alt text"></p>
+<p>点击存储，弹出密码输入框，设置证书密码</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478096803162.png" alt="Alt text"></p>
+<h3 id="1-3-导入证书到极光"><a href="#1-3-导入证书到极光" class="headerlink" title="1.3 导入证书到极光"></a>1.3 导入证书到极光</h3><p>成功导入证书如下图，会显示《已验证》</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478096837633.png" alt="Alt text"></p>
+<p>至此极光应用已经创建完成，应用生成的AppKey和Master Secret也可以正常使用</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478096855539.png" alt="Alt text"></p>
+<h2 id="2-在云端绑定第三方推送"><a href="#2-在云端绑定第三方推送" class="headerlink" title="2. 在云端绑定第三方推送"></a>2. 在云端绑定第三方推送</h2><h3 id="2-1-申请开通D3-Engine"><a href="#2-1-申请开通D3-Engine" class="headerlink" title="2.1 申请开通D3 Engine"></a>2.1 申请开通D3 Engine</h3><p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478098383402.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478098391047.png" alt="Alt text"></p>
+<p>开通D3 Engine需要机智云审核通过，点击开通服务后需要联系机智云FAE协助审核开通。</p>
+<h3 id="2-2-云端绑定极光推送"><a href="#2-2-云端绑定极光推送" class="headerlink" title="2.2 云端绑定极光推送"></a>2.2 云端绑定极光推送</h3><p>通过审核后，可以在服务一栏看到D3 Engine，依次点击“配置”-&gt;” 编辑推送平台”<br><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478096955108.png" alt="Alt text"></p>
+<p>将从极光申请到的应用App Key和 Master Secret填写到下图，并选择测试环境。</p>
+<p>注意：选择证书类型为《开发》时，只有在开发环境APP才能收到推送消息</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478096987266.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478096992652.png" alt="Alt text"></p>
+<h3 id="2-3-利用D3-Engine创建推送规则"><a href="#2-3-利用D3-Engine创建推送规则" class="headerlink" title="2.3 利用D3 Engine创建推送规则"></a>2.3 利用D3 Engine创建推送规则</h3><p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097028282.png" alt="Alt text"></p>
+<p>点击项目列表-&gt;新建项目，下面将演示创建一个设备上线后给APP推送消息的规则。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097041627.png" alt="Alt text"></p>
+<p>拖动“设备数据”框到右边空白处，并双击该栏目。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097055586.png" alt="Alt text"></p>
+<p>将触发方式设为“设备上线”，点击确定。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097067010.png" alt="Alt text"></p>
+<p>双击“APP推送”，并设置推送的内容。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097082290.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097088606.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478098510132.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478098518940.png" alt="Alt text"></p>
+<h2 id="3-修改UIConfig-json代码"><a href="#3-修改UIConfig-json代码" class="headerlink" title="3. 修改UIConfig.json代码"></a>3. 修改UIConfig.json代码</h2><p>填写jpush_app_key，以及将push_type设为1，表示选择极光推送，并且填写绑定了该极光应用的机智云应用于app_id、app_secret、product_key的值中。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097137361.png" alt="Alt text"></p>
+<h2 id="4-XCode配置推送"><a href="#4-XCode配置推送" class="headerlink" title="4. XCode配置推送"></a>4. XCode配置推送</h2><p>打开项目，选择Targets –&gt; Capabilities，开启Push Notifications的按钮，即开启了项目的远程推送功能。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097187315.png" alt="Alt text"></p>
+<p>开启推送按钮后，会自动生成一个.entitlements文件，如下，其中的红框中的值表示推送环境，development表示开发环境，distribution表示生产环境。设置值为development时推送只在开发环境生效，distribution时推送只在生产环境生效。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097202019.png" alt="Alt text"></p>
+<h2 id="5-启动虚拟设备"><a href="#5-启动虚拟设备" class="headerlink" title="5. 启动虚拟设备"></a>5. 启动虚拟设备</h2><p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478098602683.png" alt="Alt text"></p>
+<h2 id="6-部署APP运行"><a href="#6-部署APP运行" class="headerlink" title="6. 部署APP运行"></a>6. 部署APP运行</h2><p>通过以上步骤，该APP已具备了极光推送功能，部署到手机上后，申请帐号并登录，通过扫码即可绑定云端的虚拟设备。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097235631.png" alt="Alt text"></p>
+<h2 id="7-测试推送功能"><a href="#7-测试推送功能" class="headerlink" title="7. 测试推送功能"></a>7. 测试推送功能</h2><p>关闭虚拟设备后，再次开启，即可看到手机收到了推送消息。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097258793.png" alt="Alt text"></p>
+<h1 id="快速集成百度推送"><a href="#快速集成百度推送" class="headerlink" title="快速集成百度推送"></a>快速集成百度推送</h1><h2 id="1-申请百度API-KEY"><a href="#1-申请百度API-KEY" class="headerlink" title="1. 申请百度API KEY"></a>1. 申请百度API KEY</h2><h3 id="1-1-创建百度应用"><a href="#1-1-创建百度应用" class="headerlink" title="1.1 创建百度应用"></a>1.1 创建百度应用</h3><p>进入百度云推送平台：<a href="http://push.baidu.com，创建应用并配置证书" target="_blank" rel="external">http://push.baidu.com，创建应用并配置证书</a></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097308724.png" alt="Alt text"></p>
+<p>如上图，需要上传苹果pem格式的开发证书和生产证书。</p>
+<h3 id="1-2-申请苹果证书-1"><a href="#1-2-申请苹果证书-1" class="headerlink" title="1.2 申请苹果证书"></a>1.2 申请苹果证书</h3><p>申请cer证书并导出p12的过程见《快速集成极光推送》的1.2部分，下图示范如何从p12证书导出pem证书</p>
+<p>进入《终端》，输入如下命令即可导出pem证书。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl pkcs12 -in  &lt;p12证书名称&gt;  -out  &lt;pem证书名称&gt;  -nodes</div></pre></td></tr></table></figure>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097404220.png" alt="Alt text"></p>
+<h3 id="1-3-导入证书到百度推送"><a href="#1-3-导入证书到百度推送" class="headerlink" title="1.3 导入证书到百度推送"></a>1.3 导入证书到百度推送</h3><p>上传pem证书到《1.1 创建百度应用》所示图中，上传证书成功，会显示《已验证》，并且生成百度推送的API KEY 和 SECRET KEY。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097436964.png" alt="Alt text"></p>
+<h2 id="2-在云端绑定第三方登陆"><a href="#2-在云端绑定第三方登陆" class="headerlink" title="2. 在云端绑定第三方登陆"></a>2. 在云端绑定第三方登陆</h2><h3 id="2-1-申请开通D3-Engine-1"><a href="#2-1-申请开通D3-Engine-1" class="headerlink" title="2.1 申请开通D3 Engine"></a>2.1 申请开通D3 Engine</h3><p>  该步骤可参考《快速集成极光推送》的2.1部分</p>
+<h3 id="2-2-云端绑定百度推送"><a href="#2-2-云端绑定百度推送" class="headerlink" title="2.2 云端绑定百度推送"></a>2.2 云端绑定百度推送</h3><p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097657192.png" alt="Alt text"></p>
+<p>将从百度云推送平台申请到的应用API Key和Secret Key填写到下图，并选择测试环境。</p>
+<p>注意：选择证书类型为《开发》时，只有在开发环境APP才能收到推送消息</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097675429.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097684073.png" alt="Alt text"></p>
+<h3 id="2-3-利用D3-Engine创建推送规则-1"><a href="#2-3-利用D3-Engine创建推送规则-1" class="headerlink" title="2.3 利用D3 Engine创建推送规则"></a>2.3 利用D3 Engine创建推送规则</h3><p>该步骤可参考《快速集成极光推送》的2.3部分</p>
+<h2 id="3-修改UIConfig-json代码-1"><a href="#3-修改UIConfig-json代码-1" class="headerlink" title="3. 修改UIConfig.json代码"></a>3. 修改UIConfig.json代码</h2><p>填写bpush_app_key，修改push_type为2，表示选择百度推送, 并且填写绑定了该百度应用的机智云应用于app_id、app_secret、product_key的值中。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097767158.png" alt="Alt text"></p>
+<p>注意：这里也需要设置XCode推送，详情看《快速集成极光推送》的《4 XCode配置推送》</p>
+<h2 id="4-修改百度推送的启动接口"><a href="#4-修改百度推送的启动接口" class="headerlink" title="4. 修改百度推送的启动接口"></a>4. 修改百度推送的启动接口</h2><p>百度推送的启动接口有一个pushMode参数，分别有两个值BPushModeDevelopment 和 BPushModeProduction。</p>
+<p>BPushModeDevelopment：设置百度推送环境为开发环境</p>
+<p>当设置的环境与当前APP的运行环境相符合是，推送才会生效。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097866605.png" alt="Alt text"></p>
+<h2 id="5-启动虚拟设备-1"><a href="#5-启动虚拟设备-1" class="headerlink" title="5. 启动虚拟设备"></a>5. 启动虚拟设备</h2><p>该步骤可参考《快速集成极光推送》的第5部分</p>
+<h2 id="6-部署APP运行-1"><a href="#6-部署APP运行-1" class="headerlink" title="6. 部署APP运行"></a>6. 部署APP运行</h2><p>通过以上步骤，该APP已具备了百度推送功能，部署到手机上后，申请帐号并登录，通过扫码即可绑定云端的虚拟设备。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097950943.png" alt="Alt text"></p>
+<h2 id="7-测试推送功能-1"><a href="#7-测试推送功能-1" class="headerlink" title="7. 测试推送功能"></a>7. 测试推送功能</h2><p>关闭虚拟设备后，再次开启，即可看到手机收到了推送消息。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478097977985.png" alt="Alt text"></p>
+<h1 id="常见问题FAQ"><a href="#常见问题FAQ" class="headerlink" title="常见问题FAQ"></a>常见问题FAQ</h1><p><strong>1、开发者一定要开通D3 Engine才能使用消息推送吗？</strong></p>
+<p>解答：是的，目前D3 Engine只针对于企业开发者用户。所以，只有企业开发者才能申请开通使用。</p>
+<p><strong>2、使用极光推送按照以上步骤完成代码修改，但是却无法收到推送消息。</strong></p>
+<p>解答：</p>
+<p>步骤一：查看XCode的推送开关是否被开启，详情看《2.4 XCode配置推送》。</p>
+<p>步骤二：查看项目的.entitlements文件的key值是否与当前的测试环境相符合</p>
+<p>distribution表示生产环境，<br>development表示开发环境</p>
+<p>步骤三：确定项目的BundleID是否与证书的Bundle ID一致</p>
+<p>注意：若是百度推送，还需要确定启动百度推送方法所设置的pushMode是否与当前的测试环境一致，详情查看《快速集成百度推送》的《4 修改百度推送的启动接口》<br>如经过以上三个步骤，还是无法推送，则需要通过推送平台推送来确认问题</p>
+<p>步骤四：登陆极光/百度平台的应用，测试一下直接从推送平台上推送通知是否能够到达APP。</p>
+<p>推送平台单推不可以推的情况：</p>
+<p>1）确定证书是否已经失效，考虑更换证书。</p>
+<p>推送平台单推可以推的情况：</p>
+<p>1）    确认在机智云D3  Engine设置的推送环境是否与当前测试环境一致，如下图的《证书类型》</p>
+<p>2）    确认机智云应用绑定的推送APPID和Secret是否与APP中所使用的相对应，如下图</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478098008981.png" alt="Alt text"></p>
+<p>3）    若依然失败，则在如下图位置打断点，打印result的值，确定具体的错误码，根据错误码提示来确认问题并修正。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478098023653.png" alt="Alt text"></p>
+<p>通常result有错，需要从下图所示代码来进一步确认。</p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/ios/push/1478098035760.png" alt="Alt text"></p>
+<p><strong>3、极光推送如何设置角标的值</strong></p>
+<p>解答：[JPUSHService setBadge:0]; </p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="问题反馈">
+      <span>问题反馈</span>
+    </a>
+    <a href="#" title="返回顶部"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">机智云首页</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">关于我们</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">联系我们</a></span>
+      <span><a href="http://www.gizwits.com/talent/social" target="_blank">加入我们</a></span>
+    </p>
+    <p>&#169;2011-2016; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/documentation.js"></script>
+
+<!-- 咨询客服 -->
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+<!-- 百度统计/推广 -->
+<script>
+  // 百度站长统计代码
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement("script")
+    hm.src = "//hm.baidu.com/hm.js?c4c9e1db84e605270799d6222c5c44c8"
+    var s = document.getElementsByTagName("script")[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+
+  // 百度推广代码
+  var _hmt = _hmt || [];
+  ;(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+  </body>
+</html>

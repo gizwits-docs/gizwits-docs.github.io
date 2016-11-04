@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8">
+
+  <title>ESP8266串口烧写说明 - 机智云</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="ESP8266串口烧写说明-机智云">
+  <meta name="keywords" content="ESP8266串口烧写说明 docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/documentation.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+        <img src="/images/logo.png" alt="logo"> 
+      </a>
+      <a class="text" href="/">文档中心</a>
+    </span>
+
+    <span class="menu pure-u-14-24">
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/zh-cn/overview/overview.html">平台概述</a></li>
+          
+        
+          
+            <li class="levelA">
+              快速入门 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/5分钟了解机智云.html">5分钟了解机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/设备快速接入.html">设备快速接入机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/AndroidAppFrame.html">Android App 开发入门</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/iOSAPP快速入门.html">iOS App 开发入门</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              APP开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB has-submenu">
+                      App 开源框架 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iosframe.html">iOS 开源框架使用说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS消息推送.html">iOS 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS第三方登陆与换肤.html">iOS 第三方登录与换肤</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android开源框架使用指南.html">Android 开源框架使用说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android消息推送.html">Android 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android第三方登录与换肤.html">Android 第三方登录与换肤</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/iossdk.html">iOS SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/AndroidSDKA2.html">Android SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/APICloudWifiSDK.html">APICloud SDK</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              微信开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/了解微信应用开发.html">了解微信应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/微信应用开发教程.html">微信应用开发教程</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              设备开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/gagent_info.html">GAgent详解</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      MCU开发框架使用说明 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/DevSDK/代码自动生成工具.html">GoKit3.0代码自动生成工具</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3 DEV SDK Common版移植说明.html">GoKit3.0 DEV SDK Common版移植说明</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3.0介绍 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html">Gokit3.0系列开发套件简介</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/GoKit3硬件手册.html">Gokit3.0硬件手册</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      WiFi SOC方案 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S使用说明书.html">GoKit3.0(S)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S开发套件介绍.html">Gokit3.0(S)开发套件介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html">GoKit3.0(S)开发环境搭建</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S程序详解.html">Gokit3.0(S)源码详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3.0语音开发 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V使用说明书.html">GoKit3.0(V)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V二次开发指南.html">Gokit3.0(V)开发指南</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V词条.html">GoKit3.0(V)词条管理</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V程序详解.html">Gokit3.0(V)源码详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      调试与烧写 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/串口工具使用文档.html">串口工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/HF-LPB100串口烧写说明.html">HF-LPB100串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/HF-LPT120.html">HF-LPT120串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/MXCHIP串口烧写说明.html">MXCHIP串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ESP8266串口烧写说明.html">ESP8266串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/产测工具使用文档.html">产测工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/日志抓取教程文档.html">日志抓取教程文档</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              云平台 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/ent_dev.html">企业应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/enterprise_api.html">企业API</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+    
+    
+    <span class="pure-u-2-24"><a href="https://gizwits.kf5.com" style="color: #faeb00;">返回旧版</a></span>
+  
+    <span class="pure-u-3-24">
+      <i class="fa fa-globe" aria-hidden="true"></i> 
+      
+        <button class="lang-switch" data-lang="en-us">English</button>
+      
+    </span>
+
+  </div>
+</div>
+    <div class="body">
+  
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">目录</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">ESP8266串口烧写说明</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
+      </div>
+      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文针对乐鑫ESP8266模块进行串口模式烧写流程整理了一篇操作流程。合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误。</p>
+<h1 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h1><h2 id="1-下载ESP8266对应的固件"><a href="#1-下载ESP8266对应的固件" class="headerlink" title="1.下载ESP8266对应的固件"></a>1.下载ESP8266对应的固件</h2><p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076360990.png" alt="name"></p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076396266.png" alt="name"></p>
+<p>  <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076409588.png" alt="name"></p>
+<h2 id="2-确认固件文件"><a href="#2-确认固件文件" class="headerlink" title="2.确认固件文件"></a>2.确认固件文件</h2><p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076417476.png" alt="name"></p>
+<p>如图所示bin文件为我们所需要的固件。</p>
+<h2 id="3-设备连接"><a href="#3-设备连接" class="headerlink" title="3.设备连接"></a>3.设备连接</h2><p>将ESP8266模块按照如下原理图进行接线，注意GPIO0（18号管脚）需要输入低电平，本实验直接接地处理，KEY1实现外部复位功能。</p>
+<p>  <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076437289.png" alt="name"></p>
+<h2 id="4-串口设置"><a href="#4-串口设置" class="headerlink" title="4.串口设置"></a>4.串口设置</h2><h3 id="4-1-确认串口参数"><a href="#4-1-确认串口参数" class="headerlink" title="4.1.确认串口参数"></a>4.1.确认串口参数</h3><p>将上述串口连接电脑后，通过“我的电脑”-&gt;“管理”-&gt; “设备管理器”-&gt;“端口（COM 和LPT）”选项中可以看到相应增加的COM口。</p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076453130.png" alt="name"></p>
+<h3 id="4-2-下载烧写软件"><a href="#4-2-下载烧写软件" class="headerlink" title="4.2 下载烧写软件"></a>4.2 下载烧写软件</h3><p>下载地址：<a href="http://pan.baidu.com/s/1eRif36U" target="_blank" rel="external">http://pan.baidu.com/s/1eRif36U</a></p>
+<p>下载解压后得到下面文件</p>
+<p>  <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076470142.png" alt="name"></p>
+<p>再次解压图中所示的文件后，双击 <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076503512.png" alt="name">打开烧写软件，出现如下对话框。 </p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076526115.png" alt="name"></p>
+<p>依次对照下图所选的地方进行相应的填写：</p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076560369.png" alt="name"></p>
+<h2 id="5烧写操作"><a href="#5烧写操作" class="headerlink" title="5烧写操作"></a>5烧写操作</h2><p>步骤一、当串口连接成功之后，点击如上图的“START”按钮，</p>
+<p>  <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076571280.png" alt="name"></p>
+<p>会出现</p>
+<p>  <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076577320.png" alt="name"></p>
+<p>步骤二、将ESP8266进行复位（按下2.3节原理图所示的KEY1后松开）将会出现如下信息表示模块正在进行烧写。</p>
+<p>  <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076590987.png" alt="name"></p>
+<p>步骤三、等待一段时间后，出现“FINISH”字样表示烧写成功。</p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076247606.png" alt="name"></p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="问题反馈">
+      <span>问题反馈</span>
+    </a>
+    <a href="#" title="返回顶部"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">机智云首页</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">关于我们</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">联系我们</a></span>
+      <span><a href="http://www.gizwits.com/talent/social" target="_blank">加入我们</a></span>
+    </p>
+    <p>&#169;2011-2016; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/documentation.js"></script>
+
+<!-- 咨询客服 -->
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+<!-- 百度统计/推广 -->
+<script>
+  // 百度站长统计代码
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement("script")
+    hm.src = "//hm.baidu.com/hm.js?c4c9e1db84e605270799d6222c5c44c8"
+    var s = document.getElementsByTagName("script")[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+
+  // 百度推广代码
+  var _hmt = _hmt || [];
+  ;(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+  </body>
+</html>

@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8">
+
+  <title>设备快速接入- LED为例 - 机智云</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="设备快速接入- LED为例-机智云">
+  <meta name="keywords" content="设备快速接入- LED为例 docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/documentation.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+        <img src="/images/logo.png" alt="logo"> 
+      </a>
+      <a class="text" href="/">文档中心</a>
+    </span>
+
+    <span class="menu pure-u-14-24">
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/zh-cn/overview/overview.html">平台概述</a></li>
+          
+        
+          
+            <li class="levelA">
+              快速入门 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/5分钟了解机智云.html">5分钟了解机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/设备快速接入.html">设备快速接入机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/AndroidAppFrame.html">Android App 开发入门</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/iOSAPP快速入门.html">iOS App 开发入门</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              APP开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB has-submenu">
+                      App 开源框架 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iosframe.html">iOS 开源框架使用说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS消息推送.html">iOS 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS第三方登陆与换肤.html">iOS 第三方登录与换肤</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android开源框架使用指南.html">Android 开源框架使用说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android消息推送.html">Android 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android第三方登录与换肤.html">Android 第三方登录与换肤</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/iossdk.html">iOS SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/AndroidSDKA2.html">Android SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/APICloudWifiSDK.html">APICloud SDK</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              微信开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/了解微信应用开发.html">了解微信应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/微信应用开发教程.html">微信应用开发教程</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              设备开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/gagent_info.html">GAgent详解</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      MCU开发框架使用说明 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/DevSDK/代码自动生成工具.html">GoKit3.0代码自动生成工具</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3 DEV SDK Common版移植说明.html">GoKit3.0 DEV SDK Common版移植说明</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3.0介绍 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html">Gokit3.0系列开发套件简介</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/GoKit3硬件手册.html">Gokit3.0硬件手册</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      WiFi SOC方案 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S使用说明书.html">GoKit3.0(S)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S开发套件介绍.html">Gokit3.0(S)开发套件介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html">GoKit3.0(S)开发环境搭建</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S程序详解.html">Gokit3.0(S)源码详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3.0语音开发 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V使用说明书.html">GoKit3.0(V)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V二次开发指南.html">Gokit3.0(V)开发指南</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V词条.html">GoKit3.0(V)词条管理</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V程序详解.html">Gokit3.0(V)源码详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      调试与烧写 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/串口工具使用文档.html">串口工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/HF-LPB100串口烧写说明.html">HF-LPB100串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/HF-LPT120.html">HF-LPT120串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/MXCHIP串口烧写说明.html">MXCHIP串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ESP8266串口烧写说明.html">ESP8266串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/产测工具使用文档.html">产测工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/日志抓取教程文档.html">日志抓取教程文档</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              云平台 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/ent_dev.html">企业应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/enterprise_api.html">企业API</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+    
+    
+    <span class="pure-u-2-24"><a href="https://gizwits.kf5.com" style="color: #faeb00;">返回旧版</a></span>
+  
+    <span class="pure-u-3-24">
+      <i class="fa fa-globe" aria-hidden="true"></i> 
+      
+        <button class="lang-switch" data-lang="en-us">English</button>
+      
+    </span>
+
+  </div>
+</div>
+    <div class="body">
+  
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">目录</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">设备快速接入- LED为例</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
+      </div>
+      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>机智云平台是致力于物联网、智能硬件云服务的开放平台。机智云专注于提供智能云服务及物联网的软硬件解决方案 ，帮助传统硬件厂商产品升级，快速实现硬件智能化。要实现硬件的智能化，除了硬件本身外，还需要实现：智能云平台、手机APP、联网模块，每一个领域都需要专业的团队来支撑。机智云提供完整的解决方案，让厂商或开发者只需要专注于自身产品硬件。以最小的成本和风险实现硬件智能化，获得产品最大的增值。本文主要介绍设备接入机智云基本流程。</p>
+<h1 id="设备与机智云数据交互流程"><a href="#设备与机智云数据交互流程" class="headerlink" title="设备与机智云数据交互流程."></a>设备与机智云数据交互流程.</h1><p>以一款空调为例。空调厂家开发者开发空调电控板的时候，使用移植机智云GAgent的WiFi/GPRS模组建立桥梁，使空调设备的数据与机智云互联互通。设备与机智云数据交互的基本数据流如下图。</p>
+<p><img src="/assets/zh-cn/quickstart/dev/media/image1.png" alt=""></p>
+<h1 id="在机智云官网创建设备产品"><a href="#在机智云官网创建设备产品" class="headerlink" title="在机智云官网创建设备产品."></a>在机智云官网创建设备产品.</h1><blockquote>
+<p>这里以“智能灯”的例子介绍设备接入机智云的整个流程。</p>
+</blockquote>
+<h2 id="1-注册机智云开发者账号"><a href="#1-注册机智云开发者账号" class="headerlink" title="1.注册机智云开发者账号"></a>1.注册机智云开发者账号</h2><p>登录机智云官网开发者中心（<a href="http://dev.gizwits.com/zh-cn/developer/），" target="_blank" rel="external">http://dev.gizwits.com/zh-cn/developer/），</a> 根据界面指引注册开发者账号。</p>
+<p><img src="/assets/zh-cn/quickstart/dev/media/image2.png" alt=""></p>
+<h2 id="2-登录账号，选择对应项创建新产品"><a href="#2-登录账号，选择对应项创建新产品" class="headerlink" title="2.登录账号，选择对应项创建新产品"></a>2.登录账号，选择对应项创建新产品</h2><p><img src="/assets/zh-cn/quickstart/dev/media/image3.png" alt=""></p>
+<h2 id="3-填写设备产品基本信息"><a href="#3-填写设备产品基本信息" class="headerlink" title="3.填写设备产品基本信息"></a>3.填写设备产品基本信息</h2><p><img src="/assets/zh-cn/quickstart/dev/media/image4.png" alt=""></p>
+<h2 id="4-项目基本信息"><a href="#4-项目基本信息" class="headerlink" title="4.项目基本信息"></a>4.项目基本信息</h2><p>在机智云官网上已成功创建宠物屋产品，机智云为该产品分配Product Key和Product Secret参数。Product Key参数由开发者写入设备MCU（设备主控板），并告知<span id="OLE_LINK1" class="anchor"></span>WiFi/GPRS模块，WiFi/GPRS模块登录机智云后，机智云将会识别该Product Key的产品。Product Secret参数是APP开发或服务器对接时所使用的参数。</p>
+<p><img src="/assets/zh-cn/quickstart/dev/media/image5.png" alt=""></p>
+<h1 id="创建数据点"><a href="#创建数据点" class="headerlink" title="创建数据点"></a>创建数据点</h1><p>数据点即设备产品的功能的抽象，用于描述产品功能及其参数。创建数据点后，设备与云端通讯的数据格式即可确定，设备、机智云可以相互识别设备与机智云互联互通的数据。</p>
+<p><img src="/assets/zh-cn/quickstart/dev/media/image6.png" alt=""></p>
+<h2 id="1-数据点详解"><a href="#1-数据点详解" class="headerlink" title="1.数据点详解"></a>1.数据点详解</h2><p>数据点定义基本内容可分为显示名称，标识名，读写类型，数据类型及备注。概图如下：</p>
+<p><img src="/assets/zh-cn/quickstart/dev/media/image7.png" alt=""></p>
+<p>1.1 显示名称：自定义功能点名称。</p>
+<p>1.2 标识名：用于应用层传输，客户端或业务云开发时需要使用。命名规则遵循标准的开发语言变量名命名规范，支持英文字母、数字和下划线，以英文字母开头。</p>
+<p>1.3 读写类型：</p>
+<p>①　只读：表示该数据点非控制，<span id="OLE_LINK3" class="anchor"></span>数据只支持从设备上报。</p>
+<p>②　可写：表示该数据点可控制。设备端可上报该数据点数据；云端/客户端可对该数据点数据做出下发控制。</p>
+<p>③　报警：表示该数据点非控制，数据只支持从设备上报，数据类型需为布尔值。</p>
+<p>④　故障：表示该数据点非控制，数据只支持从设备上报，数据类型需为布尔值。云端会对设备上报的该数据点做统计，可在“运行状态”查看。</p>
+<p>1.4 数据类型：</p>
+<p>①　布尔值：表示两个状态：0，或1。如开关状态等，建议使用布尔数据类型。例如<span id="OLE_LINK7" class="anchor"></span>GoKit开发板的“宠物屋”，“开启/关闭红色灯”该数据点。</p>
+<p>②　枚举类型：可定义一个有限的取值集合。当定义的某个功能（元器件）有固定的若干个值。例如GoKit开发板的“宠物屋”，“设定LED组合颜色”该数据点的枚举定义值：“自定义,黄色<span id="OLE_LINK2" class="anchor"></span>,紫色,粉色”。</p>
+<p>③　数值：填写数值范围，数值可为负数/小数，机智云自动将数值转换为正数。例如GoKit开发板的“宠物屋”，“设定电机转速”该数据点：电机有正反转、调速功能，数据点值可定义为：-5～5。</p>
+<p>④　扩展：填写数据长度，数据内容由用户自定义。对于上述功能点无法满足的复杂功能可采用。机智云不建议使用此类型数据，设备上报该数据点的数据，机智云无法识别。</p>
+<p>1.5  备注：选填，用一段文本描述当前数据点的功能及定义方法，对字符格式不做限制。只用于提高数据点的易读性，如果需要团队协作开发，建议规范填写。</p>
+<p>1.6 数据点数值型分辨率、增量换算实现原理</p>
+<p>如以上提到，在定义数值型数据点的时候，取值范围可以使用包括小数、负数等非uint类型数值，熟悉嵌入式开发的开发者会知道，这些数值在设备端都是不被支持的。</p>
+<p>机智云为了让设备功能定义更加简单直接、所见即所得，研究出来一套算法，用于将用户输入的数值转换成设备能够识别的uint类型，这套算法的核心公式是：y=kx+m。</p>
+<blockquote>
+<p>y表示“显示值”，就是用户可见的最终数值，也是数据点定义时输入的值。包括 Ymin(最小值) 和 Ymax(最大值)。<br>x表示“传输值”，就是实际指令间传输使用的数值，云端/客户端接收到的值。一定是uint格式。也包括 Xmin 和 Xmax。<br>k表示“分辨率”，就是用户输入的分辨率一值，确定了每个取值的步进。<br>m表示“取值偏移量”或“增量”，算法通过m值将y值偏移到满足x值uint格式的要求，m值默认等于Ymin，确保Xmin＝0 。</p>
+</blockquote>
+<p> 以下用一个电子温度计举例说明换算过程 数据点内容： 取值范围：-30（Ymin） ~ 50（Ymax），分辨率：0.1</p>
+<p>根据公式：y=kx＋m，m默认等于Ymin -30<br>Xmin = (-30+30) / 0.1 = 0<br>Xmax = (50+30) / 0.1 = 800 </p>
+<h2 id="2-根据产品需求，分析硬件开发需求"><a href="#2-根据产品需求，分析硬件开发需求" class="headerlink" title="2.根据产品需求，分析硬件开发需求"></a>2.根据产品需求，分析硬件开发需求</h2><p>“智能灯”的产品需求是：将灯的开关状态同步到手机APP，可以使用APP远程控制灯。</p>
+<h2 id="3-结合设备功能需求，分析设备数据点需求"><a href="#3-结合设备功能需求，分析设备数据点需求" class="headerlink" title="3.结合设备功能需求，分析设备数据点需求"></a>3.结合设备功能需求，分析设备数据点需求</h2><p><span id="_Toc5478" class="anchor"></span></p>
+<p><img src="/assets/zh-cn/quickstart/dev/media/image8.png" alt=""></p>
+<h2 id="4-创建对应数据点"><a href="#4-创建对应数据点" class="headerlink" title="4.创建对应数据点"></a>4.创建对应数据点</h2><p><img src="/assets/zh-cn/quickstart/dev/media/image9.png" alt=""></p>
+<p><img src="/assets/zh-cn/quickstart/dev/media/image10.png" alt=""></p>
+<h2 id="5-修改数据点"><a href="#5-修改数据点" class="headerlink" title="5.修改数据点"></a>5.修改数据点</h2><p><img src="/assets/zh-cn/quickstart/dev//media/image11.png" alt=""></p>
+<p><img src="/assets/zh-cn/quickstart/dev/media/image12.png" alt=""></p>
+<p><img src="/assets/zh-cn/quickstart/dev/media/image13.png" alt=""></p>
+<p><img src="/assets/zh-cn/quickstart/dev/media/image14.png" alt=""></p>
+<h1 id="智能灯MCU开发"><a href="#智能灯MCU开发" class="headerlink" title="智能灯MCU开发"></a>智能灯MCU开发</h1><h2 id="1-自动生成MCU-SDK"><a href="#1-自动生成MCU-SDK" class="headerlink" title="1.自动生成MCU SDK"></a>1.自动生成MCU SDK</h2><p>自动生成的MCU SDK代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的 API。当设备收到云端或 APP 端的数据后，程序会将数据转换成对应的事件并通知到应用层，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，便可完成产品的开发。这里选择独立MCU方案、硬件平台<span id="OLE_LINK4" class="anchor"></span>STM32f103c8x后，机智云直接生成适应STM32f103c8x的工程代码。利用GoKit开发板上的扩展接口，A2和GND进行扩展外接LED灯。</p>
+<p><img src="/assets/zh-cn/quickstart/dev/media/image15.png" alt=""></p>
+<p><img src="/assets/zh-cn/quickstart/dev/media/image16.png" alt=""></p>
+<p><img src="/assets/zh-cn/quickstart/dev/media/image17.png" alt=""></p>
+<h2 id="2-MCU-SDK文件内容目录结构"><a href="#2-MCU-SDK文件内容目录结构" class="headerlink" title="2.MCU SDK文件内容目录结构"></a>2.MCU SDK文件内容目录结构</h2><p>如下图，其中黑色标注部分为STM32f103cx8硬件平台开发基本文件。绿色标注部分为机智云逻辑部分，硬件的串口驱动、定时器驱动、按键驱动等驱动实现完毕，开发者可直接在<span id="OLE_LINK6" class="anchor"></span>Gizwits_product.c&amp;Gizwits_product.h文件编写硬件动作执行函数。<br><img src="/assets/zh-cn/quickstart/dev/media/image18.png" alt=""></p>
+<p>其中主要文件说明：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件</td>
+<td>说明</td>
+</tr>
+<tr>
+<td>Gizwits_product.c</td>
+<td>该文件为产品相关处理函数，如gizEventProcess()平台相关硬件初始化，如串口、定时器等。</td>
+</tr>
+<tr>
+<td>Gizwits_product.h</td>
+<td>该文件为gizwits_product.c的头文件，存放产品相关宏定义如：HARDWARE_VERSION、SOFTWARE_VERSION</td>
+</tr>
+<tr>
+<td>Gizwits_protocol.c</td>
+<td>该文件为SDK API接口函数定义文件</td>
+</tr>
+<tr>
+<td>Gizwits_protocol.h</td>
+<td>该文件为gizwits_protocol.c对应头文件，相关API的接口声明均在此文件中。</td>
+</tr>
+</tbody>
+</table>
+<p>协议API介绍</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API名称</td>
+<td>API功能</td>
+</tr>
+<tr>
+<td>Void gizwitsInit(void)</td>
+<td>gizwits 协议初始化接口。用户调用该接口可以完成 Gizwits 协议相关初始化（包括协议相关定时器、串口的初始化）。</td>
+</tr>
+<tr>
+<td>Void <span id="OLE_LINK5" class="anchor"></span>gizwitsSetMode(unit8_t mode)</td>
+<td>参数mode[in]：仅支持0,1和2,其他数据无效。                                                                                </td>
+</tr>
+</tbody>
+</table>
+<pre><code>参数为 0，恢复模组出厂配置接口，调用会清空所有配置参数，恢复到出厂默认配置。                                                
+
+参数为 1 时配置模组进入 SoftAp 模式；                                                                                       
+
+参数为 2 配置模组进入 AirLink 模式。                                                                                        |
+</code></pre><p>| Void gizwitsHandle(dataPoint_t *dataPoint)                                  | 参数 dataPoint[in]:用户设备数据点。该函数中完成了相应协议数据的处理即数据上报的等相关操作。                              |<br>| Int8_t gizwitsEventProcess                                                   </p>
+<p> (eventInfo_t *info,uint8_t *data,uint32_t len)                            | 参数 info[in]:事件队列                                                                                                   </p>
+<pre><code>参数 data\[in\]:数据                                                                                                        
+
+参数 len \[in\]:数据长度                                                                                                    
+
+用户数据处理函数,包括 wifi 状态更新事                                                                                       
+
+件和控制事件。                                                                                                              
+
+a) Wifi 状态更新事件                                                                                                        
+
+WIFI\_开头的事件为 wifi 状态更新事件，data 参数仅在 WIFI\_RSSI 有效，data 值为 RSSI 值,数据类型为 uint8\_t，取值范围 0~7。  
+
+b) 控制事件                                                                                                                 
+
+与数据点相关,本版本代码会打印相关事件信息，相关数值也一并打印输出，用户只需要做命令的具体执行即可。                         |
+</code></pre><h2 id="3-开发步骤"><a href="#3-开发步骤" class="headerlink" title="3.开发步骤"></a>3.开发步骤</h2><p>3.1 程序主函数<br>位置：main.c 中 main()函数</p>
+<p><img src="./media/image19.png" alt=""></p>
+<p>相关说明：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>函数</td>
+<td>说明</td>
+</tr>
+<tr>
+<td>SystemInit()</td>
+<td>平台相关的硬件初始化                                               </td>
+</tr>
+</tbody>
+</table>
+<pre><code>（非 MCU SDK API，不同的平台名称可能不同）                          |
+</code></pre><p>| userInit()      | 用户相关的初始化，如：外设驱动初始化、打印串口初始化               </p>
+<pre><code>（非MCU SDK API，不同的平台名称可能不同）                           |
+</code></pre><p>| gizwitsInit()   | 平台、协议处理初始化，如：用户定时器初始化、协议通信串口初始化     </p>
+<pre><code>（MCU SDK API）                                                     |
+</code></pre><p>| userHandle()    | 用户事件回调函数，用户可以自定义事件在该函数中完成相应的协议处理。 </p>
+<pre><code>（非MCU SDK API，不同的平台名称可能不同）                           |
+</code></pre><p>| gizwitsHandle() | 协议相关的主函数                                                   </p>
+<pre><code>（MCU SDK API）                                                     |
+</code></pre><p>3.2 编写驱动程序</p>
+<p>参考GoKit2代原理图和STM32103f硬件手册，对GoKit2代功能板上面的A2引脚写驱动程序。</p>
+<p><img src="./media/image20.png" alt=""></p>
+<p>3.3 用户程序初始化</p>
+<p>位置：main.c 中 userInit() 函数</p>
+<p><img src="./media/image21.png" alt=""></p>
+<p>3.4 WiFi模块Reset/入网方式</p>
+<p>设备需要进入配置模式才能进行联网，并与云端进行通信，MCU SDK在工程中是通过按键触发进入相应的配置模式。这里，我们简单地添加成功触发WiFi模组进入AirLink配置模式后LED灯亮起。</p>
+<p>进入 Soft AP 模式：key2 按键短按。</p>
+<p><img src="./media/image22.png" alt=""></p>
+<p>B. 进入 AirLink 模式：key2 按键长按。</p>
+<p><img src="./media/image23.png" alt=""></p>
+<p>C. 模组复位：key1 按键长。</p>
+<p><img src="./media/image24.png" alt=""></p>
+<p>3.5 处理云端/APP发送过来的控制事件。</p>
+<p>与控制型协议相关的函数调用关系如下：</p>
+<p><img src="./media/image25.png" alt=""></p>
+<p>函数调用说明：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>函数</td>
+<td>说明</td>
+</tr>
+<tr>
+<td>protocolIssuedProcess</td>
+<td>该函数被 gizwitsHandle 调用，接收来自云端或 app端下发的相关协议数据，MCU SDK自处理，开发者可不关注</td>
+</tr>
+<tr>
+<td>ACTION_CONTROL_DEVICE</td>
+<td>进行“控制型协议”的相关处理，MCU SDK自处理，开发者<span id="OLE_LINK9" class="anchor"></span>可参考协议进一步理解</td>
+</tr>
+<tr>
+<td>gizDataPoint2Event</td>
+<td>根据协议生成“控制型事件”，并进行相应数据类型的转化转换，MCU SDK自处理，开发者可参考协议进一步理解</td>
+</tr>
+<tr>
+<td>gizwitsEventProcess</td>
+<td>根据已生成的“控制型事件”进行相应处理（包括相应的驱动函数），需开发者处理控制事件</td>
+</tr>
+</tbody>
+</table>
+<p>相关代码位置：gokit_mcu_stm32_xxx\Gizwits\gizwits_product.c 中 gizwitsEventProcess() 函数：</p>
+<p>功能说明：完成写类型外设的事件处理。</p>
+<p>相应代码：</p>
+<p><img src="./media/image26.png" alt=""></p>
+<p>3.7 上报设备状态</p>
+<p>与上报型协议相关的函数调用关系如下：</p>
+<p><img src="./media/image27.png" alt=""></p>
+<p>函数调用说明：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>函数</td>
+<td>说明</td>
+</tr>
+<tr>
+<td>userHandle</td>
+<td>获取用户区的上报型数据，需开发者关注</td>
+</tr>
+<tr>
+<td>gizCheckReport</td>
+<td>判断是否上报当前状态的数据，MCU SDK自处理，开发者可不关注</td>
+</tr>
+<tr>
+<td>gizDataPoints2ReportData</td>
+<td>完成用户区数据到上报型数据的转换，MCU SDK自处理，开发者可不关注</td>
+</tr>
+<tr>
+<td>gizReportData</td>
+<td>将转换后的上报数据通过串口发送给 WiFi 模块，MCU SDK自处理，开发者可不关注</td>
+</tr>
+</tbody>
+</table>
+<p>相关代码位置:gokit_mcu_stm32_xxx\User\main.c 中 userHandle() 函数：<br>使用说明：该函数中完成了用户区上报型数据的获取。用户只需将读到的数据赋值到 用户区当前设备状态结构体即可，赋值完的数据是通过 gizwitsHandle 上报云端的，开发者不需要关注变化上报和定时上报。<br><img src="./media/image28.png" alt=""></p>
+<p>3.8 编译并将固件烧写到GoKit2代MCU主控板</p>
+<h1 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h1><h2 id="1-手机安装机智云APP"><a href="#1-手机安装机智云APP" class="headerlink" title="1. 手机安装机智云APP"></a>1. 手机安装机智云APP</h2><p><img src="./media/image29.png" alt=""></p>
+<h2 id="2-打开机智云APP，注册登录APP账号"><a href="#2-打开机智云APP，注册登录APP账号" class="headerlink" title="2. 打开机智云APP，注册登录APP账号"></a>2. 打开机智云APP，注册登录APP账号</h2><p><img src="./media/image30.png" alt=""></p>
+<h2 id="3-配置WiFi模块入网"><a href="#3-配置WiFi模块入网" class="headerlink" title="3. 配置WiFi模块入网"></a>3. 配置WiFi模块入网</h2><p><img src="./media/image31.png" alt=""></p>
+<p><img src="./media/image32.png" alt=""><img src="./media/image33.png" alt=""></p>
+<h2 id="4-配置成功后，选择相应设备"><a href="#4-配置成功后，选择相应设备" class="headerlink" title="4. 配置成功后，选择相应设备"></a>4. 配置成功后，选择相应设备</h2><p><img src="./media/image34.png" alt=""></p>
+<h2 id="5-APP收发设备数据"><a href="#5-APP收发设备数据" class="headerlink" title="5. APP收发设备数据"></a>5. APP收发设备数据</h2><p><img src="./media/image35.png" alt=""></p>
+<h2 id="6-机智云后台查看设备交互数据"><a href="#6-机智云后台查看设备交互数据" class="headerlink" title="6. 机智云后台查看设备交互数据"></a>6. 机智云后台查看设备交互数据</h2><p><img src="./media/image36.png" alt=""></p>
+<h1 id="发布产品"><a href="#发布产品" class="headerlink" title="发布产品"></a>发布产品</h1><p>产品发布到正式生产环境后，机智云将为你的设备免费分配独立的云端运行环境，确保你的设备24小时不间断在线以供用户使用，将享受更多机智云为您提供的免费增值服务，包括：智能设备统计分析，开放平台展示以及各种无微不至的技术支持服务。</p>
+<p>产品如何申请发布上线，具体步骤如下：</p>
+<ol>
+<li>进入产品详细信息页面，在产品名称旁边显示【申请发布】按钮</li>
+</ol>
+<p><img src="./media/image37.png" alt=""></p>
+<ol>
+<li>点击【马上申请】按钮，如实填写申请信息审核</li>
+</ol>
+<p><img src="./media/image38.png" alt=""></p>
+<ol>
+<li>点击【提交申请】按钮，跳转提交成功页面，如图1-4。机智云将免费为你提供人工审核以及严谨的测试，审核通过后，会根据你提交的量产计划免费提供后台服务器支持。</li>
+</ol>
+<p><img src="./media/image39.png" alt=""></p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="问题反馈">
+      <span>问题反馈</span>
+    </a>
+    <a href="#" title="返回顶部"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">机智云首页</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">关于我们</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">联系我们</a></span>
+      <span><a href="http://www.gizwits.com/talent/social" target="_blank">加入我们</a></span>
+    </p>
+    <p>&#169;2011-2016; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/documentation.js"></script>
+
+<!-- 咨询客服 -->
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+<!-- 百度统计/推广 -->
+<script>
+  // 百度站长统计代码
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement("script")
+    hm.src = "//hm.baidu.com/hm.js?c4c9e1db84e605270799d6222c5c44c8"
+    var s = document.getElementsByTagName("script")[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+
+  // 百度推广代码
+  var _hmt = _hmt || [];
+  ;(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+  </body>
+</html>
