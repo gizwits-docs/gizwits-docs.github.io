@@ -301,24 +301,95 @@
 </tbody>
 </table>
 <p>MCU方案中除了支持STM32平台，还可以将我们生成好的通用平台版代码移植到符合条件的任意平台，从而实现机智云所提供的各种功能（详细移植过程请查看《GoKit3二次开发–通用平台版移植说明》）。</p>
-<h1 id="“代码自动生成工具”的使用"><a href="#“代码自动生成工具”的使用" class="headerlink" title="“代码自动生成工具”的使用"></a>“代码自动生成工具”的使用</h1><h2 id="1-创建产品"><a href="#1-创建产品" class="headerlink" title="1.创建产品"></a>1.创建产品</h2><p>登录机智云开发者中心：<a href="http://dev.gizwits.com/" target="_blank" rel="external">enter link description here</a></p>
-<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478158998646.png" alt="Alt text"><br>点击右上角创建新产品</p>
+<h1 id="“代码自动生成工具”的使用"><a href="#“代码自动生成工具”的使用" class="headerlink" title="“代码自动生成工具”的使用"></a>“代码自动生成工具”的使用</h1><h2 id="1-创建产品"><a href="#1-创建产品" class="headerlink" title="1.创建产品"></a>1.创建产品</h2><p>登录机智云开发者中心：<a href="http://dev.gizwits.com/" target="_blank" rel="external">http://dev.gizwits.com/</a></p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478158998646.png" alt="登录机智云开发者中心"></p>
+<p>点击右上角创建新产品</p>
 <p>输入相应的产品信息后点击“保存”。</p>
-<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159012724.png" alt="Alt text"></p>
-<h2 id="2-添加数据点"><a href="#2-添加数据点" class="headerlink" title="2.添加数据点"></a>2.添加数据点</h2><p>添加相应的数据点<br><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159509259.png" alt="Alt text"><br><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159514757.png" alt="Alt text"><br>添加成功后点击“应用”</p>
-<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159536876.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159012724.png" alt="创建产品"></p>
+<h2 id="2-添加数据点"><a href="#2-添加数据点" class="headerlink" title="2.添加数据点"></a>2.添加数据点</h2><p>添加相应的数据点</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159509259.png" alt="添加相应的数据点"></p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159514757.png" alt="添加相应的数据点"></p>
+<p>添加成功后点击“应用”</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159536876.png" alt="添加相应的数据点"></p>
 <h2 id="3-生成目标平台代码"><a href="#3-生成目标平台代码" class="headerlink" title="3.生成目标平台代码"></a>3.生成目标平台代码</h2><blockquote>
 <p>注：如果之前没有定义数据点则无法使用自动生成代码服务。</p>
-<h3 id="3-1-生成MCU方案代码"><a href="#3-1-生成MCU方案代码" class="headerlink" title="3.1 生成MCU方案代码"></a>3.1 生成MCU方案代码</h3><p>定义好产品后，选择左侧服务中的“MCU开发”(假设采用的MCU是STM32F103C8x)，选中硬件方案中的“独立MCU方案”，再选择“硬件平台”中的“stm32f103c8x”，最后点击“生成代码包”，等待生成完毕下载即可。<br>注：如果是其他MCU芯片，请选择“其他平台”选项，然后将生成的代码包移植到使用的平台，移植方法参考《GoKit3二次开发-通用平台版移植说明》。</p>
 </blockquote>
-<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159645300.png" alt="Alt text"></p>
-<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159651968.png" alt="Alt text"></p>
+<h3 id="3-1-生成MCU方案代码"><a href="#3-1-生成MCU方案代码" class="headerlink" title="3.1 生成MCU方案代码"></a>3.1 生成MCU方案代码</h3><p>定义好产品后，选择左侧服务中的“MCU开发”(假设采用的MCU是STM32F103C8x)，选中硬件方案中的“独立MCU方案”，再选择“硬件平台”中的“stm32f103c8x”，最后点击“生成代码包”，等待生成完毕下载即可。</p>
+<blockquote>
+<p>注：如果是其他MCU芯片，请选择“其他平台”选项，然后将生成的代码包移植到使用的平台，移植方法参考《GoKit3二次开发-通用平台版移植说明》。</p>
+</blockquote>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159645300.png" alt="生成MCU方案代码"></p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159651968.png" alt="生成MCU方案代码"></p>
 <h3 id="3-2-生成SoC方案代码"><a href="#3-2-生成SoC方案代码" class="headerlink" title="3.2 生成SoC方案代码"></a>3.2 生成SoC方案代码</h3><p>定义好产品后，选择左侧服务中的“SoC开发”(假设使用的SoC芯片是esp8266)，选中硬件方案中的“SoC方案”，则选择“硬件平台”中的“esp8266”，最后点击“生成代码包”，等待生成完毕下载即可。</p>
-<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159682322.png" alt="Alt text"><br>下载完成后解压如下</p>
-<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159695787.png" alt="Alt text"></p>
-<h1 id="自动生成代码说明"><a href="#自动生成代码说明" class="headerlink" title="自动生成代码说明"></a>自动生成代码说明</h1><h2 id="1-STM32平台文件说明"><a href="#1-STM32平台文件说明" class="headerlink" title="1. STM32平台文件说明"></a>1. STM32平台文件说明</h2><p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159738287.png" alt="Alt text"><br>主要文件说明：<br>|文件      |说明 |<br>|:—    |:—|<br>|gizwits_product.c    |该文件为产品相关处理函数，如 gizEventProcess()平台相关硬件初始化，如串口、定时器等|<br>|gizwits_product.h |    该文件为 gizwits_product.c 的头文件，存放产品相关宏定义如： HARDWARE_VERSION 、SOFTWARE_VERSION|<br>|gizwits_protocol.c    |该文件为 SDK API 接口函数定义文件|<br>|gizwits_protocol.h    |该文件为 gizwits_protocol.c 对应头文件,相关 API 的接口声明均在此文件中|</p>
-<h2 id="2-ESP8266平台文件说明"><a href="#2-ESP8266平台文件说明" class="headerlink" title="2. ESP8266平台文件说明"></a>2. ESP8266平台文件说明</h2><p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478160012758.png" alt="Alt text"><br>主要文件说明：<br>|文件      |说明 |<br>|:—    |:—|<br> |libgagent.a |    该文件为机智云设备接入协议库文件,文件位于 lib 目录下 |<br> |gagent_external.h     |该文件为 libgagent.a 对应头文件,两个文件配合使用 |<br> |gizwits_product.c     |该文件为平台相关处理文件，存放事件处理API接口函数，即 gizwitsEventProcess() |<br> |gizwits_product.h      |该文件为  gizwits_product.c 的头文件，存放产品相关宏定义如： HARDWARE_VERSION 、SOFTWARE_VERSION |<br> |gizwits_protocol.c     |该文件为协议实现文件，存放 SDK API 接口函数 |<br> |gizwits_protocol.h     |该文件为 gizwits_protocol.c 对应头文件，协议相关宏定义即 API 接口声明均在此文件中。 |</p>
-<h1 id="二次开发介绍"><a href="#二次开发介绍" class="headerlink" title="二次开发介绍"></a>二次开发介绍</h1><h2 id="1-代码二次开发需知"><a href="#1-代码二次开发需知" class="headerlink" title="1. 代码二次开发需知"></a>1. 代码二次开发需知</h2><p>自动生成的代码已经根据用户定义的产品数据点信息，并针对STM32、ESP8266等平台，生成了对应的机智云串口协议层代码，用户只需要调用相应的API接口或添加相应的逻辑处理即可。代码框架如下图所示：<br><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478160174766.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159682322.png" alt="生成SoC方案代码"></p>
+<p>下载完成后解压如下</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159695787.png" alt="生成SoC方案代码"></p>
+<h1 id="自动生成代码说明"><a href="#自动生成代码说明" class="headerlink" title="自动生成代码说明"></a>自动生成代码说明</h1><h2 id="1-STM32平台文件说明"><a href="#1-STM32平台文件说明" class="headerlink" title="1. STM32平台文件说明"></a>1. STM32平台文件说明</h2><p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159738287.png" alt="STM32平台文件说明"></p>
+<p>主要文件说明：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">文件</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">gizwits_product.c</td>
+<td style="text-align:left">该文件为产品相关处理函数，如 gizEventProcess()平台相关硬件初始化，如串口、定时器等</td>
+</tr>
+<tr>
+<td style="text-align:left">gizwits_product.h</td>
+<td style="text-align:left">该文件为 gizwits_product.c 的头文件，存放产品相关宏定义如： HARDWARE_VERSION 、SOFTWARE_VERSION</td>
+</tr>
+<tr>
+<td style="text-align:left">gizwits_protocol.c</td>
+<td style="text-align:left">该文件为 SDK API 接口函数定义文件</td>
+</tr>
+<tr>
+<td style="text-align:left">gizwits_protocol.h</td>
+<td style="text-align:left">该文件为 gizwits_protocol.c 对应头文件,相关 API 的接口声明均在此文件中</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-ESP8266平台文件说明"><a href="#2-ESP8266平台文件说明" class="headerlink" title="2. ESP8266平台文件说明"></a>2. ESP8266平台文件说明</h2><p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478160012758.png" alt="ESP8266平台文件说明"></p>
+<p>主要文件说明：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">文件</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">libgagent.a</td>
+<td style="text-align:left">该文件为机智云设备接入协议库文件,文件位于 lib 目录下</td>
+</tr>
+<tr>
+<td style="text-align:left">gagent_external.h</td>
+<td style="text-align:left">该文件为 libgagent.a 对应头文件,两个文件配合使用</td>
+</tr>
+<tr>
+<td style="text-align:left">gizwits_product.c</td>
+<td style="text-align:left">该文件为平台相关处理文件，存放事件处理API接口函数，即 gizwitsEventProcess()</td>
+</tr>
+<tr>
+<td style="text-align:left">gizwits_product.h</td>
+<td style="text-align:left">该文件为  gizwits_product.c 的头文件，存放产品相关宏定义如： HARDWARE_VERSION 、SOFTWARE_VERSION</td>
+</tr>
+<tr>
+<td style="text-align:left">gizwits_protocol.c</td>
+<td style="text-align:left">该文件为协议实现文件，存放 SDK API 接口函数</td>
+</tr>
+<tr>
+<td style="text-align:left">gizwits_protocol.h</td>
+<td style="text-align:left">该文件为 gizwits_protocol.c 对应头文件，协议相关宏定义即 API 接口声明均在此文件中。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="二次开发介绍"><a href="#二次开发介绍" class="headerlink" title="二次开发介绍"></a>二次开发介绍</h1><h2 id="1-代码二次开发需知"><a href="#1-代码二次开发需知" class="headerlink" title="1. 代码二次开发需知"></a>1. 代码二次开发需知</h2><p>自动生成的代码已经根据用户定义的产品数据点信息，并针对STM32、ESP8266等平台，生成了对应的机智云串口协议层代码，用户只需要调用相应的API接口或添加相应的逻辑处理即可。代码框架如下图所示：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478160174766.png" alt="代码二次开发需知"></p>
 <blockquote>
 <p>需要开发的部分为：</p>
 <ul>
@@ -333,15 +404,20 @@
 <h2 id="2-二次开发举例"><a href="#2-二次开发举例" class="headerlink" title="2. 二次开发举例"></a>2. 二次开发举例</h2><p>自动生成的代码在各平台之间使用了统一的协议封装，故二次开发所完成的修改也几乎相同，下面以STM32平台为例。</p>
 <h3 id="2-1-下行处理"><a href="#2-1-下行处理" class="headerlink" title="2.1 下行处理"></a>2.1 下行处理</h3><p>首先要完成的是传感器驱动开发，然后在Gizwits目录下的gizwits_product.c文件中的gizwitsEventProcess()函数中处理相应事件即可（如下例中的ledRgbControl(),功能是控制RGB灯的颜色）。</p>
 <p>下面以控制RGB LED为例，代码示例如下：</p>
-<p><strong>修改前</strong>：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="number">0</span>x01 == currentDataPoint.valueLED_ONOFF)</div><div class="line">&#123;</div><div class="line">  //user handle</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;</div><div class="line">  //user handle    </div><div class="line">&#125;        </div><div class="line"><span class="keyword">break</span>;</div></pre></td></tr></table></figure></p>
-<p><strong>修改后</strong>：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="number">0</span>x01 == currentDataPoint.valueLED_ONOFF)</div><div class="line">&#123;</div><div class="line">  //user handle</div><div class="line">ledRgbControl(<span class="number">254</span>,<span class="number">0</span>,<span class="number">0</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;</div><div class="line">  //user handle    </div><div class="line">ledRgbControl(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);  </div><div class="line">&#125;        </div><div class="line"><span class="keyword">break</span>;</div></pre></td></tr></table></figure></p>
+<p><strong>修改前</strong>：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="number">0x01</span> == currentDataPoint.valueLED_ONOFF)</div><div class="line">&#123;</div><div class="line">  <span class="comment">//user handle</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;</div><div class="line">  <span class="comment">//user handle    </span></div><div class="line">&#125;        </div><div class="line"><span class="keyword">break</span>;</div></pre></td></tr></table></figure>
+<p><strong>修改后</strong>：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="number">0</span>x01 == currentDataPoint.valueLED_ONOFF)</div><div class="line">&#123;</div><div class="line">  //user handle</div><div class="line">ledRgbControl(<span class="number">254</span>,<span class="number">0</span>,<span class="number">0</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;</div><div class="line">  //user handle    </div><div class="line">ledRgbControl(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);  </div><div class="line">&#125;        </div><div class="line"><span class="keyword">break</span>;</div></pre></td></tr></table></figure>
 <h3 id="2-2-上行处理"><a href="#2-2-上行处理" class="headerlink" title="2.2 上行处理"></a>2.2 上行处理</h3><p>首先要完成的是传感器驱动开发，然后在user目录下main.c文件中的userHandle()函数中实现传感器数据采集，用户只需并将采集到的数值赋值给对应用户区的设备状态结构体数据位即可（如下例中的：currentDataPoint.valueInfrared = irHandle();）。</p>
 <p>下面以红外传感器的数据获取为例（只读型数据点的操作会被云端自动生成），如下：</p>
-<p><strong>修改前</strong>：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">void userHandle(void)</div><div class="line">&#123;</div><div class="line">    /*</div><div class="line">    currentDataPoint.valueInfrared = ;//Add Sensor Data Collection</div><div class="line">    */</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>修改后</strong>：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">vvoid userHandle(void)</div><div class="line">&#123;</div><div class="line">    currentDataPoint.valueInfrared = irHandle();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>修改前</strong>：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">void userHandle(void)</div><div class="line">&#123;</div><div class="line">    /*</div><div class="line">    currentDataPoint.valueInfrared = ;//Add Sensor Data Collection</div><div class="line">    */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>修改后</strong>：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">vvoid userHandle(void)</div><div class="line">&#123;</div><div class="line">    currentDataPoint.valueInfrared = irHandle();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>特别提醒：userHandle()被while循环调用，执行速度较快，需要针对不同的需求，用户可调整数据点数据的采集周期和接口实现位置，预防由于传感器数据采集过快引发的不必要的问题。但不建议在userHandle()中调用延时函数来降低执行频率。正确方法如下：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">void userHandle(void)</div><div class="line">&#123;</div><div class="line">static uint32_t irLastTimer = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span>((gizGetTimerCount()-irLastTimer ) &gt; SAMPLING_TIME_MAX)     	&#123;</div><div class="line">currentDataPoint.valueInfrared = irHandle();</div><div class="line"></div><div class="line">irLastTimer = gizGetTimerCount();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>特别提醒：userHandle()被while循环调用，执行速度较快，需要针对不同的需求，用户可调整数据点数据的采集周期和接口实现位置，预防由于传感器数据采集过快引发的不必要的问题。但不建议在userHandle()中调用延时函数来降低执行频率。正确方法如下：</p>
 </blockquote>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">void userHandle(void)</div><div class="line">&#123;</div><div class="line">static uint32_t irLastTimer = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span>((gizGetTimerCount()-irLastTimer ) &gt; SAMPLING_TIME_MAX)     	&#123;</div><div class="line">currentDataPoint.valueInfrared = irHandle();</div><div class="line"></div><div class="line">irLastTimer = gizGetTimerCount();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="2-3-配置处理"><a href="#2-3-配置处理" class="headerlink" title="2.3 配置处理"></a>2.3 配置处理</h3><p>除了数据的上行与下行处理外，还需要一些配置操作需要完成，如下：</p>
 <ul>
 <li>配置入网</li>
