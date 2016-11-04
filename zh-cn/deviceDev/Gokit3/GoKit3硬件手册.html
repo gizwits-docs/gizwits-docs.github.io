@@ -278,11 +278,7 @@
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <h1 id="GoKit-3-开发套件概述"><a href="#GoKit-3-开发套件概述" class="headerlink" title="GoKit 3 开发套件概述"></a>GoKit 3 开发套件概述</h1><h2 id="1-硬件相关"><a href="#1-硬件相关" class="headerlink" title="1.硬件相关"></a>1.硬件相关</h2><p>GoKit 3采用可扩展式的硬件设计方案。核心硬件是包括：功能扩展板、ESP8266 WiFi模块。<br>同时GoKit 3兼容标准Arduino接口、Hi3518E WiFi模块、语音模块等相关模组。</p>
-<p><img src="/assets/zh-cn/deviceDev/Gokit3/manual/1478155289532.png" alt="GoKit3"></p>
 <h2 id="2-软件相关"><a href="#2-软件相关" class="headerlink" title="2.软件相关"></a>2.软件相关</h2><p>GoKit 3开发套件使用机智云物联网云服务平台，使用自定义数据点的IoT开发框架，用户可以试用其方便地开发智能硬件产品。</p>
-<h2 id="3-开发者支持"><a href="#3-开发者支持" class="headerlink" title="3.开发者支持"></a>3.开发者支持</h2><p>使用Gokit 系列开収套件，用户将拥有机智云开发者专有账号，给予开发者进入机智云云平台的技术支持，包括开发者所需要的资料及SDK、社区论坛服务、以及其他服务。</p>
-<p>机智云官方网站：<a href="http://www.gizwits.com/" target="_blank" rel="external">http://www.gizwits.com/</a></p>
-<p>开収者论坛： <a href="http://club.gizwits.com/forum.php" target="_blank" rel="external">http://club.gizwits.com/forum.php</a></p>
 <h1 id="ESP8266-Wi-Fi模组"><a href="#ESP8266-Wi-Fi模组" class="headerlink" title="ESP8266 Wi-Fi模组"></a>ESP8266 Wi-Fi模组</h1><h2 id="1-ESP8266介绍"><a href="#1-ESP8266介绍" class="headerlink" title="1.ESP8266介绍"></a>1.ESP8266介绍</h2><p>乐鑫ESP8266 拥有高性能无线SOC，给移动平台设计师带来福音，它以最低成本提供最大实用性，为 WiFi 功能嵌入其他系统提供无限可能。</p>
 <h2 id="2-ESP8266结构图"><a href="#2-ESP8266结构图" class="headerlink" title="2.ESP8266结构图"></a>2.ESP8266结构图</h2><p><img src="/assets/zh-cn/deviceDev/Gokit3/manual/1478155586395.png" alt="ESP8266结构图"></p>
 <h2 id="3-ESP8266特点"><a href="#3-ESP8266特点" class="headerlink" title="3.ESP8266特点"></a>3.ESP8266特点</h2><ul>
@@ -441,11 +437,17 @@
 <h3 id="4-12-语音降噪模块接口"><a href="#4-12-语音降噪模块接口" class="headerlink" title="4.12 语音降噪模块接口"></a>4.12 语音降噪模块接口</h3><p>扩展板提供一个语音降噪模块接口。</p>
 <p>硬件原理图如下：</p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit3/manual/1478157333930.png" alt="语音降噪模块接口"></p>
-<h3 id="4-13-预留接口"><a href="#4-13-预留接口" class="headerlink" title="4.13 预留接口"></a>4.13 预留接口</h3><p><img src="/assets/zh-cn/deviceDev/Gokit3/manual/1478157351579.png" alt="预留接口"></p>
-<p>扩展板P9接口具有电源输出、共地的功能。<br>P7 接口中有一组SWD接口（可用于模组程序烧录）、一组Uart TTL接口（用来输出模组Debug日志）。</p>
+<h3 id="4-13-预留接口"><a href="#4-13-预留接口" class="headerlink" title="4.13 预留接口"></a>4.13 预留接口</h3><p>功能板将部分没有用到的接口全部引出，方便开发者扩展应用。</p>
+<p>下图是预留的扩展接口：</p>
+<p><img src="/assets/zh-cn/deviceDev/Gokit3/manual/1478157351579.png" alt="预留接口"></p>
 <p>P6 接口是Arduino的外置兼容接口。</p>
-<h1 id="附录：GoKit-3功能扩展板原理图"><a href="#附录：GoKit-3功能扩展板原理图" class="headerlink" title="附录：GoKit 3功能扩展板原理图"></a>附录：GoKit 3功能扩展板原理图</h1><p><img src="/assets/zh-cn/deviceDev/Gokit3/manual/1478157403571.png" alt="GoKit 3功能扩展板原理图"></p>
-<p><img src="/assets/zh-cn/deviceDev/Gokit3/manual/1478157409033.png" alt="GoKit 3功能扩展板原理图"></p>
+<p>P7 接口中有一组SWD接口（可用于模组程序烧录）、一组Uart TTL接口（用来输出模组Debug日志）。</p>
+<p>P9接口具有电源输出、共地的功能。</p>
+<h1 id="开发者支持"><a href="#开发者支持" class="headerlink" title="开发者支持"></a>开发者支持</h1><p>使用Gokit 系列开収套件，用户将拥有机智云开发者专有账号，给予开发者进入机智云云平台的技术支持，包括开发者所需要的资料及SDK、社区论坛服务、以及其他服务。</p>
+<p>机智云官方网站：<a href="http://www.gizwits.com/" target="_blank" rel="external">http://www.gizwits.com/</a></p>
+<p>开収者论坛： <a href="http://club.gizwits.com/forum.php" target="_blank" rel="external">http://club.gizwits.com/forum.php</a></p>
+<p>文档中心：<a href="http://docs.gizwits.com/hc/" target="_blank" rel="external">http://docs.gizwits.com/hc/</a></p>
+<h1 id="附录：GoKit-3原理图下载地址"><a href="#附录：GoKit-3原理图下载地址" class="headerlink" title="附录：GoKit 3原理图下载地址"></a>附录：GoKit 3原理图下载地址</h1><p><a href="http://club.gizwits.com/thread-2889-1-1.html" target="_blank" rel="external">http://club.gizwits.com/thread-2889-1-1.html</a></p>
 
     </div>
     

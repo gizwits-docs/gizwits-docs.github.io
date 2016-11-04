@@ -278,7 +278,7 @@
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>机智云gizWifiSDK主要帮助开发者通过sdk接口调用的方式维护用户系统，用户与设备的绑定关系，设备的配置上线以及设备状态的获取和控制指令的发送。</p>
-<h1 id="APICloud机智云模块更新说明"><a href="#APICloud机智云模块更新说明" class="headerlink" title="APICloud机智云模块更新说明"></a>APICloud机智云模块更新说明</h1><h3 id="当前版本变更内容："><a href="#当前版本变更内容：" class="headerlink" title="当前版本变更内容："></a>当前版本变更内容：</h3><p>1、版本号为1.3.0，原生SDK为2.04.04版本</p>
+<h2 id="APICloud机智云模块更新说明"><a href="#APICloud机智云模块更新说明" class="headerlink" title="APICloud机智云模块更新说明"></a>APICloud机智云模块更新说明</h2><h3 id="当前版本变更内容："><a href="#当前版本变更内容：" class="headerlink" title="当前版本变更内容："></a>当前版本变更内容：</h3><p>1、版本号为1.3.0，原生SDK为2.04.04版本</p>
 <p>2、SDK启动接口：startWithAppID，增加域名和过滤productKey参数：</p>
 <p>3、设备配置接口：setDeviceOnboarding，模组类型参数增加了一个自定义枚举值，用于开发者使用自己的配置库</p>
 <p>4、定时任务接口将在下一个新版本中有接口更新发布，现有定时任务接口已被废弃，不推荐使用</p>
@@ -402,9 +402,65 @@ GizWifiSubDevice类的write接口返回值
 变更方式：原来的softap模式为1，变更为0；原来的airlink模式为2，变更为1
 </code></pre></li>
 </ul>
-<h1 id="接口说明"><a href="#接口说明" class="headerlink" title="接口说明"></a>接口说明</h1><h2 id="registerNotifications"><a href="#registerNotifications" class="headerlink" title="registerNotifications"></a>registerNotifications<div id="a2"></div></h2><p>注册 SDK 事件通知。通知的事件包括SDK启动失败或成功、设备列表变化上报等</p>
-<p>registerNotifications({params}, callback(ret, err))</p>
+<h1 id="接口说明"><a href="#接口说明" class="headerlink" title="接口说明"></a>接口说明</h1><h1 id="gizWifiSDK类接口"><a href="#gizWifiSDK类接口" class="headerlink" title="gizWifiSDK类接口"></a>gizWifiSDK类接口</h1><p>机智云 Wi-Fi SDK 的基础类。该类提供了SDK初始化、基本设置、用户管理、设备管理的基本接口。</p>
+<h2 id="startWithAppID"><a href="#startWithAppID" class="headerlink" title="startWithAppID"></a>startWithAppID<div id="a1"></div></h2><p>启动 SDK。 注意，该接口执行成功后才能正常执行其他接口功能。SDK启动在Android平台上可能会耗费1～2秒的时间，建议App开发者在收到启动ret返回8316(SDK启动成功)时或者启动后延时2秒左右再调用其他接口。</p>
+<p>startWithAppID({params}, callback(ret, err))</p>
+<h3 id="params"><a href="#params" class="headerlink" title="params"></a>params</h3><p>appID:</p>
+<ul>
+<li>类型： 字符串</li>
+<li>默认值：无</li>
+<li>描述：开发者在<a href="http://site.gizwits.com" target="_blank" rel="external">机智云网站</a>申请的应用标识。</li>
+</ul>
+<p>cloudServiceInfo:</p>
+<ul>
+<li>类型： 数字类型数组</li>
+<li>默认值：0</li>
+<li>描述：要切换的服务器域名信息。使用机智云生产云服务的开发者不用传值，需要连接其他云服务的要传值。域名信息不指定端口则SDK使用默认服务端口，此时这样写域名：api.gizwits.com。若需要指定特殊端口，需同时指定 Http 和 Https 端口，此时这样写域名：api.gizwits.com:81&amp;8443</li>
+<li><p>内部字段</p>
+<p>  {</p>
+<pre><code>openAPIInfo:     // api服务域名
+siteInfo:       // site服务域名
+pushInfo:       // 推送服务域名
+</code></pre><p>  }</p>
+</li>
+</ul>
+<p>specialProductKeys:</p>
+<ul>
+<li>类型： 字符串数组</li>
+<li>默认值：无</li>
+<li>描述：要过滤的设备 productKey 列表。如果希望返回所有能发现的设备则不需要传参。指定了之后,SDK 将只返回过滤后的设备</li>
+</ul>
 <h3 id="callback-ret-err"><a href="#callback-ret-err" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<ul>
+<li>类型：JSON对象</li>
+<li><p>内部字段</p>
+<pre><code>{
+    errorCode: 8316,    // SDK启动成功，数字类型
+    msg:                // 成功消息的描述，字符串类型
+}
+</code></pre></li>
+</ul>
+<p>err</p>
+<ul>
+<li>类型：JSON对象</li>
+<li><p>内部字段</p>
+<pre><code>{
+    errorCode:    // 错误代码（见枚举定义GizWifiErrorCode），数字类型
+    msg:        // 错误描述，字符串类型
+}
+</code></pre></li>
+</ul>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>// 不指定域名和过滤productKey，参考代码如下：
+var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+</code></pre><p>gizWifiSDK.startWithAppID({“appID”: “your_app_id”}, function(ret, err) {<br>        alert(“ret = “ + JSON.stringify(ret) + “err = “ + JSON.stringify(err))<br>    });</p>
+<pre><code>// 要指定cloudServiceInfo和过滤的productKey，则参考代码如下：
+var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+</code></pre><p>gizWifiSDK.startWithAppID({“appID”: “your_app_id”, “specialProductKeys”: [“your_product_key”], “cloudServiceInfo”: {“openAPIInfo”: “xxx.xxxx.com”, “siteInfo”: “xxx.xxxx.com”}}, function(ret, err) {<br>        alert(“ret = “ + JSON.stringify(ret) + “err = “ + JSON.stringify(err))<br>    });</p>
+<h3 id="可用性"><a href="#可用性" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+<p>可提供的1.0.0及更高版本</p>
+<h2 id="registerNotifications"><a href="#registerNotifications" class="headerlink" title="registerNotifications"></a>registerNotifications<div id="a2"></div></h2><p>注册 SDK 事件通知。通知的事件包括SDK启动失败或成功、设备列表变化上报等</p>
+<p>registerNotifications({params}, callback(ret, err))</p>
+<h3 id="callback-ret-err-1"><a href="#callback-ret-err-1" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -446,15 +502,15 @@ GizWifiSubDevice类的write接口返回值
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.registerNotifications(function(ret, err) {
     alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性"><a href="#可用性" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-1"><a href="#可用性-1" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="getVersion"><a href="#getVersion" class="headerlink" title="getVersion"></a>getVersion<div id="a3"></div></h2><p>获取SDK版本号</p>
 <p>getVersion(callback(ret, err))</p>
-<h3 id="callback-ret-err-1"><a href="#callback-ret-err-1" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-2"><a href="#callback-ret-err-2" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -463,32 +519,32 @@ gizWifiSDK.registerNotifications(function(ret, err) {
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-2"><a href="#示例代码-2" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.getVersion(function(ret, err) {
         alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-1"><a href="#可用性-1" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-2"><a href="#可用性-2" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="setLogLevel"><a href="#setLogLevel" class="headerlink" title="setLogLevel"></a>setLogLevel<div id="a4"></div></h2><p>设置 SDK 日志。<br>setLogLevel({params})</p>
-<h3 id="params"><a href="#params" class="headerlink" title="params"></a>params</h3><p>logLevel:</p>
+<h3 id="params-1"><a href="#params-1" class="headerlink" title="params"></a>params</h3><p>logLevel:</p>
 <ul>
 <li>类型： 数字类型，见枚举定义GizLogPrintLevel</li>
 <li>默认值：3，为详细日志输出</li>
 <li>描述：SDK日志输出级别</li>
 </ul>
-<h3 id="示例代码-2"><a href="#示例代码-2" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-3"><a href="#示例代码-3" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.setLogLevel({&quot;logLevel&quot;: 3});
-</code></pre><h3 id="可用性-2"><a href="#可用性-2" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-3"><a href="#可用性-3" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="disableLAN"><a href="#disableLAN" class="headerlink" title="disableLAN"></a>disableLAN<div id="a5"></div></h2><p>禁用小循环</p>
 <p>disableLAN({params}, callback(ret, err))</p>
-<h3 id="params-1"><a href="#params-1" class="headerlink" title="params"></a>params</h3><p>disabled:</p>
+<h3 id="params-2"><a href="#params-2" class="headerlink" title="params"></a>params</h3><p>disabled:</p>
 <ul>
 <li>类型： 布尔类型</li>
 <li>默认值：false，开启</li>
 <li>描述：可禁用局域网下设备发现、设备控制等小循环下的功能</li>
 </ul>
-<h3 id="callback-ret-err-2"><a href="#callback-ret-err-2" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-3"><a href="#callback-ret-err-3" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -508,15 +564,15 @@ gizWifiSDK.setLogLevel({&quot;logLevel&quot;: 3});
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-3"><a href="#示例代码-3" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-4"><a href="#示例代码-4" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.disableLAN({&quot;disabled&quot;: true}, function(ret, err) {
     alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-3"><a href="#可用性-3" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-4"><a href="#可用性-4" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="setCloudService"><a href="#setCloudService" class="headerlink" title="setCloudService"></a>setCloudService<div id="a6"></div></h2><p>切换服务域名</p>
 <p>setCloudService({params}, callback(ret, err))</p>
-<h3 id="params-2"><a href="#params-2" class="headerlink" title="params"></a>params</h3><p>openAPIDomain:</p>
+<h3 id="params-3"><a href="#params-3" class="headerlink" title="params"></a>params</h3><p>openAPIDomain:</p>
 <ul>
 <li>类型：字符串类型</li>
 <li>默认值：无</li>
@@ -540,7 +596,7 @@ gizWifiSDK.disableLAN({&quot;disabled&quot;: true}, function(ret, err) {
 <li>默认值：无</li>
 <li>描述：site服务端口</li>
 </ul>
-<h3 id="callback-ret-err-3"><a href="#callback-ret-err-3" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-4"><a href="#callback-ret-err-4" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -562,7 +618,7 @@ gizWifiSDK.disableLAN({&quot;disabled&quot;: true}, function(ret, err) {
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-4"><a href="#示例代码-4" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-5"><a href="#示例代码-5" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.setCloudService({
     &quot;openAPIDomain&quot;: &quot;your_api_domain&quot;, 
     &quot;openAPIPort&quot;: your_api_port, 
@@ -571,11 +627,11 @@ gizWifiSDK.setCloudService({
 }, function(ret, err) {
     alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-4"><a href="#可用性-4" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-5"><a href="#可用性-5" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="getListInfo"><a href="#getListInfo" class="headerlink" title="getListInfo"></a>getListInfo<div id="a7"></div></h2><p>获取SDK版本号</p>
 <p>getListInfo(callback(ret, err))</p>
-<h3 id="callback-ret-err-4"><a href="#callback-ret-err-4" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-5"><a href="#callback-ret-err-5" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li>内部字段<pre><code>{
@@ -598,15 +654,15 @@ gizWifiSDK.setCloudService({
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-5"><a href="#示例代码-5" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-6"><a href="#示例代码-6" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.getListInfo(function(ret, err) {
         alert(&quot;ret = &quot; + JSON.stringify(ret))
 });
-</code></pre><h3 id="可用性-5"><a href="#可用性-5" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-6"><a href="#可用性-6" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="getPhoneSSID"><a href="#getPhoneSSID" class="headerlink" title="getPhoneSSID"></a>getPhoneSSID<div id="a8"></div></h2><p>获取手机当前Wifi的SSID</p>
 <p>getPhoneSSID(callback(ret, err))</p>
-<h3 id="callback-ret-err-5"><a href="#callback-ret-err-5" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-6"><a href="#callback-ret-err-6" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -625,17 +681,17 @@ gizWifiSDK.getListInfo(function(ret, err) {
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-6"><a href="#示例代码-6" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-7"><a href="#示例代码-7" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.getPhoneSSID(function(ret, err) {
         alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-6"><a href="#可用性-6" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-7"><a href="#可用性-7" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="setDeviceOnboarding"><a href="#setDeviceOnboarding" class="headerlink" title="setDeviceOnboarding"></a>setDeviceOnboarding<div id="a9"></div></h2><p>配置设备路由。设备要能连接到WiFi网络，需要先把设备配置到WiFi路由器上。配置时，需要给设备发送要配置的路由SSID和密码。</p>
 <p>设备配置支持两种方式：SoftAP方式、AirLink方式。在设备上按不同的按键，可以使设备进入对应的配置模式。详细的操作方式，请访问<a href="http://site.gizwits.com/zh-cn/document/gokit/i_01_stared/" target="_blank" rel="external">机智云网站</a>。</p>
 <p>进行 SoftAP 配置时，设备要处于 softap 模式。此时模组会产生一个热点名称，手机 wifi 必须连接此热点后才可以配置。如果是机智云提供的固件，模组热点名称前缀为”XPG-GAgent-“，密码为”123456789”。设备处于 airlink 模式时，手机随时都可以开始配置。但无论哪种配置方式，设备上线时，手机要连接到配置的局域网 wifi 上，才能够确认设备已配置成功。设备配置成功时，在回调中会返回设备 mac 地址。如果设备重置了，设备did可能要在设备搜索回调中才能获取。</p>
 <p>setDeviceOnboarding({params}, callback(ret, err))</p>
-<h3 id="params-3"><a href="#params-3" class="headerlink" title="params"></a>params</h3><p>ssid:</p>
+<h3 id="params-4"><a href="#params-4" class="headerlink" title="params"></a>params</h3><p>ssid:</p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
@@ -671,7 +727,7 @@ gizWifiSDK.getPhoneSSID(function(ret, err) {
 <li>默认值：4</li>
 <li>描述：模组类型（见 GAgentType 枚举定义），若不指定此参数则默认配置乐鑫模组。GizWifiGAgentType定义了 SDK 支持的所有模组类型。GizWifiGAgentType还定义了一个GizGAgentOther枚举值，用于开发者使用自己的配置库进行设备配置，此时参数传GizGAgentOther即可</li>
 </ul>
-<h3 id="callback-ret-err-6"><a href="#callback-ret-err-6" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-7"><a href="#callback-ret-err-7" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -694,7 +750,7 @@ gizWifiSDK.getPhoneSSID(function(ret, err) {
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-7"><a href="#示例代码-7" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-8"><a href="#示例代码-8" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 // softap配置
 gizWifiSDK.setDeviceOnboarding({
     &quot;ssid&quot;: &quot;your_ssid&quot;,
@@ -717,11 +773,11 @@ gizWifiSDK.setDeviceOnboarding({
 }, function(ret, err) {
     alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-7"><a href="#可用性-7" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-8"><a href="#可用性-8" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="getSSIDList"><a href="#getSSIDList" class="headerlink" title="getSSIDList"></a>getSSIDList<div id="a10"></div></h2><p>获取设备热点列表。设备 wifi 模组处于 SoftAP 热点模式时，可以获取设备搜索到的 WiFi 热点列表。此接口需要手机当前 Wifi 连上设备模组的 SoftAP 热点后才能工作。</p>
 <p>getSSIDList(callback(ret, err))</p>
-<h3 id="callback-ret-err-7"><a href="#callback-ret-err-7" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-8"><a href="#callback-ret-err-8" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -743,15 +799,15 @@ gizWifiSDK.setDeviceOnboarding({
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-8"><a href="#示例代码-8" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-9"><a href="#示例代码-9" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.getSSIDList(function(ret, err) {
         alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot;  JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-8"><a href="#可用性-8" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-9"><a href="#可用性-9" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="getBoundDevices"><a href="#getBoundDevices" class="headerlink" title="getBoundDevices"></a>getBoundDevices<div id="a11"></div></h2><p>获取绑定设备列表。在不同的网络环境下，有不同的处理：<br>当手机能访问外网时，该接口会向云端发起获取绑定设备列表请求；<br>当手机不能访问外网时，局域网设备是实时发现的，但会保留之前已经获取过的绑定设备；<br>手机处于无网模式时，局域网未绑定设备会消失，但会保留之前已经获取过的绑定设备；</p>
 <p>getBoundDevices({params}, callback(ret, err))</p>
-<h3 id="params-4"><a href="#params-4" class="headerlink" title="params"></a>params</h3><p>uid:</p>
+<h3 id="params-5"><a href="#params-5" class="headerlink" title="params"></a>params</h3><p>uid:</p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
@@ -769,7 +825,7 @@ gizWifiSDK.getSSIDList(function(ret, err) {
 <li>默认值：无</li>
 <li>描述：指定过滤的产品类型识别码，可同时指定多个要过滤的 Product Key</li>
 </ul>
-<h3 id="callback-ret-err-8"><a href="#callback-ret-err-8" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-9"><a href="#callback-ret-err-9" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -803,7 +859,7 @@ gizWifiSDK.getSSIDList(function(ret, err) {
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-9"><a href="#示例代码-9" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-10"><a href="#示例代码-10" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
     gizWifiSDK.getBoundDevices({
         &quot;uid&quot;: &apos;your_uid&apos;,
         &quot;token&quot;: &apos;your_token&apos;,
@@ -811,11 +867,11 @@ gizWifiSDK.getSSIDList(function(ret, err) {
      }, function (ret1, err1) {
         alert(&quot;ret1 = &quot; + JSON.stringify(ret1) + &quot;err1 = &quot; + JSON.stringify(err1))
     });
-</code></pre><h3 id="可用性-9"><a href="#可用性-9" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-10"><a href="#可用性-10" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="bindRemoteDevice"><a href="#bindRemoteDevice" class="headerlink" title="bindRemoteDevice"></a>bindRemoteDevice<div id="a12"></div></h2><p>绑定远端设备到云端</p>
 <p>bindRemoteDevice({params}, callback(ret, err))</p>
-<h3 id="params-5"><a href="#params-5" class="headerlink" title="params"></a>params</h3><p>uid:</p>
+<h3 id="params-6"><a href="#params-6" class="headerlink" title="params"></a>params</h3><p>uid:</p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
@@ -845,57 +901,6 @@ gizWifiSDK.getSSIDList(function(ret, err) {
 <li>默认值：无</li>
 <li>描述：待绑定设备的productSecret</li>
 </ul>
-<h3 id="callback-ret-err-9"><a href="#callback-ret-err-9" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
-<ul>
-<li>类型：JSON对象</li>
-<li><p>内部字段</p>
-<pre><code>{
-    did:  // 设备唯一标识，字符串类型
-}
-</code></pre></li>
-</ul>
-<p>err</p>
-<ul>
-<li>类型：JSON对象</li>
-<li><p>内部字段</p>
-<pre><code>{
-    errorCode:    // 错误代码（见枚举定义GizWifiErrorCode），数字类型
-    msg:        // 错误描述，字符串类型
-}
-</code></pre></li>
-</ul>
-<h3 id="示例代码-10"><a href="#示例代码-10" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
-    gizWifiSDK.bindRemoteDevice({
-    &quot;uid&quot;: &apos;your_uid&apos;,
-    &quot;token&quot;: &apos;your_token&apos;,
-    &quot;mac&quot;: &apos;your_device_mac&apos;,
-    &quot;productKey&quot;: &apos;your_product_key&apos;,
-    &quot;productSecret&quot;: &apos;your_product_secret&apos;
-    }, function (ret, err) {
-        alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
-    });
-</code></pre><h3 id="可用性-10"><a href="#可用性-10" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
-<p>可提供的1.0.0及更高版本</p>
-<h2 id="unbindDevice"><a href="#unbindDevice" class="headerlink" title="unbindDevice"></a>unbindDevice<div id="a13"></div></h2><p>把设备从云端解绑。用户登录后，可以将已绑定的设备与云端自己的账户解绑。</p>
-<p>unbindDevice({params}, callback(ret, err))</p>
-<h3 id="params-6"><a href="#params-6" class="headerlink" title="params"></a>params</h3><p>uid:</p>
-<ul>
-<li>类型： 字符串</li>
-<li>默认值：无</li>
-<li>描述：用户登录后获取到的uid。</li>
-</ul>
-<p>token:</p>
-<ul>
-<li>类型： 字符串</li>
-<li>默认值：无</li>
-<li>描述：用户登录后获取到的token。</li>
-</ul>
-<p>did:</p>
-<ul>
-<li>类型： 字符串</li>
-<li>默认值：无</li>
-<li>描述：设备唯一标识。</li>
-</ul>
 <h3 id="callback-ret-err-10"><a href="#callback-ret-err-10" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
@@ -916,24 +921,43 @@ gizWifiSDK.getSSIDList(function(ret, err) {
 </code></pre></li>
 </ul>
 <h3 id="示例代码-11"><a href="#示例代码-11" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
-gizWifiSDK.unbindDevice({
+    gizWifiSDK.bindRemoteDevice({
     &quot;uid&quot;: &apos;your_uid&apos;,
     &quot;token&quot;: &apos;your_token&apos;,
-    &quot;did&quot;: &apos;your_device_id&apos;    
-}, function(ret, err) {
+    &quot;mac&quot;: &apos;your_device_mac&apos;,
+    &quot;productKey&quot;: &apos;your_product_key&apos;,
+    &quot;productSecret&quot;: &apos;your_product_secret&apos;
+    }, function (ret, err) {
         alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
-});
+    });
 </code></pre><h3 id="可用性-11"><a href="#可用性-11" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
-<h2 id="userLoginAnonymous"><a href="#userLoginAnonymous" class="headerlink" title="userLoginAnonymous"></a>userLoginAnonymous<div id="a14"></div></h2><p>匿名登录。匿名方式登录，不需要注册用户账号</p>
-<p>userLoginAnonymous(callback(ret, err))</p>
+<h2 id="unbindDevice"><a href="#unbindDevice" class="headerlink" title="unbindDevice"></a>unbindDevice<div id="a13"></div></h2><p>把设备从云端解绑。用户登录后，可以将已绑定的设备与云端自己的账户解绑。</p>
+<p>unbindDevice({params}, callback(ret, err))</p>
+<h3 id="params-7"><a href="#params-7" class="headerlink" title="params"></a>params</h3><p>uid:</p>
+<ul>
+<li>类型： 字符串</li>
+<li>默认值：无</li>
+<li>描述：用户登录后获取到的uid。</li>
+</ul>
+<p>token:</p>
+<ul>
+<li>类型： 字符串</li>
+<li>默认值：无</li>
+<li>描述：用户登录后获取到的token。</li>
+</ul>
+<p>did:</p>
+<ul>
+<li>类型： 字符串</li>
+<li>默认值：无</li>
+<li>描述：设备唯一标识。</li>
+</ul>
 <h3 id="callback-ret-err-11"><a href="#callback-ret-err-11" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
 <pre><code>{
-    uid:      // 用户uid，字符串类型
-    token:    // 登录会话token，字符串类型
+    did:  // 设备唯一标识，字符串类型
 }
 </code></pre></li>
 </ul>
@@ -948,25 +972,17 @@ gizWifiSDK.unbindDevice({
 </code></pre></li>
 </ul>
 <h3 id="示例代码-12"><a href="#示例代码-12" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
-gizWifiSDK.userLoginAnonymous(function(ret, err) {
+gizWifiSDK.unbindDevice({
+    &quot;uid&quot;: &apos;your_uid&apos;,
+    &quot;token&quot;: &apos;your_token&apos;,
+    &quot;did&quot;: &apos;your_device_id&apos;    
+}, function(ret, err) {
         alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
 </code></pre><h3 id="可用性-12"><a href="#可用性-12" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
-<h2 id="userLogin"><a href="#userLogin" class="headerlink" title="userLogin"></a>userLogin<div id="a15"></div></h2><p>用户登录。需使用注册成功的用户名、密码进行登录，可以是手机用户名、邮箱用户名或普通用户名</p>
-<p>userLogin({params}, callback(ret, err))</p>
-<h3 id="params-7"><a href="#params-7" class="headerlink" title="params"></a>params</h3><p>userName:</p>
-<ul>
-<li>类型： 字符串</li>
-<li>默认值：无</li>
-<li>描述：要登录的用户名。</li>
-</ul>
-<p>password:</p>
-<ul>
-<li>类型： 字符串</li>
-<li>默认值：无</li>
-<li>描述：要登录的密码。</li>
-</ul>
+<h2 id="userLoginAnonymous"><a href="#userLoginAnonymous" class="headerlink" title="userLoginAnonymous"></a>userLoginAnonymous<div id="a14"></div></h2><p>匿名登录。匿名方式登录，不需要注册用户账号</p>
+<p>userLoginAnonymous(callback(ret, err))</p>
 <h3 id="callback-ret-err-12"><a href="#callback-ret-err-12" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
@@ -988,17 +1004,57 @@ gizWifiSDK.userLoginAnonymous(function(ret, err) {
 </code></pre></li>
 </ul>
 <h3 id="示例代码-13"><a href="#示例代码-13" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+gizWifiSDK.userLoginAnonymous(function(ret, err) {
+        alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
+});
+</code></pre><h3 id="可用性-13"><a href="#可用性-13" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+<p>可提供的1.0.0及更高版本</p>
+<h2 id="userLogin"><a href="#userLogin" class="headerlink" title="userLogin"></a>userLogin<div id="a15"></div></h2><p>用户登录。需使用注册成功的用户名、密码进行登录，可以是手机用户名、邮箱用户名或普通用户名</p>
+<p>userLogin({params}, callback(ret, err))</p>
+<h3 id="params-8"><a href="#params-8" class="headerlink" title="params"></a>params</h3><p>userName:</p>
+<ul>
+<li>类型： 字符串</li>
+<li>默认值：无</li>
+<li>描述：要登录的用户名。</li>
+</ul>
+<p>password:</p>
+<ul>
+<li>类型： 字符串</li>
+<li>默认值：无</li>
+<li>描述：要登录的密码。</li>
+</ul>
+<h3 id="callback-ret-err-13"><a href="#callback-ret-err-13" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<ul>
+<li>类型：JSON对象</li>
+<li><p>内部字段</p>
+<pre><code>{
+    uid:      // 用户uid，字符串类型
+    token:    // 登录会话token，字符串类型
+}
+</code></pre></li>
+</ul>
+<p>err</p>
+<ul>
+<li>类型：JSON对象</li>
+<li><p>内部字段</p>
+<pre><code>{
+    errorCode:    // 错误代码（见枚举定义GizWifiErrorCode），数字类型
+    msg:        // 错误描述，字符串类型
+}
+</code></pre></li>
+</ul>
+<h3 id="示例代码-14"><a href="#示例代码-14" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.userLogin({
     &quot;userName&quot;: &apos;your_user_name&apos;,
         &quot;password&quot;: &apos;your_password&apos;
 }, function(ret, err) {
         alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 })
-</code></pre><h3 id="可用性-13"><a href="#可用性-13" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-14"><a href="#可用性-14" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="userLoginWithThirdAccountType"><a href="#userLoginWithThirdAccountType" class="headerlink" title="userLoginWithThirdAccountType"></a>userLoginWithThirdAccountType<div id="a16"></div></h2><p>第三方账号登录。第三方账号支持百度、新浪、QQ，需要通过第三方的 shareSDK 工具或各自对应的SDK，获取到 uid 和 token 之后才可以使用此接口。</p>
 <p>userLoginWithThirdAccountType({params}, callback(ret, err))</p>
-<h3 id="params-8"><a href="#params-8" class="headerlink" title="params"></a>params</h3><p>uid: 登录第三方账号之后得到的uid</p>
+<h3 id="params-9"><a href="#params-9" class="headerlink" title="params"></a>params</h3><p>uid: 登录第三方账号之后得到的uid</p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
@@ -1016,7 +1072,7 @@ gizWifiSDK.userLogin({
 <li>默认值：无</li>
 <li>描述：第三方账号类型（见 GizThirdAccountType 枚举定义）</li>
 </ul>
-<h3 id="callback-ret-err-13"><a href="#callback-ret-err-13" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-14"><a href="#callback-ret-err-14" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -1036,7 +1092,7 @@ gizWifiSDK.userLogin({
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-14"><a href="#示例代码-14" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-15"><a href="#示例代码-15" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.userLoginWithThirdAccountType({
         &quot;thirdAccountType&quot;: 0,
         &quot;uid&quot;: &apos;your_third_uid&apos;,
@@ -1044,11 +1100,11 @@ gizWifiSDK.userLoginWithThirdAccountType({
 }, function(ret, err) {
         alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-14"><a href="#可用性-14" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-15"><a href="#可用性-15" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="requestSendVerifyCode"><a href="#requestSendVerifyCode" class="headerlink" title="requestSendVerifyCode"></a>requestSendVerifyCode<div id="a17"></div></h2><p>通过App secret和手机号请求短信验证码。</p>
 <p>requestSendVerifyCode({params}, callback(ret, err))</p>
-<h3 id="params-9"><a href="#params-9" class="headerlink" title="params"></a>params</h3><p>appSecret: </p>
+<h3 id="params-10"><a href="#params-10" class="headerlink" title="params"></a>params</h3><p>appSecret: </p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
@@ -1060,7 +1116,7 @@ gizWifiSDK.userLoginWithThirdAccountType({
 <li>默认值：无</li>
 <li>描述：手机号</li>
 </ul>
-<h3 id="callback-ret-err-14"><a href="#callback-ret-err-14" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-15"><a href="#callback-ret-err-15" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -1080,24 +1136,24 @@ gizWifiSDK.userLoginWithThirdAccountType({
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-15"><a href="#示例代码-15" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-16"><a href="#示例代码-16" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.requestSendVerifyCode({
         &quot;appSecret&quot;: &apos;your_app_secret&apos;,
         &quot;phone&quot;: &apos;your_phone_number&apos;
 }, function(ret, err) {
         alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-15"><a href="#可用性-15" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-16"><a href="#可用性-16" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="getCaptchaCode"><a href="#getCaptchaCode" class="headerlink" title="getCaptchaCode"></a>getCaptchaCode<div id="a18"></div></h2><p>通过 App Secret 获取图片验证码。</p>
 <p>getCaptchaCode({params}, callback(ret, err))</p>
-<h3 id="params-10"><a href="#params-10" class="headerlink" title="params"></a>params</h3><p>appSecret: </p>
+<h3 id="params-11"><a href="#params-11" class="headerlink" title="params"></a>params</h3><p>appSecret: </p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
 <li>描述：应用的 secret 信息，是与 AppID 对应的应用签名字符串，从 site.gizwits.com 中可以看到</li>
 </ul>
-<h3 id="callback-ret-err-15"><a href="#callback-ret-err-15" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-16"><a href="#callback-ret-err-16" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -1118,17 +1174,17 @@ gizWifiSDK.requestSendVerifyCode({
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-16"><a href="#示例代码-16" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-17"><a href="#示例代码-17" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.getCaptchaCode({
         &quot;appSecret&quot;: &apos;your_app_secret&apos;
 }, function(ret, err) {
         alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-16"><a href="#可用性-16" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-17"><a href="#可用性-17" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="requestSendPhoneSMSCode"><a href="#requestSendPhoneSMSCode" class="headerlink" title="requestSendPhoneSMSCode"></a>requestSendPhoneSMSCode<div id="a19"></div></h2><p>通过图形验证码获取手机短信验证码</p>
 <p>requestSendPhoneSMSCode({params}, callback(ret, err))</p>
-<h3 id="params-11"><a href="#params-11" class="headerlink" title="params"></a>params</h3><p>token: </p>
+<h3 id="params-12"><a href="#params-12" class="headerlink" title="params"></a>params</h3><p>token: </p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
@@ -1152,7 +1208,7 @@ gizWifiSDK.getCaptchaCode({
 <li>默认值：无</li>
 <li>描述：手机号</li>
 </ul>
-<h3 id="callback-ret-err-16"><a href="#callback-ret-err-16" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-17"><a href="#callback-ret-err-17" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -1172,7 +1228,7 @@ gizWifiSDK.getCaptchaCode({
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-17"><a href="#示例代码-17" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-18"><a href="#示例代码-18" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.requestSendPhoneSMSCode({
         &quot;token&quot;: &apos;your_captcha_code_token&apos;,
         &quot;captchaId&quot;: &apos;your_captcha_code_id&apos;,
@@ -1181,11 +1237,11 @@ gizWifiSDK.requestSendPhoneSMSCode({
 }, function(ret, err) {
     alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-17"><a href="#可用性-17" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-18"><a href="#可用性-18" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="verifyPhoneSMSCode"><a href="#verifyPhoneSMSCode" class="headerlink" title="verifyPhoneSMSCode"></a>verifyPhoneSMSCode<div id="a20"></div></h2><p>验证手机短信验证码。注意，验证短信验证码后，验证码就失效了，无法再用于手机号注册</p>
 <p>verifyPhoneSMSCode({params}, callback(ret, err))</p>
-<h3 id="params-12"><a href="#params-12" class="headerlink" title="params"></a>params</h3><p>token: </p>
+<h3 id="params-13"><a href="#params-13" class="headerlink" title="params"></a>params</h3><p>token: </p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
@@ -1203,7 +1259,7 @@ gizWifiSDK.requestSendPhoneSMSCode({
 <li>默认值：无</li>
 <li>描述：手机号</li>
 </ul>
-<h3 id="callback-ret-err-17"><a href="#callback-ret-err-17" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-18"><a href="#callback-ret-err-18" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -1223,7 +1279,7 @@ gizWifiSDK.requestSendPhoneSMSCode({
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-18"><a href="#示例代码-18" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-19"><a href="#示例代码-19" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.verifyPhoneSMSCode({
         &quot;token&quot;: &apos;your_captcha_code_token&apos;,
         &quot;phoneCode&quot;: &apos;your_phone_sms_code&apos;,
@@ -1231,11 +1287,11 @@ gizWifiSDK.verifyPhoneSMSCode({
 }, function(ret, err) {
     alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-18"><a href="#可用性-18" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-19"><a href="#可用性-19" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="registerUser"><a href="#registerUser" class="headerlink" title="registerUser"></a>registerUser<div id="a21"></div></h2><p>用户注册。需指定用户类型注册。手机用户的用户名是手机号，邮箱用户的用户名是邮箱、普通用户的用户名可以是普通用户名</p>
 <p>registerUser({params}, callback(ret, err))</p>
-<h3 id="params-13"><a href="#params-13" class="headerlink" title="params"></a>params</h3><p>userName: </p>
+<h3 id="params-14"><a href="#params-14" class="headerlink" title="params"></a>params</h3><p>userName: </p>
 <ul>
 <li>类型： 字符串类型</li>
 <li>默认值：无</li>
@@ -1259,7 +1315,7 @@ gizWifiSDK.verifyPhoneSMSCode({
 <li>默认值：无</li>
 <li>描述：用户类型，详细见 GizUserAccountType 枚举定义。注册手机号时，此参数指定为手机用户，注册邮箱时，此参数指定为邮箱用户，注册普通用户名时，此参数指定为普通用户</li>
 </ul>
-<h3 id="callback-ret-err-18"><a href="#callback-ret-err-18" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-19"><a href="#callback-ret-err-19" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -1279,7 +1335,7 @@ gizWifiSDK.verifyPhoneSMSCode({
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-19"><a href="#示例代码-19" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-20"><a href="#示例代码-20" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.registerUser({
     &quot;userName&quot;: &apos;your_phone_number&apos;,
     &quot;password&quot;: &apos;your_password&apos;,
@@ -1288,11 +1344,11 @@ gizWifiSDK.registerUser({
 }, function(ret, err) {
     alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-19"><a href="#可用性-19" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-20"><a href="#可用性-20" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="transAnonymousUser"><a href="#transAnonymousUser" class="headerlink" title="transAnonymousUser"></a>transAnonymousUser<div id="a22"></div></h2><p>匿名用户转换，可转换为手机用户或者普通用户。注意，待转换的帐号必须是还未注册过的</p>
 <p>transAnonymousUser({params}, callback(ret, err))</p>
-<h3 id="params-14"><a href="#params-14" class="headerlink" title="params"></a>params</h3><p>token: </p>
+<h3 id="params-15"><a href="#params-15" class="headerlink" title="params"></a>params</h3><p>token: </p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
@@ -1322,7 +1378,7 @@ gizWifiSDK.registerUser({
 <li>默认值：无</li>
 <li>描述：用户类型，详细见 GizThirdAccountType 枚举定义。待转换的用户名是手机号时，此参数指定为1，待转换用户名是普通账号时，此参数指定为0</li>
 </ul>
-<h3 id="callback-ret-err-19"><a href="#callback-ret-err-19" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-20"><a href="#callback-ret-err-20" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -1342,7 +1398,7 @@ gizWifiSDK.registerUser({
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-20"><a href="#示例代码-20" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-21"><a href="#示例代码-21" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.transAnonymousUser({
     &quot;token&quot;: &apos;your_token&apos;,
     &quot;userName&quot;: &apos;your_phone_number&apos;,
@@ -1352,11 +1408,11 @@ gizWifiSDK.transAnonymousUser({
 }, function(ret, err) {
     alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-20"><a href="#可用性-20" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-21"><a href="#可用性-21" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="resetPassword"><a href="#resetPassword" class="headerlink" title="resetPassword"></a>resetPassword<div id="a23"></div></h2><p>重置密码</p>
 <p>resetPassword({params}, callback(ret, err))</p>
-<h3 id="params-15"><a href="#params-15" class="headerlink" title="params"></a>params</h3><p>userName: </p>
+<h3 id="params-16"><a href="#params-16" class="headerlink" title="params"></a>params</h3><p>userName: </p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
@@ -1380,57 +1436,6 @@ gizWifiSDK.transAnonymousUser({
 <li>默认值：无</li>
 <li>描述：用户类型，详细见 GizThirdAccountType 枚举定义。待重置密码的用户名是手机号时，此参数指定为手机用户，待重置密码的用户名是邮箱时，此参数指定为邮箱用户</li>
 </ul>
-<h3 id="callback-ret-err-20"><a href="#callback-ret-err-20" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
-<ul>
-<li>类型：JSON对象</li>
-<li><p>内部字段</p>
-<pre><code>{
-    errorCode: 0    // 执行成功，数字类型
-    msg:            // 错误描述，字符串类型
-}
-</code></pre></li>
-</ul>
-<p>err</p>
-<ul>
-<li>类型：JSON对象</li>
-<li><p>内部字段</p>
-<pre><code>{
-    errorCode:    // 错误代码（见枚举定义GizWifiErrorCode），数字类型
-    msg:        // 错误描述，字符串类型
-}
-</code></pre></li>
-</ul>
-<h3 id="示例代码-21"><a href="#示例代码-21" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
-gizWifiSDK.resetPassword({
-    &quot;userName&quot;: &apos;your_phone_number&apos;,
-    &quot;verifyCode&quot;: &apos;your_verify_code&apos;,
-    &quot;newPassword&quot;: &apos;your_new_password&apos;,
-    &quot;accountType&quot;: 1
-}, function(ret, err) {
-    alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
-});
-</code></pre><h3 id="可用性-21"><a href="#可用性-21" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
-<p>可提供的1.0.0及更高版本</p>
-<h2 id="changeUserPassword"><a href="#changeUserPassword" class="headerlink" title="changeUserPassword"></a>changeUserPassword<div id="a24"></div></h2><p>修改用户密码</p>
-<p>changeUserPassword({params}, callback(ret, err))</p>
-<h3 id="params-16"><a href="#params-16" class="headerlink" title="params"></a>params</h3><p>token: </p>
-<ul>
-<li>类型： 字符串</li>
-<li>默认值：无</li>
-<li>描述：用户登录或注册时得到的 token</li>
-</ul>
-<p>oldPassword: </p>
-<ul>
-<li>类型： 字符串</li>
-<li>默认值：无</li>
-<li>描述：旧密码</li>
-</ul>
-<p>newPassword: </p>
-<ul>
-<li>类型： 字符串</li>
-<li>默认值：无</li>
-<li>描述：新密码</li>
-</ul>
 <h3 id="callback-ret-err-21"><a href="#callback-ret-err-21" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
@@ -1452,6 +1457,57 @@ gizWifiSDK.resetPassword({
 </code></pre></li>
 </ul>
 <h3 id="示例代码-22"><a href="#示例代码-22" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+gizWifiSDK.resetPassword({
+    &quot;userName&quot;: &apos;your_phone_number&apos;,
+    &quot;verifyCode&quot;: &apos;your_verify_code&apos;,
+    &quot;newPassword&quot;: &apos;your_new_password&apos;,
+    &quot;accountType&quot;: 1
+}, function(ret, err) {
+    alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
+});
+</code></pre><h3 id="可用性-22"><a href="#可用性-22" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+<p>可提供的1.0.0及更高版本</p>
+<h2 id="changeUserPassword"><a href="#changeUserPassword" class="headerlink" title="changeUserPassword"></a>changeUserPassword<div id="a24"></div></h2><p>修改用户密码</p>
+<p>changeUserPassword({params}, callback(ret, err))</p>
+<h3 id="params-17"><a href="#params-17" class="headerlink" title="params"></a>params</h3><p>token: </p>
+<ul>
+<li>类型： 字符串</li>
+<li>默认值：无</li>
+<li>描述：用户登录或注册时得到的 token</li>
+</ul>
+<p>oldPassword: </p>
+<ul>
+<li>类型： 字符串</li>
+<li>默认值：无</li>
+<li>描述：旧密码</li>
+</ul>
+<p>newPassword: </p>
+<ul>
+<li>类型： 字符串</li>
+<li>默认值：无</li>
+<li>描述：新密码</li>
+</ul>
+<h3 id="callback-ret-err-22"><a href="#callback-ret-err-22" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<ul>
+<li>类型：JSON对象</li>
+<li><p>内部字段</p>
+<pre><code>{
+    errorCode: 0    // 执行成功，数字类型
+    msg:            // 错误描述，字符串类型
+}
+</code></pre></li>
+</ul>
+<p>err</p>
+<ul>
+<li>类型：JSON对象</li>
+<li><p>内部字段</p>
+<pre><code>{
+    errorCode:    // 错误代码（见枚举定义GizWifiErrorCode），数字类型
+    msg:        // 错误描述，字符串类型
+}
+</code></pre></li>
+</ul>
+<h3 id="示例代码-23"><a href="#示例代码-23" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.changeUserPassword({
     &quot;token&quot;: &apos;your_token&apos;,
     &quot;oldPassword&quot;: &apos;your_old_password&apos;,
@@ -1459,11 +1515,11 @@ gizWifiSDK.changeUserPassword({
 }, function(ret, err) {
     alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-22"><a href="#可用性-22" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-23"><a href="#可用性-23" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="changeUserInfo"><a href="#changeUserInfo" class="headerlink" title="changeUserInfo"></a>changeUserInfo<div id="a25"></div></h2><p>匿名用户转手机用户。手机匿名登录后，可以转换为手机用户，但需要先获取到手机验证码才可以转换。转换后，匿名用户已经绑定的设备，会迁移到转换后的用户账号下。</p>
 <p>changeUserInfo({params}, callback(ret, err))</p>
-<h3 id="params-17"><a href="#params-17" class="headerlink" title="params"></a>params</h3><p>token: </p>
+<h3 id="params-18"><a href="#params-18" class="headerlink" title="params"></a>params</h3><p>token: </p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
@@ -1501,7 +1557,7 @@ gizWifiSDK.changeUserPassword({
 }
 </code></pre></li>
 </ul>
-<h3 id="callback-ret-err-22"><a href="#callback-ret-err-22" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-23"><a href="#callback-ret-err-23" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -1521,7 +1577,7 @@ gizWifiSDK.changeUserPassword({
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-23"><a href="#示例代码-23" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>// 修改手机号
+<h3 id="示例代码-24"><a href="#示例代码-24" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>// 修改手机号
 var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.changeUserInfo({
     &quot;token&quot;: &apos;your_token&apos;,
@@ -1531,17 +1587,17 @@ gizWifiSDK.changeUserInfo({
 }, function(ret, err) {
     alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-23"><a href="#可用性-23" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-24"><a href="#可用性-24" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="getUserInfo"><a href="#getUserInfo" class="headerlink" title="getUserInfo"></a>getUserInfo<div id="a26"></div></h2><p>获取用户信息。用户登录后，可以获取用户的个人信息。</p>
 <p>getUserInfo({params}, callback(ret, err))</p>
-<h3 id="params-18"><a href="#params-18" class="headerlink" title="params"></a>params</h3><p>token: </p>
+<h3 id="params-19"><a href="#params-19" class="headerlink" title="params"></a>params</h3><p>token: </p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
 <li>描述：用户登录或注册时得到的 token</li>
 </ul>
-<h3 id="callback-ret-err-23"><a href="#callback-ret-err-23" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-24"><a href="#callback-ret-err-24" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -1569,17 +1625,17 @@ gizWifiSDK.changeUserInfo({
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-24"><a href="#示例代码-24" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-25"><a href="#示例代码-25" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.getUserInfo({
     &quot;token&quot;: &apos;your_token&apos;
 },function(ret, err) {
         alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-24"><a href="#可用性-24" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-25"><a href="#可用性-25" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="getGroups"><a href="#getGroups" class="headerlink" title="getGroups"></a>getGroups<div id="a27"></div></h2><p>获取用户账号下的设备分组列表。需要先完成用户登录，才能获取设备分组列表。设备分组是指把中控网关管理的子设备分成多个组，便于批量执行子设备操作。一个设备分组只能添加一种类型的设备。常见的应用场景，比如睡前把房间里所有的开关灯关掉，把床头的两个落地灯调暗，这时就可以把子设备分成两个组，一个是开关灯组，一个是落地灯组。</p>
 <p>getGroups({params}, callback(ret, err))</p>
-<h3 id="params-19"><a href="#params-19" class="headerlink" title="params"></a>params</h3><p>uid: </p>
+<h3 id="params-20"><a href="#params-20" class="headerlink" title="params"></a>params</h3><p>uid: </p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
@@ -1597,7 +1653,7 @@ gizWifiSDK.getUserInfo({
 <li>默认值：无</li>
 <li>描述：待筛选的组类型标识，字符串数组。不指定则不筛选</li>
 </ul>
-<h3 id="callback-ret-err-24"><a href="#callback-ret-err-24" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-25"><a href="#callback-ret-err-25" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -1618,7 +1674,7 @@ gizWifiSDK.getUserInfo({
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-25"><a href="#示例代码-25" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-26"><a href="#示例代码-26" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.getGroups({
         &quot;uid&quot;: &apos;your_uid&apos;,
         &quot;token&quot;: &apos;your_token&apos;,
@@ -1626,11 +1682,11 @@ gizWifiSDK.getGroups({
 },function(ret, err) {
         alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-25"><a href="#可用性-25" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-26"><a href="#可用性-26" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="addGroup"><a href="#addGroup" class="headerlink" title="addGroup"></a>addGroup<div id="a28"></div></h2><p>添加设备分组。添加后返回当前的设备分组列表</p>
 <p>addGroup({params}, callback(ret, err))</p>
-<h3 id="params-20"><a href="#params-20" class="headerlink" title="params"></a>params</h3><p>uid: </p>
+<h3 id="params-21"><a href="#params-21" class="headerlink" title="params"></a>params</h3><p>uid: </p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
@@ -1667,59 +1723,6 @@ gizWifiSDK.getGroups({
 }
 </code></pre></li>
 </ul>
-<h3 id="callback-ret-err-25"><a href="#callback-ret-err-25" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
-<ul>
-<li>类型：JSON对象</li>
-<li><p>内部字段</p>
-<pre><code>{
-    groups:[{      // 组对象（以下字段是组对象信息），数组类型
-        &quot;gid&quot;:    // 组ID，字符串类型
-    }]
-}
-</code></pre></li>
-</ul>
-<p>err</p>
-<ul>
-<li>类型：JSON对象</li>
-<li><p>内部字段</p>
-<pre><code>{
-    errorCode:    // 错误代码（见枚举定义GizWifiErrorCode），数字类型
-    msg:        // 错误描述，字符串类型
-}
-</code></pre></li>
-</ul>
-<h3 id="示例代码-26"><a href="#示例代码-26" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
-gizWifiSDK.addGroup({
-            &quot;uid&quot;: &apos;your_uid&apos;,
-            &quot;token&quot;: &apos;your_token&apos;,
-            &quot;productKey&quot;: &apos;your_group_type&apos;,
-            &quot;groupName&quot;: &apos;your_group_name&apos;,
-            &quot;specialDevices&quot;: []
-    },function(ret, err) {
-            alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err));
-    });
-</code></pre><h3 id="可用性-26"><a href="#可用性-26" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
-<p>可提供的1.0.0及更高版本</p>
-<h2 id="removeGroup"><a href="#removeGroup" class="headerlink" title="removeGroup"></a>removeGroup<div id="a29"></div></h2><p>删除设备分组。删除后返回当前的设备分组列表</p>
-<p>removeGroup({params}, callback(ret, err))</p>
-<h3 id="params-21"><a href="#params-21" class="headerlink" title="params"></a>params</h3><p>uid: </p>
-<ul>
-<li>类型： 字符串</li>
-<li>默认值：无</li>
-<li>描述：用户登录或注册时得到的 uid</li>
-</ul>
-<p>token: </p>
-<ul>
-<li>类型： 字符串</li>
-<li>默认值：无</li>
-<li>描述：用户登录或注册时得到的 token</li>
-</ul>
-<p>gid: </p>
-<ul>
-<li>类型： 字符串</li>
-<li>默认值：无</li>
-<li>描述：待删除的组id</li>
-</ul>
 <h3 id="callback-ret-err-26"><a href="#callback-ret-err-26" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
@@ -1742,6 +1745,59 @@ gizWifiSDK.addGroup({
 </code></pre></li>
 </ul>
 <h3 id="示例代码-27"><a href="#示例代码-27" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+gizWifiSDK.addGroup({
+            &quot;uid&quot;: &apos;your_uid&apos;,
+            &quot;token&quot;: &apos;your_token&apos;,
+            &quot;productKey&quot;: &apos;your_group_type&apos;,
+            &quot;groupName&quot;: &apos;your_group_name&apos;,
+            &quot;specialDevices&quot;: []
+    },function(ret, err) {
+            alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err));
+    });
+</code></pre><h3 id="可用性-27"><a href="#可用性-27" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+<p>可提供的1.0.0及更高版本</p>
+<h2 id="removeGroup"><a href="#removeGroup" class="headerlink" title="removeGroup"></a>removeGroup<div id="a29"></div></h2><p>删除设备分组。删除后返回当前的设备分组列表</p>
+<p>removeGroup({params}, callback(ret, err))</p>
+<h3 id="params-22"><a href="#params-22" class="headerlink" title="params"></a>params</h3><p>uid: </p>
+<ul>
+<li>类型： 字符串</li>
+<li>默认值：无</li>
+<li>描述：用户登录或注册时得到的 uid</li>
+</ul>
+<p>token: </p>
+<ul>
+<li>类型： 字符串</li>
+<li>默认值：无</li>
+<li>描述：用户登录或注册时得到的 token</li>
+</ul>
+<p>gid: </p>
+<ul>
+<li>类型： 字符串</li>
+<li>默认值：无</li>
+<li>描述：待删除的组id</li>
+</ul>
+<h3 id="callback-ret-err-27"><a href="#callback-ret-err-27" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<ul>
+<li>类型：JSON对象</li>
+<li><p>内部字段</p>
+<pre><code>{
+    groups:[{      // 组对象（以下字段是组对象信息），数组类型
+        &quot;gid&quot;:    // 组ID，字符串类型
+    }]
+}
+</code></pre></li>
+</ul>
+<p>err</p>
+<ul>
+<li>类型：JSON对象</li>
+<li><p>内部字段</p>
+<pre><code>{
+    errorCode:    // 错误代码（见枚举定义GizWifiErrorCode），数字类型
+    msg:        // 错误描述，字符串类型
+}
+</code></pre></li>
+</ul>
+<h3 id="示例代码-28"><a href="#示例代码-28" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
 gizWifiSDK.removeGroup({
     &quot;uid&quot;: &apos;your_uid&apos;,
             &quot;token&quot;: &apos;your_token&apos;,
@@ -1749,11 +1805,11 @@ gizWifiSDK.removeGroup({
 }, function (ret, err) {
     alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
 });
-</code></pre><h3 id="可用性-27"><a href="#可用性-27" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-28"><a href="#可用性-28" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="editGroup"><a href="#editGroup" class="headerlink" title="editGroup"></a>editGroup<div id="a30"></div></h2><p>编辑设备分组。编辑分组后返回当前的设备分组列表</p>
 <p>editGroup({params}, callback(ret, err))</p>
-<h3 id="params-22"><a href="#params-22" class="headerlink" title="params"></a>params</h3><p>uid: </p>
+<h3 id="params-23"><a href="#params-23" class="headerlink" title="params"></a>params</h3><p>uid: </p>
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
@@ -1790,7 +1846,7 @@ gizWifiSDK.removeGroup({
 }
 </code></pre></li>
 </ul>
-<h3 id="callback-ret-err-27"><a href="#callback-ret-err-27" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
+<h3 id="callback-ret-err-28"><a href="#callback-ret-err-28" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
 <ul>
 <li>类型：JSON对象</li>
 <li><p>内部字段</p>
@@ -1811,7 +1867,7 @@ gizWifiSDK.removeGroup({
 }
 </code></pre></li>
 </ul>
-<h3 id="示例代码-28"><a href="#示例代码-28" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
+<h3 id="示例代码-29"><a href="#示例代码-29" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);
     gizWifiSDK.editGroup({
     &quot;uid&quot;: &apos;your_uid&apos;,
         &quot;token&quot;: &apos;your_token&apos;,
@@ -1821,58 +1877,7 @@ gizWifiSDK.removeGroup({
     }, function (ret, err) {
         alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))
     });
-</code></pre><h3 id="可用性-28"><a href="#可用性-28" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
-<p>可提供的1.0.0及更高版本</p>
-<h1 id="gizWifiSDK类接口"><a href="#gizWifiSDK类接口" class="headerlink" title="gizWifiSDK类接口"></a>gizWifiSDK类接口</h1><p>机智云 Wi-Fi SDK 的基础类。该类提供了SDK初始化、基本设置、用户管理、设备管理的基本接口。</p>
-<h2 id="startWithAppID"><a href="#startWithAppID" class="headerlink" title="startWithAppID"></a>startWithAppID<div id="a1"></div></h2><p>启动 SDK。 注意，该接口执行成功后才能正常执行其他接口功能。SDK启动在Android平台上可能会耗费1～2秒的时间，建议App开发者在收到启动ret返回8316(SDK启动成功)时或者启动后延时2秒左右再调用其他接口。</p>
-<p>startWithAppID({params}, callback(ret, err))</p>
-<h3 id="params-23"><a href="#params-23" class="headerlink" title="params"></a>params</h3><p>appID:</p>
-<ul>
-<li>类型： 字符串</li>
-<li>默认值：无</li>
-<li>描述：开发者在<a href="http://site.gizwits.com" target="_blank" rel="external">机智云网站</a>申请的应用标识。</li>
-</ul>
-<p>cloudServiceInfo:</p>
-<ul>
-<li>类型： 数字类型数组</li>
-<li>默认值：0</li>
-<li>描述：要切换的服务器域名信息。使用机智云生产云服务的开发者不用传值，需要连接其他云服务的要传值。域名信息不指定端口则SDK使用默认服务端口，此时这样写域名：api.gizwits.com。若需要指定特殊端口，需同时指定 Http 和 Https 端口，此时这样写域名：api.gizwits.com:81&amp;8443</li>
-<li><p>内部字段</p>
-<p>  {</p>
-<pre><code>openAPIInfo:     // api服务域名
-siteInfo:       // site服务域名
-pushInfo:       // 推送服务域名
-</code></pre><p>  }</p>
-</li>
-</ul>
-<p>specialProductKeys:</p>
-<ul>
-<li>类型： 字符串数组</li>
-<li>默认值：无</li>
-<li>描述：要过滤的设备 productKey 列表。如果希望返回所有能发现的设备则不需要传参。指定了之后,SDK 将只返回过滤后的设备</li>
-</ul>
-<h3 id="callback-ret-err-28"><a href="#callback-ret-err-28" class="headerlink" title="callback(ret, err)"></a>callback(ret, err)</h3><p>ret</p>
-<ul>
-<li>类型：JSON对象</li>
-<li><p>内部字段</p>
-<pre><code>{
-    errorCode: 8316,    // SDK启动成功，数字类型
-    msg:                // 成功消息的描述，字符串类型
-}
-</code></pre></li>
-</ul>
-<p>err</p>
-<ul>
-<li>类型：JSON对象</li>
-<li><p>内部字段</p>
-<pre><code>{
-    errorCode:    // 错误代码（见枚举定义GizWifiErrorCode），数字类型
-    msg:        // 错误描述，字符串类型
-}
-</code></pre></li>
-</ul>
-<h3 id="示例代码-29"><a href="#示例代码-29" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"> // 不指定域名和过滤productKey，参考代码如下：</div><div class="line">	var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);</div><div class="line">gizWifiSDK.startWithAppID(&#123;&quot;appID&quot;: &quot;your_app_id&quot;&#125;, function(ret, err) &#123;</div><div class="line">		alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))</div><div class="line">	&#125;);</div><div class="line"></div><div class="line">    // 要指定cloudServiceInfo和过滤的productKey，则参考代码如下：</div><div class="line">    var gizWifiSDK = api.require(&apos;gizWifiSDK&apos;);</div><div class="line">gizWifiSDK.startWithAppID(&#123;&quot;appID&quot;: &quot;your_app_id&quot;, &quot;specialProductKeys&quot;: [&quot;your_product_key&quot;], &quot;cloudServiceInfo&quot;: &#123;&quot;openAPIInfo&quot;: &quot;xxx.xxxx.com&quot;, &quot;siteInfo&quot;: &quot;xxx.xxxx.com&quot;&#125;&#125;, function(ret, err) &#123;</div><div class="line">        alert(&quot;ret = &quot; + JSON.stringify(ret) + &quot;err = &quot; + JSON.stringify(err))</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
-<h3 id="可用性-29"><a href="#可用性-29" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
+</code></pre><h3 id="可用性-29"><a href="#可用性-29" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h1 id="gizWifiDevice类接口"><a href="#gizWifiDevice类接口" class="headerlink" title="gizWifiDevice类接口"></a>gizWifiDevice类接口</h1><p>机智云 Wi-Fi 的设备类。该类提供了设备登录，控制、接收设备信息功能。</p>
 <h2 id="registerNotifications-1"><a href="#registerNotifications-1" class="headerlink" title="registerNotifications"></a>registerNotifications<div id="a31"></div></h2><p>注册设备状态变化通知。只要得到设备的mac地址和did，就可以注册设备通知。注册后，设备后续的登录状态变化、运行状态变化都会实时上报给APP。设备解绑或断开连接后，就不会再上报数据了。</p>
@@ -3258,6 +3263,9 @@ GizWifiBinary.decode({&quot;binary&quot;: src2}, function(ret, err) {
 });
 </code></pre><h3 id="可用性-51"><a href="#可用性-51" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
+<p></p>
+<div id="const-content">
+
 <h1 id="常量定义"><a href="#常量定义" class="headerlink" title="常量定义"></a>常量定义</h1><p>Json字段名及常量说明：</p>
 <table>
 <thead>
@@ -3515,7 +3523,7 @@ GizWifiBinary.decode({&quot;binary&quot;: src2}, function(ret, err) {
 </tr>
 </tbody>
 </table>
-<h2 id="错误码描述"><a href="#错误码描述" class="headerlink" title="错误码描述"></a>错误码描述</h2><table>
+<h1 id="错误码描述"><a href="#错误码描述" class="headerlink" title="错误码描述"></a>错误码描述</h1><table>
 <thead>
 <tr>
 <th>errorCode</th>
@@ -4057,7 +4065,7 @@ GizWifiBinary.decode({&quot;binary&quot;: src2}, function(ret, err) {
 </tr>
 </tbody>
 </table>
-<h2 id="新旧设备配置方式对照表"><a href="#新旧设备配置方式对照表" class="headerlink" title="新旧设备配置方式对照表"></a>新旧设备配置方式对照表</h2><table>
+<h1 id="新旧设备配置方式对照表"><a href="#新旧设备配置方式对照表" class="headerlink" title="新旧设备配置方式对照表"></a>新旧设备配置方式对照表</h1><table>
 <thead>
 <tr>
 <th>GizWifiConfigureMode</th>
@@ -4078,7 +4086,7 @@ GizWifiBinary.decode({&quot;binary&quot;: src2}, function(ret, err) {
 </tr>
 </tbody>
 </table>
-<h2 id="新旧错误码对照表"><a href="#新旧错误码对照表" class="headerlink" title="新旧错误码对照表"></a>新旧错误码对照表</h2><table>
+<h1 id="新旧错误码对照表"><a href="#新旧错误码对照表" class="headerlink" title="新旧错误码对照表"></a>新旧错误码对照表</h1><table>
 <thead>
 <tr>
 <th>errorCode(new)</th>
@@ -4284,7 +4292,7 @@ GizWifiBinary.decode({&quot;binary&quot;: src2}, function(ret, err) {
 </tr>
 </tbody>
 </table>
-<h2 id="新旧错误码转换函数"><a href="#新旧错误码转换函数" class="headerlink" title="新旧错误码转换函数"></a>新旧错误码转换函数</h2><p>errorCodeConversion</p>
+<h1 id="新旧错误码转换函数"><a href="#新旧错误码转换函数" class="headerlink" title="新旧错误码转换函数"></a>新旧错误码转换函数</h1><p>errorCodeConversion</p>
 <p>该函数是专为App做错误码兼容提供的，可以节省App修改代码的时间。输入新错误码，按照上面对照表返回旧错误码。</p>
 <p>errorCodeConversion({params}, callback(ret, err))</p>
 <h3 id="params-46"><a href="#params-46" class="headerlink" title="params"></a>params</h3><p>errorCode: </p>
@@ -4310,7 +4318,7 @@ gizWifiSDK.errorCodeConversion({
 });
 </code></pre><h3 id="可用性-52"><a href="#可用性-52" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
-
+</div>
     </div>
     
     <div class="widget-wrapper">
