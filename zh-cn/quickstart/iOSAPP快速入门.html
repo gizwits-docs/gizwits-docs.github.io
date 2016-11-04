@@ -288,16 +288,40 @@
 <p><img src="/assets/zh-cn/quickstart/iOS/1478079298177.png" alt="Alt text"></p>
 <h2 id="4-修改UIConfig-json文件"><a href="#4-修改UIConfig-json文件" class="headerlink" title="4. 修改UIConfig.json文件"></a>4. 修改UIConfig.json文件</h2><p><img src="/assets/zh-cn/quickstart/iOS/1478079317474.png" alt="Alt text"></p>
 <p>如上图所示，UIConfig.json文件是一个全局配置文件，在这里可以设置工程的配置信息，逐一介绍：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">app_id：机智云app id</div><div class="line">app_secret：机智云app secret</div><div class="line">product_key：机智云 product key</div><div class="line">wifi_type_select：默认配置模块wifi模组选择功能是否开启</div><div class="line">tencent_app_id：qq登录 app id</div><div class="line">wechat_app_id：微信登录 app id</div><div class="line">wechat_app_secret：微信登录 app secret</div><div class="line">push_type：推送类型 【0：关闭，1：极光，2：百度】</div><div class="line">jpush_app_key：极光推送app key</div><div class="line">bpush_app_key：百度推送 app key</div><div class="line">openAPI_URL：openAPI 域名及端口，格式：“api.gizwits.com:80”，不写端口默认80</div><div class="line">site_URL：site 域名及端口，格式：“site.gizwits.com:80”，不写端口默认80</div><div class="line">push_URL：推送绑定服务器 域名及端口，格式：“push.gizwits.com:80”，不写端口默认80</div><div class="line">buttonColor：按钮颜色</div><div class="line">buttonTextColor：按钮文字颜色</div><div class="line">navigationBarColor：导航栏颜色</div><div class="line">navigationBarTextColor：导航栏文字颜色</div><div class="line">configProgressViewColor：配置中界面 progress view颜色</div><div class="line">statusBarStyle：状态栏样子【0：默认的黑色样式， 1：白色样式】</div><div class="line">addDeviceTitle：添加设备界面 导航栏标题文字</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>app_id：机智云app id</strong></li>
+<li><strong>app_secret：机智云app secret</strong></li>
+<li><strong>product_key：机智云 product key</strong></li>
+<li><strong>wifi_type_select：默认配置模块wifi模组选择功能是否开启</strong></li>
+<li><strong>tencent_app_id：qq登录 app id</strong></li>
+<li><strong>wechat_app_id：微信登录 app id</strong></li>
+<li><strong>wechat_app_secret：微信登录 app secret</strong></li>
+<li><strong>push_type：推送类型 【0：关闭，1：极光，2：百度】</strong></li>
+<li><strong>jpush_app_key：极光推送app key</strong></li>
+<li><strong>bpush_app_key：百度推送 app key</strong></li>
+<li><strong>openAPIDomain：域名及端口，格式：“api.gizwits.com:80”，不写端口默认80</strong></li>
+<li><strong>siteDomain 域名及端口，格式：“site.gizwits.com:80”，不写端口默认80</strong></li>
+<li><strong>pushDomain：推送绑定服务器 域名及端口，格式：“push.gizwits.com:80”，不写端口默认80</strong></li>
+<li><strong>buttonColor：按钮颜色</strong></li>
+<li><strong>buttonTextColor：按钮文字颜色</strong></li>
+<li><strong>navigationBarColor：导航栏颜色</strong></li>
+<li><strong>navigationBarTextColor：导航栏文字颜色</strong></li>
+<li><strong>configProgressViewColor：配置中界面 progress view颜色</strong></li>
+<li><strong>statusBarStyle：状态栏样子【0：默认的黑色样式， 1：白色样式]</strong></li>
+<li><strong>addDeviceTitle：添加设备界面 导航栏标题文字</strong></li>
+<li><strong>qq：登陆界面的QQ登陆按钮【true：显示， false：隐藏】</strong></li>
+<li><strong>wechat：登陆界面的微信登陆按钮【true：显示, flase：隐藏】</strong></li>
+<li><strong>anonymousLogin：登陆界面的跳过按钮【true：显示, flase：隐藏】</strong></li>
+</ul>
 <p>在机智云官网上分别找到产品的Product Key（如《1. 创建产品并定义数据点》中的图），App ID（如《2. 为产品创建安卓和iOS应用》的第二个图）与App Secret分别填入json文件中对应的位置，如下图所示：</p>
-<p><img src="./1478080815360.png" alt="Alt text"></p>
+<p><img src="assets/zh-cn/quickstart/iOS/1478080815360.png" alt="Alt text"></p>
 <h2 id="5-控制界面入口"><a href="#5-控制界面入口" class="headerlink" title="5. 控制界面入口"></a>5. 控制界面入口</h2><p>在框架中若要将控制界面切换为用户自定义的控制界面，而非框架自带的界面，则可以将下图的《GosDeviceController》切换为自定义控制界面即可，即删除图右边红框中的代码，做两步操作：</p>
 <p>1)初始化自定义的控制界面</p>
 <p>2)从deviceListController（设备列表界面）跳转到自定义控制界面</p>
 <p><img src="/assets/zh-cn/quickstart/iOS/1478080869239.png" alt="Alt text"></p>
 <h2 id="6-APP部署运行"><a href="#6-APP部署运行" class="headerlink" title="6. APP部署运行"></a>6. APP部署运行</h2><p>正确填写Product Key、App ID与App Secret后，工程就可以部署运行了</p>
 <p><img src="/assets/zh-cn/quickstart/iOS/1478080908799.png" alt="Alt text"></p>
-<p><img src="./1478080914847.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/quickstart/iOS/1478080914847.png" alt="Alt text"></p>
 <h2 id="7-注册新用户"><a href="#7-注册新用户" class="headerlink" title="7. 注册新用户"></a>7. 注册新用户</h2><p><img src="/assets/zh-cn/quickstart/iOS/1478081206628.png" alt="Alt text"></p>
 <h2 id="8-登陆用户"><a href="#8-登陆用户" class="headerlink" title="8. 登陆用户"></a>8. 登陆用户</h2><p>注册成功后，APP会自动登录，此时将跳转到“我的设备”界面</p>
 <p><img src="/assets/zh-cn/quickstart/iOS/1478081232915.png" alt="Alt text"></p>
