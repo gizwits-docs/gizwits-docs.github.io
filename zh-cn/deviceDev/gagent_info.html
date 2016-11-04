@@ -269,7 +269,7 @@
         <div class="title"></div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="GAgent功能概述"><a href="#GAgent功能概述" class="headerlink" title="GAgent功能概述"></a>GAgent功能概述</h1><p>GAgent主要的作用是数据转发，是设备数据、机智云、应用端（APP）的数据交互桥梁。可将GAgent移植到WiFi模组、GPRS模组、PC端等。目前机智云提供由机智云移植的WiFi模组对应固件有：汉枫LPB100、乐鑫8266、汉枫LPT120、高通4004 、RealTek 8711AM 、庆科3162等。</p>
+      <h2 id="title-GAgent详解"><a href="#title-GAgent详解" class="headerlink" title="title:GAgent详解"></a>title:GAgent详解</h2><h1 id="GAgent功能概述"><a href="#GAgent功能概述" class="headerlink" title="GAgent功能概述"></a>GAgent功能概述</h1><p>GAgent主要的作用是数据转发，是设备数据、机智云、应用端（APP）的数据交互桥梁。可将GAgent移植到WiFi模组、GPRS模组、PC端等。目前机智云提供由机智云移植的WiFi模组对应固件有：汉枫LPB100、乐鑫8266、汉枫LPT120、高通4004 、RealTek 8711AM 、庆科3162等。</p>
 <p><img src="/assets/zh-cn/deviceDev/GAgent/1478078696133.png" alt="GAgent功能概述"></p>
 <h1 id="GAgent接入机智云流程"><a href="#GAgent接入机智云流程" class="headerlink" title="GAgent接入机智云流程"></a>GAgent接入机智云流程</h1><h2 id="1-设备上电"><a href="#1-设备上电" class="headerlink" title="1.设备上电"></a>1.设备上电</h2><blockquote>
 <p>A、GAgent请求设备信息<br>B、回复GAgent设备信息<br>C、设备正常工作，需回复GAgent发出的心跳包<br>D、GAgent网络状态发生变化通知mcu。</p>
@@ -307,7 +307,10 @@
 <li>.缓存最近一次连接成功的路由热点(不关心是否连接外网成功)</li>
 <li>.使用当前的ssid和pwd连接路由器，失败后立即重试，如果重试超过30S都连接不成功，则尝试连接最近一次连接成功的路由热点（当前热点与最近一次连接成功热点不同）。如果仍然失败，则交替尝试连接当前热点和最近一次成功连接的热点。</li>
 <li>.连接路由超过2分钟，仍然失败时，以STA模式重启模组，重新开始上一步动作。</li>
-<li>.连接成功，当前ssid/pwd和连接成功ssid/pwd更新。<br>@(备注)[当前ssid和最近连接成功的ssid可能是同一个]</li>
+<li>.连接成功，当前ssid/pwd和连接成功ssid/pwd更新。<blockquote>
+<p>备注:当前ssid和最近连接成功的ssid可能是同一个</p>
+</blockquote>
+</li>
 </ul>
 <h2 id="6-配网策略说明"><a href="#6-配网策略说明" class="headerlink" title="6.配网策略说明"></a>6.配网策略说明</h2><ul>
 <li>.收到配置入网命令后，进入配置（softAP/AirLink）模式，等待接收ssid和pwd；</li>
@@ -333,7 +336,9 @@
 <li>.恢复连接路由器后，立即重连云端，重连时间从0开始。</li>
 <li>.若连接失败，遵循上面连接路由正常的重连策略。</li>
 </ul>
-<p>@(备注)[云端掉线的重启策略可定制，需要考虑小循环的优先级。若小循环优先级高，云端掉线重启理解重启；若小循环优先级中，云端掉线重启仅在无小循环客户端连接持续10分钟的情况下重连；若小循环优先级低，云端掉线重启可以立即重启]</p>
+<blockquote>
+<p>备注:云端掉线的重启策略可定制，需要考虑小循环的优先级。若小循环优先级高，云端掉线重启理解重启；若小循环优先级中，云端掉线重启仅在无小循环客户端连接持续10分钟的情况下重连；若小循环优先级低，云端掉线重启可以立即重启。</p>
+</blockquote>
 <h2 id="9-路由断连恢复策略"><a href="#9-路由断连恢复策略" class="headerlink" title="9.路由断连恢复策略"></a>9.路由断连恢复策略</h2><ul>
 <li>.路由断连后，模组进入本地模式（小循环、大循环不可用）；</li>
 <li>.重连路由成功后进入正常工作模式（小循环、大循环可用），重启小循环服务，重启大循环服务；</li>
