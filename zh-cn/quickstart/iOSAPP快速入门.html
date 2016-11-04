@@ -269,27 +269,7 @@
         <div class="title"></div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文主要介绍了机智云设备接入SDK的功能以及如何快速使用机智云APP开源框架来进行APP的开发与测试。</p>
-<h1 id="机制云APP开发资源简述"><a href="#机制云APP开发资源简述" class="headerlink" title="机制云APP开发资源简述"></a>机制云APP开发资源简述</h1><h2 id="1-机智云设备接入SDK"><a href="#1-机智云设备接入SDK" class="headerlink" title="1. 机智云设备接入SDK"></a>1. 机智云设备接入SDK</h2><p>机智云的设备接入SDK（以下简称SDK）封装了手机（包括PAD等设备）与机智云智能硬件的通讯过程，以及手机与云端的通讯过程。这些过程包括配置入网、发现、连接、控制、心跳、状态上报、报警通知等。使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略。</p>
-<p>机智云目前提供3套SDK：iOS平台原生SDK、Android平台原生SDK、APICloud跨平台SDK。开发者可以根据项目需要自行选择，其中APICloud版本SDK可以用H5技术一次开发，同时适配iOS和Android两个平台</p>
-<p><img src="/assets/zh-cn/quickstart/iOS/1478078635932.png" alt="Alt text"></p>
-<h2 id="2-机智云APP开源框架"><a href="#2-机智云APP开源框架" class="headerlink" title="2. 机智云APP开源框架"></a>2. 机智云APP开源框架</h2><p>为了进一步降低开发者的开发难度，机智云推出了APP开源框架。在框架中，已经模块化集成了如下功能：</p>
-<ul>
-<li>用户部分：用户注册，找回密码、第三方登录（微信登录、QQ登录）用户登录：包括云端用户登录，第三方登录（微信登录、QQ登录）</li>
-<li>配置设备入网（Arilink+SoftAP）</li>
-<li>设备发现，列表展示</li>
-<li>消息推送：极光推送、百度推送</li>
-<li>自定义皮肤</li>
-</ul>
-<p>APP开源框架将各个模块独立成包，开发者如果想了解其中某一个模块的实现代码与流程，直接参考框架代码即可。下面就将如何使用机智云开源框架快速开发一个APP做详细的讲解。</p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="1-创建产品并定义数据点"><a href="#1-创建产品并定义数据点" class="headerlink" title="1. 创建产品并定义数据点"></a>1. 创建产品并定义数据点</h2><p><img src="/assets/zh-cn/quickstart/iOS/1478078740492.png" alt="Alt text"></p>
-<p><img src="/assets/zh-cn/quickstart/iOS/1478082659923.png" alt="Alt text"></p>
-<h2 id="2-为产品创建安卓和iOS应用"><a href="#2-为产品创建安卓和iOS应用" class="headerlink" title="2. 为产品创建安卓和iOS应用"></a>2. 为产品创建安卓和iOS应用</h2><p>在服务栏目下，点击“应用配置”，分别添加安卓与iOS应用。</p>
-<p><img src="/assets/zh-cn/quickstart/iOS/1478078874904.png" alt="Alt text"></p>
-<p><img src="/assets/zh-cn/quickstart/iOS/1478082682355.png" alt="Alt text"></p>
-<h2 id="3-APP-ID与App-Secret含义与作用"><a href="#3-APP-ID与App-Secret含义与作用" class="headerlink" title="3. APP ID与App Secret含义与作用"></a>3. APP ID与App Secret含义与作用</h2><p>App ID：应用标识码，当开发者需要为一款智能产品开发应用（包括iOS、Android、Web应用等）时，在机智云开发者中创建应用的时候，后台会自动生成一个AppID，并与此设备进行关联。应用开发时需要填入此AppID。在APP注册的所有用户绑定在该Appid下。<br>App Secret：App ID的验证密钥。</p>
-<p>如下图所示，为APPID在开发APP过程中的作用</p>
-<p><img src="/assets/zh-cn/quickstart/iOS/1478078955535.png" alt="Alt text"></p>
+      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文主要介绍了如何快速使用机智云iOS APP开源框架来进行APP的开发与测试，在阅读本文档之前，请先完成<a href="/zh-cn/quickstart/准备工作.html">APP开发准备工作</a></p>
 <h1 id="10分钟部署调试机智云APP开源框架"><a href="#10分钟部署调试机智云APP开源框架" class="headerlink" title="10分钟部署调试机智云APP开源框架"></a>10分钟部署调试机智云APP开源框架</h1><h2 id="1-下载iOS-APP开源框架"><a href="#1-下载iOS-APP开源框架" class="headerlink" title="1. 下载iOS APP开源框架"></a>1. 下载iOS APP开源框架</h2><p>APP开源框架编译环境：XCode</p>
 <p>iOS APP开源框架下载地址：<br><a href="https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS" target="_blank" rel="external">https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS</a></p>
 <p><img src="/assets/zh-cn/quickstart/iOS/1478079010564.png" alt="Alt text"></p>
