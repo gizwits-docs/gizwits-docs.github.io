@@ -322,7 +322,7 @@
 <p>应用板依然板载了正反转可调速电机马达、温湿度传感器、红外感应器、RGB全彩LED灯，另外增加了OLED扩展接口，你可以为GoKit配上一块显示屏。</p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit2/8.png" alt="Alt text"></p>
 <p>WiFi模块方面，目前已经有二十几家国内厂商为机智云做了兼容。而且，现在所有开发者都可以拿到开发库自行开发适配。</p>
-<h2 id="玩转Gokit-2"><a href="#玩转Gokit-2" class="headerlink" title="玩转Gokit 2"></a>玩转Gokit 2</h2><h2 id="第一步：下载-IoE-Demo-App"><a href="#第一步：下载-IoE-Demo-App" class="headerlink" title="第一步：下载 IoE Demo App"></a>第一步：下载 IoE Demo App</h2><p>IoE Demo是机智云推出的智能硬件调试工具，通过IoE Demo App可以对GoKit进行绑定与远程控制等操作，也可以作为其他基于机智云开发的智能硬件项目的调试工具。</p>
+<h1 id="玩转Gokit-2"><a href="#玩转Gokit-2" class="headerlink" title="玩转Gokit 2"></a>玩转Gokit 2</h1><h2 id="第一步：下载-IoE-Demo-App"><a href="#第一步：下载-IoE-Demo-App" class="headerlink" title="第一步：下载 IoE Demo App"></a>第一步：下载 IoE Demo App</h2><p>IoE Demo是机智云推出的智能硬件调试工具，通过IoE Demo App可以对GoKit进行绑定与远程控制等操作，也可以作为其他基于机智云开发的智能硬件项目的调试工具。</p>
 <p>你可以通过扫描说明书上的黄色二维码下载并安装IoE Demo，也可以进入机智云开发者中心进行下载，<a href="http://dev.gizwits.com/zh-cn/developer/resource/demo_app?protoc=WIFI" target="_blank" rel="external">前往下载</a></p>
 <p>为了让开发者更好的掌握客户端开发的技巧，我们提供了IoE Demo的开源版本，<a href="http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=demo_app" target="_blank" rel="external">前往下载</a></p>
 <h2 id="第二步：将GoKit连接上网"><a href="#第二步：将GoKit连接上网" class="headerlink" title="第二步：将GoKit连接上网"></a>第二步：将GoKit连接上网</h2><p>GoKit通过WiFi通信模块以无线的方式连接路由器并接入互联网，这里我们需要做的就是把可用WiFi的路由器SSID和密码告诉GoKit（就像你新买的手机需要输入家里的WiFi密码一样）,但GoKit没有键盘和屏幕，如何做到呢？GoKit提供三种配置方式：AirLink 、WebConfig、 SoftAP。下面我们分别学习三种不同的配置方式，大家人选一种即可。</p>
@@ -355,7 +355,7 @@
 <p>点击设备将自动进行绑定，如果你从未注册、登录IoE Demo，GoKit将绑定当前手机，在不更换手机的情况下，你可以对设备进行所有的状态查询与远程控制等功能，更换手机后需要重新在局域网下进行绑定。如果你希望在不同的手机下对GoKit进行控制，可以先注册账号并登录后进行绑定操作，绑定完成后只需使用账号登录，在不同手机都可以对GoKit进行远程控制。</p>
 <h3 id="局域网控制设备"><a href="#局域网控制设备" class="headerlink" title="局域网控制设备"></a>局域网控制设备</h3><p>绑定完成后，设备显示“局域网在线”，点击进入设备界面，即可查看GoKit最新状态以及进行控制操作。</p>
 <h3 id="远程控制设备"><a href="#远程控制设备" class="headerlink" title="远程控制设备"></a>远程控制设备</h3><p>保持GoKit连接，手机关闭WiFi或切换到其他WiFi网络，此时”IoE Demo” App将自动识别网络环境并切换到远程连接模式。</p>
-<h1 id="第四步：使用微信控制GoKit"><a href="#第四步：使用微信控制GoKit" class="headerlink" title="第四步：使用微信控制GoKit"></a>第四步：使用微信控制GoKit</h1><p>微信从5.x版本开始，支持服务号设备功能。通过微信扫描设备二维码关注设备公众号后即可以实现对设备的控制。机智云作为微信设备号首批技术合作伙伴，在GoKit上也加入微信控制的功能，而GoKit也是目前世界上唯一一款开通了服务好设备功能的智能硬件开发板。使用微信控制GoKit具体步骤如下：</p>
+<h2 id="第四步：使用微信控制GoKit"><a href="#第四步：使用微信控制GoKit" class="headerlink" title="第四步：使用微信控制GoKit"></a>第四步：使用微信控制GoKit</h2><p>微信从5.x版本开始，支持服务号设备功能。通过微信扫描设备二维码关注设备公众号后即可以实现对设备的控制。机智云作为微信设备号首批技术合作伙伴，在GoKit上也加入微信控制的功能，而GoKit也是目前世界上唯一一款开通了服务好设备功能的智能硬件开发板。使用微信控制GoKit具体步骤如下：</p>
 <p>1）打开GoKit附带的说明书，找到一张白色二维码（此二维码每台设备唯一，请注意保管）。如图：</p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit2/18.png" alt="Alt text"></p>
 <p>2）打开微信扫描说明书上的二维码，点击“关注”并进入公众号。</p>
@@ -363,7 +363,7 @@
 <p><img src="/assets/zh-cn/deviceDev/Gokit2/19.png" alt="Alt text"></p>
 <p>4）在此界面上你可以看到宠物屋（GoKit）当前的状态，并可以通过点击“送风”或“抽湿”对GoKit上的电机进行控制。</p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit2/20.png" alt="Alt text"></p>
-<h1 id="第五步：开始您的智能硬件开发之旅"><a href="#第五步：开始您的智能硬件开发之旅" class="headerlink" title="第五步：开始您的智能硬件开发之旅"></a>第五步：开始您的智能硬件开发之旅</h1><p>到这里，你已经基本上体验了一款基于GoKit开发的智能硬件原型“微信宠物屋”。这仅仅是机智云团队基于GoKit开发的一款Demo产品，而GoKit本身就是一块功能强大的智能硬件开发板，你可以完全根据自己的想法，利用GoKit做出更好玩的产品，这就是你智能硬件创业的第一步。</p>
+<h2 id="第五步：开始您的智能硬件开发之旅"><a href="#第五步：开始您的智能硬件开发之旅" class="headerlink" title="第五步：开始您的智能硬件开发之旅"></a>第五步：开始您的智能硬件开发之旅</h2><p>到这里，你已经基本上体验了一款基于GoKit开发的智能硬件原型“微信宠物屋”。这仅仅是机智云团队基于GoKit开发的一款Demo产品，而GoKit本身就是一块功能强大的智能硬件开发板，你可以完全根据自己的想法，利用GoKit做出更好玩的产品，这就是你智能硬件创业的第一步。</p>
 <p>机智云提供“微信宠物屋”整套Demo的开源代码：</p>
 <p><a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit" target="_blank" rel="external">智能宠物屋”MCU源码 for GoKit（1代、2代STM、2代Arduino）</a></p>
 <p><a href="http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=demo_app" target="_blank" rel="external">智能宠物屋”Demo App （iOS、Android）</a></p>
