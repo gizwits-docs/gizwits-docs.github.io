@@ -295,10 +295,43 @@
 <li>signature 的算法: signature = MD5(appid+appsecret) 32位小写</li>
 </ul>
 <h3 id="请求报文"><a href="#请求报文" class="headerlink" title="请求报文"></a>请求报文</h3><p>1 Header<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">X-Gizwits-Application-Id: &#123;appid&#125;</div><div class="line">X-Gizwits-Application-Auth: &#123;signature&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="应答报文"><a href="#应答报文" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    "token": "XxXXXxxxx",</div><div class="line">    "expired_at": 123333333</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"># 用户管理</div><div class="line"></div><div class="line"></div><div class="line">## 创建用户</div><div class="line"></div><div class="line">### 1、创建匿名用户</div><div class="line"></div><div class="line">如果您想让您的用户不需要显示注册和登录就能使用机智云的功能，就可以通过匿名注册的方式来为该用户创建一个匿名用户。phone_id 可以是手机的唯一识别码。</div><div class="line"></div><div class="line">或者您已经有了自己的用户系统，不希望用户再次注册一次机智云帐号，您也可以使用该接口，为您的每一个用户创建一个对应的机智云匿名帐号。这时，phone_id 可以是用户在您的系统中的唯一识别码。如在与微信应用做对接时，phone_id 可以设置成微信用户的 openid。</div><div class="line"></div><div class="line">### 接口地址</div><div class="line">    http://api.gizwits.com/app/users</div><div class="line">### 请求方式</div><div class="line">    POST</div><div class="line">### 请求报文</div><div class="line">|参数    |类型  |必填    |参数类型     |描述   |备注|</div><div class="line">| :-------- | --------:| :--: |:-------- | :-------- | :-------- | </div><div class="line">|X-Gizwits-Application-Id  |String|是|header|| </div><div class="line">|phone_id|string|是|body|phone_id 可以是手机的唯一识别码| </div><div class="line"></div><div class="line">### 应答报文</div><div class="line">```json</div><div class="line">    &#123; </div><div class="line">        "uid": "akkdlfeiow", </div><div class="line">        "token": "akdlfkad",</div><div class="line">        "expire_at": 13894002020</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h3 id="2、使用用户名和密码创建用户"><a href="#2、使用用户名和密码创建用户" class="headerlink" title="2、使用用户名和密码创建用户"></a>2、使用用户名和密码创建用户</h3><h3 id="接口地址-1"><a href="#接口地址-1" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
+<h3 id="应答报文"><a href="#应答报文" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"token"</span>: <span class="string">"XxXXXxxxx"</span>,</div><div class="line">    <span class="attr">"expired_at"</span>: <span class="number">123333333</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><h3 id="1、创建匿名用户"><a href="#1、创建匿名用户" class="headerlink" title="1、创建匿名用户"></a>1、创建匿名用户</h3><p>如果您想让您的用户不需要显示注册和登录就能使用机智云的功能，就可以通过匿名注册的方式来为该用户创建一个匿名用户。phone_id 可以是手机的唯一识别码。</p>
+<p>或者您已经有了自己的用户系统，不希望用户再次注册一次机智云帐号，您也可以使用该接口，为您的每一个用户创建一个对应的机智云匿名帐号。这时，phone_id 可以是用户在您的系统中的唯一识别码。如在与微信应用做对接时，phone_id 可以设置成微信用户的 openid。</p>
+<h3 id="接口地址-1"><a href="#接口地址-1" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
 </code></pre><h3 id="请求方式-1"><a href="#请求方式-1" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-1"><a href="#请求报文-1" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">X-Gizwits-Application-Id</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">phone_id</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">phone_id 可以是手机的唯一识别码</td>
+</tr>
+</tbody>
+</table>
+<h3 id="应答报文-1"><a href="#应答报文-1" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">    <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">    <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">    <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2、使用用户名和密码创建用户"><a href="#2、使用用户名和密码创建用户" class="headerlink" title="2、使用用户名和密码创建用户"></a>2、使用用户名和密码创建用户</h3><h3 id="接口地址-2"><a href="#接口地址-2" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
+</code></pre><h3 id="请求方式-2"><a href="#请求方式-2" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求报文-2"><a href="#请求报文-2" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -333,11 +366,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="应答报文-1"><a href="#应答报文-1" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">            <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">            <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">            <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="应答报文-2"><a href="#应答报文-2" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">            <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">            <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">            <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="3、使用邮箱创建用户"><a href="#3、使用邮箱创建用户" class="headerlink" title="3、使用邮箱创建用户"></a>3、使用邮箱创建用户</h3><h3 id="业务功能描述-1"><a href="#业务功能描述-1" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>用户通过邮箱注册机智云帐号，注册成功后会收到一封邮件通知。</p>
-<h3 id="接口地址-2"><a href="#接口地址-2" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-2"><a href="#请求方式-2" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
-</code></pre><h3 id="请求报文-2"><a href="#请求报文-2" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<h3 id="接口地址-3"><a href="#接口地址-3" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
+</code></pre><h3 id="请求方式-3"><a href="#请求方式-3" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求报文-3"><a href="#请求报文-3" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -372,11 +405,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="应答报文-2"><a href="#应答报文-2" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">        <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">        <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">        <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="应答报文-3"><a href="#应答报文-3" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">        <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">        <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">        <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="4、使用手机号创建用户"><a href="#4、使用手机号创建用户" class="headerlink" title="4、使用手机号创建用户"></a>4、使用手机号创建用户</h3><h3 id="业务功能描述-2"><a href="#业务功能描述-2" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>如果希望用户使用手机号注册机智云帐号，机智云提供短信验证码接口，您需要先调用获取验证码接口获取验证码，然后再进行注册。</p>
-<h3 id="接口地址-3"><a href="#接口地址-3" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-3"><a href="#请求方式-3" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
-</code></pre><h3 id="请求报文-3"><a href="#请求报文-3" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<h3 id="接口地址-4"><a href="#接口地址-4" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
+</code></pre><h3 id="请求方式-4"><a href="#请求方式-4" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求报文-4"><a href="#请求报文-4" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -418,7 +451,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="应答报文-3"><a href="#应答报文-3" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">    <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">    <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">    <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="应答报文-4"><a href="#应答报文-4" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">    <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">    <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">    <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="使用第三方账号（百度-新浪-QQ）创建用户"><a href="#使用第三方账号（百度-新浪-QQ）创建用户" class="headerlink" title="使用第三方账号（百度/新浪/QQ）创建用户"></a>使用第三方账号（百度/新浪/QQ）创建用户</h3><h3 id="业务功能描述-3"><a href="#业务功能描述-3" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>机智云目前支持使用百度、新浪和QQ创建用户，但是需要您在客户端实现 OAuth 授权，获得用户的 uid 和 token，机智云会验证 uid 和 token 的合法性，验证通过就会创建一个机智云帐号。</p>
 <h4 id="关于-QQ-登录"><a href="#关于-QQ-登录" class="headerlink" title="关于 QQ 登录"></a>关于 QQ 登录</h4><p>使用 QQ 登录，需要提供您的机智云 APP ID 和 QQ 应用 APP ID 发送给我们的客服，我们客服将会在后台将二者进行关联。</p>
 <p>手机客户端使用 QQ SDK 获取到用户的 openid 和 access_token，将 openid 和 access_token 作为 uid 和 token POST 到该接口:</p>
@@ -429,9 +462,9 @@
         &quot;token&quot;: access_token
     }
 }
-</code></pre><h3 id="接口地址-4"><a href="#接口地址-4" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-4"><a href="#请求方式-4" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
-</code></pre><h3 id="请求报文-4"><a href="#请求报文-4" class="headerlink" title="请求报文"></a>请求报文</h3><ol>
+</code></pre><h3 id="接口地址-5"><a href="#接口地址-5" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
+</code></pre><h3 id="请求方式-5"><a href="#请求方式-5" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求报文-5"><a href="#请求报文-5" class="headerlink" title="请求报文"></a>请求报文</h3><ol>
 <li><p>Header</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">X-Gizwits-Application-Id: &#123;appid&#125;</div></pre></td></tr></table></figure>
 </li>
@@ -439,11 +472,11 @@
 <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;   </div><div class="line">            <span class="attr">"authData"</span>: &#123;</div><div class="line">                <span class="attr">"src"</span>: <span class="string">"baidu|sina|qq"</span>,</div><div class="line">                <span class="attr">"uid"</span>: <span class="string">"2346677"</span>,</div><div class="line">                <span class="attr">"token"</span>:<span class="string">"pnktnjyb996sj4p156gjtp4im"</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="应答报文-4"><a href="#应答报文-4" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">    <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">    <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">    <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="应答报文-5"><a href="#应答报文-5" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">    <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">    <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">    <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="匿名用户设置用户名和密码"><a href="#匿名用户设置用户名和密码" class="headerlink" title="匿名用户设置用户名和密码"></a>匿名用户设置用户名和密码</h3><h3 id="业务功能描述-4"><a href="#业务功能描述-4" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>假设您的机智云应用帮用户创建了一个匿名用户，他不需要注册就可以体验您的应用，并且绑定了设备，他体验满意之后，希望有一个自己的机智云帐号，但是又不想重复绑定设备。这时您可以调用该接口，为匿名用户设置用户名和密码，这样他就不再是一个匿名用户了。</p>
-<h3 id="接口地址-5"><a href="#接口地址-5" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-5"><a href="#请求方式-5" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
-</code></pre><h3 id="请求报文-5"><a href="#请求报文-5" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<h3 id="接口地址-6"><a href="#接口地址-6" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
+</code></pre><h3 id="请求方式-6"><a href="#请求方式-6" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求报文-6"><a href="#请求报文-6" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -485,11 +518,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="应答报文-5"><a href="#应答报文-5" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"updatedAt"</span>: <span class="string">"2011-11-07T21:25:10.623Z"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="应答报文-6"><a href="#应答报文-6" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"updatedAt"</span>: <span class="string">"2011-11-07T21:25:10.623Z"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="匿名用户设置手机号和密码"><a href="#匿名用户设置手机号和密码" class="headerlink" title="匿名用户设置手机号和密码"></a>匿名用户设置手机号和密码</h3><h3 id="业务描述"><a href="#业务描述" class="headerlink" title="业务描述"></a>业务描述</h3><p>与匿名用户设置用户名和密码类似，该接口可以为匿名用户设置手机号和密码，但是需要先调用一次获取短信验证码的接口。</p>
-<h3 id="接口地址-6"><a href="#接口地址-6" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-6"><a href="#请求方式-6" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
-</code></pre><h3 id="请求报文-6"><a href="#请求报文-6" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<h3 id="接口地址-7"><a href="#接口地址-7" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
+</code></pre><h3 id="请求方式-7"><a href="#请求方式-7" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求报文-7"><a href="#请求报文-7" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -538,11 +571,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="应答报文-6"><a href="#应答报文-6" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"updatedAt"</span>: <span class="string">"2011-11-07T21:25:10.623Z"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="应答报文-7"><a href="#应答报文-7" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"updatedAt"</span>: <span class="string">"2011-11-07T21:25:10.623Z"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="修改信息"><a href="#修改信息" class="headerlink" title="修改信息"></a>修改信息</h2><h3 id="业务功能描述-5"><a href="#业务功能描述-5" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口分别提供修改密码、修改邮箱、修改手机的功能</p>
-<h3 id="接口地址-7"><a href="#接口地址-7" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-7"><a href="#请求方式-7" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
-</code></pre><h3 id="修改密码Example"><a href="#修改密码Example" class="headerlink" title="修改密码Example"></a>修改密码Example</h3><h3 id="请求报文-7"><a href="#请求报文-7" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<h3 id="接口地址-8"><a href="#接口地址-8" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
+</code></pre><h3 id="请求方式-8"><a href="#请求方式-8" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
+</code></pre><h3 id="修改密码Example"><a href="#修改密码Example" class="headerlink" title="修改密码Example"></a>修改密码Example</h3><h3 id="请求报文-8"><a href="#请求报文-8" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -584,8 +617,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="应答报文-7"><a href="#应答报文-7" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"updatedAt"</span>: <span class="string">"2011-11-07T21:25:10.623Z"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="修改-email-Example"><a href="#修改-email-Example" class="headerlink" title="修改 email Example"></a>修改 email Example</h3><h3 id="请求报文-8"><a href="#请求报文-8" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<h3 id="应答报文-8"><a href="#应答报文-8" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"updatedAt"</span>: <span class="string">"2011-11-07T21:25:10.623Z"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="修改-email-Example"><a href="#修改-email-Example" class="headerlink" title="修改 email Example"></a>修改 email Example</h3><h3 id="请求报文-9"><a href="#请求报文-9" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -620,9 +653,9 @@
 </tr>
 </tbody>
 </table>
-<h3 id="应答报文-8"><a href="#应答报文-8" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"updatedAt"</span>: <span class="string">"2011-11-07T21:25:10.623Z"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="应答报文-9"><a href="#应答报文-9" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"updatedAt"</span>: <span class="string">"2011-11-07T21:25:10.623Z"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="修改手机号-Example"><a href="#修改手机号-Example" class="headerlink" title="修改手机号 Example"></a>修改手机号 Example</h3><p>修改手机号需要先调用一次获取短信验证码的接口，给新手机号发送一条短信验证码。</p>
-<h3 id="请求报文-9"><a href="#请求报文-9" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<h3 id="请求报文-10"><a href="#请求报文-10" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -664,136 +697,185 @@
 </tr>
 </tbody>
 </table>
-<h3 id="应答报文-9"><a href="#应答报文-9" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"updatedAt"</span>: <span class="string">"2011-11-07T21:25:10.623Z"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="用户登录-app-login"><a href="#用户登录-app-login" class="headerlink" title="用户登录 [/app/login]"></a>用户登录 [/app/login]</h2><p>可以使用用户名/邮箱/手机号登录，一律填写到 username 字段。</p>
-<h3 id="用户登录-POST"><a href="#用户登录-POST" class="headerlink" title="用户登录 [POST]"></a>用户登录 [POST]</h3><ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-</code></pre></li>
-<li><p>Body</p>
-<pre><code>{
-    &quot;username&quot;: &quot;bob&quot;,
-    &quot;password&quot;: &quot;123456&quot;
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 200 (application/json)</p>
-<ul>
-<li><p>Body</p>
-<pre><code>{ 
-    &quot;uid&quot;: &quot;akkdlfeiow&quot;, 
-    &quot;token&quot;: &quot;akdlfkad&quot;,
-    &quot;expire_at&quot;: 13894002020
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --request POST \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-     --data-binary &quot;{
-    \&quot;username\&quot;: \&quot;bob\&quot;,
-    \&quot;password\&quot;: \&quot;123456\&quot;
-}&quot; \
-&apos;http://api.gizwits.com/app/login&apos;
-</code></pre></li>
-</ul>
-<h1 id="验证码与密码重置"><a href="#验证码与密码重置" class="headerlink" title="验证码与密码重置"></a>验证码与密码重置</h1><h2 id="图片验证码-app-verify-codes"><a href="#图片验证码-app-verify-codes" class="headerlink" title="图片验证码 [/app/verify/codes]"></a>图片验证码 [/app/verify/codes]</h2><h3 id="获取图片验证码-GET"><a href="#获取图片验证码-GET" class="headerlink" title="获取图片验证码 [GET]"></a>获取图片验证码 [GET]</h3><ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-X-Gizwits-Application-Token: {token}
-</code></pre></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>Response 200 (application/json)</p>
-<ul>
-<li><p>Body</p>
-<pre><code>{
-    &quot;captcha_url&quot;: &quot;http://xxxxx&quot;,
-    &quot;captcha_id&quot;: &quot;XXXXXXXxxxxxxx&quot;,
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-     --header &quot;X-Gizwits-Application-Token: {token}&quot; \
-  &apos;http://api.gizwits.com/app/verify/codes&apos;
-</code></pre></li>
-</ul>
-<h3 id="发送手机短信验证码-POST"><a href="#发送手机短信验证码-POST" class="headerlink" title="发送手机短信验证码 [POST]"></a>发送手机短信验证码 [POST]</h3><ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-X-Gizwits-Application-Token: {token}
-</code></pre></li>
-<li><p>Body</p>
-<pre><code>{
-    &quot;captcha_id&quot;: &quot;XXXXXXXxxxxxxx&quot;,
-    &quot;captcha_code&quot;: &quot;123123&quot;,
-    &quot;phone&quot;: &quot;123123123&quot;
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 201 (application/json)</p>
-</li>
-<li><p>请求示例</p>
-<pre><code>Try curl --include \
-     --request POST \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-     --header &quot;X-Gizwits-Application-Token: {token}&quot; \
-     --data-binary &quot;{
-    \&quot;captcha_id\&quot;: \&quot;XXXXXXXxxxxxxx\&quot;,
-    \&quot;captcha_code\&quot;: \&quot;123123\&quot;,
-    \&quot;phone\&quot;: \&quot;123123123\&quot;
-}&quot; \
-&apos;http://api.gizwits.com/app/verify/codes&apos;
-</code></pre></li>
-</ul>
-<h3 id="校验短信验证码-PUT"><a href="#校验短信验证码-PUT" class="headerlink" title="校验短信验证码 [PUT]"></a>校验短信验证码 [PUT]</h3><ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-X-Gizwits-Application-Token: {token}
-</code></pre></li>
-<li><p>Body</p>
-<pre><code>{
-    &quot;sms_code&quot;: &quot;123xx&quot;,
-    &quot;phone&quot;: &quot;123123123&quot;
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 200 (application/json)</p>
-</li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --request PUT \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-     --header &quot;X-Gizwits-Application-Token: {token}&quot; \
-     --data-binary &quot;{
-    \&quot;sms_code\&quot;: \&quot;123xx\&quot;,
-    \&quot;phone\&quot;: \&quot;123123123\&quot;
-}&quot; \
-&apos;http://api.gizwits.com/app/verify/codes&apos;
-</code></pre></li>
-</ul>
+<h3 id="应答报文-10"><a href="#应答报文-10" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"updatedAt"</span>: <span class="string">"2011-11-07T21:25:10.623Z"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="用户登录"><a href="#用户登录" class="headerlink" title="用户登录"></a>用户登录</h2><p>可以使用用户名/邮箱/手机号登录，一律填写到 username 字段。</p>
+<h3 id="接口地址-9"><a href="#接口地址-9" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>api.gizwits.com/app/login
+</code></pre><h3 id="请求方式-9"><a href="#请求方式-9" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求报文-11"><a href="#请求报文-11" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">X-Gizwits-Application-Id</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">username</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">用户名</td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">密码</td>
+</tr>
+</tbody>
+</table>
+<h3 id="应答报文-11"><a href="#应答报文-11" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">                <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">                <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">                <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="验证码与密码重置"><a href="#验证码与密码重置" class="headerlink" title="验证码与密码重置"></a>验证码与密码重置</h1><h2 id="验证码-app-verify-codes"><a href="#验证码-app-verify-codes" class="headerlink" title="验证码 [/app/verify/codes]"></a>验证码 [/app/verify/codes]</h2><h3 id="业务功能描述-6"><a href="#业务功能描述-6" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供获取图片验证码和发送手机短信验证码</p>
+<h3 id="请求方式-10"><a href="#请求方式-10" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求内容"><a href="#请求内容" class="headerlink" title="请求内容"></a>请求内容</h3><p>获取图片验证码</p>
+<h3 id="请求报文-12"><a href="#请求报文-12" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">X-Gizwits-Application-Id</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">X-Gizwits-User-token</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">captcha_url</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">captcha_id</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+</tr>
+</tbody>
+</table>
+<h3 id="应答报文-12"><a href="#应答报文-12" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 201</p>
+<h3 id="请求内容-1"><a href="#请求内容-1" class="headerlink" title="请求内容"></a>请求内容</h3><p>发送手机短信验证码</p>
+<h3 id="请求报文-13"><a href="#请求报文-13" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">X-Gizwits-Application-Id</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">X-Gizwits-User-token</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">captcha_url</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">captcha_id</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">phone</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+</tr>
+</tbody>
+</table>
+<h3 id="应答报文-13"><a href="#应答报文-13" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 201</p>
+<h3 id="校验短信验证码"><a href="#校验短信验证码" class="headerlink" title="校验短信验证码"></a>校验短信验证码</h3><h3 id="业务功能描述-7"><a href="#业务功能描述-7" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供获取图片验证码和发送手机短信验证码</p>
+<h3 id="请求方式-11"><a href="#请求方式-11" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
+</code></pre><h3 id="请求报文-14"><a href="#请求报文-14" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">X-Gizwits-Application-Id</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">X-Gizwits-User-token</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">sms_code</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">phone</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+</tr>
+</tbody>
+</table>
+<h3 id="应答报文-14"><a href="#应答报文-14" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 200</p>
 <h2 id="重置密码-app-reset-password"><a href="#重置密码-app-reset-password" class="headerlink" title="重置密码 [/app/reset_password]"></a>重置密码 [/app/reset_password]</h2><h3 id="使用邮箱重置密码-POST"><a href="#使用邮箱重置密码-POST" class="headerlink" title="使用邮箱重置密码 [POST]"></a>使用邮箱重置密码 [POST]</h3><p>请求成功后用户会收到一封重置密码的邮件, 用户根据邮件的链接进行密码重置。</p>
 <ul>
 <li><p>Request (application/json)</p>
