@@ -284,7 +284,7 @@
 <h1 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h1><ul>
 <li>python sdk: <a href="https://github.com/gizwits/gservice_sdk_py" target="_blank" rel="external">https://github.com/gizwits/gservice_sdk_py</a></li>
 </ul>
-<h1 id="用户信息-app-users"><a href="#用户信息-app-users" class="headerlink" title="用户信息 [/app/users]"></a>用户信息 [/app/users]</h1><h2 id="创建匿名用户-POST"><a href="#创建匿名用户-POST" class="headerlink" title="创建匿名用户 [POST]"></a>创建匿名用户 [POST]</h2><p>如果您想让您的用户不需要显示注册和登录就能使用机智云的功能，就可以通过匿名注册的方式来为该用户创建一个匿名用户。phone_id 可以是手机的唯一识别码。</p>
+<h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><h2 id="用户信息-app-users"><a href="#用户信息-app-users" class="headerlink" title="用户信息 [/app/users]"></a>用户信息 [/app/users]</h2><h3 id="创建匿名用户-POST"><a href="#创建匿名用户-POST" class="headerlink" title="创建匿名用户 [POST]"></a>创建匿名用户 [POST]</h3><p>如果您想让您的用户不需要显示注册和登录就能使用机智云的功能，就可以通过匿名注册的方式来为该用户创建一个匿名用户。phone_id 可以是手机的唯一识别码。</p>
 <p>或者您已经有了自己的用户系统，不希望用户再次注册一次机智云帐号，您也可以使用该接口，为您的每一个用户创建一个对应的机智云匿名帐号。这时，phone_id 可以是用户在您的系统中的唯一识别码。如在与微信应用做对接时，phone_id 可以设置成微信用户的 openid。</p>
 <ul>
 <li><p>Request (application/json)</p>
@@ -323,7 +323,7 @@
 &apos;http://api.gizwits.com/app/users&apos;
 </code></pre></li>
 </ul>
-<h2 id="使用用户名和密码创建用户-POST"><a href="#使用用户名和密码创建用户-POST" class="headerlink" title="使用用户名和密码创建用户 [POST]"></a>使用用户名和密码创建用户 [POST]</h2><ul>
+<h3 id="使用用户名和密码创建用户-POST"><a href="#使用用户名和密码创建用户-POST" class="headerlink" title="使用用户名和密码创建用户 [POST]"></a>使用用户名和密码创建用户 [POST]</h3><ul>
 <li><p>Request (application/json)</p>
 <ul>
 <li><p>Header</p>
@@ -360,7 +360,7 @@
 &apos;http://api.gizwits.com/app/users&apos;
 </code></pre></li>
 </ul>
-<h2 id="使用邮箱创建用户-POST"><a href="#使用邮箱创建用户-POST" class="headerlink" title="使用邮箱创建用户 [POST]"></a>使用邮箱创建用户 [POST]</h2><p>用户通过邮箱注册机智云帐号，注册成功后会收到一封邮件通知。</p>
+<h3 id="使用邮箱创建用户-POST"><a href="#使用邮箱创建用户-POST" class="headerlink" title="使用邮箱创建用户 [POST]"></a>使用邮箱创建用户 [POST]</h3><p>用户通过邮箱注册机智云帐号，注册成功后会收到一封邮件通知。</p>
 <ul>
 <li><p>Request (application/json)</p>
 <ul>
@@ -398,7 +398,7 @@
 &apos;http://api.gizwits.com/app/users&apos;
 </code></pre></li>
 </ul>
-<h2 id="使用手机号创建用户-POST"><a href="#使用手机号创建用户-POST" class="headerlink" title="使用手机号创建用户 [POST]"></a>使用手机号创建用户 [POST]</h2><p>如果希望用户使用手机号注册机智云帐号，机智云提供短信验证码接口，您需要先调用获取验证码接口获取验证码，然后再进行注册。</p>
+<h3 id="使用手机号创建用户-POST"><a href="#使用手机号创建用户-POST" class="headerlink" title="使用手机号创建用户 [POST]"></a>使用手机号创建用户 [POST]</h3><p>如果希望用户使用手机号注册机智云帐号，机智云提供短信验证码接口，您需要先调用获取验证码接口获取验证码，然后再进行注册。</p>
 <ul>
 <li><p>Request (application/json)</p>
 <ul>
@@ -438,7 +438,7 @@
 &apos;http://api.gizwits.com/app/users&apos;
 </code></pre></li>
 </ul>
-<h2 id="使用第三方账号（百度-新浪-QQ）创建用户-POST"><a href="#使用第三方账号（百度-新浪-QQ）创建用户-POST" class="headerlink" title="使用第三方账号（百度/新浪/QQ）创建用户 [POST]"></a>使用第三方账号（百度/新浪/QQ）创建用户 [POST]</h2><p>机智云目前支持使用百度、新浪和QQ创建用户，但是需要您在客户端实现 OAuth 授权，获得用户的 uid 和 token，机智云会验证 uid 和 token 的合法性，验证通过就会创建一个机智云帐号。</p>
+<h3 id="使用第三方账号（百度-新浪-QQ）创建用户-POST"><a href="#使用第三方账号（百度-新浪-QQ）创建用户-POST" class="headerlink" title="使用第三方账号（百度/新浪/QQ）创建用户 [POST]"></a>使用第三方账号（百度/新浪/QQ）创建用户 [POST]</h3><p>机智云目前支持使用百度、新浪和QQ创建用户，但是需要您在客户端实现 OAuth 授权，获得用户的 uid 和 token，机智云会验证 uid 和 token 的合法性，验证通过就会创建一个机智云帐号。</p>
 <h2 id="关于-QQ-登录"><a href="#关于-QQ-登录" class="headerlink" title="关于 QQ 登录"></a>关于 QQ 登录</h2><p>使用 QQ 登录，需要提供您的机智云 APP ID 和 QQ 应用 APP ID 发送给我们的客服，我们客服将会在后台将二者进行关联。</p>
 <p>手机客户端使用 QQ SDK 获取到用户的 openid 和 access_token，将 openid 和 access_token 作为 uid 和 token POST 到该接口:</p>
 <pre><code>{
@@ -491,7 +491,7 @@
 &apos;http://api.gizwits.com/app/users&apos;
 </code></pre></li>
 </ul>
-<h2 id="匿名用户设置用户名和密码-PUT"><a href="#匿名用户设置用户名和密码-PUT" class="headerlink" title="匿名用户设置用户名和密码 [PUT]"></a>匿名用户设置用户名和密码 [PUT]</h2><p>假设您的机智云应用帮用户创建了一个匿名用户，他不需要注册就可以体验您的应用，并且绑定了设备，他体验满意之后，希望有一个自己的机智云帐号，但是又不想重复绑定设备。这时您可以调用该接口，为匿名用户设置用户名和密码，这样他就不再是一个匿名用户了。</p>
+<h3 id="匿名用户设置用户名和密码-PUT"><a href="#匿名用户设置用户名和密码-PUT" class="headerlink" title="匿名用户设置用户名和密码 [PUT]"></a>匿名用户设置用户名和密码 [PUT]</h3><p>假设您的机智云应用帮用户创建了一个匿名用户，他不需要注册就可以体验您的应用，并且绑定了设备，他体验满意之后，希望有一个自己的机智云帐号，但是又不想重复绑定设备。这时您可以调用该接口，为匿名用户设置用户名和密码，这样他就不再是一个匿名用户了。</p>
 <ul>
 <li><p>Request (application/json)</p>
 <ul>
@@ -529,7 +529,7 @@ X-Gizwits-User-token: {token}
 &apos;http://api.gizwits.com/app/users&apos;
 </code></pre></li>
 </ul>
-<h2 id="匿名用户设置手机号和密码-PUT"><a href="#匿名用户设置手机号和密码-PUT" class="headerlink" title="匿名用户设置手机号和密码 [PUT]"></a>匿名用户设置手机号和密码 [PUT]</h2><p>与匿名用户设置用户名和密码类似，该接口可以为匿名用户设置手机号和密码，但是需要先调用一次获取短信验证码的接口。</p>
+<h3 id="匿名用户设置手机号和密码-PUT"><a href="#匿名用户设置手机号和密码-PUT" class="headerlink" title="匿名用户设置手机号和密码 [PUT]"></a>匿名用户设置手机号和密码 [PUT]</h3><p>与匿名用户设置用户名和密码类似，该接口可以为匿名用户设置手机号和密码，但是需要先调用一次获取短信验证码的接口。</p>
 <ul>
 <li><p>Request (application/json)</p>
 <ul>
@@ -569,7 +569,7 @@ X-Gizwits-User-token: {token}
 &apos;http://api.gizwits.com/app/users&apos;
 </code></pre></li>
 </ul>
-<h2 id="修改密码-PUT"><a href="#修改密码-PUT" class="headerlink" title="修改密码 [PUT]"></a>修改密码 [PUT]</h2><ul>
+<h3 id="修改密码-PUT"><a href="#修改密码-PUT" class="headerlink" title="修改密码 [PUT]"></a>修改密码 [PUT]</h3><ul>
 <li><p>Request (application/json)</p>
 <ul>
 <li><p>Header</p>
@@ -606,7 +606,7 @@ X-Gizwits-User-token: {token}
 &apos;http://api.gizwits.com/app/users&apos;
 </code></pre></li>
 </ul>
-<h2 id="修改-email-PUT"><a href="#修改-email-PUT" class="headerlink" title="修改 email [PUT]"></a>修改 email [PUT]</h2><ul>
+<h3 id="修改-email-PUT"><a href="#修改-email-PUT" class="headerlink" title="修改 email [PUT]"></a>修改 email [PUT]</h3><ul>
 <li><p>Request (application/json)</p>
 <ul>
 <li><p>Header</p>
@@ -641,7 +641,7 @@ X-Gizwits-User-token: {token}
 &apos;http://api.gizwits.com/app/users&apos;
 </code></pre></li>
 </ul>
-<h2 id="修改手机号-PUT"><a href="#修改手机号-PUT" class="headerlink" title="修改手机号 [PUT]"></a>修改手机号 [PUT]</h2><p>修改手机号需要先调用一次获取短信验证码的接口，给新手机号发送一条短信验证码。</p>
+<h3 id="修改手机号-PUT"><a href="#修改手机号-PUT" class="headerlink" title="修改手机号 [PUT]"></a>修改手机号 [PUT]</h3><p>修改手机号需要先调用一次获取短信验证码的接口，给新手机号发送一条短信验证码。</p>
 <ul>
 <li><p>Request (application/json)</p>
 <ul>
@@ -679,8 +679,8 @@ X-Gizwits-User-token: {token}
 &apos;http://api.gizwits.com/app/users&apos;
 </code></pre></li>
 </ul>
-<h1 id="用户登录-app-login"><a href="#用户登录-app-login" class="headerlink" title="用户登录 [/app/login]"></a>用户登录 [/app/login]</h1><p>可以使用用户名/邮箱/手机号登录，一律填写到 username 字段。</p>
-<h2 id="用户登录-POST"><a href="#用户登录-POST" class="headerlink" title="用户登录 [POST]"></a>用户登录 [POST]</h2><ul>
+<h2 id="用户登录-app-login"><a href="#用户登录-app-login" class="headerlink" title="用户登录 [/app/login]"></a>用户登录 [/app/login]</h2><p>可以使用用户名/邮箱/手机号登录，一律填写到 username 字段。</p>
+<h3 id="用户登录-POST"><a href="#用户登录-POST" class="headerlink" title="用户登录 [POST]"></a>用户登录 [POST]</h3><ul>
 <li><p>Request (application/json)</p>
 <ul>
 <li><p>Header</p>
@@ -752,7 +752,7 @@ X-Gizwits-Application-Auth: {signature}
   &apos;https://api.gizwits.com/app/request_token&apos;
 </code></pre></li>
 </ul>
-<h1 id="图片验证码-app-verify-codes"><a href="#图片验证码-app-verify-codes" class="headerlink" title="图片验证码 [/app/verify/codes]"></a>图片验证码 [/app/verify/codes]</h1><h2 id="获取图片验证码-GET"><a href="#获取图片验证码-GET" class="headerlink" title="获取图片验证码 [GET]"></a>获取图片验证码 [GET]</h2><ul>
+<h1 id="验证码与密码重置"><a href="#验证码与密码重置" class="headerlink" title="验证码与密码重置"></a>验证码与密码重置</h1><h2 id="图片验证码-app-verify-codes"><a href="#图片验证码-app-verify-codes" class="headerlink" title="图片验证码 [/app/verify/codes]"></a>图片验证码 [/app/verify/codes]</h2><h3 id="获取图片验证码-GET"><a href="#获取图片验证码-GET" class="headerlink" title="获取图片验证码 [GET]"></a>获取图片验证码 [GET]</h3><ul>
 <li><p>Request (application/json)</p>
 <ul>
 <li><p>Header</p>
@@ -781,7 +781,7 @@ X-Gizwits-Application-Token: {token}
   &apos;http://api.gizwits.com/app/verify/codes&apos;
 </code></pre></li>
 </ul>
-<h2 id="发送手机短信验证码-POST"><a href="#发送手机短信验证码-POST" class="headerlink" title="发送手机短信验证码 [POST]"></a>发送手机短信验证码 [POST]</h2><ul>
+<h3 id="发送手机短信验证码-POST"><a href="#发送手机短信验证码-POST" class="headerlink" title="发送手机短信验证码 [POST]"></a>发送手机短信验证码 [POST]</h3><ul>
 <li><p>Request (application/json)</p>
 <ul>
 <li><p>Header</p>
@@ -813,7 +813,7 @@ X-Gizwits-Application-Token: {token}
 &apos;http://api.gizwits.com/app/verify/codes&apos;
 </code></pre></li>
 </ul>
-<h2 id="校验短信验证码-PUT"><a href="#校验短信验证码-PUT" class="headerlink" title="校验短信验证码 [PUT]"></a>校验短信验证码 [PUT]</h2><ul>
+<h3 id="校验短信验证码-PUT"><a href="#校验短信验证码-PUT" class="headerlink" title="校验短信验证码 [PUT]"></a>校验短信验证码 [PUT]</h3><ul>
 <li><p>Request (application/json)</p>
 <ul>
 <li><p>Header</p>
@@ -843,7 +843,7 @@ X-Gizwits-Application-Token: {token}
 &apos;http://api.gizwits.com/app/verify/codes&apos;
 </code></pre></li>
 </ul>
-<h1 id="重置密码-app-reset-password"><a href="#重置密码-app-reset-password" class="headerlink" title="重置密码 [/app/reset_password]"></a>重置密码 [/app/reset_password]</h1><h2 id="使用邮箱重置密码-POST"><a href="#使用邮箱重置密码-POST" class="headerlink" title="使用邮箱重置密码 [POST]"></a>使用邮箱重置密码 [POST]</h2><p>请求成功后用户会收到一封重置密码的邮件, 用户根据邮件的链接进行密码重置。</p>
+<h2 id="重置密码-app-reset-password"><a href="#重置密码-app-reset-password" class="headerlink" title="重置密码 [/app/reset_password]"></a>重置密码 [/app/reset_password]</h2><h3 id="使用邮箱重置密码-POST"><a href="#使用邮箱重置密码-POST" class="headerlink" title="使用邮箱重置密码 [POST]"></a>使用邮箱重置密码 [POST]</h3><p>请求成功后用户会收到一封重置密码的邮件, 用户根据邮件的链接进行密码重置。</p>
 <ul>
 <li><p>Request (application/json)</p>
 <ul>
@@ -870,7 +870,7 @@ X-Gizwits-Application-Token: {token}
 &apos;http://api.gizwits.com/app/reset_password&apos;
 </code></pre></li>
 </ul>
-<h2 id="使用手机号重置密码-POST"><a href="#使用手机号重置密码-POST" class="headerlink" title="使用手机号重置密码 [POST]"></a>使用手机号重置密码 [POST]</h2><p>使用手机号重置密码需要先调用一次获取短信验证码的接口。</p>
+<h3 id="使用手机号重置密码-POST"><a href="#使用手机号重置密码-POST" class="headerlink" title="使用手机号重置密码 [POST]"></a>使用手机号重置密码 [POST]</h3><p>使用手机号重置密码需要先调用一次获取短信验证码的接口。</p>
 <ul>
 <li><p>Request (application/json)</p>
 <ul>
@@ -901,42 +901,7 @@ X-Gizwits-Application-Token: {token}
 &apos;http://api.gizwits.com/app/reset_password&apos;
 </code></pre></li>
 </ul>
-<h1 id="获取设备最近上传数据-app-devdata-did-latest"><a href="#获取设备最近上传数据-app-devdata-did-latest" class="headerlink" title="获取设备最近上传数据 [/app/devdata/{did}/latest]"></a>获取设备最近上传数据 [/app/devdata/{did}/latest]</h1><h2 id="获取设备最近上传数据点-GET"><a href="#获取设备最近上传数据点-GET" class="headerlink" title="获取设备最近上传数据点 [GET]"></a>获取设备最近上传数据点 [GET]</h2><p>获取设备最近一次上传的数据，包含所有数据点的键值对。</p>
-<ul>
-<li><p>参数列表</p>
-<ul>
-<li>did (required, string, <code>gdGn7PzAYf4VrhnVag5x8D</code>)</li>
-</ul>
-</li>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 200 (application/json)</p>
-<ul>
-<li><p>Body</p>
-<pre><code>{
-    &quot;did&quot;: &quot;gdGn7PzAYf4VrhnVag5x8D&quot;,
-    &quot;updated_at&quot;: 148293984328,
-    &quot;attr&quot;: {
-      &quot;temp&quot;: 10,
-      &quot;humi&quot;: 20
-    }
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-  &apos;http://api.gizwits.com/app/devdata/gdGn7PzAYf4VrhnVag5x8D/latest&apos;
-</code></pre></li>
-</ul>
-<h1 id="绑定设备-app-bind-mac"><a href="#绑定设备-app-bind-mac" class="headerlink" title="绑定设备 [/app/bind_mac]"></a>绑定设备 [/app/bind_mac]</h1><h2 id="绑定设备-POST"><a href="#绑定设备-POST" class="headerlink" title="绑定设备 [POST]"></a>绑定设备 [POST]</h2><p>X-Gizwits-Timestamp 与服务器相差不能超过 5 分钟<br>X-Gizwits-Signature = MD5(product_secret + X-Gizwits-Timestamp).lower()</p>
+<h1 id="绑定管理"><a href="#绑定管理" class="headerlink" title="绑定管理"></a>绑定管理</h1><h2 id="绑定设备-app-bind-mac"><a href="#绑定设备-app-bind-mac" class="headerlink" title="绑定设备 [/app/bind_mac]"></a>绑定设备 [/app/bind_mac]</h2><h3 id="绑定设备-POST"><a href="#绑定设备-POST" class="headerlink" title="绑定设备 [POST]"></a>绑定设备 [POST]</h3><p>X-Gizwits-Timestamp 与服务器相差不能超过 5 分钟<br>X-Gizwits-Signature = MD5(product_secret + X-Gizwits-Timestamp).lower()</p>
 <ul>
 <li><p>Request (application/json)</p>
 <ul>
@@ -977,7 +942,7 @@ X-Gizwits-Signature: {sig}
 &apos;http://api.gizwits.com/app/bind_mac&apos;
 </code></pre></li>
 </ul>
-<h1 id="绑定关系-app-bindings"><a href="#绑定关系-app-bindings" class="headerlink" title="绑定关系 [/app/bindings]"></a>绑定关系 [/app/bindings]</h1><h2 id="获取绑定列表-GET"><a href="#获取绑定列表-GET" class="headerlink" title="获取绑定列表 [GET]"></a>获取绑定列表 [GET]</h2><ul>
+<h2 id="绑定关系-app-bindings"><a href="#绑定关系-app-bindings" class="headerlink" title="绑定关系 [/app/bindings]"></a>绑定关系 [/app/bindings]</h2><h3 id="获取绑定列表-GET"><a href="#获取绑定列表-GET" class="headerlink" title="获取绑定列表 [GET]"></a>获取绑定列表 [GET]</h3><ul>
 <li>参数列表<ul>
 <li>limit (optional, number, <code>20</code>)</li>
 <li>skip (optional, number, <code>0</code>)</li>
@@ -1036,7 +1001,7 @@ X-Gizwits-User-token: {token}
   &apos;http://api.gizwits.com/app/bindings?show_disabled=1&amp;limit=20&amp;skip=0&apos;
 </code></pre></li>
 </ul>
-<h2 id="绑定设备-通过-did-passcode-POST"><a href="#绑定设备-通过-did-passcode-POST" class="headerlink" title="绑定设备: 通过 did + passcode [POST]"></a>绑定设备: 通过 did + passcode [POST]</h2><p>使用该接口适合知道 did 和 passcode 的情况。</p>
+<h3 id="绑定设备-通过-did-passcode-POST"><a href="#绑定设备-通过-did-passcode-POST" class="headerlink" title="绑定设备: 通过 did + passcode [POST]"></a>绑定设备: 通过 did + passcode [POST]</h3><p>使用该接口适合知道 did 和 passcode 的情况。</p>
 <p>dev_alias 设备别名，用于当前用户对该设备起一个别名，仅该用户可见。<br>remark 用于设置备注信息。</p>
 <ul>
 <li><p>Request (application/json)</p>
@@ -1080,7 +1045,7 @@ X-Gizwits-User-token: {token}
 &apos;http://api.gizwits.com/app/bindings&apos;
 </code></pre></li>
 </ul>
-<h2 id="解除绑定-DELETE"><a href="#解除绑定-DELETE" class="headerlink" title="解除绑定 [DELETE]"></a>解除绑定 [DELETE]</h2><ul>
+<h3 id="解除绑定-DELETE"><a href="#解除绑定-DELETE" class="headerlink" title="解除绑定 [DELETE]"></a>解除绑定 [DELETE]</h3><ul>
 <li><p>Request (application/json)</p>
 <ul>
 <li><p>Header</p>
@@ -1116,14 +1081,49 @@ X-Gizwits-User-token: {token}
 &apos;http://api.gizwits.com/app/bindings&apos;
 </code></pre></li>
 </ul>
-<h1 id="远程控制设备-app-control-did"><a href="#远程控制设备-app-control-did" class="headerlink" title="远程控制设备 [/app/control/{did}]"></a>远程控制设备 [/app/control/{did}]</h1><p>远程控制设备可以通过两种方式，一种是设置数据点，一种是发送原始控制指令。<br>推荐使用设置数据点的方式，通过这种方式控制设备，系统内部自动会生成原始控制指令发送给设备，使用起来更简单。</p>
+<h1 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h1><h2 id="获取设备最近上传数据-app-devdata-did-latest"><a href="#获取设备最近上传数据-app-devdata-did-latest" class="headerlink" title="获取设备最近上传数据 [/app/devdata/{did}/latest]"></a>获取设备最近上传数据 [/app/devdata/{did}/latest]</h2><h3 id="获取设备最近上传数据点-GET"><a href="#获取设备最近上传数据点-GET" class="headerlink" title="获取设备最近上传数据点 [GET]"></a>获取设备最近上传数据点 [GET]</h3><p>获取设备最近一次上传的数据，包含所有数据点的键值对。</p>
+<ul>
+<li><p>参数列表</p>
+<ul>
+<li>did (required, string, <code>gdGn7PzAYf4VrhnVag5x8D</code>)</li>
+</ul>
+</li>
+<li><p>Request (application/json)</p>
+<ul>
+<li><p>Header</p>
+<pre><code>X-Gizwits-Application-Id: {appid}
+</code></pre></li>
+</ul>
+</li>
+<li><p>Response 200 (application/json)</p>
+<ul>
+<li><p>Body</p>
+<pre><code>{
+    &quot;did&quot;: &quot;gdGn7PzAYf4VrhnVag5x8D&quot;,
+    &quot;updated_at&quot;: 148293984328,
+    &quot;attr&quot;: {
+      &quot;temp&quot;: 10,
+      &quot;humi&quot;: 20
+    }
+}
+</code></pre></li>
+</ul>
+</li>
+<li><p>请求示例</p>
+<pre><code>curl --include \
+     --header &quot;Content-Type: application/json&quot; \
+     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
+  &apos;http://api.gizwits.com/app/devdata/gdGn7PzAYf4VrhnVag5x8D/latest&apos;
+</code></pre></li>
+</ul>
+<h2 id="远程控制设备-app-control-did"><a href="#远程控制设备-app-control-did" class="headerlink" title="远程控制设备 [/app/control/{did}]"></a>远程控制设备 [/app/control/{did}]</h2><p>远程控制设备可以通过两种方式，一种是设置数据点，一种是发送原始控制指令。<br>推荐使用设置数据点的方式，通过这种方式控制设备，系统内部自动会生成原始控制指令发送给设备，使用起来更简单。</p>
 <ul>
 <li>参数列表<ul>
 <li>did (required, string, <code>did</code>)</li>
 </ul>
 </li>
 </ul>
-<h2 id="设置数据点-POST"><a href="#设置数据点-POST" class="headerlink" title="设置数据点 [POST]"></a>设置数据点 [POST]</h2><ul>
+<h3 id="设置数据点-POST"><a href="#设置数据点-POST" class="headerlink" title="设置数据点 [POST]"></a>设置数据点 [POST]</h3><ul>
 <li>只能设置可写类型的数据点</li>
 <li>bool 类型的数据点设置为 true/false</li>
 <li>enum 类型的数据点设置为枚举的字符串</li>
@@ -1190,7 +1190,7 @@ X-Gizwits-User-token: {token}
 &apos;http://api.gizwits.com/app/control/did&apos;
 </code></pre></li>
 </ul>
-<h2 id="发送原始控制指令-POST"><a href="#发送原始控制指令-POST" class="headerlink" title="发送原始控制指令 [POST]"></a>发送原始控制指令 [POST]</h2><ul>
+<h3 id="发送原始控制指令-POST"><a href="#发送原始控制指令-POST" class="headerlink" title="发送原始控制指令 [POST]"></a>发送原始控制指令 [POST]</h3><ul>
 <li><p>Request (application/json)</p>
 <ul>
 <li><p>Header</p>
@@ -1223,7 +1223,7 @@ X-Gizwits-User-token: {token}
 &apos;http://api.gizwits.com/app/control/did&apos;
 </code></pre></li>
 </ul>
-<h1 id="定时任务-app-scheduler-limit-skip"><a href="#定时任务-app-scheduler-limit-skip" class="headerlink" title="定时任务 [/app/scheduler{?limit,skip}]"></a>定时任务 [/app/scheduler{?limit,skip}]</h1><p>定时任务分为一次性定时任务和可重复执行定时任务。一次性定时任务在设定好的日期和时间执行；可重复执行定时任务可以设置按星期重复，如每周一执行，工作日执行等，在重复的星期的设定时间执行。</p>
+<h1 id="定时管理"><a href="#定时管理" class="headerlink" title="定时管理"></a>定时管理</h1><h2 id="定时任务-app-scheduler-limit-skip"><a href="#定时任务-app-scheduler-limit-skip" class="headerlink" title="定时任务 [/app/scheduler{?limit,skip}]"></a>定时任务 [/app/scheduler{?limit,skip}]</h2><p>定时任务分为一次性定时任务和可重复执行定时任务。一次性定时任务在设定好的日期和时间执行；可重复执行定时任务可以设置按星期重复，如每周一执行，工作日执行等，在重复的星期的设定时间执行。</p>
 <p>执行日期通过 date 参数进行设置，格式为：”2015-01-01”。</p>
 <p>执行时间通过 time 参数进行设置，格式为：”10:10”, <em>注意：该时间为 UTC 时间！</em></p>
 <p>重复类型通过 repeat 参数进行设置，不重复设置为 “none”；重复设置为 “mon”, “tue”, “wed”, “thu”, “fri”, “sat”, “sun” 的组合，组合之间用逗号分隔，如每周一和周二重复为 “mon,tue”。</p>
@@ -1239,7 +1239,7 @@ X-Gizwits-User-token: {token}
 </code></pre><p>对于执行失败的定时任务，可以设置重复次数和重复策略。重复次数的范围为 0 ～ 60 次。置重复策略分为全部重试和部分重试。全部重试，将在重试的时候发送所有设定的控制指令；部分重试，只对还未发送成功指令进行发送。</p>
 <p>重复次数通过 retry_count 来设置。</p>
 <p>重复策略通过 retry_task 来设置，全部重试为 “all”，部分重试为 “failed”。</p>
-<h2 id="创建定时任务-POST"><a href="#创建定时任务-POST" class="headerlink" title="创建定时任务 [POST]"></a>创建定时任务 [POST]</h2><ul>
+<h3 id="创建定时任务-POST"><a href="#创建定时任务-POST" class="headerlink" title="创建定时任务 [POST]"></a>创建定时任务 [POST]</h3><ul>
 <li><p>Request (application/json)</p>
 <ul>
 <li><p>Header</p>
@@ -1285,7 +1285,7 @@ X-Gizwits-User-token: {token}
 </ul>
 </li>
 </ul>
-<h2 id="获取定时任务-GET"><a href="#获取定时任务-GET" class="headerlink" title="获取定时任务 [GET]"></a>获取定时任务 [GET]</h2><ul>
+<h3 id="获取定时任务-GET"><a href="#获取定时任务-GET" class="headerlink" title="获取定时任务 [GET]"></a>获取定时任务 [GET]</h3><ul>
 <li><p>参数列表</p>
 <ul>
 <li>limit (optional, number, <code>20</code>)</li>
@@ -1363,13 +1363,13 @@ X-Gizwits-User-token: {token}
 </ul>
 </li>
 </ul>
-<h1 id="删除定时任务-app-scheduler-id"><a href="#删除定时任务-app-scheduler-id" class="headerlink" title="删除定时任务 [/app/scheduler/{id}]"></a>删除定时任务 [/app/scheduler/{id}]</h1><ul>
+<h2 id="删除定时任务-app-scheduler-id"><a href="#删除定时任务-app-scheduler-id" class="headerlink" title="删除定时任务 [/app/scheduler/{id}]"></a>删除定时任务 [/app/scheduler/{id}]</h2><ul>
 <li>参数列表<ul>
 <li>id (required, string, <code>sid1</code>)</li>
 </ul>
 </li>
 </ul>
-<h2 id="删除定时任务-DELETE"><a href="#删除定时任务-DELETE" class="headerlink" title="删除定时任务 [DELETE]"></a>删除定时任务 [DELETE]</h2><ul>
+<h3 id="删除定时任务-DELETE"><a href="#删除定时任务-DELETE" class="headerlink" title="删除定时任务 [DELETE]"></a>删除定时任务 [DELETE]</h3><ul>
 <li><p>Request (application/text)</p>
 <ul>
 <li><p>Header</p>
