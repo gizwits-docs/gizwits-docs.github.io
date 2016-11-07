@@ -288,6 +288,44 @@
 <h1 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h1><ul>
 <li>python sdk: <a href="https://github.com/gizwits/gservice_sdk_py" target="_blank" rel="external">https://github.com/gizwits/gservice_sdk_py</a></li>
 </ul>
+<h1 id="HTTP请求头部"><a href="#HTTP请求头部" class="headerlink" title="HTTP请求头部"></a>HTTP请求头部</h1><h2 id="X-Gizwits-Application-Id"><a href="#X-Gizwits-Application-Id" class="headerlink" title="X-Gizwits-Application-Id"></a>X-Gizwits-Application-Id</h2><p>所有接口都需要设置该头部, 该头部信息的值通过在开发者中心的应用管理中创建应用获得</p>
+<h2 id="X-Gizwits-User-token"><a href="#X-Gizwits-User-token" class="headerlink" title="X-Gizwits-User-token"></a>X-Gizwits-User-token</h2><p>App用户token值， 生存周期为1个星期有效，调用获取token接口返回的expired_at为失效日期时间戳。若现在时间戳 &gt; expired_at时间戳，则需要重新获取token, 获取token接口请见“App用户token申请”</p>
+<h1 id="App用户token申请"><a href="#App用户token申请" class="headerlink" title="App用户token申请"></a>App用户token申请</h1><p>该接口提供获取App用户接口访问权限的功能</p>
+<h2 id="获取-App-Token-app-request-token"><a href="#获取-App-Token-app-request-token" class="headerlink" title="获取 App Token [/app/request_token]"></a>获取 App Token [/app/request_token]</h2><h3 id="获取-App-Token-POST"><a href="#获取-App-Token-POST" class="headerlink" title="获取 App Token [POST]"></a>获取 App Token [POST]</h3><ul>
+<li>请使用 <em>https</em> 调用本接口</li>
+<li>signature 的算法: signature = MD5(appid+appsecret) 32位小写</li>
+</ul>
+<ul>
+<li><p>Request (application/json)</p>
+<ul>
+<li><p>Header</p>
+<pre><code>X-Gizwits-Application-Id: {appid}
+X-Gizwits-Application-Auth: {signature}
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Response 200 (application/json)</p>
+<ul>
+<li><p>Body</p>
+<pre><code>{
+    &quot;token&quot;: &quot;XxXXXxxxx&quot;,
+    &quot;expired_at&quot;: 123333333,
+}
+</code></pre></li>
+</ul>
+</li>
+<li><p>请求示例</p>
+<pre><code>curl --include \
+     --insecure \
+     --request POST \
+     --header &quot;Content-Type: application/json&quot; \
+     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
+     --header &quot;X-Gizwits-Application-Auth: {signature}&quot; \
+  &apos;https://api.gizwits.com/app/request_token&apos;
+</code></pre></li>
+</ul>
 <h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><h2 id="用户信息-app-users"><a href="#用户信息-app-users" class="headerlink" title="用户信息 [/app/users]"></a>用户信息 [/app/users]</h2><h3 id="创建匿名用户-POST"><a href="#创建匿名用户-POST" class="headerlink" title="创建匿名用户 [POST]"></a>创建匿名用户 [POST]</h3><p>如果您想让您的用户不需要显示注册和登录就能使用机智云的功能，就可以通过匿名注册的方式来为该用户创建一个匿名用户。phone_id 可以是手机的唯一识别码。</p>
 <p>或者您已经有了自己的用户系统，不希望用户再次注册一次机智云帐号，您也可以使用该接口，为您的每一个用户创建一个对应的机智云匿名帐号。这时，phone_id 可以是用户在您的系统中的唯一识别码。如在与微信应用做对接时，phone_id 可以设置成微信用户的 openid。</p>
 <ul>
@@ -719,41 +757,6 @@ X-Gizwits-User-token: {token}
     \&quot;password\&quot;: \&quot;123456\&quot;
 }&quot; \
 &apos;http://api.gizwits.com/app/login&apos;
-</code></pre></li>
-</ul>
-<h1 id="获取-App-Token-app-request-token"><a href="#获取-App-Token-app-request-token" class="headerlink" title="获取 App Token [/app/request_token]"></a>获取 App Token [/app/request_token]</h1><h2 id="获取-App-Token-POST"><a href="#获取-App-Token-POST" class="headerlink" title="获取 App Token [POST]"></a>获取 App Token [POST]</h2><ul>
-<li>请使用 <em>https</em> 调用本接口</li>
-<li>signature 的算法: signature = MD5(appid+appsecret) 32位小写</li>
-</ul>
-<ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-X-Gizwits-Application-Auth: {signature}
-</code></pre></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>Response 200 (application/json)</p>
-<ul>
-<li><p>Body</p>
-<pre><code>{
-    &quot;token&quot;: &quot;XxXXXxxxx&quot;,
-    &quot;expired_at&quot;: 123333333,
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --insecure \
-     --request POST \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-     --header &quot;X-Gizwits-Application-Auth: {signature}&quot; \
-  &apos;https://api.gizwits.com/app/request_token&apos;
 </code></pre></li>
 </ul>
 <h1 id="验证码与密码重置"><a href="#验证码与密码重置" class="headerlink" title="验证码与密码重置"></a>验证码与密码重置</h1><h2 id="图片验证码-app-verify-codes"><a href="#图片验证码-app-verify-codes" class="headerlink" title="图片验证码 [/app/verify/codes]"></a>图片验证码 [/app/verify/codes]</h2><h3 id="获取图片验证码-GET"><a href="#获取图片验证码-GET" class="headerlink" title="获取图片验证码 [GET]"></a>获取图片验证码 [GET]</h3><ul>
@@ -1227,7 +1230,7 @@ X-Gizwits-User-token: {token}
 &apos;http://api.gizwits.com/app/control/did&apos;
 </code></pre></li>
 </ul>
-<h1 id="定时管理"><a href="#定时管理" class="headerlink" title="定时管理"></a>定时管理</h1><h2 id="定时任务-app-scheduler-limit-skip"><a href="#定时任务-app-scheduler-limit-skip" class="headerlink" title="定时任务 [/app/scheduler{?limit,skip}]"></a>定时任务 [/app/scheduler{?limit,skip}]</h2><p>定时任务分为一次性定时任务和可重复执行定时任务。一次性定时任务在设定好的日期和时间执行；可重复执行定时任务可以设置按星期重复，如每周一执行，工作日执行等，在重复的星期的设定时间执行。</p>
+<h1 id="定时功能"><a href="#定时功能" class="headerlink" title="定时功能"></a>定时功能</h1><h2 id="定时任务-app-scheduler-limit-skip"><a href="#定时任务-app-scheduler-limit-skip" class="headerlink" title="定时任务 [/app/scheduler{?limit,skip}]"></a>定时任务 [/app/scheduler{?limit,skip}]</h2><p>定时任务分为一次性定时任务和可重复执行定时任务。一次性定时任务在设定好的日期和时间执行；可重复执行定时任务可以设置按星期重复，如每周一执行，工作日执行等，在重复的星期的设定时间执行。</p>
 <p>执行日期通过 date 参数进行设置，格式为：”2015-01-01”。</p>
 <p>执行时间通过 time 参数进行设置，格式为：”10:10”, <em>注意：该时间为 UTC 时间！</em></p>
 <p>重复类型通过 repeat 参数进行设置，不重复设置为 “none”；重复设置为 “mon”, “tue”, “wed”, “thu”, “fri”, “sat”, “sun” 的组合，组合之间用逗号分隔，如每周一和周二重复为 “mon,tue”。</p>
@@ -1385,13 +1388,137 @@ X-Gizwits-User-token: {token}
 <li><p>Response 200 (application/json)</p>
 </li>
 </ul>
-<h1 id="定时任务执行日志-app-scheduler-id-logs"><a href="#定时任务执行日志-app-scheduler-id-logs" class="headerlink" title="定时任务执行日志 [/app/scheduler/{id}/logs]"></a>定时任务执行日志 [/app/scheduler/{id}/logs]</h1><ul>
+<h2 id="获取设备定时任务-app-devices-did-scheduler"><a href="#获取设备定时任务-app-devices-did-scheduler" class="headerlink" title="获取设备定时任务 [/app/devices/{did}/scheduler]"></a>获取设备定时任务 [/app/devices/{did}/scheduler]</h2><ul>
+<li><p>参数列表</p>
+<ul>
+<li>limit (optional, number, <code>20</code>)</li>
+<li>skip (optional, number, <code>0</code>)</li>
+</ul>
+</li>
+<li><p>Request (application/text)</p>
+<ul>
+<li><p>Header</p>
+<pre><code>X-Gizwits-Application-Id: {appid}
+X-Gizwits-User-token: {token}
+</code></pre></li>
+</ul>
+</li>
+<li><p>Response 200 (application/json)</p>
+<ul>
+<li>Body<pre><code>[
+  {
+    &quot;attrs&quot;: {&quot;attr&quot;: 1},
+    &quot;date&quot;: &quot;2016-11-07&quot;,
+    &quot;time&quot;: &quot;12:00&quot;,
+    &quot;repeat&quot;: &quot;none&quot;,
+    &quot;days&quot;: [
+      0
+    ],
+    &quot;start_date&quot;: &quot;2016-11-07&quot;,
+    &quot;end_date&quot;: &quot;2016-11-07&quot;,
+    &quot;enabled&quot;: true,
+    &quot;remark&quot;: &quot;&quot;,
+    &quot;id&quot;: &quot;&quot;,
+    &quot;created_at&quot;: &quot;2016-11-07&quot;
+  }
+]
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h2 id="创建设备定时任务-app-devices-did-scheduler"><a href="#创建设备定时任务-app-devices-did-scheduler" class="headerlink" title="创建设备定时任务 [/app/devices/{did}/scheduler]"></a>创建设备定时任务 [/app/devices/{did}/scheduler]</h2><h3 id="创建设备定时任务-POST"><a href="#创建设备定时任务-POST" class="headerlink" title="创建设备定时任务 [POST]"></a>创建设备定时任务 [POST]</h3><ul>
+<li><p>Request (application/json)</p>
+<ul>
+<li><p>Header</p>
+<pre><code>X-Gizwits-Application-Id: {appid}
+X-Gizwits-User-token: {token}
+</code></pre></li>
+<li><p>Body</p>
+<pre><code>{
+  &quot;attrs&quot;: {},
+  &quot;date&quot;: &quot;2016-11-07&quot;,
+  &quot;time&quot;: &quot;12:00&quot;,
+  &quot;repeat&quot;: &quot;none&quot;,
+  &quot;days&quot;: [
+    0
+  ],
+  &quot;start_date&quot;: &quot;2016-11-07&quot;,
+  &quot;end_date&quot;: &quot;2016-11-07&quot;,
+  &quot;enabled&quot;: true,
+  &quot;remark&quot;: &quot;&quot;
+}
+</code></pre></li>
+</ul>
+</li>
+<li><p>Response 201 (application/json)</p>
+<ul>
+<li><p>Body</p>
+<pre><code>{
+  &quot;id&quot;: &quot;adkle&quot;
+}
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h2 id="修改设备定时任务-app-devices-did-scheduler"><a href="#修改设备定时任务-app-devices-did-scheduler" class="headerlink" title="修改设备定时任务 [/app/devices/{did}/scheduler]"></a>修改设备定时任务 [/app/devices/{did}/scheduler]</h2><h3 id="修改设备定时任务-PUT"><a href="#修改设备定时任务-PUT" class="headerlink" title="修改设备定时任务 [PUT]"></a>修改设备定时任务 [PUT]</h3><ul>
+<li><p>Request (application/json)</p>
+<ul>
+<li><p>Header</p>
+<pre><code>X-Gizwits-Application-Id: {appid}
+X-Gizwits-User-token: {token}
+</code></pre></li>
+<li><p>Body</p>
+<pre><code>{
+  &quot;attrs&quot;: {},
+  &quot;date&quot;: &quot;2016-11-07&quot;,
+  &quot;time&quot;: &quot;12:00&quot;,
+  &quot;repeat&quot;: &quot;none&quot;,
+  &quot;days&quot;: [
+    0
+  ],
+  &quot;start_date&quot;: &quot;2016-11-07&quot;,
+  &quot;end_date&quot;: &quot;2016-11-07&quot;,
+  &quot;enabled&quot;: true,
+  &quot;remark&quot;: &quot;&quot;
+}
+</code></pre></li>
+</ul>
+</li>
+<li><p>Response 200 (application/json)</p>
+<ul>
+<li><p>Body</p>
+<pre><code>{
+  &quot;id&quot;: &quot;adkle&quot;
+}
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h2 id="删除设备定时任务-app-devices-did-scheduler-id"><a href="#删除设备定时任务-app-devices-did-scheduler-id" class="headerlink" title="删除设备定时任务 [/app/devices/{did}/scheduler/{id}]"></a>删除设备定时任务 [/app/devices/{did}/scheduler/{id}]</h2><ul>
 <li>参数列表<ul>
 <li>id (required, string, <code>sid1</code>)</li>
 </ul>
 </li>
 </ul>
-<h2 id="获取最近一次定时任务执行日志-GET"><a href="#获取最近一次定时任务执行日志-GET" class="headerlink" title="获取最近一次定时任务执行日志 [GET]"></a>获取最近一次定时任务执行日志 [GET]</h2><ul>
+<h3 id="删除设备定时任务-DELETE"><a href="#删除设备定时任务-DELETE" class="headerlink" title="删除设备定时任务 [DELETE]"></a>删除设备定时任务 [DELETE]</h3><ul>
+<li><p>Request (application/text)</p>
+<ul>
+<li><p>Header</p>
+<pre><code>X-Gizwits-Application-Id: {appid}
+X-Gizwits-User-token: {token}
+</code></pre></li>
+</ul>
+</li>
+<li><p>Response 200 (application/json)</p>
+</li>
+</ul>
+<h2 id="定时任务执行日志-app-scheduler-id-logs"><a href="#定时任务执行日志-app-scheduler-id-logs" class="headerlink" title="定时任务执行日志 [/app/scheduler/{id}/logs]"></a>定时任务执行日志 [/app/scheduler/{id}/logs]</h2><ul>
+<li>参数列表<ul>
+<li>id (required, string, <code>sid1</code>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="获取最近一次定时任务执行日志-GET"><a href="#获取最近一次定时任务执行日志-GET" class="headerlink" title="获取最近一次定时任务执行日志 [GET]"></a>获取最近一次定时任务执行日志 [GET]</h3><ul>
 <li><p>Request (application/text)</p>
 <ul>
 <li><p>Header</p>
