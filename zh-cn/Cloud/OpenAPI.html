@@ -956,350 +956,163 @@
 </tbody>
 </table>
 <h1 id="应答报文-16"><a href="#应答报文-16" class="headerlink" title="应答报文"></a>应答报文</h1><p>Response 200 (application/json)</p>
-<h1 id="绑定管理"><a href="#绑定管理" class="headerlink" title="绑定管理"></a>绑定管理</h1><h2 id="绑定设备-app-bind-mac"><a href="#绑定设备-app-bind-mac" class="headerlink" title="绑定设备 [/app/bind_mac]"></a>绑定设备 [/app/bind_mac]</h2><h3 id="绑定设备-POST"><a href="#绑定设备-POST" class="headerlink" title="绑定设备 [POST]"></a>绑定设备 [POST]</h3><p>X-Gizwits-Timestamp 与服务器相差不能超过 5 分钟<br>X-Gizwits-Signature = MD5(product_secret + X-Gizwits-Timestamp).lower()</p>
-<ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-X-Gizwits-User-token: {token}
-X-Gizwits-Timestamp: {req_ts}
-X-Gizwits-Signature: {sig}
-</code></pre></li>
-<li><p>Body</p>
-<pre><code>{
-   &quot;product_key&quot;: &quot;xxx&quot;,
-   &quot;mac&quot;: &quot;xxx&quot;,
-   &quot;remark&quot;: &quot;xxx&quot;,
-   &quot;dev_alias&quot;: &quot;xxx&quot;
-}
-</code></pre></li>
-</ul>
+<h1 id="绑定管理"><a href="#绑定管理" class="headerlink" title="绑定管理"></a>绑定管理</h1><h2 id="绑定设备-app-bind-mac"><a href="#绑定设备-app-bind-mac" class="headerlink" title="绑定设备 [/app/bind_mac]"></a>绑定设备 [/app/bind_mac]</h2><h3 id="业务功能描述-11"><a href="#业务功能描述-11" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>X-Gizwits-Timestamp 与服务器相差不能超过 5 分钟<br>X-Gizwits-Signature = MD5(product_secret + X-Gizwits-Timestamp).lower()</p>
+<h3 id="接口地址-12"><a href="#接口地址-12" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/bind_mac
+</code></pre><h3 id="请求方式-15"><a href="#请求方式-15" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求报文-17"><a href="#请求报文-17" class="headerlink" title="请求报文"></a>请求报文</h3><p>1、 Header<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">X-Gizwits-Application-Id: &#123;appid&#125;</div><div class="line">X-Gizwits-User-token: &#123;token&#125;</div><div class="line">X-Gizwits-Timestamp: &#123;req_ts&#125;</div><div class="line">X-Gizwits-Signature: &#123;sig&#125;</div></pre></td></tr></table></figure></p>
+<p>2、 Body<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">    <span class="attr">"mac"</span>: <span class="string">"xxx"</span>,</div><div class="line">    <span class="attr">"remark"</span>: <span class="string">"xxx"</span>,</div><div class="line">    <span class="attr">"dev_alias"</span>: <span class="string">"xxx"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="应答报文-17"><a href="#应答报文-17" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 201 (application/json)</p>
+<h2 id="获取绑定列表-GET"><a href="#获取绑定列表-GET" class="headerlink" title="获取绑定列表 [GET]"></a>获取绑定列表 [GET]</h2><h3 id="业务功能描述-12"><a href="#业务功能描述-12" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供绑定列表</p>
+<h3 id="接口地址-13"><a href="#接口地址-13" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/bindings
+</code></pre><h3 id="请求方式-16"><a href="#请求方式-16" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
+</code></pre><h3 id="请求报文-18"><a href="#请求报文-18" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">X-Gizwits-Application-Id</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">X-Gizwits-User-token</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">limit</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">url</td>
+<td style="text-align:left">limit</td>
+</tr>
+<tr>
+<td style="text-align:left">skip</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">url</td>
+</tr>
+</tbody>
+</table>
+<h3 id="limit-amp-skip参数说明"><a href="#limit-amp-skip参数说明" class="headerlink" title="limit &amp; skip参数说明"></a>limit &amp; skip参数说明</h3><p>limit 和 skip 表示分页参数。limit 为一次性返回的最多条数，skip 为跳过多少条数据。<br>如每页 10 条数据，获取第一页数据：limit=10, skip=0；获取第二页数据：limit=10, skip=10.</p>
+<h3 id="应答报文-18"><a href="#应答报文-18" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"devices"</span>: [&#123;</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"abcada"</span>,</div><div class="line">        <span class="attr">"mac"</span>: <span class="string">"1122334455667788"</span>,</div><div class="line">        <span class="attr">"is_online"</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">"passcode"</span>: <span class="string">"123456"</span>,</div><div class="line">        <span class="attr">"host"</span>: <span class="string">"m2m.gizwits.com"</span>,</div><div class="line">        <span class="attr">"port"</span>: <span class="number">3128</span>,</div><div class="line">        <span class="attr">"remark"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"is_disabled"</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">"type"</span>: <span class="string">"normal"</span>,</div><div class="line">        <span class="attr">"dev_alias"</span>: <span class="string">"dev1"</span></div><div class="line">    &#125;,&#123;</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"abcada"</span>,</div><div class="line">        <span class="attr">"mac"</span>: <span class="string">"1122334455667788"</span>,</div><div class="line">        <span class="attr">"is_online"</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">"passcode"</span>: <span class="string">"123456"</span>,</div><div class="line">        <span class="attr">"host"</span>: <span class="string">"m2m.gizwits.com"</span>,</div><div class="line">        <span class="attr">"port"</span>: <span class="number">3128</span>,</div><div class="line">        <span class="attr">"remark"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"is_disabled"</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">"type"</span>: <span class="string">"center_control"</span>,</div><div class="line">        <span class="attr">"dev_alias"</span>: <span class="string">"dev2"</span></div><div class="line">    &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="绑定设备-通过-did-passcode"><a href="#绑定设备-通过-did-passcode" class="headerlink" title="绑定设备: 通过 did + passcode"></a>绑定设备: 通过 did + passcode</h2><h3 id="业务功能描述-13"><a href="#业务功能描述-13" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>使用该接口适合知道 did 和 passcode 的情况。<br>dev_alias 设备别名，用于当前用户对该设备起一个别名，仅该用户可见。<br>remark 用于设置备注信息。</p>
+<h3 id="接口地址-14"><a href="#接口地址-14" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/bindings
+</code></pre><h3 id="请求方式-17"><a href="#请求方式-17" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求报文-19"><a href="#请求报文-19" class="headerlink" title="请求报文"></a>请求报文</h3><ol>
+<li>Header<br>X-Gizwits-Application-Id: {appid}<br>X-Gizwits-User-token: {token}</li>
+<li>Body<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">                <span class="attr">"devices"</span>: [&#123;</div><div class="line">                    <span class="attr">"did"</span>: <span class="string">"gdGn7PzAYf4VrhnVag5x8D"</span>,</div><div class="line">                    <span class="attr">"passcode"</span>: <span class="string">"gokit"</span>,</div><div class="line">                    <span class="attr">"remark"</span>: <span class="string">""</span>，      </div><div class="line">                    <span class="string">"dev_alias"</span>: <span class="string">"my_dev"</span></div><div class="line">                &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
-<li><p>Response 201 (application/json)</p>
+</ol>
+<h3 id="应答报文-19"><a href="#应答报文-19" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"success"</span>: ['abc', 'add'],</div><div class="line">    <span class="attr">"failed"</span>: ['adad', 'ee']</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="修改绑定信息"><a href="#修改绑定信息" class="headerlink" title="修改绑定信息"></a>修改绑定信息</h2><h3 id="业务功能描述-14"><a href="#业务功能描述-14" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>修改绑定信息</p>
+<h3 id="接口地址-15"><a href="#接口地址-15" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/bindings/{did}
+</code></pre><h3 id="请求方式-18"><a href="#请求方式-18" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
+</code></pre><h3 id="请求报文-20"><a href="#请求报文-20" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">did</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">url</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">X-Gizwits-Application-Id</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">X-Gizwits-User-token</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">remark</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">limit</td>
+</tr>
+<tr>
+<td style="text-align:left">dev_alias</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+</tr>
+</tbody>
+</table>
+<h3 id="应答报文-20"><a href="#应答报文-20" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"remark"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"dev_alias"</span>: <span class="string">"string"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="解除绑定"><a href="#解除绑定" class="headerlink" title="解除绑定"></a>解除绑定</h3><h3 id="业务功能描述-15"><a href="#业务功能描述-15" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>提供解除绑定功能</p>
+<h3 id="接口地址-16"><a href="#接口地址-16" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/bindings
+</code></pre><h3 id="请求方式-19"><a href="#请求方式-19" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>DELETE
+</code></pre><h3 id="请求报文-21"><a href="#请求报文-21" class="headerlink" title="请求报文"></a>请求报文</h3><p>1.Header<br>X-Gizwits-Application-Id: {appid}<br>X-Gizwits-User-token: {token}</p>
+<p>2.Body<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">            <span class="attr">"devices"</span>: [&#123;</div><div class="line">                <span class="attr">"did"</span>: <span class="string">"gdGn7PzAYf4VrhnVag5x8D"</span></div><div class="line">            &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="应答报文-21"><a href="#应答报文-21" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"success"</span>: ['abc', 'add'],</div><div class="line">    <span class="attr">"failed"</span>: ['adad', 'ee']</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h1><h2 id="获取设备最近上传数据"><a href="#获取设备最近上传数据" class="headerlink" title="获取设备最近上传数据"></a>获取设备最近上传数据</h2><h3 id="业务功能描述-16"><a href="#业务功能描述-16" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>获取设备最近一次上传的数据，包含所有数据点的键值对。</p>
+<h3 id="接口地址-17"><a href="#接口地址-17" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/devdata/{did}/latest
+</code></pre><h3 id="请求方式-20"><a href="#请求方式-20" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
+</code></pre><h3 id="请求报文-22"><a href="#请求报文-22" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">did</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">url</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">X-Gizwits-Application-Id</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+</tr>
+</tbody>
+</table>
+<h3 id="应答报文-22"><a href="#应答报文-22" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    "did": "gdGn7PzAYf4VrhnVag5x8D",</div><div class="line">    "updated_at": 148293984328,</div><div class="line">    "attr": &#123;</div><div class="line">      "temp": 10,</div><div class="line">      "humi": 20</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">## 远程控制设备</div><div class="line"></div><div class="line">### 接口地址</div><div class="line">     http://api.gizwits.com/app/control/&#123;did&#125;</div><div class="line">### 请求方式</div><div class="line">     POST</div><div class="line"></div><div class="line">### 详情描述</div><div class="line">远程控制设备可以通过两种方式，一种是设置数据点，一种是发送原始控制指令。</div><div class="line">推荐使用设置数据点的方式，通过这种方式控制设备，系统内部自动会生成原始控制指令发送给设备，使用起来更简单。</div><div class="line"></div><div class="line">+ 参数列表</div><div class="line">    + did (required, string, `did`)</div><div class="line"></div><div class="line">### 设置数据点 [POST]</div><div class="line"></div><div class="line">* 只能设置可写类型的数据点</div><div class="line">* bool 类型的数据点设置为 true/false</div><div class="line">* enum 类型的数据点设置为枚举的字符串</div><div class="line">* uint8/uint16/uint32 类型的数据点设置为数字</div><div class="line">* binary 类型的数据设置为 hex 类型字符串，如发送一串十六进制数据 0x01, 0x02, 0x03, 就写成 "010203";</div><div class="line">  如果 binary 类型本身为字符串，如 "hello world!"，需将字符串每个字符的 ASCII 转成十六进制再发送，本例为 "68656c6c6f20776f726c6421";</div><div class="line">  **注意 binary 类型定义了多少长度，就需要发多少长度的数据**。</div><div class="line"></div><div class="line">### 请求报文</div><div class="line">1. Header</div><div class="line">X-Gizwits-Application-Id: &#123;appid&#125;</div><div class="line">X-Gizwits-User-token: &#123;token&#125;</div><div class="line">2. Body</div><div class="line">```json</div><div class="line">&#123;</div><div class="line">    "attrs": &#123;</div><div class="line">      "temp": 10</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="应答报文-23"><a href="#应答报文-23" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#125;</div></pre></td></tr></table></figure>
+<h3 id="发送原始控制指令"><a href="#发送原始控制指令" class="headerlink" title="发送原始控制指令"></a>发送原始控制指令</h3><h3 id="请求报文-23"><a href="#请求报文-23" class="headerlink" title="请求报文"></a>请求报文</h3><ol>
+<li>Header<br>X-Gizwits-Application-Id: {appid}<br>X-Gizwits-User-token: {token}</li>
+<li>Body<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"raw"</span>: [&lt;byte&gt;, &lt;byte&gt;, ...]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --request POST \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-     --header &quot;X-Gizwits-User-token: {token}&quot; \
-     --header &quot;X-Gizwits-Timestamp: {req_ts}&quot; \
-     --header &quot;X-Gizwits-Signature: {sig}&quot; \
-     --data-binary &quot;{
-   \&quot;product_key\&quot;: \&quot;xxx\&quot;,
-   \&quot;mac\&quot;: \&quot;xxx\&quot;,
-   \&quot;remark\&quot;: \&quot;xxx\&quot;,
-   \&quot;dev_alias\&quot;: \&quot;xxx\&quot;
-}&quot; \
-&apos;http://api.gizwits.com/app/bind_mac&apos;
-</code></pre></li>
-</ul>
-<h2 id="绑定关系-app-bindings"><a href="#绑定关系-app-bindings" class="headerlink" title="绑定关系 [/app/bindings]"></a>绑定关系 [/app/bindings]</h2><h3 id="获取绑定列表-GET"><a href="#获取绑定列表-GET" class="headerlink" title="获取绑定列表 [GET]"></a>获取绑定列表 [GET]</h3><ul>
-<li>参数列表<ul>
-<li>limit (optional, number, <code>20</code>)</li>
-<li>skip (optional, number, <code>0</code>)</li>
-</ul>
-</li>
-</ul>
-<p>limit 和 skip 表示分页参数。limit 为一次性返回的最多条数，skip 为跳过多少条数据。</p>
-<p>如每页 10 条数据，获取第一页数据：limit=10, skip=0；获取第二页数据：limit=10, skip=10.</p>
-<ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-X-Gizwits-User-token: {token}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 200 (application/json)</p>
-<ul>
-<li><p>Body</p>
-<pre><code>{
-    &quot;devices&quot;: [{
-        &quot;product_key&quot;: &quot;akdlfkad&quot;,
-        &quot;did&quot;: &quot;abcada&quot;,
-        &quot;mac&quot;: &quot;1122334455667788&quot;,
-        &quot;is_online&quot;: false,
-        &quot;passcode&quot;: &quot;123456&quot;,
-        &quot;host&quot;: &quot;m2m.gizwits.com&quot;,
-        &quot;port&quot;: 3128,
-        &quot;remark&quot;: &quot;&quot;,
-        &quot;is_disabled&quot;: false,
-        &quot;type&quot;: &quot;normal&quot;,
-        &quot;dev_alias&quot;: &quot;dev1&quot;
-    },{
-        &quot;product_key&quot;: &quot;akdlfkad&quot;,
-        &quot;did&quot;: &quot;abcada&quot;,
-        &quot;mac&quot;: &quot;1122334455667788&quot;,
-        &quot;is_online&quot;: false,
-        &quot;passcode&quot;: &quot;123456&quot;,
-        &quot;host&quot;: &quot;m2m.gizwits.com&quot;,
-        &quot;port&quot;: 3128,
-        &quot;remark&quot;: &quot;&quot;,
-        &quot;is_disabled&quot;: false,
-        &quot;type&quot;: &quot;center_control&quot;,
-        &quot;dev_alias&quot;: &quot;dev2&quot;
-    }]
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-     --header &quot;X-Gizwits-User-token: {token}&quot; \
-  &apos;http://api.gizwits.com/app/bindings?show_disabled=1&amp;limit=20&amp;skip=0&apos;
-</code></pre></li>
-</ul>
-<h3 id="绑定设备-通过-did-passcode-POST"><a href="#绑定设备-通过-did-passcode-POST" class="headerlink" title="绑定设备: 通过 did + passcode [POST]"></a>绑定设备: 通过 did + passcode [POST]</h3><p>使用该接口适合知道 did 和 passcode 的情况。</p>
-<p>dev_alias 设备别名，用于当前用户对该设备起一个别名，仅该用户可见。<br>remark 用于设置备注信息。</p>
-<ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-X-Gizwits-User-token: {token}
-</code></pre></li>
-<li><p>Body</p>
-<pre><code>{
-    &quot;devices&quot;: [{
-        &quot;did&quot;: &quot;gdGn7PzAYf4VrhnVag5x8D&quot;,
-        &quot;passcode&quot;: &quot;gokit&quot;,
-        &quot;remark&quot;: &quot;&quot;，      
-        &quot;dev_alias&quot;: &quot;my_dev&quot;
-    }]
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 200 (application/json)</p>
-<pre><code>{
-     &quot;success&quot;: [&apos;abc&apos;, &apos;add&apos;],
-     &quot;failed&quot;: [&apos;adad&apos;, &apos;ee&apos;]
-}
-</code></pre></li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --request POST \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-     --header &quot;X-Gizwits-User-token: {token}&quot; \
-     --data-binary &quot;{
-    \&quot;devices\&quot;: [{
-        \&quot;did\&quot;: \&quot;gdGn7PzAYf4VrhnVag5x8D\&quot;,
-        \&quot;passcode\&quot;: \&quot;gokit\&quot;,
-        \&quot;remark\&quot;: \&quot;\&quot;,
-        \&quot;dev_alias\&quot;: \&quot;\&quot;
-    }]
-}&quot; \
-&apos;http://api.gizwits.com/app/bindings&apos;
-</code></pre></li>
-</ul>
-<h2 id="修改绑定信息-app-bindings-did"><a href="#修改绑定信息-app-bindings-did" class="headerlink" title="修改绑定信息 [/app/bindings/{did}]"></a>修改绑定信息 [/app/bindings/{did}]</h2><h3 id="修改绑定信息-PUT"><a href="#修改绑定信息-PUT" class="headerlink" title="修改绑定信息 [PUT]"></a>修改绑定信息 [PUT]</h3><ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-X-Gizwits-User-token: {token}
-</code></pre></li>
-<li><p>Body</p>
-<pre><code>{
-    &quot;remark&quot;: &quot;string&quot;,
-    &quot;dev_alias&quot;: &quot;string&quot;
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 200 (application/json)</p>
-<pre><code>{
-    &quot;remark&quot;: &quot;string&quot;,
-    &quot;dev_alias&quot;: &quot;string&quot;
-}
-</code></pre></li>
-</ul>
-<h3 id="解除绑定-DELETE"><a href="#解除绑定-DELETE" class="headerlink" title="解除绑定 [DELETE]"></a>解除绑定 [DELETE]</h3><ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-X-Gizwits-User-token: {token}
-</code></pre></li>
-<li><p>Body</p>
-<pre><code>{
-    &quot;devices&quot;: [{
-        &quot;did&quot;: &quot;gdGn7PzAYf4VrhnVag5x8D&quot;
-    }]
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 200 (application/json)</p>
-<pre><code>{
-     &quot;success&quot;: [&apos;abc&apos;, &apos;add&apos;],
-     &quot;failed&quot;: [&apos;adad&apos;, &apos;ee&apos;]
-}
-</code></pre></li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --request DELETE \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-     --header &quot;X-Gizwits-User-token: {token}&quot; \
-     --data-binary &quot;{
-    \&quot;devices\&quot;: [{
-        \&quot;did\&quot;: \&quot;gdGn7PzAYf4VrhnVag5x8D\&quot;
-    }]
-}&quot; \
-&apos;http://api.gizwits.com/app/bindings&apos;
-</code></pre></li>
-</ul>
-<h1 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h1><h2 id="获取设备最近上传数据-app-devdata-did-latest"><a href="#获取设备最近上传数据-app-devdata-did-latest" class="headerlink" title="获取设备最近上传数据 [/app/devdata/{did}/latest]"></a>获取设备最近上传数据 [/app/devdata/{did}/latest]</h2><h3 id="获取设备最近上传数据点-GET"><a href="#获取设备最近上传数据点-GET" class="headerlink" title="获取设备最近上传数据点 [GET]"></a>获取设备最近上传数据点 [GET]</h3><p>获取设备最近一次上传的数据，包含所有数据点的键值对。</p>
-<ul>
-<li><p>参数列表</p>
-<ul>
-<li>did (required, string, <code>gdGn7PzAYf4VrhnVag5x8D</code>)</li>
-</ul>
-</li>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 200 (application/json)</p>
-<ul>
-<li><p>Body</p>
-<pre><code>{
-    &quot;did&quot;: &quot;gdGn7PzAYf4VrhnVag5x8D&quot;,
-    &quot;updated_at&quot;: 148293984328,
-    &quot;attr&quot;: {
-      &quot;temp&quot;: 10,
-      &quot;humi&quot;: 20
-    }
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-  &apos;http://api.gizwits.com/app/devdata/gdGn7PzAYf4VrhnVag5x8D/latest&apos;
-</code></pre></li>
-</ul>
-<h2 id="远程控制设备-app-control-did"><a href="#远程控制设备-app-control-did" class="headerlink" title="远程控制设备 [/app/control/{did}]"></a>远程控制设备 [/app/control/{did}]</h2><p>远程控制设备可以通过两种方式，一种是设置数据点，一种是发送原始控制指令。<br>推荐使用设置数据点的方式，通过这种方式控制设备，系统内部自动会生成原始控制指令发送给设备，使用起来更简单。</p>
-<ul>
-<li>参数列表<ul>
-<li>did (required, string, <code>did</code>)</li>
-</ul>
-</li>
-</ul>
-<h3 id="设置数据点-POST"><a href="#设置数据点-POST" class="headerlink" title="设置数据点 [POST]"></a>设置数据点 [POST]</h3><ul>
-<li>只能设置可写类型的数据点</li>
-<li>bool 类型的数据点设置为 true/false</li>
-<li>enum 类型的数据点设置为枚举的字符串</li>
-<li>uint8/uint16/uint32 类型的数据点设置为数字</li>
-<li>binary 类型的数据设置为 hex 类型字符串，如发送一串十六进制数据 0x01, 0x02, 0x03, 就写成 “010203”;<br>如果 binary 类型本身为字符串，如 “hello world!”，需将字符串每个字符的 ASCII 转成十六进制再发送，本例为 “68656c6c6f20776f726c6421”;<br><strong>注意 binary 类型定义了多少长度，就需要发多少长度的数据</strong>。</li>
-</ul>
-<ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-X-Gizwits-User-token: {token}
-</code></pre></li>
-<li><p>Body</p>
-<pre><code>{
-    &quot;attrs&quot;: {
-      &quot;temp&quot;: 10
-    }
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 200 (application/json)</p>
-<ul>
-<li><p>Body</p>
-<pre><code>{}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-X-Gizwits-User-token: {token}
-</code></pre></li>
-<li><p>Body</p>
-<pre><code>{
-    &quot;attrs&quot;: {
-      &quot;temp&quot;: 10,
-      &quot;humi&quot;: 50
-    }
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 200 (application/json)</p>
-<ul>
-<li><p>Body</p>
-<pre><code>{}
-</code></pre></li>
-</ul>
-</li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --request POST \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-     --header &quot;X-Gizwits-User-token: {token}&quot; \
-     --data-binary &quot;{
-    \&quot;attrs\&quot;: {
-        \&quot;temp\&quot;: 10
-    }
-}&quot; \
-&apos;http://api.gizwits.com/app/control/did&apos;
-</code></pre></li>
-</ul>
-<h3 id="发送原始控制指令-POST"><a href="#发送原始控制指令-POST" class="headerlink" title="发送原始控制指令 [POST]"></a>发送原始控制指令 [POST]</h3><ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-X-Gizwits-User-token: {token}
-</code></pre></li>
-<li><p>Body</p>
-<pre><code>{
-    &quot;raw&quot;: [&lt;byte&gt;, &lt;byte&gt;, ...]
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 200 (application/json)</p>
-<ul>
-<li><p>Body</p>
-<pre><code>{}
-</code></pre></li>
-</ul>
-</li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --request POST \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-     --header &quot;X-Gizwits-User-token: {token}&quot; \
-     --data-binary &quot;{
-    \&quot;raw\&quot;: [0, 1, 2, 3]
-}&quot; \
-&apos;http://api.gizwits.com/app/control/did&apos;
-</code></pre></li>
-</ul>
+</ol>
+<h3 id="应答报文-24"><a href="#应答报文-24" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#125;</div></pre></td></tr></table></figure>
 <h1 id="定时功能"><a href="#定时功能" class="headerlink" title="定时功能"></a>定时功能</h1><h2 id="定时任务-app-scheduler-limit-skip"><a href="#定时任务-app-scheduler-limit-skip" class="headerlink" title="定时任务 [/app/scheduler{?limit,skip}]"></a>定时任务 [/app/scheduler{?limit,skip}]</h2><p>定时任务分为一次性定时任务和可重复执行定时任务。一次性定时任务在设定好的日期和时间执行；可重复执行定时任务可以设置按星期重复，如每周一执行，工作日执行等，在重复的星期的设定时间执行。</p>
 <p>执行日期通过 date 参数进行设置，格式为：”2015-01-01”。</p>
 <p>执行时间通过 time 参数进行设置，格式为：”10:10”, <em>注意：该时间为 UTC 时间！</em></p>
