@@ -287,165 +287,25 @@
 <li>心跳：浏览器（Javascript）定期向云端发送心跳，云端回复心跳响应。</li>
 </ul>
 <h1 id="3-约定"><a href="#3-约定" class="headerlink" title="3. 约定"></a>3. 约定</h1><h2 id="3-1-协议阅读说明"><a href="#3-1-协议阅读说明" class="headerlink" title="3.1. 协议阅读说明"></a>3.1. 协议阅读说明</h2><p>● &lt;str&gt;表示字符串占位符，&lt;int&gt;表示整型数据占位符。</p>
-<h2 id="3-2-云端Web-Socket服务地址"><a href="#3-2-云端Web-Socket服务地址" class="headerlink" title="3.2. 云端Web Socket服务地址"></a>3.2. 云端Web Socket服务地址</h2><pre>
-ws://&lt;m2m_host&gt;:8080/ws/app/v1 
-</pre>
-其中的&lt;m2m_host&gt;为绑定设备列表中的host字段的值，如”m2m.gizwits.com”或”sandbox.gizwits.com”，请参考获取绑定设备列表HTTP API。
-
-
-## 3.3. 注意事项  
-
-* 在与云端进行Web Socket交互前，用户必须已注册并已绑定了设备。 
-* 与云端交互的数据均为JSON字符串,以UTF-8的方式编码。可以通过JSON.stringify(json)把Javascript对象转化为字符串再发送给云端，或通过var res = JSON.parse(evt.data)把接收到的字符串数据转化成Javascript对象。
-* Web Socket的测试程序请使用http://&lt;m2m_host&gt;:8080/app(​&lt;m2m_host&gt;为绑定设备列表中的host字段的值)， 也可以查看这个网页的源代码作为示例代码参考。
-
-
-# 4. 通讯协议 
-
-## 4.1. 用户登陆 
-
-浏览器（Javascript）必须登陆后才能和云端作进一步的交互。 
-
-浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。
-<pre>
-{
-    "cmd": "login_req",
-    "data":
-    {
-        "appid": &lt;str&gt;, 
-        "uid": &lt;str&gt;,
-        "token": &lt;str&gt;,
-        "p0_type": "attrs_v4"|"custom", ("attrs_v4" 指通过标准数据点协议的方式和云端交互，见下文“标准数据点操作”部分。"custom"表示使用自定义业务逻辑协议的方式与云端交互，见下文“浏览器与云端的数据交互”部分。) 
-        "heartbeat_interval": &lt;int&gt; (心跳的时间间隔，单位为秒，值必须小于等于180)
-    }
-}
-</pre>   
-
-<p>云端 ⇒ 浏览器。云端向浏览器回复以下的JSON字符串。</p>
-<pre>
-{
-    "cmd": "login_res",
-    "data":
-    {
-        "success": true | false （true为登陆成功，false登陆失败）
-    }
-}
-</pre>
-
-
-<h2 id="4-2-设备上线下线通知"><a href="#4-2-设备上线下线通知" class="headerlink" title="4.2. 设备上线下线通知"></a>4.2. 设备上线下线通知</h2><p>当设备上线或下线时，云端会主动发送通知到浏览器。</p>
-<p>云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知设备上线或下线。</p>
-<pre>
-{
-    "cmd": "s2c_online_status",
-    "data": 
-    {
-        "did": &lt;str&gt;,（上下线设备的did）
-        "passcode": &lt;str&gt;,（上下线设备的passcode）
-        "mac": &lt;str&gt;,（上下线设备的mac）
-        "online": true | false （true表示设备上线，false表示设备下线）
-    }
-}
-</pre>  
-
-
-<h2 id="4-3-浏览器与云端的数据交互（数据透传）"><a href="#4-3-浏览器与云端的数据交互（数据透传）" class="headerlink" title="4.3. 浏览器与云端的数据交互（数据透传）"></a>4.3. 浏览器与云端的数据交互（数据透传）</h2><p>浏览器可以和云端交互任意符合协议的数据。协议的格式为请参考其它协议文档。<br>当用户在登 陆时参数”p0_type”的值等于”custom”时，只能以这种方式和云端交互数据。</p>
-<p>浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。 </p>
-<pre>
-{
-    "cmd": "c2s_raw",
-    "data": 
-    {
-        "did": &lt;str&gt;, （目标设备的did）
-        "raw": [&lt;byte&gt;, &lt;byte&gt;, ...] （自定义业务逻辑指令的内容，以byte数组方式传送，每个byte的范围必须为 0~255。该内容必须要以[0, 0, 0, 3, varLen(1~4B), 0, 0, 144]开头）
-    }  
-}
-</pre> 
-
-<p>若想云端往设备转发数据，raw的值需要加上以下的协议前缀再接上发往设备的数据，即[0, 0, 0, 3, varLen(1~4B), 0, 0, 144] + 发往设备的数据，其中的varLen为可变长度，由1~4个字节(B)表示本可变长度字段后一直到数据包结尾的字节数 ，如长度小于128B，直接用一个字节(B)表示长度即可，长度大于等于128B的编码解码方式请参考MQTT V3.1协议的可变长度（Remaining Length）定义。  </p>
-<p>云端 ⇒ 浏览器。当云端收到设备上传的数据后，云端向浏览器转发以下的JSON字符串，数据放在raw字段中。登陆参数​”p0_type”​的值等于​”attrs_v4”​时,设备以“透传业务指令”上报的数据会以本指令发往浏览器。</p>
-<pre>
-{
-    "cmd": "s2c_raw", 
-    "data":
-    {
-        "did": &lt;str&gt;,（数据来源设备的did）
-        "raw": [&lt;byte&gt;, &lt;byte&gt;, ...]（自定义业务逻辑指令的内容，以byte数组方式传送，每个byte的范围必须为 0~255）
-    }
-}
-</pre> 
-
-<p>若该数据为设备上报的数据，raw的值会带上一个协议前缀，即[0, 0, 0, 3, varLen(1~4B), 0, 0, 145] + 设备数据，其中的varLen为可变长度，定义请参考上文。 </p>
-<h2 id="4-4-标准数据点操作（读、写、通知）"><a href="#4-4-标准数据点操作（读、写、通知）" class="headerlink" title="4.4. 标准数据点操作（读、写、通知）"></a>4.4. 标准数据点操作（读、写、通知）</h2><p>当用户在登陆时参数”p0_type”的值等于”attrs_v4”时，云端会以标准数据点协议的方式和浏览器交互。   </p>
-<p>浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串，读取目标设备当前的状态。陆参数”p0_type”​的值等于​”custom”​时不允许使用本指令。</p>
-<pre>
-{
-    "cmd": "c2s_read",
-    "data":
-    {
-        "did": &lt;str&gt;（目标设备的did）
-    }
-}
-</pre>   
-
-<p>浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串，控制目标设备（更改目标设备的状态）。登陆参数​”p0_type”​的值等于​”custom”​时不允许使用本指令。</p>
-<pre>
-{
-    "cmd": "c2s_write",
-    "data":
-    {
-        "did": &lt;str&gt;,（目标设备的did）
-        "attrs": 
-        {
-            "name1": &lt;value1&gt;, (“name1”指数据点的标识名(name)，&lt;value1&gt;指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
-            "name2": &lt;value2&gt;,
-            ...
-        }
-    }
-}
-</pre>   
-
-<p>云端 ⇒ 浏览器。设备收到读取指令或状态发生变化后，会主动发送当前状态到云端，云端向浏览器转发以下的JSON字符串。 登陆参数​”p0_type”​的值等于​”custom”​时不会收到本指令。</p>
-<pre>
-{
-    "cmd": "s2c_noti",     
-    "data": 
-    { 
-        "did": &lt;str&gt;,（数据来源设备的did）         
-        "attrs": 
-        {
-            "name1": &lt;value1&gt;, (“name1”指数据点的标识名(name)，&lt;value1&gt;指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
-            "name2": &lt;value2&gt;,
-             ...          
-        }
-    } 
-} 
-</pre>
-
-
-<h2 id="4-5-心跳"><a href="#4-5-心跳" class="headerlink" title="4.5. 心跳"></a>4.5. 心跳</h2><p>浏览器和云端建立Web Socket连接后，需要在登陆参数”heartbeat_interval”指定的时间间隔内，定期向云端发送心跳。云端收到后会回复心跳。</p>
-<p>浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。</p>
-<pre>
-{
-    "cmd": "ping"
-}
-</pre> 
-
-<p>云端 ⇒ 浏览器。云端向浏览器回复以下的JSON字符串。</p>
-<pre>
-{
-    "cmd": "pong"
-}
-</pre>
-
-<h2 id="4-6-非法消息通知"><a href="#4-6-非法消息通知" class="headerlink" title="4.6. 非法消息通知"></a>4.6. 非法消息通知</h2><p>当浏览器向云端发送的消息不合法或收到设备上报的数据不合法时,云端会下发此消息通知浏览器。</p>
-<p>云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知有非法消息。</p>
-<pre>
-{
-    "cmd": "s2c_invalid_msg", 
-    "data": &lt;str&gt; ​(描述文本)
-}
-</pre>
+<h2 id="3-2-云端Web-Socket服务地址"><a href="#3-2-云端Web-Socket服务地址" class="headerlink" title="3.2. 云端Web Socket服务地址"></a>3.2. 云端Web Socket服务地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ws://&amp;lt;m2m_host&amp;gt;:8080/ws/app/v1</div></pre></td></tr></table></figure>
+<p>其中的&lt;m2m_host&gt;为绑定设备列表中的host字段的值，如”m2m.gizwits.com”或”sandbox.gizwits.com”，请参考获取绑定设备列表HTTP API。</p>
+<h2 id="3-3-注意事项"><a href="#3-3-注意事项" class="headerlink" title="3.3. 注意事项"></a>3.3. 注意事项</h2><ul>
+<li>在与云端进行Web Socket交互前，用户必须已注册并已绑定了设备。 </li>
+<li>与云端交互的数据均为JSON字符串,以UTF-8的方式编码。可以通过JSON.stringify(json)把Javascript对象转化为字符串再发送给云端，或通过var res = JSON.parse(evt.data)把接收到的字符串数据转化成Javascript对象。</li>
+<li>Web Socket的测试程序请使用<a href="http://&lt;m2m_host&gt;:8080/app(​&lt;m2m_host&gt;为绑定设备列表中的host字段的值)，" target="_blank" rel="external">http://&lt;m2m_host&gt;:8080/app(​&lt;m2m_host&gt;为绑定设备列表中的host字段的值)，</a> 也可以查看这个网页的源代码作为示例代码参考。</li>
+</ul>
+<h1 id="4-通讯协议"><a href="#4-通讯协议" class="headerlink" title="4. 通讯协议"></a>4. 通讯协议</h1><h2 id="4-1-用户登陆"><a href="#4-1-用户登陆" class="headerlink" title="4.1. 用户登陆"></a>4.1. 用户登陆</h2><p>浏览器（Javascript）必须登陆后才能和云端作进一步的交互。 </p>
+<p>浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;cmd&quot;: &quot;login_req&quot;,</div><div class="line">    &quot;data&quot;:</div><div class="line">    &#123;</div><div class="line">        &quot;appid&quot;: &amp;lt;str&amp;gt;, </div><div class="line">        &quot;uid&quot;: &amp;lt;str&amp;gt;,</div><div class="line">        &quot;token&quot;: &amp;lt;str&amp;gt;,</div><div class="line">        &quot;p0_type&quot;: &quot;attrs_v4&quot;|&quot;custom&quot;, (&quot;attrs_v4&quot; 指通过标准数据点协议的方式和云端交互，见下文“标准数据点操作”部分。&quot;custom&quot;表示使用自定义业务逻辑协议的方式与云端交互，见下文“浏览器与云端的数据交互”部分。) </div><div class="line">        &quot;heartbeat_interval&quot;: &amp;lt;int&amp;gt; (心跳的时间间隔，单位为秒，值必须小于等于180)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">```   </div><div class="line"></div><div class="line">云端 ⇒ 浏览器。云端向浏览器回复以下的JSON字符串。</div></pre></td></tr></table></figure></p>
+<p>{<br>    “cmd”: “login_res”,<br>    “data”:<br>    {<br>        “success”: true | false （true为登陆成功，false登陆失败）<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line"> </div><div class="line">## 4.2. 设备上线下线通知 </div><div class="line"></div><div class="line">当设备上线或下线时，云端会主动发送通知到浏览器。</div><div class="line"></div><div class="line">云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知设备上线或下线。</div></pre></td></tr></table></figure></p>
+<p>{<br>    “cmd”: “s2c_online_status”,<br>    “data”:<br>    {<br>        “did”: &lt;str&gt;,（上下线设备的did）<br>        “passcode”: &lt;str&gt;,（上下线设备的passcode）<br>        “mac”: &lt;str&gt;,（上下线设备的mac）<br>        “online”: true | false （true表示设备上线，false表示设备下线）<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">## 4.3. 浏览器与云端的数据交互（数据透传）</div><div class="line"></div><div class="line">浏览器可以和云端交互任意符合协议的数据。协议的格式为请参考其它协议文档。</div><div class="line">当用户在登 陆时参数&quot;p0_type&quot;的值等于&quot;custom&quot;时，只能以这种方式和云端交互数据。</div><div class="line"></div><div class="line">浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。</div></pre></td></tr></table></figure></p>
+<p>{<br>    “cmd”: “c2s_raw”,<br>    “data”:<br>    {<br>        “did”: &lt;str&gt;, （目标设备的did）<br>        “raw”: [&lt;byte&gt;, &lt;byte&gt;, …] （自定义业务逻辑指令的内容，以byte数组方式传送，每个byte的范围必须为 0~255。该内容必须要以[0, 0, 0, 3, varLen(1~4B), 0, 0, 144]开头）<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">若想云端往设备转发数据，raw的值需要加上以下的协议前缀再接上发往设备的数据，即[0, 0, 0, 3, varLen(1~4B), 0, 0, 144] + 发往设备的数据，其中的varLen为可变长度，由1~4个字节(B)表示本可变长度字段后一直到数据包结尾的字节数 ，如长度小于128B，直接用一个字节(B)表示长度即可，长度大于等于128B的编码解码方式请参考MQTT V3.1协议的可变长度（Remaining Length）定义。  </div><div class="line"></div><div class="line"></div><div class="line">云端 ⇒ 浏览器。当云端收到设备上传的数据后，云端向浏览器转发以下的JSON字符串，数据放在raw字段中。登陆参数​&quot;p0_type&quot;​的值等于​&quot;attrs_v4&quot;​时,设备以“透传业务指令”上报的数据会以本指令发往浏览器。</div></pre></td></tr></table></figure></p>
+<p>{<br>    “cmd”: “s2c_raw”,<br>    “data”:<br>    {<br>        “did”: &lt;str&gt;,（数据来源设备的did）<br>        “raw”: [&lt;byte&gt;, &lt;byte&gt;, …]（自定义业务逻辑指令的内容，以byte数组方式传送，每个byte的范围必须为 0~255）<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">若该数据为设备上报的数据，raw的值会带上一个协议前缀，即[0, 0, 0, 3, varLen(1~4B), 0, 0, 145] + 设备数据，其中的varLen为可变长度，定义请参考上文。 </div><div class="line"></div><div class="line">## 4.4. 标准数据点操作（读、写、通知）</div><div class="line"></div><div class="line">当用户在登陆时参数&quot;p0_type&quot;的值等于&quot;attrs_v4&quot;时，云端会以标准数据点协议的方式和浏览器交互。   </div><div class="line"></div><div class="line">浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串，读取目标设备当前的状态。陆参数&quot;p0_type&quot;​的值等于​&quot;custom&quot;​时不允许使用本指令。</div></pre></td></tr></table></figure></p>
+<p>{<br>    “cmd”: “c2s_read”,<br>    “data”:<br>    {<br>        “did”: &lt;str&gt;（目标设备的did）<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串，控制目标设备（更改目标设备的状态）。登陆参数​&quot;p0_type&quot;​的值等于​&quot;custom&quot;​时不允许使用本指令。</div></pre></td></tr></table></figure></p>
+<p>{<br>    “cmd”: “c2s_write”,<br>    “data”:<br>    {<br>        “did”: &lt;str&gt;,（目标设备的did）<br>        “attrs”:<br>        {<br>            “name1”: &lt;value1&gt;, (“name1”指数据点的标识名(name)，&lt;value1&gt;指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))<br>            “name2”: &lt;value2&gt;,<br>            …<br>        }<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">云端 ⇒ 浏览器。设备收到读取指令或状态发生变化后，会主动发送当前状态到云端，云端向浏览器转发以下的JSON字符串。 登陆参数​&quot;p0_type&quot;​的值等于​&quot;custom&quot;​时不会收到本指令。</div></pre></td></tr></table></figure></p>
+<p>{<br>    “cmd”: “s2c_noti”,<br>    “data”:<br>    {<br>        “did”: &lt;str&gt;,（数据来源设备的did）<br>        “attrs”:<br>        {<br>            “name1”: &lt;value1&gt;, (“name1”指数据点的标识名(name)，&lt;value1&gt;指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))<br>            “name2”: &lt;value2&gt;,<br>             …<br>        }<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">## 4.5. 心跳</div><div class="line">  </div><div class="line">浏览器和云端建立Web Socket连接后，需要在登陆参数&quot;heartbeat_interval&quot;指定的时间间隔内，定期向云端发送心跳。云端收到后会回复心跳。</div><div class="line">    </div><div class="line">浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。</div></pre></td></tr></table></figure></p>
+<p>{<br>    “cmd”: “ping”<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line">云端 ⇒ 浏览器。云端向浏览器回复以下的JSON字符串。</div></pre></td></tr></table></figure></p>
+<p>{<br>    “cmd”: “pong”<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 4.6. 非法消息通知</div><div class="line"></div><div class="line">当浏览器向云端发送的消息不合法或收到设备上报的数据不合法时,云端会下发此消息通知浏览器。</div><div class="line"></div><div class="line">云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知有非法消息。</div></pre></td></tr></table></figure></p>
+<p>{<br>    “cmd”: “s2c_invalid_msg”,<br>    “data”: &lt;str&gt; ​(描述文本)<br>}<br>```</p>
 
     </div>
     
