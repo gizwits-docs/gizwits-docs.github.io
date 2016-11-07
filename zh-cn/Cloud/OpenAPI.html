@@ -287,7 +287,7 @@
 <h1 id="访问地址"><a href="#访问地址" class="headerlink" title="访问地址"></a>访问地址</h1><p><a href="http://api.gizwits.com" target="_blank" rel="external">http://api.gizwits.com</a></p>
 <h1 id="HTTP请求头部"><a href="#HTTP请求头部" class="headerlink" title="HTTP请求头部"></a>HTTP请求头部</h1><h2 id="X-Gizwits-Application-Id"><a href="#X-Gizwits-Application-Id" class="headerlink" title="X-Gizwits-Application-Id"></a>X-Gizwits-Application-Id</h2><p>所有接口都需要设置该头部, 该头部信息的值通过在开发者中心的应用管理中创建应用获得</p>
 <h2 id="X-Gizwits-User-token"><a href="#X-Gizwits-User-token" class="headerlink" title="X-Gizwits-User-token"></a>X-Gizwits-User-token</h2><p>App用户token值， 生存周期为1个星期有效，调用获取token接口返回的expired_at为失效日期时间戳。若现在时间戳 &gt; expired_at时间戳，则需要重新获取token, 获取token接口请见“App用户token申请”</p>
-<h1 id="App-Token申请"><a href="#App-Token申请" class="headerlink" title="App Token申请"></a>App Token申请</h1><h2 id="获取-App-Token-app-request-token"><a href="#获取-App-Token-app-request-token" class="headerlink" title="获取 App Token [/app/request_token]"></a>获取 App Token [/app/request_token]</h2><h3 id="业务功能描述"><a href="#业务功能描述" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供获取访问token访问权限的功能</p>
+<h1 id="App-Token申请"><a href="#App-Token申请" class="headerlink" title="App Token申请"></a>App Token申请</h1><h2 id="获取-App-Token"><a href="#获取-App-Token" class="headerlink" title="获取 App Token"></a>获取 App Token</h2><h3 id="业务功能描述"><a href="#业务功能描述" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供获取访问token访问权限的功能</p>
 <h3 id="接口地址"><a href="#接口地址" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/request_token
 </code></pre><h3 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
@@ -737,7 +737,8 @@
 </tbody>
 </table>
 <h3 id="应答报文-11"><a href="#应答报文-11" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">                <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">                <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">                <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="验证码与密码重置"><a href="#验证码与密码重置" class="headerlink" title="验证码与密码重置"></a>验证码与密码重置</h1><h2 id="验证码-app-verify-codes"><a href="#验证码-app-verify-codes" class="headerlink" title="验证码 [/app/verify/codes]"></a>验证码 [/app/verify/codes]</h2><h3 id="业务功能描述-6"><a href="#业务功能描述-6" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供获取图片验证码和发送手机短信验证码</p>
+<h1 id="验证码"><a href="#验证码" class="headerlink" title="验证码"></a>验证码</h1><h2 id="获取图片验证码-app-verify-codes"><a href="#获取图片验证码-app-verify-codes" class="headerlink" title="获取图片验证码 [/app/verify/codes]"></a>获取图片验证码 [/app/verify/codes]</h2><h3 id="业务功能描述-6"><a href="#业务功能描述-6" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供获取图片验证码</p>
+<h3 id="请求地址"><a href="#请求地址" class="headerlink" title="请求地址"></a>请求地址</h3><p><a href="http://api.gizwits.com/app/verify/codes" target="_blank" rel="external">http://api.gizwits.com/app/verify/codes</a></p>
 <h3 id="请求方式-10"><a href="#请求方式-10" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求内容"><a href="#请求内容" class="headerlink" title="请求内容"></a>请求内容</h3><p>获取图片验证码</p>
 <h3 id="请求报文-12"><a href="#请求报文-12" class="headerlink" title="请求报文"></a>请求报文</h3><table>
@@ -782,8 +783,10 @@
 </tbody>
 </table>
 <h3 id="应答报文-12"><a href="#应答报文-12" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 201</p>
-<h3 id="请求内容-1"><a href="#请求内容-1" class="headerlink" title="请求内容"></a>请求内容</h3><p>发送手机短信验证码</p>
-<h3 id="请求报文-13"><a href="#请求报文-13" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<h2 id="发送手机短信验证码"><a href="#发送手机短信验证码" class="headerlink" title="发送手机短信验证码"></a>发送手机短信验证码</h2><h3 id="业务功能描述-7"><a href="#业务功能描述-7" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>发送手机短信验证码</p>
+<h3 id="请求地址-1"><a href="#请求地址-1" class="headerlink" title="请求地址"></a>请求地址</h3><p><a href="http://api.gizwits.com/app/verify/codes" target="_blank" rel="external">http://api.gizwits.com/app/verify/codes</a></p>
+<h3 id="请求方式-11"><a href="#请求方式-11" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求报文-13"><a href="#请求报文-13" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -832,8 +835,8 @@
 </tbody>
 </table>
 <h3 id="应答报文-13"><a href="#应答报文-13" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 201</p>
-<h3 id="校验短信验证码"><a href="#校验短信验证码" class="headerlink" title="校验短信验证码"></a>校验短信验证码</h3><h3 id="业务功能描述-7"><a href="#业务功能描述-7" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供获取图片验证码和发送手机短信验证码</p>
-<h3 id="请求方式-11"><a href="#请求方式-11" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
+<h2 id="校验短信验证码"><a href="#校验短信验证码" class="headerlink" title="校验短信验证码"></a>校验短信验证码</h2><h3 id="业务功能描述-8"><a href="#业务功能描述-8" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口校验短信验证码功能</p>
+<h3 id="请求方式-12"><a href="#请求方式-12" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
 </code></pre><h3 id="请求报文-14"><a href="#请求报文-14" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -876,64 +879,83 @@
 </tbody>
 </table>
 <h3 id="应答报文-14"><a href="#应答报文-14" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 200</p>
-<h2 id="重置密码-app-reset-password"><a href="#重置密码-app-reset-password" class="headerlink" title="重置密码 [/app/reset_password]"></a>重置密码 [/app/reset_password]</h2><h3 id="使用邮箱重置密码-POST"><a href="#使用邮箱重置密码-POST" class="headerlink" title="使用邮箱重置密码 [POST]"></a>使用邮箱重置密码 [POST]</h3><p>请求成功后用户会收到一封重置密码的邮件, 用户根据邮件的链接进行密码重置。</p>
-<ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-</code></pre></li>
-<li><p>Body</p>
-<pre><code>{
-    &quot;email&quot;: &quot;bob@bob.com&quot;
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 200 (application/json)</p>
-</li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --request POST \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-     --data-binary &quot;{
-    \&quot;email\&quot;: \&quot;bob@bob.com\&quot;
-}&quot; \
-&apos;http://api.gizwits.com/app/reset_password&apos;
-</code></pre></li>
-</ul>
-<h3 id="使用手机号重置密码-POST"><a href="#使用手机号重置密码-POST" class="headerlink" title="使用手机号重置密码 [POST]"></a>使用手机号重置密码 [POST]</h3><p>使用手机号重置密码需要先调用一次获取短信验证码的接口。</p>
-<ul>
-<li><p>Request (application/json)</p>
-<ul>
-<li><p>Header</p>
-<pre><code>X-Gizwits-Application-Id: {appid}
-</code></pre></li>
-<li><p>Body</p>
-<pre><code>{
-    &quot;phone&quot;: &quot;13232433&quot;,
-    &quot;code&quot;: &quot;13232&apos;,
-    &quot;new_pwd&quot;: &quot;1323200&quot;
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>Response 200 (application/json)</p>
-</li>
-<li><p>请求示例</p>
-<pre><code>curl --include \
-     --request POST \
-     --header &quot;Content-Type: application/json&quot; \
-     --header &quot;X-Gizwits-Application-Id: {appid}&quot; \
-     --data-binary &quot;{
-    \&quot;phone\&quot;: \&quot;13232433\&quot;,
-    \&quot;code\&quot;: \&quot;13232\&apos;,
-    \&quot;new_pwd\&quot;: \&quot;1323200\&quot;
-}&quot; \
-&apos;http://api.gizwits.com/app/reset_password&apos;
-</code></pre></li>
-</ul>
+<h1 id="重置密码"><a href="#重置密码" class="headerlink" title="重置密码"></a>重置密码</h1><h2 id="邮箱重置密码"><a href="#邮箱重置密码" class="headerlink" title="邮箱重置密码"></a>邮箱重置密码</h2><h3 id="业务功能描述-9"><a href="#业务功能描述-9" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>请求成功后用户会收到一封重置密码的邮件, 用户根据邮件的链接进行密码重置。</p>
+<h3 id="接口地址-10"><a href="#接口地址-10" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/reset_password
+</code></pre><h3 id="请求方式-13"><a href="#请求方式-13" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求报文-15"><a href="#请求报文-15" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">X-Gizwits-Application-Id</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">email</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+</tr>
+</tbody>
+</table>
+<h1 id="应答报文-15"><a href="#应答报文-15" class="headerlink" title="应答报文"></a>应答报文</h1><p>Response 200 (application/json)</p>
+<h2 id="使用手机号重置密码"><a href="#使用手机号重置密码" class="headerlink" title="使用手机号重置密码"></a>使用手机号重置密码</h2><h3 id="业务功能描述-10"><a href="#业务功能描述-10" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>使用手机号重置密码需要先调用一次获取短信验证码的接口。</p>
+<h3 id="接口地址-11"><a href="#接口地址-11" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/reset_password
+</code></pre><h3 id="请求方式-14"><a href="#请求方式-14" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求报文-16"><a href="#请求报文-16" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">X-Gizwits-Application-Id</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">phone</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">手机号码</td>
+</tr>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">验证码</td>
+</tr>
+<tr>
+<td style="text-align:left">new_pwd</td>
+<td style="text-align:right">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">新密码</td>
+</tr>
+</tbody>
+</table>
+<h1 id="应答报文-16"><a href="#应答报文-16" class="headerlink" title="应答报文"></a>应答报文</h1><p>Response 200 (application/json)</p>
 <h1 id="绑定管理"><a href="#绑定管理" class="headerlink" title="绑定管理"></a>绑定管理</h1><h2 id="绑定设备-app-bind-mac"><a href="#绑定设备-app-bind-mac" class="headerlink" title="绑定设备 [/app/bind_mac]"></a>绑定设备 [/app/bind_mac]</h2><h3 id="绑定设备-POST"><a href="#绑定设备-POST" class="headerlink" title="绑定设备 [POST]"></a>绑定设备 [POST]</h3><p>X-Gizwits-Timestamp 与服务器相差不能超过 5 分钟<br>X-Gizwits-Signature = MD5(product_secret + X-Gizwits-Timestamp).lower()</p>
 <ul>
 <li><p>Request (application/json)</p>
