@@ -1052,6 +1052,28 @@ X-Gizwits-User-token: {token}
 &apos;http://api.gizwits.com/app/bindings&apos;
 </code></pre></li>
 </ul>
+<h2 id="修改绑定信息-app-bindings-did"><a href="#修改绑定信息-app-bindings-did" class="headerlink" title="修改绑定信息 [/app/bindings/{did}]"></a>修改绑定信息 [/app/bindings/{did}]</h2><h3 id="修改绑定信息-PUT"><a href="#修改绑定信息-PUT" class="headerlink" title="修改绑定信息 [PUT]"></a>修改绑定信息 [PUT]</h3><ul>
+<li><p>Request (application/json)</p>
+<ul>
+<li><p>Header</p>
+<pre><code>X-Gizwits-Application-Id: {appid}
+X-Gizwits-User-token: {token}
+</code></pre></li>
+<li><p>Body</p>
+<pre><code>{
+    &quot;remark&quot;: &quot;string&quot;,
+    &quot;dev_alias&quot;: &quot;string&quot;
+}
+</code></pre></li>
+</ul>
+</li>
+<li><p>Response 200 (application/json)</p>
+<pre><code>{
+    &quot;remark&quot;: &quot;string&quot;,
+    &quot;dev_alias&quot;: &quot;string&quot;
+}
+</code></pre></li>
+</ul>
 <h3 id="解除绑定-DELETE"><a href="#解除绑定-DELETE" class="headerlink" title="解除绑定 [DELETE]"></a>解除绑定 [DELETE]</h3><ul>
 <li><p>Request (application/json)</p>
 <ul>
@@ -1775,6 +1797,21 @@ X-Gizwits-User-token: {token}
 <td>400</td>
 <td style="text-align:center">9045</td>
 <td>API deprecated!</td>
+</tr>
+<tr>
+<td>400</td>
+<td style="text-align:center">9046</td>
+<td>Register already in progress!</td>
+</tr>
+<tr>
+<td>400</td>
+<td style="text-align:center">9047</td>
+<td>device encrypt disabled!</td>
+</tr>
+<tr>
+<td>400</td>
+<td style="text-align:center">9048</td>
+<td>device encrypt enabled, does not support this api!</td>
 </tr>
 <tr>
 <td>xxx</td>
