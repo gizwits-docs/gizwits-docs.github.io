@@ -281,15 +281,16 @@
         <div class="title">Gizwits Open API</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>机智云 Open API 主要帮助开发者通过 HTTP 的方式维护用户、用户与设备之间的绑定关系，以及获取设备数据、发送控制指令给设备。</p>
-<p>调用 API 需要获取 appid，product_key 和 token。appid 和 product_key 可以在产品信息页面获取到，token 通过用户注册和登录获取到。</p>
-<p>下文中的参数统一用 {appid} 来表示，请将你自己的 appid 整个替换掉 {appid} （包括大括号）。</p>
+      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>使用机智云提供的Open API（Http / WebSocket），可以快速开发网页或微信应用等基于html的轻应用，用于管理和控制智能设备。<br>机智云 Open API 主要帮助开发者通过 HTTP 的方式维护用户、用户与设备之间的绑定关系，以及获取设备数据、发送控制指令给设备。</p>
 <h1 id="访问地址"><a href="#访问地址" class="headerlink" title="访问地址"></a>访问地址</h1><p><a href="http://api.gizwits.com" target="_blank" rel="external">http://api.gizwits.com</a></p>
-<h1 id="HTTP请求头部"><a href="#HTTP请求头部" class="headerlink" title="HTTP请求头部"></a>HTTP请求头部</h1><h2 id="X-Gizwits-Application-Id"><a href="#X-Gizwits-Application-Id" class="headerlink" title="X-Gizwits-Application-Id"></a>X-Gizwits-Application-Id</h2><p>所有接口都需要设置该头部, 该头部信息的值通过在开发者中心的应用管理中创建应用获得</p>
+<h1 id="协议约定"><a href="#协议约定" class="headerlink" title="协议约定"></a>协议约定</h1><h2 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a>请求方式</h2><p>本文档所定义接口基于HTTP/HTTPS协议进行传输，需要注意协议中标注的请求方式，通过GET、PUT、DELETE等进行不同的操作。</p>
+<h2 id="请求参数"><a href="#请求参数" class="headerlink" title="请求参数"></a>请求参数</h2><p>HTTP请求参数的类型一般分为三种。Header表示该参数是在HTTP请求头中；URL表示是通过url传参；Body表示是Request Body，通常Body中都是JSON格式</p>
+<h2 id="HTTP请求头部说明"><a href="#HTTP请求头部说明" class="headerlink" title="HTTP请求头部说明"></a>HTTP请求头部说明</h2><p>调用 API 需要获取 appid，product_key 和 token。appid 和 product_key 可以在产品信息页面获取到，token 通过用户注册和登录获取到。<br>下文中的参数统一用 {appid} 来表示，请将你自己的 appid 整个替换掉 {appid} （包括大括号）。</p>
+<h2 id="X-Gizwits-Application-Id"><a href="#X-Gizwits-Application-Id" class="headerlink" title="X-Gizwits-Application-Id"></a>X-Gizwits-Application-Id</h2><p>所有接口都需要设置该头部, 该头部信息的值通过在开发者中心的应用管理中创建应用获得</p>
 <h2 id="X-Gizwits-User-token"><a href="#X-Gizwits-User-token" class="headerlink" title="X-Gizwits-User-token"></a>X-Gizwits-User-token</h2><p>App用户token值， 生存周期为1个星期有效，调用获取token接口返回的expired_at为失效日期时间戳。若现在时间戳 &gt; expired_at时间戳，则需要重新获取token, 获取token接口请见“App用户token申请”</p>
 <h1 id="App-Token申请"><a href="#App-Token申请" class="headerlink" title="App Token申请"></a>App Token申请</h1><h2 id="获取-App-Token"><a href="#获取-App-Token" class="headerlink" title="获取 App Token"></a>获取 App Token</h2><h3 id="业务功能描述"><a href="#业务功能描述" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供获取访问token访问权限的功能</p>
 <h3 id="接口地址"><a href="#接口地址" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/request_token
-</code></pre><h3 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-1"><a href="#请求方式-1" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
 <li>请使用 <em>https</em> 调用本接口</li>
 <li>signature 的算法: signature = MD5(appid+appsecret) 32位小写</li>
@@ -299,7 +300,7 @@
 <h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><h3 id="1、创建匿名用户"><a href="#1、创建匿名用户" class="headerlink" title="1、创建匿名用户"></a>1、创建匿名用户</h3><p>如果您想让您的用户不需要显示注册和登录就能使用机智云的功能，就可以通过匿名注册的方式来为该用户创建一个匿名用户。phone_id 可以是手机的唯一识别码。</p>
 <p>或者您已经有了自己的用户系统，不希望用户再次注册一次机智云帐号，您也可以使用该接口，为您的每一个用户创建一个对应的机智云匿名帐号。这时，phone_id 可以是用户在您的系统中的唯一识别码。如在与微信应用做对接时，phone_id 可以设置成微信用户的 openid。</p>
 <h3 id="接口地址-1"><a href="#接口地址-1" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-1"><a href="#请求方式-1" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-2"><a href="#请求方式-2" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-1"><a href="#请求报文-1" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -331,7 +332,7 @@
 </table>
 <h3 id="应答报文-1"><a href="#应答报文-1" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">    <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">    <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">    <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="2、使用用户名和密码创建用户"><a href="#2、使用用户名和密码创建用户" class="headerlink" title="2、使用用户名和密码创建用户"></a>2、使用用户名和密码创建用户</h3><h3 id="接口地址-2"><a href="#接口地址-2" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-2"><a href="#请求方式-2" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-3"><a href="#请求方式-3" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-2"><a href="#请求报文-2" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -372,7 +373,7 @@
 <h3 id="应答报文-2"><a href="#应答报文-2" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">            <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">            <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">            <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="3、使用邮箱创建用户"><a href="#3、使用邮箱创建用户" class="headerlink" title="3、使用邮箱创建用户"></a>3、使用邮箱创建用户</h3><h3 id="业务功能描述-1"><a href="#业务功能描述-1" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>用户通过邮箱注册机智云帐号，注册成功后会收到一封邮件通知。</p>
 <h3 id="接口地址-3"><a href="#接口地址-3" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-3"><a href="#请求方式-3" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-4"><a href="#请求方式-4" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-3"><a href="#请求报文-3" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -413,7 +414,7 @@
 <h3 id="应答报文-3"><a href="#应答报文-3" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">        <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">        <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">        <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="4、使用手机号创建用户"><a href="#4、使用手机号创建用户" class="headerlink" title="4、使用手机号创建用户"></a>4、使用手机号创建用户</h3><h3 id="业务功能描述-2"><a href="#业务功能描述-2" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>如果希望用户使用手机号注册机智云帐号，机智云提供短信验证码接口，您需要先调用获取验证码接口获取验证码，然后再进行注册。</p>
 <h3 id="接口地址-4"><a href="#接口地址-4" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-4"><a href="#请求方式-4" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-5"><a href="#请求方式-5" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-4"><a href="#请求报文-4" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -471,13 +472,13 @@
     }
 }
 </code></pre><h3 id="接口地址-5"><a href="#接口地址-5" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-5"><a href="#请求方式-5" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-6"><a href="#请求方式-6" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-5"><a href="#请求报文-5" class="headerlink" title="请求报文"></a>请求报文</h3><p>Header<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">X-Gizwits-Application-Id: &#123;appid&#125;</div></pre></td></tr></table></figure></p>
 <p>Body<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;   </div><div class="line">            <span class="attr">"authData"</span>: &#123;</div><div class="line">                <span class="attr">"src"</span>: <span class="string">"baidu|sina|qq"</span>,</div><div class="line">                <span class="attr">"uid"</span>: <span class="string">"2346677"</span>,</div><div class="line">                <span class="attr">"token"</span>:<span class="string">"pnktnjyb996sj4p156gjtp4im"</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
 <h3 id="应答报文-5"><a href="#应答报文-5" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">    <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">    <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">    <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="匿名用户设置用户名和密码"><a href="#匿名用户设置用户名和密码" class="headerlink" title="匿名用户设置用户名和密码"></a>匿名用户设置用户名和密码</h3><h3 id="业务功能描述-4"><a href="#业务功能描述-4" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>假设您的机智云应用帮用户创建了一个匿名用户，他不需要注册就可以体验您的应用，并且绑定了设备，他体验满意之后，希望有一个自己的机智云帐号，但是又不想重复绑定设备。这时您可以调用该接口，为匿名用户设置用户名和密码，这样他就不再是一个匿名用户了。</p>
 <h3 id="接口地址-6"><a href="#接口地址-6" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-6"><a href="#请求方式-6" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-7"><a href="#请求方式-7" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-6"><a href="#请求报文-6" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -526,7 +527,7 @@
 <h3 id="应答报文-6"><a href="#应答报文-6" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"updatedAt"</span>: <span class="string">"2011-11-07T21:25:10.623Z"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="匿名用户设置手机号和密码"><a href="#匿名用户设置手机号和密码" class="headerlink" title="匿名用户设置手机号和密码"></a>匿名用户设置手机号和密码</h3><h3 id="业务描述"><a href="#业务描述" class="headerlink" title="业务描述"></a>业务描述</h3><p>与匿名用户设置用户名和密码类似，该接口可以为匿名用户设置手机号和密码，但是需要先调用一次获取短信验证码的接口。</p>
 <h3 id="接口地址-7"><a href="#接口地址-7" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-7"><a href="#请求方式-7" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-8"><a href="#请求方式-8" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-7"><a href="#请求报文-7" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -583,7 +584,7 @@
 <h3 id="应答报文-7"><a href="#应答报文-7" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"updatedAt"</span>: <span class="string">"2011-11-07T21:25:10.623Z"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="修改用户信息"><a href="#修改用户信息" class="headerlink" title="修改用户信息"></a>修改用户信息</h2><h3 id="业务功能描述-5"><a href="#业务功能描述-5" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口分别提供修改用户密码、修改用户邮箱、修改用户手机的功能</p>
 <h3 id="接口地址-8"><a href="#接口地址-8" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/users
-</code></pre><h3 id="请求方式-8"><a href="#请求方式-8" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
+</code></pre><h3 id="请求方式-9"><a href="#请求方式-9" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
 </code></pre><h3 id="修改密码Example"><a href="#修改密码Example" class="headerlink" title="修改密码Example"></a>修改密码Example</h3><h3 id="请求报文-8"><a href="#请求报文-8" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -717,7 +718,7 @@
 <h3 id="应答报文-10"><a href="#应答报文-10" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"updatedAt"</span>: <span class="string">"2011-11-07T21:25:10.623Z"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="用户登录"><a href="#用户登录" class="headerlink" title="用户登录"></a>用户登录</h2><p>可以使用用户名/邮箱/手机号登录，一律填写到 username 字段。</p>
 <h3 id="接口地址-9"><a href="#接口地址-9" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>api.gizwits.com/app/login
-</code></pre><h3 id="请求方式-9"><a href="#请求方式-9" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-10"><a href="#请求方式-10" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-11"><a href="#请求报文-11" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -758,7 +759,7 @@
 <h3 id="应答报文-11"><a href="#应答报文-11" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">                <span class="attr">"uid"</span>: <span class="string">"akkdlfeiow"</span>, </div><div class="line">                <span class="attr">"token"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">                <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="验证码"><a href="#验证码" class="headerlink" title="验证码"></a>验证码</h1><h2 id="获取图片验证码"><a href="#获取图片验证码" class="headerlink" title="获取图片验证码"></a>获取图片验证码</h2><h3 id="业务功能描述-6"><a href="#业务功能描述-6" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供获取图片验证码</p>
 <h3 id="请求地址"><a href="#请求地址" class="headerlink" title="请求地址"></a>请求地址</h3><p><a href="http://api.gizwits.com/app/verify/codes" target="_blank" rel="external">http://api.gizwits.com/app/verify/codes</a></p>
-<h3 id="请求方式-10"><a href="#请求方式-10" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+<h3 id="请求方式-11"><a href="#请求方式-11" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求内容"><a href="#请求内容" class="headerlink" title="请求内容"></a>请求内容</h3><p>获取图片验证码</p>
 <h3 id="请求报文-12"><a href="#请求报文-12" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
@@ -808,7 +809,7 @@
 <h3 id="应答报文-12"><a href="#应答报文-12" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 201</p>
 <h2 id="发送手机短信验证码"><a href="#发送手机短信验证码" class="headerlink" title="发送手机短信验证码"></a>发送手机短信验证码</h2><h3 id="业务功能描述-7"><a href="#业务功能描述-7" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>发送手机短信验证码</p>
 <h3 id="请求地址-1"><a href="#请求地址-1" class="headerlink" title="请求地址"></a>请求地址</h3><p><a href="http://api.gizwits.com/app/verify/codes" target="_blank" rel="external">http://api.gizwits.com/app/verify/codes</a></p>
-<h3 id="请求方式-11"><a href="#请求方式-11" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+<h3 id="请求方式-12"><a href="#请求方式-12" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-13"><a href="#请求报文-13" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -864,7 +865,7 @@
 </table>
 <h3 id="应答报文-13"><a href="#应答报文-13" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 201</p>
 <h2 id="校验短信验证码"><a href="#校验短信验证码" class="headerlink" title="校验短信验证码"></a>校验短信验证码</h2><h3 id="业务功能描述-8"><a href="#业务功能描述-8" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口校验短信验证码功能</p>
-<h3 id="请求方式-12"><a href="#请求方式-12" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
+<h3 id="请求方式-13"><a href="#请求方式-13" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
 </code></pre><h3 id="请求报文-14"><a href="#请求报文-14" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -913,7 +914,7 @@
 <h3 id="应答报文-14"><a href="#应答报文-14" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 200</p>
 <h1 id="重置密码"><a href="#重置密码" class="headerlink" title="重置密码"></a>重置密码</h1><h2 id="邮箱重置密码"><a href="#邮箱重置密码" class="headerlink" title="邮箱重置密码"></a>邮箱重置密码</h2><h3 id="业务功能描述-9"><a href="#业务功能描述-9" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>请求成功后用户会收到一封重置密码的邮件, 用户根据邮件的链接进行密码重置。</p>
 <h3 id="接口地址-10"><a href="#接口地址-10" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/reset_password
-</code></pre><h3 id="请求方式-13"><a href="#请求方式-13" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-14"><a href="#请求方式-14" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-15"><a href="#请求报文-15" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -946,7 +947,7 @@
 <h3 id="应答报文-15"><a href="#应答报文-15" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 200 (application/json)</p>
 <h2 id="使用手机号重置密码"><a href="#使用手机号重置密码" class="headerlink" title="使用手机号重置密码"></a>使用手机号重置密码</h2><h3 id="业务功能描述-10"><a href="#业务功能描述-10" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>使用手机号重置密码需要先调用一次获取短信验证码的接口。</p>
 <h3 id="接口地址-11"><a href="#接口地址-11" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/reset_password
-</code></pre><h3 id="请求方式-14"><a href="#请求方式-14" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-15"><a href="#请求方式-15" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-16"><a href="#请求报文-16" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -995,13 +996,13 @@
 <h3 id="应答报文-16"><a href="#应答报文-16" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 200 (application/json)</p>
 <h1 id="绑定管理"><a href="#绑定管理" class="headerlink" title="绑定管理"></a>绑定管理</h1><h2 id="根据mac绑定设备"><a href="#根据mac绑定设备" class="headerlink" title="根据mac绑定设备"></a>根据mac绑定设备</h2><h3 id="业务功能描述-11"><a href="#业务功能描述-11" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>X-Gizwits-Timestamp 与服务器相差不能超过 5 分钟<br>X-Gizwits-Signature = MD5(product_secret + X-Gizwits-Timestamp).lower()</p>
 <h3 id="接口地址-12"><a href="#接口地址-12" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/bind_mac
-</code></pre><h3 id="请求方式-15"><a href="#请求方式-15" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-16"><a href="#请求方式-16" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-17"><a href="#请求报文-17" class="headerlink" title="请求报文"></a>请求报文</h3><p>1、 Header<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">X-Gizwits-Application-Id: &#123;appid&#125;</div><div class="line">X-Gizwits-User-token: &#123;token&#125;</div><div class="line">X-Gizwits-Timestamp: &#123;req_ts&#125;</div><div class="line">X-Gizwits-Signature: &#123;sig&#125;</div></pre></td></tr></table></figure></p>
 <p>2、 Body<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">    <span class="attr">"mac"</span>: <span class="string">"xxx"</span>,</div><div class="line">    <span class="attr">"remark"</span>: <span class="string">"xxx"</span>,</div><div class="line">    <span class="attr">"dev_alias"</span>: <span class="string">"xxx"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="应答报文-17"><a href="#应答报文-17" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 201 (application/json)</p>
 <h2 id="获取绑定列表"><a href="#获取绑定列表" class="headerlink" title="获取绑定列表"></a>获取绑定列表</h2><h3 id="业务功能描述-12"><a href="#业务功能描述-12" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供绑定列表</p>
 <h3 id="接口地址-13"><a href="#接口地址-13" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/bindings
-</code></pre><h3 id="请求方式-16"><a href="#请求方式-16" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
+</code></pre><h3 id="请求方式-17"><a href="#请求方式-17" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
 </code></pre><h3 id="请求报文-18"><a href="#请求报文-18" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -1051,12 +1052,12 @@
 <h3 id="应答报文-18"><a href="#应答报文-18" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"devices"</span>: [&#123;</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"abcada"</span>,</div><div class="line">        <span class="attr">"mac"</span>: <span class="string">"1122334455667788"</span>,</div><div class="line">        <span class="attr">"is_online"</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">"passcode"</span>: <span class="string">"123456"</span>,</div><div class="line">        <span class="attr">"host"</span>: <span class="string">"m2m.gizwits.com"</span>,</div><div class="line">        <span class="attr">"port"</span>: <span class="number">3128</span>,</div><div class="line">        <span class="attr">"remark"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"is_disabled"</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">"type"</span>: <span class="string">"normal"</span>,</div><div class="line">        <span class="attr">"dev_alias"</span>: <span class="string">"dev1"</span></div><div class="line">    &#125;,&#123;</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"akdlfkad"</span>,</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"abcada"</span>,</div><div class="line">        <span class="attr">"mac"</span>: <span class="string">"1122334455667788"</span>,</div><div class="line">        <span class="attr">"is_online"</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">"passcode"</span>: <span class="string">"123456"</span>,</div><div class="line">        <span class="attr">"host"</span>: <span class="string">"m2m.gizwits.com"</span>,</div><div class="line">        <span class="attr">"port"</span>: <span class="number">3128</span>,</div><div class="line">        <span class="attr">"remark"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"is_disabled"</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">"type"</span>: <span class="string">"center_control"</span>,</div><div class="line">        <span class="attr">"dev_alias"</span>: <span class="string">"dev2"</span></div><div class="line">    &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="绑定设备"><a href="#绑定设备" class="headerlink" title="绑定设备"></a>绑定设备</h2><h3 id="业务功能描述-13"><a href="#业务功能描述-13" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>使用该接口适合知道 did 和 passcode 的情况。<br>dev_alias 设备别名，用于当前用户对该设备起一个别名，仅该用户可见。<br>remark 用于设置备注信息。</p>
 <h3 id="接口地址-14"><a href="#接口地址-14" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/bindings
-</code></pre><h3 id="请求方式-17"><a href="#请求方式-17" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-18"><a href="#请求方式-18" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-19"><a href="#请求报文-19" class="headerlink" title="请求报文"></a>请求报文</h3><p>Header<br>X-Gizwits-Application-Id: {appid}<br>X-Gizwits-User-token: {token}<br>Body<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">                <span class="attr">"devices"</span>: [&#123;</div><div class="line">                    <span class="attr">"did"</span>: <span class="string">"gdGn7PzAYf4VrhnVag5x8D"</span>,</div><div class="line">                    <span class="attr">"passcode"</span>: <span class="string">"gokit"</span>,</div><div class="line">                    <span class="attr">"remark"</span>: <span class="string">""</span>，      </div><div class="line">                    <span class="string">"dev_alias"</span>: <span class="string">"my_dev"</span></div><div class="line">                &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="应答报文-19"><a href="#应答报文-19" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"success"</span>: ['abc', 'add'],</div><div class="line">    <span class="attr">"failed"</span>: ['adad', 'ee']</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="修改绑定信息"><a href="#修改绑定信息" class="headerlink" title="修改绑定信息"></a>修改绑定信息</h2><h3 id="业务功能描述-14"><a href="#业务功能描述-14" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>修改绑定信息</p>
 <h3 id="接口地址-15"><a href="#接口地址-15" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/bindings/{did}
-</code></pre><h3 id="请求方式-18"><a href="#请求方式-18" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
+</code></pre><h3 id="请求方式-19"><a href="#请求方式-19" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
 </code></pre><h3 id="请求报文-20"><a href="#请求报文-20" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -1113,13 +1114,13 @@
 <h3 id="应答报文-20"><a href="#应答报文-20" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"remark"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"dev_alias"</span>: <span class="string">"string"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="解除绑定"><a href="#解除绑定" class="headerlink" title="解除绑定"></a>解除绑定</h3><h3 id="业务功能描述-15"><a href="#业务功能描述-15" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>提供解除绑定功能</p>
 <h3 id="接口地址-16"><a href="#接口地址-16" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/bindings
-</code></pre><h3 id="请求方式-19"><a href="#请求方式-19" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>DELETE
+</code></pre><h3 id="请求方式-20"><a href="#请求方式-20" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>DELETE
 </code></pre><h3 id="请求报文-21"><a href="#请求报文-21" class="headerlink" title="请求报文"></a>请求报文</h3><p>Header<br>X-Gizwits-Application-Id: {appid}<br>X-Gizwits-User-token: {token}</p>
 <p>Body<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">            <span class="attr">"devices"</span>: [&#123;</div><div class="line">                <span class="attr">"did"</span>: <span class="string">"gdGn7PzAYf4VrhnVag5x8D"</span></div><div class="line">            &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="应答报文-21"><a href="#应答报文-21" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"success"</span>: ['abc', 'add'],</div><div class="line">    <span class="attr">"failed"</span>: ['adad', 'ee']</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h1><h2 id="获取设备最近上传数据"><a href="#获取设备最近上传数据" class="headerlink" title="获取设备最近上传数据"></a>获取设备最近上传数据</h2><h3 id="业务功能描述-16"><a href="#业务功能描述-16" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>获取设备最近一次上传的数据，包含所有数据点的键值对。</p>
 <h3 id="接口地址-17"><a href="#接口地址-17" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/devdata/{did}/latest
-</code></pre><h3 id="请求方式-20"><a href="#请求方式-20" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
+</code></pre><h3 id="请求方式-21"><a href="#请求方式-21" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
 </code></pre><h3 id="请求报文-22"><a href="#请求报文-22" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -1151,7 +1152,7 @@
 </table>
 <h3 id="应答报文-22"><a href="#应答报文-22" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"did"</span>: <span class="string">"gdGn7PzAYf4VrhnVag5x8D"</span>,</div><div class="line">    <span class="attr">"updated_at"</span>: <span class="number">148293984328</span>,</div><div class="line">    <span class="attr">"attr"</span>: &#123;</div><div class="line">      <span class="attr">"temp"</span>: <span class="number">10</span>,</div><div class="line">      <span class="attr">"humi"</span>: <span class="number">20</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="远程控制设备"><a href="#远程控制设备" class="headerlink" title="远程控制设备"></a>远程控制设备</h2><h3 id="接口地址-18"><a href="#接口地址-18" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/control/{did}
-</code></pre><h3 id="请求方式-21"><a href="#请求方式-21" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-22"><a href="#请求方式-22" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="详情描述"><a href="#详情描述" class="headerlink" title="详情描述"></a>详情描述</h3><p>远程控制设备可以通过两种方式，一种是设置数据点，一种是发送原始控制指令。<br>推荐使用设置数据点的方式，通过这种方式控制设备，系统内部自动会生成原始控制指令发送给设备，使用起来更简单。</p>
 <ul>
 <li>参数列表<ul>
@@ -1181,7 +1182,7 @@
 <p>重复策略通过 retry_task 来设置，全部重试为 “all”，部分重试为 “failed”。</p>
 <h2 id="创建定时任务"><a href="#创建定时任务" class="headerlink" title="创建定时任务"></a>创建定时任务</h2><h3 id="业务功能描述-17"><a href="#业务功能描述-17" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供定时任务创建功能</p>
 <h3 id="请求地址-2"><a href="#请求地址-2" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/scheduler
-</code></pre><h3 id="请求方式-22"><a href="#请求方式-22" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-23"><a href="#请求方式-23" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-25"><a href="#请求报文-25" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -1235,7 +1236,7 @@
 <h3 id="应答报文-25"><a href="#应答报文-25" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"id"</span>: <span class="string">"adkle"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="获取定时任务"><a href="#获取定时任务" class="headerlink" title="获取定时任务"></a>获取定时任务</h2><h3 id="业务功能描述-18"><a href="#业务功能描述-18" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供定时任务获取功能</p>
 <h3 id="请求地址-3"><a href="#请求地址-3" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/scheduler
-</code></pre><h3 id="请求方式-23"><a href="#请求方式-23" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
+</code></pre><h3 id="请求方式-24"><a href="#请求方式-24" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
 </code></pre><h3 id="请求报文-26"><a href="#请求报文-26" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -1284,7 +1285,7 @@
 <h3 id="应答报文-26"><a href="#应答报文-26" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"id"</span>: <span class="string">"abckaldkl"</span>,</div><div class="line">    <span class="attr">"created_at"</span>: <span class="string">"2015-01-01T12:00:00"</span>,</div><div class="line">    <span class="attr">"date"</span>: <span class="string">"2015-01-01"</span>,</div><div class="line">    <span class="attr">"time"</span>: <span class="string">"12:00"</span>,</div><div class="line">    <span class="attr">"repeat"</span>: <span class="string">"none"</span>,</div><div class="line">    <span class="attr">"task"</span>: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"did1"</span>,</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">        <span class="attr">"attrs"</span>: &#123;</div><div class="line">          <span class="attr">"attr1"</span>: <span class="number">1</span>,</div><div class="line">          <span class="attr">"attr2"</span>: <span class="number">1</span></div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"did2"</span>,</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">        <span class="attr">"attrs"</span>: &#123;</div><div class="line">          <span class="attr">"attr1"</span>: <span class="number">1</span>,</div><div class="line">          <span class="attr">"attr2"</span>: <span class="number">2</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    <span class="attr">"retry_count"</span>: <span class="number">3</span>,</div><div class="line">    <span class="attr">"retry_task"</span>: <span class="string">"all"</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"id"</span>: <span class="string">"abckaldkl"</span>,</div><div class="line">    <span class="attr">"created_at"</span>: <span class="string">"2015-01-01T12:00:00"</span>,</div><div class="line">    <span class="attr">"date"</span>: <span class="string">"2015-01-01"</span>,</div><div class="line">    <span class="attr">"time"</span>: <span class="string">"12:00"</span>,</div><div class="line">    <span class="attr">"repeat"</span>: <span class="string">"none"</span>,</div><div class="line">    <span class="attr">"task"</span>: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"did1"</span>,</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">        <span class="attr">"attrs"</span>: &#123;</div><div class="line">          <span class="attr">"attr1"</span>: <span class="string">"val"</span>,</div><div class="line">          <span class="attr">"attr2"</span>: <span class="string">"val"</span></div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"did2"</span>,</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">        <span class="attr">"attrs"</span>: &#123;</div><div class="line">          <span class="attr">"attr1"</span>: <span class="string">"val"</span>,</div><div class="line">          <span class="attr">"attr2"</span>: <span class="string">"val"</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    <span class="attr">"retry_count"</span>: <span class="number">3</span>,</div><div class="line">    <span class="attr">"retry_task"</span>: <span class="string">"all"</span></div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
 <h2 id="删除定时任务"><a href="#删除定时任务" class="headerlink" title="删除定时任务"></a>删除定时任务</h2><h3 id="业务功能描述-19"><a href="#业务功能描述-19" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供定时任务删除功能</p>
 <h3 id="请求地址-4"><a href="#请求地址-4" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/scheduler/{id}
-</code></pre><h3 id="请求方式-24"><a href="#请求方式-24" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>DELETE
+</code></pre><h3 id="请求方式-25"><a href="#请求方式-25" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>DELETE
 </code></pre><h3 id="请求报文-27"><a href="#请求报文-27" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -1324,7 +1325,7 @@
 </table>
 <h3 id="应答报文-27"><a href="#应答报文-27" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 200 (application/json)</p>
 <h2 id="获取设备定时任务"><a href="#获取设备定时任务" class="headerlink" title="获取设备定时任务"></a>获取设备定时任务</h2><h3 id="请求地址-5"><a href="#请求地址-5" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/devices/{did}/scheduler
-</code></pre><h3 id="请求方式-25"><a href="#请求方式-25" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
+</code></pre><h3 id="请求方式-26"><a href="#请求方式-26" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
 </code></pre><h3 id="请求报文-28"><a href="#请求报文-28" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -1381,7 +1382,7 @@
 <h3 id="应答报文-28"><a href="#应答报文-28" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"attrs"</span>: &#123;<span class="attr">"attr"</span>: <span class="number">1</span>&#125;,</div><div class="line">    <span class="attr">"date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">    <span class="attr">"time"</span>: <span class="string">"12:00"</span>,</div><div class="line">    <span class="attr">"repeat"</span>: <span class="string">"none"</span>,</div><div class="line">    <span class="attr">"days"</span>: [</div><div class="line">      <span class="number">0</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"start_date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">    <span class="attr">"end_date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">    <span class="attr">"enabled"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"remark"</span>: <span class="string">""</span>,</div><div class="line">    <span class="attr">"id"</span>: <span class="string">""</span>,</div><div class="line">    <span class="attr">"created_at"</span>: <span class="string">"2016-11-07"</span></div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
 <h2 id="创建设备定时任务"><a href="#创建设备定时任务" class="headerlink" title="创建设备定时任务"></a>创建设备定时任务</h2><h3 id="业务功能描述-20"><a href="#业务功能描述-20" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供设备定时任务创建功能</p>
 <h3 id="请求地址-6"><a href="#请求地址-6" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/devices/{did}/scheduler
-</code></pre><h3 id="请求方式-26"><a href="#请求方式-26" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求方式-27"><a href="#请求方式-27" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-29"><a href="#请求报文-29" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -1423,7 +1424,7 @@
 <h3 id="应答报文-29"><a href="#应答报文-29" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"id"</span>: <span class="string">"adkle"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="修改设备定时任务"><a href="#修改设备定时任务" class="headerlink" title="修改设备定时任务"></a>修改设备定时任务</h2><h3 id="业务功能描述-21"><a href="#业务功能描述-21" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供设备定时任务修改功能</p>
 <h3 id="请求地址-7"><a href="#请求地址-7" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/devices/{did}/scheduler
-</code></pre><h3 id="请求方式-27"><a href="#请求方式-27" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
+</code></pre><h3 id="请求方式-28"><a href="#请求方式-28" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
 </code></pre><h3 id="请求报文-30"><a href="#请求报文-30" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -1465,7 +1466,7 @@
 <h3 id="应答报文-30"><a href="#应答报文-30" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"id"</span>: <span class="string">"adkle"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="删除设备定时任务"><a href="#删除设备定时任务" class="headerlink" title="删除设备定时任务"></a>删除设备定时任务</h2><h3 id="业务功能描述-22"><a href="#业务功能描述-22" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供设备定时任务删除功能</p>
 <h3 id="请求地址-8"><a href="#请求地址-8" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/devices/{did}/scheduler/{id}
-</code></pre><h3 id="请求方式-28"><a href="#请求方式-28" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>DELETE
+</code></pre><h3 id="请求方式-29"><a href="#请求方式-29" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>DELETE
 </code></pre><h3 id="请求报文-31"><a href="#请求报文-31" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -1506,7 +1507,7 @@
 <h3 id="应答报文-31"><a href="#应答报文-31" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 200 (application/json)</p>
 <h2 id="定时任务执行日志"><a href="#定时任务执行日志" class="headerlink" title="定时任务执行日志"></a>定时任务执行日志</h2><h3 id="业务功能描述-23"><a href="#业务功能描述-23" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供定时任务执行日志功能</p>
 <h3 id="请求地址-9"><a href="#请求地址-9" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/scheduler/{id}/logs
-</code></pre><h3 id="请求方式-29"><a href="#请求方式-29" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
+</code></pre><h3 id="请求方式-30"><a href="#请求方式-30" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
 </code></pre><h3 id="请求报文-32"><a href="#请求报文-32" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
