@@ -4,14 +4,14 @@
   <head>
   <meta charset="utf-8">
 
-  <title>机智云</title>
+  <title>GoKit3 DEV SDK Common版移植说明 - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="-机智云">
-  <meta name="keywords" content=" docs 文档中心 Gizwits">
+  <meta name="Description" content="GoKit3 DEV SDK Common版移植说明-机智云">
+  <meta name="keywords" content="GoKit3 DEV SDK Common版移植说明 docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
 
@@ -278,10 +278,10 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title"></div>
+        <div class="title">GoKit3 DEV SDK Common版移植说明</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="GoKit3-DEV-SDK-Common版移植说明"><a href="#GoKit3-DEV-SDK-Common版移植说明" class="headerlink" title="GoKit3 DEV SDK Common版移植说明"></a>GoKit3 DEV SDK Common版移植说明</h1><h1 id="前文需知"><a href="#前文需知" class="headerlink" title="前文需知"></a>前文需知</h1><h2 id="1-什么是-quot-代码自动生成工具-quot-？"><a href="#1-什么是-quot-代码自动生成工具-quot-？" class="headerlink" title="1.什么是&quot;代码自动生成工具&quot;？"></a>1.什么是&quot;代码自动生成工具&quot;？</h2><p>为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。</p>
+      <h1 id="前文需知"><a href="#前文需知" class="headerlink" title="前文需知"></a>前文需知</h1><h2 id="1-什么是-quot-代码自动生成工具-quot-？"><a href="#1-什么是-quot-代码自动生成工具-quot-？" class="headerlink" title="1.什么是&quot;代码自动生成工具&quot;？"></a>1.什么是&quot;代码自动生成工具&quot;？</h2><p>为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。</p>
 <p>自动生成的代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的API，且提供了多种平台的实例代码。当设备收到云端或APP端的数据后，程序会将数据转换成对应的事件并通知到应用层，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。</p>
 <p>MCU方案默认支持 <strong>STM32F103C8x</strong> 平台，如果是其他MCU芯片，可以将我们生成好的 <strong>通用平台版代码</strong> 移植到符合条件的平台，从而实现机智云所提供的各种功能。</p>
 <p>本文将主要说明 <strong>通用平台版</strong> 的移植。</p>
@@ -377,7 +377,7 @@
 </code></pre><h1 id="相关支持"><a href="#相关支持" class="headerlink" title="相关支持"></a>相关支持</h1><p>1)   如果您是开发者</p>
 <p>GoKit是面向智能硬件开发者限量免费开放，注册我们的论坛或关注我们的官方微信均可发起申请即可。</p>
 <p>开发者论坛： <a href="http://club.gizwits.com/forum.php" target="_blank" rel="external">http://club.gizwits.com/forum.php</a></p>
-<p>文档中心： <a href="http://docs.gizwits.com/hc/" target="_blank" rel="external">http://docs.gizwits.com/hc/</a></p>
+<p>文档中心： <a href="http://docs.gizwits.com/" target="_blank" rel="external">http://docs.gizwits.com/hc/</a></p>
 <p>2)    如果您是团体</p>
 <p>GizWits针对团体有很多支持计划，您可以和GizWtis联系，快速得到GoKit以及技术支持；</p>
 <p>网站地址： <a href="http://www.gizwits.com/about-us" target="_blank" rel="external">http://www.gizwits.com/about-us</a></p>
