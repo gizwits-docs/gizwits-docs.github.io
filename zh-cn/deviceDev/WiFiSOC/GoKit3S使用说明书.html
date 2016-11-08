@@ -377,7 +377,7 @@
 </blockquote>
 <p>即使GoKit不在身边依然近在咫尺</p>
 <p>GoKit天生支持远程连接，您可以将您的手机切换成2G、3G、4G，然后打开软件，您的GoKit依然存在，点击设备后就如同本地操作一样，唯一不同的就是目前的连接方式是远程连接。</p>
-<h1 id="GoKit3-S-的MCU模式"><a href="#GoKit3-S-的MCU模式" class="headerlink" title="GoKit3(S)的MCU模式"></a>GoKit3(S)的MCU模式</h1><p>GoKit3(S)除了支持SOC模式同时支持MCU模式，两者区别请查看<a href="/assets/zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html"><em>《Gokit3系列开发套件简介》</em></a>中的“3.1. SOC版与MCU版的区别”一节，以下介绍如何使用MCU模式。</p>
+<h1 id="GoKit3-S-的MCU模式"><a href="#GoKit3-S-的MCU模式" class="headerlink" title="GoKit3(S)的MCU模式"></a>GoKit3(S)的MCU模式</h1><p>GoKit3(S)除了支持SOC模式同时支持MCU模式，两者区别请查看<a href="zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html">《Gokit3系列开发套件简介》</a>中的“3.1. SOC版与MCU版的区别”一节，以下介绍如何使用MCU模式。</p>
 <h2 id="1-先确认GoKit3-S-处于SOC模式"><a href="#1-先确认GoKit3-S-处于SOC模式" class="headerlink" title="1 先确认GoKit3(S)处于SOC模式"></a>1 先确认GoKit3(S)处于SOC模式</h2><p>因为只有在SOC模式下才能正常烧写固件，所以先确定ESP 8266 WiFi处于模组接口的SOC模式（靠下位置），如下图：</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image26.png" alt=""></p>
 <h2 id="2-烧写ESP8266对应的Gagent程序"><a href="#2-烧写ESP8266对应的Gagent程序" class="headerlink" title="2 烧写ESP8266对应的Gagent程序"></a>2 烧写ESP8266对应的Gagent程序</h2><p>使用MCU模式时，ESP8266(WiFi模组)只负责信息的接收与发送，所以WiFi模组需要烧写Gagent源码固件。<strong>Gagent</strong>是机智云开发的可运行在各种通讯模组上的一款应用程序，开发者使用<strong>Gagent</strong>后，只需要关心产品的业务逻辑开发，不用关心数据的通讯功能开发，大大降低了开发的难度。</p>
@@ -386,7 +386,7 @@
 <p> 注：要下载ESP8266对应的最新版本，如下图：</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image27.png" alt=""></p>
 <p>烧写方式：</p>
-<p>MCU模式的固件烧写与SOC模式下的固件烧写方式相似，详细方式请查看<a href="http://docs.gizwits.com/hc/kb/article/156881/" target="_blank" rel="external"><em>《机智云GAgent for ESP8266 串口烧写说明》</em></a>。</p>
+<p>MCU模式的固件烧写与SOC模式下的固件烧写方式相似，详细方式请查看<a href="/zh-cn/deviceDev/ESP8266串口烧写说明.html">《机智云GAgent for ESP8266 串口烧写说明》</a>。</p>
 <h2 id="3-将模组切换到MCU模式"><a href="#3-将模组切换到MCU模式" class="headerlink" title="3 将模组切换到MCU模式"></a>3 将模组切换到MCU模式</h2><p>将GoKit3(S)<strong>断电后</strong>再将ESP8266 WiFi模组从“SOC模式位置”（靠下位置）拔起，重插到“MCU模式位置”（靠上位置），如下图：</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image26.png" alt=""></p>
 <h2 id="4-MCU模式下的GoKit3-S-使用方法"><a href="#4-MCU模式下的GoKit3-S-使用方法" class="headerlink" title="4 MCU模式下的GoKit3(S)使用方法"></a>4 MCU模式下的GoKit3(S)使用方法</h2><blockquote>
