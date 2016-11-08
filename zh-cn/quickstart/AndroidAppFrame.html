@@ -285,7 +285,8 @@
 <h1 id="10分钟部署调试机智云APP开源框架"><a href="#10分钟部署调试机智云APP开源框架" class="headerlink" title="10分钟部署调试机智云APP开源框架"></a>10分钟部署调试机智云APP开源框架</h1><h2 id="1-下载安卓APP开源框架"><a href="#1-下载安卓APP开源框架" class="headerlink" title="1.    下载安卓APP开源框架"></a>1.    下载安卓APP开源框架</h2><p>APP开源框架编译环境：Eclipse</p>
 <p>安卓APP开源框架下载地址：<br><a href="https://git.oschina.net/dantang/GizOpenSource_AppKit_Android" target="_blank" rel="external">https://git.oschina.net/dantang/GizOpenSource_AppKit_Android</a></p>
 <p><img src="/assets/zh-cn/quickstart/Android下载地址.png" alt="@Android下载地址"></p>
-<h2 id="2-导入到Eclipse工程"><a href="#2-导入到Eclipse工程" class="headerlink" title="2.    导入到Eclipse工程"></a>2.    导入到Eclipse工程</h2><p>导入过程中可能会出现如下错误<br> <img src="/assets/zh-cn/quickstart/错误码.png" alt=""></p>
+<h2 id="2-导入到Eclipse工程"><a href="#2-导入到Eclipse工程" class="headerlink" title="2.    导入到Eclipse工程"></a>2.    导入到Eclipse工程</h2><p>导入过程中可能会出现如下错误</p>
+<p> <img src="/assets/zh-cn/quickstart/错误码.png" alt=""></p>
 <p>此时需要将proguard-project中的target版本修改为eclipse对应的安卓SDK版本即可。</p>
 <p><img src="/assets/zh-cn/quickstart/修改proguard-project中的targe.png" alt="Alt text"></p>
 <h2 id="3-开源框架包结构说明"><a href="#3-开源框架包结构说明" class="headerlink" title="3.    开源框架包结构说明"></a>3.    开源框架包结构说明</h2><p>如下图所示，将Package Presentation设置为Hierarchical</p>
@@ -336,14 +337,16 @@
 <p>进入控制页面，可以发现，控制页面为一个空白的页面。机智云开源框架为了让开发者快速开发APP，已将用户登录，设备发现，设备配网等功能做成了各个标准模块，仅保留控制页面让开发者自行开发设计，节省了开发者的时间。下章节，将示例如何快速开发一个简单好看的控制页面。</p>
 <h1 id="控制页面快速开发设计"><a href="#控制页面快速开发设计" class="headerlink" title="控制页面快速开发设计"></a>控制页面快速开发设计</h1><h2 id="1-控制页面代码预览"><a href="#1-控制页面代码预览" class="headerlink" title="1.    控制页面代码预览"></a>1.    控制页面代码预览</h2><p>依次打开ControlModule -&gt; GosDeviceControlActivity.java，可以看到，整个控制页面非常简单，就只有一个TextView将设备的mac地址显示出来。</p>
 <p><img src="/assets/zh-cn/quickstart/代码预览.png" alt="Alt text"></p>
-<h2 id="2-页面UI设计"><a href="#2-页面UI设计" class="headerlink" title="2.    页面UI设计"></a>2.    页面UI设计</h2><p>根据创建的产品“智能灯”，想实现的UI效果如下：<br><img src="/assets/zh-cn/quickstart/UI效果.png" alt="Alt text"></p>
+<h2 id="2-页面UI设计"><a href="#2-页面UI设计" class="headerlink" title="2.    页面UI设计"></a>2.    页面UI设计</h2><p>根据创建的产品“智能灯”，想实现的UI效果如下：</p>
+<p><img src="/assets/zh-cn/quickstart/UI效果.png" alt="Alt text"></p>
 <p>点击页面中间灯的控件，APP下发命令，控制灯的开关，并将灯的图片显示为开启状态。关闭的时候显示为关闭。</p>
 <h2 id="3-页面布局代码开发"><a href="#3-页面布局代码开发" class="headerlink" title="3.    页面布局代码开发"></a>3.    页面布局代码开发</h2><h3 id="导入图片文件"><a href="#导入图片文件" class="headerlink" title="导入图片文件"></a>导入图片文件</h3><p><img src="/assets/zh-cn/quickstart/倒入图片.png" alt="Alt text"></p>
 <p>将表示智能灯开关状态的图片拷贝到drawable目录下，如下图所示：</p>
 <p><img src="/assets/zh-cn/quickstart/drawable目录.png" alt="Alt text"></p>
 <h3 id="添加Button控件"><a href="#添加Button控件" class="headerlink" title="添加Button控件"></a>添加Button控件</h3><p><strong>1）打开控制页面对应的布局文件“activity_gos_device_control.xml”</strong></p>
 <p><img src="/assets/zh-cn/quickstart/页面对应的布局文件.png" alt="Alt text"></p>
-<p><strong>2）添加Button控件</strong><br>如图所示，将控制页面中多余控件删除，添加一个Button控件<br><img src="/assets/zh-cn/quickstart/添加Button控件.png" alt="Alt text"></p>
+<p><strong>2）添加Button控件</strong><br>如图所示，将控制页面中多余控件删除，添加一个Button控件</p>
+<p><img src="/assets/zh-cn/quickstart/添加Button控件.png" alt="Alt text"></p>
 <p><strong>3）使用selector来对Button控件背景进行控制</strong><br>在drawable文件夹下新建一个selector文件，如图所示：</p>
 <p><img src="/assets/zh-cn/quickstart/新建selector.png" alt="Alt text"></p>
 <p>在btn_light_onoff_selector.xml添加背景切换代码：</p>
