@@ -307,12 +307,12 @@
 <li>1、利用“扩展类型”数据点进行透传</li>
 <li>2、不定义数据点直接进行数据透传，即纯透传</li>
 </ul>
-<h1 id="扩展类型数据点透传"><a href="#扩展类型数据点透传" class="headerlink" title="扩展类型数据点透传"></a>扩展类型数据点透传</h1><h2 id="1-定义数据点"><a href="#1-定义数据点" class="headerlink" title="1.定义数据点"></a>1.定义数据点</h2><p><img src="/AppDev/other/translate/1479700129063.png" alt="Alt text"></p>
+<h1 id="扩展类型数据点透传"><a href="#扩展类型数据点透传" class="headerlink" title="扩展类型数据点透传"></a>扩展类型数据点透传</h1><h2 id="1-定义数据点"><a href="#1-定义数据点" class="headerlink" title="1.定义数据点"></a>1.定义数据点</h2><p><img src="/assets/zh-cn/AppDev/other/translate/1479700129063.png" alt="Alt text"></p>
 <p>在机智云产品管理中的数据点中定义一个拓展类型的数据点，如上图所示：<br>定义数据长度为60个byte（透传情况下，数据长度暂时支持900字节内数据传输）。</p>
 <h2 id="2-设备上报数据协议说明"><a href="#2-设备上报数据协议说明" class="headerlink" title="2.设备上报数据协议说明"></a>2.设备上报数据协议说明</h2><p>设备MCU按照数据点的定义格式上报透传数据，在完成新产品的定义后，每个新产品都有相应的串口通信协议文档，文档下载路径如下图所示：</p>
-<p><img src="/AppDev/other/translate/1479700275592.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/AppDev/other/translate/1479700275592.png" alt="Alt text"></p>
 <p>在串口通信协议文档文档的4.9部分则有MCU上报数据的格式，如下图：</p>
-<p> <img src="/AppDev/other/translate/1479700373845.png" alt="Alt text"></p>
+<p> <img src="/assets/zh-cn/AppDev/other/translate/1479700373845.png" alt="Alt text"></p>
 <p>图中的dev_status(60B)即为需要透传的数据。</p>
 <h2 id="3-SDK回调接口说明"><a href="#3-SDK回调接口说明" class="headerlink" title="3.SDK回调接口说明"></a>3.SDK回调接口说明</h2><p>APP端接收到MCU上报数据的回调接口：didReceiveData，判断result为GizWifiErrorCode.GIZ_SDK_SUCCESS，则接收到的数据可能为普通数据点或者扩展数据点。</p>
 <h2 id="4-APP接收数据代码示例"><a href="#4-APP接收数据代码示例" class="headerlink" title="4.APP接收数据代码示例"></a>4.APP接收数据代码示例</h2><p><strong>Andriod接收到MCU上报拓展数据类型代码示例：</strong></p>
@@ -332,7 +332,7 @@
 <p>上述代码中，input1与input2的透传结果是不一样的，input1中定义的是十六进制的数值，input2中则是十进制的数值。如果使用input1中0x11的值下发给设备，那么设备将收到0x11的十六进制值，如果使用input2中11的值下发给设备，那么设备收到将是0x0b（十进制11对应十六进制b）。使用input1下发设备，MCU收到的数据为：</p>
 <p>FF FF 00 43 03 45 00 00 01 01 11 22 33 44 55 66 77 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69</p>
 <h1 id="无数据点透传"><a href="#无数据点透传" class="headerlink" title="无数据点透传"></a>无数据点透传</h1><h2 id="1-设备上报数据协议说明"><a href="#1-设备上报数据协议说明" class="headerlink" title="1.设备上报数据协议说明"></a>1.设备上报数据协议说明</h2><p>MCU上报数据的格式如下表所示，包长度(len)是指从命令开始一直到校验和的字节长度(包括命令和校验和)。dev_status是需要透传数据，可以设置任意长度，但是暂时支持900B内传输。</p>
-<p><img src="/AppDev/other/translate/1479701502710.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/AppDev/other/translate/1479701502710.png" alt="Alt text"></p>
 <p>如设备上报指令：FF FF 00 0D 05 00 00 00 06 11 22 33 44 55 66 77 F4  ；那么透传的数据为11 22 33 44 55 66 77</p>
 <h2 id="2-SDK回调接口说明"><a href="#2-SDK回调接口说明" class="headerlink" title="2.SDK回调接口说明"></a>2.SDK回调接口说明</h2><p>APP端接收到MCU上报数据的回调接口： didReceiveData，判断result为GizWifiErrorCode.GIZ_SDK_SUCCESS，则表示接收到数据成功，回传参数的dataMap 中的“binary”字段的值为透传数据。</p>
 <h2 id="3-APP接收数据代码示例"><a href="#3-APP接收数据代码示例" class="headerlink" title="3.APP接收数据代码示例"></a>3.APP接收数据代码示例</h2><p><strong>Andriod接收MCU无数据点上报代码示例：</strong></p>
@@ -341,7 +341,7 @@
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)device:(GizWifiDevice *)device didReceiveData:(<span class="built_in">NSError</span> *)result data:(<span class="built_in">NSDictionary</span> *)dataMap withSN:(<span class="built_in">NSNumber</span> *)sn</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (result.code == GIZ_SDK_SUCCESS)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"接收到数据"</span>);</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"dataMap = %@"</span>, dataMap);</div><div class="line">        </div><div class="line">        <span class="built_in">NSString</span> *binary = dataMap[<span class="string">@"binary"</span>];</div><div class="line">        <span class="comment">// 后面需要自行对binary数据进行解析</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如MCU上报：FF FF 00 0D 05 00 00 00 06 11 22 33 44 55 66 77 F4<br>则APP将打印： Binary data:11 22 33 44 55 66 77</p>
 <h2 id="4-APP下发数据代码示例"><a href="#4-APP下发数据代码示例" class="headerlink" title="4.APP下发数据代码示例"></a>4.APP下发数据代码示例</h2><p>APP在GizWifiDevice类的write接口中，发送的json格式为：{“binary”: “xxxxxx”}；MCU接收的数据格式如下：</p>
-<p> <img src="/AppDev/other/translate/1479702010435.png" alt="Alt text"></p>
+<p> <img src="/assets/zh-cn/AppDev/other/translate/1479702010435.png" alt="Alt text"></p>
 <p><strong>Andriod下发无数据点透传数据代码示例：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">byte</span>[] input1 = &#123; <span class="number">0x11</span>, <span class="number">0x22</span>, <span class="number">0x33</span>, <span class="number">0x44</span>, <span class="number">0x55</span>, <span class="number">0x66</span>, <span class="number">0x77</span> &#125;;</div><div class="line">ConcurrentHashMap&lt;String, Object&gt; dataMap = <span class="keyword">new</span> ConcurrentHashMap&lt;String, Object&gt;();</div><div class="line">dataMap.put(<span class="string">"binary"</span>, input1);</div><div class="line">device.write(dataMap, <span class="number">0</span>);</div></pre></td></tr></table></figure>
 <p><strong>iOS下发无数据点透传数据代码示例：</strong></p>
