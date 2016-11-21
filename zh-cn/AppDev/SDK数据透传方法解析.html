@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8">
+
+  <title>SDK数据透传方法解析 - 机智云</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="SDK数据透传方法解析-机智云">
+  <meta name="keywords" content="SDK数据透传方法解析 docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+
+      <a href="http://www.gizwits.com" class="logo">
+        <img src="/images/logo.png" alt="logo"> 
+      </a>
+      <a class="text" href="/">文档中心</a>
+    </span>
+    
+    <div class="mobile-header"v>
+      <span class="title">机智云 文档中心</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+    
+
+    <span class="menu pure-u-16-24">
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/zh-cn/overview/overview.html">平台概述</a></li>
+          
+        
+          
+            <li class="levelA">
+              快速入门 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/5分钟了解机智云.html">5分钟了解机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/设备快速接入.html">设备快速接入机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App快速接入机智云 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/准备工作.html">App开发准备工作</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/AndroidAppFrame.html">Android App 快速开发</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/iOSAPP快速入门.html">iOS App 快速开发</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              APP开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB has-submenu">
+                      App 开源框架 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iosframe.html">iOS 开源框架说明(含源码)</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS消息推送.html">iOS 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS第三方登陆与换肤.html">iOS 第三方登录与换肤</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android开源框架使用指南.html">Android 开源框架说明（含源码）</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android消息推送.html">Android 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android第三方登录与换肤.html">Android 第三方登录与换肤</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/iOSSDKA2.html">iOS SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/AndroidSDKA2.html">Android SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/APICloudWifiSDK.html">APICloud SDK</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              微信开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/了解微信应用开发.html">了解微信应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/WeChatDev.html">微信应用开发教程</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              设备开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/gagent_info.html">GAgent详解</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      MCU开发框架使用说明 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/DevSDK/代码自动生成工具.html">GoKit3代码自动生成工具</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3 DEV SDK Common版移植说明.html">GoKit3 DEV SDK Common版移植说明</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3介绍 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html">Gokit3系列开发套件简介</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/GoKit3硬件手册.html">Gokit3硬件手册</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3 SOC方案 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S使用说明书.html">GoKit3(S)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S开发套件介绍.html">Gokit3(S)开发套件介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html">GoKit3(S)开发环境搭建</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S程序详解.html">Gokit3(S)源码详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3语音开发 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V使用说明书.html">GoKit3(V)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V二次开发指南.html">Gokit3(V)开发指南</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V词条.html">GoKit3(V)词条管理</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V程序详解.html">Gokit3(V)源码详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/Gokit2使用指南.html">Gokit2 使用指南</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      调试与烧写 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/串口工具使用文档.html">串口工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/HF-LPB100串口烧写说明.html">HF-LPB100串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/HF-LPT120.html">HF-LPT120串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/MXCHIP串口烧写说明.html">MXCHIP串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ESP8266串口烧写说明.html">ESP8266串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/产测工具使用文档.html">产测工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/日志抓取教程文档.html">日志抓取教程文档</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              云平台 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/ent_dev.html">企业应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/noti1.0.html">消息代理服务</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/enterprise_api.html">企业API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/OpenAPI.html">OpenAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/WebsocketAPI.html">WebSocketAPI</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              用户手册 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/OTA使用教程.html">OTA使用教程</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+  
+    <span class="pure-u-3-24 lang-switch-wrapper">
+      <i class="fa fa-globe" aria-hidden="true"></i> 
+      
+        <button class="lang-switch" data-lang="en-us">English</button>
+      
+    </span>
+
+  </div>
+</div>
+    <div class="body">
+  
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">目录</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">SDK数据透传方法解析</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
+      </div>
+      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文主要介绍如何使用机智云设备接入SDK来进行APP与设备之间的数据透传。在APP和MCU之间，有两种数据透传方式：</p>
+<ul>
+<li>1、利用“扩展类型”数据点进行透传</li>
+<li>2、不定义数据点直接进行数据透传，即纯透传</li>
+</ul>
+<h1 id="扩展类型数据点透传"><a href="#扩展类型数据点透传" class="headerlink" title="扩展类型数据点透传"></a>扩展类型数据点透传</h1><h2 id="1-定义数据点"><a href="#1-定义数据点" class="headerlink" title="1.定义数据点"></a>1.定义数据点</h2><p><img src="./1479700129063.png" alt="Alt text"></p>
+<p>在机智云产品管理中的数据点中定义一个拓展类型的数据点，如上图所示：<br>定义数据长度为60个byte（透传情况下，数据长度暂时支持900字节内数据传输）。</p>
+<h2 id="2-设备上报数据协议说明"><a href="#2-设备上报数据协议说明" class="headerlink" title="2.设备上报数据协议说明"></a>2.设备上报数据协议说明</h2><p>设备MCU按照数据点的定义格式上报透传数据，在完成新产品的定义后，每个新产品都有相应的串口通信协议文档，文档下载路径如下图所示：</p>
+<p><img src="./1479700275592.png" alt="Alt text"></p>
+<p>在串口通信协议文档文档的4.9部分则有MCU上报数据的格式，如下图：</p>
+<p> <img src="./1479700373845.png" alt="Alt text"></p>
+<p>图中的dev_status(60B)即为需要透传的数据。</p>
+<h2 id="3-SDK回调接口说明"><a href="#3-SDK回调接口说明" class="headerlink" title="3.SDK回调接口说明"></a>3.SDK回调接口说明</h2><p>APP端接收到MCU上报数据的回调接口：didReceiveData，判断result为GizWifiErrorCode.GIZ_SDK_SUCCESS，则接收到的数据可能为普通数据点或者扩展数据点。</p>
+<h2 id="4-APP接收数据代码示例"><a href="#4-APP接收数据代码示例" class="headerlink" title="4.APP接收数据代码示例"></a>4.APP接收数据代码示例</h2><p><strong>Andriod接收到MCU上报拓展数据类型代码示例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">final</span> <span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">char</span>[] hexArray = <span class="string">"0123456789ABCDEF"</span>.toCharArray();</div><div class="line"></div><div class="line"><span class="comment">// 将16进制的byte转为string，比如byte值为&#123;0x62,0x63&#125;，那么将转为“6263”</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">bytesToHex</span><span class="params">(<span class="keyword">byte</span>[] bytes)</span> </span>&#123;</div><div class="line">		<span class="keyword">char</span>[] hexChars = <span class="keyword">new</span> <span class="keyword">char</span>[bytes.length * <span class="number">3</span>];</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; bytes.length; j++) &#123;</div><div class="line">			<span class="keyword">int</span> v = bytes[j] &amp; <span class="number">0xFF</span>;</div><div class="line">			hexChars[j * <span class="number">3</span>] = hexArray[v &gt;&gt;&gt; <span class="number">4</span>];</div><div class="line">			hexChars[j * <span class="number">3</span> + <span class="number">1</span>] = hexArray[v &amp; <span class="number">0x0F</span>];</div><div class="line">			hexChars[j * <span class="number">3</span> + <span class="number">2</span>] = <span class="string">' '</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> String(hexChars);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">didReceiveData</span><span class="params">(GizWifiErrorCode result, GizWifiDevice device,</span></span></div><div class="line">			ConcurrentHashMap&lt;String, Object&gt; dataMap, <span class="keyword">int</span> sn) &#123;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) &#123;</div><div class="line">	<span class="comment">// 普通数据点类型，有布尔型、整形和枚举型数据，该种类型一般为可读写</span></div><div class="line">		<span class="keyword">if</span> (dataMap.get(<span class="string">"data"</span>) != <span class="keyword">null</span>) &#123;</div><div class="line">			ConcurrentHashMap&lt;String, Object&gt; map = (ConcurrentHashMap&lt;String, Object&gt;) dataMap.get(<span class="string">"data"</span>);</div><div class="line">			<span class="comment">// 扩展数据点，key为"kuozhan"</span></div><div class="line">			<span class="keyword">byte</span>[] bytes = (<span class="keyword">byte</span>[]) map.get(<span class="string">"kuozhan"</span>);</div><div class="line">			String string = bytesToHex(bytes);</div><div class="line">			Toast.makeText(<span class="keyword">this</span>, string, Toast.LENGTH_SHORT).show();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>iOS接收到MCU上报拓展数据类型代码示例：</strong></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)device:(GizWifiDevice *)device didReceiveData:(<span class="built_in">NSError</span> *)result data:(<span class="built_in">NSDictionary</span> *)dataMap withSN:(<span class="built_in">NSNumber</span> *)sn</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (result.code == GIZ_SDK_SUCCESS)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"接收到数据"</span>);</div><div class="line">        <span class="built_in">NSDictionary</span> *data = dataMap[<span class="string">@"data"</span>];</div><div class="line">        <span class="built_in">NSString</span> *kuozhan = data[<span class="string">@"kuozhan"</span>];</div><div class="line">            </div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"dataMap = %@"</span>, dataMap);</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"kuozhan = %@"</span>, kuozhan);</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="5-设备上报数据案例"><a href="#5-设备上报数据案例" class="headerlink" title="5.设备上报数据案例"></a>5.设备上报数据案例</h2><p>案例：根据数据点上报格式上报数据：</p>
+<p>FF FF 00 42 05 00 00 00 04 01 02 03 04 05 06 07 08 09 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 78</p>
+<p>注意定义的扩展数据类型为60个字节，因此上报数据的时候也一定要保证上报命令中“设备状态”字节数为60个字节，否则APP端将不会收到数据。多余的数据可以进行补零操作。</p>
+<p>APP端接收到的dataMap字典中有一个”kuozhan”的key，对应的值即为透传的数据。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">dataMap = &#123;</div><div class="line">    alerts=&#123;</div><div class="line">    &#125;;</div><div class="line">    data =&#123;</div><div class="line">        kuozhan = &lt;01020304 05060708 09000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000&gt;;</div><div class="line">    &#125;;</div><div class="line">    faults=&#123;</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="6-APP下发数据代码示例"><a href="#6-APP下发数据代码示例" class="headerlink" title="6.APP下发数据代码示例"></a>6.APP下发数据代码示例</h2><p>APP在GizWifiDevice类的write接口中，按照数据点定义发送扩展数据。</p>
+<p><strong>Andriod下发拓展数据类型命令代码示例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">byte</span>[] input1 = &#123; <span class="number">0x11</span>, <span class="number">0x22</span>, <span class="number">0x33</span>, <span class="number">0x44</span>, <span class="number">0x55</span>, <span class="number">0x66</span>, <span class="number">0x77</span> &#125;;</div><div class="line"><span class="comment">// byte[] input2 = &#123; 11, 22, 33, 44, 55, 66, 77, 88, 99&#125;;</span></div><div class="line">ConcurrentHashMap&lt;String, Object&gt; dataMap = <span class="keyword">new</span> ConcurrentHashMap&lt;String, Object&gt;();</div><div class="line">dataMap.put(<span class="string">"kuozhan"</span>, input1);</div><div class="line">device.write(dataMap, <span class="number">0</span>);</div></pre></td></tr></table></figure>
+<p><strong>iOS下发拓展数据类型命令代码示例：</strong></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> input1[<span class="number">7</span>] = &#123;<span class="number">0x11</span>, <span class="number">0x22</span>, <span class="number">0x33</span>, <span class="number">0x44</span>, <span class="number">0x55</span>, <span class="number">0x66</span>, <span class="number">0x77</span>&#125;;</div><div class="line"><span class="comment">// char input2[7] = &#123;11, 22, 33, 44, 55, 66, 77&#125;;</span></div><div class="line">    <span class="built_in">NSData</span>* data = [<span class="built_in">NSData</span> dataWithBytes:input1 length:<span class="keyword">sizeof</span>(input1)];</div><div class="line">    <span class="built_in">NSDictionary</span> *request = @&#123;<span class="string">@"kuozhan"</span>: data&#125;;</div><div class="line">    [<span class="keyword">self</span>.device write:request withSN:<span class="number">44</span>];</div></pre></td></tr></table></figure>
+<p>上述代码中，input1与input2的透传结果是不一样的，input1中定义的是十六进制的数值，input2中则是十进制的数值。如果使用input1中0x11的值下发给设备，那么设备将收到0x11的十六进制值，如果使用input2中11的值下发给设备，那么设备收到将是0x0b（十进制11对应十六进制b）。使用input1下发设备，MCU收到的数据为：</p>
+<p>FF FF 00 43 03 45 00 00 01 01 11 22 33 44 55 66 77 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69</p>
+<h1 id="无数据点透传"><a href="#无数据点透传" class="headerlink" title="无数据点透传"></a>无数据点透传</h1><h2 id="1-设备上报数据协议说明"><a href="#1-设备上报数据协议说明" class="headerlink" title="1.设备上报数据协议说明"></a>1.设备上报数据协议说明</h2><p>MCU上报数据的格式如下表所示，包长度(len)是指从命令开始一直到校验和的字节长度(包括命令和校验和)。dev_status是需要透传数据，可以设置任意长度，但是暂时支持900B内传输。</p>
+<p><img src="./1479701502710.png" alt="Alt text"></p>
+<p>如设备上报指令：FF FF 00 0D 05 00 00 00 06 11 22 33 44 55 66 77 F4  ；那么透传的数据为11 22 33 44 55 66 77</p>
+<h2 id="2-SDK回调接口说明"><a href="#2-SDK回调接口说明" class="headerlink" title="2.SDK回调接口说明"></a>2.SDK回调接口说明</h2><p>APP端接收到MCU上报数据的回调接口： didReceiveData，判断result为GizWifiErrorCode.GIZ_SDK_SUCCESS，则表示接收到数据成功，回传参数的dataMap 中的“binary”字段的值为透传数据。</p>
+<h2 id="3-APP接收数据代码示例"><a href="#3-APP接收数据代码示例" class="headerlink" title="3.APP接收数据代码示例"></a>3.APP接收数据代码示例</h2><p><strong>Andriod接收MCU无数据点上报代码示例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">didReceiveData</span><span class="params">(GizWifiErrorCode result, GizWifiDevice device,ConcurrentHashMap&lt;String, Object&gt; dataMap, <span class="keyword">int</span> sn)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) &#123;</div><div class="line">		<span class="comment">// 透传数据，无数据点定义，适合开发者自行定义协议自行解析</span></div><div class="line">		<span class="keyword">if</span> (dataMap.get(<span class="string">"binary"</span>) != <span class="keyword">null</span>) &#123;</div><div class="line">		<span class="keyword">byte</span>[] binary = (<span class="keyword">byte</span>[]) dataMap.get(<span class="string">"binary"</span>);</div><div class="line">		Log.i(<span class="string">"info"</span>, <span class="string">"Binary data:"</span> + bytesToHex(binary));</div><div class="line">			<span class="comment">// 收到后面需要自行解析</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>iOS接收MCU无数据点上报代码示例：</strong></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)device:(GizWifiDevice *)device didReceiveData:(<span class="built_in">NSError</span> *)result data:(<span class="built_in">NSDictionary</span> *)dataMap withSN:(<span class="built_in">NSNumber</span> *)sn</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (result.code == GIZ_SDK_SUCCESS)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"接收到数据"</span>);</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"dataMap = %@"</span>, dataMap);</div><div class="line">        </div><div class="line">        <span class="built_in">NSString</span> *binary = dataMap[<span class="string">@"binary"</span>];</div><div class="line">        <span class="comment">// 后面需要自行对binary数据进行解析</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如MCU上报：FF FF 00 0D 05 00 00 00 06 11 22 33 44 55 66 77 F4<br>则APP将打印： Binary data:11 22 33 44 55 66 77</p>
+<h2 id="4-APP下发数据代码示例"><a href="#4-APP下发数据代码示例" class="headerlink" title="4.APP下发数据代码示例"></a>4.APP下发数据代码示例</h2><p>APP在GizWifiDevice类的write接口中，发送的json格式为：{“binary”: “xxxxxx”}；MCU接收的数据格式如下：</p>
+<p> <img src="./1479702010435.png" alt="Alt text"></p>
+<p><strong>Andriod下发无数据点透传数据代码示例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">byte</span>[] input1 = &#123; <span class="number">0x11</span>, <span class="number">0x22</span>, <span class="number">0x33</span>, <span class="number">0x44</span>, <span class="number">0x55</span>, <span class="number">0x66</span>, <span class="number">0x77</span> &#125;;</div><div class="line">ConcurrentHashMap&lt;String, Object&gt; dataMap = <span class="keyword">new</span> ConcurrentHashMap&lt;String, Object&gt;();</div><div class="line">dataMap.put(<span class="string">"binary"</span>, input1);</div><div class="line">device.write(dataMap, <span class="number">0</span>);</div></pre></td></tr></table></figure>
+<p><strong>iOS下发无数据点透传数据代码示例：</strong></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> input1[<span class="number">7</span>] = &#123;<span class="number">0x11</span>, <span class="number">0x22</span>, <span class="number">0x33</span>, <span class="number">0x44</span>, <span class="number">0x55</span>, <span class="number">0x66</span>, <span class="number">0x77</span>&#125;;</div><div class="line"><span class="comment">// char input2[7] = &#123;11, 22, 33, 44, 55, 66, 77&#125;;    </span></div><div class="line"><span class="built_in">NSData</span>* data = [<span class="built_in">NSData</span> dataWithBytes:input1 length:<span class="keyword">sizeof</span>(input1)];</div><div class="line"><span class="built_in">NSDictionary</span> *request = @&#123;<span class="string">@"binary"</span>: data&#125;;    </div><div class="line">[<span class="keyword">self</span>.device write:request withSN:<span class="number">0</span>];</div></pre></td></tr></table></figure>
+<p>MCU接收到的APP下发数据格式（即以上bytes数组下发后，MCU接收到的数据）：<br>FF FF 00 0D 03 16 00 00 05 11 22 33 44 55 66 77 07</p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="问题反馈">
+      <span>问题反馈</span>
+    </a>
+    <a href="#" title="返回顶部"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">机智云首页</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">关于我们</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">联系我们</a></span>
+      <span><a href="http://www.gizwits.com/talent/social" target="_blank">加入我们</a></span>
+    </p>
+    <p>&#169;2011-2016; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/documentation.js"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
