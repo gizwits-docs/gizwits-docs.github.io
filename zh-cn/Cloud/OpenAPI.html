@@ -1157,8 +1157,8 @@
 <p>Body<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">            <span class="attr">"devices"</span>: [&#123;</div><div class="line">                <span class="attr">"did"</span>: <span class="string">"gdGn7PzAYf4VrhnVag5x8D"</span></div><div class="line">            &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="应答报文-20"><a href="#应答报文-20" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"success"</span>: ['abc', 'add'],</div><div class="line">    <span class="attr">"failed"</span>: ['adad', 'ee']</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h1><h2 id="远程控制设备"><a href="#远程控制设备" class="headerlink" title="远程控制设备"></a>远程控制设备</h2><h3 id="接口地址-16"><a href="#接口地址-16" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://api.gizwits.com/app/control/{did}
-</code></pre><h3 id="请求方式-20"><a href="#请求方式-20" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
-</code></pre><h3 id="详情描述"><a href="#详情描述" class="headerlink" title="详情描述"></a>详情描述</h3><p>远程控制设备可以通过两种方式，一种是设置数据点，一种是发送原始控制指令。<br>推荐使用设置数据点的方式，通过这种方式控制设备，系统内部自动会生成原始控制指令发送给设备，使用起来更简单。</p>
+</code></pre><h3 id="请求方式-20"><a href="#请求方式-20" class="headerlink" title="请求方式"></a>请求方式</h3><p>POST</p>
+<h3 id="详情描述"><a href="#详情描述" class="headerlink" title="详情描述"></a>详情描述</h3><p>远程控制设备可以通过两种方式，一种是设置数据点，一种是发送原始控制指令。<br>推荐使用设置数据点的方式，通过这种方式控制设备，系统内部自动会生成原始控制指令发送给设备，使用起来更简单。</p>
 <ul>
 <li>参数列表<ul>
 <li>did (required, string, <code>did</code>)</li>
@@ -1174,8 +1174,57 @@
 </ul>
 <h3 id="请求报文-21"><a href="#请求报文-21" class="headerlink" title="请求报文"></a>请求报文</h3><p>Header<br>X-Gizwits-Application-Id: {appid}<br>X-Gizwits-User-token: {token}<br>Body<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"attrs"</span>: &#123;</div><div class="line">      <span class="attr">"temp"</span>: <span class="number">10</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="应答报文-21"><a href="#应答报文-21" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#125;</div></pre></td></tr></table></figure>
-<h3 id="发送原始控制指令"><a href="#发送原始控制指令" class="headerlink" title="发送原始控制指令"></a>发送原始控制指令</h3><h3 id="请求报文-22"><a href="#请求报文-22" class="headerlink" title="请求报文"></a>请求报文</h3><p>Header<br>X-Gizwits-Application-Id: {appid}<br>X-Gizwits-User-token: {token}<br>Body<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"raw"</span>: [&lt;byte&gt;, &lt;byte&gt;, ...]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="发送原始控制指令"><a href="#发送原始控制指令" class="headerlink" title="发送原始控制指令"></a>发送原始控制指令</h3><h3 id="请求报文-22"><a href="#请求报文-22" class="headerlink" title="请求报文"></a>请求报文</h3><p>Header<br>X-Gizwits-Application-Id: {appid}<br>X-Gizwits-User-token: {token}Body<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"raw"</span>: [&lt;byte&gt;, &lt;byte&gt;, ...]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="应答报文-22"><a href="#应答报文-22" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#125;</div></pre></td></tr></table></figure>
+<h2 id="设备加密注册"><a href="#设备加密注册" class="headerlink" title="设备加密注册"></a>设备加密注册</h2><h3 id="业务描述-1"><a href="#业务描述-1" class="headerlink" title="业务描述"></a>业务描述</h3><p>提供设备加密注册功能，当设备使用加密注册接口进行注册后，设备将生成唯一did，且该did无法调用普通的设备注销接口注销，如进行重复加密注册操作，生成的did不会发生变化。<br>设备使用加密注册接口注册生成唯一did后，设备之前生成的did会自动被注销。<br>设备调用加密注册接口成功后，设备将无法调用非加密的设备注册接口，设备provison接口，以及设备注销接口。</p>
+<h3 id="接口地址-17"><a href="#接口地址-17" class="headerlink" title="接口地址"></a>接口地址</h3><p>   <a href="http://api.gizwits.com/dev/{product_key}/device" target="_blank" rel="external">http://api.gizwits.com/dev/{product_key}/device</a></p>
+<h3 id="请求方式-21"><a href="#请求方式-21" class="headerlink" title="请求方式"></a>请求方式</h3><p>   POST </p>
+<h3 id="请求报文-23"><a href="#请求报文-23" class="headerlink" title="请求报文"></a>请求报文</h3><p>Header<br>Content-Type：application/x-www-form-urlencoded</p>
+<p> body：<br> data={data}<br> data内容为mac={mac}&amp;passcode={passcode}&amp;type={type}&amp;extra={extra}经过AES加密后的密文。</p>
+<p>data内容说明：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">MAC</td>
+<td style="text-align:left">设备mac地址</td>
+</tr>
+<tr>
+<td style="text-align:left">passcode</td>
+<td style="text-align:left">设备passcode</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">设备type，当前只可以取noraml或center_control</td>
+</tr>
+<tr>
+<td style="text-align:left">extra</td>
+<td style="text-align:left">16进制格式字符串，长度8bit：<br>1.当最后一位字符转换成二进制的末尾一位为1，则默认设备type为center_control,如果为0，则默认type为norma <br>2当最后一位字符转换成二进制的倒数第二位为1，则默认使用了代码自动生成，如果为0，则默认未使用代码自动生成.</td>
+</tr>
+</tbody>
+</table>
+<p>AES加密方法说明：<br>AES 补码方式为 pcks7padding<br>AES key 为 product_secret 转为 16 进制（128 bit）<br>AES mode 为 AES.MODE_ECB</p>
+<h3 id="应答报文-23"><a href="#应答报文-23" class="headerlink" title="应答报文"></a>应答报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">响应编码</th>
+<th style="text-align:left">返回内容</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">201</td>
+<td style="text-align:left">adfkkgkljsdfd</td>
+<td style="text-align:left">返回结果为did={did}经过AES加密后的密文</td>
+</tr>
+</tbody>
+</table>
 <h1 id="定时功能"><a href="#定时功能" class="headerlink" title="定时功能"></a>定时功能</h1><h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><h3 id="业务详情描述"><a href="#业务详情描述" class="headerlink" title="业务详情描述"></a>业务详情描述</h3><p>定时任务分为一次性定时任务和可重复执行定时任务。一次性定时任务在设定好的日期和时间执行；可重复执行定时任务可以设置按星期重复，如每周一执行，工作日执行等，在重复的星期的设定时间执行。</p>
 <p>执行日期通过 date 参数进行设置，格式为：”2015-01-01”。</p>
 <p>执行时间通过 time 参数进行设置，格式为：”10:10”, <em>注意：该时间为 UTC 时间！</em></p>
@@ -1187,8 +1236,8 @@
 <p>重复策略通过 retry_task 来设置，全部重试为 “all”，部分重试为 “failed”。</p>
 <h2 id="创建定时任务"><a href="#创建定时任务" class="headerlink" title="创建定时任务"></a>创建定时任务</h2><h3 id="业务功能描述-15"><a href="#业务功能描述-15" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供定时任务创建功能</p>
 <h3 id="请求地址-2"><a href="#请求地址-2" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/scheduler
-</code></pre><h3 id="请求方式-21"><a href="#请求方式-21" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
-</code></pre><h3 id="请求报文-23"><a href="#请求报文-23" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+</code></pre><h3 id="请求方式-22"><a href="#请求方式-22" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
+</code></pre><h3 id="请求报文-24"><a href="#请求报文-24" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -1238,11 +1287,11 @@
 <li>request body<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"date"</span>: <span class="string">"2015-01-01"</span>,</div><div class="line">  <span class="attr">"time"</span>: <span class="string">"12:00"</span>,</div><div class="line">  <span class="attr">"repeat"</span>: <span class="string">"none"</span>,</div><div class="line">  <span class="attr">"task"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"did"</span>: <span class="string">"did1"</span>,</div><div class="line">      <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">      <span class="attr">"attrs"</span>: &#123;</div><div class="line">        <span class="attr">"attr1"</span>: val,</div><div class="line">        <span class="attr">"attr2"</span>: val</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"did"</span>: <span class="string">"did2"</span>,</div><div class="line">      <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">      <span class="attr">"attrs"</span>: &#123;</div><div class="line">        <span class="attr">"attr1"</span>: val,</div><div class="line">        <span class="attr">"attr2"</span>: val</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  ],</div><div class="line">  <span class="attr">"retry_count"</span>: <span class="number">3</span>,</div><div class="line">  <span class="attr">"retry_task"</span>: <span class="string">"all"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="应答报文-23"><a href="#应答报文-23" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"id"</span>: <span class="string">"adkle"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="应答报文-24"><a href="#应答报文-24" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"id"</span>: <span class="string">"adkle"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="获取定时任务"><a href="#获取定时任务" class="headerlink" title="获取定时任务"></a>获取定时任务</h2><h3 id="业务功能描述-16"><a href="#业务功能描述-16" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供定时任务获取功能</p>
 <h3 id="请求地址-3"><a href="#请求地址-3" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/scheduler
-</code></pre><h3 id="请求方式-22"><a href="#请求方式-22" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
-</code></pre><h3 id="请求报文-24"><a href="#请求报文-24" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+</code></pre><h3 id="请求方式-23"><a href="#请求方式-23" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
+</code></pre><h3 id="请求报文-25"><a href="#请求报文-25" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -1287,11 +1336,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="应答报文-24"><a href="#应答报文-24" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"id"</span>: <span class="string">"abckaldkl"</span>,</div><div class="line">    <span class="attr">"created_at"</span>: <span class="string">"2015-01-01T12:00:00"</span>,</div><div class="line">    <span class="attr">"date"</span>: <span class="string">"2015-01-01"</span>,</div><div class="line">    <span class="attr">"time"</span>: <span class="string">"12:00"</span>,</div><div class="line">    <span class="attr">"repeat"</span>: <span class="string">"none"</span>,</div><div class="line">    <span class="attr">"task"</span>: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"did1"</span>,</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">        <span class="attr">"attrs"</span>: &#123;</div><div class="line">          <span class="attr">"attr1"</span>: <span class="number">1</span>,</div><div class="line">          <span class="attr">"attr2"</span>: <span class="number">1</span></div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"did2"</span>,</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">        <span class="attr">"attrs"</span>: &#123;</div><div class="line">          <span class="attr">"attr1"</span>: <span class="number">1</span>,</div><div class="line">          <span class="attr">"attr2"</span>: <span class="number">2</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    <span class="attr">"retry_count"</span>: <span class="number">3</span>,</div><div class="line">    <span class="attr">"retry_task"</span>: <span class="string">"all"</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"id"</span>: <span class="string">"abckaldkl"</span>,</div><div class="line">    <span class="attr">"created_at"</span>: <span class="string">"2015-01-01T12:00:00"</span>,</div><div class="line">    <span class="attr">"date"</span>: <span class="string">"2015-01-01"</span>,</div><div class="line">    <span class="attr">"time"</span>: <span class="string">"12:00"</span>,</div><div class="line">    <span class="attr">"repeat"</span>: <span class="string">"none"</span>,</div><div class="line">    <span class="attr">"task"</span>: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"did1"</span>,</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">        <span class="attr">"attrs"</span>: &#123;</div><div class="line">          <span class="attr">"attr1"</span>: <span class="string">"val"</span>,</div><div class="line">          <span class="attr">"attr2"</span>: <span class="string">"val"</span></div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"did2"</span>,</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">        <span class="attr">"attrs"</span>: &#123;</div><div class="line">          <span class="attr">"attr1"</span>: <span class="string">"val"</span>,</div><div class="line">          <span class="attr">"attr2"</span>: <span class="string">"val"</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    <span class="attr">"retry_count"</span>: <span class="number">3</span>,</div><div class="line">    <span class="attr">"retry_task"</span>: <span class="string">"all"</span></div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<h3 id="应答报文-25"><a href="#应答报文-25" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"id"</span>: <span class="string">"abckaldkl"</span>,</div><div class="line">    <span class="attr">"created_at"</span>: <span class="string">"2015-01-01T12:00:00"</span>,</div><div class="line">    <span class="attr">"date"</span>: <span class="string">"2015-01-01"</span>,</div><div class="line">    <span class="attr">"time"</span>: <span class="string">"12:00"</span>,</div><div class="line">    <span class="attr">"repeat"</span>: <span class="string">"none"</span>,</div><div class="line">    <span class="attr">"task"</span>: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"did1"</span>,</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">        <span class="attr">"attrs"</span>: &#123;</div><div class="line">          <span class="attr">"attr1"</span>: <span class="number">1</span>,</div><div class="line">          <span class="attr">"attr2"</span>: <span class="number">1</span></div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"did2"</span>,</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">        <span class="attr">"attrs"</span>: &#123;</div><div class="line">          <span class="attr">"attr1"</span>: <span class="number">1</span>,</div><div class="line">          <span class="attr">"attr2"</span>: <span class="number">2</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    <span class="attr">"retry_count"</span>: <span class="number">3</span>,</div><div class="line">    <span class="attr">"retry_task"</span>: <span class="string">"all"</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"id"</span>: <span class="string">"abckaldkl"</span>,</div><div class="line">    <span class="attr">"created_at"</span>: <span class="string">"2015-01-01T12:00:00"</span>,</div><div class="line">    <span class="attr">"date"</span>: <span class="string">"2015-01-01"</span>,</div><div class="line">    <span class="attr">"time"</span>: <span class="string">"12:00"</span>,</div><div class="line">    <span class="attr">"repeat"</span>: <span class="string">"none"</span>,</div><div class="line">    <span class="attr">"task"</span>: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"did1"</span>,</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">        <span class="attr">"attrs"</span>: &#123;</div><div class="line">          <span class="attr">"attr1"</span>: <span class="string">"val"</span>,</div><div class="line">          <span class="attr">"attr2"</span>: <span class="string">"val"</span></div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"did"</span>: <span class="string">"did2"</span>,</div><div class="line">        <span class="attr">"product_key"</span>: <span class="string">"xxx"</span>,</div><div class="line">        <span class="attr">"attrs"</span>: &#123;</div><div class="line">          <span class="attr">"attr1"</span>: <span class="string">"val"</span>,</div><div class="line">          <span class="attr">"attr2"</span>: <span class="string">"val"</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    <span class="attr">"retry_count"</span>: <span class="number">3</span>,</div><div class="line">    <span class="attr">"retry_task"</span>: <span class="string">"all"</span></div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
 <h2 id="删除定时任务"><a href="#删除定时任务" class="headerlink" title="删除定时任务"></a>删除定时任务</h2><h3 id="业务功能描述-17"><a href="#业务功能描述-17" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供定时任务删除功能</p>
 <h3 id="请求地址-4"><a href="#请求地址-4" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/scheduler/{id}
-</code></pre><h3 id="请求方式-23"><a href="#请求方式-23" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>DELETE
-</code></pre><h3 id="请求报文-25"><a href="#请求报文-25" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+</code></pre><h3 id="请求方式-24"><a href="#请求方式-24" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>DELETE
+</code></pre><h3 id="请求报文-26"><a href="#请求报文-26" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -1328,10 +1377,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="应答报文-25"><a href="#应答报文-25" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 200 (application/json)</p>
+<h3 id="应答报文-26"><a href="#应答报文-26" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 200 (application/json)</p>
 <h2 id="获取设备定时任务"><a href="#获取设备定时任务" class="headerlink" title="获取设备定时任务"></a>获取设备定时任务</h2><h3 id="请求地址-5"><a href="#请求地址-5" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/devices/{did}/scheduler
-</code></pre><h3 id="请求方式-24"><a href="#请求方式-24" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
-</code></pre><h3 id="请求报文-26"><a href="#请求报文-26" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+</code></pre><h3 id="请求方式-25"><a href="#请求方式-25" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
+</code></pre><h3 id="请求报文-27"><a href="#请求报文-27" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -1384,52 +1433,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="应答报文-26"><a href="#应答报文-26" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"attrs"</span>: &#123;<span class="attr">"attr"</span>: <span class="number">1</span>&#125;,</div><div class="line">    <span class="attr">"date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">    <span class="attr">"time"</span>: <span class="string">"12:00"</span>,</div><div class="line">    <span class="attr">"repeat"</span>: <span class="string">"none"</span>,</div><div class="line">    <span class="attr">"days"</span>: [</div><div class="line">      <span class="number">0</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"start_date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">    <span class="attr">"end_date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">    <span class="attr">"enabled"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"remark"</span>: <span class="string">""</span>,</div><div class="line">    <span class="attr">"id"</span>: <span class="string">""</span>,</div><div class="line">    <span class="attr">"created_at"</span>: <span class="string">"2016-11-07"</span></div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<h3 id="应答报文-27"><a href="#应答报文-27" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"attrs"</span>: &#123;<span class="attr">"attr"</span>: <span class="number">1</span>&#125;,</div><div class="line">    <span class="attr">"date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">    <span class="attr">"time"</span>: <span class="string">"12:00"</span>,</div><div class="line">    <span class="attr">"repeat"</span>: <span class="string">"none"</span>,</div><div class="line">    <span class="attr">"days"</span>: [</div><div class="line">      <span class="number">0</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"start_date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">    <span class="attr">"end_date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">    <span class="attr">"enabled"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"remark"</span>: <span class="string">""</span>,</div><div class="line">    <span class="attr">"id"</span>: <span class="string">""</span>,</div><div class="line">    <span class="attr">"created_at"</span>: <span class="string">"2016-11-07"</span></div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
 <h2 id="创建设备定时任务"><a href="#创建设备定时任务" class="headerlink" title="创建设备定时任务"></a>创建设备定时任务</h2><h3 id="业务功能描述-18"><a href="#业务功能描述-18" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供设备定时任务创建功能</p>
 <h3 id="请求地址-6"><a href="#请求地址-6" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/devices/{did}/scheduler
-</code></pre><h3 id="请求方式-25"><a href="#请求方式-25" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
-</code></pre><h3 id="请求报文-27"><a href="#请求报文-27" class="headerlink" title="请求报文"></a>请求报文</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:right">类型</th>
-<th style="text-align:center">必填</th>
-<th style="text-align:left">参数类型</th>
-<th style="text-align:left">描述</th>
-<th style="text-align:left">备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">did</td>
-<td style="text-align:right">String</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">url</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">X-Gizwits-Application-Id</td>
-<td style="text-align:right">String</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">header</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">X-Gizwits-User-token</td>
-<td style="text-align:right">String</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">header</td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<p>Body request<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;attrs&quot;: &#123;&#125;,</div><div class="line">  &quot;date&quot;: &quot;2016-11-07&quot;,</div><div class="line">  &quot;time&quot;: &quot;12:00&quot;,</div><div class="line">  &quot;repeat&quot;: &quot;none&quot;,</div><div class="line">  &quot;days&quot;: [</div><div class="line">    0</div><div class="line">  ],</div><div class="line">  &quot;start_date&quot;: &quot;2016-11-07&quot;,</div><div class="line">  &quot;end_date&quot;: &quot;2016-11-07&quot;,</div><div class="line">  &quot;enabled&quot;: true,</div><div class="line">  &quot;remark&quot;: &quot;&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="应答报文-27"><a href="#应答报文-27" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"id"</span>: <span class="string">"adkle"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="修改设备定时任务"><a href="#修改设备定时任务" class="headerlink" title="修改设备定时任务"></a>修改设备定时任务</h2><h3 id="业务功能描述-19"><a href="#业务功能描述-19" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供设备定时任务修改功能</p>
-<h3 id="请求地址-7"><a href="#请求地址-7" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/devices/{did}/scheduler
-</code></pre><h3 id="请求方式-26"><a href="#请求方式-26" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
+</code></pre><h3 id="请求方式-26"><a href="#请求方式-26" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>POST
 </code></pre><h3 id="请求报文-28"><a href="#请求报文-28" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
@@ -1467,12 +1474,54 @@
 </tr>
 </tbody>
 </table>
-<p>Body request<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"attrs"</span>: &#123;&#125;,</div><div class="line">  <span class="attr">"date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">  <span class="attr">"time"</span>: <span class="string">"12:00"</span>,</div><div class="line">  <span class="attr">"repeat"</span>: <span class="string">"none"</span>,</div><div class="line">  <span class="attr">"days"</span>: [</div><div class="line">    <span class="number">0</span></div><div class="line">  ],</div><div class="line">  <span class="attr">"start_date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">  <span class="attr">"end_date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">  <span class="attr">"enabled"</span>: <span class="literal">true</span>,</div><div class="line">  <span class="attr">"remark"</span>: <span class="string">""</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Body request<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;attrs&quot;: &#123;&#125;,</div><div class="line">  &quot;date&quot;: &quot;2016-11-07&quot;,</div><div class="line">  &quot;time&quot;: &quot;12:00&quot;,</div><div class="line">  &quot;repeat&quot;: &quot;none&quot;,</div><div class="line">  &quot;days&quot;: [</div><div class="line">    0</div><div class="line">  ],</div><div class="line">  &quot;start_date&quot;: &quot;2016-11-07&quot;,</div><div class="line">  &quot;end_date&quot;: &quot;2016-11-07&quot;,</div><div class="line">  &quot;enabled&quot;: true,</div><div class="line">  &quot;remark&quot;: &quot;&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="应答报文-28"><a href="#应答报文-28" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"id"</span>: <span class="string">"adkle"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="修改设备定时任务"><a href="#修改设备定时任务" class="headerlink" title="修改设备定时任务"></a>修改设备定时任务</h2><h3 id="业务功能描述-19"><a href="#业务功能描述-19" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供设备定时任务修改功能</p>
+<h3 id="请求地址-7"><a href="#请求地址-7" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/devices/{did}/scheduler
+</code></pre><h3 id="请求方式-27"><a href="#请求方式-27" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>PUT
+</code></pre><h3 id="请求报文-29"><a href="#请求报文-29" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">did</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">url</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">X-Gizwits-Application-Id</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">X-Gizwits-User-token</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>Body request<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"attrs"</span>: &#123;&#125;,</div><div class="line">  <span class="attr">"date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">  <span class="attr">"time"</span>: <span class="string">"12:00"</span>,</div><div class="line">  <span class="attr">"repeat"</span>: <span class="string">"none"</span>,</div><div class="line">  <span class="attr">"days"</span>: [</div><div class="line">    <span class="number">0</span></div><div class="line">  ],</div><div class="line">  <span class="attr">"start_date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">  <span class="attr">"end_date"</span>: <span class="string">"2016-11-07"</span>,</div><div class="line">  <span class="attr">"enabled"</span>: <span class="literal">true</span>,</div><div class="line">  <span class="attr">"remark"</span>: <span class="string">""</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="应答报文-29"><a href="#应答报文-29" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"id"</span>: <span class="string">"adkle"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="删除设备定时任务"><a href="#删除设备定时任务" class="headerlink" title="删除设备定时任务"></a>删除设备定时任务</h2><h3 id="业务功能描述-20"><a href="#业务功能描述-20" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供设备定时任务删除功能</p>
 <h3 id="请求地址-8"><a href="#请求地址-8" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/devices/{did}/scheduler/{id}
-</code></pre><h3 id="请求方式-27"><a href="#请求方式-27" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>DELETE
-</code></pre><h3 id="请求报文-29"><a href="#请求报文-29" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+</code></pre><h3 id="请求方式-28"><a href="#请求方式-28" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>DELETE
+</code></pre><h3 id="请求报文-30"><a href="#请求报文-30" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -1517,11 +1566,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="应答报文-29"><a href="#应答报文-29" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 200 (application/json)</p>
+<h3 id="应答报文-30"><a href="#应答报文-30" class="headerlink" title="应答报文"></a>应答报文</h3><p>Response 200 (application/json)</p>
 <h2 id="定时任务执行日志"><a href="#定时任务执行日志" class="headerlink" title="定时任务执行日志"></a>定时任务执行日志</h2><h3 id="业务功能描述-21"><a href="#业务功能描述-21" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供定时任务执行日志功能</p>
 <h3 id="请求地址-9"><a href="#请求地址-9" class="headerlink" title="请求地址"></a>请求地址</h3><pre><code>http://api.gizwits.com/app/scheduler/{id}/logs
-</code></pre><h3 id="请求方式-28"><a href="#请求方式-28" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
-</code></pre><h3 id="请求报文-30"><a href="#请求报文-30" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+</code></pre><h3 id="请求方式-29"><a href="#请求方式-29" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
+</code></pre><h3 id="请求报文-31"><a href="#请求报文-31" class="headerlink" title="请求报文"></a>请求报文</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">参数</th>
@@ -1558,7 +1607,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="应答报文-30"><a href="#应答报文-30" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"datetime"</span>: <span class="string">"2015-01-02T12:00:00"</span>,</div><div class="line">  <span class="attr">"status"</span>: <span class="string">"succeed|failed"</span>,</div><div class="line">  <span class="attr">"detail"</span>: &#123;</div><div class="line">    <span class="attr">"did1"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"did2"</span>: <span class="literal">false</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="应答报文-31"><a href="#应答报文-31" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"datetime"</span>: <span class="string">"2015-01-02T12:00:00"</span>,</div><div class="line">  <span class="attr">"status"</span>: <span class="string">"succeed|failed"</span>,</div><div class="line">  <span class="attr">"detail"</span>: &#123;</div><div class="line">    <span class="attr">"did1"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"did2"</span>: <span class="literal">false</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="接口错误"><a href="#接口错误" class="headerlink" title="接口错误"></a>接口错误</h1><h2 id="错误信息格式"><a href="#错误信息格式" class="headerlink" title="错误信息格式"></a>错误信息格式</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">      <span class="attr">"error_code"</span>: <span class="string">"9015"</span>,</div><div class="line">      <span class="attr">"error_message"</span>: <span class="string">"form invalid!"</span>,</div><div class="line">      <span class="attr">"detail"</span>: <span class="string">""</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="错误信息表"><a href="#错误信息表" class="headerlink" title="错误信息表"></a>错误信息表</h2><table>
 <thead>
