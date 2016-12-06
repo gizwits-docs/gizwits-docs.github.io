@@ -458,6 +458,21 @@
 <h2 id="6-查看LOG日志"><a href="#6-查看LOG日志" class="headerlink" title="6 查看LOG日志"></a>6 查看LOG日志</h2><p>将USB口（及供电接口）连接计算机便可通过串口（注意<strong>选择对应COM口号</strong>）打印工具查看LOG信息（波特率：115200）</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/image43.png" alt="Alt text"></p>
 <p>注：若LOG信息出现乱码，可重启串口打印软件，即可恢复正常。</p>
+<h1 id="固件升级-OTA"><a href="#固件升级-OTA" class="headerlink" title="固件升级(OTA)"></a>固件升级(OTA)</h1><h2 id="1-上传固件"><a href="#1-上传固件" class="headerlink" title="1 上传固件"></a>1 上传固件</h2><p>登陆开发者中心，找到需要进行OTA的产品，按下图所示找到固件升级页面</p>
+<p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/image44.jpg" alt="Alt text"></p>
+<p>点击“创建新固件”按钮，按下图提示填写：</p>
+<p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/image45.jpg" alt="Alt text"></p>
+<p><strong>说明：</strong></p>
+<p>1、固件所在的目录是bin/upgrade/*bin</p>
+<p>2、自03000003版本后增加了Changelog文件，OTA软件版本号会在Changelog文件中描述。</p>
+<p>3、03000001版本软件版本号请使用040200xx</p>
+<p>4、OTA固件版本号必须大于运行在模组中的固件版本号</p>
+<p>4.2 验证固件</p>
+<p>固件创建完成后，可以看到如下界面：</p>
+<p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/image46.jpg" alt="Alt text"></p>
+<p>点击“验证固件”按钮，会看到如下图的弹框</p>
+<p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/image47.jpg" alt="Alt text"></p>
+<p>填入MAC，点击“推送”后等待OTA推送结果即可。</p>
 <h1 id="FAQ-amp-总结"><a href="#FAQ-amp-总结" class="headerlink" title="FAQ&amp;总结"></a>FAQ&amp;总结</h1><h2 id="1-FAQ"><a href="#1-FAQ" class="headerlink" title="1 FAQ"></a>1 FAQ</h2><p><strong>问：自定义开发环境共享文件夹不成功怎么办？</strong></p>
 <p>答：使用如下命令重新安装VMware Tools</p>
 <p>sudo apt-get autoremove open-vm-dkms open-vm-tools –purge </p>
