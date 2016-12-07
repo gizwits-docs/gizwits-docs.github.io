@@ -329,14 +329,14 @@
 <p>答案是肯定的！</p>
 <p>亚马逊 Echo 背后的大脑是 Alexa。Alexa 是亚马逊提供的一个语音服务平台，开发者可以在 Alexa 平台上开发出新的 Skill（可以理解为插件）。<br>这样只要用户启用了新的 Skill，那么 Echo 的功能就得到了增强。</p>
 <p>我们要让 Echo 控制一款机智云的产品，就是要在 Alexa 上开发一个针对这个产品的 Skill。</p>
-<h1 id="接入步骤"><a href="#接入步骤" class="headerlink" title="接入步骤"></a>接入步骤</h1><h2 id="创建-Alexa-Skill"><a href="#创建-Alexa-Skill" class="headerlink" title="创建 Alexa Skill"></a>创建 Alexa Skill</h2><ul>
+<h1 id="接入步骤"><a href="#接入步骤" class="headerlink" title="接入步骤"></a>接入步骤</h1><h2 id="1、创建-Alexa-Skill"><a href="#1、创建-Alexa-Skill" class="headerlink" title="1、创建 Alexa Skill"></a>1、创建 Alexa Skill</h2><ul>
 <li>打开<a href="https://developer.amazon.com" target="_blank" rel="external">亚马逊开发者平台</a>并登录您的开发者账号</li>
 <li>在菜单栏选择 “Alexa”</li>
 <li>点击 “Alexa Skills Kit”</li>
 <li>点击 “Add a New Skill”</li>
 <li>请仔细阅读亚马逊的 Alexa Skill 开发文档，本文档对 Skill 的开发不做说明</li>
 </ul>
-<h2 id="账号连接"><a href="#账号连接" class="headerlink" title="账号连接"></a>账号连接</h2><p>假设有一个用户下载了您的 App，并且已经绑定了您开发的基于机智云的智能产品，现在他要使用 Echo 控制您的产品。</p>
+<h2 id="2、账号连接"><a href="#2、账号连接" class="headerlink" title="2、账号连接"></a>2、账号连接</h2><p>假设有一个用户下载了您的 App，并且已经绑定了您开发的基于机智云的智能产品，现在他要使用 Echo 控制您的产品。</p>
 <p>那么第一步要做的，就是让用户的亚马逊账号关联机智云账号。</p>
 <p>机智云提供 OAuth 2.0 接口，可以让第三方应用通过 OAuth 2.0 的方式获取用户的 token，然后通过用户的 token 调用 Open API 完成绑定设备列表查询、设备状态获取以及设备远程控制等功能。</p>
 <ul>
@@ -350,8 +350,8 @@
 <li>这时，你在 Alexa App 中，选择 “Skills”，点击 “Your Skills”，就能看到你的 Skill 了，点击 “Link Account” 就能进入登录页面了</li>
 <li>输入您在自己的 App 中注册的账号和密码，如果最终出现成功连接账号的页面，您就能在 Alexa Skill 的程序中收到 Alexa 发送的用户 token 了</li>
 </ul>
-<h2 id="使用-Open-API-完成-Alexa-Skill-开发"><a href="#使用-Open-API-完成-Alexa-Skill-开发" class="headerlink" title="使用 Open API 完成 Alexa Skill 开发"></a>使用 Open API 完成 Alexa Skill 开发</h2><p>如何使用 Open API 不在本文范围内，您可以参考其他文档，完成您的 Alexa Skill 开发</p>
-<h2 id="提交-Skill-审核"><a href="#提交-Skill-审核" class="headerlink" title="提交 Skill 审核"></a>提交 Skill 审核</h2><p>如果您已经完成了所 Alexa Skill 开发，那么恭喜您，您可以在 Alexa Skill 设置页面提交发布申请了。</p>
+<h2 id="3、使用-Open-API-完成-Alexa-Skill-开发"><a href="#3、使用-Open-API-完成-Alexa-Skill-开发" class="headerlink" title="3、使用 Open API 完成 Alexa Skill 开发"></a>3、使用 Open API 完成 Alexa Skill 开发</h2><p>如何使用 Open API 不在本文范围内，您可以参考其他文档，完成您的 Alexa Skill 开发</p>
+<h2 id="4、提交-Skill-审核"><a href="#4、提交-Skill-审核" class="headerlink" title="4、提交 Skill 审核"></a>4、提交 Skill 审核</h2><p>如果您已经完成了所 Alexa Skill 开发，那么恭喜您，您可以在 Alexa Skill 设置页面提交发布申请了。</p>
 <p>在这之前，有一点需要注意的是，亚马逊对启用了 “Account Linking” 的 Skill 有如下要求：”Authorization URL” 的域名必须属于您，并且该链接必须是 https 链接。</p>
 <p>这就需要您完成如下几点：</p>
 <ul>
