@@ -400,7 +400,7 @@
 </tr>
 </tbody>
 </table>
-<p>“device.status.raw”,”device.status.kv”,”datapoints.changed”| </p>
+<p>“device.status.raw”,”device.status.kv”,”datapoints.changed”</p>
 <p>Gizwits Platform 回复：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">"cmd": "login_res",</div><div class="line">"data": &#123;</div><div class="line">"result": true | false,</div><div class="line">"msg": "ok" | &lt;error msg&gt;</div><div class="line">&#125;</div><div class="line">&#125;\n</div></pre></td></tr></table></figure></p>
 <p>如 result 为 false 表示登陆失败，该连接会被关闭。</p>
 <h2 id="2-心跳"><a href="#2-心跳" class="headerlink" title="2.  心跳"></a>2.  心跳</h2><p>客户端和 Gizwits Platform 建立 SSL 连接后，需定期向 Gizwits Platform 发送数据以保持连接的有效性，如 5 分钟内没有向 Gizwits Platform 发送任何数据，应向 Gizwits Platform 发送以下的心跳数据：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">"cmd": "ping"</div><div class="line">&#125;\n</div></pre></td></tr></table></figure></p>
