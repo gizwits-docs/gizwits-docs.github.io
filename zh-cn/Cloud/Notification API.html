@@ -331,7 +331,13 @@
       <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>为企业提供 SSL 通讯 API，用于实时推送设备与产品相关的事件。</p>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>1.一次可接受多个 Product 的消息。每个 Product 需要 auth_id 和 auth_secret 验证。</p>
 <p>2.针对每一个 product，都需要新创建一个唯一的 auth_id：</p>
-<p>a.对产品拥有者，auth_id 和 auth_secret 需要向机智云获取，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；<br>b.对第三方运营商，通过使用 Http API 获取 auth_id 和 auth_secret，获取后，还需要通过 Http API 对已拥有的设备做关联，关联成功后，才能够获取设备消息和控制设备；<br>c.第三方运营商申请 auth_id api：<a href="https://m2mv4.iotsdk.com:2018/v1/doc#!/product/post_v1_products_product_key_operator" target="_blank" rel="external">https://m2mv4.iotsdk.com:2018/v1/doc#!/product/post_v1_products_product_key_operator</a><br>d.第三方运营商关联设备 api：<a href="https://m2mv4.iotsdk.com:2018/v1/doc#!/product/put_v1_products_product_key_operator" target="_blank" rel="external">https://m2mv4.iotsdk.com:2018/v1/doc#!/product/put_v1_products_product_key_operator</a><br>e.第三方运营商取消关联设备 api：<a href="https://m2mv4.iotsdk.com:2018/v1/doc#!/product/delete_v1_products_product_key_operator" target="_blank" rel="external">https://m2mv4.iotsdk.com:2018/v1/doc#!/product/delete_v1_products_product_key_operator</a></p>
+<ul>
+<li>a.对产品拥有者，auth_id 和 auth_secret 需要向机智云获取，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；</li>
+<li>b.对第三方运营商，通过使用 Http API 获取 auth_id 和 auth_secret，获取后，还需要通过 Http API 对已拥有的设备做关联，关联成功后，才能够获取设备消息和控制设备；</li>
+<li>c.第三方运营商申请 auth_id api：<a href="https://m2mv4.iotsdk.com:2018/v1/doc#!/product/post_v1_products_product_key_operator" target="_blank" rel="external">https://m2mv4.iotsdk.com:2018/v1/doc#!/product/post_v1_products_product_key_operator</a></li>
+<li>d.第三方运营商关联设备 api：<a href="https://m2mv4.iotsdk.com:2018/v1/doc#!/product/put_v1_products_product_key_operator" target="_blank" rel="external">https://m2mv4.iotsdk.com:2018/v1/doc#!/product/put_v1_products_product_key_operator</a></li>
+<li>e.第三方运营商取消关联设备 api：<a href="https://m2mv4.iotsdk.com:2018/v1/doc#!/product/delete_v1_products_product_key_operator" target="_blank" rel="external">https://m2mv4.iotsdk.com:2018/v1/doc#!/product/delete_v1_products_product_key_operator</a></li>
+</ul>
 <p>3.以 product_key+subkey 为唯一主键。其中 subkey(subscription key)为自定义字符串，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线（即[a-zA-Z0-9]）。</p>
 <p>4.选取接收信息的 product_key 下的消息类型。一个 product_key 可支持多种消息类型。目前有 7 种，见推送事件消息字段的 event_type。</p>
 <h1 id="过程描述"><a href="#过程描述" class="headerlink" title="过程描述"></a>过程描述</h1><p>事件通过 SSL 接口推送。通讯过程如下：</p>
