@@ -338,7 +338,53 @@
 <li>HTTP API 服务端口：201<h1 id="SSL-的接口协议-的接口协议"><a href="#SSL-的接口协议-的接口协议" class="headerlink" title="SSL 的接口协议 的接口协议"></a>SSL 的接口协议 的接口协议</h1>消息内容为二进制数据，UTF-8 编码。请注意每个消息后都必须添加”\n”作为消息结尾符。<h2 id="1-连接与登陆"><a href="#1-连接与登陆" class="headerlink" title="1.  连接与登陆"></a>1.  连接与登陆</h2>客户端和 Gizwits Platform 建立 SSL 连接后，客户端发送以下字符串内容作身份验证(登陆Gizwits Platform)：<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">"cmd": "login_req",</div><div class="line">"prefetch_count":&lt;uint&gt; (0 &lt; prefetch_count &lt;= 32767, 表示推送没有 ACK 的消息</div><div class="line">的最大个数，可不填，默认值是 50)</div><div class="line">"data": [&#123;</div><div class="line">“product_key": &lt;key string&gt;,</div><div class="line">"auth_id": &lt;auth_id string&gt;,</div><div class="line">"auth_secret": &lt;auth_secret string&gt;,</div><div class="line">"subkey": &lt;subkey string&gt;,</div><div class="line">"events":[&lt;event string&gt;,...] (可一个或多个 event)</div><div class="line">&#125;,...] (可一个或多个 product)</div><div class="line">&#125;\n</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>请求字段说明：<br>| 字段      | 是否必须         |             描述           |<br>| ————- |:————-:|    ————-    |<br>| cmd     | 必须   | 登录类型，必须为 login_req|<br>| prefetch_count   |     非必须     | 默认值为 50|<br>| data.product_key| 必须     | 产品 ID|<br>| data.auth_id    | 必须     | 产品授权 ID|<br>| data.auth_secret    | 必须     | 产品授权密钥|<br>| data.subkey    | 必须     | subscription key，为客户端自定义标识。大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线|<br>|data.events    | 必须     | 客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型为”device.attr_fault”,”device.attr_alert”,”device.online”，”device.offline”,”device.status.raw”,”device.status.kv”, “datapoints.changed”| </p>
+<p>请求字段说明：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th style="text-align:center">是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmd</td>
+<td style="text-align:center">必须</td>
+<td>登录类型，必须为login_req</td>
+</tr>
+<tr>
+<td>prefetch_count</td>
+<td style="text-align:center">非必须</td>
+<td>默认值为50</td>
+</tr>
+<tr>
+<td>data.product_key</td>
+<td style="text-align:center">必须</td>
+<td>产品ID</td>
+</tr>
+<tr>
+<td>data.auth_id</td>
+<td style="text-align:center">必须</td>
+<td>产品授权ID</td>
+</tr>
+<tr>
+<td>data.auth_secret</td>
+<td style="text-align:center">必须</td>
+<td>产品授权密匙</td>
+</tr>
+<tr>
+<td>data.subkey</td>
+<td style="text-align:center">必须</td>
+<td>subscription key，为客户端自定义标识，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线</td>
+</tr>
+<tr>
+<td>data.events</td>
+<td style="text-align:center">必须</td>
+<td>客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型为:”device.attr_fault”;”device.attr_alert”;”device.online”;”device.offline”;”device.status.raw”;”device.status.kv”;”datapoints.changed”</td>
+</tr>
+</tbody>
+</table>
 <p>Gizwits Platform 回复：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">"cmd": "login_res",</div><div class="line">"data": &#123;</div><div class="line">"result": true | false,</div><div class="line">"msg": "ok" | &lt;error msg&gt;</div><div class="line">&#125;</div><div class="line">&#125;\n</div></pre></td></tr></table></figure></p>
 <p>如 result 为 false 表示登陆失败，该连接会被关闭。</p>
 <h2 id="2-心跳"><a href="#2-心跳" class="headerlink" title="2.  心跳"></a>2.  心跳</h2><p>客户端和 Gizwits Platform 建立 SSL 连接后，需定期向 Gizwits Platform 发送数据以保持连接的有效性，如 5 分钟内没有向 Gizwits Platform 发送任何数据，应向 Gizwits Platform 发送以下的心跳数据：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">"cmd": "ping"</div><div class="line">&#125;\n</div></pre></td></tr></table></figure></p>
