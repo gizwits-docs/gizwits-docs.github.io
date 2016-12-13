@@ -346,7 +346,8 @@
 <p>产品上架后，在产品服务中点击“添加配置文件”。</p>
 <p> <img src="/assets/zh-cn/deviceDev/debug/test/1478081489006.png" alt="name"></p>
 <p>输入配置名称后，点击“添加步骤”添加需要进行的产测步骤，产测数据点为设备定义数据点。每点击一次“添加步骤”可以添加一个数据点步骤。指令添加完成后点击保存，会生成一个产测文件。</p>
-<p> </p>
+<p><strong>注意：</strong><br><strong>当产测步骤的数据点为只读类型数据点时，如故障报警，红外监测，温度监测等数据点，需要先配置相应设备环境，触发设备产生相应状态，才能产测成功，否则产测必定失败。（如添加红外监测开启，那么需要先配置设备所处环境，在该环境下能触发设备的红外监测开启）。</strong>
+ </p>
 <h2 id="3-下载产测app"><a href="#3-下载产测app" class="headerlink" title="3.下载产测app"></a>3.下载产测app</h2><p>在产测文件下方点击“产测App下载”即可扫码下载App至手机中。（产测App只提供android版本）</p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/test/1478081515011.png" alt="name"></p>
 <h2 id="4-下载产测文件"><a href="#4-下载产测文件" class="headerlink" title="4.下载产测文件"></a>4.下载产测文件</h2><p>   <img src="/assets/zh-cn/deviceDev/debug/test/1478081550135.png" alt="name"></p>
