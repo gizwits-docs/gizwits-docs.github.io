@@ -349,7 +349,7 @@
 <li>增加不同设备的协议自动转换能力；</li>
 <li>增加设备端的数据计算算法实施与更换以及立即执行的能力。</li>
 </ul>
-<p><img src="./001.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/001.png" alt="Alt text"></p>
 <h2 id="3必读术语"><a href="#3必读术语" class="headerlink" title="3必读术语"></a>3必读术语</h2><h4 id="3-1-ECE"><a href="#3-1-ECE" class="headerlink" title="3.1 ECE"></a>3.1 ECE</h4><p>ECE是Edge Computing Engine的缩写，意为边缘计算引擎。</p>
 <h4 id="3-2-PK"><a href="#3-2-PK" class="headerlink" title="3.2 PK"></a>3.2 PK</h4><p>PK是Pruduct Key的缩写，是企业在机智云平台开发者中心创建的某款产品的唯一编号，同一款产品的Product Key都是相同的。</p>
 <h4 id="3-3-协议脚本"><a href="#3-3-协议脚本" class="headerlink" title="3.3 协议脚本"></a>3.3 协议脚本</h4><p>协议脚本可将产品自定义协议与机智云协议进行相互转换，帮助用户产品轻松接入机智云。</p>
@@ -360,36 +360,36 @@
 <h2 id="2-通信配置协议转换"><a href="#2-通信配置协议转换" class="headerlink" title="2.通信配置协议转换"></a>2.通信配置协议转换</h2><p>设置通信接口的设置参数，比如通信串口号、波特率、数据包格式、校验方式等，通过这些设置，可以让模组与设备正常的收发数据。</p>
 <h4 id="2-1场景描述"><a href="#2-1场景描述" class="headerlink" title="2.1场景描述"></a>2.1场景描述</h4><p><strong>场景1：波特率转换</strong><br>我们通过LUA脚本，将原来的设备通讯串口号从com3转换成com4，将波特率从9600转换成38400。</p>
 <p>我们使用ECE雾计算服务，在【通信配置】里，将修改好的脚本进行录入（如下图，设备通讯串口号从com3转换成com4，波特率从9600转换成38400），然后点击【推送】，设置好推送地址。</p>
-<p><img src="./002.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/002.png" alt="Alt text"></p>
 <p>此时，我们可以看到程序启动时（如下图），打开的串口号是COM3，波特率是9600。运行期间会收到云端的推送消息。收到消息后，模组会重启串口，并按照设定的参数，打开COM4，波特率使用38400。</p>
-<p><img src="./003.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/003.png" alt="Alt text"></p>
 <p>这样，我们的通用模组，只在云端进行简单配置，就可以和各种设备进行数据通讯，双方都不需要再做二次开发。</p>
-<h4 id="2-2使用流程"><a href="#2-2使用流程" class="headerlink" title="2.2使用流程"></a>2.2使用流程</h4><p><img src="./004.png" alt="Alt text"></p>
+<h4 id="2-2使用流程"><a href="#2-2使用流程" class="headerlink" title="2.2使用流程"></a>2.2使用流程</h4><p><img src="/assets/zh-cn/UserManual/ECE/004.png" alt="Alt text"></p>
 <p>流程说明：</p>
 <p>1.通信配置LUA脚本给用户提供范例脚本头部，用户可对脚本进行新增、修改、清空操作，目前脚本只保留最新一版；</p>
 <p>2.通信配置可以动态更改通信参数；</p>
 <p>3.上传：脚本编写好，暂不进行推送，可将脚本上传云端保存；若用户不对脚本推送或上传，辑的脚本将不被保存；</p>
 <p>4.通信配置只能对模组进行推送，可指定MAC地址或同PK所有MAC地址推送。点击推送后脚本将上传到云端保存；</p>
-<p><img src="./005.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/005.png" alt="Alt text"></p>
 <h2 id="3-微应用升级"><a href="#3-微应用升级" class="headerlink" title="3.微应用升级"></a>3.微应用升级</h2><p>微应用升级指的是对设备获取的数据或者设备自身行为的设置。可以设置对数据的后期处理，比如对温度值的最大值、最小值、平均值的处理，也可以设置设备的行为处理，比如设置设备对温度的采集频率等。</p>
 <h4 id="3-1场景描述"><a href="#3-1场景描述" class="headerlink" title="3.1场景描述"></a>3.1场景描述</h4><p><strong>场景1：业务层协议转换</strong><br>把设备采集的原始二进制数据转换成json字符串，然后再上报云端。<br>我们使用ECE雾计算服务，在【微应用】里，录入协议转换脚本(如下图)，然后点击【推送】，设置好推送地址。</p>
-<p><img src="./006.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/006.png" alt="Alt text"></p>
 <p>可以看到程序一开始输出的是原始二进制数据（如下图），收到云端下发的排序指令后，模组输出的就是格式化的json串。</p>
-<p><img src="./007.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/007.png" alt="Alt text"></p>
 <p>这样，设备的私有协议都可以不用更改，我们在云端配置解析方法后，就可以做自动的适配和解析。</p>
 <p><strong>场景2：新增一个设备行为</strong><br>当温度超过70度后，点亮红灯报警。<br>我们使用ECE雾计算服务，在【微应用】里，录入关联动作脚本(如下图)，然后点击【推送】，设置好推送地址。</p>
-<p><img src="./008.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/008.png" alt="Alt text"></p>
 <p>从日志中（如下图），可以看到模组已经收到脚本。</p>
-<p><img src="./009.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/009.png" alt="Alt text"></p>
 <p>此时，我们使用热风枪加热传感器（如下图），可以看到超过70度后，设备亮起了红灯。</p>
-<p><img src="./010.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/010.png" alt="Alt text"></p>
 <p>这样，设备更多的功能，可以在后期方便的增加或者更改，而不用升级整个固件。<br><strong>场景3：高级数据运算</strong><br> 让设备进行比较高效复杂的数据运算，并把运算结果转换为json后上传云端。假设设备默认5秒一次温度采样频率，为了得到更多的采样点，我们设定设备新的采样频率为100毫秒采集一次温度值，5秒后，用采集的数据计算出平均值、最大值、最小值和方差，然后上报云端。</p>
 <p>同样是5秒上报一次，但是后者更具数据价值。<br>我们使用ECE雾计算服务，在【微应用】里，录入设备行为设定以及数据分析(如下图)，然后点击【推送】，设置好推送地址。</p>
-<p><img src="./011.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/011.png" alt="Alt text"></p>
 <p>可以看到设备一开始5秒一次采集温度（如下图），并上传，收到云端的配置脚本后，设备改为100毫秒采集一次温度，然后计算出结果，上报云端。</p>
-<p><img src="./012.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/012.png" alt="Alt text"></p>
 <p>这样，就可以做到云和雾的计算平衡，雾端可以做更多的实时数据处理，实现最大的数据价值。</p>
-<h4 id="3-2微应用模组推送流程"><a href="#3-2微应用模组推送流程" class="headerlink" title="3.2微应用模组推送流程"></a>3.2微应用模组推送流程</h4><p><img src="./013.png" alt="Alt text"></p>
+<h4 id="3-2微应用模组推送流程"><a href="#3-2微应用模组推送流程" class="headerlink" title="3.2微应用模组推送流程"></a>3.2微应用模组推送流程</h4><p><img src="/assets/zh-cn/UserManual/ECE/013.png" alt="Alt text"></p>
 <p>流程说明：</p>
 <p>1.微应用LUA脚本给用户提供范例脚本头部，用户可对脚本进行新增、修改、清空操作，目前脚本只保留最新一版；</p>
 <p>2.微应用可用于业务层协议的自动适配和解析、添加或修改设备行为、让设备进行比较高效复杂的数据运算；</p>
@@ -399,8 +399,8 @@
 <li>若对模组推送可指定MAC地址或同PK所有MAC地址推送；</li>
 <li>点击推送后脚本将上传到云端保存；</li>
 </ul>
-<p><img src="./014.png" alt="Alt text"></p>
-<h4 id="3-3微应用手机推送流程"><a href="#3-3微应用手机推送流程" class="headerlink" title="3.3微应用手机推送流程"></a>3.3微应用手机推送流程</h4><p><img src="./015.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/014.png" alt="Alt text"></p>
+<h4 id="3-3微应用手机推送流程"><a href="#3-3微应用手机推送流程" class="headerlink" title="3.3微应用手机推送流程"></a>3.3微应用手机推送流程</h4><p><img src="/assets/zh-cn/UserManual/ECE/015.png" alt="Alt text"></p>
 <p>流程说明：</p>
 <p>1.同【2.3.2微应用模组推送流程说明】1、2、3；</p>
 <p>2.微应用可对模组或者手机进行推送：</p>
@@ -409,14 +409,14 @@
 <li>选择对手机推送，用户则不需选择推送范围，也不需要填写MAC地址；</li>
 <li>点击推送后脚本将上传到云端保存；</li>
 </ul>
-<p><img src="./016.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/016.png" alt="Alt text"></p>
 <h1 id="业务规范"><a href="#业务规范" class="headerlink" title="业务规范"></a>业务规范</h1><h2 id="1脚本名称"><a href="#1脚本名称" class="headerlink" title="1脚本名称"></a>1脚本名称</h2><p>该名称为用户自定义输入，为必填项，否则无法实现推送。用户可删除或修改文案，目前版本只支持保存最新操作。支持字符输入字母A-Z、a-z、下划线_、数字0-9，首字母不能为数字，字符最大输入量为64字节。此功能有两个用处：</p>
 <ul>
 <li>用户对本次脚本录入作备注，再次进入ECE服务时，能通过自定义文案知道当前操作内容；</li>
 <li>脚本推送时，作为推送的文件名；<h2 id="2-MAC地址"><a href="#2-MAC地址" class="headerlink" title="2 MAC地址"></a>2 MAC地址</h2>MAC地址输入至少一个，输入限制50个内；输入多个MAC采用“回车”换行形式，地址多于输入框显示范围，输入框出现拉条，用户可点击并上下拖动到查看每一行。推送后将保存用户的填写信息。</li>
 </ul>
 <p>MAC地址输入功能包括复制、粘贴、删除。<br>MAC支持输入任何符号、数字0-9、大写A-Z、小写a-z，限制12个字符或以内，地址输入操作如图：</p>
-<p><img src="./017.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/ECE/017.png" alt="Alt text"></p>
 <h1 id="LUA脚本规格说明"><a href="#LUA脚本规格说明" class="headerlink" title="LUA脚本规格说明"></a>LUA脚本规格说明</h1><p>选择协议脚本后，会自动生成LUA脚本规范头部，用户不可对头部内容进行修改，用户在”–to do”下方完成内容编辑。</p>
 <h2 id="1-通信配置脚本头部"><a href="#1-通信配置脚本头部" class="headerlink" title="1 通信配置脚本头部"></a>1 通信配置脚本头部</h2><p>头部规范如下：</p>
 <p>———-luaComInit———-<br>–to do</p>
