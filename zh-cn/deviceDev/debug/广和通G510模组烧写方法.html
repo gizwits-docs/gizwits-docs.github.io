@@ -376,19 +376,19 @@
 </tr>
 </tbody>
 </table>
-<p><img src="./1482753663131.png" alt="Alt text"></p>
-<h2 id="连接模组"><a href="#连接模组" class="headerlink" title="连接模组"></a>连接模组</h2><p>电脑插入USB转TTL串口模块，查看模块所在COM口<br><img src="./1482753675007.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482753663131.png" alt="Alt text"></p>
+<h2 id="连接模组"><a href="#连接模组" class="headerlink" title="连接模组"></a>连接模组</h2><p>电脑插入USB转TTL串口模块，查看模块所在COM口<br><img src="/assets/zh-cn/deviceDev/debug/G510/1482753675007.png" alt="Alt text"></p>
 <p>使用杜邦线将USB转TTL串口模块与焊接好的G510模组连接。</p>
-<p><img src="./1482753870813.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482753870813.png" alt="Alt text"></p>
 <h2 id="下载固件与烧写工具"><a href="#下载固件与烧写工具" class="headerlink" title="下载固件与烧写工具"></a>下载固件与烧写工具</h2><p>下载G510的相对应的GAgent固件，打开烧写工具Fibocom_upgrade V1.3。</p>
-<p><img src="./1482753911061.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482753911061.png" alt="Alt text"></p>
 <h1 id="烧写过程"><a href="#烧写过程" class="headerlink" title="烧写过程"></a>烧写过程</h1><h2 id="步骤1-切断电源"><a href="#步骤1-切断电源" class="headerlink" title="步骤1.切断电源"></a>步骤1.切断电源</h2><p>先断开模组的供电（可拨掉VCC的杜邦线）。</p>
 <h2 id="步骤2-配置烧写软件"><a href="#步骤2-配置烧写软件" class="headerlink" title="步骤2.配置烧写软件"></a>步骤2.配置烧写软件</h2><p>按照下图配置Fibocom_upgrade V1.3</p>
-<p><img src="./1482753930052.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482753930052.png" alt="Alt text"></p>
 <h2 id="步骤3-进入烧写"><a href="#步骤3-进入烧写" class="headerlink" title="步骤3.进入烧写"></a>步骤3.进入烧写</h2><p>重新接上模组的VCC供电，把power_on打到低电平（接GND），烧写工具会自动运行。</p>
 <p>如果烧写失败，可能是模组还没开机，检查G510 开关机状态，VDD管脚电平为 0V 时，G510 处于关机状态，电平大于 2.85V 时，G510 处于开机状态。</p>
 <p>当 POWER_ON 管脚信号为低电平并且持续超过 800ms 时，模块将开机。</p>
-<p><img src="./1482753947372.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482753947372.png" alt="Alt text"></p>
 <h1 id="效果验证"><a href="#效果验证" class="headerlink" title="效果验证"></a>效果验证</h1><p>1.使用杜邦线将USB转TTL串口模块与G510模组的UART2（注意:和烧录固件的不是同一串口）连接。</p>
 <table>
 <thead>
@@ -418,7 +418,7 @@
 </table>
 <p>2.使用机智云XPG助手模拟MUC功能。</p>
 <p>按照下图配置，更多使用方法<a href="http://docs.gizwits.com/zh-cn/deviceDev/%E4%B8%B2%E5%8F%A3%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.html" target="_blank" rel="external">请点击这里</a></p>
-<p><img src="./1482812677989.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482812677989.png" alt="Alt text"></p>
 <p>3.另外，可以再增加一个USB转TTL模块，通过接G510的UART1串口来输出LOG日志，可以看见G510连接GAgent的过程。</p>
 <table>
 <thead>
@@ -443,14 +443,14 @@
 </tbody>
 </table>
 <p>注：波特率为：115200<br>注意：由于没有连接SIM卡，所以模组无法真正的连上网络，会一直报错。</p>
-<p><img src="./1482754299767.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482754299767.png" alt="Alt text"></p>
 <h1 id="附录：SIM卡连接方法"><a href="#附录：SIM卡连接方法" class="headerlink" title="附录：SIM卡连接方法"></a>附录：SIM卡连接方法</h1><p>模块包含了一个 SIM 卡接口，这个接口符合 GSM 11.11 和 GSM 11.12 标准（基于 ISO/IEC 7816） 。</p>
 <p>这些标准定义了 GSM SIM 卡的电气特性、 信令和协议规范。</p>
 <p>模块不包含 SIM 卡槽。SIM 卡槽必须放在模块外部的用户开发板上。模块的 SIM 卡接口包括了所有必须的信号，这些信号被接到接口连接器，直接并全部连接到外部的 SIM 卡。模块支持 1.8V 或者 2.85V 电平自动识别。当模块在开机后，首先 SIM_VCC 向外部 SIM 卡输出 1.8V电压来建立通信。如果通信不成功，SIM_VCC 会再次输出 2.85V 电压，并和 SIM 卡建立通信。</p>
-<p><img src="./1482754308693.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482754308693.png" alt="Alt text"></p>
 <p>下图显示了一个典型的 SIM 卡接口，连接到模块。在模块开发板上，使用 MOLEX （PN 912283001 &amp;912360001）SIM 卡槽，来实现这种连接方式。</p>
 <p>无论 SIM_CD 是否使用，都必须上拉，保证 SIM 卡的检测稳定。模块内部已经将 SIM_DATA 信号上拉到 SIM_VCC，外围无需再上拉。</p>
-<p><img src="./1482754330995.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482754330995.png" alt="Alt text"></p>
 <p>SIM 卡接口和信号的设计特别重要。为了满足设计标准和规定，以下几点是必须要遵循的设计准则：</p>
 <ul>
 <li><p>SIM 卡的位置以及 SIM 信号的走线，必须远离任何可能的电磁干扰源，像射频天线和数字开关信号等。</p>
