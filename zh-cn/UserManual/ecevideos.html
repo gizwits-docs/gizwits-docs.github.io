@@ -401,10 +401,8 @@
 <li>到产品页面找到对应产品的<strong>product key</strong>,如下图：<br><img src="http://static.zybuluo.com/AlexLin/kgh8wgy6eu2gy6chl6k5d7dj/image_1b54goudp1mv3113418pp2g5s553g.png" alt="image_1b54goudp1mv3113418pp2g5s553g.png-58.7kB"></li>
 <li>把<strong>product key</strong>保存到init.lua脚本里面，格式如下：<br><img src="http://static.zybuluo.com/AlexLin/drpbhokmpu0ls8sy5x2k7nox/image_1b54grort2v01nums0s4gq8103t.png" alt="image_1b54grort2v01nums0s4gq8103t.png-7.8kB"></li>
 <li>把该文件烧录到<strong>0xb0000</strong>地址，烧录步骤跟<strong>第五部分固件烧写操作</strong>一样</li>
-<li><img src="http://static.zybuluo.com/AlexLin/99epdwavq6vodgxr2dxxco8u/image_1b3u26iv81mp21lntq0cpd41rpf13.png" alt="init.lua烧录"></li>
+<li><img src="http://static.zybuluo.com/AlexLin/99epdwavq6vodgxr2dxxco8u/image_1b3u26iv81mp21lntq0cpd41rpf13.png" alt="init.lua烧录"><br>#观看链接：<br><a href="http://v.qq.com/x/page/r03612h7pr0.html" target="_blank" rel="external">2.固件烧录</a><br><a href="http://v.qq.com/x/page/p0361baxn9z.html" target="_blank" rel="external">3.pk烧录</a><br>###<strong>3.MCU协议介绍</strong><br>####<strong>MCU与WiFi通讯以字符串形式通讯，具体命令规范如下：</strong></li>
 </ul>
-<p>###<strong>3.MCU协议介绍</strong></p>
-<p>####<strong>MCU与WiFi通讯以字符串形式通讯，具体命令规范如下：</strong></p>
 <hr>
 <hr>
 <ul>
@@ -412,7 +410,7 @@
 </li>
 <li><p>WiFi回复配网:<br>命令: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- - -</div><div class="line">- MCU上传设备数据给WiFi **cmd=3**:</div><div class="line"> 命令: ```mcu2wifi&amp;cmd=3&amp;Infrared=1&amp;LedSwitchOnOff=1&amp;MotorSwitchOnOff=1&amp;Temperature=05</div></pre></td></tr></table></figure></p>
 </li>
-<li><p>WiFi发送控制指令给mcu <strong>cmd=4</strong>：<br>命令: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">**实现该协议的固件见机智云下载中心 [ECE雾计算esp8266固件包][31] 里面的```gokit_mcu_stm32_ece.hex```**</div><div class="line">**固件烧录教程:**http://club.gizwits.com/forum.php?mod=viewthread&amp;tid=3311&amp;highlight=gokit%2B%E7%83%A7%E5%BD%95</div><div class="line">###**4.脚本编译及推送**</div><div class="line">- - -</div><div class="line">####**脚本格式及编写规则**</div><div class="line">请参照demo.lua这个脚本为模板编写自己的lua应用程序，该demo脚本需配套gokit套件及上面提到的模组及MCU固件使用，实现了下列功能：  </div><div class="line">1、当检测到上报温度大于27度时，通知MCU打开电机;  </div><div class="line">2、当红外对管检测到障碍物时，打开红灯;  </div><div class="line">下面我们通过注释区定义了几大块：  </div><div class="line">应用程序初始化部分，程序请写到luaInit内容区，这部分的代码在整个脚本生命周期只会运行一次，比如分配应用的内存大小，请把lua应用程序需要初始化一次的部分放在这个区域内。</div></pre></td></tr></table></figure></p>
+<li><p>WiFi发送控制指令给mcu <strong>cmd=4</strong>：<br>命令: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">**实现该协议的固件见机智云下载中心 [ECE雾计算esp8266固件包][31] 里面的```gokit_mcu_stm32_ece.hex```**</div><div class="line">**固件烧录教程:**http://club.gizwits.com/forum.php?mod=viewthread&amp;tid=3311&amp;highlight=gokit%2B%E7%83%A7%E5%BD%95</div><div class="line">#观看链接：</div><div class="line">[4.MCU协议介绍](http://v.qq.com/x/page/a03619wrrqr.html)</div><div class="line">###**4.脚本编译及推送**</div><div class="line">- - -</div><div class="line">####**脚本格式及编写规则**</div><div class="line">请参照demo.lua这个脚本为模板编写自己的lua应用程序，该demo脚本需配套gokit套件及上面提到的模组及MCU固件使用，实现了下列功能：  </div><div class="line">1、当检测到上报温度大于27度时，通知MCU打开电机;  </div><div class="line">2、当红外对管检测到障碍物时，打开红灯;  </div><div class="line">下面我们通过注释区定义了几大块：  </div><div class="line">应用程序初始化部分，程序请写到luaInit内容区，这部分的代码在整个脚本生命周期只会运行一次，比如分配应用的内存大小，请把lua应用程序需要初始化一次的部分放在这个区域内。</div></pre></td></tr></table></figure></p>
 </li>
 </ul>
 <p>———-luaInit———-<br>———内容————</p>
@@ -433,6 +431,7 @@
 <p><img src="http://static.zybuluo.com/AlexLin/yu6scxcs2zdzlsb92n5q5gi8/image_1b52egm5f1q3951nla12lg1apm1t.png" alt="image_1b52egm5f1q3951nla12lg1apm1t.png-61kB"></p>
 <p><strong>Mac地址出错或设备未上线提示的推送失败：</strong></p>
 <p><img src="http://static.zybuluo.com/AlexLin/s1oj1xyj90avz3lippw7syzw/image_1b52eh3j657kvm6177i1k1epd42a.png" alt="image_1b52eh3j657kvm6177i1k1epd42a.png-66.4kB"></p>
+<p>#观看链接<br><a href="http://v.qq.com/x/page/d03617dbq8p.html" target="_blank" rel="external">5.lua脚本讲解</a><br><a href="http://v.qq.com/x/page/y0361kmy887.html" target="_blank" rel="external">6.gokit跑lua演示</a></p>
 
     </div>
     
