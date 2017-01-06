@@ -424,21 +424,23 @@
 <p><a href="http://v.qq.com/x/page/p0361baxn9z.html" target="_blank" rel="external">pk烧录</a></p>
 <h2 id="3-MCU协议介绍"><a href="#3-MCU协议介绍" class="headerlink" title="3.MCU协议介绍"></a>3.MCU协议介绍</h2><p>MCU与WiFi通讯以字符串形式通讯，具体命令规范如下：</p>
 <ul>
-<li>MCU 通知 WiFi进入airlink配网 <strong>cmd=2</strong>:<br>命令: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mcu2wifi&amp;cmd=2&amp;mode=0/1</div></pre></td></tr></table></figure>
-</li>
+<li>MCU 通知 WiFi进入airlink配网 <strong>cmd=2</strong>:<br>命令: </li>
 </ul>
-<p>解释:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mode:0 softap配置模式; mode:1 airlink配网模式</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mcu2wifi&amp;cmd=2&amp;mode=0/1</div></pre></td></tr></table></figure>
+<p>解释:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mode:0 softap配置模式; mode:1 airlink配网模式</div></pre></td></tr></table></figure>
 <ul>
-<li><p>WiFi回复配网:<br>命令:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mcu2wifi&amp;cmd=2&amp;result=0/1</div></pre></td></tr></table></figure>
-</li>
-<li><p>MCU上传设备数据给WiFi <strong>cmd=3</strong>:<br>命令:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mcu2wifi&amp;cmd=3&amp;Infrared=1&amp;LedSwitchOnOff=1&amp;MotorSwitchOnOff=1&amp;Temperature=05</div></pre></td></tr></table></figure>
-</li>
-<li><p>WiFi发送控制指令给mcu <strong>cmd=4</strong>：<br>命令:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wifi2mcu&amp;cmd=4&amp;LedSwitchOnOff=1或者MotorSwitchOnOff=1</div></pre></td></tr></table></figure>
-</li>
+<li>WiFi回复配网:<br>命令:</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mcu2wifi&amp;cmd=2&amp;result=0/1</div></pre></td></tr></table></figure>
+<ul>
+<li>MCU上传设备数据给WiFi <strong>cmd=3</strong>:<br>命令:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mcu2wifi&amp;cmd=3&amp;Infrared=1&amp;LedSwitchOnOff=1&amp;MotorSwitchOnOff=1&amp;Temperature=05</div></pre></td></tr></table></figure>
+<ul>
+<li>WiFi发送控制指令给mcu <strong>cmd=4</strong>：<br>命令:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wifi2mcu&amp;cmd=4&amp;LedSwitchOnOff=1或者MotorSwitchOnOff=1</div></pre></td></tr></table></figure>
 <p>实现该协议的固件见机智云下载中心 <a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent" target="_blank" rel="external">ECE雾计算esp8266固件包</a> 里面的</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gokit_mcu_stm32_ece.hex</div></pre></td></tr></table></figure>
 <p>固件烧录教程:<br><a href="http://club.gizwits.com/forum.php?mod=viewthread&amp;tid=3311&amp;highlight=gokit%2B%E7%83%A7%E5%BD%95" target="_blank" rel="external">http://club.gizwits.com/forum.php?mod=viewthread&amp;tid=3311&amp;highlight=gokit%2B%E7%83%A7%E5%BD%95</a></p>
