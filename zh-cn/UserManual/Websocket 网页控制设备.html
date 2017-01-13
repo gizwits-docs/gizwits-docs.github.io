@@ -361,35 +361,35 @@
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>JavaScript网页远程控制设备，是调用了机智云开放的Open API和WebSocket API来实现的。其中，Open API用到的接口有匿名登录用户、绑定设备和获取绑定设备列表。而WebSocket API上的用户登陆、设备上线下线通知、浏览器与云端的数据交互（数据透传）、心跳和非法消息通知。</p>
-<p><img src="./图片1.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/WebSocket/图片1.png" alt="Alt text"></p>
 <p>当设备已经是成功连接上云端，就可使用以下流程来控制设备了：</p>
-<p><img src="./图片2.png" alt="Alt text"></p>
-<h1 id="准备工作：调用OPEN-API匿名登录用户和绑定设备"><a href="#准备工作：调用OPEN-API匿名登录用户和绑定设备" class="headerlink" title="准备工作：调用OPEN API匿名登录用户和绑定设备"></a>准备工作：调用OPEN API匿名登录用户和绑定设备</h1><h2 id="1-获取phone-id"><a href="#1-获取phone-id" class="headerlink" title="1.获取phone_id"></a>1.获取phone_id</h2><p>phone<em> id 可以是手机的唯一识别码。或者您已经有了自己的用户系统，不希望用户再次注册一次机智云帐号，您也可以使用该接口，为您的每一个用户创建一个对应的机智云匿名帐号。这时，phone</em> id 可以是用户在您的系统中的唯一识别码。如在与微信应用做对接时，phone_id 可以设置成微信用户的 openid。</p>
+<p><img src="/assets/zh-cn/UserManual/WebSocket/图片2.png" alt="Alt text"></p>
+<h1 id="准备工作：调用OPEN-API匿名登录用户和绑定设备"><a href="#准备工作：调用OPEN-API匿名登录用户和绑定设备" class="headerlink" title="准备工作：调用OPEN API匿名登录用户和绑定设备"></a>准备工作：调用OPEN API匿名登录用户和绑定设备</h1><h2 id="1-获取phone-id"><a href="#1-获取phone-id" class="headerlink" title="1.获取phone_id"></a>1.获取phone_id</h2><p>phone_id 可以是手机的唯一识别码。或者您已经有了自己的用户系统，不希望用户再次注册一次机智云帐号，您也可以使用该接口，为您的每一个用户创建一个对应的机智云匿名帐号。这时，phone_id 可以是用户在您的系统中的唯一识别码。如在与微信应用做对接时，phone_id 可以设置成微信用户的 openid。</p>
 <h2 id="2-创建用户"><a href="#2-创建用户" class="headerlink" title="2.创建用户"></a>2.创建用户</h2><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_users" target="_blank" rel="external">http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_users</a></p>
-<h3 id="2-1-填写appid"><a href="#2-1-填写appid" class="headerlink" title="2.1.填写appid"></a>2.1.填写appid</h3><p><img src="./图片3.png" alt="Alt text"></p>
-<h3 id="2-2-填写body"><a href="#2-2-填写body" class="headerlink" title="2.2.填写body"></a>2.2.填写body</h3><p><img src="./图片4.png" alt="Alt text"></p>
-<h3 id="2-3-登录匿名用户，获取token"><a href="#2-3-登录匿名用户，获取token" class="headerlink" title="2.3.登录匿名用户，获取token"></a>2.3.登录匿名用户，获取token</h3><p><img src="./图片5.png" alt="Alt text"></p>
+<h3 id="2-1-填写appid"><a href="#2-1-填写appid" class="headerlink" title="2.1.填写appid"></a>2.1.填写appid</h3><p><img src="/assets/zh-cn/UserManual/WebSocket/图片3.png" alt="Alt text"></p>
+<h3 id="2-2-填写body"><a href="#2-2-填写body" class="headerlink" title="2.2.填写body"></a>2.2.填写body</h3><p><img src="/assets/zh-cn/UserManual/WebSocket/图片4.png" alt="Alt text"></p>
+<h3 id="2-3-登录匿名用户，获取token"><a href="#2-3-登录匿名用户，获取token" class="headerlink" title="2.3.登录匿名用户，获取token"></a>2.3.登录匿名用户，获取token</h3><p><img src="/assets/zh-cn/UserManual/WebSocket/图片5.png" alt="Alt text"></p>
 <h2 id="3-绑定设备"><a href="#3-绑定设备" class="headerlink" title="3.绑定设备"></a>3.绑定设备</h2><p>POST请求链接：<br><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_mac" target="_blank" rel="external">http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_mac</a></p>
-<h3 id="3-1-填写appid"><a href="#3-1-填写appid" class="headerlink" title="3.1.填写appid"></a>3.1.填写appid</h3><p><img src="./图片6.png" alt="Alt text"></p>
-<h3 id="3-2-填写刚才匿名登录回调的token"><a href="#3-2-填写刚才匿名登录回调的token" class="headerlink" title="3.2.填写刚才匿名登录回调的token"></a>3.2.填写刚才匿名登录回调的token</h3><p><img src="./图片7.png" alt="Alt text"></p>
-<h3 id="3-3-填写Timestamp、Signature和body"><a href="#3-3-填写Timestamp、Signature和body" class="headerlink" title="3.3.填写Timestamp、Signature和body"></a>3.3.填写Timestamp、Signature和body</h3><p><img src="./图片8.png" alt="Alt text"></p>
+<h3 id="3-1-填写appid"><a href="#3-1-填写appid" class="headerlink" title="3.1.填写appid"></a>3.1.填写appid</h3><p><img src="/assets/zh-cn/UserManual/WebSocket/图片6.png" alt="Alt text"></p>
+<h3 id="3-2-填写刚才匿名登录回调的token"><a href="#3-2-填写刚才匿名登录回调的token" class="headerlink" title="3.2.填写刚才匿名登录回调的token"></a>3.2.填写刚才匿名登录回调的token</h3><p><img src="/assets/zh-cn/UserManual/WebSocket/图片7.png" alt="Alt text"></p>
+<h3 id="3-3-填写Timestamp、Signature和body"><a href="#3-3-填写Timestamp、Signature和body" class="headerlink" title="3.3.填写Timestamp、Signature和body"></a>3.3.填写Timestamp、Signature和body</h3><p><img src="/assets/zh-cn/UserManual/WebSocket/图片8.png" alt="Alt text"></p>
 <p>备注：时间戳计算链接，<a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="external">http://tool.chinaz.com/Tools/unixtime.aspx</a><br>MD5计算链接，<a href="http://tool.oschina.net/encrypt?type=2，如下图" target="_blank" rel="external">http://tool.oschina.net/encrypt?type=2，如下图</a>:</p>
-<p><img src="./图片9.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/WebSocket/图片9.png" alt="Alt text"></p>
 <h1 id="Websocket网页控制界面"><a href="#Websocket网页控制界面" class="headerlink" title="Websocket网页控制界面"></a>Websocket网页控制界面</h1><h2 id="1-websocket-API封装起来的sdk"><a href="#1-websocket-API封装起来的sdk" class="headerlink" title="1.websocket API封装起来的sdk"></a>1.websocket API封装起来的sdk</h2><p>链接如下：<br><a href="https://github.com/gizwits/gizwits-wechat-js-sdk" target="_blank" rel="external">https://github.com/gizwits/gizwits-wechat-js-sdk</a></p>
-<h2 id="2-运行index-html"><a href="#2-运行index-html" class="headerlink" title="2.运行index.html"></a>2.运行index.html</h2><p><img src="./图片10.png" alt="Alt text"></p>
+<h2 id="2-运行index-html"><a href="#2-运行index-html" class="headerlink" title="2.运行index.html"></a>2.运行index.html</h2><p><img src="/assets/zh-cn/UserManual/WebSocket/图片10.png" alt="Alt text"></p>
 <h2 id="3-Websocket网页控制界面"><a href="#3-Websocket网页控制界面" class="headerlink" title="3.Websocket网页控制界面"></a>3.Websocket网页控制界面</h2><p><a href="https://gizwits.github.io/gizwits-wechat-js-sdk/v0.2.0.html" target="_blank" rel="external">https://gizwits.github.io/gizwits-wechat-js-sdk/v0.2.0.html</a><br>如下：</p>
-<p><img src="./图片11.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/WebSocket/图片11.png" alt="Alt text"></p>
 <h1 id="控制设备分两种方式"><a href="#控制设备分两种方式" class="headerlink" title="控制设备分两种方式"></a>控制设备分两种方式</h1><h2 id="1-V4版本的标准数据点协议"><a href="#1-V4版本的标准数据点协议" class="headerlink" title="1.V4版本的标准数据点协议"></a>1.V4版本的标准数据点协议</h2><h3 id="1-1-初始化Gizwits-WS对象"><a href="#1-1-初始化Gizwits-WS对象" class="headerlink" title="1.1.初始化Gizwits WS对象"></a>1.1.初始化Gizwits WS对象</h3><p>上面使用的参数有：<br>| 参数      |     说明       |                数值         |<br>| ————- |:————-:|    ————-    |<br>|apiHost    |机智云OpenApi域名    |api.gizwits.com|<br>|commType    |标准数据点协议格式    |attrs_v4|<br>|wechatOpenId    |微信用户OpenID（就是手机的iPhone_id）|    String|<br>|gizwitsAppId    |机智云平台应用标识    |String|</p>
 <p>初始化，如下：</p>
-<p><img src="./图片12.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/WebSocket/图片12.png" alt="Alt text"></p>
 <h3 id="1-2-获取绑定列表"><a href="#1-2-获取绑定列表" class="headerlink" title="1.2.获取绑定列表"></a>1.2.获取绑定列表</h3><p>如果该用户要获取绑定设备列表，先要确认该用户（就是该openid）是否有对要控制设备的已进行绑定了。</p>
-<p><img src="./图片13.png" alt="Alt text"></p>
-<h3 id="1-3-选择一个要进行控制的设备did，创建websocket连接"><a href="#1-3-选择一个要进行控制的设备did，创建websocket连接" class="headerlink" title="1.3.选择一个要进行控制的设备did，创建websocket连接"></a>1.3.选择一个要进行控制的设备did，创建websocket连接</h3><p><img src="./图片14.png" alt="Alt text"></p>
-<h3 id="1-4-选择已连接的设备，读取设备的当前状态"><a href="#1-4-选择已连接的设备，读取设备的当前状态" class="headerlink" title="1.4.选择已连接的设备，读取设备的当前状态"></a>1.4.选择已连接的设备，读取设备的当前状态</h3><p><img src="./图片15.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/WebSocket/图片13.png" alt="Alt text"></p>
+<h3 id="1-3-选择一个要进行控制的设备did，创建websocket连接"><a href="#1-3-选择一个要进行控制的设备did，创建websocket连接" class="headerlink" title="1.3.选择一个要进行控制的设备did，创建websocket连接"></a>1.3.选择一个要进行控制的设备did，创建websocket连接</h3><p><img src="/assets/zh-cn/UserManual/WebSocket/图片14.png" alt="Alt text"></p>
+<h3 id="1-4-选择已连接的设备，读取设备的当前状态"><a href="#1-4-选择已连接的设备，读取设备的当前状态" class="headerlink" title="1.4.选择已连接的设备，读取设备的当前状态"></a>1.4.选择已连接的设备，读取设备的当前状态</h3><p><img src="/assets/zh-cn/UserManual/WebSocket/图片15.png" alt="Alt text"></p>
 <h3 id="1-5-选择已连接的设备，下发控制指令"><a href="#1-5-选择已连接的设备，下发控制指令" class="headerlink" title="1.5.选择已连接的设备，下发控制指令"></a>1.5.选择已连接的设备，下发控制指令</h3><p>如下发控制指令{“Swicth”:true}，如下图：</p>
-<p><img src="./图片16.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/WebSocket/图片16.png" alt="Alt text"></p>
 <p>控制模拟设备效果：</p>
-<p><img src="./图片17.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/WebSocket/图片17.png" alt="Alt text"></p>
 <h2 id="2-V4版本的自定义格式协议"><a href="#2-V4版本的自定义格式协议" class="headerlink" title="2.V4版本的自定义格式协议"></a>2.V4版本的自定义格式协议</h2><p>V4版本的自定义格式协议（就是无法数据点透传）</p>
 <h3 id="2-1-初始化Gizwits-WS对象"><a href="#2-1-初始化Gizwits-WS对象" class="headerlink" title="2.1.初始化Gizwits WS对象"></a>2.1.初始化Gizwits WS对象</h3><p>上面用的的参数有：</p>
 <table>
@@ -423,16 +423,16 @@
 </tr>
 </tbody>
 </table>
-<p><img src="./图片18.png" alt="Alt text"></p>
-<h3 id="2-2-获取绑定列表"><a href="#2-2-获取绑定列表" class="headerlink" title="2.2.获取绑定列表"></a>2.2.获取绑定列表</h3><p><img src="./图片19.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/WebSocket/图片18.png" alt="Alt text"></p>
+<h3 id="2-2-获取绑定列表"><a href="#2-2-获取绑定列表" class="headerlink" title="2.2.获取绑定列表"></a>2.2.获取绑定列表</h3><p><img src="/assets/zh-cn/UserManual/WebSocket/图片19.png" alt="Alt text"></p>
 <h3 id="2-3创建websocket连接"><a href="#2-3创建websocket连接" class="headerlink" title="2.3创建websocket连接"></a>2.3创建websocket连接</h3><p>选择一个要进行控制的设备did，创建websocket连接：</p>
-<p><img src="./图片20.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/WebSocket/图片20.png" alt="Alt text"></p>
 <h3 id="2-4-读取设备的当前状态"><a href="#2-4-读取设备的当前状态" class="headerlink" title="2.4.读取设备的当前状态"></a>2.4.读取设备的当前状态</h3><p>选择已连接的设备，读取设备的当前状态：</p>
-<p><img src="./图片21.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/WebSocket/图片21.png" alt="Alt text"></p>
 <h3 id="2-5-下发控制指令"><a href="#2-5-下发控制指令" class="headerlink" title="2.5.下发控制指令"></a>2.5.下发控制指令</h3><p>选择已连接的设备，下发的控制指令：[0,0,0,3,9,0,0,144,1,0,1,2,3,4] （注意：下发数据的格式为十进制的，每个位端的表示为0,0,0,3为header、9为len、0为flag、0,144为cmd、1为action、0,1,2,3,4为业务指令），如下：</p>
-<p><img src="./图片22.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/WebSocket/图片22.png" alt="Alt text"></p>
 <p>模拟mcu收到命令，如下：<br>FF FF 00 0B 03 1E 00 00 01 00 01 02 03 04 37</p>
-<p><img src="./图片23.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/WebSocket/图片23.png" alt="Alt text"></p>
 
     </div>
     
