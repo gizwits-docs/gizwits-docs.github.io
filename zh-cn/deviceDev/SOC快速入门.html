@@ -400,7 +400,8 @@
 </ul>
 <p>在这套SOC源码里面需要关心也就这几个主要的地方，模块联网以及底层驱动均不需要开发者去处理和修改。</p>
 <h4 id="2-4-3-前往机智云下载中心，下载“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”SoC源码库"><a href="#2-4-3-前往机智云下载中心，下载“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”SoC源码库" class="headerlink" title="2.4.3 前往机智云下载中心，下载“微信宠物屋 for GoKit3(S) ESP8266 V03000003”SoC源码库"></a>2.4.3 前往机智云下载中心，下载“微信宠物屋 for GoKit3(S) ESP8266 V03000003”SoC源码库</h4><p><strong>“微信宠物屋 for GoKit3(S) ESP8266 V03000003”</strong>这个是机智云工程师使用GoKit3（S）板，基于esp8266硬件平台写的案例，案例里面包含了红外传感器，温湿度传感器，小电机，RGB灯，用户按键等几个外设的驱动，可以直接复制到任何一个GoKit3（S）的板子上使用，也可以移植至其他的8266板子上去使用，获取源码方式如下图：</p>
-<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410520403.png" alt="Alt text"><br><img src="/assets/zh-cn/deviceDev/UseSoc/1483410527525.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410520403.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410527525.png" alt="Alt text"></p>
 <p><strong>备注：如需深入了解这个“微信宠物屋”这个实例源码的解析可以参考以下链接：</strong><br><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html">微信宠物屋实例源码的解析</a></p>
 <h4 id="2-4-4-从“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”案例中移植“GizLamp”项目所需要的led驱动的-c和-h文件。"><a href="#2-4-4-从“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”案例中移植“GizLamp”项目所需要的led驱动的-c和-h文件。" class="headerlink" title="2.4.4 从“微信宠物屋 for GoKit3(S) ESP8266 V03000003”案例中移植“GizLamp”项目所需要的led驱动的.c和.h文件。"></a>2.4.4 从“微信宠物屋 for GoKit3(S) ESP8266 V03000003”案例中移植“GizLamp”项目所需要的led驱动的.c和.h文件。</h4><ul>
 <li>将<strong>“gokit3_SoC_ESP8266_03000003_2016120711\app\driver”</strong>文件目录下的<br> <strong>“hal_rgb_led.c”</strong>的c文件复制至<strong>“gizlamp\app\driver”</strong>下</li>
@@ -428,19 +429,23 @@
 <p><strong>- Key1</strong></p>
 <p>用于reset wifi和使模块进入产测模式</p>
 <ul>
-<li><p>reset wifi -&gt; 长按key1<br><img src="/assets/zh-cn/deviceDev/UseSoc/1483410609968.png" alt="Alt text"></p>
-</li>
-<li><p>进入产测模式 -&gt; 短按key1<br><img src="/assets/zh-cn/deviceDev/UseSoc/1483410698977.png" alt="Alt text"></p>
-</li>
+<li>reset wifi -&gt; 长按key1</li>
 </ul>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410609968.png" alt="Alt text"></p>
+<ul>
+<li>进入产测模式 -&gt; 短按key1</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410698977.png" alt="Alt text"></p>
 <p><strong>- Key2</strong></p>
 <p>用于触发模块进入airlink和softap的配置模式</p>
 <ul>
-<li><p>airlink配置模式 -&gt; 长按key1<br><img src="/assets/zh-cn/deviceDev/UseSoc/1483410739993.png" alt="Alt text"></p>
-</li>
-<li><p>softap配置模式 -&gt; 短按key1<br><img src="/assets/zh-cn/deviceDev/UseSoc/1483410747091.png" alt="Alt text"></p>
-</li>
+<li>airlink配置模式 -&gt; 长按key1</li>
 </ul>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410739993.png" alt="Alt text"></p>
+<ul>
+<li>softap配置模式 -&gt; 短按key1</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410747091.png" alt="Alt text"></p>
 <p>首先在<strong>“user_main.c”</strong>文件里面添加以下头文件</p>
 <ul>
 <li><strong>#include “driver/hal_rgb_led.h”</strong></li>
@@ -451,11 +456,14 @@
 <li><strong>rgbGpioInit（）</strong></li>
 <li><p><strong>rgbLedInit（）;</strong><br>@</p>
 </li>
-<li><p>添加<strong>“#include “driver/hal_rgb_led.h””</strong>头文件<br><img src="/assets/zh-cn/deviceDev/UseSoc/1483410801710.png" alt="Alt text"></p>
-</li>
-<li><p>在<strong>“user_main（）”</strong>函数里添加rgb灯的驱动函数<br><img src="/assets/zh-cn/deviceDev/UseSoc/1483410831716.png" alt="Alt text"></p>
+<li><p>添加<strong>“#include “driver/hal_rgb_led.h””</strong>头文件</p>
 </li>
 </ul>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410801710.png" alt="Alt text"></p>
+<ul>
+<li>在<strong>“user_main（）”</strong>函数里添加rgb灯的驱动函数</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410831716.png" alt="Alt text"></p>
 <p>然后在<strong>“gizwits_product.c”</strong>文件里面添加以下头文件</p>
 <ul>
 <li><strong>#include “driver/hal_rgb_led.h”</strong>  </li>
@@ -466,11 +474,14 @@
 <li><strong>rgbControl（0，0，0）;//关灯</strong></li>
 <li><p><strong>rgbControl（254，254，254）;//开灯</strong><br>@</p>
 </li>
-<li><p>添加<strong>“#include “driver/hal_rgb_led.h””</strong>头文件<br><img src="/assets/zh-cn/deviceDev/UseSoc/1483410953054.png" alt="Alt text"></p>
-</li>
-<li><p>在<strong>“gizwitsEventProcess（）”</strong>函数添加灯的开关事件<br><img src="/assets/zh-cn/deviceDev/UseSoc/1483410973316.png" alt="Alt text"></p>
+<li><p>添加<strong>“#include “driver/hal_rgb_led.h””</strong>头文件</p>
 </li>
 </ul>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410953054.png" alt="Alt text"></p>
+<ul>
+<li>在<strong>“gizwitsEventProcess（）”</strong>函数添加灯的开关事件</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410973316.png" alt="Alt text"></p>
 <p>完成以上动作之后，进行SoC编译开发环境的搭建，请参考 &gt;&gt; 第6）点</p>
 <h4 id="2-4-6-搭建SoC源码编译开发环境"><a href="#2-4-6-搭建SoC源码编译开发环境" class="headerlink" title="2.4.6 搭建SoC源码编译开发环境"></a>2.4.6 搭建SoC源码编译开发环境</h4><ul>
 <li>请参考这里：<a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备">开发环境准备</a></li>
