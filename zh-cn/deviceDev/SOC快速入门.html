@@ -362,7 +362,7 @@
 <p><strong>其他：</strong></p>
 <p>1）机智云开发者账号<br>2）微信宠物屋 for GoKit3(S) ESP8266 V03000003源码（机智云下载中心可获得）<br>3）智能灯项目自动生成SoC源码（请继续查看下述操作，即可生成获得）</p>
 <p><strong>补充说明：</strong></p>
-<p>1）如果没有GoKit3的小伙伴也可以参考GoKit3的原理图基于esp8266模块（模块的Flash必须为4Mbyte，建议模块型号：安信可的esp-12f）自行搭建硬件，原理图链接如下：<a href="http://club.gizwits.com/thread-2889-1-1.html" target="_blank" rel="external">http://club.gizwits.com/thread-2889-1-1.html</a><br>2）GoKit3（S）购买链接：<a href="https://shop159680395.taobao.com/（机智云官方店）" target="_blank" rel="external">https://shop159680395.taobao.com/（机智云官方店）</a></p>
+<p>1）如果没有GoKit3的小伙伴也可以参考GoKit3的原理图基于esp8266模块（模块的Flash必须为4Mbyte，建议模块型号：安信可的esp-12f）自行搭建硬件，原理图链接如下：<a href="http://club.gizwits.com/thread-2889-1-1.html" target="_blank" rel="external">http://club.gizwits.com/thread-2889-1-1.html</a><br>2）GoKit3（S）购买链接：<a href="https://shop159680395.taobao.com/" target="_blank" rel="external">https://shop159680395.taobao.com/</a> （机智云官方店）</p>
 <h2 id="2-开始开发"><a href="#2-开始开发" class="headerlink" title="2.开始开发"></a>2.开始开发</h2><h3 id="2-1-注册开发者账号"><a href="#2-1-注册开发者账号" class="headerlink" title="2.1 注册开发者账号"></a>2.1 注册开发者账号</h3><p>机智云开发者账号，用于产品接入、设备管理、OTA服务、MCU开发等的功能使用。<br>注册链接：<a href="http://dev.gizwits.com/zh-cn/developer/" target="_blank" rel="external">http://dev.gizwits.com/zh-cn/developer/</a></p>
 <h3 id="2-2新建产品"><a href="#2-2新建产品" class="headerlink" title="2.2新建产品"></a>2.2新建产品</h3><p>注册完成后，登陆至机智云开发者中心后台后，点击开发者中心后台右上角的<strong>“创建新产品”</strong>菜单，在跳转页面新建一个名为<strong>“GizLamp”</strong>的产品，选择<strong>“Wi-Fi/移动网络方案”</strong>方式接入，并完成产品创建。如下图：</p>
 <p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410297895.png" alt="Alt text"></p>
@@ -377,8 +377,7 @@
 <p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410483137.png" alt="Alt text"></p>
 <h3 id="2-4-云端自动生成源码"><a href="#2-4-云端自动生成源码" class="headerlink" title="2.4 云端自动生成源码"></a>2.4 云端自动生成源码</h3><h4 id="2-4-1自动生成工具介绍："><a href="#2-4-1自动生成工具介绍：" class="headerlink" title="2.4.1自动生成工具介绍："></a>2.4.1自动生成工具介绍：</h4><p><strong>自动生成代码工具：</strong>是机智云为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。自动生成的代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的API，且提供了多种平台的实例代码。当设备收到云端或APP端的数据后，程序会将数据转换成对应的事件并通知到应用层，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。使用自动生成的代码开发产品，就不必再处理协议相关的部分了，开发者可以将节省出来的精力集中在产品的核心功能开发上。</p>
 <ul>
-<li><strong>关于“自动生成代码工具”的更多介绍和帮助，请点击以下链接：</strong></li>
-<li><a href="http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html" target="_blank" rel="external">http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html</a></li>
+<li><strong>关于“自动生成代码工具”的更多介绍和帮助，请点击以下链接：</strong> <a href="http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html" target="_blank" rel="external">自动生成代码工具</a></li>
 </ul>
 <p><strong>获取本次（GizLamp）项目，云端自动生成基于esp8266的SoC源码：</strong></p>
 <p>完成产品的数据点新建之后，点击页面的左侧菜单栏的“MCU开发”根据页面提示选择“SOC方案”，目前SOC方案机智云云端默认的“硬件平台”为esp8266，选择完成之后下拉至页面底部，点击“生成代码包”，等待大概30秒左右即可生成基于esp8266的本次项目（GizLamp）代码包，下载下来即可，由于下载下来的文件名过于长，并且在文件名里包含了产品的ProductKey，所以本次项目将下载下来的文件名修改为“GizLamp”如下图：</p>
@@ -402,7 +401,7 @@
 <p>在这套SOC源码里面需要关心也就这几个主要的地方，模块联网以及底层驱动均不需要开发者去处理和修改。</p>
 <h4 id="2-4-3-前往机智云下载中心，下载“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”SoC源码库"><a href="#2-4-3-前往机智云下载中心，下载“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”SoC源码库" class="headerlink" title="2.4.3 前往机智云下载中心，下载“微信宠物屋 for GoKit3(S) ESP8266 V03000003”SoC源码库"></a>2.4.3 前往机智云下载中心，下载“微信宠物屋 for GoKit3(S) ESP8266 V03000003”SoC源码库</h4><p><strong>“微信宠物屋 for GoKit3(S) ESP8266 V03000003”</strong>这个是机智云工程师使用GoKit3（S）板，基于esp8266硬件平台写的案例，案例里面包含了红外传感器，温湿度传感器，小电机，RGB灯，用户按键等几个外设的驱动，可以直接复制到任何一个GoKit3（S）的板子上使用，也可以移植至其他的8266板子上去使用，获取源码方式如下图：</p>
 <p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410520403.png" alt="Alt text"><br><img src="/assets/zh-cn/deviceDev/UseSoc/1483410527525.png" alt="Alt text"></p>
-<p><strong>备注：如需深入了解这个“微信宠物屋”这个实例源码的解析可以参考以下链接：</strong><br><a href="http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html" target="_blank" rel="external">http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html</a></p>
+<p><strong>备注：如需深入了解这个“微信宠物屋”这个实例源码的解析可以参考以下链接：</strong><br><a href="http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html" target="_blank" rel="external">微信宠物屋实例源码的解析</a></p>
 <h4 id="2-4-4-从“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”案例中移植“GizLamp”项目所需要的led驱动的-c和-h文件。"><a href="#2-4-4-从“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”案例中移植“GizLamp”项目所需要的led驱动的-c和-h文件。" class="headerlink" title="2.4.4 从“微信宠物屋 for GoKit3(S) ESP8266 V03000003”案例中移植“GizLamp”项目所需要的led驱动的.c和.h文件。"></a>2.4.4 从“微信宠物屋 for GoKit3(S) ESP8266 V03000003”案例中移植“GizLamp”项目所需要的led驱动的.c和.h文件。</h4><ul>
 <li>将<strong>“gokit3_SoC_ESP8266_03000003_2016120711\app\driver”</strong>文件目录下的<br> <strong>“hal_rgb_led.c”</strong>的c文件复制至<strong>“gizlamp\app\driver”</strong>下</li>
 </ul>
@@ -474,24 +473,24 @@
 </ul>
 <p>完成以上动作之后，进行SoC编译开发环境的搭建，请参考 &gt;&gt; 第6）点</p>
 <h4 id="2-4-6-搭建SoC源码编译开发环境"><a href="#2-4-6-搭建SoC源码编译开发环境" class="headerlink" title="2.4.6 搭建SoC源码编译开发环境"></a>2.4.6 搭建SoC源码编译开发环境</h4><ul>
-<li>请参考这里：<br><a href="http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备" target="_blank" rel="external">http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备</a></li>
+<li>请参考这里：<a href="http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备" target="_blank" rel="external">开发环境准备</a></li>
 </ul>
 <p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410993024.png" alt="Alt text"></p>
 <p><strong>补充说明：新手入门建议使用virtualbox+乐鑫官方的开发环境，进行二次开发</strong></p>
 <h4 id="2-4-7-SOC源码编译"><a href="#2-4-7-SOC源码编译" class="headerlink" title="2.4.7 SOC源码编译"></a>2.4.7 SOC源码编译</h4><ul>
-<li>请参考这里：<br><a href="http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-源码编译" target="_blank" rel="external">http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-源码编译</a></li>
+<li>请参考这里：<a href="http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-源码编译" target="_blank" rel="external">源码编译</a></li>
 </ul>
 <p><img src="/assets/zh-cn/deviceDev/UseSoc/1483411008805.png" alt="Alt text"></p>
 <h4 id="2-4-8-固件烧写"><a href="#2-4-8-固件烧写" class="headerlink" title="2.4.8 固件烧写"></a>2.4.8 固件烧写</h4><ul>
-<li>请参考这里：<br><a href="http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-固件下载" target="_blank" rel="external">http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-固件下载</a></li>
+<li>请参考这里：<a href="http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-固件下载" target="_blank" rel="external">固件下载</a></li>
 </ul>
 <p><img src="/assets/zh-cn/deviceDev/UseSoc/1483411027642.png" alt="Alt text"></p>
 <h2 id="3-调试与发布"><a href="#3-调试与发布" class="headerlink" title="3. 调试与发布"></a>3. 调试与发布</h2><ul>
-<li>产品调试请参考这里：<br><a href="http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#调试" target="_blank" rel="external">http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#调试</a></li>
+<li>产品调试请参考这里：<a href="http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#调试" target="_blank" rel="external">调试</a></li>
 </ul>
 <p><img src="/assets/zh-cn/deviceDev/UseSoc/1483411043890.png" alt="Alt text"></p>
 <ul>
-<li>产品发布请参考这里：<br><a href="http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#发布产品" target="_blank" rel="external">http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#发布产品</a></li>
+<li>产品发布请参考这里：<a href="http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#发布产品" target="_blank" rel="external">发布产品</a></li>
 </ul>
 <p><img src="/assets/zh-cn/deviceDev/UseSoc/1483411051018.png" alt="Alt text"></p>
 <h2 id="4-项目完成"><a href="#4-项目完成" class="headerlink" title="4. 项目完成"></a>4. 项目完成</h2><ul>
