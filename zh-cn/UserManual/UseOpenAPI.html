@@ -371,7 +371,7 @@
       </div>
       <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文档介绍了机智云云端提供api接口（openapi），应用端（PC）利用工具（postman）发送HTTP请求实现用户登陆，设备绑定，设备远程控制等功能。</p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202039422.png" alt="Alt text"></p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>设备：开发者中心-个人项目-虚拟设备<br>软件：postman<br>其他：机智云开发者账号<br>参考文档：openapi指南<br>辅助工具链接：<br><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="external">Unix时间戳</a><br><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="external">MD5加密</a></p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>设备：开发者中心-个人项目-虚拟设备<br>软件：postman<br>其他：机智云开发者账号<br>参考文档：openapi指南<br>辅助工具链接：<br><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="external">Unix时间戳</a><br><a href="http://tool.chinaz.com/Tools/md5.aspx" target="_blank" rel="external">MD5加密</a></p>
 <h1 id="云端创建产品"><a href="#云端创建产品" class="headerlink" title="云端创建产品"></a>云端创建产品</h1><h2 id="1-新建产品"><a href="#1-新建产品" class="headerlink" title="1.新建产品"></a>1.新建产品</h2><p>注册完成后，登陆至机智云开发者中心后台后，点击开发者中心后台右上角的“创建新产品”菜单，在跳转页面新建一个名为“Openapi”的产品，选择“Wi-Fi/移动网络方案”方式接入，并完成产品创建。如下图：</p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202107571.png" alt="Alt text"></p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202114252.png" alt="Alt text"></p>
@@ -405,8 +405,8 @@
 <h3 id="4-3-通过did-passcode的POST请求绑定设备"><a href="#4-3-通过did-passcode的POST请求绑定设备" class="headerlink" title="4.3 通过did+passcode的POST请求绑定设备"></a>4.3 通过did+passcode的POST请求绑定设备</h3><p>我们这里选择用did+passcode的绑定方式的POST请求来绑定设备，在Headers填入之前获取的Appid和User_token，在Body填入从虚拟设备上获取的did和passcode，然后返回success则表示绑定成功，如下图</p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202319341.png" alt="Alt text"></p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202323986.png" alt="Alt text"></p>
-<h3 id="4-4-通过MAC的POST请求绑定设备（注：第4步成功后，这步骤可跳过）"><a href="#4-4-通过MAC的POST请求绑定设备（注：第4步成功后，这步骤可跳过）" class="headerlink" title="4.4 通过MAC的POST请求绑定设备（注：第4步成功后，这步骤可跳过）"></a>4.4 通过MAC的POST请求绑定设备（注：第4步成功后，这步骤可跳过）</h3><p>我们这里选择用MAC的绑定方式的POST请求来绑定设备，在Headers填入之前获取的Appid和User_token，Timestamp为Unix时间戳（有效时间为五分钟），Signature的算法利用MD5加密的方法{MD5(product_secret+X-Gizwits-Timestamp).lower()}，Body填入product_key和设备的mac，点击send，发现设备在线则成功，如下图</p>
-<p>注：Timestamp和Signature获取的链接为：Unix时间戳 SignatureMD5加密</p>
+<h3 id="4-4-通过MAC的POST请求绑定设备（注：第3步成功后，这步骤可跳过）"><a href="#4-4-通过MAC的POST请求绑定设备（注：第3步成功后，这步骤可跳过）" class="headerlink" title="4.4 通过MAC的POST请求绑定设备（注：第3步成功后，这步骤可跳过）"></a>4.4 通过MAC的POST请求绑定设备（注：第3步成功后，这步骤可跳过）</h3><p>我们这里选择用MAC的绑定方式的POST请求来绑定设备，在Headers填入之前获取的Appid和User_token，Timestamp为Unix时间戳（有效时间为五分钟），Signature的算法利用MD5加密的方法{MD5(product_secret+X-Gizwits-Timestamp).lower()}，Body填入product_key和设备的mac，点击send，发现设备在线则成功，如下图</p>
+<p>注：Timestamp和Signature获取的链接为：<br><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="external">Unix时间戳</a><br><a href="http://tool.chinaz.com/Tools/md5.aspx" target="_blank" rel="external">MD5加密</a></p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202337484.png" alt="Alt text"></p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202344923.png" alt="Alt text"></p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202354309.png" alt="Alt text"></p>
