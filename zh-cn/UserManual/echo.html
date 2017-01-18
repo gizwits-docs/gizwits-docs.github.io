@@ -369,10 +369,8 @@
         <div class="title">接入亚马逊Echo音箱教程</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <p>#1、概述</p>
-<p>本文介绍了亚马逊Echo音箱如何接入机智云并且控制机智云下的GOKIT设备</p>
-<p>##1.1 接入流程</p>
-<p><strong>关系图：</strong></p>
+      <h1 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h1><p>本文介绍了亚马逊Echo音箱如何接入机智云并且控制机智云下的GOKIT设备</p>
+<h2 id="1-1-接入流程"><a href="#1-1-接入流程" class="headerlink" title="1.1 接入流程"></a>1.1 接入流程</h2><p><strong>关系图：</strong></p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484625601810.png" alt="Alt text"></p>
 <p>机智云云端：即机智云云端数据库，云端对外提供OpenApi，即访问数据的接口，企业和个人开发者想要得到设备接入、用户账号管理、用户与设备绑定管理、设备远程监控、定时任务以及设备高级数据等服务，可以调用Open Api来实现这些功能。（详情使用方法点击此处跳转）</p>
 <p>Alexa：Alexa是Amazon Echo的语音服务提供了功能或技能，使客户能够使用语音以更直观的方式与设备进行交互。 技能的例子包括播放音乐，回答一般问题，设置闹钟或计时器等的能力。</p>
@@ -381,23 +379,21 @@
 <p>控制原理：控制机智云设备可以调用机智云的OpenAPI，OpenAPI控制设备的调用接口需要用到注册机智云用户时候返回的User Token，机智云对亚马逊授权开放该接口，与亚马逊账号进行互联互通，使得亚马逊可在Alexa里填入接口的相应的URL绑定机智云账号，从而调用到Access Token，传到Lambda里去再通过OpenAPI调用控制设备的接口进行控制。</p>
 <p><strong>流程图：</strong></p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484625616584.png" alt="Alt text"></p>
-<p>##1.2 接入须知<br>1、具备产品互联的服务功能（申请条件：机智云企业开发者，购买了GDCS服务包的企业客户）</p>
+<h2 id="1-2-接入须知"><a href="#1-2-接入须知" class="headerlink" title="1.2 接入须知"></a>1.2 接入须知</h2><p>1、具备产品互联的服务功能（申请条件：机智云企业开发者，购买了GDCS服务包的企业客户）</p>
 <p>2、熟悉《设备快速接入机智云文档》《App快速接入机智云文档》并且能够完成整个接入</p>
-<p>##1.3 准备工作<br>硬件设备：亚马逊Echo音箱、机智云GOKIT设备<br>软件：机智云APP<br>其他：机智云开发者账号、亚马逊开发者账号、亚马逊AWS Lambda账号</p>
-<p>#2、机智云配置<br>本节要点：申请机智云产品互联服务，配置机智云的产品互联，配置Alexa定向URL来绑定机智云。</p>
-<p>##2.1 设备接入<br>按照文档中心的《设备快速接入机智云》绑定设备，获取设备did （<a href="http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html" target="_blank" rel="external">点击此处跳转</a>）</p>
-<p>##2.1 APP开发<br>按照文档中心的《App快速接入机智云》注册登陆机智云账号获取User Token和AppId进行绑定  （<a href="http://docs.gizwits.com/zh-cn/quickstart/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C.html" target="_blank" rel="external">点击此处跳转</a>）</p>
-<p>##2.3 申请产品互联并配置</p>
-<p><img src="/assets/zh-cn/UserManual/Echo/1484625737500.png" alt="Alt text"></p>
+<h2 id="1-3-准备工作"><a href="#1-3-准备工作" class="headerlink" title="1.3 准备工作"></a>1.3 准备工作</h2><p>硬件设备：亚马逊Echo音箱、机智云GOKIT设备<br>软件：机智云APP<br>其他：机智云开发者账号、亚马逊开发者账号、亚马逊AWS Lambda账号</p>
+<h1 id="2、机智云配置"><a href="#2、机智云配置" class="headerlink" title="2、机智云配置"></a>2、机智云配置</h1><p>本节要点：申请机智云产品互联服务，配置机智云的产品互联，配置Alexa定向URL来绑定机智云。</p>
+<h2 id="2-1-设备接入"><a href="#2-1-设备接入" class="headerlink" title="2.1 设备接入"></a>2.1 设备接入</h2><p>按照文档中心的《设备快速接入机智云》绑定设备，获取设备did （<a href="http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html" target="_blank" rel="external">点击此处跳转</a>）</p>
+<h2 id="2-1-APP开发"><a href="#2-1-APP开发" class="headerlink" title="2.1 APP开发"></a>2.1 APP开发</h2><p>按照文档中心的《App快速接入机智云》注册登陆机智云账号获取User Token和AppId进行绑定  （<a href="http://docs.gizwits.com/zh-cn/quickstart/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C.html" target="_blank" rel="external">点击此处跳转</a>）</p>
+<h2 id="2-3-申请产品互联并配置"><a href="#2-3-申请产品互联并配置" class="headerlink" title="2.3 申请产品互联并配置"></a>2.3 申请产品互联并配置</h2><p><img src="/assets/zh-cn/UserManual/Echo/1484625737500.png" alt="Alt text"></p>
 <p>点击个人项目-服务-添加服务，找到产品互联，点击进去开通服务（必须是购买了GDCS服务包的企业客户）</p>
 <p>申请完成后，点开产品互联，点击亚马逊Echo，配置你App开发中所填入的AppID，点击配置。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484625881833.png" alt="Alt text"></p>
 <p>配置Client Nname和AlexaSkill上面的Redirect URL。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484637706571.png" alt="Alt text"></p>
 <p>详情配置请参考接入教程（<a href="http://docs.gizwits.com/zh-cn/UserManual/echo.html" target="_blank" rel="external">点击此处跳转</a>）</p>
-<p>#3、AlexaSkill配置</p>
-<p>本节要点：配置AlexaSkill的语音控制逻辑，配置AlexaSkill和Lambda关联，配置AlexaSkill和机智云账号互联。</p>
-<p>##3.1 创建Skill以及配置interaction model页面<br>1）打开亚马逊开发者中心（<a href="https://developer.amazon.com/home.html" target="_blank" rel="external">点击此处跳转</a>），登陆之前所注册好的亚马逊开发者账号。</p>
+<h1 id="3、AlexaSkill配置"><a href="#3、AlexaSkill配置" class="headerlink" title="3、AlexaSkill配置"></a>3、AlexaSkill配置</h1><p>本节要点：配置AlexaSkill的语音控制逻辑，配置AlexaSkill和Lambda关联，配置AlexaSkill和机智云账号互联。</p>
+<h2 id="3-1-创建Skill以及配置interaction-model页面"><a href="#3-1-创建Skill以及配置interaction-model页面" class="headerlink" title="3.1 创建Skill以及配置interaction model页面"></a>3.1 创建Skill以及配置interaction model页面</h2><p>1）打开亚马逊开发者中心（<a href="https://developer.amazon.com/home.html" target="_blank" rel="external">点击此处跳转</a>），登陆之前所注册好的亚马逊开发者账号。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626095613.png" alt="Alt text"><br><img src="/assets/zh-cn/UserManual/Echo/1484626099372.png" alt="Alt text"></p>
 <p>2）登陆成功后。跳转到developer console，点击ALEXA，点击Alexa Skills Kit的Get Started。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626108141.png" alt="Alt text"></p>
@@ -421,7 +417,7 @@
 </ol>
 <p>设定好之后, 我们点选Next</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626142791.png" alt="Alt text"></p>
-<p>##3.1.1 intent Schema（语音控制逻辑）<br>Intent Schema设定了这个Skill会用到的intent, 它使用JSON格式如下</p>
+<h2 id="3-1-1-intent-Schema（语音控制逻辑）"><a href="#3-1-1-intent-Schema（语音控制逻辑）" class="headerlink" title="3.1.1 intent Schema（语音控制逻辑）"></a>3.1.1 intent Schema（语音控制逻辑）</h2><p>Intent Schema设定了这个Skill会用到的intent, 它使用JSON格式如下</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626212536.png" alt="Alt text"></p>
 <p>一个skill里面可以填多个intent, 每个intent触发的的情况不同。 Intent里面可以填slot（也可以不填），slot就像是程式里的列举变数, 它分成两种</p>
 <p>Custom slot type: 使用者需要为slot列举可能的值<br>Built-in slot type: Amazon定义了一些常用的slot, 像是日期, 数字, 城市名……, 这类的slot会以AMAZON为前缀字</p>
@@ -431,27 +427,24 @@
 <p>其中LIGHT_STATE是custom slot type, 所以我们点选 “Add Slot Type”来设定</p>
 <p>接着会跳出一个视窗让我们填slot的名字, 以及列举的值,<br>这里 “Enter Type” 的地方我们填 “LIGHT_STATE”, 接着 “Enter Values​​”的地方填入 “on”, “off”, 填完之后按 “Save”</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626236165.png" alt="Alt text"></p>
-<p>##3.1.2 Sample Utterances（语音命令配置）<br>Sample Utterances, 这里要填的是当使用者说了什么句子时, 可以触发哪些intent, 我们填入以下的值<br>ControlLight Turn {LightState} the light<br>ControlLight Turn the light {LightState}</p>
+<h2 id="3-1-2-Sample-Utterances（语音命令配置）"><a href="#3-1-2-Sample-Utterances（语音命令配置）" class="headerlink" title="3.1.2 Sample Utterances（语音命令配置）"></a>3.1.2 Sample Utterances（语音命令配置）</h2><p>Sample Utterances, 这里要填的是当使用者说了什么句子时, 可以触发哪些intent, 我们填入以下的值<br>ControlLight Turn {LightState} the light<br>ControlLight Turn the light {LightState}</p>
 <p>它的格式里, 前面带的是intent名称, 接着是空白或tab, 后面跟着是使用者说的句子, 以第一行来说, 代表当使用者说了 “Turn on the light”会触发ControlLight intent<br>填完之后我们按 “Next”</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626251575.png" alt="Alt text"></p>
-<p>##3.2 configuration的配置</p>
-<p>这个页面里需要填写与Alexa衔接的Endpoint。当使用者触发Alexa的intent之后, Alexa会将这个intent传递给其它service处理, 使用者可以自己架构这样的server, 或是使用Amazon AWS Lambda, 这里我们将暂停设定Alexa, 并且设定AWS Lambda, 稍后再将这部份完成</p>
+<h2 id="3-2-configuration的配置"><a href="#3-2-configuration的配置" class="headerlink" title="3.2 configuration的配置"></a>3.2 configuration的配置</h2><p>这个页面里需要填写与Alexa衔接的Endpoint。当使用者触发Alexa的intent之后, Alexa会将这个intent传递给其它service处理, 使用者可以自己架构这样的server, 或是使用Amazon AWS Lambda, 这里我们将暂停设定Alexa, 并且设定AWS Lambda, 稍后再将这部份完成</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626328760.png" alt="Alt text"></p>
 <p><strong>Account Linking的配置方法：</strong></p>
 <p>将下图页面的 Redirect URLs 设置到机智云 “产品互联” 的 Redirect URL 中，”Client Name” 可以填写 “Alexa”，填入机智云“产品互联”的Client ID和Client Secret作为请求身份验证的公共字符串。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484706885988.png" alt="Alt text"></p>
 <p>有需要的用户可以填入隐私权限链接保护你的Alexa Skill，本教程选择不填，点击Next下一步。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626335480.png" alt="Alt text"></p>
-<p>#4、Lambda配置</p>
-<p>本节要点：配置Lambda绑定AWS IOT ，配置Lambda绑定Alexa，编写Lambda逻辑代码解析AlexaSkill接收和返回的语音指令，编写OpenApi代码接入机智云云端并控制设备</p>
+<h1 id="4、Lambda配置"><a href="#4、Lambda配置" class="headerlink" title="4、Lambda配置"></a>4、Lambda配置</h1><p>本节要点：配置Lambda绑定AWS IOT ，配置Lambda绑定Alexa，编写Lambda逻辑代码解析AlexaSkill接收和返回的语音指令，编写OpenApi代码接入机智云云端并控制设备</p>
 <p>进入AWS Lambda的首页 <a href="https://aws.amazon.com/cn/lambda/" target="_blank" rel="external">https://aws.amazon.com/cn/lambda/</a><br>点选右边 “创建免费用户”</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626447125.png" alt="Alt text"></p>
 <p>登陆成功后，选择美国东部。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626456752.png" alt="Alt text"></p>
 <p>点击服务-Lambda</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626463861.png" alt="Alt text"></p>
-<p>##4.1  创建和配置AlexaFuntion</p>
-<p>Lambda预先设计了一些使用情境, 这些情境提供了一些sample code与default setting。要使用Alexa与Lambda衔接, 我们在Filter的地方填入Alexa</p>
+<h2 id="4-1-创建和配置AlexaFuntion"><a href="#4-1-创建和配置AlexaFuntion" class="headerlink" title="4.1  创建和配置AlexaFuntion"></a>4.1  创建和配置AlexaFuntion</h2><p>Lambda预先设计了一些使用情境, 这些情境提供了一些sample code与default setting。要使用Alexa与Lambda衔接, 我们在Filter的地方填入Alexa</p>
 <p>填完之后会筛选出与Alexa相关的blueprint, 其中“alexa-skills-kit-color-expert”与“alexa-skills-kit-color-export-python”是相似的blueprint, 差别只在于“alexa-skills -kit-color-expert”使用的程式语言是JavaScript, 而“alexa-skills-kit-color-export-python”使用python, 这里我们选择“alexa-skills-kit-color-expert”</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626476761.png" alt="Alt text"></p>
 <p>点击Configure triggers，这个页面里可以设定触发Lambda开始运算的event从哪里来, 我们点中间的虚线方框, 底下会出现预先设定好的服务列表, 这里我们选择 “Alexa Skills Kit”并且点击Next。</p>
@@ -481,17 +474,16 @@
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626676552.png" alt="Alt text"></p>
 <p>完成之后, 我们点选ameba的thing, 让右边的资讯栏出现, 其中REST API endpoint里, 这个字串“xxxxxxxxx.iot.us-east-1.amazonaws.com”是AWS IoT提供给其它服务使用的endpoint, 这个endpoint我们会拿来填入Lambda所需的资讯里</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626686257.png" alt="Alt text"></p>
-<p>##4.2  Lambda中所对应skill的代码<br>回到Lambda的设定页面, 点选 “code”页签</p>
+<h2 id="4-2-Lambda中所对应skill的代码"><a href="#4-2-Lambda中所对应skill的代码" class="headerlink" title="4.2  Lambda中所对应skill的代码"></a>4.2  Lambda中所对应skill的代码</h2><p>回到Lambda的设定页面, 点选 “code”页签</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626694113.png" alt="Alt text"></p>
-<p>##4.2.1  event部分代码解析（Echo音箱逻辑处理）<br>在onIntent函式里, 会比对intent的名字, 这边我们会比对我们设定的intent名字 “ControlLight”, 并且返回 light_control的处理函数</p>
+<h2 id="4-2-1-event部分代码解析（Echo音箱逻辑处理）"><a href="#4-2-1-event部分代码解析（Echo音箱逻辑处理）" class="headerlink" title="4.2.1  event部分代码解析（Echo音箱逻辑处理）"></a>4.2.1  event部分代码解析（Echo音箱逻辑处理）</h2><p>在onIntent函式里, 会比对intent的名字, 这边我们会比对我们设定的intent名字 “ControlLight”, 并且返回 light_control的处理函数</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626706311.png" alt="Alt text"></p>
 <p>在light_control里面, 我们可以取得intent的slots资讯, 这边我们要取得的slot是 “LightState”<br>获取在skill上语音说话所传过来的value并传给switch_action，之后判断switch_action等于on时，则传Ture到switch_action_fun这个函数里。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626714763.png" alt="Alt text"></p>
-<p>##4.2.2  调用机智云openAPI控制设备<br>在swtich_action_fun里面，调用机智云的OpenApi进行控制设备</p>
+<h2 id="4-2-2-调用机智云openAPI控制设备"><a href="#4-2-2-调用机智云openAPI控制设备" class="headerlink" title="4.2.2  调用机智云openAPI控制设备"></a>4.2.2  调用机智云openAPI控制设备</h2><p>在swtich_action_fun里面，调用机智云的OpenApi进行控制设备</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626727043.png" alt="Alt text"></p>
-<p>#5、Alexa应用端配置<br>本节要点：Echo音箱配置入网，AlexaSkill与亚马逊账号绑定，Alexa与机智云账号绑定。</p>
-<p>##5.1  配置Echo音箱入网</p>
-<p>用笔记本电脑点击链接<a href="http://alexa.amazon.com/spa/index.html配置" target="_blank" rel="external">http://alexa.amazon.com/spa/index.html配置</a><br>或用手机App来进行配置：下载链接<br>（<a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201602060）" target="_blank" rel="external">https://www.amazon.com/gp/help/customer/display.html?nodeId=201602060）</a><br>登陆亚马逊账号，进入Alexa配置页面，选择Echo音箱</p>
+<h1 id="5、Alexa应用端配置"><a href="#5、Alexa应用端配置" class="headerlink" title="5、Alexa应用端配置"></a>5、Alexa应用端配置</h1><p>本节要点：Echo音箱配置入网，AlexaSkill与亚马逊账号绑定，Alexa与机智云账号绑定。</p>
+<h2 id="5-1-配置Echo音箱入网"><a href="#5-1-配置Echo音箱入网" class="headerlink" title="5.1  配置Echo音箱入网"></a>5.1  配置Echo音箱入网</h2><p>用笔记本电脑点击链接<a href="http://alexa.amazon.com/spa/index.html配置" target="_blank" rel="external">http://alexa.amazon.com/spa/index.html配置</a><br>或用手机App来进行配置：下载链接<br>（<a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201602060）" target="_blank" rel="external">https://www.amazon.com/gp/help/customer/display.html?nodeId=201602060）</a><br>登陆亚马逊账号，进入Alexa配置页面，选择Echo音箱</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626746300.png" alt="Alt text"></p>
 <p>选择你使用的语言</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626759759.png" alt="Alt text"></p>
@@ -507,7 +499,7 @@
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626808465.png" alt="Alt text"></p>
 <p>稍等片刻后，便配置成功，点击continue。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626813128.png" alt="Alt text"></p>
-<p>##5.2  绑定机智云所注册的账号<br>进入点击进入Skills，点右上角切换到Your Skills，点击Control GOKIT。</p>
+<h2 id="5-2-绑定机智云所注册的账号"><a href="#5-2-绑定机智云所注册的账号" class="headerlink" title="5.2  绑定机智云所注册的账号"></a>5.2  绑定机智云所注册的账号</h2><p>进入点击进入Skills，点右上角切换到Your Skills，点击Control GOKIT。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626833289.png" alt="Alt text"></p>
 <p>进入之后点击Enable</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626838409.png" alt="Alt text"></p>
@@ -519,24 +511,21 @@
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626865727.png" alt="Alt text"><br><img src="/assets/zh-cn/UserManual/Echo/1484626870181.png" alt="Alt text"></p>
 <p>回到Control GOKIT页面，发现Link Account按钮消失了，则说明关联绑定机智云账号成功</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626875505.png" alt="Alt text"></p>
-<p>#6、AlexaSkill调试与发布</p>
-<p>本节要点：调试AlexaSkill是否成功与Lambda和机智云通讯，语音控制逻辑是否正确，如何发布Skill。</p>
-<p>##6.1  AlexaSkill和Lambda的绑定<br>回到Alexa页面，点击configuration，North America的框里输入AWS Lambda ARN，Lambda ARN在Lambda的Function右上角可以查看到</p>
+<h1 id="6、AlexaSkill调试与发布"><a href="#6、AlexaSkill调试与发布" class="headerlink" title="6、AlexaSkill调试与发布"></a>6、AlexaSkill调试与发布</h1><p>本节要点：调试AlexaSkill是否成功与Lambda和机智云通讯，语音控制逻辑是否正确，如何发布Skill。</p>
+<h2 id="6-1-AlexaSkill和Lambda的绑定"><a href="#6-1-AlexaSkill和Lambda的绑定" class="headerlink" title="6.1  AlexaSkill和Lambda的绑定"></a>6.1  AlexaSkill和Lambda的绑定</h2><p>回到Alexa页面，点击configuration，North America的框里输入AWS Lambda ARN，Lambda ARN在Lambda的Function右上角可以查看到</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626891354.png" alt="Alt text"><br><img src="/assets/zh-cn/UserManual/Echo/1484626904720.png" alt="Alt text"></p>
-<p>##6.2  发送控制指令进行测试<br>在Test页面, 我们可以做一些基本测试<br>在Voice Simulator里, 我们可以测试Alexa收到的语音资料里, 它会如何发音<br>它使用SSML tags让Alexa发出特定的语音像是拼出hello, 点选Listen就可以听看看语音的结果</p>
+<h2 id="6-2-发送控制指令进行测试"><a href="#6-2-发送控制指令进行测试" class="headerlink" title="6.2  发送控制指令进行测试"></a>6.2  发送控制指令进行测试</h2><p>在Test页面, 我们可以做一些基本测试<br>在Voice Simulator里, 我们可以测试Alexa收到的语音资料里, 它会如何发音<br>它使用SSML tags让Alexa发出特定的语音像是拼出hello, 点选Listen就可以听看看语音的结果</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626919082.png" alt="Alt text"></p>
 <p>这边的文字也就是Lambda回传的outputSpeech内容, 所以我们可以在Lambda的回传语音讯息里有更多弹性<br>在 “Service Simulator”, 我们可以填入使用者发出的语音讯息, 并且让Alexa假装听到这个讯息做对应的处理, 这里我们填入 “Turn on the light”, 然后点选 “Ask Control Gokit”<br>这段语音讯息会被Alexa处理, 送至Lambda function, Lambda function处理完之后再回传结果, 若正常返回结果，我们就可以对自己的Echo音响说话来语音控制Gokit了。<br>我们可以点选右下角的 “Listen” 可以聆听这段结果。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626954374.png" alt="Alt text"></p>
-<p>##6.3  AlexaSkill发布</p>
-<p>测试成功后，可以将自己编写的AlexaSkill发布提供给其他的Alexa用户使用，在Publishing information里可以填入自己Skill的一些基础信息，并点击Submit for Certification提交。</p>
+<h2 id="6-3-AlexaSkill发布"><a href="#6-3-AlexaSkill发布" class="headerlink" title="6.3  AlexaSkill发布"></a>6.3  AlexaSkill发布</h2><p>测试成功后，可以将自己编写的AlexaSkill发布提供给其他的Alexa用户使用，在Publishing information里可以填入自己Skill的一些基础信息，并点击Submit for Certification提交。</p>
 <p><strong>注：当Skill发布成功后，Skill的信息和参数等不可二次修改，请谨慎发布。</strong></p>
 <p><strong>注意事项：</strong><br>亚马逊对启用了 “Account Linking” 的 Skill 有如下要求：”Authorization URL” 的域名必须属于您，并且该链接必须是 https 链接。</p>
 <p><strong>这就需要您完成如下几点：</strong><br>    1）拥有一个自己品牌的域名<br>   2）添加一个二级域名，并且 CNAME 到 “oauth.gizwits.com”<br>    3）购买一个 https 证书，并将证书文件（包括证书文件和 key 文件）发送给我们，我们将您的证书配置在我们的服务器<br>    4）在 “Account Linking” 页面，将 “Authorization URL” 和 “Access Token URI” 中的域名修改为您的二级域名</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626992489.png" alt="Alt text"><br><img src="/assets/zh-cn/UserManual/Echo/1484626997903.png" alt="Alt text"></p>
 <p>若发布成功后，其他用户就可以在Alexa应用端的Skills-All Skills里搜索到</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484627004661.png" alt="Alt text"></p>
-<p>#7、相关支持</p>
-<p>7.1 如果您是开发者</p>
+<h1 id="7、相关支持"><a href="#7、相关支持" class="headerlink" title="7、相关支持"></a>7、相关支持</h1><p>7.1 如果您是开发者</p>
 <p>GoKit是面向智能硬件开发者限量免费开放，注册我们的论坛或关注我们的官方微信均可发起申请即可。</p>
 <p>开发者论坛： <a href="http://club.gizwits.com/forum.php" target="_blank" rel="external">http://club.gizwits.com/forum.php</a></p>
 <p>文档中心：<a href="http://docs.gizwits.com/hc/" target="_blank" rel="external">http://docs.gizwits.com/hc/</a></p>
