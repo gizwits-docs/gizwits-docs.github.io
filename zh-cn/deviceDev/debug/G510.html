@@ -4,14 +4,14 @@
   <head>
   <meta charset="utf-8">
 
-  <title>广和通G510模组烧写方法 - 机智云</title>
+  <title>广和通G510模组接入方案 - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="广和通G510模组烧写方法-机智云">
-  <meta name="keywords" content="广和通G510模组烧写方法 docs 文档中心 Gizwits">
+  <meta name="Description" content="广和通G510模组接入方案-机智云">
+  <meta name="keywords" content="广和通G510模组接入方案 docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
 
@@ -366,10 +366,160 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">广和通G510模组烧写方法</div>
+        <div class="title">广和通G510模组接入方案</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>1.广和通G510模组<br>2.杜邦线若干条<br>3.USB转TTL串口模块<br>4.G510的GAgent通用固件<br>5.烧写工具Fibocom_upgrade V1.3</p>
+      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>   G510是广和通推出的一款基于GPRS的通讯模组，本篇通过讲述如何通过G510模组把MCU接入到机智云云端，并实现通讯的方案。全篇文章的内容包括G510模组的管脚介绍、SIM卡连接、供电要求、串口定义以及固件烧写方法等，合作厂商在进行设备接入时请参照以下资料进行，以免造成不可控的错误。</p>
+<h1 id="模组接入准备"><a href="#模组接入准备" class="headerlink" title="模组接入准备"></a>模组接入准备</h1><h2 id="G510模组管脚图"><a href="#G510模组管脚图" class="headerlink" title="G510模组管脚图"></a>G510模组管脚图</h2><p><img src="/assets/zh-cn/deviceDev/debug/G510/1482753663131.png" alt="Alt text"></p>
+<h2 id="SIM卡连接方法"><a href="#SIM卡连接方法" class="headerlink" title="SIM卡连接方法"></a>SIM卡连接方法</h2><p>模块包含了一个 SIM 卡接口，这个接口符合 GSM 11.11 和 GSM 11.12 标准（基于 ISO/IEC 7816） 。</p>
+<p>这些标准定义了 GSM SIM 卡的电气特性、 信令和协议规范。</p>
+<p>模块不包含 SIM 卡槽。SIM 卡槽必须放在模块外部的用户开发板上。模块的 SIM 卡接口包括了所有必须的信号，这些信号被接到接口连接器，直接并全部连接到外部的 SIM 卡。模块支持 1.8V 或者 2.85V 电平自动识别。当模块在开机后，首先 SIM_VCC 向外部 SIM 卡输出 1.8V电压来建立通信。如果通信不成功，SIM_VCC 会再次输出 2.85V 电压，并和 SIM 卡建立通信。</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482754308693.png" alt="Alt text"></p>
+<p>下图显示了一个典型的 SIM 卡接口，连接到模块。在模块开发板上，使用 MOLEX （PN 912283001 &amp;912360001）SIM 卡槽，来实现这种连接方式。</p>
+<p>无论 SIM_CD 是否使用，都必须上拉，保证 SIM 卡的检测稳定。模块内部已经将 SIM_DATA 信号上拉到 SIM_VCC，外围无需再上拉。</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482754330995.png" alt="Alt text"></p>
+<p>SIM 卡接口和信号的设计特别重要。为了满足设计标准和规定，以下几点是必须要遵循的设计准则：</p>
+<ul>
+<li><p>SIM 卡的位置以及 SIM 信号的走线，必须远离任何可能的电磁干扰源，像射频天线和数字开关信号等。</p>
+</li>
+<li><p>在模块接口连接器和 SIM 卡槽之间，SIM 卡走线长度不应超过 100mm，这样满足 EMC 法则，同时提供信号的完整性。</p>
+</li>
+<li><p>为了避免 SIM 卡时钟和数据信号 （SIM_CLK 和 SIM_DATA） 之间的串扰，建议在开发板上将它们隔开，最好是由大地隔开。</p>
+</li>
+<li><p>SIM 卡信号应使用低容性的保护性元器件进行 ESD 保护。建议使用 AVR M1005C270MAAB(TDK) ，并且 ESD 器件应该布局在 SIM 卡的附近</p>
+</li>
+</ul>
+<h2 id="电源接入管理"><a href="#电源接入管理" class="headerlink" title="电源接入管理"></a>电源接入管理</h2><p>模块必须由外部3.3V 到4.5V的直流电源单独供电， 而且电源必须在此电压下允许有 2.0A 的电流通过，此电流只是在 GSM 的时隙发送时的瞬态电流。 模块提供 2 个管脚由外部来供电，如下表</p>
+<table>
+<thead>
+<tr>
+<th>管脚号</th>
+<th style="text-align:center">管脚名</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td style="text-align:center">VBAT</td>
+<td style="text-align:left">直流电源 VBAT = 3.3 V to 4.5 V</td>
+</tr>
+<tr>
+<td>10</td>
+<td style="text-align:center">VBAT</td>
+<td style="text-align:left">推荐电源电压：4.0V</td>
+</tr>
+</tbody>
+</table>
+<p>GSM 是时分多址，在发送时隙时会导致瞬时电流波动，由此会出现电压纹波现象。此时如果不处理妥当，这些频繁的电压纹波将会降低模块的性能。建议将此纹波控制在 300mV 以内。在任何情况下，模块的供电都不应该低于它的最小电压。为了降低纹波等对电源的影响，我们建议：</p>
+<ul>
+<li>在模块的电源输入端使用一颗1000uF或者更大的， 低ESR的电容。 这颗电容， 越靠近模块的VBAT管脚越好。</li>
+<li>使用低阻的电源，电源线和 LAYOUT 走线。</li>
+<li>电源走线越短越好。</li>
+<li>使用滤波电容给模块的供电滤波，如下表：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>推荐的容值</th>
+<th style="text-align:center">功能</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1000 uF</td>
+<td style="text-align:center">电流纹波</td>
+<td style="text-align:left">降低发送时隙时对电源的影响，尽可能使用大容量电容</td>
+</tr>
+<tr>
+<td>10 nF, 100 nF</td>
+<td style="text-align:center">数字开关噪声</td>
+<td style="text-align:left">滤除由时钟，数字信号引起的噪声</td>
+</tr>
+<tr>
+<td>8.2 pF, 10 p</td>
+<td style="text-align:center">DCS1800/PCS1900 MHz GSM 频段</td>
+<td style="text-align:left">滤除由 GSM 高频段传输中带来的杂波</td>
+</tr>
+<tr>
+<td>33 pF, 39 pF</td>
+<td style="text-align:center">GSM850/GSM900 MHz GSM 频段</td>
+<td style="text-align:left">滤除由 GSM 低频段传输中带来的杂波</td>
+</tr>
+</tbody>
+</table>
+<h2 id="串口的定义和使用"><a href="#串口的定义和使用" class="headerlink" title="串口的定义和使用"></a>串口的定义和使用</h2><p>G510 有 3 个 UART 串口。</p>
+<ul>
+<li>UART1 是一个完全独立的 8 线串行通信接口 (UART1). 这是主串口。默认端口配置为115200bps、 8 个数据位、1 个停止位和无奇偶校验。主要用于固件下载、log打印等。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>管脚号</th>
+<th style="text-align:center">管脚名</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">性能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>19</td>
+<td style="text-align:center">UART1_TXD</td>
+<td style="text-align:left">模块发送数据</td>
+<td style="text-align:left">模块发送数据</td>
+</tr>
+<tr>
+<td>18</td>
+<td style="text-align:center">UART1_RXD</td>
+<td style="text-align:left">推模块接收数据</td>
+<td style="text-align:left">模块接收数据</td>
+</tr>
+<tr>
+<td>21</td>
+<td style="text-align:center">UART1_CTS</td>
+<td style="text-align:left">清空发送</td>
+<td style="text-align:left">模块切换接收</td>
+</tr>
+<tr>
+<td>20</td>
+<td style="text-align:center">UART1_RTS</td>
+<td style="text-align:left">请求发送</td>
+<td style="text-align:left">模块提醒 DTE 接收</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>UART2 是一个 2 线串口，只支持部分 AT 命令，用于和MCU通信。UART 2 默认端口配置为 115200bps、8 个数据位、1 个停止位和无奇偶校验。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>管脚号</th>
+<th style="text-align:center">管脚名</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">性能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>40</td>
+<td style="text-align:center">UART1_TXD</td>
+<td style="text-align:left">模块发送数据</td>
+<td style="text-align:left">G510发送数据</td>
+</tr>
+<tr>
+<td>39</td>
+<td style="text-align:center">UART1_RXD</td>
+<td style="text-align:left">推模块接收数据</td>
+<td style="text-align:left">G510接收数据</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>HOST UART 是个 Debug UART，主要用来下载，校准，Trace 等，不支持 AT 命令。此口只在生产调试时使用，用户只需接测试点。</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>如需获取更多的G510模组参考资料，请登陆广和通官方网站<a href="http://www.fibocom.com.cn/support/1-3-3.html进行获取。" target="_blank" rel="external">http://www.fibocom.com.cn/support/1-3-3.html进行获取。</a><br>如需获取接入机智云平台参考资料，请登陆机智云官方网站文档中心<a href="http://docs.gizwits.com/zh-cn/overview/overview.html进行获取。" target="_blank" rel="external">http://docs.gizwits.com/zh-cn/overview/overview.html进行获取。</a></p>
 <h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><h2 id="焊接对应管脚"><a href="#焊接对应管脚" class="headerlink" title="焊接对应管脚"></a>焊接对应管脚</h2><p>G510模组电路焊接：参照下方电路图，使用杜邦线连接以下管脚</p>
 <table>
 <thead>
@@ -401,7 +551,6 @@
 </tr>
 </tbody>
 </table>
-<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482753663131.png" alt="Alt text"></p>
 <h2 id="连接模组"><a href="#连接模组" class="headerlink" title="连接模组"></a>连接模组</h2><p>电脑插入USB转TTL串口模块，查看模块所在COM口</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/G510/1482753675007.png" alt="Alt text"></p>
 <p>使用杜邦线将USB转TTL串口模块与焊接好的G510模组连接。</p>
@@ -459,35 +608,17 @@
 <td style="text-align:center">GND</td>
 </tr>
 <tr>
-<td>39：UART1_RXD</td>
+<td>18：UART1_RXD</td>
 <td style="text-align:center">TRX</td>
 </tr>
 <tr>
-<td>40：UART1_TXD</td>
+<td>19：UART1_TXD</td>
 <td style="text-align:center">TXD</td>
 </tr>
 </tbody>
 </table>
 <p>注：波特率为：115200<br>注意：由于没有连接SIM卡，所以模组无法真正的连上网络，会一直报错。</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/G510/1482754299767.png" alt="Alt text"></p>
-<h1 id="附录：SIM卡连接方法"><a href="#附录：SIM卡连接方法" class="headerlink" title="附录：SIM卡连接方法"></a>附录：SIM卡连接方法</h1><p>模块包含了一个 SIM 卡接口，这个接口符合 GSM 11.11 和 GSM 11.12 标准（基于 ISO/IEC 7816） 。</p>
-<p>这些标准定义了 GSM SIM 卡的电气特性、 信令和协议规范。</p>
-<p>模块不包含 SIM 卡槽。SIM 卡槽必须放在模块外部的用户开发板上。模块的 SIM 卡接口包括了所有必须的信号，这些信号被接到接口连接器，直接并全部连接到外部的 SIM 卡。模块支持 1.8V 或者 2.85V 电平自动识别。当模块在开机后，首先 SIM_VCC 向外部 SIM 卡输出 1.8V电压来建立通信。如果通信不成功，SIM_VCC 会再次输出 2.85V 电压，并和 SIM 卡建立通信。</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482754308693.png" alt="Alt text"></p>
-<p>下图显示了一个典型的 SIM 卡接口，连接到模块。在模块开发板上，使用 MOLEX （PN 912283001 &amp;912360001）SIM 卡槽，来实现这种连接方式。</p>
-<p>无论 SIM_CD 是否使用，都必须上拉，保证 SIM 卡的检测稳定。模块内部已经将 SIM_DATA 信号上拉到 SIM_VCC，外围无需再上拉。</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/G510/1482754330995.png" alt="Alt text"></p>
-<p>SIM 卡接口和信号的设计特别重要。为了满足设计标准和规定，以下几点是必须要遵循的设计准则：</p>
-<ul>
-<li><p>SIM 卡的位置以及 SIM 信号的走线，必须远离任何可能的电磁干扰源，像射频天线和数字开关信号等。</p>
-</li>
-<li><p>在模块接口连接器和 SIM 卡槽之间，SIM 卡走线长度不应超过 100mm，这样满足 EMC 法则，同时提供信号的完整性。</p>
-</li>
-<li><p>为了避免 SIM 卡时钟和数据信号 （SIM_CLK 和 SIM_DATA） 之间的串扰，建议在开发板上将它们隔开，最好是由大地隔开。</p>
-</li>
-<li><p>SIM 卡信号应使用低容性的保护性元器件进行 ESD 保护。建议使用 AVR M1005C270MAAB(TDK) ，并且 ESD 器件应该布局在 SIM 卡的附近</p>
-</li>
-</ul>
 
     </div>
     
