@@ -388,14 +388,13 @@
 <p>Arduino Uno WiFi集成了乐鑫的ESP8266芯片作为WiFi模块以提供无线联网功能，支持OTA程序无线下载功能，支持REST方式实现远程控制，支持Web方式轻松配置网络。 </p>
 <p>WiFi功能使得Arduino Uno WiFi可以轻松实现无线控制，但是假如没有一款优秀的云服务器来提供固定IP访问和数据保存，也是无法实现不在同一局域网中的远程控制的。 </p>
 <p>Gizwits为个人开发者带来了福音，在设备节点小于一定数量时，Gizwits为开发者提供免费云服务器使用。另外为了简化开发难度，Gizwits提供了数据上传分发的详细协议格式及APP范例。 </p>
-<h1 id="本文将介绍Arduino-Uno-WiFi-板ESP8266固件烧写流程与方法。"><a href="#本文将介绍Arduino-Uno-WiFi-板ESP8266固件烧写流程与方法。" class="headerlink" title="本文将介绍Arduino Uno WiFi 板ESP8266固件烧写流程与方法。"></a>本文将介绍Arduino Uno WiFi 板ESP8266固件烧写流程与方法。</h1><p><img src="/assets/zh-cn/deviceDev/ArduinoUNO/Tutorial/1486536567292.png" alt="Alt text">     </p>
-<p><img src="/assets/zh-cn/deviceDev/ArduinoUNO/Tutorial/1486536575753.png" alt="Alt text"></p>
+<h1 id="本文将介绍Arduino-Uno-WiFi-板ESP8266固件烧写流程与方法。"><a href="#本文将介绍Arduino-Uno-WiFi-板ESP8266固件烧写流程与方法。" class="headerlink" title="本文将介绍Arduino Uno WiFi 板ESP8266固件烧写流程与方法。"></a>本文将介绍Arduino Uno WiFi 板ESP8266固件烧写流程与方法。</h1><p><img src="/assets/zh-cn/deviceDev/ArduinoUNO/Tutorial/1486536567292.png" alt="Alt text">     <img src="/assets/zh-cn/deviceDev/ArduinoUNO/Tutorial/1486536575753.png" alt="Alt text"></p>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="1、ESP8266烧写工具及固件下载"><a href="#1、ESP8266烧写工具及固件下载" class="headerlink" title="1、ESP8266烧写工具及固件下载"></a>1、ESP8266烧写工具及固件下载</h2><p>链接: <a href="http://pan.baidu.com/s/1c25QA8w" target="_blank" rel="external">http://pan.baidu.com/s/1c25QA8w</a> 密码: ixkj</p>
 <h2 id="2、连接烧写串口（TX-RX直连，如若出现连接失败，则做交叉连接尝试）："><a href="#2、连接烧写串口（TX-RX直连，如若出现连接失败，则做交叉连接尝试）：" class="headerlink" title="2、连接烧写串口（TX/RX直连，如若出现连接失败，则做交叉连接尝试）："></a>2、连接烧写串口（TX/RX直连，如若出现连接失败，则做交叉连接尝试）：</h2><p><img src="/assets/zh-cn/deviceDev/ArduinoUNO/Tutorial/1486536736936.png" alt="Alt text"></p>
 <h1 id="烧录"><a href="#烧录" class="headerlink" title="烧录"></a>烧录</h1><h2 id="按照下列步骤进行镜像上传："><a href="#按照下列步骤进行镜像上传：" class="headerlink" title="按照下列步骤进行镜像上传："></a>按照下列步骤进行镜像上传：</h2><ul>
 <li>使用Arduino IDE工具下载Blink.ino到ATMega328p</li>
 </ul>
-<p><img src="/assets/zh-cn/deviceDev/ArduinoUNO/Tutorial/1486537111742.jpeg" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/ArduinoUNO/Tutorial/1486537111742.png" alt="Alt text"></p>
 <ul>
 <li>使用USB2Serial工具的Tx Rx GND管脚分别接至Arduino Uno WiFi的Tx Rx GND管脚</li>
 <li>将USB2Serial工具USB接口接至PC，并保证驱动已安装，PC可识别串口</li>
