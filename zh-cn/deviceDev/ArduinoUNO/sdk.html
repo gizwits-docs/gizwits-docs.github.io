@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8">
+
+  <title>ArduinoUnoWiFi SDK之API介绍 - 机智云</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="ArduinoUnoWiFi SDK之API介绍-机智云">
+  <meta name="keywords" content="ArduinoUnoWiFi SDK之API介绍 docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+
+      <a href="http://www.gizwits.com" class="logo">
+        <img src="/images/logo.png" alt="logo"> 
+      </a>
+      <a class="text" href="/">文档中心</a>
+    </span>
+    
+    <div class="mobile-header"v>
+      <span class="title">机智云 文档中心</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+    
+
+    <span class="menu pure-u-16-24">
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/zh-cn/overview/overview.html">平台概述</a></li>
+          
+        
+          
+            <li class="levelA">
+              快速入门 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/5分钟了解机智云.html">5分钟了解机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/noun.html">机智云名词定义解释</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      设备快速接入机智云 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/设备快速接入.html">独立MCU方案快速入门</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/UseSOC.html">SOC方案快速入门</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App快速接入机智云 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/准备工作.html">App开发准备工作</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/AndroidAppFrame.html">Android App 快速开发</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/iOSAPP快速入门.html">iOS App 快速开发</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              APP开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB has-submenu">
+                      App 开源框架 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iosframe.html">iOS 开源框架说明(含源码)</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS消息推送.html">iOS 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS第三方登陆与换肤.html">iOS 第三方登录与换肤</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android开源框架使用指南.html">Android 开源框架说明（含源码）</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android消息推送.html">Android 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android第三方登录与换肤.html">Android 第三方登录与换肤</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/iOSSDKA2.html">iOS SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/AndroidSDKA2.html">Android SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/APICloudWifiSDK.html">APICloud SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      更多App开发指南 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/SDK数据透传方法解析.html">SDK数据透传方法解析</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App开发教学视频 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/开源框架视频教程.html">开源框架使用视频教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              微信开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/了解微信应用开发.html">了解微信应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/WeChatDev.html">微信应用开发教程</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              设备开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/gagent_info.html">GAgent详解</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      MCU开发框架使用说明 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/DevSDK/代码自动生成工具.html">GoKit3代码自动生成工具</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3 DEV SDK Common版移植说明.html">GoKit3 DEV SDK Common版移植说明</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3介绍 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html">Gokit3系列开发套件简介</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/GoKit3硬件手册.html">Gokit3硬件手册</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3 SOC方案 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S使用说明书.html">GoKit3(S)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S开发套件介绍.html">Gokit3(S)开发套件介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html">GoKit3(S)开发环境搭建</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S程序详解.html">Gokit3(S)源码详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gokit3语音开发 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V使用说明书.html">GoKit3(V)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V二次开发指南.html">Gokit3(V)开发指南</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V词条.html">GoKit3(V)词条管理</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit3V程序详解.html">Gokit3(V)源码详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/Gokit2使用指南.html">Gokit2 使用指南</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      调试与烧写 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/串口工具使用文档.html">串口工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/HF-LPB100串口烧写说明.html">HF-LPB100串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/HF-LPT120.html">HF-LPT120串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/MXCHIP串口烧写说明.html">MXCHIP串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ESP8266串口烧写说明.html">ESP8266串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/G510.html">广和通G510模组烧写方法</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/日志抓取教程文档.html">日志抓取教程文档</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/ecevideos.html">ECE Demo开发教程</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              云平台 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/ent_dev.html">企业应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/noti1.0.html">消息代理服务</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/enterprise_api.html">企业API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/openapi_apps.html">Open API 指南</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/WebsocketAPI.html">WebSocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/NotificationAPI.html">SNoti API</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              用户手册 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/change.html">个人项目产品转企业项目产品</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/OTA使用教程.html">OTA使用教程</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/产测工具使用文档.html">产测工具使用文档</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/D3.html">D3 Engine使用教程</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/ece.html">ECE雾计算使用教程</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/echo.html">接入亚马逊ECho教程</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/rtbd.html">实时大数据使用教程</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API使用教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseOpenAPI.html">使用OpenAPI控制虚拟设备教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseWebsocket.html">使用Websocket 网页控制设备教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/DataAPI.html">使用聚合API教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+  
+    <span class="pure-u-3-24 lang-switch-wrapper">
+      <i class="fa fa-globe" aria-hidden="true"></i> 
+      
+        <button class="lang-switch" data-lang="en-us">English</button>
+      
+    </span>
+
+  </div>
+</div>
+    <div class="body">
+  
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">目录</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">ArduinoUnoWiFi SDK之API介绍</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
+      </div>
+      <h1 id="1-文件介绍"><a href="#1-文件介绍" class="headerlink" title="1 文件介绍"></a>1 文件介绍</h1><p><img src="/assets/zh-cn/deviceDev/ArduinoUNO/SDK/1486537812364.png" alt="Alt text"></p>
+<h2 id="重要文件解读："><a href="#重要文件解读：" class="headerlink" title="重要文件解读："></a>重要文件解读：</h2><h2 id="1-gizwits-product-cpp"><a href="#1-gizwits-product-cpp" class="headerlink" title="1.gizwits_product.cpp"></a>1.gizwits_product.cpp</h2><p>该文件为产品相关处理函数，如gizwitsEventProcess()。</p>
+<h2 id="2-gizwits-product-h"><a href="#2-gizwits-product-h" class="headerlink" title="2.gizwits_product.h"></a>2.gizwits_product.h</h2><p>该文件为gizwits_product.c的头文件，如HARDWARE_VERSION、SOFTWARE_VERSION。</p>
+<h2 id="3-gizwits-protocol-cpp"><a href="#3-gizwits-protocol-cpp" class="headerlink" title="3.gizwits_protocol.cpp"></a>3.gizwits_protocol.cpp</h2><p>该文件为SDK API接口函数定义文件。</p>
+<h2 id="4-gizwits-protocol-h"><a href="#4-gizwits-protocol-h" class="headerlink" title="4.gizwits_protocol.h"></a>4.gizwits_protocol.h</h2><p>该文件为gizwits_protocol.c对应头文件,相关API的接口声明均在此文件中。</p>
+<h2 id="5-工程文件"><a href="#5-工程文件" class="headerlink" title="5.工程文件"></a>5.工程文件</h2><p>networkConfig.ino<br>按键配置入网示例，实现了两个按键驱动，key1短按通知模组进入产测模式，key1长按复位模组，key2短按模组进入softAP模式，key2长按模组进入Airlink模式。<br>simpleTry.ino<br>数据点示例，主要处理数据的下发和上报。</p>
+<h1 id="2-Gizwits类方法介绍"><a href="#2-Gizwits类方法介绍" class="headerlink" title="2 Gizwits类方法介绍"></a>2 Gizwits类方法介绍</h1><p><code>void begin(void)</code><br>gizwits协议初始化接口。<br>用户调用该接口可以完成Gizwits协议相关初始化（包括协议串口的初始化、串口接收数据缓冲区初始化）。</p>
+<p><code>void process(void)</code><br>该函数中完成了相应协议数据的处理及数据上报的等相关操作，需要在loop中调用。</p>
+<p><code>void setBindMode(uint8_t mode)</code><br>模组配置网络接口，参数mode[in]：WIFI_MODE_TYPE_T枚举值<br>参数为WIFI_RESET_MODE，恢复模组出厂配置接口，调用会清空所有配置参数，恢复到出厂默认配置。<br>参数为WIFI_SOFTAP_MODE或WIFI_AIRLINK_MODE，配置模式切换接口，支持SoftAP和AirLink模式。参数为WIFI_SOFTAP_MODE时配置模组进入SoftAp模式，参数为WIFI_AIRLINK_MODE配置模组进入AirLink模式。<br>参数为WIFI_PRODUCTION_TEST，模组进入产测模式。<br>参数为WIFI_NINABLE_MODE，模组进入可绑定模式，可绑定时间为NINABLETIME(gizwits_protocol.h中声明)，默认为0，表示模组永久可绑定。<br>bool wifiHasBeenSet(EVENT_TYPE_T eventType)<br>查询模组状态接口，参数eventType[in]：EVENT_TYPE_T枚举值<br>参数为WIFI_SOFTAP，函数返回为true则表示模组状态为SOFTAP模式<br>参数为WIFI_AIRLINK，函数返回为true则表示模组状态为AIRLINK模式<br>参数为WIFI_STATION，函数返回为true则表示模组状态为STATION模式<br>参数为WIFI_CON_ROUTER，函数返回为true则表示模组状态为已连接到路由器<br>参数为WIFI_DISCON_ROUTER，函数返回为true则表示模组状态为断开路由器<br>参数为WIFI_CON_M2M，函数返回为true则表示模组状态为连接到M2M状态<br>参数为WIFI_DISCON_M2M，函数返回为true则表示模组状态为断开M2M状态</p>
+<p><code>void read(EVENT_TYPE_T eventType, bool* value)</code><br>参数eventType[in]:数据点事件宏<br>参数value[out]:返回的数据<br>bool型数据点下发数值获取接口。用户获取到下发的数值，做相应处理。</p>
+<p><code>void read(EVENT_TYPE_T eventType, uint32_t* value)</code><br>参数eventType[in]:数据点事件宏<br>参数value[out]:返回的数据<br>无符号整型数值类数据点和枚举型数据点下发数值获取接口。用户获取到下发的数值，做相应处理。</p>
+<p><code>void read(EVENT_TYPE_T eventType, int32_t* value)</code><br>参数eventType[in]:数据点事件宏<br>参数value[out]:返回的数据<br>有符号整型数值类数据点下发数值获取接口。用户获取到下发的数值，做相应处理。</p>
+<p><code>void read(EVENT_TYPE_T eventType, float* value)</code><br>参数eventType[in]:数据点事件宏<br>参数value[out]:返回的数据<br>浮点型数值类数据点下发数值获取接口。用户获取到下发的数值，做相应处理。</p>
+<p><code>void readBinary(EVENT_TYPE_T eventType, uint8_t* data)</code><br>参数eventType[out]:数据点事件宏<br>参数data[out]:返回的数据<br>扩展型数据点下发数值获取接口。用户获取到下发的数值，做相应处理。注意，使用云端自动生成的代码，扩展型数据点使用数组存储并且长度已经定义完毕，用户不需要传参，也不许任意改动该长度定义。</p>
+<p><code>void write(VALUE_TYPE_T valueType, bool value)</code><br>参数valueType[in]:可写数据点事件宏<br>参数value[in]:待上报数据<br>bool型数据点数据上报接口。用户通过传感器或者其他获取到数据，通过该接口上报到云端和APP。</p>
+<p><code>void write(VALUE_TYPE_T valueType, uint32_t value)</code><br>参数valueType[in]:可写数据点事件宏<br>参数value[in]:待上报数据<br>无符号整型数值类和枚举类数据点数据上报接口。用户通过传感器或者其他获取到数据，通过该接口上报到云端和APP。</p>
+<p><code>void write(VALUE_TYPE_T valueType, int32_t value)</code><br>参数valueType[in]:可写数据点事件宏<br>参数value[in]:待上报数据<br>有符号整型数值类数据点数据上报接口。用户通过传感器或者其他获取到数据，通过该接口上报到云端和APP。</p>
+<p><code>void write(VALUE_TYPE_T valueType, float value)</code><br>参数valueType[in]:可写数据点事件宏<br>参数value[in]:待上报数据<br>浮点型数值类数据点数据上报接口。用户通过传感器或者其他获取到数据，通过该接口上报到云端和APP。</p>
+<p><code>void writeBinary(VALUE_TYPE_T valueType, uint8_t* data,uint32_t dataLen)</code><br>参数eventType[in]:数据点事件宏<br>参数data[in]:待上报的数据<br>参数dataLen[in]:待上报的数据长度<br>扩展型数据点上报接口。注意，使用云端自动生成的代码，扩展型数据点使用数组存储并且长度已经定义完毕，也不许改动该长度定义。</p>
+<p><code>bool hasBeenSet(EVENT_TYPE_T eventType)</code><br>参数eventType[in]:可写数据点事件宏<br>返回true表示已产生该数据点事件，如APP控制某数据点动作。用户首先判断该数据点事件是否发生，再去做相应处理。</p>
+<h1 id="3-二次开发"><a href="#3-二次开发" class="headerlink" title="3 二次开发"></a>3 二次开发</h1><h2 id="配置入网"><a href="#配置入网" class="headerlink" title="配置入网"></a>配置入网</h2><p>支持SoftAp和AirLink两种方式配置入网，相应接口为setBindMode()。networkConfig工程提供给了按键配置入网的示例。<br>举例：KEY2长按3s触发AirLink配置模式<br>case KEY2_LONG_PRESS:<br>myGizwits.setBindMode(WIFI_AIRLINK_MODE);<br>Break;</p>
+<h2 id="数据采集"><a href="#数据采集" class="headerlink" title="数据采集"></a>数据采集</h2><p>simpleTry示例已经自动生成了关于开发者定义的需要上报的所有数据点信息。bool型数据点使用bool型变量，无符号整型数值类或者枚举型数据点使用unsigned long型变量，有符号整型数值类数据点使用long型变量，浮点型数据点使用float型变量，扩展型数据点使用数组存储，长度信息已经生成，开发者只需要实现数据采集即可。特别提醒，如果开发者自行定义变量，变量类型定义一定要遵从上述规则，数值型变量的赋值一定不要越界（超过在云端定义的数据大小范围）。</p>
+<h2 id="举例：温度采集"><a href="#举例：温度采集" class="headerlink" title="举例：温度采集"></a>举例：温度采集</h2><p>long varW_Temperature = 0;//采集函数返回温度数值<br>myGizwits.write(VALUE_TEMPERATURE, varW_Temperature);//Add Sensor Data Collection<br>事件处理<br>simpleTry示例已经自动生成了关于开发者定义的需要处理的所有数据点信息的基础框架。bool型数据点使用bool型变量，无符号整型数值类或者枚举型数据点使用unsigned long型变量，有符号整型数值类数据点使用long型变量，浮点型数据点使用float型变量，扩展型数据点使用数组存储，长度信息已经生成，开发者只需要实现相应处理即可。特别提醒，如果开发者自行定义变量，变量类型定义一定要遵从上述规则。</p>
+<h2 id="举例：控制LED开关-bool型"><a href="#举例：控制LED开关-bool型" class="headerlink" title="举例：控制LED开关(bool型)"></a>举例：控制LED开关(bool型)</h2><p>bool varR_LED_OnOff = 0;<br>if(myGizwits.hasBeenSet(EVENT_LED_ONOFF))<br>{<br>    myGizwits.read(EVENT_LED_ONOFF,&amp;varR_LED_OnOff);//Address for storing data<br>//判断动作是开/关，做灯相应处理<br>}</p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="问题反馈">
+      <span>问题反馈</span>
+    </a>
+    <a href="#" title="返回顶部"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">机智云首页</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">关于我们</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">联系我们</a></span>
+      <span><a href="http://www.gizwits.com/talent/social" target="_blank">加入我们</a></span>
+    </p>
+    <p>&#169;2011-2016; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/documentation.js"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
