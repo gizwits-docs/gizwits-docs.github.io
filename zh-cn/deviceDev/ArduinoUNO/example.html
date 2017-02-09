@@ -447,26 +447,16 @@
 <p>通过对比的我们应该了解到这套程序的思路是，如果需要在这套程序中读取一个云端下发的数据，首先需要通过<code>myGizwits.hasBeenSet()</code>这条函数判断这个数据点事件有是否发生，如果数据点事件发生了就通过<code>myGizwits.read(,)</code>这个函数去把发生的事件所产生的数据读取出来，然后再做相应的判断。</p>
 <p>注意：read(,)在“ArduinoUnoWiFi SDK之API介绍”一共有四条，读取不同是据点事    件时，返回值的参数会有差异，使用之前参考“ArduinoUnoWiFi SDK之API介绍”文    档</p>
 <p>应该大体有个理解啦吧！其实你会发现所有你要操作的事件都完成好了！！好，那我们开始修改程序，首先从“2.4.2引用部分开始”</p>
-<h3 id="2-4-2-引用部分"><a href="#2-4-2-引用部分" class="headerlink" title="2.4.2 引用部分"></a>2.4.2 引用部分</h3><ul>
-<li>1）添加WS2812驱动H文件</li>
-</ul>
+<h3 id="2-4-2-引用部分"><a href="#2-4-2-引用部分" class="headerlink" title="2.4.2 引用部分"></a>2.4.2 引用部分</h3><p>1）添加WS2812驱动H文件</p>
 <p><code>#include &lt;Adafruit_NeoPixel.h&gt;</code><br><img src="/assets/zh-cn/deviceDev/ArduinoUNO/example/1486547101769.png" alt="Alt text"></p>
-<ul>
-<li><p>2）定义WS2812的数据通信引脚，以及RGB灯数量。<br><code>#define PIN 9</code>         //使用arduino uno wifi的9号引脚<br><code>#define NUM_LEDS 8</code>    //WS2812小板的数量是8个<br><img src="/assets/zh-cn/deviceDev/ArduinoUNO/example/1486547108566.png" alt="Alt text"></p>
-</li>
-<li><p>3）初始化LED数量、通信引脚号和驱动模式</p>
-</li>
-</ul>
+<p>2）定义WS2812的数据通信引脚，以及RGB灯数量。<br><code>#define PIN 9</code>         //使用arduino uno wifi的9号引脚<br><code>#define NUM_LEDS 8</code>    //WS2812小板的数量是8个<br><img src="/assets/zh-cn/deviceDev/ArduinoUNO/example/1486547108566.png" alt="Alt text"></p>
+<p>3）初始化LED数量、通信引脚号和驱动模式</p>
 <p><code>Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRB + NEO_KHZ800);</code><br><img src="/assets/zh-cn/deviceDev/ArduinoUNO/example/1486547114920.png" alt="Alt text"></p>
-<ul>
-<li>1）该函数中NUM_LEDS，表示控制的点亮多少个全彩灯珠，如果你想改变灯珠点亮的个数你可以    在    这里进行修改。</li>
-<li>2）PIN表示的是与开发板所连的第几个端口，我们这里使用的是第9个端口，你可根    据自己的需要    修改对应的端口。</li>
-<li>3）关于NEO_GRB+NEO_KHZ800，这包括了与开发板所连的具体类型。具体的介绍可以参考文本最    后    Adafruit_NeoPixel库文件的解析，以及根据指导完成更多的案例。</li>
-</ul>
+<p>1）该函数中NUM_LEDS，表示控制的点亮多少个全彩灯珠，如果你想改变灯珠点亮的个数你可以    在    这里进行修改。<br>2）PIN表示的是与开发板所连的第几个端口，我们这里使用的是第9个端口，你可根    据自己的需要    修改对应的端口。<br>3）关于NEO_GRB+NEO_KHZ800，这包括了与开发板所连的具体类型。具体的介绍可以参考文本最    后    Adafruit_NeoPixel库文件的解析，以及根据指导完成更多的案例。</p>
 <p>引用部分完整修改参考如下</p>
 <p><img src="/assets/zh-cn/deviceDev/ArduinoUNO/example/1486547121948.png" alt="Alt text"></p>
 <p>接着修改“2.4.3 void setup(){}部分”</p>
-<p>######2.4.3 void setup(){}部分<br>将以下代码添加到“void setup（）{}”函数里面用于初始化</p>
+<h3 id="2-4-3-void-setup-部分"><a href="#2-4-3-void-setup-部分" class="headerlink" title="2.4.3 void setup(){}部分"></a>2.4.3 void setup(){}部分</h3><p>将以下代码添加到“void setup（）{}”函数里面用于初始化</p>
 <p><code>strip.begin();</code><br><code>strip.show();</code>// Initialize all pixels to ‘off’<br><img src="/assets/zh-cn/deviceDev/ArduinoUNO/example/1486547136712.png" alt="Alt text"></p>
 <p>最后修改“2.4.4 void loop(){}部分”</p>
 <h3 id="2-4-4-void-loop-部分"><a href="#2-4-4-void-loop-部分" class="headerlink" title="2.4.4 void loop(){}部分"></a>2.4.4 void loop(){}部分</h3><p>这一部份我们刚才已经熟悉过啦，那直接修改吧。首先，把所有自动生成工具，所定义的变量全部找出来，如下：<br><img src="/assets/zh-cn/deviceDev/ArduinoUNO/example/1486547148889.png" alt="Alt text"></p>
