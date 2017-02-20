@@ -517,6 +517,27 @@
 <li>Owner 选择一个要取消的分享邀请，调用<a href="http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/delete_app_sharing_id" target="_blank" rel="external">取消分享邀请</a>接口，取消分享</li>
 <li>Guest 用户对设备的绑定被取消，同时，Owner 和 Guest 都将收到一条设备分享消息</li>
 </ul>
+<h2 id="设备联动"><a href="#设备联动" class="headerlink" title="设备联动"></a>设备联动</h2><p>创建设备联动的规则，实现一个或多个设备的状态变化时，自动控制一个或多个设备的状态改变。</p>
+<p>联动的设备需要绑定同一个用户，不同产品下的设备需要先进行产品关联。</p>
+<p>联动规则创建后，可以随时进行修改，或者删除。</p>
+<h3 id="创建联动规则"><a href="#创建联动规则" class="headerlink" title="创建联动规则"></a>创建联动规则</h3><ul>
+<li>用户与参加联动的设备进行绑定</li>
+<li>用户调用<a href="http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/get_app_rules_params" target="_blank" rel="external">获取可用数据点信息</a>接口查询可用的数据点标识名</li>
+<li>用户选择一个设备作为触发规则的设备，调用<a href="http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/post_app_rules" target="_blank" rel="external">创建设备联动规则</a>接口创建联动规则</li>
+<li>当满足联动规则设定的条件时，规则中设定的触发动作便会被触发</li>
+</ul>
+<h3 id="查询联动规则"><a href="#查询联动规则" class="headerlink" title="查询联动规则"></a>查询联动规则</h3><ul>
+<li>用户调用<a href="http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/get_app_rules" target="_blank" rel="external">查询设备联动规则</a>查询自己创建的联动规则</li>
+</ul>
+<h3 id="修改联动规则"><a href="#修改联动规则" class="headerlink" title="修改联动规则"></a>修改联动规则</h3><ul>
+<li>用户调用<a href="http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/get_app_rules" target="_blank" rel="external">查询设备联动规则</a>查询自己创建的联动规则</li>
+<li>用户选择一个需要修改的规则id，调用<a href="http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/put_app_rules_rule_id" target="_blank" rel="external">修改设备联动规则</a>接口修改联动规则</li>
+<li>当满足修改后的联动规则设定的条件时，规则中设定的触发动作便会被触发</li>
+</ul>
+<h3 id="删除联动规则"><a href="#删除联动规则" class="headerlink" title="删除联动规则"></a>删除联动规则</h3><ul>
+<li>用户调用<a href="http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/get_app_rules" target="_blank" rel="external">查询设备联动规则</a>查询自己创建的联动规则</li>
+<li>用户选择一个需要删除的规则id，调用<a href="http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/delete_app_rules_rule_id" target="_blank" rel="external">删除设备联动规则</a>接口删除联动规则</li>
+</ul>
 <h2 id="设备远程监控"><a href="#设备远程监控" class="headerlink" title="设备远程监控"></a>设备远程监控</h2><h3 id="获取设备详情"><a href="#获取设备详情" class="headerlink" title="获取设备详情"></a>获取设备详情</h3><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/设备远程监控/get_app_devices_did" target="_blank" rel="external">调试接口</a></p>
 <h3 id="获取设备最近一次上报的数据"><a href="#获取设备最近一次上报的数据" class="headerlink" title="获取设备最近一次上报的数据"></a>获取设备最近一次上报的数据</h3><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/设备远程监控/get_app_devdata_did_latest" target="_blank" rel="external">调试接口</a></p>
 <p>该接口获取的是 24 小时内，设备最近一次上报的数据点值。</p>
