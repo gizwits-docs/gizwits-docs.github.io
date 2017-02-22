@@ -403,7 +403,6 @@
 <p><img src="/assets/zh-cn/UserManual/Echo/1484625881833.png" alt="Alt text"></p>
 <p>配置Client Nname和AlexaSkill上面的Redirect URL。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484637706571.png" alt="Alt text"></p>
-<p>详情配置请参考接入教程（<a href="http://docs.gizwits.com/zh-cn/UserManual/echo.html" target="_blank" rel="external">点击此处跳转</a>）</p>
 <h1 id="3、AlexaSkill配置"><a href="#3、AlexaSkill配置" class="headerlink" title="3、AlexaSkill配置"></a>3、AlexaSkill配置</h1><p>本节要点：配置AlexaSkill的语音控制逻辑，配置AlexaSkill和Lambda关联，配置AlexaSkill和机智云账号互联。</p>
 <h2 id="3-1-创建Skill以及配置interaction-model页面"><a href="#3-1-创建Skill以及配置interaction-model页面" class="headerlink" title="3.1 创建Skill以及配置interaction model页面"></a>3.1 创建Skill以及配置interaction model页面</h2><p>1）打开亚马逊开发者中心（<a href="https://developer.amazon.com/home.html" target="_blank" rel="external">点击此处跳转</a>），登陆之前所注册好的亚马逊开发者账号。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626095613.png" alt="Alt text"><br><img src="/assets/zh-cn/UserManual/Echo/1484626099372.png" alt="Alt text"></p>
@@ -446,9 +445,10 @@
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626328760.png" alt="Alt text"></p>
 <p><strong>Account Linking的配置方法：</strong></p>
 <p>将下图页面的 Redirect URLs 设置到机智云 “产品互联” 的 Redirect URL 中，”Client Name” 可以填写 “Alexa”，填入机智云“产品互联”的Client ID和Client Secret作为请求身份验证的公共字符串。</p>
-<p><img src="/assets/zh-cn/UserManual/Echo/1484706885988.png" alt="Alt text"></p>
+<p>Authorization URL(<a href="https://oauth.gizwits.com/oauth/authorize)获取权限" target="_blank" rel="external">https://oauth.gizwits.com/oauth/authorize)获取权限</a><br>Access Token URL(<a href="https://oauth.gizwits.com/oauth/token)获取access_token" target="_blank" rel="external">https://oauth.gizwits.com/oauth/token)获取access_token</a></p>
+<p><img src="/assets/zh-cn/UserManual/Echo/图片1.png" alt="Alt text"><br><img src="/assets/zh-cn/UserManual/Echo/图片2.png" alt="Alt text"></p>
 <p>有需要的用户可以填入隐私权限链接保护你的Alexa Skill，本教程选择不填，点击Next下一步。</p>
-<p><img src="/assets/zh-cn/UserManual/Echo/1484626335480.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/UserManual/Echo/1484706885988.png" alt="Alt text"></p>
 <h1 id="4、Lambda配置"><a href="#4、Lambda配置" class="headerlink" title="4、Lambda配置"></a>4、Lambda配置</h1><p>本节要点：配置Lambda绑定AWS IOT ，配置Lambda绑定Alexa，编写Lambda逻辑代码解析AlexaSkill接收和返回的语音指令，编写OpenApi代码接入机智云云端并控制设备</p>
 <p>进入AWS Lambda的首页 <a href="https://aws.amazon.com/cn/lambda/" target="_blank" rel="external">https://aws.amazon.com/cn/lambda/</a><br>点选右边 “创建免费用户”</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626447125.png" alt="Alt text"></p>
