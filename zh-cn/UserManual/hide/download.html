@@ -383,7 +383,56 @@
         <div class="title">热门下载</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <p>下面写正文</p>
+      <p>热门下载：</p>
+<h1 id="GAgent固件"><a href="#GAgent固件" class="headerlink" title="GAgent固件"></a>GAgent固件</h1><p>GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以提供上层应用（手机APP等控制端、云端）到产品设备的双向数据通讯，此外，还提供对设备的配置入网、发现绑定、程序升级等功能。<br>产品开发者使用GAgent后，只需要关心产品的业务逻辑开发，不用关心数据的通讯功能开发，大大降低了开发的难度。<br>该固件遵循以下协议《机智云平台标准接入协议之MCU与WiFi模组通讯》、《机智云平台标准接入协议之设备与云端通讯》、《机智云平台标准接入协议之App与设备通讯》。<br> 1 <a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent" target="_blank" rel="external">乐鑫ESP8266 联网固件</a><br> 2 <a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent" target="_blank" rel="external">汉枫LPT120/LPB120 联网固件</a><br> 3 <a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent" target="_blank" rel="external">汉枫LPB100 联网固件</a><br> 4 <a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent" target="_blank" rel="external">高通QCA4004 联网固件</a><br> 5 <a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent" target="_blank" rel="external">RealTek 8711AM  联网固件</a><br> 6 <a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent" target="_blank" rel="external">联盛德 TLN13SP01 联网固件</a><br> 7 <a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent" target="_blank" rel="external">MXCHIP 联网固件</a></p>
+<h1 id="开源框架"><a href="#开源框架" class="headerlink" title="开源框架"></a>开源框架</h1><p>开源框架是机智云出品的，包含Wi-Fi类智能硬件app通用功能的一套源码。只要是使用机智云协议的产品，开发者开发配套的app时都可以直接使用该框架的源码实现快速开发，从而也满足app的开发周期短、成本低的要求。<br>开源框架包括智能硬件app通用的5个模块，分别是：初始化模块、用户模块、配置模块、设备列表模块、控制模块。<br> 1 <a href="http://dev.gizwits.com/zh-cn/developer/resource/open_framework" target="_blank" rel="external">开源框架 for iOS](http://dev.gizwits.com/zh-cn/developer/resource/open_framework)<br> 2 开源框架 for Android</a></p>
+<h1 id="设备接入SDK"><a href="#设备接入SDK" class="headerlink" title="设备接入SDK"></a>设备接入SDK</h1><p>设备接入SDK封装了手机（包括PAD等设备）与机智云智能硬件的通讯过程，以及手机与云端的通讯过程。<br>这些过程包括配置入网、发现、连接、控制、心跳、状态上报、报警通知等。<br>使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略。另外还提供了APICloud版本的wifi设备接入SDK，可以使用JS语言更加快速完成APP开发。<br> 1 <a href="http://dev.gizwits.com/zh-cn/developer/resource/sdk?service=m2m" target="_blank" rel="external">iOS SDK</a><br> 2 <a href="http://dev.gizwits.com/zh-cn/developer/resource/sdk?service=m2m" target="_blank" rel="external">Android SDK</a><br> 3 <a href="http://dev.gizwits.com/zh-cn/developer/resource/sdk?service=m2m" target="_blank" rel="external">APICloud SDK](http://dev.gizwits.com/zh-cn/developer/resource/sdk?service=m2m)<br> 4 BT/BLE设备接入SDK for iOS</a><br> 5 <a href="http://dev.gizwits.com/zh-cn/developer/resource/sdk?service=m2m" target="_blank" rel="external">BT/BLE设备接入SDK for Android</a></p>
+<h1 id="统计分析SDK"><a href="#统计分析SDK" class="headerlink" title="统计分析SDK"></a>统计分析SDK</h1><p>统计分析SDK用于将数据进行云存储、云获取和云计算，蓝牙产品是主要使用对象。产生的数据会通过手机传输到云存储器中，如需数据调用，则通过接口获取即可。<br>目前提供的基本数据运算有：数据求和、数据平均、数据最大值及最小值查找等。</p>
+<ul>
+<li><a href="http://dev.gizwits.com/zh-cn/developer/resource/sdk?service=analytic" target="_blank" rel="external">BT/BLE统计分析SDK for iOS</a></li>
+<li><a href="http://dev.gizwits.com/zh-cn/developer/resource/sdk?service=analytic" target="_blank" rel="external">BT/BLE统计分析SDK for Android</a></li>
+</ul>
+<h1 id="开源APP"><a href="#开源APP" class="headerlink" title="开源APP"></a>开源APP</h1><h2 id="智能灯"><a href="#智能灯" class="headerlink" title="智能灯"></a>智能灯</h2><p>这是一款可以帮助开发者快速使用GizWifiSDK，连接到机智云的开源物联示例APP。该APP针对的是智能家电中的灯泡类产品，此款产品已满足用户基本功能需求，其中包括：1.用户登录；2.配置入网；3. 搜索设备列表；4.绑定或解绑设备；5.灯开关；6.色彩和色温切换；7.色彩和色温连续调节；8.亮度调节；9.修改设备别名；10.倒计时开关；11.云端定时预约，不限次数等等。</p>
+<ul>
+<li><a href="http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=app_source_code" target="_blank" rel="external">源码链接 for iOS</a></li>
+<li><a href="http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=app_source_code" target="_blank" rel="external">源码链接 for Android</a></li>
+</ul>
+<h2 id="开源硬件"><a href="#开源硬件" class="headerlink" title="开源硬件"></a>开源硬件</h2><ul>
+<li><a href="http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=sample_source_code" target="_blank" rel="external">植物宝</a></li>
+<li><a href="http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=sample_source_code" target="_blank" rel="external">智能宠物屋</a></li>
+<li><a href="http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=sample_source_code" target="_blank" rel="external">智能桌上足球</a></li>
+</ul>
+<h1 id="开发者开源项目"><a href="#开发者开源项目" class="headerlink" title="开发者开源项目"></a>开发者开源项目</h1><p>##智能家居</p>
+<ul>
+<li><a href="http://club.gizwits.com/thread-2794-1-1.html" target="_blank" rel="external">智能婴儿摇篮</a></li>
+<li><a href="http://club.gizwits.com/thread-2830-1-1.html" target="_blank" rel="external">Arduino 智能灯</a></li>
+<li><a href="http://club.gizwits.com/thread-3308-1-1.html" target="_blank" rel="external">智能家居云控制套件</a></li>
+<li><a href="http://club.gizwits.com/thread-3029-1-1.html" target="_blank" rel="external">智能插座</a></li>
+<li><a href="http://club.gizwits.com/thread-2997-1-1.html" target="_blank" rel="external">智慧宿舍</a></li>
+<li><a href="http://club.gizwits.com/thread-3381-1-1.html" target="_blank" rel="external">智能鞋柜</a></li>
+<li>[PM25监测智能插座方案]（<a href="http://club.gizwits.com/thread-4348-1-1.html）" target="_blank" rel="external">http://club.gizwits.com/thread-4348-1-1.html）</a></li>
+</ul>
+<h2 id="医疗健康"><a href="#医疗健康" class="headerlink" title="医疗健康"></a>医疗健康</h2><ul>
+<li><a href="http://club.gizwits.com/thread-2685-1-1.html" target="_blank" rel="external">智能药盒</a></li>
+<li><a href="http://club.gizwits.com/thread-2865-1-1.html" target="_blank" rel="external">智能健康计</a></li>
+</ul>
+<h2 id="工业、商用"><a href="#工业、商用" class="headerlink" title="工业、商用"></a>工业、商用</h2><ul>
+<li><a href="http://club.gizwits.com/thread-3332-1-1.html" target="_blank" rel="external">商场智能温控器</a></li>
+<li><a href="http://club.gizwits.com/thread-3242-1-1.html" target="_blank" rel="external">无线工业粉尘监测仪</a></li>
+</ul>
+<h2 id="智能玩具"><a href="#智能玩具" class="headerlink" title="智能玩具"></a>智能玩具</h2><ul>
+<li><a href="http://club.gizwits.com/thread-3016-1-1.html" target="_blank" rel="external">仓鼠管家和OpenHamtaro开源项目</a></li>
+<li><a href="http://club.gizwits.com/thread-3367-1-1.html" target="_blank" rel="external">智能桌上足球</a></li>
+</ul>
+<h1 id="机智云Wi-Fi-移动通信产品调试APP"><a href="#机智云Wi-Fi-移动通信产品调试APP" class="headerlink" title="机智云Wi-Fi/移动通信产品调试APP"></a>机智云Wi-Fi/移动通信产品调试APP</h1><p>机智云App是全球首款IoT设备通用调试工具，根据开发者自定义的产品功能，自动生成可响应的控制页面。开发者在机智云平台开发智能硬件时，可以很方便地使用该App对硬件设备进行调试和验证。此APP有完整的用户注册、登陆和注销流程，并且可以完成机智云智能硬件的配置入网、设备搜索、设备绑定、设备登录、设备控制、远程控制、状态更新、本地远程切换等基本设备操作。</p>
+<ul>
+<li><a href="http://dev.gizwits.com/zh-cn/developer/resource/demo_app?protoc=WIFI" target="_blank" rel="external">机智云Wi-Fi/移动通信产品调试App for iOS</a></li>
+<li><a href="http://dev.gizwits.com/zh-cn/developer/resource/demo_app?protoc=WIFI" target="_blank" rel="external">机智云Wi-Fi/移动通信产品调试App for Android</a></li>
+</ul>
+<h1 id="产测工具"><a href="#产测工具" class="headerlink" title="产测工具"></a>产测工具</h1><p>使用产测工具，可以快速检验工厂生产线上的成品或者半成品。产测工具是一个简单的手机APP，可以在用户产品中定义产测的测试项，再对工厂的设备进行相关定义项的自动测试。设备针对测试项测试通过后，表示产品合格。<br>产测工具可以将设备并行处理，平均5～10秒可以完成一个设备的测试，从而大大提高测试的速度。</p>
+<ul>
+<li><a href="http://dev.gizwits.com/zh-cn/developer/resource/dataprofile_app" target="_blank" rel="external">Wi-Fi产测应用</a></li>
+</ul>
 
     </div>
     
