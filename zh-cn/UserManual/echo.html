@@ -533,12 +533,11 @@
 <p>这边的文字也就是Lambda回传的outputSpeech内容, 所以我们可以在Lambda的回传语音讯息里有更多弹性<br>在 “Service Simulator”, 我们可以填入使用者发出的语音讯息, 并且让Alexa假装听到这个讯息做对应的处理, 这里我们填入 “Turn on the light”, 然后点选 “Ask Control Gokit”<br>这段语音讯息会被Alexa处理, 送至Lambda function, Lambda function处理完之后再回传结果, 若正常返回结果，我们就可以对自己的Echo音响说话来语音控制Gokit了。<br>我们可以点选右下角的 “Listen” 可以聆听这段结果。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626954374.png" alt="Alt text"></p>
 <h2 id="6-3-AlexaSkill发布"><a href="#6-3-AlexaSkill发布" class="headerlink" title="6.3  AlexaSkill发布"></a>6.3  AlexaSkill发布</h2><p>测试成功后，可以将自己编写的AlexaSkill发布提供给其他的Alexa用户使用，在Publishing information里可以填入自己Skill的一些基础信息，并点击Submit for Certification提交。</p>
-<p><strong>注：当Skill发布成功后，Skill的信息和参数等不可二次修改，请谨慎发布。</strong></p>
-<p><strong>注意事项：</strong><br>亚马逊对启用了 “Account Linking” 的 Skill 有如下要求：”Authorization URL” 的域名必须属于您，并且该链接必须是 https 链接。</p>
-<p><strong>这就需要您完成如下几点：</strong><br>    1）拥有一个自己品牌的域名<br>   2）添加一个二级域名，并且 CNAME 到 “oauth.gizwits.com”<br>    3）购买一个 https 证书，并将证书文件（包括证书文件和 key 文件）发送给我们，我们将您的证书配置在我们的服务器<br>    4）在 “Account Linking” 页面，将 “Authorization URL” 和 “Access Token URI” 中的域名修改为您的二级域名</p>
+<p><strong>注：当Skill发布成功后，Skill的一些信息和参数等不可二次修改，请谨慎发布。</strong></p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626992489.png" alt="Alt text"><br><img src="/assets/zh-cn/UserManual/Echo/1484626997903.png" alt="Alt text"></p>
 <p>若发布成功后，其他用户就可以在Alexa应用端的Skills-All Skills里搜索到</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484627004661.png" alt="Alt text"></p>
+<p>如在发布过程中遇到相关问题，可以联系机智云，我们将帮您发布你的skill</p>
 <h1 id="7、相关支持"><a href="#7、相关支持" class="headerlink" title="7、相关支持"></a>7、相关支持</h1><p>7.1 如果您是开发者</p>
 <p>GoKit是面向智能硬件开发者限量免费开放，注册我们的论坛或关注我们的官方微信均可发起申请即可。</p>
 <p>开发者论坛： <a href="http://club.gizwits.com/forum.php" target="_blank" rel="external">http://club.gizwits.com/forum.php</a></p>
