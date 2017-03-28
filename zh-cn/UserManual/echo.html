@@ -483,11 +483,6 @@
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626643685.png" alt="Alt text"></p>
 <p>会出现恭喜你已完成设定的讯息, 请注意, 右上角的字串“ARN - arn:aws:lambda:us-east-1:xxxxxxxxxx”, 就是这个Lambda function的end point, 这个会用来填入Alexa的设定页面</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626655908.png" alt="Alt text"></p>
-<p>这里我们暂停AWS Lambda的设定, 并且设定好AWS IoT相关的设定</p>
-<p>请参考之前的文章将Ameba与AWS IoT Shadow的设定完成:<br><a href="http://www.amebaiot.com/ameba-arduino-amazon-aws-iot/" target="_blank" rel="external">http://www.amebaiot.com/ameba-arduino-amazon-aws-iot/</a><br>example的部份, 我们使用 “File” -&gt; “Examples” -&gt; “AmebaMQTTClient” -&gt; “amazon_awsiot_with_ack”<br>因为Alexa的限制需要将region改成us-east-1, 这部份需要特别注意:</p>
-<p><img src="/assets/zh-cn/UserManual/Echo/1484626676552.png" alt="Alt text"></p>
-<p>完成之后, 我们点选ameba的thing, 让右边的资讯栏出现, 其中REST API endpoint里, 这个字串“xxxxxxxxx.iot.us-east-1.amazonaws.com”是AWS IoT提供给其它服务使用的endpoint, 这个endpoint我们会拿来填入Lambda所需的资讯里</p>
-<p><img src="/assets/zh-cn/UserManual/Echo/1484626686257.png" alt="Alt text"></p>
 <h2 id="4-2-Lambda中所对应skill的代码"><a href="#4-2-Lambda中所对应skill的代码" class="headerlink" title="4.2  Lambda中所对应skill的代码"></a>4.2  Lambda中所对应skill的代码</h2><p>回到Lambda的设定页面, 点选 “code”页签</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626694113.png" alt="Alt text"></p>
 <h3 id="4-2-1-event部分代码解析（Echo音箱逻辑处理）"><a href="#4-2-1-event部分代码解析（Echo音箱逻辑处理）" class="headerlink" title="4.2.1  event部分代码解析（Echo音箱逻辑处理）"></a>4.2.1  event部分代码解析（Echo音箱逻辑处理）</h3><p>在onIntent函式里, 会比对intent的名字, 这边我们会比对我们设定的intent名字 “ControlLight”, 并且返回 light_control的处理函数</p>
