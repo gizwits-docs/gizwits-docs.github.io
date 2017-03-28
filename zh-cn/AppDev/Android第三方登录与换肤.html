@@ -383,13 +383,13 @@
         <div class="title">Android App集成第三方登录与换肤指南</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文主要是介绍了如何通过开源框架快速支持QQ和微信登陆，并介绍了如何实现app快速换肤</p>
-<h1 id="QQ登陆接入"><a href="#QQ登陆接入" class="headerlink" title="QQ登陆接入"></a>QQ登陆接入</h1><p>APP要支持QQ登陆，需要先到腾讯开放平台创建一个应用，获取应用的APPID，并设置到开源框架中即可。</p>
+      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文主要是介绍了如何通过开源框架快速支持QQ和微信登录，并介绍了如何实现app快速换肤</p>
+<h1 id="QQ登录接入"><a href="#QQ登录接入" class="headerlink" title="QQ登录接入"></a>QQ登录接入</h1><p>APP要支持QQ登录，需要先到腾讯开放平台创建一个应用，获取应用的APPID，并设置到开源框架中即可。</p>
 <h2 id="1-创建腾讯开发者账号"><a href="#1-创建腾讯开发者账号" class="headerlink" title="1.创建腾讯开发者账号"></a>1.创建腾讯开发者账号</h2><p>   点击<a href="http://open.qq.com进入腾讯开放平台" target="_blank" rel="external">http://open.qq.com进入腾讯开放平台</a></p>
 <p> <img src="/assets/zh-cn/AppDev/AppFrame/android/change/1478074977472.png" alt="name"></p>
-<p>   点击《登陆》，填写账号密码登陆</p>
+<p>   点击《登录》，填写账号密码登录</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/change/1478075035627.png" alt="name"></p>
-<p>登陆成功后跳转到注册界面，开发者可根据自己的需要选择个人或者公司类型。</p>
+<p>登录成功后跳转到注册界面，开发者可根据自己的需要选择个人或者公司类型。</p>
 <p> <img src="/assets/zh-cn/AppDev/AppFrame/android/change/1478075057029.png" alt="name"></p>
 <p>下图是选择个人注册的跳转界面，需填写完整的资料，并完成邮箱验证，即成功创建腾讯开发者账号。</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/change/1478075072214.png" alt="name"></p>
@@ -397,18 +397,18 @@
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/change/1478075093037.png" alt="name"></p>
 <p>   选择《移动应用 安卓》，点击《创建应用》</p>
 <p> <img src="/assets/zh-cn/AppDev/AppFrame/android/change/1478075148169.png" alt="name"></p>
-<p>完善应用信息，并提交审核。审核通过后，即可使用红框部分的APP ID 和 APP KEY来创建QQ登陆入口。</p>
+<p>完善应用信息，并提交审核。审核通过后，即可使用红框部分的APP ID 和 APP KEY来创建QQ登录入口。</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/change/1478075167275.png" alt="name"></p>
-<h2 id="3-绑定QQ应用到机智云"><a href="#3-绑定QQ应用到机智云" class="headerlink" title="3.绑定QQ应用到机智云"></a>3.绑定QQ应用到机智云</h2><p>登陆机智云开发者中心：<a href="http://dev.gizwits.com/zh-cn/developer/product/，选中需要绑定第三方登陆的产品" target="_blank" rel="external">http://dev.gizwits.com/zh-cn/developer/product/，选中需要绑定第三方登陆的产品</a></p>
+<h2 id="3-绑定QQ应用到机智云"><a href="#3-绑定QQ应用到机智云" class="headerlink" title="3.绑定QQ应用到机智云"></a>3.绑定QQ应用到机智云</h2><p>登录机智云开发者中心：<a href="http://dev.gizwits.com/zh-cn/developer/product/，选中需要绑定第三方登录的产品" target="_blank" rel="external">http://dev.gizwits.com/zh-cn/developer/product/，选中需要绑定第三方登录的产品</a></p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/change/1478075216544.png" alt="name"></p>
-<p>进入产品设置界面，选择需要关联QQ登陆的应用，如下图：</p>
+<p>进入产品设置界面，选择需要关联QQ登录的应用，如下图：</p>
 <p> <img src="/assets/zh-cn/AppDev/AppFrame/android/change/1478075231726.png" alt="name"></p>
-<p>点击《关联第三方登陆》进入关联界面，填写从腾讯开放平台申请到的APPID，并点击确定，即完成了机智云应用于QQ应用的绑定。</p>
+<p>点击《关联第三方登录》进入关联界面，填写从腾讯开放平台申请到的APPID，并点击确定，即完成了机智云应用于QQ应用的绑定。</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/change/1478075247601.png" alt="name"></p>
 <h2 id="4-修改UIConfig-json文件"><a href="#4-修改UIConfig-json文件" class="headerlink" title="4.修改UIConfig.json文件"></a>4.修改UIConfig.json文件</h2><p>将在腾讯开发平台申请到的APPID填写到开源框架的配置文件UIConfig.json中</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/change/1478075283475.png" alt="name"></p>
 <p>正确填写“tencent_app_id”后部署运行，即可使用QQ登录了。</p>
-<h1 id="微信登陆接入"><a href="#微信登陆接入" class="headerlink" title="微信登陆接入"></a>微信登陆接入</h1><p>APP要实现微信登陆，必须前往微信开放平台申请一个应用，获取应用的APPID和APPSecret并且配置到开源框架中即可。</p>
+<h1 id="微信登录接入"><a href="#微信登录接入" class="headerlink" title="微信登录接入"></a>微信登录接入</h1><p>APP要实现微信登录，必须前往微信开放平台申请一个应用，获取应用的APPID和APPSecret并且配置到开源框架中即可。</p>
 <h2 id="1-创建微信开发者账号"><a href="#1-创建微信开发者账号" class="headerlink" title="1.创建微信开发者账号"></a>1.创建微信开发者账号</h2><p>点击<a href="https://open.weixin.qq.com进入微信开放平台" target="_blank" rel="external">https://open.weixin.qq.com进入微信开放平台</a> </p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/change/1478075315152.png" alt="name"></p>
 <p>点击《注册》进入以下界面，编辑基本信息</p>
