@@ -407,13 +407,13 @@
 <h3 id="5-4-下载SDK"><a href="#5-4-下载SDK" class="headerlink" title="5.4.    下载SDK"></a>5.4.    下载SDK</h3><p> <img src="/assets/zh-cn/AppDev/iOSSDK/image2.png" alt="Alt text"></p>
 <h3 id="5-5-导入SDK"><a href="#5-5-导入SDK" class="headerlink" title="5.5.    导入SDK"></a>5.5.    导入SDK</h3><p>首先双击解开压缩包 GizWifiSDK-iOS-xxx.zip。按照App开发的需要，可以选择使用动态库或者静态库。以下分别为动态库和静态库的加载方式：</p>
 <p>5.5.1.    导入动态SDK</p>
-<p>动态库加载请注意按照下图进行设置，否则应用运行后会立即崩溃：<br><img src="/assets/zh-cn/AppDev/iOSSDK/image13.JPG" alt="Alt text"></p>
+<p>动态库在解压后的DynamicLibrary目录下。动态库加载请注意按照下图进行设置，否则应用运行后会立即崩溃：<br><img src="/assets/zh-cn/AppDev/iOSSDK/image13.JPG" alt="Alt text"></p>
 <p>5.5.2.    导入静态SDK</p>
-<p>第一步，将解压后的文件添加到指定的工程中：<br><img src="/assets/zh-cn/AppDev/iOSSDK/image3.png" alt="Alt text"></p>
-<p>第三步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。<br><img src="/assets/zh-cn/AppDev/iOSSDK/image4.png" alt="Alt text"></p>
+<p>第一步，解压后，将StaticLibrary目录下的文件添加到指定的工程中：<br><img src="/assets/zh-cn/AppDev/iOSSDK/image3.png" alt="Alt text"></p>
+<p>第二步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。<br><img src="/assets/zh-cn/AppDev/iOSSDK/image4.png" alt="Alt text"></p>
 <p><img src="/assets/zh-cn/AppDev/iOSSDK/image5.png" alt="Alt text"></p>
-<p>第四步，如果使用的是Xcode7.2以下版本，需要添加AudioToolbox、SystemConfiguration、CoreTelephony库。<br><img src="/assets/zh-cn/AppDev/iOSSDK/image6.png" alt="Alt text"></p>
-<p>第五步，一定要记得在Info.plist设置支持ATS特性，否则iOS9下某些功能无法正常使用<br><img src="/assets/zh-cn/AppDev/iOSSDK/image7.png" alt="Alt text"></p>
+<p>第三步，如果使用的是Xcode7.2以下版本，需要添加AudioToolbox、SystemConfiguration、CoreTelephony库。<br><img src="/assets/zh-cn/AppDev/iOSSDK/image6.png" alt="Alt text"></p>
+<p>第四步，一定要记得在Info.plist设置支持ATS特性，否则iOS9下某些功能无法正常使用<br><img src="/assets/zh-cn/AppDev/iOSSDK/image7.png" alt="Alt text"></p>
 <p>最后，确保工程里面有这些链接库，SDK就添加完成了:<br> <img src="/assets/zh-cn/AppDev/iOSSDK/image8.png" alt="Alt text"></p>
 <h3 id="5-6-通过cocoapods使用GizWifiSDK（可选）"><a href="#5-6-通过cocoapods使用GizWifiSDK（可选）" class="headerlink" title="5.6.    通过cocoapods使用GizWifiSDK（可选）"></a>5.6.    通过cocoapods使用GizWifiSDK（可选）</h3><p>第一步：确认本机安装的cocoapods能正常工作</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod --help</div></pre></td></tr></table></figure>
