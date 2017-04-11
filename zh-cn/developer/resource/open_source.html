@@ -657,7 +657,7 @@
 </ol>
 </li>
 </ul>
-<h1 id="GoKit-MCU示例工程"><a href="#GoKit-MCU示例工程" class="headerlink" title="GoKit MCU示例工程"></a>GoKit MCU示例工程</h1><p>微信宠物屋<br>微信宠物屋是用GoKit开发板开发出的一款智能硬件产品，这款产品可以采集温湿度，开关风机，检测红外遮挡，开关彩色LED灯；并可在手机APP或者微信服务号上实时监测与调节宠物屋环境、掌握宠物活动动向。通过微信宠物屋这个产品，可以帮助开发者了解机智云的智能硬件体系，更快的完成智能硬件产品的开发。</p>
+<h1 id="GoKit-MCU示例工程"><a href="#GoKit-MCU示例工程" class="headerlink" title="GoKit MCU示例工程"></a>GoKit MCU示例工程</h1><p>微信宠物屋是用GoKit开发板开发出的一款智能硬件产品，这款产品可以采集温湿度，开关风机，检测红外遮挡，开关彩色LED灯；并可在手机APP或者微信服务号上实时监测与调节宠物屋环境、掌握宠物活动动向。通过微信宠物屋这个产品，可以帮助开发者了解机智云的智能硬件体系，更快的完成智能硬件产品的开发。</p>
 <p>以下的资源为针对不同Gokit开发底板的宠物屋的MCU代码实现。</p>
 <h2 id="GoKit3-S-ESP8266"><a href="#GoKit3-S-ESP8266" class="headerlink" title="GoKit3(S) ESP8266"></a>GoKit3(S) ESP8266</h2><p>微信宠物屋 for GoKit3(S) ESP8266 V03000003</p>
 <ul>
@@ -799,8 +799,7 @@
 <li>发布时间：2015.4.22 17:38</li>
 <li>暂无更新信息</li>
 </ul>
-<h1 id="客户端开发资源"><a href="#客户端开发资源" class="headerlink" title="客户端开发资源"></a>客户端开发资源</h1><h2 id="开源框架"><a href="#开源框架" class="headerlink" title="开源框架"></a>开源框架</h2><p>开源框架</p>
-<p>开源框架是机智云出品的，包含Wi-Fi类智能硬件app通用功能的一套源码。只要是使用机智云协议的产品，开发者开发配套的app时都可以直接使用该框架的源码实现快速开发，从而也满足app的开发周期短、成本低的要求。</p>
+<h1 id="客户端开发资源"><a href="#客户端开发资源" class="headerlink" title="客户端开发资源"></a>客户端开发资源</h1><h2 id="开源框架"><a href="#开源框架" class="headerlink" title="开源框架"></a>开源框架</h2><p>开源框架是机智云出品的，包含Wi-Fi类智能硬件app通用功能的一套源码。只要是使用机智云协议的产品，开发者开发配套的app时都可以直接使用该框架的源码实现快速开发，从而也满足app的开发周期短、成本低的要求。</p>
 <p>开源框架包括智能硬件app通用的5个模块，分别是：初始化模块、用户模块、配置模块、设备列表模块、控制模块。</p>
 <h4 id="开源框架-for-iOS-V2-5-0"><a href="#开源框架-for-iOS-V2-5-0" class="headerlink" title="开源框架 for iOS V2.5.0"></a>开源框架 for iOS V2.5.0</h4><ul>
 <li><a href="https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS" target="_blank" rel="external">框架下载&gt;&gt;</a></li>
@@ -821,10 +820,10 @@
 <li>为避免工程加载出错，工程绝对路径不要太长； </li>
 <li>JDK请使用1.7以上版本； </li>
 <li>此AS工程需要使用最新AS环境编译，如果AS版本过低将会遇到编译错误。开发者请对照以下说明，修改为符合自己编译环境的版本： <ul>
-<li>1\在gradle-wrapper.properties中，找到以下内容，修改为自己的AS环境支持的版本：distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip </li>
-<li>2\在build.gradle（Moudle : app）中，找到以下内容，修改为自己AS环境支持的版本号： compileSdkVersion 25 buildToolsVersion ‘25.0.2’ targetSdkVersion 25 compile ‘com.android.support:appcompat-v7:25.1.0’ </li>
-<li>3\在build.gradle（project）中，找到以下内容，修改为自己的AS环境支持的版本号： classpath ‘com.android.tools.build:gradle:2.5.0’ 此外，请初学的小伙伴注意AS编译器给出的错误信息提示，依据错误信息调整自己的AS开发环境。</li>
-<li>4\举个例子：如果在build.gradle（Moudle : app）中指定了buildToolsVersion是25.0.2，但小伙伴的AS环境中没有这个版本，编译器会提示如下信息： Error: Failed to find Build Tools revision 25.0.2, Install Build Tools 25.0.2 and sync project 意思是小伙伴需要安装25.0.2版本的Build Tools。 特在此友情提示初学开发者，希望可以帮助您更轻松的解决编译环境问题。</li>
+<li>1、在gradle-wrapper.properties中，找到以下内容，修改为自己的AS环境支持的版本：distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip </li>
+<li>2、在build.gradle（Moudle : app）中，找到以下内容，修改为自己AS环境支持的版本号： compileSdkVersion 25 buildToolsVersion ‘25.0.2’ targetSdkVersion 25 compile ‘com.android.support:appcompat-v7:25.1.0’ </li>
+<li>3、在build.gradle（project）中，找到以下内容，修改为自己的AS环境支持的版本号： classpath ‘com.android.tools.build:gradle:2.5.0’ 此外，请初学的小伙伴注意AS编译器给出的错误信息提示，依据错误信息调整自己的AS开发环境。</li>
+<li>4、举个例子：如果在build.gradle（Moudle : app）中指定了buildToolsVersion是25.0.2，但小伙伴的AS环境中没有这个版本，编译器会提示如下信息： Error: Failed to find Build Tools revision 25.0.2, Install Build Tools 25.0.2 and sync project 意思是小伙伴需要安装25.0.2版本的Build Tools。 特在此友情提示初学开发者，希望可以帮助您更轻松的解决编译环境问题。</li>
 </ul>
 </li>
 </ul>
@@ -852,7 +851,7 @@
 </ul>
 <p><strong>旧版本下载</strong></p>
 <ul>
-<li><p>版本号: 2.06.06  /   更新时间: 2017.1.25 15:35  /  <a href="http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.06.06.zip" target="_blank" rel="external">SDK下载</a></p>
+<li><p>版本号: 2.06.06  /   更新时间: 2017.1.25 15:35  /  <a href="http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.06.06.zip" target="_blank" rel="external">SDK下载&gt;&gt;</a></p>
 <ul>
 <li>更新信息<ul>
 <li>版本号：2.06.06  </li>
@@ -869,7 +868,7 @@
 </li>
 </ul>
 </li>
-<li><p>版本号: 2.05.05.21618  /  更新时间: 2016.12.16 19:51  /  <a href="http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.05.05.21618.zip" target="_blank" rel="external">SDK下载</a></p>
+<li><p>版本号: 2.05.05.21618  /  更新时间: 2016.12.16 19:51  /  <a href="http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.05.05.21618.zip" target="_blank" rel="external">SDK下载&gt;&gt;</a></p>
 <ul>
 <li>更新信息<ul>
 <li>版本号：2.05.05.21618  </li>
@@ -883,7 +882,7 @@
 </li>
 </ul>
 </li>
-<li><p>版本号: 2.05.05.2916  /   更新时间: 2016.11.30 10:59   /  <a href="http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.05.05.2916.zip" target="_blank" rel="external">SDK下载</a></p>
+<li><p>版本号: 2.05.05.2916  /   更新时间: 2016.11.30 10:59   /  <a href="http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.05.05.2916.zip" target="_blank" rel="external">SDK下载&gt;&gt;</a></p>
 <ul>
 <li>更新信息<ul>
 <li>版本号：2.05.05.2916  </li>
@@ -902,7 +901,7 @@
 </li>
 </ul>
 </li>
-<li><p>版本号: 2.05.05  /   更新时间: 2016.11.10 10:50   /  <a href="http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.05.05.zip" target="_blank" rel="external">SDK下载</a></p>
+<li><p>版本号: 2.05.05  /   更新时间: 2016.11.10 10:50   /  <a href="http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.05.05.zip" target="_blank" rel="external">SDK下载&gt;&gt;</a></p>
 <ul>
 <li>更新信息<ul>
 <li>版本号：2.05.05  </li>
@@ -925,7 +924,7 @@
 </li>
 </ul>
 </li>
-<li><p>版本号: 2.04.04  /  更新时间: 2016.10.26 14:12   /  <a href="http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.04.04.zip" target="_blank" rel="external">SDK下载</a></p>
+<li><p>版本号: 2.04.04  /  更新时间: 2016.10.26 14:12   /  <a href="http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.04.04.zip" target="_blank" rel="external">SDK下载&gt;&gt;</a></p>
 <ul>
 <li>更新信息<ul>
 <li>版本号：2.04.04  </li>
