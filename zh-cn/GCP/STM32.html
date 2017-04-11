@@ -394,16 +394,17 @@
 <p>应用范围:<br>智能家居 \ 智能家电 \ 智慧公寓 \ 智慧安防 \ 物联网M2M \ 单品类解决方案（净水器、空气净化器、照明、卫浴、厨电等） \ 商用租赁 \ 智能充电桩 \ 工业控制 \ 农业大棚 \ 资产管理 。</p>
 <h2 id="Gokit-开源套件"><a href="#Gokit-开源套件" class="headerlink" title="Gokit 开源套件"></a>Gokit 开源套件</h2><p>GizWits Open Kit（缩写：GoKit），是机智云推出的一款开源WiFi智能硬件开发板，内置了温/湿度传感器、红外控测器、电机马达、全彩LED灯等常用传感器和元器件，配有一个WiFi时间模块和一颗MCU，并预留了扩展接口和开关键，可根据开发者的实际需求搭配使用。另外增加了OLED扩展接口，你可以为GoKit配上一块显示屏。<br>WiFi模块方面，目前已经有二十几家国内厂商为机智云做了兼容。而且，现在所有开发者都可以拿到开发库自行开发适配。</p>
 <p>借助机智云的 Gokit套件，开发者可快速开发新产品。</p>
-<h3 id="GoKit背后是一个完整的产品体系"><a href="#GoKit背后是一个完整的产品体系" class="headerlink" title="GoKit背后是一个完整的产品体系"></a>GoKit背后是一个完整的产品体系</h3><p><img src="https://static.oschina.net/uploads/img/201704/07181948_VgIS.png" alt="输入图片说明" title="在这里输入图片标题"><br>这个体系包含设备、APP、M2M服务、业务服务、以及云对接等各种环节,详细说来,还有很多很多,如果您有兴趣,可以参考我们的论坛 <a href="http://club.gizwits.com/" target="_blank" rel="external">club.gizwits.com</a>。</p>
-<h3 id="GoKit在系统中的位置"><a href="#GoKit在系统中的位置" class="headerlink" title="GoKit在系统中的位置"></a>GoKit在系统中的位置</h3><p>GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能硬件。</p>
+<h4 id="GoKit背后是一个完整的产品体系"><a href="#GoKit背后是一个完整的产品体系" class="headerlink" title="GoKit背后是一个完整的产品体系"></a>GoKit背后是一个完整的产品体系</h4><p><img src="https://static.oschina.net/uploads/img/201704/07181948_VgIS.png" alt="输入图片说明" title="在这里输入图片标题"><br>这个体系包含设备、APP、M2M服务、业务服务、以及云对接等各种环节,详细说来,还有很多很多,如果您有兴趣,可以参考我们的论坛 <a href="http://club.gizwits.com/" target="_blank" rel="external">club.gizwits.com</a>。</p>
+<h4 id="GoKit在系统中的位置"><a href="#GoKit在系统中的位置" class="headerlink" title="GoKit在系统中的位置"></a>GoKit在系统中的位置</h4><p>GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能硬件。</p>
 <p><img src="https://static.oschina.net/uploads/img/201704/07182036_VDft.png" alt="输入图片说明" title="在这里输入图片标题"></p>
-<h3 id="现有的Gokit版本："><a href="#现有的Gokit版本：" class="headerlink" title="现有的Gokit版本："></a>现有的Gokit版本：</h3><ul>
+<h2 id="历代Gokit"><a href="#历代Gokit" class="headerlink" title="历代Gokit"></a>历代Gokit</h2><p>现有的Gokit版本：</p>
+<ul>
 <li>Gokit 2 标准板（STM32）:基于STM32平台，可更快的实现量产时的代码移植和复用。支持数据通过Wifi上传至到云平台</li>
 <li>Gokit 2 创客板（arduino）:基于Arduino平台，简单、易入门，能够通过串口接收到MCU或传感器的数据。支持数据通过Wifi上传至到云平台</li>
 <li>Gokit 3S（SOC）:支持MCU、SoC、BLE、语音、模式切换等特性，支持代码自动生成工具，节省空间和成本。<br>支持GPRS数据透传。</li>
 <li>Gokit 3V（语音板）:支持语音通信。</li>
 </ul>
-<h3 id="GoKit-能给您带来什么？"><a href="#GoKit-能给您带来什么？" class="headerlink" title="GoKit 能给您带来什么？"></a>GoKit 能给您带来什么？</h3><ol>
+<h4 id="GoKit-能给您带来什么？"><a href="#GoKit-能给您带来什么？" class="headerlink" title="GoKit 能给您带来什么？"></a>GoKit 能给您带来什么？</h4><ol>
 <li><p>如果您是一个产品经理<br>如果您是一个产品经理,您肯定希望快速的完成两件事情,一是做出产品的原型,实现产品初步功能;二是将产品量产,并找到销售渠道;<br>第一件事情可以这样玩 GoKit:<br>在我们的网页上,参照 GoKit 的模版,用图形化的方式定义您的产品功能;<br>下载系统为您的产品生成的 DemoAPP,即可完成对您的产品原型;<br>第二件事情可以这样玩 GoKit:<br>使用系统按照您的产品定义生成的协议和源码,参考 GoKit 的工程,完成快速产品开发(1-2 天);<br>使用 GizWits 提供的开源 APP(含 UI、UE 设计),参考您的产品定义,快速完成 APP 开发(1-2 天);<br>通过 GizWits 的合作伙伴,找到合适的生产商,进行产品测试和生产;<br>利用 GizWits 提供的 N 种宣传和渠道机会,将您的产品一夜成名;</p>
 </li>
 <li><p>如果您是一个APP开发者<br>如果您是一个APP开发者,您可能不太熟悉硬件的处理和云端处理，您可以使用GoKit提供的丰富资源,进行APP的开发：<br>您可以根据 GoKit 的电机控制功能,开发出电动窗帘的 APP；<br>您也可以根据温湿度传感器,开发出家庭的温湿度检测的 APP；<br>您也可以自定义 LED 的颜色和亮度,来开发出更多功能的 APP；<br>当然,如果您愿意,也可以和GizWits的合作伙伴一起,针对您想实现的产品定制GoKit,合作完成一款优秀的产品。 </p>
