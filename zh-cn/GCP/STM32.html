@@ -392,12 +392,12 @@
       <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>STM32是ST(意法半导体)推出的基于ARM® Cortex® M 处理器内核的 32位闪存微控制器产品，融高性能、实时性、数字信号处理、低功耗、低电压于一身，同时保持高集成度和开发简易的特点。拥有业内最强大的产品阵容，基于工业标准的处理器，大量的软硬件开发工具，让STM32单片机成为各类中小项目和完整平台解决方案的理想选择。</p>
 <p>作为国内第一个智能硬件自助开发(PaaS)及云服务(SaaS)平台和意法半导体战略合作伙伴,机智云率先开发出了<strong>基于STM32的物联网开源套件 Gokit 和 STM32代码自动生成工具</strong>，帮助物联网智能硬件开发者快速打造产品原型。</p>
 <p>应用范围:<br>智能家居 \ 智能家电 \ 智慧公寓 \ 智慧安防 \ 物联网M2M \ 单品类解决方案（净水器、空气净化器、照明、卫浴、厨电等） \ 商用租赁 \ 智能充电桩 \ 工业控制 \ 农业大棚 \ 资产管理 。</p>
-<h2 id="Gokit-开源套件"><a href="#Gokit-开源套件" class="headerlink" title="Gokit 开源套件"></a>Gokit 开源套件</h2><p>GizWits Open Kit（缩写：GoKit），是机智云推出的一款开源WiFi智能硬件开发板，内置了温/湿度传感器、红外控测器、电机马达、全彩LED灯等常用传感器和元器件，配有一个WiFi时间模块和一颗MCU，并预留了扩展接口和开关键，可根据开发者的实际需求搭配使用。另外增加了OLED扩展接口，你可以为GoKit配上一块显示屏。<br>WiFi模块方面，目前已经有二十几家国内厂商为机智云做了兼容。而且，现在所有开发者都可以拿到开发库自行开发适配。</p>
+<h2 id="基于STM32的开源套件Gokit"><a href="#基于STM32的开源套件Gokit" class="headerlink" title="基于STM32的开源套件Gokit"></a>基于STM32的开源套件Gokit</h2><p>GizWits Open Kit（缩写：GoKit），是机智云推出的一款开源WiFi智能硬件开发板，内置了温/湿度传感器、红外控测器、电机马达、全彩LED灯等常用传感器和元器件，配有一个WiFi时间模块和一颗MCU，并预留了扩展接口和开关键，可根据开发者的实际需求搭配使用。另外增加了OLED扩展接口，你可以为GoKit配上一块显示屏。<br>WiFi模块方面，目前已经有二十几家国内厂商为机智云做了兼容。而且，现在所有开发者都可以拿到开发库自行开发适配。</p>
 <p>借助机智云的 Gokit套件，开发者可快速开发新产品。</p>
 <h4 id="GoKit背后是一个完整的产品体系"><a href="#GoKit背后是一个完整的产品体系" class="headerlink" title="GoKit背后是一个完整的产品体系"></a>GoKit背后是一个完整的产品体系</h4><p><img src="https://static.oschina.net/uploads/img/201704/07181948_VgIS.png" alt="输入图片说明" title="在这里输入图片标题"><br>这个体系包含设备、APP、M2M服务、业务服务、以及云对接等各种环节,详细说来,还有很多很多,如果您有兴趣,可以参考我们的论坛 <a href="http://club.gizwits.com/" target="_blank" rel="external">club.gizwits.com</a>。</p>
 <h4 id="GoKit在系统中的位置"><a href="#GoKit在系统中的位置" class="headerlink" title="GoKit在系统中的位置"></a>GoKit在系统中的位置</h4><p>GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能硬件。</p>
 <p><img src="https://static.oschina.net/uploads/img/201704/07182036_VDft.png" alt="输入图片说明" title="在这里输入图片标题"></p>
-<h2 id="历代Gokit"><a href="#历代Gokit" class="headerlink" title="历代Gokit"></a>历代Gokit</h2><p>现有的Gokit版本：</p>
+<h4 id="历代Gokit"><a href="#历代Gokit" class="headerlink" title="历代Gokit"></a>历代Gokit</h4><p>现有的Gokit版本：</p>
 <ul>
 <li>Gokit 2 标准板（STM32）:基于STM32平台，可更快的实现量产时的代码移植和复用。支持数据通过Wifi上传至到云平台</li>
 <li>Gokit 2 创客板（arduino）:基于Arduino平台，简单、易入门，能够通过串口接收到MCU或传感器的数据。支持数据通过Wifi上传至到云平台</li>
@@ -415,7 +415,8 @@
 </li>
 </ol>
 <h1 id="联网说明"><a href="#联网说明" class="headerlink" title="联网说明"></a>联网说明</h1><p>智能设备之所以智能，一个重要的原因在于其具备联网能力，常见的智能设备多是由单片机/微处理器/微控制器等构成的嵌入式系统，主流的联网方式是嵌入GPRS、WIFI、蓝牙等无线通信模块。</p>
-<p>机智云提供了一款兼容国内主流Wi-Fi模块、GSM模块的模组系统——GAgent。可以提供上层应用（手机APP等控制端、云端）到产品设备的双向数据通讯，此外，还提供对设备的配置入网、发现绑定、程序升级等功能。<br>产品开发者使用GAgent后，只需要关心产品的业务逻辑开发，不用关心数据的通讯功能开发，大大降低了开发的难度。<br>目前机智云提供由机智云移植的WiFi模组对应固件有：汉枫LPB100、乐鑫8266、汉枫LPT120、高通4004 、RealTek 8711AM 、庆科3162、广和通G510等。购买机智云支持的无线通信模组后，烧录GAgent固件，模组对MCU就是串口透传，开发者无需任何二次开发，只需按照官方给出的参考设计搭建最小系统，连接到MCU的串口即可。</p>
+<p>机智云提供了一款兼容国内主流Wi-Fi模块、GSM模块的模组系统——GAgent。可以提供上层应用（手机APP等控制端、云端）到产品设备的双向数据通讯，此外，还提供对设备的配置入网、发现绑定、程序升级等功能。<br><strong>产品开发者使用GAgent后，只需要关心产品的业务逻辑开发</strong>，不用关心数据的通讯功能开发，大大降低了开发的难度。</p>
+<p>目前机智云提供由机智云移植的WiFi模组对应固件有：汉枫LPB100、乐鑫8266、汉枫LPT120、高通4004 、RealTek 8711AM 、庆科3162、广和通G510等。购买机智云支持的无线通信模组后，烧录GAgent固件，模组对MCU就是串口透传，开发者无需任何二次开发，只需按照官方给出的参考设计搭建最小系统，连接到MCU的串口即可。</p>
 <p>部分模组固件烧写教程：</p>
 <ul>
 <li><a href="http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html" target="_blank" rel="external">汉枫 LPB100串口烧写说明</a></li>
