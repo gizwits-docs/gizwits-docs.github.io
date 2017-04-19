@@ -476,10 +476,11 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) &#123;          </div><div class="line">	ActivityCompat.requestPermissions(this, new String[] &#123; Manifest.permission.ACCESS_FINE_LOCATION &#125;, ACCESS_FINE_LOCATION_REQUEST_CODE);      </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li><p>请求权限后，系统会弹出请求权限的对话框：<br><img src="/assets/zh-cn/AppDev/AndroidSDK/1478089519041.png" alt="Alt text"></p>
-</li>
-<li><p>用户选择允许后，会回调onRequestPermissionsResult方法, 该方法可类似如下处理：</p>
-</li>
+<li>请求权限后，系统会弹出请求权限的对话框：</li>
+</ul>
+<p><img src="/assets/zh-cn/AppDev/AndroidSDK/1478089519041.jpg" alt="Alt text"></p>
+<ul>
+<li>用户选择允许后，会回调onRequestPermissionsResult方法, 该方法可类似如下处理：</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">onActivityResult  </div><div class="line">Override  </div><div class="line">public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) &#123;      </div><div class="line">	super.onRequestPermissionsResult(requestCode, permissions, grantResults);      </div><div class="line">	doNext(requestCode,grantResults);  </div><div class="line">&#125;</div><div class="line"></div><div class="line">// 接着根据requestCode和grantResults(授权结果)做相应的后续处理：</div><div class="line">private void doNext(int requestCode, int[] grantResults) &#123;</div><div class="line">	if (requestCode == ACCESS_FINE_LOCATION_REQUEST_CODE) &#123;</div><div class="line">		if (grantResults[0] == PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">              		// Permission Granted          </div><div class="line">		&#125; else &#123;</div><div class="line">              		// Permission Denied</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Fragment中运行时权限的特殊处理</p>
