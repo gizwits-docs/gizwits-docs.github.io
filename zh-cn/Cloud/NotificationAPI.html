@@ -386,8 +386,12 @@
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <p>v2.1.5</p>
-<h1 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h1><p><a href="https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty" target="_blank" rel="external">https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty</a></p>
-<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>为企业提供 SSL 通讯 API，用于实时推送设备与产品相关的事件。</p>
+<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>企业客户可通过SNoti提供的安全数据传输通道，实时的接收设备的数据，用于设备信息归类整理，设备状态统计，设备监控等；也可以通过远程控制功能，实时发送业务指令控制在线设备。</p>
+<h1 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h1><p>1.代码仓库：<a href="https://github.com/gizwits/noti-java-demo/tree/v2.0.0" target="_blank" rel="external">https://github.com/gizwits/noti-java-demo/tree/v2.0.0</a></p>
+<p>2.登陆参数配置：请在src/main/resources/application.properties文件中，修改相应的参数，如：productKey, authId, authSecret</p>
+<h1 id="SNoti申请流程"><a href="#SNoti申请流程" class="headerlink" title="SNoti申请流程"></a>SNoti申请流程</h1><p>1.企业开发者登陆开发者中心，选择添加服务，如下图<br><img src="/assets/zh-cn/cloud/添加SNoti服务.png" alt="添加"></p>
+<p>2.点击上图箭头指向的SNoti服务，进入下一步，申请开通服务<br><img src="/assets/zh-cn/cloud/开通SNoti服务.png" alt="添加"></p>
+<p>3.成功添加SNoti服务后，在服务页面点击“新建授权”创建，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；<br><img src="/assets/zh-cn/cloud/添加api.png" alt="添加"></p>
 <h1 id="关键术语"><a href="#关键术语" class="headerlink" title="关键术语"></a>关键术语</h1><p>1.auth_id &amp; auth_secret: 产品授权ID和密钥，一个产品可创建多个auth_id，一个auth_id对应唯一的一个产品；SNoti客户端登陆时，会验证auth_id和auth_secret的正确性；</p>
 <p>2.subkey：消息分发机制，以ProductKey + subkey作为唯一主键，不同主键之间，消息互不影响（即同一个ProductKey使用不同的subkey，可产生消息副本）；subkey(subscription key)为自定义字符串，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线（即[a-zA-Z0-9]）；</p>
 <p>3.产品的7种消息类型（event_type）分别为：</p>
@@ -400,39 +404,24 @@
 <li>device.attr_alert：设备报警事件</li>
 <li>datapoints.changed：数据点编辑事件</li>
 </ul>
-<h1 id="企业auth-id申请流程"><a href="#企业auth-id申请流程" class="headerlink" title="企业auth_id申请流程"></a>企业auth_id申请流程</h1><p>1.企业开发者登陆开发者中心，选择添加服务，如下图<br><img src="/assets/zh-cn/cloud/添加SNoti服务.png" alt="添加"></p>
-<p>2.点击上图箭头指向的SNoti服务，进入下一步，申请开通服务<br><img src="/assets/zh-cn/cloud/开通SNoti服务.png" alt="添加"></p>
-<p>3.成功添加SNoti服务后，在服务页面点击“新建授权”创建，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；<br><img src="/assets/zh-cn/cloud/添加api.png" alt="添加"></p>
-<h1 id="运营商auth-id申请流程（企业用户可略过此章节）"><a href="#运营商auth-id申请流程（企业用户可略过此章节）" class="headerlink" title="运营商auth_id申请流程（企业用户可略过此章节）"></a>运营商auth_id申请流程（企业用户可略过此章节）</h1><p>1.通过使用 Http API 获取 auth_id 和 auth_secret</p>
-<ul>
-<li>申请 auth_id api:<a href="http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/post_v1_products_product_key_operator" target="_blank" rel="external">http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/post_v1_products_product_key_operator</a></li>
-</ul>
-<p>2.获取后，还需要通过 Http API 对已拥有的设备做关联</p>
-<ul>
-<li>关联设备 api:<a href="http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/put_v1_products_product_key_operator" target="_blank" rel="external">http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/put_v1_products_product_key_operator</a></li>
-</ul>
-<p>3.关联成功后，SNoti客户端需要重新登陆，才能够获取新关联的设备消息和控制设备</p>
-<p>4.如需取消设备关联，可通过下面Http API，同样的，取消关联成功，需要重新登陆SNoti客户端</p>
-<ul>
-<li>取消关联设备 api:<a href="http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/delete_v1_products_product_key_operator" target="_blank" rel="external">http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/delete_v1_products_product_key_operator</a></li>
-</ul>
 <h1 id="过程描述"><a href="#过程描述" class="headerlink" title="过程描述"></a>过程描述</h1><p>事件通过 SSL 接口推送。通讯过程如下：</p>
 <p>1.客户端以 Client 的身份与本接口（Gizwits Platform）建立 SSL 连接。客户端无需提供证书，只需要信任服务器证书即可；</p>
 <p>2.客户端发送登录指令完成验证；</p>
-<p>3.客户端实时接受事件消息，并向服务器 ack 事件消息；</p>
-<p>4.当客户端在一定时间范围内没有向服务器发送任何消息，需要发 ping 心跳请求，服务器回复 pong 心跳响应。</p>
-<h1 id="消息推送"><a href="#消息推送" class="headerlink" title="消息推送"></a>消息推送</h1><p>服务端推送消息到客户端。推送工作方式：</p>
-<p>1.相同 product_key + subkey 的多个客户端登录连接，消息轮流推送到各客户端；</p>
-<p>2.相同 product_key，不同 subkey 的客户端都能接收该 product 下设备的指定类型的消息副本，客户端之间不会相互干扰；</p>
-<p>3.当 某客户端未返回的 ack 消息数达到该客户端登录设置的 prefetch_count 值后，消息将不在继续推送给该客户端，但会发送到其他客户端；</p>
-<p>4.未返回 ack 的消息，服务端会一直等待不会重发，只有在该客户端断开的情况下，未 ack 的消息会重新发送到连接的客户端；</p>
-<p>5.当所有客户端都断开连接后，后续设备的消息会保存在服务端，等待客户端下次接收。</p>
-<h1 id="服务地址"><a href="#服务地址" class="headerlink" title="服务地址"></a>服务地址</h1><ul>
+<p>3.服务端推送消息到客户端。推送工作方式：</p>
+<ul>
+<li>相同 product_key + subkey 的多个客户端登录连接，消息轮流推送到各客户端；</li>
+<li>相同 product_key，不同 subkey 的客户端都能接收该 product 下设备的指定类型的消息副本，客户端之间不会相互干扰；</li>
+<li>当某客户端未返回的 ack 消息数达到该客户端登录设置的 prefetch_count 值后，消息将不在继续推送给该客户端，但会发送到其他客户端；</li>
+<li>未返回 ack 的消息，服务端会一直等待不会重发，只有在该客户端断开的情况下，未 ack 的消息会重新发送到连接的客户端；</li>
+<li>当所有客户端都断开连接后，后续设备的消息会保存在服务端，等待客户端下次接收。</li>
+</ul>
+<p>4.客户端实时接受事件消息，并向服务器 ack 事件消息；</p>
+<p>5.当客户端在一定时间范围内没有向服务器发送任何消息，需要发 ping 心跳请求，服务器回复 pong 心跳响应。</p>
+<h1 id="接口协议"><a href="#接口协议" class="headerlink" title="接口协议"></a>接口协议</h1><ul>
 <li>域名：snoti.gizwits.com</li>
 <li>SSL 服务端口：2017</li>
-<li>HTTP API 服务端口：2018</li>
 </ul>
-<h1 id="SSL-的接口协议"><a href="#SSL-的接口协议" class="headerlink" title="SSL 的接口协议"></a>SSL 的接口协议</h1><p>消息内容为二进制数据，UTF-8 编码。请注意每个消息后都必须添加”\n”作为消息结尾符。</p>
+<p>消息内容为二进制数据，UTF-8 编码。请注意每个消息后都必须添加”\n”作为消息结尾符。</p>
 <h2 id="1-连接与登陆"><a href="#1-连接与登陆" class="headerlink" title="1.  连接与登陆"></a>1.  连接与登陆</h2><p>客户端和 Gizwits Platform 建立 SSL 连接后，客户端发送以下字符串内容作身份验证(登陆Gizwits Platform)：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">"cmd": "login_req",</div><div class="line">"prefetch_count":&lt;uint&gt; (0 &lt; prefetch_count &lt;= 32767, 表示推送没有 ACK 的消息</div><div class="line">的最大个数，可不填，默认值是 50)</div><div class="line">"data": [&#123;</div><div class="line">“product_key": &lt;key string&gt;,</div><div class="line">"auth_id": &lt;auth_id string&gt;,</div><div class="line">"auth_secret": &lt;auth_secret string&gt;,</div><div class="line">"subkey": &lt;subkey string&gt;,</div><div class="line">"events":[&lt;event string&gt;,...] (可一个或多个 event)</div><div class="line">&#125;,...] (可一个或多个 product)</div><div class="line">&#125;\n</div></pre></td></tr></table></figure>
 <p>请求字段说明：</p>
@@ -566,7 +555,6 @@
 <h2 id="5-中控项目是否可以使用SNoti？"><a href="#5-中控项目是否可以使用SNoti？" class="headerlink" title="5. 中控项目是否可以使用SNoti？"></a>5. 中控项目是否可以使用SNoti？</h2><p>a. SNoti不区分产品类型是否为中控产品，只需要对产品申请auth_id即可；</p>
 <p>b. 需要接收中控网关的数据，就使用中控网关产品对应的auth_id；</p>
 <p>c. 需要接收子设备的数据，就使用子设备产品对应的auth_id。</p>
-<h1 id="旧版文档记录"><a href="#旧版文档记录" class="headerlink" title="旧版文档记录"></a>旧版文档记录</h1><p><a href="/assets/pdf/SNoti API V2.1.2.pdf">SNoti API V2.1.2.1</a></p>
 
     </div>
     
