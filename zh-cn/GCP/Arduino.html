@@ -391,9 +391,9 @@
 <p>作为国内第一个智能硬件自助开发(PaaS)及云服务(SaaS)平台和Arduino战略合作伙伴,机智云率先开发出了基<strong>于Arduino的物联网开源套件 Gokit 和 Arduino代码自动生成工具</strong>，帮助创客快速实现智能化产品开发。</p>
 <h2 id="Gokit-Arduino开源套件"><a href="#Gokit-Arduino开源套件" class="headerlink" title="Gokit_Arduino开源套件"></a>Gokit_Arduino开源套件</h2><p>GizWits Open Kit（缩写：GoKit），是机智云推出的一款开源WiFi智能硬件开发板，内置了温/湿度传感器、红外控测器、电机马达、全彩LED灯等常用传感器和元器件，配有一个WiFi时间模块和一颗MCU，并预留了扩展接口和开关键，可根据开发者的实际需求搭配使用。另外增加了OLED扩展接口，你可以为GoKit配上一块显示屏。<br>WiFi模块方面，目前已经有二十几家国内厂商为机智云做了兼容。而且，现在所有开发者都可以拿到开发库自行开发适配。</p>
 <p>借助机智云的 Gokit套件，开发者可快速开发新产品。</p>
-<h4 id="GoKit背后是一个完整的产品体系"><a href="#GoKit背后是一个完整的产品体系" class="headerlink" title="GoKit背后是一个完整的产品体系"></a>GoKit背后是一个完整的产品体系</h4><p><img src="https://static.oschina.net/uploads/img/201704/07181948_VgIS.png" alt="输入图片说明" title="在这里输入图片标题"><br>这个体系包含设备、APP、M2M服务、业务服务、以及云对接等各种环节,详细说来,还有很多很多,如果您有兴趣,可以参考我们的论坛 <a href="http://club.gizwits.com/" target="_blank" rel="external">club.gizwits.com</a>。</p>
+<h4 id="GoKit背后是一个完整的产品体系"><a href="#GoKit背后是一个完整的产品体系" class="headerlink" title="GoKit背后是一个完整的产品体系"></a>GoKit背后是一个完整的产品体系</h4><p><img src="http://club.gizwits.com/EDMimages/github/STM32-1.png" alt="GoKit背后是一个完整的产品体系" title="GoKit背后是一个完整的产品体系"><br>这个体系包含设备、APP、M2M服务、业务服务、以及云对接等各种环节,详细说来,还有很多很多,如果您有兴趣,可以参考我们的论坛 <a href="http://club.gizwits.com/" target="_blank" rel="external">club.gizwits.com</a>。</p>
 <h4 id="GoKit在系统中的位置"><a href="#GoKit在系统中的位置" class="headerlink" title="GoKit在系统中的位置"></a>GoKit在系统中的位置</h4><p>GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能硬件。</p>
-<p><img src="https://static.oschina.net/uploads/img/201704/07182036_VDft.png" alt="输入图片说明" title="在这里输入图片标题"></p>
+<p><img src="http://club.gizwits.com/EDMimages/github/STM32-2.png" alt="GoKit在系统中的位置" title="GoKit在系统中的位置"></p>
 <h4 id="历代Gokit"><a href="#历代Gokit" class="headerlink" title="历代Gokit"></a>历代Gokit</h4><p>现有的Gokit版本</p>
 <ul>
 <li>Gokit 2 标准板（STM32）:基于STM32平台，可更快的实现量产时的代码移植和复用。支持数据通过Wifi上传至到云平台</li>
@@ -413,7 +413,7 @@
 </ol>
 <h1 id="联网说明"><a href="#联网说明" class="headerlink" title="联网说明"></a>联网说明</h1><p>为方便硬件快速联网，机智云自研串口通信协议GAgent，兼容市面上70多种GRPS、WiFi模块， Arduino爱好者只需购买支持接入机智云的模组，烧写相应的GAgent固件，即可让Arduino设备具备联网能力。</p>
 <p>什么是GAent? GAent是机智云开发用于快速搭建物联网框架的固件，主要的作用是数据转发，是设备数据、机智云、应用端（APP）的数据交互桥梁。目前机智云提供由机智云移植的WiFi模组对应固件有：汉枫LPB100、乐鑫8266、汉枫LPT120、高通4004 、RealTek 8711AM 、庆科3162等。以上设备只需刷入GAgent，即可快速接入机智云。可应用在智能家居 \ 智能家电 \ 智慧公寓 \ 智慧安防 \ 物联网M2M \ 单品类解决方案（净水器、空气净化器、照明、卫浴、厨电等） \ 商用租赁 \ 智能充电桩 \ 工业控制 \ 农业大棚 \ 资产管理等领域 。</p>
-<p><img src="https://static.oschina.net/uploads/img/201704/11153242_gA0a.png" alt="输入图片说明" title="在这里输入图片标题"></p>
+<p><img src="http://club.gizwits.com/EDMimages/github/STM32-3.png" alt="输入图片说明" title="在这里输入图片标题"></p>
 <p>GAgent模组固件烧写教程：</p>
 <ul>
 <li><a href="http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html" target="_blank" rel="external">汉枫 LPB100串口烧写说明</a></li>
@@ -499,7 +499,7 @@
 <li>智能电网</li>
 <li>医疗/保健/卫生</li>
 </ul>
-<p>机智云客户：<br><img src="http://club.gizwits.com/EDMimages/marstest/gizwitslogoqiang.png" alt="机智云客户Logo墙" title="在这里输入图片标题"></p>
+<p>机智云客户：<br><img src="http://club.gizwits.com/EDMimages/github/g510-2.png" alt="机智云客户Logo墙" title="机智云客户Logo墙"></p>
 <h2 id="官方技术交流群"><a href="#官方技术交流群" class="headerlink" title="官方技术交流群"></a>官方技术交流群</h2><ul>
 <li>G1机智云物联网云服务 104975951</li>
 <li>G2机智云物联网云服务 491509598</li>
