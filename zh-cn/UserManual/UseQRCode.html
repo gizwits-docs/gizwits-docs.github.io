@@ -414,16 +414,7 @@
 <h2 id="7-APP调用接口绑定设备"><a href="#7-APP调用接口绑定设备" class="headerlink" title="7.APP调用接口绑定设备"></a>7.APP调用接口绑定设备</h2><p>下载解压后的二维码可以用机智云APP调试工具直接扫码后绑定设备。</p>
 <p><img src="/assets/zh-cn/UserManual/qrcode/1495607384670.png" alt="Alt text"></p>
 <p>在APP开发中需要调用机智云APP SDK中通过二维码绑定设备的接口绑定设备，扫描二维码需要通过第三方框架(比如zxing)来实现，可以参考机智云开源框架代码来实现，SKD中具体绑定设备接口调用如下，以安卓为例：</p>
-<p><code>//绑定接口
-    GizWifiSDK.sharedInstance().bindDeviceByQRCode(用户id,用户token,二维码内容);
-    //绑定回调接口
-    GizWifiSDKListener sdkListener=new GizWifiSDKListener() {
-        @Override
-        public void didBindDevice(GizWifiErrorCode result, String did) {
-            super.didBindDevice(result, did);
-        //绑定成功回调
-        }
-    };</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//绑定接口</span></div><div class="line">GizWifiSDK.sharedInstance().bindDeviceByQRCode(用户id,用户token,二维码内容);</div><div class="line"><span class="comment">//绑定回调接口</span></div><div class="line">GizWifiSDKListener sdkListener=<span class="keyword">new</span> GizWifiSDKListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">didBindDevice</span><span class="params">(GizWifiErrorCode result, String did)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.didBindDevice(result, did);</div><div class="line">	<span class="comment">//绑定成功回调</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
     </div>
     
