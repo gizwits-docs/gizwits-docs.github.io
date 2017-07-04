@@ -579,7 +579,7 @@
 <h2 id="5-中控项目是否可以使用SNoti？"><a href="#5-中控项目是否可以使用SNoti？" class="headerlink" title="5. 中控项目是否可以使用SNoti？"></a>5. 中控项目是否可以使用SNoti？</h2><p>a. SNoti不区分产品类型是否为中控产品，只需要对产品申请auth_id即可；</p>
 <p>b. 需要接收中控网关的数据，就使用中控网关产品对应的auth_id；</p>
 <p>c. 需要接收子设备的数据，就使用子设备产品对应的auth_id。</p>
-<h2 id="6-相同product-key下不同subkey的客户端都能接收到来自SNoti的消息推送吗？"><a href="#6-相同product-key下不同subkey的客户端都能接收到来自SNoti的消息推送吗？" class="headerlink" title="6. 相同product_key下不同subkey的客户端都能接收到来自SNoti的消息推送吗？"></a>6. 相同product_key下不同subkey的客户端都能接收到来自SNoti的消息推送吗？</h2><p>是的，不同的subkey就会创建不同的队列，彼此数据独立。所以当有数据需要向客户端推送的时候，所有不同subkey的客户端都可以接收到该推送消息，前提是该subkey的客户端在登陆时有设置该推送事件的监听。</p>
+<h2 id="6-相同product-key下不同subkey的客户端都能接收到来自SNoti的消息推送吗？"><a href="#6-相同product-key下不同subkey的客户端都能接收到来自SNoti的消息推送吗？" class="headerlink" title="6. 相同product_key下不同subkey的客户端都能接收到来自SNoti的消息推送吗？"></a>6. 相同product_key下不同subkey的客户端都能接收到来自SNoti的消息推送吗？</h2><p>是的，不同的subkey就会创建不同的队列，彼此数据独立。所以当有数据需要向客户端推送的时候，所有不同subkey的客户端都可以接收到该推送消息，前提是该subkey的客户端在登陆时有设置该推送事件的监听。 </p>
 
     </div>
     
