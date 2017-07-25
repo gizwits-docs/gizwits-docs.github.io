@@ -389,7 +389,7 @@
 <h2 id="添加固件"><a href="#添加固件" class="headerlink" title="添加固件"></a>添加固件</h2><p>如将设备的模组烧写的固件为：GAgent_00ESP826_04020019_16101715.bin，其中硬件版本号为：00ESP826，软件版本号为：04020019<br>步骤一、进入【服务】固件升级（OTA）模块，点击【创建新固件】</p>
 <p><img src="/assets/zh-cn/UserManual/OTA/1479262419091.png" alt="Alt text"></p>
 <p><img src="/assets/zh-cn/UserManual/OTA/1479262439396.png" alt="Alt text"></p>
-<p>步骤二、<a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent" target="_blank" rel="external">下载GAgent OTA固件</a>（MCU固件是开发者开发，若是MCU升级，可跳过该步骤。）</p>
+<p>步骤二、<a href="http://download.gizwits.com/zh-cn/p/92/94" target="_blank" rel="external">下载GAgent OTA固件</a>（MCU固件是开发者开发，若是MCU升级，可跳过该步骤。）</p>
 <p><img src="/assets/zh-cn/UserManual/OTA/1479451464257.png" alt="Alt text"></p>
 <blockquote>
 <p><strong>备注：</strong>所有<strong>汉枫WiFi模组</strong> OTA固件必须选择web版本，<strong>ESP 8266 WiFi模组</strong>OTA固件为“非combine文件”。如下图：</p>
@@ -399,9 +399,9 @@
 <p>步骤三、固件信息填写<br>硬件版本号+软件版本号前 4 个字节 +固件类型完全匹配为一系列固件，软件版本号后4个字节区分固件版本，OTA升级需在同系列中进行。</p>
 <blockquote>
 <ul>
-<li>版本名称：自定义，由英文、数字及下划线组成 </li>
+<li>版本名称：自定义，由英文、数字及下划线组成</li>
 <li>固件类型：支持WiFi/MCU两种方式，选择wifi</li>
-<li>推送方式：支持V4V4.1两种方式。推送方式的选择可以参考页面“温馨提示”。<br><strong>注意：由于目前大部分设备所使用的固件支持v4.1推送方式，本文只讲解v4.1推送方式流程。</strong> </li>
+<li>推送方式：支持V4V4.1两种方式。推送方式的选择可以参考页面“温馨提示”。<br><strong>注意：由于目前大部分设备所使用的固件支持v4.1推送方式，本文只讲解v4.1推送方式流程。</strong></li>
 <li>选择固件：上传需要升级的固件，如：GAgent_00MX3162_04020004.bin（wifi为bin文件，mcu为bin/hex文件）</li>
 <li>硬件版本号：目标升级WIFI硬件版本（即上传的），必须为8个字节</li>
 <li>软件版本号：目标升级WIFI软件版本（即上传的），必须为8个字节</li>
@@ -411,8 +411,9 @@
 <p><img src="/assets/zh-cn/UserManual/OTA/1479460824716.png" alt="Alt text"></p>
 <p>步骤四、 点击完成，此时固件为未验证状态</p>
 <h2 id="验证固件"><a href="#验证固件" class="headerlink" title="验证固件"></a>验证固件</h2><p>出于安全性考虑，未验证通过固件不可进行OTA推送。验证固件不区分OTA版本，流程一致。在大批量升级设备之前，需要选择单台设备进行升级，并自行验证升级后的设备稳定性。若无异常，固件变为已验证状态，表示可以进行批量OTA升级。<br>验证固件流程如下：</p>
-<p>步骤一、再次确认已上传的bin文件及信息填写无误（未验证固件还可编辑）<br>步骤二、准备测试设备并让其连上云端,保证验证的设备在线。<br>步骤三、进入未验证固件的固件详情页面，点击【验证固件】，出现如下界面：</p>
-<p><img src="/assets/zh-cn/UserManual/OTA/1479263377242.png" alt="Alt text"></p>
+<p>步骤一、再次确认已上传的bin文件及信息填写无误（未验证固件还可编辑）。</p>
+<p>步骤二、准备测试设备并让其连上云端,保证验证的设备在线。</p>
+<p>步骤三、进入未验证固件的固件详情页面，点击【验证固件】，出现如下界面：<br><img src="/assets/zh-cn/UserManual/OTA/1479263377242.png" alt="Alt text"></p>
 <p><img src="/assets/zh-cn/UserManual/OTA/1479263561546.png" alt="Alt text"></p>
 <p>步骤四、在输入框填写在线测试设备的MAC地址，找到目标设备后进入固件升级倒计时</p>
 <p><img src="/assets/zh-cn/UserManual/OTA/1479263999098.png" alt="Alt text"></p>
@@ -428,7 +429,7 @@
 </ul>
 <ol>
 <li>指定地址：填入目标推送设备区域，如“广东省-广州市” 或者 指定MAC地址：填入目标推送设备地址，<strong>如有多个换行隔开</strong></li>
-<li>指定旧固件版本：选择目标推送设备的旧固件版本 </li>
+<li>指定旧固件版本：选择目标推送设备的旧固件版本</li>
 <li>目标设备：取条件1&amp;2的交集，刷新后显示欲推送的目标设备数</li>
 <li>推送周期（UTC）：设置推送规则有效日期</li>
 <li>推送时段（UTC）：设置每日推送时段。</li>
