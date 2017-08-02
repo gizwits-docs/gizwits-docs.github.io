@@ -17,7 +17,7 @@
 
   <link rel="stylesheet" href="/css/pure.min.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/documentation.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=1783f50d571f9305bcb8130bc862083d">
   <link rel="stylesheet" href="/css/share.min.css">
 </head>
   <body>
@@ -36,8 +36,10 @@
       <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
     </div>
     
-
     <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
       <ul class="levelA-wrapper">
         
           
@@ -355,16 +357,49 @@
     </span>
   
     <span class="pure-u-3-24 lang-switch-wrapper">
+      
       <i class="fa fa-globe" aria-hidden="true"></i> 
       
       <a href="http://docsen.gizwits.com/hc/" class="lang-switch">English</a>
       
     </span>
+  </div>
 
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>  
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
   </div>
 </div>
     <div class="body">
-  
+
   <div class="container clearfix">
     <div class="navigation">
       <div class="navigation-inner">
@@ -452,7 +487,7 @@
 <script src="/js/clipboard.min.js"></script>
 <script src="/js/scrollspy.js"></script>
 <script src="/js/social-share.min.js"></script>
-<script src="/js/documentation.js"></script>
+<script src="/js/documentation.js?v=270053b59329d6bbc3cf83870f9c3f6c"></script>
 
 
 <script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
