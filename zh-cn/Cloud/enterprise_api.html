@@ -796,6 +796,217 @@
 </tbody>
 </table>
 <h3 id="应答报文-7"><a href="#应答报文-7" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Http Response Code ： 200	</div><div class="line">Body：</div><div class="line">&#123;</div><div class="line">  "did": "string",</div><div class="line">  "passcode": "string"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="9、设备上下线记录"><a href="#9、设备上下线记录" class="headerlink" title="9、设备上下线记录"></a>9、设备上下线记录</h2><h3 id="调试地址-8"><a href="#调试地址-8" class="headerlink" title="调试地址"></a><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_online" target="_blank" rel="external">调试地址</a></h3><h3 id="业务功能描述-8"><a href="#业务功能描述-8" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p><strong>设备上下线记录 </strong> </p>
+<ul>
+<li>按 ts 降序排序。  </li>
+<li>设备的心跳统计信息，在设备上下线记录的 Payload 中。  </li>
+<li>设备上线记录中，payload 记录了设备设备指定的心跳时间间隔（KeepAlive），单位为秒，此 KeepAlive 的值等于设备上传的心跳时间间隔再加上5秒。  </li>
+<li>设备下线记录中，payload 记录了设备的在线时长（duration），以及在线时发送的心跳次数（heartbeat/count），相邻两个心跳的最大间隔时间（heartbeat/max），最小间隔时间（heartbeat/min），平均间隔时间（heartbeat/avg）, 最后一次收到心跳时刻与下线时刻的间隔时间（heartbeat/last），单位为秒  </li>
+<li>心跳的间隔时间，为m2m收到第n次心跳的时间点（时间戳）与第n-1次心跳的时间点（时间戳）之差，其中n &gt;= 2；当n &lt; 2时，max，min，avg的值固定为0  </li>
+<li>max，min：计算客户端从接到第一次心跳开始，到最后一次接到心跳为止的时间段内，相邻两个心跳时间差的最大，最小值；  </li>
+<li>avg：客户端与云端建立链接开始，到最后一次接到心跳为止的时间段，除以心跳次数；    </li>
+<li>设备下线记录中，payload记录了设备的下线原因（reason），说明各种reason的意义：</li>
+<li>mqtt_disconnect：设备主动断开与mqtt的连接  </li>
+<li>no_heartbeat：m2m在KeepAlive时段内，没有收到设备心跳  </li>
+<li>tcp_closed：设备主动断开tcp连接  </li>
+<li>ssl_closed：设备主动断开ssl连接  </li>
+<li>offline_force：设备重复上线，原有的连接断开  </li>
+<li>offline_reset：设备注销，断开连接  </li>
+<li>offline_exception：异常断开连接  </li>
+<li>offline_sending_density_overflow：客户端发送信息的频率过大，断开链接  </li>
+<li>offline_sending_data_size_overflow：客户端发送信息的流量过大，断开链接<br><strong>ChangeLog</strong>  </li>
+<li>0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录  </li>
+<li>0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内  </li>
+<li>0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序  <h3 id="接口地址-8"><a href="#接口地址-8" class="headerlink" title="接口地址"></a>接口地址</h3>   <a href="http://enterpriseapi.gizwits.com/GET" target="_blank" rel="external">http://enterpriseapi.gizwits.com/GET</a> /v1/products/{product_key}/devices/{did}/online</li>
+</ul>
+<h3 id="请求方式-8"><a href="#请求方式-8" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
+</code></pre><h3 id="请求报文-8"><a href="#请求报文-8" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">did</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">设备id</td>
+</tr>
+<tr>
+<td style="text-align:left">start_ts</td>
+<td style="text-align:right">integer</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">开始时间戳</td>
+</tr>
+<tr>
+<td style="text-align:left">end_ts</td>
+<td style="text-align:right">intege</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">开始时间戳</td>
+</tr>
+<tr>
+<td style="text-align:left">sort</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">desc、asc</td>
+</tr>
+<tr>
+<td style="text-align:left">limit</td>
+<td style="text-align:right">integer</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+</tr>
+<tr>
+<td style="text-align:left">skip</td>
+<td style="text-align:right">integer</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+</tr>
+</tbody>
+</table>
+<h3 id="应答报文-8"><a href="#应答报文-8" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Http Response Code ： 200	</div><div class="line">Body：</div><div class="line">&#123;</div><div class="line">  "meta": &#123;</div><div class="line">    "total": 0,</div><div class="line">    "limit": 0,</div><div class="line">    "skip": 0,</div><div class="line">    "next": "string",</div><div class="line">    "previous": "string"</div><div class="line">  &#125;,</div><div class="line">  "objects": [</div><div class="line">    &#123;</div><div class="line">      "timestamp": 0,</div><div class="line">      "type": "string",</div><div class="line">      "payload": "string"</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="10、设备通信日志"><a href="#10、设备通信日志" class="headerlink" title="10、设备通信日志"></a>10、设备通信日志</h2><h3 id="调试地址-9"><a href="#调试地址-9" class="headerlink" title="调试地址"></a><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_cmd" target="_blank" rel="external">调试地址</a></h3><h3 id="业务功能描述-9"><a href="#业务功能描述-9" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>设备通信日志  </p>
+<ul>
+<li>按 ts 降序排序。  </li>
+<li>payload 为二进制进行 base64 编码后的结果。<br>ChangeLog  </li>
+<li>0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录  </li>
+<li>0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内  </li>
+<li>0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序  </li>
+</ul>
+<h3 id="接口地址-9"><a href="#接口地址-9" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/devices/{did}/cmd
+</code></pre><h3 id="请求方式-9"><a href="#请求方式-9" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
+</code></pre><h3 id="请求报文-9"><a href="#请求报文-9" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">did</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">设备id</td>
+</tr>
+<tr>
+<td style="text-align:left">start_ts</td>
+<td style="text-align:right">integer</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">开始时间戳</td>
+</tr>
+<tr>
+<td style="text-align:left">end_ts</td>
+<td style="text-align:right">intege</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">开始时间戳</td>
+</tr>
+<tr>
+<td style="text-align:left">sort</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">desc、asc</td>
+</tr>
+<tr>
+<td style="text-align:left">limit</td>
+<td style="text-align:right">integer</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+</tr>
+<tr>
+<td style="text-align:left">skip</td>
+<td style="text-align:right">integer</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+</tr>
+</tbody>
+</table>
+<h3 id="应答报文-9"><a href="#应答报文-9" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Http Response Code ： 200	</div><div class="line">Body：</div><div class="line">&#123;</div><div class="line">  "meta": &#123;</div><div class="line">    "total": 0,</div><div class="line">    "limit": 0,</div><div class="line">    "skip": 0,</div><div class="line">    "next": "string",</div><div class="line">    "previous": "string"</div><div class="line">  &#125;,</div><div class="line">  "objects": [</div><div class="line">    &#123;</div><div class="line">      "timestamp": 0,</div><div class="line">      "type": "string",</div><div class="line">      "payload": "string"</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="11、获取设备地理位置分布（实时）"><a href="#11、获取设备地理位置分布（实时）" class="headerlink" title="11、获取设备地理位置分布（实时）"></a>11、获取设备地理位置分布（实时）</h2><h3 id="调试地址-10"><a href="#调试地址-10" class="headerlink" title="调试地址"></a><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#/设备管理/get_v1_products_product_key_devices_locations" target="_blank" rel="external">调试地址</a></h3><h3 id="业务功能描述-10"><a href="#业务功能描述-10" class="headerlink" title="业务功能描述"></a>业务功能描述</h3><p>该接口提供了通过查询设备的product_key和gid等参数，来获取最新的设备地理位置分布的功能。</p>
+<h3 id="接口地址-10"><a href="#接口地址-10" class="headerlink" title="接口地址"></a>接口地址</h3><pre><code>http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/devices/locations
+</code></pre><h3 id="请求方式-10"><a href="#请求方式-10" class="headerlink" title="请求方式"></a>请求方式</h3><pre><code>GET
+</code></pre><h3 id="请求报文-10"><a href="#请求报文-10" class="headerlink" title="请求报文"></a>请求报文</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">gid</td>
+<td style="text-align:right">String</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">设备组 id</td>
+</tr>
+<tr>
+<td style="text-align:left">is_online</td>
+<td style="text-align:right">integer</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">是否在线</td>
+</tr>
+<tr>
+<td style="text-align:left">is_faulty</td>
+<td style="text-align:right">integer</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">是否故障</td>
+</tr>
+<tr>
+<td style="text-align:left">is_alert</td>
+<td style="text-align:right">integer</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">是否报警</td>
+</tr>
+</tbody>
+</table>
+<h3 id="应答报文-10"><a href="#应答报文-10" class="headerlink" title="应答报文"></a>应答报文</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Http Response Code ： 200	</div><div class="line">Body：</div><div class="line">&#123;</div><div class="line">  "gid": "string",</div><div class="line">  "total": 0,</div><div class="line">  "location": &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="接口错误"><a href="#接口错误" class="headerlink" title="接口错误"></a>接口错误</h1><h2 id="错误信息格式"><a href="#错误信息格式" class="headerlink" title="错误信息格式"></a>错误信息格式</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">      <span class="attr">"error_code"</span>: <span class="string">"5001"</span>,</div><div class="line">      <span class="attr">"error_message"</span>: <span class="string">"body json invalid"</span>,</div><div class="line">      <span class="attr">"detail"</span>: <span class="string">""</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="错误信息表"><a href="#错误信息表" class="headerlink" title="错误信息表"></a>错误信息表</h2><table>
 <thead>
