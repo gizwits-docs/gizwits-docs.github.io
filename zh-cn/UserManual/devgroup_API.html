@@ -4,14 +4,14 @@
   <head>
   <meta charset="utf-8">
 
-  <title>机智云</title>
+  <title>设备分组API使用教程 - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="-机智云">
-  <meta name="keywords" content=" docs 文档中心 Gizwits">
+  <meta name="Description" content="设备分组API使用教程-机智云">
+  <meta name="keywords" content="设备分组API使用教程 docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -416,10 +416,34 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title"></div>
+        <div class="title">设备分组API使用教程</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      
+      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>设备分组接口可以对多个设备进行分组，只要往分组里面发送指令，做到同时控制一个分组下的多个设备。</p>
+<p>要使用该设备分组接口，必须创建分组。创建分组以后根据MAC地址绑定设备，再根据设备日志MAC地址对应的did将设备加进一个分组里面，再往分组里面发送指令，设备收到指令并作出反应，就完成了设备分组。</p>
+<p>使用例子，如：一个公司有多个部门，每个部门有多盏智能灯。每天早上一个部门来人了，就可以只打开该部门的智能灯。每天晚上一个部门的人都走光了，就可以只关闭该部门的智能灯。</p>
+<h1 id="设备分组API使用流程"><a href="#设备分组API使用流程" class="headerlink" title="设备分组API使用流程"></a>设备分组API使用流程</h1><p>Open API的设备分组接口，就是对多个设备分组并进行控制。当开发者/企业客户设置好openAPI设备分组接口后，就可以调用该接口把多个设备加入到分组，做到分组控制多个设备。</p>
+<h4 id="1-打开机智云官网文档中心-gt-云API-gt-OPEN-API指南，下拉点击调试接口"><a href="#1-打开机智云官网文档中心-gt-云API-gt-OPEN-API指南，下拉点击调试接口" class="headerlink" title="1.打开机智云官网文档中心-&gt;云API-&gt;OPEN API指南，下拉点击调试接口"></a>1.打开机智云官网文档中心-&gt;云API-&gt;OPEN API指南，下拉点击调试接口</h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/1.png" alt="调试接口1"></p>
+<p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/2.png" alt="调试接口2"></p>
+<h4 id="2-点击设备分组-gt-创建分组"><a href="#2-点击设备分组-gt-创建分组" class="headerlink" title="2.点击设备分组-&gt;创建分组"></a>2.点击设备分组-&gt;创建分组</h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/3.png" alt="创建分组"></p>
+<h4 id="3-点击创建分组-gt-感叹号，填写App-ID和token，这两个参数可以参考文档《利用openapi（postman）控制虚拟设备》中“2-3新建应用配置”和“3-Postman安装和导入”，参考文档链接http-docs-gizwits-com-zh-cn-UserManual-UseOpenAPI-html"><a href="#3-点击创建分组-gt-感叹号，填写App-ID和token，这两个参数可以参考文档《利用openapi（postman）控制虚拟设备》中“2-3新建应用配置”和“3-Postman安装和导入”，参考文档链接http-docs-gizwits-com-zh-cn-UserManual-UseOpenAPI-html" class="headerlink" title="3.点击创建分组-&gt;感叹号，填写App ID和token，这两个参数可以参考文档《利用openapi（postman）控制虚拟设备》中“2.3新建应用配置”和“3. Postman安装和导入”，参考文档链接http://docs.gizwits.com/zh-cn/UserManual/UseOpenAPI.html"></a>3.点击创建分组-&gt;感叹号，填写App ID和token，这两个参数可以参考文档《利用openapi（postman）控制虚拟设备》中“2.3新建应用配置”和“3. Postman安装和导入”，参考文档链接<a href="http://docs.gizwits.com/zh-cn/UserManual/UseOpenAPI.html" target="_blank" rel="external">http://docs.gizwits.com/zh-cn/UserManual/UseOpenAPI.html</a></h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/4.png" alt="填写App ID和token 1"></p>
+<p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/5.png" alt="填写App ID和token 2"></p>
+<h4 id="4-填写App-ID和token之后，填写body"><a href="#4-填写App-ID和token之后，填写body" class="headerlink" title="4.填写App ID和token之后，填写body"></a>4.填写App ID和token之后，填写body</h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/6.png" alt="填写body1"></p>
+<p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/7.png" alt="填写body2"></p>
+<h4 id="5-得到分组id后，我们可以查看一下组里面有没有设备"><a href="#5-得到分组id后，我们可以查看一下组里面有没有设备" class="headerlink" title="5.得到分组id后，我们可以查看一下组里面有没有设备"></a>5.得到分组id后，我们可以查看一下组里面有没有设备</h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/8.png" alt="查看分组设备1"></p>
+<p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/9.png" alt="查看分组设备2"></p>
+<h4 id="6-根据MAC绑定设备"><a href="#6-根据MAC绑定设备" class="headerlink" title="6.根据MAC绑定设备"></a>6.根据MAC绑定设备</h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/10.png" alt="根据MAC绑定设备1"></p>
+<p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/11.png" alt="根据MAC绑定设备2"></p>
+<h4 id="Timestamp获取链接http-tool-chinaz-com-Tools-unixtime-aspx"><a href="#Timestamp获取链接http-tool-chinaz-com-Tools-unixtime-aspx" class="headerlink" title="Timestamp获取链接http://tool.chinaz.com/Tools/unixtime.aspx"></a>Timestamp获取链接<a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="external">http://tool.chinaz.com/Tools/unixtime.aspx</a></h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/12.png" alt="Timestamp获取"></p>
+<h4 id="Signature获取链接http-tool-chinaz-com-Tools-md5-aspx"><a href="#Signature获取链接http-tool-chinaz-com-Tools-md5-aspx" class="headerlink" title="Signature获取链接http://tool.chinaz.com/Tools/md5.aspx"></a>Signature获取链接<a href="http://tool.chinaz.com/Tools/md5.aspx" target="_blank" rel="external">http://tool.chinaz.com/Tools/md5.aspx</a></h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/13.png" alt="Signature获取"></p>
+<h4 id="绑定设备成功以后会返回一个如下的响应体"><a href="#绑定设备成功以后会返回一个如下的响应体" class="headerlink" title="绑定设备成功以后会返回一个如下的响应体"></a>绑定设备成功以后会返回一个如下的响应体</h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/14.png" alt="绑定设备成功"></p>
+<h4 id="7-绑定设备以后，我们回到设备分组，将设备添加到分组"><a href="#7-绑定设备以后，我们回到设备分组，将设备添加到分组" class="headerlink" title="7.绑定设备以后，我们回到设备分组，将设备添加到分组"></a>7.绑定设备以后，我们回到设备分组，将设备添加到分组</h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/15.png" alt="设备添加到分组1"></p>
+<p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/16.png" alt="设备添加到分组2"></p>
+<h4 id="8-查看设备日志"><a href="#8-查看设备日志" class="headerlink" title="8.查看设备日志"></a>8.查看设备日志</h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/17.png" alt="查看设备日志"></p>
+<h4 id="9-成功添加设备到分组以后会返回如下响应体"><a href="#9-成功添加设备到分组以后会返回如下响应体" class="headerlink" title="9.成功添加设备到分组以后会返回如下响应体"></a>9.成功添加设备到分组以后会返回如下响应体</h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/18.png" alt="添加设备到分组成功"></p>
+<h4 id="10-然后我们就可以针对设备分组发送指令远程控制设备"><a href="#10-然后我们就可以针对设备分组发送指令远程控制设备" class="headerlink" title="10.然后我们就可以针对设备分组发送指令远程控制设备"></a>10.然后我们就可以针对设备分组发送指令远程控制设备</h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/19.png" alt="分组发送指令"></p>
+<h4 id="11-这样我们就可以控制一个分组中的一个设备（RGB灯亮灭），按照同种方法添加多个设备到一个分组中，我们就可以同时控制一个分组中的多个设备。"><a href="#11-这样我们就可以控制一个分组中的一个设备（RGB灯亮灭），按照同种方法添加多个设备到一个分组中，我们就可以同时控制一个分组中的多个设备。" class="headerlink" title="11.这样我们就可以控制一个分组中的一个设备（RGB灯亮灭），按照同种方法添加多个设备到一个分组中，我们就可以同时控制一个分组中的多个设备。"></a>11.这样我们就可以控制一个分组中的一个设备（RGB灯亮灭），按照同种方法添加多个设备到一个分组中，我们就可以同时控制一个分组中的多个设备。</h4><p><img src="/assets/zh-cn/UserManual/Dev_GroupAPI/20.png" alt="分组发送指令成功"></p>
+
     </div>
     
     <div class="widget-wrapper">
