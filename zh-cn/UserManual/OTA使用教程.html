@@ -436,7 +436,7 @@
         <div class="title">OTA使用教程</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h3 id="MCU-OTA教程-html"><a href="#MCU-OTA教程-html" class="headerlink" title="MCU OTA教程.html )"></a><a href="http://docs.gizwits.com/zh-cn/UserManual/MCUOTA(stm32f103c8t6" target="_blank" rel="external">MCU OTA教程</a>.html )</h3><h1 id="OTA功能概述"><a href="#OTA功能概述" class="headerlink" title="OTA功能概述"></a>OTA功能概述</h1><p>OTA 英文全称是Over-the-Air Technology，即空间下载技术。当设备连上云端时会收到OTA升级通知，再通过HTTP完成固件升级。机智云的OTA服务主要提供以下功能：</p>
+      <h1 id="OTA功能概述"><a href="#OTA功能概述" class="headerlink" title="OTA功能概述"></a>OTA功能概述</h1><p>OTA 英文全称是Over-the-Air Technology，即空间下载技术。当设备连上云端时会收到OTA升级通知，再通过HTTP完成固件升级。机智云的OTA服务主要提供以下功能：</p>
 <ul>
 <li>OTA通知服务，即离线升级。当设备的固件程序有新版本发布，OTA 通知服务会推送升级通知到设备。</li>
 <li>OTA透传服务，即在线升级。设备固件程序通过M2M 消息服务透传到设备端。</li>
@@ -447,7 +447,8 @@
 <li>OTA进度统计分析</li>
 </ul>
 <h1 id="OTA升级流程"><a href="#OTA升级流程" class="headerlink" title="OTA升级流程"></a>OTA升级流程</h1><p>Wifi产品OTA服务是在开发者中心网站上实现的，由5部分组成：分别是添加固件、验证固件、添加规则、开始推送、推送完成（查询结果）。</p>
-<h2 id="添加固件"><a href="#添加固件" class="headerlink" title="添加固件"></a>添加固件</h2><p>如将设备的模组烧写的固件为：GAgent_00ESP826_04020019_16101715.bin，其中硬件版本号为：00ESP826，软件版本号为：04020019<br>步骤一、进入【服务】固件升级（OTA）模块，点击【创建新固件】</p>
+<h2 id="添加固件"><a href="#添加固件" class="headerlink" title="添加固件"></a>添加固件</h2><p>注：以下是GAgent固件OTA教程，要看<a href="http://docs.gizwits.com/zh-cn/UserManual/MCUOTA(stm32f103c8t6" target="_blank" rel="external">MCU OTA教程</a>.html)请点击跳转</p>
+<p>如将设备的模组烧写的固件为：GAgent_00ESP826_04020019_16101715.bin，其中硬件版本号为：00ESP826，软件版本号为：04020019<br>步骤一、进入【服务】固件升级（OTA）模块，点击【创建新固件】</p>
 <p><img src="/assets/zh-cn/UserManual/OTA/1479262419091.png" alt="Alt text"></p>
 <p><img src="/assets/zh-cn/UserManual/OTA/1479262439396.png" alt="Alt text"></p>
 <p>步骤二、<a href="http://download.gizwits.com/zh-cn/p/92/94" target="_blank" rel="external">下载GAgent OTA固件</a>（MCU固件是开发者开发，若是MCU升级，可跳过该步骤。）</p>
