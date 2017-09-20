@@ -18,7 +18,7 @@
 
   <link rel="stylesheet" href="/css/pure.min.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/documentation.css?v=1783f50d571f9305bcb8130bc862083d">
+  <link rel="stylesheet" href="/css/documentation.css?v=50bcbb38b2e846d35d71b2f077cde4f9">
   <link rel="stylesheet" href="/css/share.min.css">
 </head>
   <body>
@@ -472,7 +472,7 @@
 <p><img src="/assets/zh-cn/cloud/get-appid.png" alt="Get AppID"></p>
 <h3 id="X-Gizwits-User-token"><a href="#X-Gizwits-User-token" class="headerlink" title="X-Gizwits-User-token"></a>X-Gizwits-User-token</h3><p>X-Gizwits-User-token 简称 UserToken，它代表着接口调用中的用户上下文。</p>
 <p>UserToken 具有有效期，默认为 7 天。</p>
-<p>可以通过用户注册或者登录接口获取 UserToken，返回字段中的 token 就是 UserToken，expire_at 表示 UserToken 过期的时间戳：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;uid&quot;: &quot;29db4f0d806e451a84264ba3da64d9de&quot;,</div><div class="line">  &quot;token&quot;: &quot;86a0ee91548f4971832e371811702316&quot;,</div><div class="line">  &quot;expire_at&quot;: 13894002020</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>可以通过用户注册或者登录接口获取 UserToken，返回字段中的 token 就是 UserToken，expire_at 表示 UserToken 过期的时间戳：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"uid"</span>: <span class="string">"29db4f0d806e451a84264ba3da64d9de"</span>,</div><div class="line">  <span class="attr">"token"</span>: <span class="string">"86a0ee91548f4971832e371811702316"</span>,</div><div class="line">  <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>每次登录可以获取一个新的 UserToken，新旧 UserToken 都可以使用。</p>
 <p>因为机智云 Open API 大多数的接口都是与用户相关的，所以一般的接口调用顺序如下：</p>
 <ul>
@@ -631,339 +631,339 @@
 <tr>
 <th style="text-align:left">枚举ID</th>
 <th style="text-align:left">枚举定义</th>
-<th>描述</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left">9001</td>
 <td style="text-align:left">GIZ_OPENAPI_MAC_ALREADY_REGISTERED</td>
-<td>mac already registered!</td>
+<td style="text-align:left">mac already registered!</td>
 </tr>
 <tr>
 <td style="text-align:left">9002</td>
 <td style="text-align:left">GIZ_OPENAPI_PRODUCT_KEY_INVALID</td>
-<td>product_key invalid</td>
+<td style="text-align:left">product_key invalid</td>
 </tr>
 <tr>
 <td style="text-align:left">9003</td>
 <td style="text-align:left">GIZ_OPENAPI_APPID_INVALID</td>
-<td>appid invalid</td>
+<td style="text-align:left">appid invalid</td>
 </tr>
 <tr>
 <td style="text-align:left">9004</td>
 <td style="text-align:left">GIZ_OPENAPI_TOKEN_INVALID</td>
-<td>token invalid</td>
+<td style="text-align:left">token invalid</td>
 </tr>
 <tr>
 <td style="text-align:left">9005</td>
 <td style="text-align:left">GIZ_OPENAPI_USER_NOT_EXIST</td>
-<td>user not exist</td>
+<td style="text-align:left">user not exist</td>
 </tr>
 <tr>
 <td style="text-align:left">9006</td>
 <td style="text-align:left">GIZ_OPENAPI_TOKEN_EXPIRED</td>
-<td>token expired</td>
+<td style="text-align:left">token expired</td>
 </tr>
 <tr>
 <td style="text-align:left">9007</td>
 <td style="text-align:left">GIZ_OPENAPI_M2M_ID_INVALID</td>
-<td>m2m_id invalid</td>
+<td style="text-align:left">m2m_id invalid</td>
 </tr>
 <tr>
 <td style="text-align:left">9008</td>
 <td style="text-align:left">GIZ_OPENAPI_SERVER_ERROR</td>
-<td>server error</td>
+<td style="text-align:left">server error</td>
 </tr>
 <tr>
 <td style="text-align:left">9009</td>
 <td style="text-align:left">GIZ_OPENAPI_CODE_EXPIRED</td>
-<td>code expired</td>
+<td style="text-align:left">code expired</td>
 </tr>
 <tr>
 <td style="text-align:left">9010</td>
 <td style="text-align:left">GIZ_OPENAPI_CODE_INVALID</td>
-<td>code invalid</td>
+<td style="text-align:left">code invalid</td>
 </tr>
 <tr>
 <td style="text-align:left">9011</td>
 <td style="text-align:left">GIZ_OPENAPI_SANDBOX_SCALE_QUOTA_EXHAUSTED</td>
-<td>sandbox scale quota exhausted!</td>
+<td style="text-align:left">sandbox scale quota exhausted!</td>
 </tr>
 <tr>
 <td style="text-align:left">9012</td>
 <td style="text-align:left">GIZ_OPENAPI_PRODUCTION_SCALE_QUOTA_EXHAUSTED</td>
-<td>production scale quota exhausted!</td>
+<td style="text-align:left">production scale quota exhausted!</td>
 </tr>
 <tr>
 <td style="text-align:left">9013</td>
 <td style="text-align:left">GIZ_OPENAPI_PRODUCT_HAS_NO_REQUEST_SCALE</td>
-<td>product has no request scale!</td>
+<td style="text-align:left">product has no request scale!</td>
 </tr>
 <tr>
 <td style="text-align:left">9014</td>
 <td style="text-align:left">GIZ_OPENAPI_DEVICE_NOT_FOUND</td>
-<td>device not found!</td>
+<td style="text-align:left">device not found!</td>
 </tr>
 <tr>
 <td style="text-align:left">9015</td>
 <td style="text-align:left">GIZ_OPENAPI_FORM_INVALID</td>
-<td>form invalid!</td>
+<td style="text-align:left">form invalid!</td>
 </tr>
 <tr>
 <td style="text-align:left">9016</td>
 <td style="text-align:left">GIZ_OPENAPI_DID_PASSCODE_INVALID</td>
-<td>did or passcode invalid!</td>
+<td style="text-align:left">did or passcode invalid!</td>
 </tr>
 <tr>
 <td style="text-align:left">9017</td>
 <td style="text-align:left">GIZ_OPENAPI_DEVICE_NOT_BOUND</td>
-<td>device not bound!</td>
+<td style="text-align:left">device not bound!</td>
 </tr>
 <tr>
 <td style="text-align:left">9018</td>
 <td style="text-align:left">GIZ_OPENAPI_PHONE_UNAVALIABLE</td>
-<td>phone unavailable!</td>
+<td style="text-align:left">phone unavailable!</td>
 </tr>
 <tr>
 <td style="text-align:left">9019</td>
 <td style="text-align:left">GIZ_OPENAPI_USERNAME_UNAVALIABLE</td>
-<td>username unavailable!</td>
+<td style="text-align:left">username unavailable!</td>
 </tr>
 <tr>
 <td style="text-align:left">9020</td>
 <td style="text-align:left">GIZ_OPENAPI_USERNAME_PASSWORD_ERROR</td>
-<td>username or password error!</td>
+<td style="text-align:left">username or password error!</td>
 </tr>
 <tr>
 <td style="text-align:left">9021</td>
 <td style="text-align:left">GIZ_OPENAPI_SEND_COMMAND_FAILED</td>
-<td>send command failed!</td>
+<td style="text-align:left">send command failed!</td>
 </tr>
 <tr>
 <td style="text-align:left">9022</td>
 <td style="text-align:left">GIZ_OPENAPI_EMAIL_UNAVALIABLE</td>
-<td>email unavailable!</td>
+<td style="text-align:left">email unavailable!</td>
 </tr>
 <tr>
 <td style="text-align:left">9023</td>
 <td style="text-align:left">GIZ_OPENAPI_DEVICE_DISABLED</td>
-<td>device is disabled!</td>
+<td style="text-align:left">device is disabled!</td>
 </tr>
 <tr>
 <td style="text-align:left">9024</td>
 <td style="text-align:left">GIZ_OPENAPI_FAILED_NOTIFY_M2M</td>
-<td>fail to notify m2m!</td>
+<td style="text-align:left">fail to notify m2m!</td>
 </tr>
 <tr>
 <td style="text-align:left">9025</td>
 <td style="text-align:left">GIZ_OPENAPI_ATTR_INVALID</td>
-<td>attr invalid!</td>
+<td style="text-align:left">attr invalid!</td>
 </tr>
 <tr>
 <td style="text-align:left">9026</td>
 <td style="text-align:left">GIZ_OPENAPI_USER_INVALID</td>
-<td>user invalid!</td>
+<td style="text-align:left">user invalid!</td>
 </tr>
 <tr>
 <td style="text-align:left">9027</td>
 <td style="text-align:left">GIZ_OPENAPI_FIRMWARE_NOT_FOUND</td>
-<td>firmware not found!</td>
+<td style="text-align:left">firmware not found!</td>
 </tr>
 <tr>
 <td style="text-align:left">9028</td>
 <td style="text-align:left">GIZ_OPENAPI_JD_PRODUCT_NOT_FOUND</td>
-<td>JD product info not found!</td>
+<td style="text-align:left">JD product info not found!</td>
 </tr>
 <tr>
 <td style="text-align:left">9029</td>
 <td style="text-align:left">GIZ_OPENAPI_DATAPOINT_DATA_NOT_FOUND</td>
-<td>datapoint data not found!</td>
+<td style="text-align:left">datapoint data not found!</td>
 </tr>
 <tr>
 <td style="text-align:left">9030</td>
 <td style="text-align:left">GIZ_OPENAPI_SCHEDULER_NOT_FOUND</td>
-<td>scheduler not found!</td>
+<td style="text-align:left">scheduler not found!</td>
 </tr>
 <tr>
 <td style="text-align:left">9031</td>
 <td style="text-align:left">GIZ_OPENAPI_QQ_OAUTH_KEY_INVALID</td>
-<td>qq oauth key invalid!</td>
+<td style="text-align:left">qq oauth key invalid!</td>
 </tr>
 <tr>
 <td style="text-align:left">9032</td>
 <td style="text-align:left">GIZ_OPENAPI_OTA_SERVICE_OK_BUT_IN_IDLE</td>
-<td>ota upgrade service OK, but in idle or disable!</td>
+<td style="text-align:left">ota upgrade service OK, but in idle or disable!</td>
 </tr>
 <tr>
 <td style="text-align:left">9033</td>
 <td style="text-align:left">GIZ_OPENAPI_BT_FIRMWARE_UNVERIFIED</td>
-<td>bt firmware unverified,except verify device!</td>
+<td style="text-align:left">bt firmware unverified,except verify device!</td>
 </tr>
 <tr>
 <td style="text-align:left">9034</td>
 <td style="text-align:left">GIZ_OPENAPI_BT_FIRMWARE_NOTHING_TO_UPGRADE</td>
-<td>bt firmware is OK, but nothing to upgrade!</td>
+<td style="text-align:left">bt firmware is OK, but nothing to upgrade!</td>
 </tr>
 <tr>
 <td style="text-align:left">9035</td>
 <td style="text-align:left">GIZ_OPENAPI_SAVE_KAIROSDB_ERROR</td>
-<td>Save kairosdb error!</td>
+<td style="text-align:left">Save kairosdb error!</td>
 </tr>
 <tr>
 <td style="text-align:left">9036</td>
 <td style="text-align:left">GIZ_OPENAPI_EVENT_NOT_DEFINED</td>
-<td>event not defined!</td>
+<td style="text-align:left">event not defined!</td>
 </tr>
 <tr>
 <td style="text-align:left">9037</td>
 <td style="text-align:left">GIZ_OPENAPI_SEND_SMS_FAILED</td>
-<td>send sms failed!</td>
+<td style="text-align:left">send sms failed!</td>
 </tr>
 <tr>
 <td style="text-align:left">9038</td>
 <td style="text-align:left">GIZ_OPENAPI_APPLICATION_AUTH_INVALID</td>
-<td>X-Gizwits-Application-Auth invalid!</td>
+<td style="text-align:left">X-Gizwits-Application-Auth invalid!</td>
 </tr>
 <tr>
 <td style="text-align:left">9039</td>
 <td style="text-align:left">GIZ_OPENAPI_NOT_ALLOWED_CALL_API</td>
-<td>Not allowed to call deprecated API!</td>
+<td style="text-align:left">Not allowed to call deprecated API!</td>
 </tr>
 <tr>
 <td style="text-align:left">9040</td>
 <td style="text-align:left">GIZ_OPENAPI_BAD_QRCODE_CONTENT</td>
-<td>bad qrcode content!</td>
+<td style="text-align:left">bad qrcode content!</td>
 </tr>
 <tr>
 <td style="text-align:left">9041</td>
 <td style="text-align:left">GIZ_OPENAPI_REQUEST_THROTTLED</td>
-<td>request was throttled</td>
+<td style="text-align:left">request was throttled</td>
 </tr>
 <tr>
 <td style="text-align:left">9042</td>
 <td style="text-align:left">GIZ_OPENAPI_DEVICE_OFFLINE</td>
-<td>device offline!</td>
+<td style="text-align:left">device offline!</td>
 </tr>
 <tr>
 <td style="text-align:left">9043</td>
 <td style="text-align:left">GIZ_OPENAPI_TIMESTAMP_INVALID</td>
-<td>X-Gizwits-Timestamp invalid!</td>
+<td style="text-align:left">X-Gizwits-Timestamp invalid!</td>
 </tr>
 <tr>
 <td style="text-align:left">9044</td>
 <td style="text-align:left">GIZ_OPENAPI_SIGNATURE_INVALID</td>
-<td>X-Gizwits-Signature invalid!</td>
+<td style="text-align:left">X-Gizwits-Signature invalid!</td>
 </tr>
 <tr>
 <td style="text-align:left">9045</td>
 <td style="text-align:left">GIZ_OPENAPI_DEPRECATED_API</td>
-<td>API deprecated!</td>
+<td style="text-align:left">API deprecated!</td>
 </tr>
 <tr>
 <td style="text-align:left">9046</td>
 <td style="text-align:left">GIZ_OPENAPI_REGISTER_IS_BUSY</td>
-<td>Register already in progress!</td>
+<td style="text-align:left">Register already in progress!</td>
 </tr>
 <tr>
 <td style="text-align:left">9080</td>
 <td style="text-align:left">GIZ_OPENAPI_CANNOT_SHARE_TO_SELF</td>
-<td>can not share device to self!</td>
+<td style="text-align:left">can not share device to self!</td>
 </tr>
 <tr>
 <td style="text-align:left">9081</td>
 <td style="text-align:left">GIZ_OPENAPI_ONLY_OWNER_CAN_SHARE</td>
-<td>guest or normal user can not share device!</td>
+<td style="text-align:left">guest or normal user can not share device!</td>
 </tr>
 <tr>
 <td style="text-align:left">9082</td>
 <td style="text-align:left">GIZ_OPENAPI_NOT_FOUND_GUEST</td>
-<td>guest user not found!</td>
+<td style="text-align:left">guest user not found!</td>
 </tr>
 <tr>
 <td style="text-align:left">9083</td>
 <td style="text-align:left">GIZ_OPENAPI_GUEST_ALREADY_BOUND</td>
-<td>guest user alread bound!</td>
+<td style="text-align:left">guest user alread bound!</td>
 </tr>
 <tr>
 <td style="text-align:left">9084</td>
 <td style="text-align:left">GIZ_OPENAPI_NOT_FOUND_SHARING_INFO</td>
-<td>sharing record not found!</td>
+<td style="text-align:left">sharing record not found!</td>
 </tr>
 <tr>
 <td style="text-align:left">9085</td>
 <td style="text-align:left">GIZ_OPENAPI_NOT_FOUND_THE_MESSAGE</td>
-<td>message record not found!</td>
+<td style="text-align:left">message record not found!</td>
 </tr>
 <tr>
 <td style="text-align:left">9087</td>
 <td style="text-align:left">GIZ_OPENAPI_SHARING_IS_WAITING_FOR_ACCEPT</td>
-<td>sharing alread created,waiting for the guest to accept!</td>
+<td style="text-align:left">sharing alread created,waiting for the guest to accept!</td>
 </tr>
 <tr>
 <td style="text-align:left">9088</td>
 <td style="text-align:left">GIZ_OPENAPI_SHARING_IS_EXPIRED</td>
-<td>sharing record expired!</td>
+<td style="text-align:left">sharing record expired!</td>
 </tr>
 <tr>
 <td style="text-align:left">9089</td>
 <td style="text-align:left">GIZ_OPENAPI_SHARING_IS_COMPLETED</td>
-<td>sharing record status is not unaccept!</td>
+<td style="text-align:left">sharing record status is not unaccept!</td>
 </tr>
 <tr>
 <td style="text-align:left">9090</td>
 <td style="text-align:left">GIZ_OPENAPI_INVALID_SHARING_BECAUSE_UNBINDING</td>
-<td>owner binding disabled!</td>
+<td style="text-align:left">owner binding disabled!</td>
 </tr>
 <tr>
 <td style="text-align:left">9092</td>
 <td style="text-align:left">GIZ_OPENAPI_ONLY_OWNER_CAN_BIND</td>
-<td>owner exist, guest can not bind!</td>
+<td style="text-align:left">owner exist, guest can not bind!</td>
 </tr>
 <tr>
 <td style="text-align:left">9093</td>
 <td style="text-align:left">GIZ_OPENAPI_ONLY_OWNER_CAN_OPERATE</td>
-<td>permission denied, you are not owner!</td>
+<td style="text-align:left">permission denied, you are not owner!</td>
 </tr>
 <tr>
 <td style="text-align:left">9094</td>
 <td style="text-align:left">GIZ_OPENAPI_SHARING_ALREADY_CANCELLED</td>
-<td>sharing already canceled!</td>
+<td style="text-align:left">sharing already canceled!</td>
 </tr>
 <tr>
 <td style="text-align:left">9095</td>
 <td style="text-align:left">GIZ_OPENAPI_OWNER_CANNOT_UNBIND_SELF</td>
-<td>can not unbind self!</td>
+<td style="text-align:left">can not unbind self!</td>
 </tr>
 <tr>
 <td style="text-align:left">9096</td>
 <td style="text-align:left">GIZ_OPENAPI_ONLY_GUEST_CAN_CHECK_QRCODE</td>
-<td>permission denied, you are not guest!</td>
+<td style="text-align:left">permission denied, you are not guest!</td>
 </tr>
 <tr>
 <td style="text-align:left">9098</td>
 <td style="text-align:left">GIZ_OPENAPI_MESSAGE_ALREADY_DELETED</td>
-<td>notify delele binding failed!</td>
+<td style="text-align:left">notify delele binding failed!</td>
 </tr>
 <tr>
 <td style="text-align:left">9099</td>
 <td style="text-align:left">GIZ_OPENAPI_BINDING_NOTIFY_FAILED</td>
-<td>notify delele binding failed!</td>
+<td style="text-align:left">notify delele binding failed!</td>
 </tr>
 <tr>
 <td style="text-align:left">9100</td>
 <td style="text-align:left">GIZ_OPENAPI_ONLY_SELF_CAN_MODIFY_ALIAS</td>
-<td>permission denied, you are not owner or guest!</td>
+<td style="text-align:left">permission denied, you are not owner or guest!</td>
 </tr>
 <tr>
 <td style="text-align:left">9101</td>
 <td style="text-align:left">GIZ_OPENAPI_ONLY_RECEIVER_CAN_MARK_MESSAGE</td>
-<td>permission denied, you are not the receiver!</td>
+<td style="text-align:left">permission denied, you are not the receiver!</td>
 </tr>
 <tr>
 <td style="text-align:left">9999</td>
 <td style="text-align:left">GIZ_OPENAPI_RESERVED</td>
-<td>reserved</td>
+<td style="text-align:left">reserved</td>
 </tr>
 </tbody>
 </table>
