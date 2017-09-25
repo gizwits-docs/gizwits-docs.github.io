@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>SOC方案UART0教程 - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="SOC方案UART0教程-Gizwits">
+  <meta name="keywords" content="SOC方案UART0教程 docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=50bcbb38b2e846d35d71b2f077cde4f9">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+
+      <a href="http://www.gizwits.com" class="logo">
+        <img src="/images/logo.png" alt="logo"> 
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+    
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+    
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA">
+              Tutorial &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Intro in 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Device Accessing</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">App Development</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA"><a href="/en-us/quickstart.html">Device</a></li>
+          
+        
+          
+            <li class="levelA">
+              App &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">ios SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Android SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Wechat SDK</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Business Cloud</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">D3</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Global Deployment</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA"><a href="/en-us/quickstart.html">API</a></li>
+          
+        
+      </ul>
+    </span>
+  
+    <span class="pure-u-3-24 lang-switch-wrapper">
+      
+      <i class="fa fa-globe" aria-hidden="true"></i> 
+      
+        <button class="lang-switch" data-lang="zh-cn">中文</button>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>  
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">SOC方案UART0教程</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h3 id="教程代码"><a href="#教程代码" class="headerlink" title="教程代码"></a><a href="http://docs.gizwits.com/assets/pdf/GizwitsSoCESP8266_32M201709251109038981ae6a2c.zip" target="_blank" rel="external">教程代码</a></h3><h3 id="esp8266-technical-reference-cn-pdf"><a href="#esp8266-technical-reference-cn-pdf" class="headerlink" title="esp8266-technical_reference_cn.pdf"></a><a href="http://docs.gizwits.com/assets/pdf/esp8266-technical_reference_cn.pdf" target="_blank" rel="external">esp8266-technical_reference_cn.pdf</a></h3><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h4 id="本文主要介绍如何在soc方案下使用esp8266的UART0，让开发者可以在soc方案下的使用esp8266串口通信。本文主要实现两种方式："><a href="#本文主要介绍如何在soc方案下使用esp8266的UART0，让开发者可以在soc方案下的使用esp8266串口通信。本文主要实现两种方式：" class="headerlink" title="本文主要介绍如何在soc方案下使用esp8266的UART0，让开发者可以在soc方案下的使用esp8266串口通信。本文主要实现两种方式："></a>本文主要介绍如何在soc方案下使用esp8266的UART0，让开发者可以在soc方案下的使用esp8266串口通信。本文主要实现两种方式：</h4><h5 id="方式1：esp8266的UART0-rx接收到什么数据，UART0-tx就发送什么数据"><a href="#方式1：esp8266的UART0-rx接收到什么数据，UART0-tx就发送什么数据" class="headerlink" title="方式1：esp8266的UART0_rx接收到什么数据，UART0_tx就发送什么数据"></a>方式1：esp8266的UART0_rx接收到什么数据，UART0_tx就发送什么数据</h5><h5 id="方式2：在程序中让UART0-tx发送特定数据"><a href="#方式2：在程序中让UART0-tx发送特定数据" class="headerlink" title="方式2：在程序中让UART0_tx发送特定数据"></a>方式2：在程序中让UART0_tx发送特定数据</h5><h1 id="方式1的实现"><a href="#方式1的实现" class="headerlink" title="方式1的实现"></a>方式1的实现</h1><h4 id="在uart-c代码中，修改uart0-rx-intr-handler函数如下图（可下载本教程代码uart-c直接复制到自己代码中）"><a href="#在uart-c代码中，修改uart0-rx-intr-handler函数如下图（可下载本教程代码uart-c直接复制到自己代码中）" class="headerlink" title="在uart.c代码中，修改uart0_rx_intr_handler函数如下图（可下载本教程代码uart.c直接复制到自己代码中）"></a>在uart.c代码中，修改uart0_rx_intr_handler函数如下图（可下载本教程代码uart.c直接复制到自己代码中）</h4><p><img src="http://docs.gizwits.com/assets/zh-cn/deviceDev/SOC_UART0/1.png" alt="图1"></p>
+<h4 id="当然，如果不想直接修改源自动生成代码，可以用-if-0”、”-else”、”-endif”的方式，本教程代码uart-c就是使用这个方式，可参考"><a href="#当然，如果不想直接修改源自动生成代码，可以用-if-0”、”-else”、”-endif”的方式，本教程代码uart-c就是使用这个方式，可参考" class="headerlink" title="当然，如果不想直接修改源自动生成代码，可以用#if 0”、”#else”、”#endif”的方式，本教程代码uart.c就是使用这个方式，可参考"></a>当然，如果不想直接修改源自动生成代码，可以用#if 0”、”#else”、”#endif”的方式，本教程代码uart.c就是使用这个方式，可参考</h4><h4 id="修改完源码，我们就可以尝试往esp8266的UART0-rx写数据，看下UART0-tx会不会将该数据发送出来"><a href="#修改完源码，我们就可以尝试往esp8266的UART0-rx写数据，看下UART0-tx会不会将该数据发送出来" class="headerlink" title="修改完源码，我们就可以尝试往esp8266的UART0_rx写数据，看下UART0_tx会不会将该数据发送出来"></a>修改完源码，我们就可以尝试往esp8266的UART0_rx写数据，看下UART0_tx会不会将该数据发送出来</h4><p><img src="http://docs.gizwits.com/assets/zh-cn/deviceDev/SOC_UART0/2.png" alt="图2"></p>
+<h4 id="可以看到，esp8266的UART0-rx接收到什么，UART0-tx就发送什么。"><a href="#可以看到，esp8266的UART0-rx接收到什么，UART0-tx就发送什么。" class="headerlink" title="可以看到，esp8266的UART0_rx接收到什么，UART0_tx就发送什么。"></a>可以看到，esp8266的UART0_rx接收到什么，UART0_tx就发送什么。</h4><h5 id="注：关于串口的FIFO接收与发送数据，可下载本教程附件esp8266-technical-reference-cn-pdf，阅读第11章关于UART的介绍与接口"><a href="#注：关于串口的FIFO接收与发送数据，可下载本教程附件esp8266-technical-reference-cn-pdf，阅读第11章关于UART的介绍与接口" class="headerlink" title="注：关于串口的FIFO接收与发送数据，可下载本教程附件esp8266-technical_reference_cn.pdf，阅读第11章关于UART的介绍与接口"></a>注：关于串口的FIFO接收与发送数据，可下载本教程附件esp8266-technical_reference_cn.pdf，阅读第11章关于UART的介绍与接口</h5><h1 id="方式2的实现"><a href="#方式2的实现" class="headerlink" title="方式2的实现"></a>方式2的实现</h1><h4 id="我们像控制灯的开关一样，用App去控制UART0-tx分别发送“Hello-Gizwits-n”和“Goodbye-Gizwits-n”。"><a href="#我们像控制灯的开关一样，用App去控制UART0-tx分别发送“Hello-Gizwits-n”和“Goodbye-Gizwits-n”。" class="headerlink" title="我们像控制灯的开关一样，用App去控制UART0_tx分别发送“Hello,Gizwits!\n”和“Goodbye,Gizwits!\n”。"></a>我们像控制灯的开关一样，用App去控制UART0_tx分别发送“Hello,Gizwits!\n”和“Goodbye,Gizwits!\n”。</h4><h5 id="1、在uart-c找到uart1-sendStr-no-wait函数，复制修改成UART0专用，在uart-h做同样的操作，如下图"><a href="#1、在uart-c找到uart1-sendStr-no-wait函数，复制修改成UART0专用，在uart-h做同样的操作，如下图" class="headerlink" title="1、在uart.c找到uart1_sendStr_no_wait函数，复制修改成UART0专用，在uart.h做同样的操作，如下图"></a>1、在uart.c找到uart1_sendStr_no_wait函数，复制修改成UART0专用，在uart.h做同样的操作，如下图</h5><p><img src="http://docs.gizwits.com/assets/zh-cn/deviceDev/SOC_UART0/3.png" alt="图3"></p>
+<p><img src="http://docs.gizwits.com/assets/zh-cn/deviceDev/SOC_UART0/4.png" alt="图4"></p>
+<h5 id="2、在gizwits-product-c添加代码如图（前提是已经定义了一个可写布尔数据点）"><a href="#2、在gizwits-product-c添加代码如图（前提是已经定义了一个可写布尔数据点）" class="headerlink" title="2、在gizwits_product.c添加代码如图（前提是已经定义了一个可写布尔数据点）"></a>2、在gizwits_product.c添加代码如图（前提是已经定义了一个可写布尔数据点）</h5><p><img src="http://docs.gizwits.com/assets/zh-cn/deviceDev/SOC_UART0/5.png" alt="图5"></p>
+<h5 id="UART0-tx发送数据如图"><a href="#UART0-tx发送数据如图" class="headerlink" title="UART0_tx发送数据如图"></a>UART0_tx发送数据如图</h5><p><img src="http://docs.gizwits.com/assets/zh-cn/deviceDev/SOC_UART0/6.png" alt="图6"></p>
+<h5 id="这样，我们就可以让UART0-tx发送我们特定的数据"><a href="#这样，我们就可以让UART0-tx发送我们特定的数据" class="headerlink" title="这样，我们就可以让UART0_tx发送我们特定的数据"></a>这样，我们就可以让UART0_tx发送我们特定的数据</h5>
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="分享">
+          <span>分享</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="项目登记">
+      <span>项目登记</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=0ee1b30fb21f097d45c310066cd95d9e"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
