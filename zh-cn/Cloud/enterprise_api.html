@@ -738,7 +738,9 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/access_token
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"token"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"expired_at"</span>: <span class="number">0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><h2 id="搜索注册用户"><a href="#搜索注册用户" class="headerlink" title="搜索注册用户"></a><span id="get_v1_users_search">搜索注册用户</span></h2><p>*实现备注<br>该接口查询的是注册用户信息</p>
+<h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><h2 id="搜索注册用户"><a href="#搜索注册用户" class="headerlink" title="搜索注册用户"></a><span id="get_v1_users_search">搜索注册用户</span></h2><ul>
+<li>实现备注<br>该接口查询的是注册用户信息</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户管理/get_v1_users_search" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET
@@ -913,8 +915,10 @@ http://enterpriseapi.gizwits.com/v1/users/search
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"meta"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"limit"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"skip"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"next"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"previous"</span>: <span class="string">"string"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"objects"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uid"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"username"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"phone"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"email"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"birthday"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"is_anonymous"</span>: <span class="literal">true</span>,</div><div class="line">      <span class="attr">"gender"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"address"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"remark"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"created_at"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"updated_at"</span>: <span class="number">0</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="搜索绑定用户"><a href="#搜索绑定用户" class="headerlink" title="搜索绑定用户"></a><span id="get_v1_products_product_key_users_search">搜索绑定用户</span></h2><p><em>实现备注<br>该接口查询的是绑定用户信息
-</em>说明：只有当搜索设备 did 时会返回该设备的 owner 权限情况，true：拥有 owner 权限，false：没有 owner 权限</p>
+<h2 id="搜索绑定用户"><a href="#搜索绑定用户" class="headerlink" title="搜索绑定用户"></a><span id="get_v1_products_product_key_users_search">搜索绑定用户</span></h2><ul>
+<li>实现备注<br>该接口查询的是绑定用户信息</li>
+<li>说明：只有当搜索设备 did 时会返回该设备的 owner 权限情况，true：拥有 owner 权限，false：没有 owner 权限</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户管理/get_v1_products_product_key_users_search" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -1485,8 +1489,11 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/search
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"meta"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"limit"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"skip"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"next"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"previous"</span>: <span class="string">"string"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"objects"</span>: &#123;</div><div class="line">    <span class="attr">"did"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"mac"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"is_online"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"country"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"region"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"city"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"longitude"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"latitude"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"is_faulty"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"is_alert"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"online_latest"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"created_at"</span>: <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="远程控制"><a href="#远程控制" class="headerlink" title="远程控制"></a><span id="post_v1_products_product_key_devices_did_control">远程控制</span></h2><p>远程控制设备可以通过两种方式<br><em>原始指令: raw<br>二进制转 byte 数组，如要发送 010203，就是<br>{<br>“raw”: [1, 2, 3]<br>}
-</em>数据点方式: attrs<br>设备产品必须定义了数据点，比如要设置温度 temp 为 30 度<br>{<br>“attrs”: {<br>  “temp”: 30<br>}<br>}</p>
+<h2 id="远程控制"><a href="#远程控制" class="headerlink" title="远程控制"></a><span id="post_v1_products_product_key_devices_did_control">远程控制</span></h2><p>远程控制设备可以通过两种方式</p>
+<ul>
+<li>原始指令: raw<br>二进制转 byte 数组，如要发送 010203，就是<br>{<br>“raw”: [1, 2, 3]<br>}</li>
+<li>数据点方式: attrs<br>设备产品必须定义了数据点，比如要设置温度 temp 为 30 度<br>{<br>“attrs”: {<br>“temp”: 30<br>}<br>}</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/post_v1_products_product_key_devices_did_control" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>POST
@@ -1536,9 +1543,12 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/control
 <p>响应参数<br>   无</p>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"raw"</span>: [</div><div class="line">    <span class="number">0</span></div><div class="line">  ],</div><div class="line">  <span class="attr">"attrs"</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="设备上下线记录"><a href="#设备上下线记录" class="headerlink" title="设备上下线记录"></a><span id="get_v1_products_product_key_devices_did_online">设备上下线记录</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_online" target="_blank" rel="external">调试接口</a></p>
-<p><em>ChangeLog
-</em>0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录<br><em>0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
-</em>0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序</p>
+<ul>
+<li>ChangeLog</li>
+<li>0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录</li>
+<li>0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内</li>
+<li>0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序</li>
+</ul>
 <p>请求类型及地址</p>
 <pre><code>GET
 http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/online
@@ -1659,10 +1669,12 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/online
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"meta"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"limit"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"skip"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"next"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"previous"</span>: <span class="string">"string"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"objects"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"timestamp"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"payload"</span>: <span class="string">"string"</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="设备通信日志"><a href="#设备通信日志" class="headerlink" title="设备通信日志"></a><span id="get_v1_products_product_key_devices_did_cmd">设备通信日志</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_cmd" target="_blank" rel="external">调试接口</a></p>
-<p><em>按 ts 降序排序。
-</em>payload 为二进制进行 base64 编码后的结果。<br><em>ChangeLog
-</em>0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录<br><em>0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
-</em>0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序</p>
+<p>ChangeLog</p>
+<ul>
+<li>0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录</li>
+<li>0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内</li>
+<li>0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序</li>
+</ul>
 <p>请求类型及地址</p>
 <pre><code>GET
 http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/cmd
@@ -1783,9 +1795,12 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/cmd
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"meta"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"limit"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"skip"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"next"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"previous"</span>: <span class="string">"string"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"objects"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"timestamp"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"payload"</span>: <span class="string">"string"</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="获取设备历时数据"><a href="#获取设备历时数据" class="headerlink" title="获取设备历时数据"></a><span id="get_v1_products_product_key_devices_did_data">获取设备历时数据</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_data" target="_blank" rel="external">调试接口</a></p>
-<p><em>ChangeLog
-</em>0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录<br><em>0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
-</em>0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序</p>
+<p>ChangeLog</p>
+<ul>
+<li>0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录</li>
+<li>0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内</li>
+<li>0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序</li>
+</ul>
 <p>请求类型及地址</p>
 <pre><code>GET
 http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/data
@@ -1901,8 +1916,12 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/data
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"meta"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"limit"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"skip"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"next"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"previous"</span>: <span class="string">"string"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"objects"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"ts"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"attrs"</span>: &#123;</div><div class="line">        <span class="attr">"longitude"</span>: <span class="string">"string"</span>,</div><div class="line">        <span class="attr">"latitude"</span>: <span class="string">"string"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h1 id="用户报表"><a href="#用户报表" class="headerlink" title="用户报表"></a>用户报表</h1><p>##<span id="get_v1_products_product_key_users_report_new">用户新增报表</span></p>
-<p>实现备注：<br>这里指的是绑定了该 PK 下产品的新增用户<br>日期查询说明：<br><em>cycle 为 date 时，start,end的格式是年-月-日，example:2016-08-01,
-</em>cycle 为 week 时，start,end的格式是年-周，example:2016-51<br>*cycle 为 month 时，start,end的格式为年-月，example:2016-12<br><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_new" target="_blank" rel="external">调试接口</a></p>
+<p>实现备注：<br>这里指的是绑定了该 PK 下产品的新增用户<br>日期查询说明：</p>
+<ul>
+<li>cycle 为 date 时，start,end的格式是年-月-日，example:2016-08-01,</li>
+<li>cycle 为 week 时，start,end的格式是年-周，example:2016-51</li>
+<li>cycle 为 month 时，start,end的格式为年-月，example:2016-12<br><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_new" target="_blank" rel="external">调试接口</a></li>
+</ul>
 <p>请求类型及地址</p>
 <pre><code>GET
 http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/report/new
@@ -1998,7 +2017,9 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/report/new
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"cycle"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"start"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"end"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"data"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"date"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"count"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"location"</span>: &#123;&#125;</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="企业活跃用户人数"><a href="#企业活跃用户人数" class="headerlink" title="企业活跃用户人数"></a><span id="get_v1_users_liveness_total">企业活跃用户人数</span></h2><p>*实现备注<br>该接口查询的是企业活跃用户人数</p>
+<h2 id="企业活跃用户人数"><a href="#企业活跃用户人数" class="headerlink" title="企业活跃用户人数"></a><span id="get_v1_users_liveness_total">企业活跃用户人数</span></h2><ul>
+<li>实现备注<br>该接口查询的是企业活跃用户人数</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_liveness_total" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET
@@ -2082,7 +2103,9 @@ http://enterpriseapi.gizwits.com/v1/users/liveness_total
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"data"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"date"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"count"</span>: <span class="number">0</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="用户地理分布"><a href="#用户地理分布" class="headerlink" title="用户地理分布"></a><span id="get_v1_users_location">用户地理分布</span></h2><p>*实现备注<br>该接口查询的是企业用户地理分布</p>
+<h2 id="用户地理分布"><a href="#用户地理分布" class="headerlink" title="用户地理分布"></a><span id="get_v1_users_location">用户地理分布</span></h2><ul>
+<li>实现备注<br>该接口查询的是企业用户地理分布</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_location" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET
@@ -2140,7 +2163,9 @@ http://enterpriseapi.gizwits.com/v1/users/location
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"China"</span>: &#123;</div><div class="line">    <span class="attr">"count"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"Guangdong"</span>: &#123;</div><div class="line">      <span class="attr">"count"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"Guangzhou"</span>: &#123;</div><div class="line">        <span class="attr">"count"</span>: <span class="number">0</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="用户总数报表"><a href="#用户总数报表" class="headerlink" title="用户总数报表"></a><span id="get_v1_products_product_key_users_report_total">用户总数报表</span></h2><p>*实现备注<br>查询用户空间表，获取曾经绑定过该 pk 设备的用户总数</p>
+<h2 id="用户总数报表"><a href="#用户总数报表" class="headerlink" title="用户总数报表"></a><span id="get_v1_products_product_key_users_report_total">用户总数报表</span></h2><ul>
+<li>实现备注<br>查询用户空间表，获取曾经绑定过该 pk 设备的用户总数</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_total" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code> GET
@@ -2196,7 +2221,9 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/report/total
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"total"</span>: <span class="number">0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h1 id="设备报表"><a href="#设备报表" class="headerlink" title="设备报表"></a>设备报表</h1><h2 id="获取设备地理位置分布"><a href="#获取设备地理位置分布" class="headerlink" title="获取设备地理位置分布"></a><span id="get_v1_products_product_key_devices_locations">获取设备地理位置分布</span></h2><p>*实现备注<br>获取设备地理位置分布报表</p>
+<h1 id="设备报表"><a href="#设备报表" class="headerlink" title="设备报表"></a>设备报表</h1><h2 id="获取设备地理位置分布"><a href="#获取设备地理位置分布" class="headerlink" title="获取设备地理位置分布"></a><span id="get_v1_products_product_key_devices_locations">获取设备地理位置分布</span></h2><ul>
+<li>实现备注<br>获取设备地理位置分布报表</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_devices_locations" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code> GET
@@ -2278,7 +2305,9 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/locations
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">  <span class="attr">"location"</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="设备概览"><a href="#设备概览" class="headerlink" title="设备概览"></a><span id="get_v1_products_product_key_summary">设备概览</span></h2><p>*实现备注<br>获取最近的激活和活跃设备数报表</p>
+<h2 id="设备概览"><a href="#设备概览" class="headerlink" title="设备概览"></a><span id="get_v1_products_product_key_summary">设备概览</span></h2><ul>
+<li>实现备注<br>获取最近的激活和活跃设备数报表</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_devices_locations" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code> GET
@@ -2347,8 +2376,12 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/locations
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"online"</span>: <span class="number">0</span>,</div><div class="line">  <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">  <span class="attr">"new"</span>: &#123;</div><div class="line">    <span class="attr">"today"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"yesterday"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"7_day"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"30_day"</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"active"</span>: &#123;</div><div class="line">    <span class="attr">"yesterday"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"7_day"</span>: <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="设备激活详情"><a href="#设备激活详情" class="headerlink" title="设备激活详情"></a><span id="get_v1_products_product_key_incr_devices">设备激活详情</span></h2><p>实现备注<br><em>获取设备激活详情报表<br>日期查询说明
-</em>start,end 的格式是年-月-日，example:2016-08-01,<br>*注意：蓝牙设备响应返回的结果为device_sn字段</p>
+<h2 id="设备激活详情"><a href="#设备激活详情" class="headerlink" title="设备激活详情"></a><span id="get_v1_products_product_key_incr_devices">设备激活详情</span></h2><p>实现备注</p>
+<ul>
+<li>获取设备激活详情报表<br>日期查询说明</li>
+<li>start,end 的格式是年-月-日，example:2016-08-01,</li>
+<li>注意：蓝牙设备响应返回的结果为device_sn字段</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_incr_devices" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -2487,8 +2520,12 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/incr_devices
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"meta"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"limit"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"skip"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"next"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"previous"</span>: <span class="string">"string"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"objects"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"report_date"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"product_key"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"mac"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"device_sn"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"country"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"region"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"city"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"created_at"</span>: <span class="string">"string"</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="设备活跃详情"><a href="#设备活跃详情" class="headerlink" title="设备活跃详情"></a><span id="get_v1_products_product_key_active_devices">设备活跃详情</span></h2><p>实现备注<br><em>获取设备活跃详情报表<br>日期查询说明
-</em>start,end 的格式是年-月-日，example:2016-08-01,<br>*注意：蓝牙设备响应返回的结果为device_sn字段</p>
+<h2 id="设备活跃详情"><a href="#设备活跃详情" class="headerlink" title="设备活跃详情"></a><span id="get_v1_products_product_key_active_devices">设备活跃详情</span></h2><p>实现备注</p>
+<ul>
+<li>获取设备活跃详情报表<br>日期查询说明</li>
+<li>start,end 的格式是年-月-日，example:2016-08-01,</li>
+<li>注意：蓝牙设备响应返回的结果为device_sn字段</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_active_devices" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -2627,10 +2664,15 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/active_devices
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"meta"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"limit"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"skip"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"next"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"previous"</span>: <span class="string">"string"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"objects"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"report_date"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"product_key"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"mac"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"device_sn"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"country"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"region"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"city"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"created_at"</span>: <span class="string">"string"</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="获取活跃历史报表"><a href="#获取活跃历史报表" class="headerlink" title="获取活跃历史报表"></a><span id="get_v1_products_product_key_devices_report_liveness_history">获取活跃历史报表</span></h2><p>实现备注<br>活跃设备：一天之内有数据上报的设备<br><em>日报表最多查询 30 天。
-</em>周报表最多查询 53 周。<br><em>月报表最多查询 12 月。<br>日期查询说明
-</em>cycle 为 date 时，start,end 的格式是年-月-日，example:2016-08-01,<br><em>cycle 为 week 时，start,end 的格式是年-周，example:2016-51
-</em>cycle 为 month 时，start,end 的格式为年-月，example:2016-12</p>
+<h2 id="获取活跃历史报表"><a href="#获取活跃历史报表" class="headerlink" title="获取活跃历史报表"></a><span id="get_v1_products_product_key_devices_report_liveness_history">获取活跃历史报表</span></h2><p>实现备注<br>活跃设备：一天之内有数据上报的设备</p>
+<ul>
+<li>日报表最多查询 30 天。</li>
+<li>周报表最多查询 53 周。</li>
+<li>月报表最多查询 12 月。<br>日期查询说明</li>
+<li>cycle 为 date 时，start,end 的格式是年-月-日，example:2016-08-01,</li>
+<li>cycle 为 week 时，start,end 的格式是年-周，example:2016-51</li>
+<li>cycle 为 month 时，start,end 的格式为年-月，example:2016-12</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_devices_report_liveness_history" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -2732,7 +2774,10 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/report/livene
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"cycle"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"start"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"end"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"data"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"date"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"count"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"location"</span>: &#123;&#125;</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="获取故障设备台数报表"><a href="#获取故障设备台数报表" class="headerlink" title="获取故障设备台数报表"></a><span id="get_v1_products_product_key_fault_report_devices">获取故障设备台数报表</span></h2><p>实现备注<br>*获取故障设备台数报表</p>
+<h2 id="获取故障设备台数报表"><a href="#获取故障设备台数报表" class="headerlink" title="获取故障设备台数报表"></a><span id="get_v1_products_product_key_fault_report_devices">获取故障设备台数报表</span></h2><p>实现备注</p>
+<ul>
+<li>获取故障设备台数报表</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_fault_report_devices" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -2798,7 +2843,10 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/fault/report/devices
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"count"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"resolved"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"unresolved"</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"location"</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="获取报警设备台数报表"><a href="#获取报警设备台数报表" class="headerlink" title="获取报警设备台数报表"></a><span id="get_v1_products_product_key_alert_report_devices">获取报警设备台数报表</span></h2><p>实现备注<br>*获取报警设备台数报表</p>
+<h2 id="获取报警设备台数报表"><a href="#获取报警设备台数报表" class="headerlink" title="获取报警设备台数报表"></a><span id="get_v1_products_product_key_alert_report_devices">获取报警设备台数报表</span></h2><p>实现备注</p>
+<ul>
+<li>获取报警设备台数报表</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_alert_report_devices" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -2864,7 +2912,10 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/alert/report/devices
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"count"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"resolved"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"unresolved"</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"location"</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="获取故障次数报表"><a href="#获取故障次数报表" class="headerlink" title="获取故障次数报表"></a><span id="get_v1_products_product_key_fault_report_events">获取故障次数报表</span></h2><p>实现备注<br>*获取故障次数报表</p>
+<h2 id="获取故障次数报表"><a href="#获取故障次数报表" class="headerlink" title="获取故障次数报表"></a><span id="get_v1_products_product_key_fault_report_events">获取故障次数报表</span></h2><p>实现备注</p>
+<ul>
+<li>获取故障次数报表</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_fault_report_events" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -2940,7 +2991,10 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/fault/report/events
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"count"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"resolved"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"unresolved"</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"detail"</span>: &#123;&#125;,</div><div class="line">  <span class="attr">"location"</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="获取报警次数报表"><a href="#获取报警次数报表" class="headerlink" title="获取报警次数报表"></a><span id="get_v1_products_product_key_fault_alert_events">获取报警次数报表</span></h2><p>实现备注<br>*获取报警次数报表</p>
+<h2 id="获取报警次数报表"><a href="#获取报警次数报表" class="headerlink" title="获取报警次数报表"></a><span id="get_v1_products_product_key_fault_alert_events">获取报警次数报表</span></h2><p>实现备注</p>
+<ul>
+<li>获取报警次数报表</li>
+</ul>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_fault_alert_events" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
