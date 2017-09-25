@@ -2774,6 +2774,75 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/report/livene
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"cycle"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"start"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"end"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"data"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"date"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"count"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"location"</span>: &#123;&#125;</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="设备实时统计报表"><a href="#设备实时统计报表" class="headerlink" title="设备实时统计报表"></a><span id="get_v1_products_product_key_devices_report_rt">设备实时统计报表</span></h2><p>实现备注</p>
+<ul>
+<li>获取设备实时统计报表</li>
+</ul>
+<p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_devices_report_rt" target="_blank" rel="external">调试接口</a></p>
+<p>请求类型及地址</p>
+<pre><code>GET  
+http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/report/devices/report/rt
+</code></pre><p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">产品标识码</td>
+</tr>
+<tr>
+<td style="text-align:left">gid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">设备组 id</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">gid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">设备组 id</td>
+</tr>
+<tr>
+<td style="text-align:left">activated</td>
+<td style="text-align:left">integer</td>
+<td style="text-align:left">激活数</td>
+</tr>
+<tr>
+<td style="text-align:left">faulty</td>
+<td style="text-align:left">integer</td>
+<td style="text-align:left">故障数</td>
+</tr>
+<tr>
+<td style="text-align:left">end</td>
+<td style="text-align:left">integer</td>
+<td style="text-align:left">报警数</td>
+</tr>
+</tbody>
+</table>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"count"</span>: &#123;</div><div class="line">    <span class="attr">"activated"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"faulty"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"alert"</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"location"</span>: &#123;</div><div class="line">    <span class="attr">"China"</span>: &#123;</div><div class="line">      <span class="attr">"count"</span>: &#123;</div><div class="line">        <span class="attr">"activated"</span>: <span class="number">0</span>,</div><div class="line">        <span class="attr">"faulty"</span>: <span class="number">0</span>,</div><div class="line">        <span class="attr">"alert"</span>: <span class="number">0</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
 <h2 id="获取故障设备台数报表"><a href="#获取故障设备台数报表" class="headerlink" title="获取故障设备台数报表"></a><span id="get_v1_products_product_key_fault_report_devices">获取故障设备台数报表</span></h2><p>实现备注</p>
 <ul>
 <li>获取故障设备台数报表</li>
