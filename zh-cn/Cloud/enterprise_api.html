@@ -1948,39 +1948,6 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/data
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"meta"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"limit"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"skip"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"next"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"previous"</span>: <span class="string">"string"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"objects"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"ts"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"attrs"</span>: &#123;</div><div class="line">        <span class="attr">"longitude"</span>: <span class="string">"string"</span>,</div><div class="line">        <span class="attr">"latitude"</span>: <span class="string">"string"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<ul>
-<li><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#/设备组管理" target="_blank" rel="external">设备组管理</a>：提供了创建设备组、查询设备组列表、删除设备组、更新设备组、获取设备组下mac列表等功能。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>API列表</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="#获取设备组树形结构">get_v1_products_product_key_device_groups</a></td>
-<td>获取设备组树形结构</td>
-</tr>
-<tr>
-<td><a href="#创建设备组">post_v1_products_product_key_device_groups</a></td>
-<td>创建设备组</td>
-</tr>
-<tr>
-<td><a href="#删除设备组">delete_v1_products_product_key_device_groups_gid</a></td>
-<td>删除设备组</td>
-</tr>
-<tr>
-<td><a href="#获取设备组下的mac列表">get_v1_products_product_key_device_groups_gid</a></td>
-<td>获取设备组下的mac列表</td>
-</tr>
-<tr>
-<td><a href="#更新设备组">put_v1_products_product_key_device_groups_gid</a></td>
-<td>更新设备组</td>
-</tr>
-</tbody>
-</table>
 <h1 id="设备组管理"><a href="#设备组管理" class="headerlink" title="设备组管理"></a>设备组管理</h1><h2 id="获取设备组树形结构"><a href="#获取设备组树形结构" class="headerlink" title="获取设备组树形结构"></a><span id="get_v1_products_product_key_device_groups">获取设备组树形结构</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/get_v1_products_product_key_device_groups" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET
@@ -2103,8 +2070,8 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="获取设备组下的mac列表"><a href="#获取设备组下的mac列表" class="headerlink" title="获取设备组下的mac列表"></a><span id="get_v1_products_product_key_device_groups_gid">获取设备组下的mac列表</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/get_v1_products_product_key_device_groups_gid" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
-<pre><code>DELETE
- http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
+<pre><code>GET
+http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
 </code></pre><p>请求参数</p>
 <table>
 <thead>
@@ -2153,8 +2120,8 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"macs"</span>: [</div><div class="line">    <span class="string">"string"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="更新设备组"><a href="#更新设备组" class="headerlink" title="更新设备组"></a><span id="put_v1_products_product_key_device_groups_gid">更新设备组</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/put_v1_products_product_key_device_groups_gid" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
-<pre><code>DELETE
- http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
+<pre><code>PUT
+http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
 </code></pre><p>实现备注</p>
 <ul>
 <li>action: 操作，”assign” | “unassign”</li>
