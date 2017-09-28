@@ -544,6 +544,39 @@
 </tbody>
 </table>
 <ul>
+<li><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#/设备组管理" target="_blank" rel="external">设备组管理</a>：提供了创建设备组、查询设备组列表、删除设备组、更新设备组、获取设备组下mac列表等功能。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>API列表</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#获取设备组树形结构">get_v1_products_product_key_device_groups</a></td>
+<td>获取设备组树形结构</td>
+</tr>
+<tr>
+<td><a href="#创建设备组">post_v1_products_product_key_device_groups</a></td>
+<td>创建设备组</td>
+</tr>
+<tr>
+<td><a href="#删除设备组">delete_v1_products_product_key_device_groups_gid</a></td>
+<td>删除设备组</td>
+</tr>
+<tr>
+<td><a href="#获取设备组下的mac列表">get_v1_products_product_key_device_groups_gid</a></td>
+<td>获取设备组下的mac列表</td>
+</tr>
+<tr>
+<td><a href="#更新设备组">put_v1_products_product_key_device_groups_gid</a></td>
+<td>更新设备组</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#/用户报表" target="_blank" rel="external">用户报表</a>：提供了查询用户新增报表、企业活跃用户人数、用户地理分布、用户总数报表等功能。</li>
 </ul>
 <table>
@@ -1543,11 +1576,11 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/control
 <p>响应参数<br>   无</p>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"raw"</span>: [</div><div class="line">    <span class="number">0</span></div><div class="line">  ],</div><div class="line">  <span class="attr">"attrs"</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="设备上下线记录"><a href="#设备上下线记录" class="headerlink" title="设备上下线记录"></a><span id="get_v1_products_product_key_devices_did_online">设备上下线记录</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_online" target="_blank" rel="external">调试接口</a></p>
-<p>ChangeLog</p>
+<p>实现备注</p>
 <ul>
-<li>0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录</li>
-<li>0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内</li>
-<li>0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序</li>
+<li>start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录</li>
+<li>start_ts与end_ts之间的间隔秒必须在两天范围以内</li>
+<li>增加sort排序，默认为降序，asc代表升序，desc代表降序</li>
 </ul>
 <p>请求类型及地址</p>
 <pre><code>GET
@@ -1669,11 +1702,11 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/online
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"meta"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"limit"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"skip"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"next"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"previous"</span>: <span class="string">"string"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"objects"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"timestamp"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"payload"</span>: <span class="string">"string"</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="设备通信日志"><a href="#设备通信日志" class="headerlink" title="设备通信日志"></a><span id="get_v1_products_product_key_devices_did_cmd">设备通信日志</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_cmd" target="_blank" rel="external">调试接口</a></p>
-<p>ChangeLog</p>
+<p>实现备注</p>
 <ul>
-<li>0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录</li>
-<li>0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内</li>
-<li>0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序</li>
+<li>start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录</li>
+<li>start_ts与end_ts之间的间隔秒必须在两天范围以内</li>
+<li>增加sort排序，默认为降序，asc代表升序，desc代表降序</li>
 </ul>
 <p>请求类型及地址</p>
 <pre><code>GET
@@ -1795,11 +1828,11 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/cmd
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"meta"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"limit"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"skip"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"next"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"previous"</span>: <span class="string">"string"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"objects"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"timestamp"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"payload"</span>: <span class="string">"string"</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="获取设备历时数据"><a href="#获取设备历时数据" class="headerlink" title="获取设备历时数据"></a><span id="get_v1_products_product_key_devices_did_data">获取设备历时数据</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_data" target="_blank" rel="external">调试接口</a></p>
-<p>ChangeLog</p>
+<p>实现备注</p>
 <ul>
-<li>0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录</li>
-<li>0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内</li>
-<li>0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序</li>
+<li>start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录</li>
+<li>start_ts与end_ts之间的间隔秒必须在两天范围以内</li>
+<li>增加sort排序，默认为降序，asc代表升序，desc代表降序</li>
 </ul>
 <p>请求类型及地址</p>
 <pre><code>GET
@@ -1915,6 +1948,256 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/data
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"meta"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"limit"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"skip"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"next"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"previous"</span>: <span class="string">"string"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"objects"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"ts"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"attrs"</span>: &#123;</div><div class="line">        <span class="attr">"longitude"</span>: <span class="string">"string"</span>,</div><div class="line">        <span class="attr">"latitude"</span>: <span class="string">"string"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#/设备组管理" target="_blank" rel="external">设备组管理</a>：提供了创建设备组、查询设备组列表、删除设备组、更新设备组、获取设备组下mac列表等功能。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>API列表</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#获取设备组树形结构">get_v1_products_product_key_device_groups</a></td>
+<td>获取设备组树形结构</td>
+</tr>
+<tr>
+<td><a href="#创建设备组">post_v1_products_product_key_device_groups</a></td>
+<td>创建设备组</td>
+</tr>
+<tr>
+<td><a href="#删除设备组">delete_v1_products_product_key_device_groups_gid</a></td>
+<td>删除设备组</td>
+</tr>
+<tr>
+<td><a href="#获取设备组下的mac列表">get_v1_products_product_key_device_groups_gid</a></td>
+<td>获取设备组下的mac列表</td>
+</tr>
+<tr>
+<td><a href="#更新设备组">put_v1_products_product_key_device_groups_gid</a></td>
+<td>更新设备组</td>
+</tr>
+</tbody>
+</table>
+<h1 id="设备组管理"><a href="#设备组管理" class="headerlink" title="设备组管理"></a>设备组管理</h1><h2 id="获取设备组树形结构"><a href="#获取设备组树形结构" class="headerlink" title="获取设备组树形结构"></a><span id="get_v1_products_product_key_device_groups">获取设备组树形结构</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/get_v1_products_product_key_device_groups" target="_blank" rel="external">调试接口</a></p>
+<p>请求类型及地址</p>
+<pre><code>GET
+http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups
+</code></pre><p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">产品名称</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数<br>    无</p>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="创建设备组"><a href="#创建设备组" class="headerlink" title="创建设备组"></a><span id="post_v1_products_product_key_device_groups">创建设备组</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/post_v1_products_product_key_device_groups" target="_blank" rel="external">调试接口</a></p>
+<p>请求类型及地址</p>
+<pre><code>POST
+ http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups
+</code></pre><p>实现备注</p>
+<ul>
+<li>parent 为可选参数，如果有 parent 表示创建一个子设备组。</li>
+<li>一个产品只能有一个根设备组。</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">产品名称</td>
+</tr>
+<tr>
+<td style="text-align:left">parent_gid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">子设备组id</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">gid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">设备组id</td>
+</tr>
+</tbody>
+</table>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="删除设备组"><a href="#删除设备组" class="headerlink" title="删除设备组"></a><span id="delete_v1_products_product_key_device_groups_gid">删除设备组</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/delete_v1_products_product_key_device_groups_gid" target="_blank" rel="external">调试接口</a></p>
+<p>请求类型及地址</p>
+<pre><code>DELETE
+ http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
+</code></pre><p>实现备注</p>
+<ul>
+<li>删除设备组需要先清空设备组下所有设备及子设备组。</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">产品名称</td>
+</tr>
+<tr>
+<td style="text-align:left">gid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">设备组id</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数<br>       无 </p>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="获取设备组下的mac列表"><a href="#获取设备组下的mac列表" class="headerlink" title="获取设备组下的mac列表"></a><span id="get_v1_products_product_key_device_groups_gid">获取设备组下的mac列表</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/get_v1_products_product_key_device_groups_gid" target="_blank" rel="external">调试接口</a></p>
+<p>请求类型及地址</p>
+<pre><code>DELETE
+ http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
+</code></pre><p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">产品名称</td>
+</tr>
+<tr>
+<td style="text-align:left">gid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">设备组id</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">macs</td>
+<td style="text-align:left">Array[string]</td>
+<td style="text-align:left">mac列表</td>
+</tr>
+</tbody>
+</table>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"macs"</span>: [</div><div class="line">    <span class="string">"string"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="更新设备组"><a href="#更新设备组" class="headerlink" title="更新设备组"></a><span id="put_v1_products_product_key_device_groups_gid">更新设备组</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/put_v1_products_product_key_device_groups_gid" target="_blank" rel="external">调试接口</a></p>
+<p>请求类型及地址</p>
+<pre><code>DELETE
+ http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
+</code></pre><p>实现备注</p>
+<ul>
+<li>action: 操作，”assign” | “unassign”</li>
+<li>macs: MAC 列表，最多一次上传 1000 个 MAC</li>
+<li>reassign: 当 action 为 “assign” 时有效。当 reassgin 为 true，MAC 如果已经在某个设备组下面，会被移动到当前组；当 reassign 为 false，MAC 如果已经在某个设备组下面，则移动失败。</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">产品名称</td>
+</tr>
+<tr>
+<td style="text-align:left">gid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">设备组id</td>
+</tr>
+<tr>
+<td style="text-align:left">body</td>
+<td style="text-align:left">AssignObject</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">设备组id</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数<br>       无 </p>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h1 id="用户报表"><a href="#用户报表" class="headerlink" title="用户报表"></a>用户报表</h1><h2 id="用户新增报表"><a href="#用户新增报表" class="headerlink" title="用户新增报表"></a><span id="get_v1_products_product_key_users_report_new">用户新增报表</span></h2><p>实现备注：<br>这里指的是绑定了该 PK 下产品的新增用户<br>日期查询说明：</p>
 <ul>
 <li>cycle 为 date 时，start,end的格式是年-月-日，example:2016-08-01,</li>
