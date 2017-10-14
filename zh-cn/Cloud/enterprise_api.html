@@ -600,7 +600,7 @@
 <td>用户地理分布</td>
 </tr>
 <tr>
-<td><a href="#用户总数报表--实时">get_v1_products_product_key_users_report_total</a></td>
+<td><a href="#用户总数报表">get_v1_products_product_key_users_report_total</a></td>
 <td>用户总数</td>
 </tr>
 </tbody>
@@ -617,47 +617,47 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="#获取激活报表--大数据">get_v1_products_product_key_devices_report_activation</a></td>
+<td><a href="#获取激活报表">get_v1_products_product_key_devices_report_activation</a></td>
 <td>获取激活设备统计报表</td>
 </tr>
 <tr>
-<td><a href="#获取设备地理位置分布--实时">get_v1_products_product_key_devices_locations</a></td>
+<td><a href="#获取设备地理位置分布">get_v1_products_product_key_devices_locations</a></td>
 <td>获取设备地理位置分布</td>
 </tr>
 <tr>
-<td><a href="#设备概览--大数据">get_v1_products_product_key_summary</a></td>
+<td><a href="#设备概览">get_v1_products_product_key_summary</a></td>
 <td>最近的激活和活跃设备数</td>
 </tr>
 <tr>
-<td><a href="#设备激活详情--大数据">get_v1_products_product_key_incr_devices</a></td>
+<td><a href="#设备激活详情">get_v1_products_product_key_incr_devices</a></td>
 <td>自定义查询激活设备详情</td>
 </tr>
 <tr>
-<td><a href="#设备活跃详情--大数据">get_v1_products_product_key_active_devices</a></td>
+<td><a href="#设备活跃详情">get_v1_products_product_key_active_devices</a></td>
 <td>自定义查询活跃设备详情</td>
 </tr>
 <tr>
-<td><a href="#获取活跃历史报表--大数据">get_v1_products_product_key_devices_report_liveness_history</a></td>
+<td><a href="#获取活跃历史报表">get_v1_products_product_key_devices_report_liveness_history</a></td>
 <td>可以获取以日、周、月为时间维度的活跃设备历史报表</td>
 </tr>
 <tr>
-<td><a href="#设备实时统计报表--实时">get_v1_products_product_key_devices_report_rt</a></td>
+<td><a href="#设备实时统计报表">get_v1_products_product_key_devices_report_rt</a></td>
 <td>查询设备状态表</td>
 </tr>
 <tr>
-<td><a href="#获取故障设备台数报表--大数据">get_v1_products_product_key_fault_report_devices</a></td>
+<td><a href="#获取故障设备台数报表">get_v1_products_product_key_fault_report_devices</a></td>
 <td>获取故障设备台数报表</td>
 </tr>
 <tr>
-<td><a href="#获取报警设备台数报表--大数据">get_v1_products_product_key_alert_report_devices</a></td>
+<td><a href="#获取报警设备台数报表">get_v1_products_product_key_alert_report_devices</a></td>
 <td>获取报警设备台数报表</td>
 </tr>
 <tr>
-<td><a href="#获取故障次数报表--大数据">get_v1_products_product_key_fault_report_events</a></td>
+<td><a href="#获取故障次数报表">get_v1_products_product_key_fault_report_events</a></td>
 <td>获取故障次数报表</td>
 </tr>
 <tr>
-<td><a href="#获取报警次数报表--大数据">get_v1_products_product_key_fault_alert_events</a></td>
+<td><a href="#获取报警次数报表">get_v1_products_product_key_fault_alert_events</a></td>
 <td>获取报警次数报表</td>
 </tr>
 </tbody>
@@ -1522,7 +1522,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/search
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"meta"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"limit"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"skip"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"next"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"previous"</span>: <span class="string">"string"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"objects"</span>: &#123;</div><div class="line">    <span class="attr">"did"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"mac"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"is_online"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"country"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"region"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"city"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"longitude"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"latitude"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"is_faulty"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"is_alert"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"online_latest"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"created_at"</span>: <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="远程控制"><a href="#远程控制" class="headerlink" title="远程控制"></a><span id="post_v1_products_product_key_devices_did_control">远程控制</span></h2><p>远程控制设备可以通过两种方式</p>
+<h2 id="设备远程控制"><a href="#设备远程控制" class="headerlink" title="设备远程控制"></a><span id="post_v1_products_product_key_devices_did_control">设备远程控制</span></h2><p>远程控制设备可以通过两种方式</p>
 <ul>
 <li>原始指令: raw<br>二进制转 byte 数组，如要发送 010203，就是<br>{<br>“raw”: [1, 2, 3]<br>}</li>
 <li>数据点方式: attrs<br>设备产品必须定义了数据点，比如要设置温度 temp 为 30 度<br>{<br>“attrs”: {<br>“temp”: 30<br>}<br>}</li>
@@ -1974,7 +1974,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups
 </tbody>
 </table>
 <p>响应参数<br>    无</p>
-<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="创建设备组"><a href="#创建设备组" class="headerlink" title="创建设备组"></a><span id="post_v1_products_product_key_device_groups">创建设备组</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/post_v1_products_product_key_device_groups" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>POST
@@ -2067,7 +2067,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups
 </tbody>
 </table>
 <p>响应参数<br>       无 </p>
-<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="获取设备组下的mac列表"><a href="#获取设备组下的mac列表" class="headerlink" title="获取设备组下的mac列表"></a><span id="get_v1_products_product_key_device_groups_gid">获取设备组下的mac列表</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/get_v1_products_product_key_device_groups_gid" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET
@@ -2164,7 +2164,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
 </tbody>
 </table>
 <p>响应参数<br>       无 </p>
-<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h1 id="用户报表"><a href="#用户报表" class="headerlink" title="用户报表"></a>用户报表</h1><h2 id="用户新增报表"><a href="#用户新增报表" class="headerlink" title="用户新增报表"></a><span id="get_v1_products_product_key_users_report_new">用户新增报表</span></h2><p>实现备注：</p>
 <ul>
 <li>这里指的是绑定了该 PK 下产品的新增用户<br>日期查询说明：</li>
@@ -2172,6 +2172,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
 <li>cycle 为 week 时，start,end的格式是年-周，example:2016-51</li>
 <li>cycle 为 month 时，start,end的格式为年-月，example:2016-12</li>
 </ul>
+<p><strong>此接口仅可在国内环境使用</strong></p>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_new" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET
@@ -2564,6 +2565,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/locations
 <ul>
 <li>获取最近的激活和活跃设备数报表</li>
 </ul>
+<p><strong>此接口仅可在国内环境使用</strong></p>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_devices_locations" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code> GET
@@ -2638,6 +2640,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/locations
 <li>start,end 的格式是年-月-日，example:2016-08-01,</li>
 <li>注意：蓝牙设备响应返回的结果为device_sn字段</li>
 </ul>
+<p><strong>此接口仅可在国内环境使用</strong></p>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_incr_devices" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -2782,6 +2785,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/incr_devices
 <li>start,end 的格式是年-月-日，example:2016-08-01,</li>
 <li>注意：蓝牙设备响应返回的结果为device_sn字段</li>
 </ul>
+<p><strong>此接口仅可在国内环境使用</strong></p>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_active_devices" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -2929,6 +2933,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/active_devices
 <li>cycle 为 week 时，start,end 的格式是年-周，example:2016-51</li>
 <li>cycle 为 month 时，start,end 的格式为年-月，example:2016-12</li>
 </ul>
+<p><strong>此接口仅可在国内环境使用</strong></p>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_devices_report_liveness_history" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -3098,11 +3103,12 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/report/device
 </tr>
 </tbody>
 </table>
-<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"count"</span>: &#123;</div><div class="line">    <span class="attr">"activated"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"faulty"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"alert"</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"location"</span>: &#123;</div><div class="line">    <span class="attr">"China"</span>: &#123;</div><div class="line">      <span class="attr">"count"</span>: &#123;</div><div class="line">        <span class="attr">"activated"</span>: <span class="number">0</span>,</div><div class="line">        <span class="attr">"faulty"</span>: <span class="number">0</span>,</div><div class="line">        <span class="attr">"alert"</span>: <span class="number">0</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"count"</span>: &#123;</div><div class="line">    <span class="attr">"activated"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"faulty"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"alert"</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"location"</span>: &#123;</div><div class="line">    <span class="attr">"China"</span>: &#123;</div><div class="line">      <span class="attr">"count"</span>: &#123;</div><div class="line">        <span class="attr">"activated"</span>: <span class="number">0</span>,</div><div class="line">        <span class="attr">"faulty"</span>: <span class="number">0</span>,</div><div class="line">        <span class="attr">"alert"</span>: <span class="number">0</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="获取故障设备台数报表"><a href="#获取故障设备台数报表" class="headerlink" title="获取故障设备台数报表"></a><span id="get_v1_products_product_key_fault_report_devices">获取故障设备台数报表</span></h2><p>实现备注</p>
 <ul>
 <li>获取故障设备台数报表</li>
 </ul>
+<p><strong>此接口仅可在国内环境使用</strong></p>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_fault_report_devices" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -3172,6 +3178,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/fault/report/devices
 <ul>
 <li>获取报警设备台数报表</li>
 </ul>
+<p><strong>此接口仅可在国内环境使用</strong></p>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_alert_report_devices" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -3241,6 +3248,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/alert/report/devices
 <ul>
 <li>获取故障次数报表</li>
 </ul>
+<p><strong>此接口仅可在国内环境使用</strong></p>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_fault_report_events" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -3320,6 +3328,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/fault/report/events
 <ul>
 <li>获取报警次数报表</li>
 </ul>
+<p><strong>此接口仅可在国内环境使用</strong></p>
 <p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_fault_alert_events" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET  
@@ -3397,7 +3406,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/alert/report/devices
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"count"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"resolved"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"unresolved"</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"detail"</span>: &#123;&#125;,</div><div class="line">  <span class="attr">"location"</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h1 id="绑定管理"><a href="#绑定管理" class="headerlink" title="绑定管理"></a>绑定管理</h1><h2 id="设备绑定功能"><a href="#设备绑定功能" class="headerlink" title="设备绑定功能"></a><span id="post_v1_products_product_key_devices_bindings">设备绑定功能</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/绑定管理/post_v1_products_product_key_devices_bindings" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
-<pre><code>POST 
+<pre><code>POST
 http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
 </code></pre><p>请求参数</p>
 <table>

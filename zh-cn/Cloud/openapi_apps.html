@@ -522,7 +522,7 @@
 <td>查询消息列表</td>
 </tr>
 <tr>
-<td><a href="#标记消息已读和删除">put_app_messages</a></td>
+<td><a href="#标记已读和删除消息">put_app_messages</a></td>
 <td>标记消息已读和删除</td>
 </tr>
 </tbody>
@@ -903,7 +903,13 @@
 <li>用户名密码注册，通过 username 和 passowrd 创建用户</li>
 <li>手机注册，通过 phone, password 和 code（短信验证码）创建用户，短信验证码的获取参考下面章节</li>
 <li>邮箱注册，通过 email 和 password 创建用户</li>
-<li>第三方登录用户创建，通过authData内的 src、 uid 和 token 创建用户。目前支持 QQ、百度、新浪微博</li>
+<li>第三方登录用户创建，通过authData内的 src、 uid 和 token 创建用户。目前支持腾讯QQ、新浪微博、百度、微信、Facebook、Twitter、Google+、Amazon</li>
+</ul>
+<p>第三方登录注意事项：</p>
+<ul>
+<li>Google 和 amazon 第三方登录，authData 里面的 token 需要带上 “Bearer “ 开头</li>
+<li>QQ 和 Twitter 需要在开发者中心填写API_KEY和API_Secret</li>
+<li>Facebook、Twitter、Google、Amazon仅可在美东和欧洲环境使用</li>
 </ul>
 <p>请求地址及地址</p>
 <pre><code>POST
@@ -981,7 +987,7 @@ http://api.gizwits.com/app/users
 <td style="text-align:left">string</td>
 <td style="text-align:center">否</td>
 <td style="text-align:left">body</td>
-<td style="text-align:left">平台类型:qq, sina, baidu, wechat</td>
+<td style="text-align:left">平台类型:qq,sina,baidu,wechat,twitter,facebook,google, amazon</td>
 </tr>
 <tr>
 <td style="text-align:left">uid</td>
