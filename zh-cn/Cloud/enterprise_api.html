@@ -465,6 +465,23 @@
 </tbody>
 </table>
 <ul>
+<li><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#/产品管理" target="_blank" rel="external">产品管理</a>：提供了获取产品数据点等功能。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>API列表</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#获取产品数据点">get_v1_products_product_key_datapoint</a></td>
+<td>获取某个产品的数据点信息</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#/用户管理" target="_blank" rel="external">用户管理</a>：提供了搜索注册用户、搜索绑定用户等功能。</li>
 </ul>
 <table>
@@ -482,23 +499,6 @@
 <tr>
 <td><a href="#搜索绑定用户">get_v1_users_search</a></td>
 <td>该接口查询的是绑定用户信息</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#/产品管理" target="_blank" rel="external">产品管理</a>：提供了获取产品数据点等功能。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>API列表</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="#获取产品数据点">get_v1_products_product_key_datapoint</a></td>
-<td>获取某个产品的数据点信息</td>
 </tr>
 </tbody>
 </table>
@@ -686,9 +686,9 @@
 <h1 id="协议约定"><a href="#协议约定" class="headerlink" title="协议约定"></a>协议约定</h1><h2 id="1、请求方式"><a href="#1、请求方式" class="headerlink" title="1、请求方式"></a>1、请求方式</h2><p>本文档所定义接口基于HTTP/HTTPS协议进行传输，需要注意协议中标注的请求方式，通过GET、PUT、DELETE等进行不同的操作。</p>
 <h2 id="2、接口地址"><a href="#2、接口地址" class="headerlink" title="2、接口地址"></a>2、接口地址</h2><p>接口地址中用${ }号包含的为变量，需要使用者通过对应的变量替换。例如${product_key}表示需要将获取的product_key值赋予到接口地址中，${token值}表示是需要替换为通过授权接口获取的token，${did} 表示是需要替换为具体的did。</p>
 <h2 id="3、请求参数"><a href="#3、请求参数" class="headerlink" title="3、请求参数"></a>3、请求参数</h2><p>HTTP请求参数的类型一般分为三种。Header表示该参数是在HTTP请求头中；URL表示是通过url传参；Body表示是Request Body，通常Body中都是JSON格式</p>
-<h2 id="4、HTTP请求头部"><a href="#4、HTTP请求头部" class="headerlink" title="4、HTTP请求头部"></a>4、HTTP请求头部</h2><p>本文档协议中设备管理类、设备报表查询类的接口在进行接口访问时，都需要在请求头增加token值，以此校验访问者是否有权访问该接口。token值是通过获取授权接口获得。<br>请求头格式如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Content-Type: application/json</div><div class="line">Authorization: token $&#123;token值&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="4、HTTP请求头部"><a href="#4、HTTP请求头部" class="headerlink" title="4、HTTP请求头部"></a>4、HTTP请求头部</h2><p>本文档协议中设备管理类、设备报表查询类的接口在进行接口访问时，都需要在请求头增加token值，以此校验访问者是否有权访问该接口。token值是通过获取授权接口获得。<br>请求头格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Content-Type: application/json</div><div class="line">Authorization: token $&#123;token值&#125;</div></pre></td></tr></table></figure></p>
 <p>注意：${token值}是不包括${}号，只需将从获取token接口获得token值放到token之后。例如：Authorization: token  efbekskdklllsF</p>
-<h2 id="5、HTTP响应头部"><a href="#5、HTTP响应头部" class="headerlink" title="5、HTTP响应头部"></a>5、HTTP响应头部</h2><p>本协议中的接口在返回报文头部会输出如下信息：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">X-RateLimit-Limit: 60     //接口允许访问总量</div><div class="line">X-RateLimit-Remaining: 56 //接口剩余访问次数</div><div class="line">X-RateLimit-Reset: 1372700873 //调用频率限制重置时间，TS类型</div></pre></td></tr></table></figure></p>
+<h2 id="5、HTTP响应头部"><a href="#5、HTTP响应头部" class="headerlink" title="5、HTTP响应头部"></a>5、HTTP响应头部</h2><p>本协议中的接口在返回报文头部会输出如下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">X-RateLimit-Limit: 60     //接口允许访问总量</div><div class="line">X-RateLimit-Remaining: 56 //接口剩余访问次数</div><div class="line">X-RateLimit-Reset: 1372700873 //调用频率限制重置时间，TS类型</div></pre></td></tr></table></figure></p>
 <h2 id="6、Token值的生命周期"><a href="#6、Token值的生命周期" class="headerlink" title="6、Token值的生命周期"></a>6、Token值的生命周期</h2><p>Token值有效期为7天， 调用获取token接口返回的expired_at为失效日期时间戳。若现在时间戳 &gt; expired_at时间戳，则需要重新获取token, token调用请见”获取Token”</p>
 <h2 id="7、接口请求配额说明"><a href="#7、接口请求配额说明" class="headerlink" title="7、接口请求配额说明"></a>7、接口请求配额说明</h2><p>企业API每小时默认允许企业API接口每小时调用3600次，超过阈值则抛错，1小时后恢复接口调用。具体抛错请查看5.2错误信息表系统编码5013的相关说明</p>
 <h1 id="在线调试-企业-API"><a href="#在线调试-企业-API" class="headerlink" title="在线调试 企业 API"></a>在线调试 企业 API</h1><p>我们提供了在线 API 调试工具，在每个接口描述中，都会给出对应的调试接口链接。</p>
@@ -771,6 +771,84 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/access_token
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"token"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"expired_at"</span>: <span class="number">0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="产品管理"><a href="#产品管理" class="headerlink" title="产品管理"></a>产品管理</h1><h2 id="获取产品数据点"><a href="#获取产品数据点" class="headerlink" title="获取产品数据点"></a><span id="get_v1_products_product_key_datapoint">获取产品数据点</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/产品管理/get_v1_products_product_key_datapoint" target="_blank" rel="external">调试接口</a></p>
+<p>请求类型及地址</p>
+<pre><code>GET
+http://enterpriseapi.gizwits.com/v1/products/{product_key}/datapoint
+</code></pre><p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">产品名称</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">数据点标识名称</td>
+</tr>
+<tr>
+<td style="text-align:left">entities</td>
+<td style="text-align:left">Array[EntitiyList]</td>
+<td style="text-align:left">数据点列表</td>
+</tr>
+<tr>
+<td style="text-align:left">protocolType</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">协议类型，固定长度为“standard” ，可变长度为“var_len”</td>
+</tr>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">产品名称</td>
+</tr>
+<tr>
+<td style="text-align:left">packetVersion</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">固定值，“0x00000004”</td>
+</tr>
+<tr>
+<td style="text-align:left">ui</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">数据点 ui json</td>
+</tr>
+<tr>
+<td style="text-align:left">display_name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">数据点名称</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">entity id</td>
+</tr>
+</tbody>
+</table>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"entities"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"display_name"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"id"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"string"</span></div><div class="line">    &#125;</div><div class="line">  ],</div><div class="line">  <span class="attr">"protocolType"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"product_key"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"packetVersion"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"ui"</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><h2 id="搜索注册用户"><a href="#搜索注册用户" class="headerlink" title="搜索注册用户"></a><span id="get_v1_users_search">搜索注册用户</span></h2><ul>
 <li>实现备注<br>该接口查询的是注册用户信息</li>
 </ul>
@@ -1105,84 +1183,6 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/search
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"meta"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"limit"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"skip"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"next"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"previous"</span>: <span class="string">"string"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"objects"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"uid"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"username"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"phone"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"email"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"gender"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"birthday"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"address"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"remark"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"created_at"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"is_anomymous"</span>: <span class="literal">true</span>,</div><div class="line">      <span class="attr">"auth_src"</span>: &#123;&#125;,</div><div class="line">      <span class="attr">"is_owner"</span>: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h1 id="产品管理"><a href="#产品管理" class="headerlink" title="产品管理"></a>产品管理</h1><h2 id="获取产品数据点"><a href="#获取产品数据点" class="headerlink" title="获取产品数据点"></a><span id="get_v1_products_product_key_datapoint">获取产品数据点</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/产品管理/get_v1_products_product_key_datapoint" target="_blank" rel="external">调试接口</a></p>
-<p>请求类型及地址</p>
-<pre><code>GET
-http://enterpriseapi.gizwits.com/v1/products/{product_key}/datapoint
-</code></pre><p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:center">必填</th>
-<th style="text-align:left">参数类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">product_key</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">path</td>
-<td style="text-align:left">产品名称</td>
-</tr>
-</tbody>
-</table>
-<p>响应参数</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">name</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">数据点标识名称</td>
-</tr>
-<tr>
-<td style="text-align:left">entities</td>
-<td style="text-align:left">Array[EntitiyList]</td>
-<td style="text-align:left">数据点列表</td>
-</tr>
-<tr>
-<td style="text-align:left">protocolType</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">协议类型，固定长度为“standard” ，可变长度为“var_len”</td>
-</tr>
-<tr>
-<td style="text-align:left">product_key</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">产品名称</td>
-</tr>
-<tr>
-<td style="text-align:left">packetVersion</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">固定值，“0x00000004”</td>
-</tr>
-<tr>
-<td style="text-align:left">ui</td>
-<td style="text-align:left">object</td>
-<td style="text-align:left">数据点 ui json</td>
-</tr>
-<tr>
-<td style="text-align:left">display_name</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">数据点名称</td>
-</tr>
-<tr>
-<td style="text-align:left">id</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">entity id</td>
-</tr>
-</tbody>
-</table>
-<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"entities"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"display_name"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"id"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"string"</span></div><div class="line">    &#125;</div><div class="line">  ],</div><div class="line">  <span class="attr">"protocolType"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"product_key"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"packetVersion"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"ui"</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h1 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h1><h2 id="获取设备did"><a href="#获取设备did" class="headerlink" title="获取设备did"></a><span id="get_v1_products_product_key_devices">获取设备did</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices" target="_blank" rel="external">调试接口</a></p>
 <p>请求类型及地址</p>
 <pre><code>GET
@@ -2165,6 +2165,144 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
 </table>
 <p>响应参数<br>       无 </p>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="绑定管理"><a href="#绑定管理" class="headerlink" title="绑定管理"></a>绑定管理</h1><h2 id="设备绑定功能"><a href="#设备绑定功能" class="headerlink" title="设备绑定功能"></a><span id="post_v1_products_product_key_devices_bindings">设备绑定功能</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/绑定管理/post_v1_products_product_key_devices_bindings" target="_blank" rel="external">调试接口</a></p>
+<p>请求类型及地址</p>
+<pre><code>POST
+http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
+</code></pre><p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">产品标识码</td>
+</tr>
+<tr>
+<td style="text-align:left">uid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">用户 id</td>
+</tr>
+<tr>
+<td style="text-align:left">appid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">应用  id</td>
+</tr>
+<tr>
+<td style="text-align:left">dids</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">did 列表</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">success</td>
+<td style="text-align:left">Array[string],</td>
+<td style="text-align:left">绑定成功列表</td>
+</tr>
+<tr>
+<td style="text-align:left">failed</td>
+<td style="text-align:left">Array[string],</td>
+<td style="text-align:left">绑定失败列表</td>
+</tr>
+</tbody>
+</table>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"success"</span>: [</div><div class="line">    <span class="string">"string"</span></div><div class="line">  ],</div><div class="line">  <span class="attr">"failed"</span>: [</div><div class="line">    <span class="string">"string"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="解除绑定"><a href="#解除绑定" class="headerlink" title="解除绑定"></a><span id="delete_v1_products_product_key_devices_bindings">解除绑定</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/绑定管理/delete_v1_products_product_key_devices_bindings" target="_blank" rel="external">调试接口</a></p>
+<p>请求类型及地址</p>
+<pre><code>DELETE
+http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
+</code></pre><p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">产品标识码</td>
+</tr>
+<tr>
+<td style="text-align:left">uid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">用户 id</td>
+</tr>
+<tr>
+<td style="text-align:left">appid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">应用  id</td>
+</tr>
+<tr>
+<td style="text-align:left">dids</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">body</td>
+<td style="text-align:left">did 列表</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">success</td>
+<td style="text-align:left">Array[string],</td>
+<td style="text-align:left">绑定成功列表</td>
+</tr>
+<tr>
+<td style="text-align:left">failed</td>
+<td style="text-align:left">Array[string],</td>
+<td style="text-align:left">绑定失败列表</td>
+</tr>
+</tbody>
+</table>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"success"</span>: [</div><div class="line">    <span class="string">"string"</span></div><div class="line">  ],</div><div class="line">  <span class="attr">"failed"</span>: [</div><div class="line">    <span class="string">"string"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h1 id="用户报表"><a href="#用户报表" class="headerlink" title="用户报表"></a>用户报表</h1><h2 id="用户新增报表"><a href="#用户新增报表" class="headerlink" title="用户新增报表"></a><span id="get_v1_products_product_key_users_report_new">用户新增报表</span></h2><p>实现备注：</p>
 <ul>
 <li>这里指的是绑定了该 PK 下产品的新增用户<br>日期查询说明：</li>
@@ -3404,150 +3542,11 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/alert/report/devices
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"count"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"resolved"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"unresolved"</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"detail"</span>: &#123;&#125;,</div><div class="line">  <span class="attr">"location"</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h1 id="绑定管理"><a href="#绑定管理" class="headerlink" title="绑定管理"></a>绑定管理</h1><h2 id="设备绑定功能"><a href="#设备绑定功能" class="headerlink" title="设备绑定功能"></a><span id="post_v1_products_product_key_devices_bindings">设备绑定功能</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/绑定管理/post_v1_products_product_key_devices_bindings" target="_blank" rel="external">调试接口</a></p>
-<p>请求类型及地址</p>
-<pre><code>POST
-http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
-</code></pre><p>请求参数</p>
-<table>
+<h1 id="错误信息表"><a href="#错误信息表" class="headerlink" title="错误信息表"></a>错误信息表</h1><table>
 <thead>
 <tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:center">必填</th>
-<th style="text-align:left">参数类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">product_key</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">path</td>
-<td style="text-align:left">产品标识码</td>
-</tr>
-<tr>
-<td style="text-align:left">uid</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">body</td>
-<td style="text-align:left">用户 id</td>
-</tr>
-<tr>
-<td style="text-align:left">appid</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">body</td>
-<td style="text-align:left">应用  id</td>
-</tr>
-<tr>
-<td style="text-align:left">dids</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">body</td>
-<td style="text-align:left">did 列表</td>
-</tr>
-</tbody>
-</table>
-<p>响应参数</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">success</td>
-<td style="text-align:left">Array[string],</td>
-<td style="text-align:left">绑定成功列表</td>
-</tr>
-<tr>
-<td style="text-align:left">failed</td>
-<td style="text-align:left">Array[string],</td>
-<td style="text-align:left">绑定失败列表</td>
-</tr>
-</tbody>
-</table>
-<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"success"</span>: [</div><div class="line">    <span class="string">"string"</span></div><div class="line">  ],</div><div class="line">  <span class="attr">"failed"</span>: [</div><div class="line">    <span class="string">"string"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="解除绑定"><a href="#解除绑定" class="headerlink" title="解除绑定"></a><span id="delete_v1_products_product_key_devices_bindings">解除绑定</span></h2><p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/绑定管理/delete_v1_products_product_key_devices_bindings" target="_blank" rel="external">调试接口</a></p>
-<p>请求类型及地址</p>
-<pre><code>DELETE
-http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
-</code></pre><p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:center">必填</th>
-<th style="text-align:left">参数类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">product_key</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">path</td>
-<td style="text-align:left">产品标识码</td>
-</tr>
-<tr>
-<td style="text-align:left">uid</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">body</td>
-<td style="text-align:left">用户 id</td>
-</tr>
-<tr>
-<td style="text-align:left">appid</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">body</td>
-<td style="text-align:left">应用  id</td>
-</tr>
-<tr>
-<td style="text-align:left">dids</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">body</td>
-<td style="text-align:left">did 列表</td>
-</tr>
-</tbody>
-</table>
-<p>响应参数</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">success</td>
-<td style="text-align:left">Array[string],</td>
-<td style="text-align:left">绑定成功列表</td>
-</tr>
-<tr>
-<td style="text-align:left">failed</td>
-<td style="text-align:left">Array[string],</td>
-<td style="text-align:left">绑定失败列表</td>
-</tr>
-</tbody>
-</table>
-<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"success"</span>: [</div><div class="line">    <span class="string">"string"</span></div><div class="line">  ],</div><div class="line">  <span class="attr">"failed"</span>: [</div><div class="line">    <span class="string">"string"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h1 id="接口错误"><a href="#接口错误" class="headerlink" title="接口错误"></a>接口错误</h1><h2 id="错误信息格式"><a href="#错误信息格式" class="headerlink" title="错误信息格式"></a>错误信息格式</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">      <span class="attr">"error_code"</span>: <span class="string">"5001"</span>,</div><div class="line">      <span class="attr">"error_message"</span>: <span class="string">"body json invalid"</span>,</div><div class="line">      <span class="attr">"detail"</span>: <span class="string">""</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="错误信息表"><a href="#错误信息表" class="headerlink" title="错误信息表"></a>错误信息表</h2><table>
-<thead>
-<tr>
-<th>HTTP响应编码</th>
-<th style="text-align:center">系统错误编码</th>
+<th>响应码</th>
+<th style="text-align:center">系统错误码</th>
 <th style="text-align:left">错误信息描述</th>
 <th style="text-align:left">解决办法</th>
 </tr>
@@ -3556,7 +3555,7 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
 <tr>
 <td>400</td>
 <td style="text-align:center">5001</td>
-<td style="text-align:left">json字串格式错误</td>
+<td style="text-align:left">body json invalid</td>
 <td style="text-align:left">核对json字串</td>
 </tr>
 <tr>
@@ -3593,42 +3592,42 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
 <td>404</td>
 <td style="text-align:center">5007</td>
 <td style="text-align:left">association not exist</td>
-<td style="text-align:left">表示Eid没有雨对应的产品Product Key 关联，必须成功关联才能操作</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
 <td>400</td>
 <td style="text-align:center">5008</td>
 <td style="text-align:left">association existed</td>
-<td style="text-align:left"></td>
+<td style="text-align:left">Eid没有与对应的Product Key 关联，请联系客服</td>
 </tr>
 <tr>
 <td>400</td>
 <td style="text-align:center">5009</td>
 <td style="text-align:left">token invalid</td>
-<td style="text-align:left">请携带token或检查token字段格式,正确的token格式是在http header中输入:token ${token值}，token后面必须空一格后再写入具体的token值</td>
+<td style="text-align:left">请携带token或检查token字段格式</td>
 </tr>
 <tr>
 <td>400</td>
 <td style="text-align:center">5010</td>
-<td style="text-align:left">token未匹配</td>
-<td style="text-align:left">请核对token</td>
+<td style="text-align:left">token not match product_key</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
 <td>400</td>
 <td style="text-align:center">5011</td>
-<td style="text-align:left">token过期</td>
+<td style="text-align:left">token has expired</td>
 <td style="text-align:left">请再次获取token</td>
 </tr>
 <tr>
 <td>400</td>
 <td style="text-align:center">5012</td>
-<td style="text-align:left">发起关联请求的主机ip无访问权限</td>
+<td style="text-align:left">ip not in white list</td>
 <td style="text-align:left">添加ip到ip企业数据访问白名单中</td>
 </tr>
 <tr>
 <td>403</td>
 <td style="text-align:center">5013</td>
-<td style="text-align:left">接口使用过于频繁</td>
+<td style="text-align:left">API call rate limit execeed quota</td>
 <td style="text-align:left">等待一定时间后再次使用此接口</td>
 </tr>
 <tr>
@@ -3640,8 +3639,74 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
 <tr>
 <td>404</td>
 <td style="text-align:center">5015</td>
-<td style="text-align:left">Product Key不存在</td>
+<td style="text-align:left">Product key not exist!</td>
 <td style="text-align:left">核对产品Product Key是否正确</td>
+</tr>
+<tr>
+<td>404</td>
+<td style="text-align:center">5016</td>
+<td style="text-align:left">Appid not exist!</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>404</td>
+<td style="text-align:center">5016</td>
+<td style="text-align:left">Appid not exist!</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>404</td>
+<td style="text-align:center">5017</td>
+<td style="text-align:left">Uid not exist!</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>403</td>
+<td style="text-align:center">5018</td>
+<td style="text-align:left">product operation not allowed</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>404</td>
+<td style="text-align:center">5019</td>
+<td style="text-align:left">organization does not exist</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>400</td>
+<td style="text-align:center">5020</td>
+<td style="text-align:left">can not delete published product!</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>400</td>
+<td style="text-align:center">5021</td>
+<td style="text-align:left">enterprise is exist</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>404</td>
+<td style="text-align:center">5022</td>
+<td style="text-align:left">enterprise does not exist</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>403</td>
+<td style="text-align:center">5023</td>
+<td style="text-align:left">enterprise is creating</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>403</td>
+<td style="text-align:center">5024</td>
+<td style="text-align:left">api deny to visit!</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>404</td>
+<td style="text-align:center">5025</td>
+<td style="text-align:left">product does not exist</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
 <td>403</td>
@@ -3680,15 +3745,27 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
 <td style="text-align:left"></td>
 </tr>
 <tr>
+<td>400</td>
+<td style="text-align:center">5207</td>
+<td style="text-align:left">product key not in pre assignment!</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>400</td>
+<td style="text-align:center">5208</td>
+<td style="text-align:left">create assign device in progress!</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
 <td>404</td>
 <td style="text-align:center">5301</td>
-<td style="text-align:left">设备不存在</td>
+<td style="text-align:left">device not exist</td>
 <td style="text-align:left">核对设备ID</td>
 </tr>
 <tr>
 <td>403</td>
 <td style="text-align:center">5302</td>
-<td style="text-align:left">产品与设备未绑定</td>
+<td style="text-align:left">device not belong to this product</td>
 <td style="text-align:left">请先将设备绑定到产品</td>
 </tr>
 <tr>
@@ -3700,38 +3777,121 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
 <tr>
 <td>400</td>
 <td style="text-align:center">5304</td>
-<td style="text-align:left">设备未激活</td>
+<td style="text-align:left">device is disabled</td>
 <td style="text-align:left">激活设备</td>
 </tr>
 <tr>
 <td>400</td>
 <td style="text-align:center">5305</td>
-<td style="text-align:left">设备处于下线状态</td>
+<td style="text-align:left">device offline!</td>
 <td style="text-align:left">上线设备</td>
 </tr>
 <tr>
 <td>400</td>
 <td style="text-align:center">5401</td>
-<td style="text-align:left">数据点错误</td>
+<td style="text-align:left">attr invalid!</td>
 <td style="text-align:left">核对数据点信息</td>
 </tr>
 <tr>
-<td>400</td>
+<td>404</td>
 <td style="text-align:center">5402</td>
-<td style="text-align:left">数据点未定义</td>
+<td style="text-align:left">datapoint data not found!</td>
 <td style="text-align:left">先定义数据点,然后再次尝试</td>
 </tr>
 <tr>
 <td>400</td>
 <td style="text-align:center">5403</td>
-<td style="text-align:left">控制命令发送失败</td>
+<td style="text-align:left">send command failed!</td>
 <td style="text-align:left">请再次使用此接口</td>
 </tr>
 <tr>
-<td>400</td>
+<td>403</td>
 <td style="text-align:center">5404</td>
-<td style="text-align:left">remote control not allowed</td>
+<td style="text-align:left">remote control not allowed!</td>
 <td style="text-align:left">远程控制操作需要后台开启</td>
+</tr>
+<tr>
+<td>404</td>
+<td style="text-align:center">5405</td>
+<td style="text-align:left">attrs not exist!</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>500</td>
+<td style="text-align:center">5406</td>
+<td style="text-align:left">Datapoints malformed</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>500</td>
+<td style="text-align:center">5407</td>
+<td style="text-align:left">generate meta failed</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>400</td>
+<td style="text-align:center">5408</td>
+<td style="text-align:left">raw data error!</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>500</td>
+<td style="text-align:center">5409</td>
+<td style="text-align:left">call innerapi failed!</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>404</td>
+<td style="text-align:center">5501</td>
+<td style="text-align:left">firmware does not exist</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>400</td>
+<td style="text-align:center">5502</td>
+<td style="text-align:left">firmware version has created</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>403</td>
+<td style="text-align:center">5503</td>
+<td style="text-align:left">firmware operation not allowed</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>500</td>
+<td style="text-align:center">5601</td>
+<td style="text-align:left">kairosdb query error!</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>403</td>
+<td style="text-align:center">5701</td>
+<td style="text-align:left">This eid has no permission to reset pwd.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>403</td>
+<td style="text-align:center">5702</td>
+<td style="text-align:left">This eid has no permission to reset pwd for this appid.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>400</td>
+<td style="text-align:center">5703</td>
+<td style="text-align:left">Cannot reset pwd for anonymous user</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>400</td>
+<td style="text-align:center">5801</td>
+<td style="text-align:left">the pks has not associate with enterprise!</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>400</td>
+<td style="text-align:center">5901</td>
+<td style="text-align:left">x-service secret key invalid!</td>
 </tr>
 </tbody>
 </table>
