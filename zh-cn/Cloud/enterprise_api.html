@@ -577,7 +577,7 @@
 </tbody>
 </table>
 <ul>
-<li><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#/用户报表" target="_blank" rel="external">用户报表</a>：提供了查询用户新增报表、企业活跃用户人数、用户地理分布、用户总数报表等功能。</li>
+<li><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#/绑定管理" target="_blank" rel="external">绑定管理</a>：提供了设备绑定、解绑功能。</li>
 </ul>
 <table>
 <thead>
@@ -588,20 +588,12 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="#用户新增报表">get_v1_products_product_key_users_report_new</a></td>
-<td>这里指的是绑定了该 PK 下产品的新增用户</td>
+<td><a href="#设备绑定功能">post_v1_products_product_key_devices_bindings</a></td>
+<td>设备绑定</td>
 </tr>
 <tr>
-<td><a href="#企业活跃用户人数">get_v1_users_liveness_total</a></td>
-<td>企业活跃用户人数</td>
-</tr>
-<tr>
-<td><a href="#用户地理分布">get_v1_users_location</a></td>
-<td>用户地理分布</td>
-</tr>
-<tr>
-<td><a href="#用户总数报表">get_v1_products_product_key_users_report_total</a></td>
-<td>用户总数</td>
+<td><a href="#解除绑定">delete_v1_products_product_key_devices_bindings</a></td>
+<td>解除设备绑定</td>
 </tr>
 </tbody>
 </table>
@@ -663,7 +655,7 @@
 </tbody>
 </table>
 <ul>
-<li><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#/绑定管理" target="_blank" rel="external">绑定管理</a>：提供了设备绑定、解绑功能。</li>
+<li><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#/用户报表" target="_blank" rel="external">用户报表</a>：提供了查询用户新增报表、企业活跃用户人数、用户地理分布、用户总数报表等功能。</li>
 </ul>
 <table>
 <thead>
@@ -674,12 +666,20 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="#设备绑定功能">post_v1_products_product_key_devices_bindings</a></td>
-<td>设备绑定</td>
+<td><a href="#用户新增报表">get_v1_products_product_key_users_report_new</a></td>
+<td>这里指的是绑定了该 PK 下产品的新增用户</td>
 </tr>
 <tr>
-<td><a href="#解除绑定">delete_v1_products_product_key_devices_bindings</a></td>
-<td>解除设备绑定</td>
+<td><a href="#企业活跃用户人数">get_v1_users_liveness_total</a></td>
+<td>企业活跃用户人数</td>
+</tr>
+<tr>
+<td><a href="#用户地理分布">get_v1_users_location</a></td>
+<td>用户地理分布</td>
+</tr>
+<tr>
+<td><a href="#用户总数报表">get_v1_products_product_key_users_report_total</a></td>
+<td>用户总数</td>
 </tr>
 </tbody>
 </table>
@@ -2303,317 +2303,6 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"success"</span>: [</div><div class="line">    <span class="string">"string"</span></div><div class="line">  ],</div><div class="line">  <span class="attr">"failed"</span>: [</div><div class="line">    <span class="string">"string"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h1 id="用户报表"><a href="#用户报表" class="headerlink" title="用户报表"></a>用户报表</h1><h2 id="用户新增报表"><a href="#用户新增报表" class="headerlink" title="用户新增报表"></a><span id="get_v1_products_product_key_users_report_new">用户新增报表</span></h2><p>实现备注：</p>
-<ul>
-<li>这里指的是绑定了该 PK 下产品的新增用户<br>日期查询说明：</li>
-<li>cycle 为 date 时，start,end的格式是年-月-日，example:2016-08-01,</li>
-<li>cycle 为 week 时，start,end的格式是年-周，example:2016-51</li>
-<li>cycle 为 month 时，start,end的格式为年-月，example:2016-12</li>
-</ul>
-<p><strong>此接口仅可在国内环境使用</strong></p>
-<p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_new" target="_blank" rel="external">调试接口</a></p>
-<p>请求类型及地址</p>
-<pre><code>GET
-http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/report/new
-</code></pre><p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:center">必填</th>
-<th style="text-align:left">参数类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">product_key</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">path</td>
-<td style="text-align:left">产品名称</td>
-</tr>
-<tr>
-<td style="text-align:left">gid</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">query</td>
-<td style="text-align:left">设备组id</td>
-</tr>
-<tr>
-<td style="text-align:left">cycle</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">否</td>
-<td style="text-align:left">query</td>
-<td style="text-align:left">统计周期，可以为 date、week、month</td>
-</tr>
-<tr>
-<td style="text-align:left">start</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">query</td>
-<td style="text-align:left">起始周期，为起始日期、起始周或起始月</td>
-</tr>
-<tr>
-<td style="text-align:left">end</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">query</td>
-<td style="text-align:left">结束周期，为结束日期、结束周或结束月</td>
-</tr>
-</tbody>
-</table>
-<p>响应参数</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">did</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">设备组 id</td>
-</tr>
-<tr>
-<td style="text-align:left">cycle</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">周期，分为 month,week,date</td>
-</tr>
-<tr>
-<td style="text-align:left">start</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">开始日期</td>
-</tr>
-<tr>
-<td style="text-align:left">data</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">日期</td>
-</tr>
-<tr>
-<td style="text-align:left">count</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">数量</td>
-</tr>
-<tr>
-<td style="text-align:left">location</td>
-<td style="text-align:left">object</td>
-<td style="text-align:left">地理位置信息</td>
-</tr>
-</tbody>
-</table>
-<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"cycle"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"start"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"end"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"data"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"date"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"count"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"location"</span>: &#123;&#125;</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="企业活跃用户人数"><a href="#企业活跃用户人数" class="headerlink" title="企业活跃用户人数"></a><span id="get_v1_users_liveness_total">企业活跃用户人数</span></h2><p>实现备注</p>
-<ul>
-<li>该接口查询的是企业活跃用户人数</li>
-</ul>
-<p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_liveness_total" target="_blank" rel="external">调试接口</a></p>
-<p>请求类型及地址</p>
-<pre><code>GET
-http://enterpriseapi.gizwits.com/v1/users/liveness_total
-</code></pre><p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:center">必填</th>
-<th style="text-align:left">参数类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">X-Gizwits-Enterprise-ID</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">header</td>
-<td style="text-align:left">enterprise id</td>
-</tr>
-<tr>
-<td style="text-align:left">X-Gizwits-Enterprise-Secret</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">header</td>
-<td style="text-align:left">enterprise secret</td>
-</tr>
-<tr>
-<td style="text-align:left">product_secret</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">query</td>
-<td style="text-align:left">产品标识码 product_key</td>
-</tr>
-<tr>
-<td style="text-align:left">appid</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">否</td>
-<td style="text-align:left">query</td>
-<td style="text-align:left">应用id</td>
-</tr>
-<tr>
-<td style="text-align:left">start_date</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">query</td>
-<td style="text-align:left">开始日期，如：2015-01-02</td>
-</tr>
-<tr>
-<td style="text-align:left">end_date</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">query</td>
-<td style="text-align:left">结束日期，如：2015-01-03</td>
-</tr>
-</tbody>
-</table>
-<p>响应参数</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">date</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">日期</td>
-</tr>
-<tr>
-<td style="text-align:left">count</td>
-<td style="text-align:left">integer</td>
-<td style="text-align:left">数量</td>
-</tr>
-</tbody>
-</table>
-<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"data"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"date"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"count"</span>: <span class="number">0</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="用户地理分布"><a href="#用户地理分布" class="headerlink" title="用户地理分布"></a><span id="get_v1_users_location">用户地理分布</span></h2><p>实现备注</p>
-<ul>
-<li>该接口查询的是企业用户地理分布</li>
-</ul>
-<p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_location" target="_blank" rel="external">调试接口</a></p>
-<p>请求类型及地址</p>
-<pre><code>GET
-http://enterpriseapi.gizwits.com/v1/users/location
-</code></pre><p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:center">必填</th>
-<th style="text-align:left">参数类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">X-Gizwits-Enterprise-ID</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">header</td>
-<td style="text-align:left">enterprise id</td>
-</tr>
-<tr>
-<td style="text-align:left">X-Gizwits-Enterprise-Secret</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">header</td>
-<td style="text-align:left">enterprise secret</td>
-</tr>
-<tr>
-<td style="text-align:left">product_secret</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">query</td>
-<td style="text-align:left">产品标识码 product_key</td>
-</tr>
-</tbody>
-</table>
-<p>响应参数</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">count</td>
-<td style="text-align:left">integer</td>
-<td style="text-align:left">数 量</td>
-</tr>
-</tbody>
-</table>
-<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"China"</span>: &#123;</div><div class="line">    <span class="attr">"count"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"Guangdong"</span>: &#123;</div><div class="line">      <span class="attr">"count"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"Guangzhou"</span>: &#123;</div><div class="line">        <span class="attr">"count"</span>: <span class="number">0</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="用户总数报表"><a href="#用户总数报表" class="headerlink" title="用户总数报表"></a><span id="get_v1_products_product_key_users_report_total">用户总数报表</span></h2><p>实现备注</p>
-<ul>
-<li>查询用户空间表，获取曾经绑定过该 pk 设备的用户总数</li>
-</ul>
-<p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_total" target="_blank" rel="external">调试接口</a></p>
-<p>请求类型及地址</p>
-<pre><code> GET
-http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/report/total
-</code></pre><p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:center">必填</th>
-<th style="text-align:left">参数类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">product_key</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">是</td>
-<td style="text-align:left">path</td>
-<td style="text-align:left">产品标识码</td>
-</tr>
-<tr>
-<td style="text-align:left">gid</td>
-<td style="text-align:left">string</td>
-<td style="text-align:center">否</td>
-<td style="text-align:left">query</td>
-<td style="text-align:left">设备组id</td>
-</tr>
-</tbody>
-</table>
-<p>响应参数</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">gid</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">设备组 id</td>
-</tr>
-<tr>
-<td style="text-align:left">total</td>
-<td style="text-align:left">integer</td>
-<td style="text-align:left">用户总数</td>
-</tr>
-</tbody>
-</table>
-<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"total"</span>: <span class="number">0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h1 id="设备报表"><a href="#设备报表" class="headerlink" title="设备报表"></a>设备报表</h1><h2 id="获取设备地理位置分布"><a href="#获取设备地理位置分布" class="headerlink" title="获取设备地理位置分布"></a><span id="get_v1_products_product_key_devices_locations">获取设备地理位置分布</span></h2><p>实现备注</p>
 <ul>
 <li>获取设备地理位置分布报表</li>
@@ -3542,6 +3231,317 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/alert/report/devices
 </tbody>
 </table>
 <p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"count"</span>: &#123;</div><div class="line">    <span class="attr">"total"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"resolved"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"unresolved"</span>: <span class="number">0</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"detail"</span>: &#123;&#125;,</div><div class="line">  <span class="attr">"location"</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="用户报表"><a href="#用户报表" class="headerlink" title="用户报表"></a>用户报表</h1><h2 id="用户新增报表"><a href="#用户新增报表" class="headerlink" title="用户新增报表"></a><span id="get_v1_products_product_key_users_report_new">用户新增报表</span></h2><p>实现备注：</p>
+<ul>
+<li>这里指的是绑定了该 PK 下产品的新增用户<br>日期查询说明：</li>
+<li>cycle 为 date 时，start,end的格式是年-月-日，example:2016-08-01,</li>
+<li>cycle 为 week 时，start,end的格式是年-周，example:2016-51</li>
+<li>cycle 为 month 时，start,end的格式为年-月，example:2016-12</li>
+</ul>
+<p><strong>此接口仅可在国内环境使用</strong></p>
+<p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_new" target="_blank" rel="external">调试接口</a></p>
+<p>请求类型及地址</p>
+<pre><code>GET
+http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/report/new
+</code></pre><p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">产品名称</td>
+</tr>
+<tr>
+<td style="text-align:left">gid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">设备组id</td>
+</tr>
+<tr>
+<td style="text-align:left">cycle</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">统计周期，可以为 date、week、month</td>
+</tr>
+<tr>
+<td style="text-align:left">start</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">起始周期，为起始日期、起始周或起始月</td>
+</tr>
+<tr>
+<td style="text-align:left">end</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">结束周期，为结束日期、结束周或结束月</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">did</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">设备组 id</td>
+</tr>
+<tr>
+<td style="text-align:left">cycle</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">周期，分为 month,week,date</td>
+</tr>
+<tr>
+<td style="text-align:left">start</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">开始日期</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">日期</td>
+</tr>
+<tr>
+<td style="text-align:left">count</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">数量</td>
+</tr>
+<tr>
+<td style="text-align:left">location</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">地理位置信息</td>
+</tr>
+</tbody>
+</table>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"cycle"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"start"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"end"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"data"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"date"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"count"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"location"</span>: &#123;&#125;</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="企业活跃用户人数"><a href="#企业活跃用户人数" class="headerlink" title="企业活跃用户人数"></a><span id="get_v1_users_liveness_total">企业活跃用户人数</span></h2><p>实现备注</p>
+<ul>
+<li>该接口查询的是企业活跃用户人数</li>
+</ul>
+<p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_liveness_total" target="_blank" rel="external">调试接口</a></p>
+<p>请求类型及地址</p>
+<pre><code>GET
+http://enterpriseapi.gizwits.com/v1/users/liveness_total
+</code></pre><p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">X-Gizwits-Enterprise-ID</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left">enterprise id</td>
+</tr>
+<tr>
+<td style="text-align:left">X-Gizwits-Enterprise-Secret</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left">enterprise secret</td>
+</tr>
+<tr>
+<td style="text-align:left">product_secret</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">产品标识码 product_key</td>
+</tr>
+<tr>
+<td style="text-align:left">appid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">应用id</td>
+</tr>
+<tr>
+<td style="text-align:left">start_date</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">开始日期，如：2015-01-02</td>
+</tr>
+<tr>
+<td style="text-align:left">end_date</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">结束日期，如：2015-01-03</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">date</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">日期</td>
+</tr>
+<tr>
+<td style="text-align:left">count</td>
+<td style="text-align:left">integer</td>
+<td style="text-align:left">数量</td>
+</tr>
+</tbody>
+</table>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"data"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"date"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"count"</span>: <span class="number">0</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="用户地理分布"><a href="#用户地理分布" class="headerlink" title="用户地理分布"></a><span id="get_v1_users_location">用户地理分布</span></h2><p>实现备注</p>
+<ul>
+<li>该接口查询的是企业用户地理分布</li>
+</ul>
+<p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_location" target="_blank" rel="external">调试接口</a></p>
+<p>请求类型及地址</p>
+<pre><code>GET
+http://enterpriseapi.gizwits.com/v1/users/location
+</code></pre><p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">X-Gizwits-Enterprise-ID</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left">enterprise id</td>
+</tr>
+<tr>
+<td style="text-align:left">X-Gizwits-Enterprise-Secret</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">header</td>
+<td style="text-align:left">enterprise secret</td>
+</tr>
+<tr>
+<td style="text-align:left">product_secret</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">产品标识码 product_key</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">count</td>
+<td style="text-align:left">integer</td>
+<td style="text-align:left">数 量</td>
+</tr>
+</tbody>
+</table>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"China"</span>: &#123;</div><div class="line">    <span class="attr">"count"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"Guangdong"</span>: &#123;</div><div class="line">      <span class="attr">"count"</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">"Guangzhou"</span>: &#123;</div><div class="line">        <span class="attr">"count"</span>: <span class="number">0</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="用户总数报表"><a href="#用户总数报表" class="headerlink" title="用户总数报表"></a><span id="get_v1_products_product_key_users_report_total">用户总数报表</span></h2><p>实现备注</p>
+<ul>
+<li>查询用户空间表，获取曾经绑定过该 pk 设备的用户总数</li>
+</ul>
+<p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_total" target="_blank" rel="external">调试接口</a></p>
+<p>请求类型及地址</p>
+<pre><code> GET
+http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/report/total
+</code></pre><p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">product_key</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">是</td>
+<td style="text-align:left">path</td>
+<td style="text-align:left">产品标识码</td>
+</tr>
+<tr>
+<td style="text-align:left">gid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">query</td>
+<td style="text-align:left">设备组id</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">gid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">设备组 id</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">integer</td>
+<td style="text-align:left">用户总数</td>
+</tr>
+</tbody>
+</table>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"gid"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"total"</span>: <span class="number">0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h1 id="错误信息表"><a href="#错误信息表" class="headerlink" title="错误信息表"></a>错误信息表</h1><table>
 <thead>
 <tr>
