@@ -4,14 +4,14 @@
   <head>
   <meta charset="utf-8">
 
-  <title>GoKit3(S)二次开发-程序详解 - 机智云</title>
+  <title>GoKit3(S)二次开发-程序详解（旧） - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="GoKit3(S)二次开发-程序详解-机智云">
-  <meta name="keywords" content="GoKit3(S)二次开发-程序详解 docs 文档中心 Gizwits">
+  <meta name="Description" content="GoKit3(S)二次开发-程序详解（旧）-机智云">
+  <meta name="keywords" content="GoKit3(S)二次开发-程序详解（旧） docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -214,7 +214,9 @@
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/DevSDK/代码自动生成工具.html">MCU代码自动生成工具使用教程</a></li>
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3 DEV SDK Common版移植说明.html">MCU SDK 通用平台移植教程</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3_DEV_SDK_Common_transplant.html">MCU SDK 通用平台移植教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/STM32CubeMX_transplant.html">STM32CubeMX移植机智云自动生成代码详解</a></li>
                         
                       </ul>
                     </li>
@@ -237,7 +239,9 @@
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html">GoKit3(S)开发环境搭建</a></li>
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S程序详解.html">Gokit3(S)源码详解</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html">GoKit-SoC程序详解</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit-MCU-explanation.html">GoKit-MCU程序详解</a></li>
                         
                       </ul>
                     </li>
@@ -248,11 +252,11 @@
                       开发套件Arduino资料 &#9656;
                       <ul class="levelC-wrapper">
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/intro.html">ArduinoUNOWiFi接入机智云介绍</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi.html">ArduinoUNOWiFi接入机智云介绍</a></li>
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/Tutorial.html">ArduinoUnoWiFi 之ESP8266固件烧写教程</a></li>
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/sdk.html">ArduinoUnoWiFi SDK之API介绍</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi_SDK_API.html">ArduinoUnoWiFi SDK之API介绍</a></li>
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/example.html">Arduino Uno WiFi智能小夜灯</a></li>
                         
@@ -450,10 +454,11 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">GoKit3(S)二次开发-程序详解</div>
+        <div class="title">GoKit3(S)二次开发-程序详解（旧）</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="通信协议详解"><a href="#通信协议详解" class="headerlink" title="通信协议详解"></a>通信协议详解</h1><h2 id="1-协议阅读前需知"><a href="#1-协议阅读前需知" class="headerlink" title="1 协议阅读前需知"></a>1 协议阅读前需知</h2><p><strong>A. SOC版与MCU版的区别：</strong></p>
+      <p><strong>2017年9月25日起已使用新版SOC代码生成，<a href="http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html" target="_blank" rel="external">查看新版</a>自动生成代码程序详解</strong></p>
+<h1 id="通信协议详解"><a href="#通信协议详解" class="headerlink" title="通信协议详解"></a>通信协议详解</h1><h2 id="1-协议阅读前需知"><a href="#1-协议阅读前需知" class="headerlink" title="1 协议阅读前需知"></a>1 协议阅读前需知</h2><p><strong>A. SOC版与MCU版的区别：</strong></p>
 <p>由于SoC方案是直接在WiFi模组上进行开发故没有MCU这一概念，无需进行串口协议传输，没有协议组包和协议解析这些步骤，所以<strong>没有串口协议</strong>，重点是“P0数据区”解析这部分。</p>
 <p><strong>B. SOC版与MCU版的联系：</strong></p>
 <p>云端生成的协议文档默认是MCU版的协议文档，其实SOC版完全可复用MCU版的协议，故在这里直接将《xxx-机智云接入串口通讯协议文档》中的MCU理解为SOC（后文同理）。</p>
@@ -651,19 +656,19 @@
 </tr>
 </tbody>
 </table>
-<h2 id="2-程序实现原理"><a href="#2-程序实现原理" class="headerlink" title="2 程序实现原理"></a>2 程序实现原理</h2><p><strong>协议实现机制：</strong> </p>
+<h2 id="2-程序实现原理"><a href="#2-程序实现原理" class="headerlink" title="2 程序实现原理"></a>2 程序实现原理</h2><p><strong>协议实现机制：</strong></p>
 <p>协议解析后，将P0数据区的有效数据点生成对应的数据点事件，再按事件处理数据点。</p>
-<p><strong>数据点转换事件的说明</strong>： </p>
-<p>根据协议P0数据区的attr_flags位判断出有效数据点，并将其转化成对应的数据点事件，然后在事件处理函数中(gizEventProcess)完成事件的处理。 </p>
-<h2 id="3-程序初始化说明"><a href="#3-程序初始化说明" class="headerlink" title="3 程序初始化说明"></a>3 程序初始化说明</h2><h3 id="3-1-数据协议结构体的定义"><a href="#3-1-数据协议结构体的定义" class="headerlink" title="3.1 数据协议结构体的定义"></a>3.1 数据协议结构体的定义</h3><p>结构体<strong>dataPoint_t</strong>  ，代码位置: <strong>gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong> </p>
+<p><strong>数据点转换事件的说明</strong>：</p>
+<p>根据协议P0数据区的attr_flags位判断出有效数据点，并将其转化成对应的数据点事件，然后在事件处理函数中(gizEventProcess)完成事件的处理。</p>
+<h2 id="3-程序初始化说明"><a href="#3-程序初始化说明" class="headerlink" title="3 程序初始化说明"></a>3 程序初始化说明</h2><h3 id="3-1-数据协议结构体的定义"><a href="#3-1-数据协议结构体的定义" class="headerlink" title="3.1 数据协议结构体的定义"></a>3.1 数据协议结构体的定义</h3><p>结构体<strong>dataPoint_t</strong>  ，代码位置: <strong>gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong></p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/Source/image7.png" alt="Alt text"></p>
 <p>说明：结构体<strong>dataPoint_t</strong>，作用是存储用户区的设备状态信息，用户根据云端定义的数据点向其对应的数据位赋值后便不需关心数据的转换，其数据位分别对应<strong>“p0 数据区约定”</strong>中的<strong>“4.9 设备MCU向WiFi模组主动上报当前状态”</strong>中的：dev_status(11B) 位：</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/Source/image8.png" alt="Alt text"></p>
-<p><strong>attrFlags_t、attrVals_t</strong> ，代码位置: <strong>gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong> </p>
+<p><strong>attrFlags_t、attrVals_t</strong> ，代码位置: <strong>gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong></p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/Source/image9.png" alt="Alt text"></p>
 <p>结构体attrFlags_t、attrVals_t分别对应<strong>“p0 数据区约定”</strong>中的<strong>“4.10 WiFi模组控制设备”</strong>中的：attr_flags(1B) + attr_vals(6B)位：</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/Source/image10.png" alt="Alt text"></p>
-<p><strong>devStatus_t</strong>，代码位置: <strong>gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong> </p>
+<p><strong>devStatus_t</strong>，代码位置: <strong>gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong></p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/Source/image11.png" alt="Alt text"></p>
 <p>结构体<strong>devStatus_t</strong>对应“<strong>p0 数据区约定”</strong>中的<strong>“4.9 设备MCU向WiFi模组主动上报当前状态”</strong>中的：dev_status(11B) 位：</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/Source/12.png" alt="Alt text"></p>
@@ -729,7 +734,7 @@
 <h2 id="4-配置模式说明"><a href="#4-配置模式说明" class="headerlink" title="4 配置模式说明"></a>4 配置模式说明</h2><p>开发者只有先调用“WiFi配置接口”API才能使WiFi模组进入相应的配置模式，进而完成联网、云端通信的等功能。</p>
 <p><strong>“WiFi配置接口”API 位置：gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong></p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/Source/image23.png" alt="Alt text"></p>
-<p>在本示例工程中是通过<strong>按键触</strong>发进入相应的配置模式，程序中触发逻辑位置：<strong>gokit_mcu_stm32_xxx\User\main.c</strong> </p>
+<p>在本示例工程中是通过<strong>按键触</strong>发进入相应的配置模式，程序中触发逻辑位置：<strong>gokit_mcu_stm32_xxx\User\main.c</strong></p>
 <p>A.进入Soft AP 模式：key2按键短按。</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/Source/image24.png" alt="Alt text"></p>
 <p>B.进入AirLink 模式：key2按键长按。</p>
@@ -921,7 +926,7 @@
 </tbody>
 </table>
 <h2 id="8-机智云协议数据处理"><a href="#8-机智云协议数据处理" class="headerlink" title="8 机智云协议数据处理"></a>8 机智云协议数据处理</h2><h3 id="8-1-数据点类型转换"><a href="#8-1-数据点类型转换" class="headerlink" title="8.1 数据点类型转换"></a>8.1 数据点类型转换</h3><p>机智云为使设备功能定义更加简单直接，使用户输入的数值转换成设备能够识别的uint类型，这套算法的核心公式是：y=kx+m （<strong>y：显示值；x：传输值；k：分辨率；m：增量</strong>）</p>
-<p>以微信宠物屋的温湿度传感器温度检测为例： </p>
+<p>以微信宠物屋的温湿度传感器温度检测为例：</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/Source/image53.png" alt="Alt text"></p>
 <p>取值范围：-13（Ymin） ~ 187（Ymax），分辨率：1，增量：-13 ；</p>
 <p>其分辨率、偏移量作为宏定义定义在app\Gizwits\gizwits_product.h中：</p>

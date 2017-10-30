@@ -4,14 +4,14 @@
   <head>
   <meta charset="utf-8">
 
-  <title>GoKit3(V)二次开发-程序详解 - 机智云</title>
+  <title>GoKit3(V)二次开发-程序详解（旧） - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="GoKit3(V)二次开发-程序详解-机智云">
-  <meta name="keywords" content="GoKit3(V)二次开发-程序详解 docs 文档中心 Gizwits">
+  <meta name="Description" content="GoKit3(V)二次开发-程序详解（旧）-机智云">
+  <meta name="keywords" content="GoKit3(V)二次开发-程序详解（旧） docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -214,7 +214,9 @@
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/DevSDK/代码自动生成工具.html">MCU代码自动生成工具使用教程</a></li>
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3 DEV SDK Common版移植说明.html">MCU SDK 通用平台移植教程</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3_DEV_SDK_Common_transplant.html">MCU SDK 通用平台移植教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/STM32CubeMX_transplant.html">STM32CubeMX移植机智云自动生成代码详解</a></li>
                         
                       </ul>
                     </li>
@@ -237,7 +239,9 @@
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html">GoKit3(S)开发环境搭建</a></li>
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S程序详解.html">Gokit3(S)源码详解</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html">GoKit-SoC程序详解</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit-MCU-explanation.html">GoKit-MCU程序详解</a></li>
                         
                       </ul>
                     </li>
@@ -248,11 +252,11 @@
                       开发套件Arduino资料 &#9656;
                       <ul class="levelC-wrapper">
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/intro.html">ArduinoUNOWiFi接入机智云介绍</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi.html">ArduinoUNOWiFi接入机智云介绍</a></li>
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/Tutorial.html">ArduinoUnoWiFi 之ESP8266固件烧写教程</a></li>
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/sdk.html">ArduinoUnoWiFi SDK之API介绍</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi_SDK_API.html">ArduinoUnoWiFi SDK之API介绍</a></li>
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/example.html">Arduino Uno WiFi智能小夜灯</a></li>
                         
@@ -450,10 +454,11 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">GoKit3(V)二次开发-程序详解</div>
+        <div class="title">GoKit3(V)二次开发-程序详解（旧）</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="通信协议详解"><a href="#通信协议详解" class="headerlink" title="通信协议详解"></a>通信协议详解</h1><h2 id="1-协议命令格式"><a href="#1-协议命令格式" class="headerlink" title="1 协议命令格式"></a>1 协议命令格式</h2><p>我们首先了解具体<strong>通讯协议的约定</strong>，可以看到协议格式为：</p>
+      <p><strong>2017年9月25日起已使用新版MCU代码生成，<a href="http://docs.gizwits.com/zh-cn/deviceDev/Gokit3Voice/GoKit-MCU-explanation.html" target="_blank" rel="external">查看新版</a>自动生成代码程序详解</strong></p>
+<h1 id="通信协议详解"><a href="#通信协议详解" class="headerlink" title="通信协议详解"></a>通信协议详解</h1><h2 id="1-协议命令格式"><a href="#1-协议命令格式" class="headerlink" title="1 协议命令格式"></a>1 协议命令格式</h2><p>我们首先了解具体<strong>通讯协议的约定</strong>，可以看到协议格式为：</p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit3Voice/source/image3.png" alt="Alt text"></p>
 <p>说明：</p>
 <p>1) 包头(header)固定为0xFFFF；</p>
@@ -603,19 +608,19 @@
 </tr>
 </tbody>
 </table>
-<h2 id="2-程序实现原理"><a href="#2-程序实现原理" class="headerlink" title="2 程序实现原理"></a>2 程序实现原理</h2><p><strong>协议实现机制：</strong> </p>
+<h2 id="2-程序实现原理"><a href="#2-程序实现原理" class="headerlink" title="2 程序实现原理"></a>2 程序实现原理</h2><p><strong>协议实现机制：</strong></p>
 <p>协议解析后，将P0数据区的有效数据点生成对应的数据点事件，再按事件处理数据点。</p>
-<p><strong>数据点转换事件的说明：</strong> </p>
-<p>根据协议P0数据区的attr_flags位判断出有效数据点，并将其转化成对应的数据点事件，然后在事件处理函数中(gizwitsEventProcess)完成事件的处理。 </p>
-<h2 id="3-程序初始化说明"><a href="#3-程序初始化说明" class="headerlink" title="3 程序初始化说明"></a>3 程序初始化说明</h2><h3 id="3-1-数据协议结构体的定义"><a href="#3-1-数据协议结构体的定义" class="headerlink" title="3.1 数据协议结构体的定义"></a>3.1 数据协议结构体的定义</h3><p>结构体dataPoint_t  ，代码位置: <strong>gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong> </p>
+<p><strong>数据点转换事件的说明：</strong></p>
+<p>根据协议P0数据区的attr_flags位判断出有效数据点，并将其转化成对应的数据点事件，然后在事件处理函数中(gizwitsEventProcess)完成事件的处理。</p>
+<h2 id="3-程序初始化说明"><a href="#3-程序初始化说明" class="headerlink" title="3 程序初始化说明"></a>3 程序初始化说明</h2><h3 id="3-1-数据协议结构体的定义"><a href="#3-1-数据协议结构体的定义" class="headerlink" title="3.1 数据协议结构体的定义"></a>3.1 数据协议结构体的定义</h3><p>结构体dataPoint_t  ，代码位置: <strong>gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong></p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit3Voice/source/image6.png" alt="Alt text"></p>
 <p>说明：结构体dataPoint_t作用是存储用户区的设备状态信息，用户根据云端定义的数据点向其对应的数据位赋值后便不需关心数据的转换，其数据位对应“p0 数据区约定”中的“4.9 设备MCU向WiFi模组主动上报当前状态”中的：dev_status(11B) 位：</p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit3Voice/source/image7.png" alt="Alt text"></p>
-<p><strong>attrFlags_t、attrVals_t</strong> ，代码位置: <strong>gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong> </p>
+<p><strong>attrFlags_t、attrVals_t</strong> ，代码位置: <strong>gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong></p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit3Voice/source/image8.png" alt="Alt text"></p>
 <p>结构体<strong>attrFlags_t、attrVals_t</strong>分别对应<strong>“p0 数据区约定”</strong>中的<strong>“4.10 WiFi模组控制设备”</strong>中的：attr_flags(1B) + attr_vals(6B)位：</p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit3Voice/source/image9.png" alt="Alt text"></p>
-<p>结构体<strong>devStatus_t</strong>，代码位置: <strong>gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong> </p>
+<p>结构体<strong>devStatus_t</strong>，代码位置: <strong>gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong></p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit3Voice/source/image10.png" alt="Alt text"></p>
 <p>结构体devStatus_t对应<strong>“p0 数据区约定”中</strong>的<strong>“4.9 设备MCU向WiFi模组主动上报当前状态”</strong>中的：dev_status(11B) 位：</p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit3Voice/source/10.png" alt="Alt text"></p>
@@ -698,17 +703,15 @@
 <p>Wifi 配置接口说明：</p>
 <p>/**</p>
 <ul>
-<li>@brief WiFi配置接口</li>
-<li></li>
-<li><p>用户可以调用该接口使WiFi模组进入相应的配置模式或者复位模组</p>
+<li><p>@brief WiFi配置接口<br>*</p>
 </li>
-<li></li>
-<li><p>@param[in] mode 配置模式选择：0x0， 模组复位 ;0x01， SoftAp模式 ;0x02， AirLink模式</p>
+<li><p>用户可以调用该接口使WiFi模组进入相应的配置模式或者复位模组<br>*</p>
 </li>
-<li></li>
+<li><p>@param[in] mode 配置模式选择：0x0， 模组复位 ;0x01， SoftAp模式 ;0x02， AirLink模式<br>*</p>
+</li>
 <li>@return 错误命令码<br><em>/<br><em>*·int32_t gizwitsSetMode(uint8_t mode)</em></em></li>
 </ul>
-<p>程序中触发逻辑位置：<strong>gokit_mcu_stm32_xxx\User\main.c</strong> </p>
+<p>程序中触发逻辑位置：<strong>gokit_mcu_stm32_xxx\User\main.c</strong></p>
 <p>A.进入Soft AP 模式：key2按键短按。<br><img src="/assets/zh-cn/deviceDev/Gokit3Voice/source/image26.png" alt="Alt text"></p>
 <p>B.进入AirLink 模式：key2按键长按。<br><img src="/assets/zh-cn/deviceDev/Gokit3Voice/source/image27.png" alt="Alt text"></p>
 <p>C.模组复位：key1按键长。<br><img src="/assets/zh-cn/deviceDev/Gokit3Voice/source/image28.png" alt="Alt text"></p>
@@ -922,7 +925,7 @@
 </table>
 <p>gizY2X      |   将用户区数据转化为传输数据，详情查看“2.8.1 数据点类型转换”一节。 |</p>
 <h2 id="8-机智云协议数据处理"><a href="#8-机智云协议数据处理" class="headerlink" title="8 机智云协议数据处理"></a>8 机智云协议数据处理</h2><h3 id="8-1-数据点类型转换"><a href="#8-1-数据点类型转换" class="headerlink" title="8.1 数据点类型转换"></a>8.1 数据点类型转换</h3><p>机智云为使设备功能定义更加简单直接，使用户输入的数值转换成设备能够识别的uint类型，这套算法的核心公式是：y=kx+m （y：显示值；x：传输值；k：分辨率；m：增量）</p>
-<p>以《微信宠物屋》的温湿度传感器温度数据点为例： </p>
+<p>以《微信宠物屋》的温湿度传感器温度数据点为例：</p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit3Voice/source/image56.png" alt="Alt text"></p>
 <p>取值范围：-13（Ymin） ~ 187（Ymax），分辨率：1，增量：-13 ；</p>
 <p>其分辨率、偏移量作为宏定义定义在<strong>app\Gizwits\gizwits_product.h</strong>中：</p>

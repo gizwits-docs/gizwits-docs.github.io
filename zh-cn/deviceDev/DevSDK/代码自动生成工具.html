@@ -214,7 +214,9 @@
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/DevSDK/代码自动生成工具.html">MCU代码自动生成工具使用教程</a></li>
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3 DEV SDK Common版移植说明.html">MCU SDK 通用平台移植教程</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3_DEV_SDK_Common_transplant.html">MCU SDK 通用平台移植教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/STM32CubeMX_transplant.html">STM32CubeMX移植机智云自动生成代码详解</a></li>
                         
                       </ul>
                     </li>
@@ -237,7 +239,9 @@
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html">GoKit3(S)开发环境搭建</a></li>
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S程序详解.html">Gokit3(S)源码详解</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html">GoKit-SoC程序详解</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit-MCU-explanation.html">GoKit-MCU程序详解</a></li>
                         
                       </ul>
                     </li>
@@ -248,11 +252,11 @@
                       开发套件Arduino资料 &#9656;
                       <ul class="levelC-wrapper">
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/intro.html">ArduinoUNOWiFi接入机智云介绍</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi.html">ArduinoUNOWiFi接入机智云介绍</a></li>
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/Tutorial.html">ArduinoUnoWiFi 之ESP8266固件烧写教程</a></li>
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/sdk.html">ArduinoUnoWiFi SDK之API介绍</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi_SDK_API.html">ArduinoUnoWiFi SDK之API介绍</a></li>
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/example.html">Arduino Uno WiFi智能小夜灯</a></li>
                         
@@ -453,7 +457,8 @@
         <div class="title">GoKit3二次开发-代码自动生成工具介绍</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="前文需知"><a href="#前文需知" class="headerlink" title="前文需知"></a>前文需知</h1><h2 id="1-什么是“代码自动生成工具”"><a href="#1-什么是“代码自动生成工具”" class="headerlink" title="1.什么是“代码自动生成工具”"></a>1.什么是“代码自动生成工具”</h2><p>为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。</p>
+      <p><strong><a href="http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/代码自动生成工具_old.html" target="_blank" rel="external">查看旧版代码自动生成工具介绍</a></strong></p>
+<h1 id="前文需知"><a href="#前文需知" class="headerlink" title="前文需知"></a>前文需知</h1><h2 id="1-什么是“代码自动生成工具”"><a href="#1-什么是“代码自动生成工具”" class="headerlink" title="1.什么是“代码自动生成工具”"></a>1.什么是“代码自动生成工具”</h2><p>为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。</p>
 <p>自动生成的代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的API，且提供了多种平台的实例代码。当设备收到云端或APP端的数据后，程序会将数据转换成对应的事件并通知到应用层，<strong>开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。</strong></p>
 <p>使用自动生成的代码开发产品，就不必再处理协议相关的部分了，开发者可以将节省出来的精力集中在产品的核心功能开发上。</p>
 <h2 id="2-支持的平台"><a href="#2-支持的平台" class="headerlink" title="2.支持的平台"></a>2.支持的平台</h2><p>自动生成服务支持的硬件方案有：独立MCU方案、SOC方案。其中独立MCU方案支持的硬件平台有：stm32f103c8x平台、通用平台（即“其他平台”）；SOC方案支持的硬件平台有：ESP8266平台。</p>
@@ -495,12 +500,12 @@
 <p>注：如果是其他MCU芯片，请选择“其他平台”选项，然后将生成的代码包移植到使用的平台，移植方法参考《GoKit3二次开发-通用平台版移植说明》。</p>
 </blockquote>
 <p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159645300.png" alt="生成MCU方案代码"></p>
-<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159651968.png" alt="生成MCU方案代码"></p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/20170918112222.png" alt="生成MCU方案代码"></p>
 <h3 id="3-2-生成SoC方案代码"><a href="#3-2-生成SoC方案代码" class="headerlink" title="3.2 生成SoC方案代码"></a>3.2 生成SoC方案代码</h3><p>定义好产品后，选择左侧服务中的“SoC开发”(假设使用的SoC芯片是esp8266)，选中硬件方案中的“SoC方案”，则选择“硬件平台”中的“esp8266”，最后点击“生成代码包”，等待生成完毕下载即可。</p>
 <p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159682322.png" alt="生成SoC方案代码"></p>
 <p>下载完成后解压如下</p>
 <p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159695787.png" alt="生成SoC方案代码"></p>
-<h1 id="自动生成代码说明"><a href="#自动生成代码说明" class="headerlink" title="自动生成代码说明"></a>自动生成代码说明</h1><h2 id="1-STM32平台文件说明"><a href="#1-STM32平台文件说明" class="headerlink" title="1. STM32平台文件说明"></a>1. STM32平台文件说明</h2><p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159738287.png" alt="STM32平台文件说明"></p>
+<h1 id="自动生成代码说明"><a href="#自动生成代码说明" class="headerlink" title="自动生成代码说明"></a>自动生成代码说明</h1><h2 id="1-STM32平台文件说明"><a href="#1-STM32平台文件说明" class="headerlink" title="1. STM32平台文件说明"></a>1. STM32平台文件说明</h2><p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/20170918112608.png" alt="STM32平台文件说明"></p>
 <p>主要文件说明：</p>
 <table>
 <thead>
@@ -528,7 +533,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="2-ESP8266平台文件说明"><a href="#2-ESP8266平台文件说明" class="headerlink" title="2. ESP8266平台文件说明"></a>2. ESP8266平台文件说明</h2><p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478160012758.png" alt="ESP8266平台文件说明"></p>
+<h2 id="2-ESP8266平台文件说明"><a href="#2-ESP8266平台文件说明" class="headerlink" title="2. ESP8266平台文件说明"></a>2. ESP8266平台文件说明</h2><p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/20170918113322.png" alt="ESP8266平台文件说明"></p>
 <p>主要文件说明：</p>
 <table>
 <thead>
@@ -584,7 +589,7 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="number">0x01</span> == currentDataPoint.valueLED_ONOFF)</div><div class="line">&#123;</div><div class="line">  <span class="comment">//user handle</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;</div><div class="line">  <span class="comment">//user handle    </span></div><div class="line">&#125;        </div><div class="line"><span class="keyword">break</span>;</div></pre></td></tr></table></figure>
 <p><strong>修改后</strong>：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="number">0x01</span> == currentDataPoint.valueLED_ONOFF)</div><div class="line">&#123;</div><div class="line">  <span class="comment">//user handle</span></div><div class="line">ledRgbControl(<span class="number">254</span>,<span class="number">0</span>,<span class="number">0</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;</div><div class="line">  <span class="comment">//user handle    </span></div><div class="line">ledRgbControl(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);  </div><div class="line">&#125;        </div><div class="line"><span class="keyword">break</span>;</div></pre></td></tr></table></figure>
-<h3 id="2-2-上行处理"><a href="#2-2-上行处理" class="headerlink" title="2.2 上行处理"></a>2.2 上行处理</h3><p>首先要完成的是传感器驱动开发，然后在user目录下main.c文件中的userHandle()函数中实现传感器数据采集，用户只需并将采集到的数值赋值给对应用户区的设备状态结构体数据位即可（如下例中的：currentDataPoint.valueInfrared = irHandle();）。</p>
+<h3 id="2-2-上行处理"><a href="#2-2-上行处理" class="headerlink" title="2.2 上行处理"></a>2.2 上行处理</h3><p>首先要完成的是传感器驱动开发，然后在Gizwits目录下的gizwits_product.c文件中的userHandle()函数中实现传感器数据采集，用户只需并将采集到的数值赋值给对应用户区的设备状态结构体数据位即可（如下例中的：currentDataPoint.valueInfrared = irHandle();）。</p>
 <p>下面以红外传感器的数据获取为例（只读型数据点的操作会被云端自动生成），如下：</p>
 <p><strong>修改前</strong>：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">userHandle</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="comment">/*</span></div><div class="line"><span class="comment">    currentDataPoint.valueInfrared = ;//Add Sensor Data Collection</span></div><div class="line"><span class="comment">    */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>

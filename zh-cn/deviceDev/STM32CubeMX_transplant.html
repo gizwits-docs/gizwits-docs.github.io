@@ -1,0 +1,694 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8">
+
+  <title>STM32CubeMX移植机智云自动生成代码详解 - 机智云</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="STM32CubeMX移植机智云自动生成代码详解-机智云">
+  <meta name="keywords" content="STM32CubeMX移植机智云自动生成代码详解 docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+
+      <a href="http://www.gizwits.com" class="logo">
+        <img src="/images/logo.png" alt="logo"> 
+      </a>
+      <a class="text" href="/">文档中心</a>
+    </span>
+    
+    <div class="mobile-header"v>
+      <span class="title">机智云 文档中心</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+    
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/zh-cn/overview/overview.html">平台概述</a></li>
+          
+        
+          
+            <li class="levelA">
+              快速入门 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/5分钟了解机智云.html">5分钟了解机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/noun.html">机智云名词定义解释</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              应用开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/准备工作.html">App开发准备工作及向导</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/devApp.html">App代码自动生成服务介绍</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App 开源框架 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iosframe.html">iOS 开源框架说明(含源码)</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS消息推送.html">iOS 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS第三方登陆与换肤.html">iOS 第三方登录与换肤</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/iOSAPPFrame.html">iOS开源框架的快速开发实例</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android开源框架使用指南.html">Android 开源框架说明（含源码）</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android消息推送.html">Android 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android第三方登录与换肤.html">Android 第三方登录与换肤</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/AndroidAppFrame.html">Android开源框架的快速开发实例</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/APICloudFrame.html">APICloud开源框架使用指南(含源码)</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/开源框架视频教程.html">开源框架使用视频教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App 开发 SDK &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOSSDKA2.html">iOS SDK</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/AndroidSDKA2.html">Android SDK</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/APICloudWifiSDK.html">APICloud SDK</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/SDK数据透传方法解析.html">SDK数据透传方法解析</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/SDK调试日志抓取教程.html">SDK调试日志抓取教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/sdk_error.html">SDK错误码列表</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/了解微信应用开发.html">微信应用开发流程</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/WeChatDev.html">微信应用开发教程</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      更多教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/Cloud/SharingSDK.html">设备分享功能SDK使用流程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/third-party.html">第三方登录平台申请流程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/应用开发FAQ.html">应用开发FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              设备接入 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/设备接入准备工作及向导.html">设备接入准备工作及向导</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      设备快速接入机智云 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/UseMCU.html">独立MCU接入方案</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/UseSOC.html">ESP8266-SOC接入方案</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/module_source/module_source.html">模块硬件资料</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      GAgent通讯模组使用教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/gagent_info.html">GAgent详细介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/串口工具使用文档.html">串口工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/HF-LPB100串口烧写说明.html">HF-LPB100串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/HF-LPT120.html">HF-LPT120串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/MXCHIP串口烧写说明.html">MXCHIP串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ESP8266串口烧写说明.html">ESP8266串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/G510.html">广和通G510模组烧写方法</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/通讯模组调试日志抓取教程.html">通讯模组调试日志抓取教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      MCU代码自动生成服务介绍 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/DevSDK/代码自动生成工具.html">MCU代码自动生成工具使用教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3_DEV_SDK_Common_transplant.html">MCU SDK 通用平台移植教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/STM32CubeMX_transplant.html">STM32CubeMX移植机智云自动生成代码详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      开源套件Gokit资料 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit2使用指南.html">Gokit2 使用指南</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html">Gokit3系列开发套件简介</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/GoKit3硬件手册.html">Gokit3硬件手册</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S使用说明书.html">GoKit3(S)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S开发套件介绍.html">Gokit3(S)开发套件介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html">GoKit3(S)开发环境搭建</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html">GoKit-SoC程序详解</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit-MCU-explanation.html">GoKit-MCU程序详解</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      开发套件Arduino资料 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi.html">ArduinoUNOWiFi接入机智云介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/Tutorial.html">ArduinoUnoWiFi 之ESP8266固件烧写教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi_SDK_API.html">ArduinoUnoWiFi SDK之API介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/example.html">Arduino Uno WiFi智能小夜灯</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      更多接入指南 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/ecevideos.html">ECE Demo开发教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/串口工具使用文档.html">串口工具使用文档</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/设备接入FAQ.html">设备接入FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              云API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/openapi_apps.html">Open API 指南</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/ent_dev.html">企业应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/enterprise_api.html">企业API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/NotificationAPI.html">SNoti API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/WebsocketAPI.html">WebSocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API使用教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseOpenAPI.html">使用OpenAPI控制虚拟设备教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseSNoti.html">Snoti数据实时同步服务demo使用教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseWebsocket.html">使用Websocket 网页控制设备教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/DataAPI.html">使用聚合API教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/LinkageAPI.html">设备联动API使用教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/devgroup_API.html">设备分组API使用教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseQRCode.html">APP绑定设备二维码生成教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              用户手册 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/change.html">个人项目产品转企业项目产品</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      OTA使用教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/OTA.html">GAgent OTA教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/MCUOTA.html">MCU OTA教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/产测工具使用文档.html">产测工具使用文档</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/D3.html">D3 Engine使用教程</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/ece.html">ECE雾计算使用教程</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      语音音箱接入教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/echo.html">接入Echo开发教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/echo.html">使用Echo音箱控制GoKit</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/Google_Home_GoKit.html">使用Google Home音箱控制GoKit</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/rtbd.html">实时大数据使用教程</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/WorldWideConnectSolution.html">全球部署方案</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+  
+    <span class="pure-u-3-24 lang-switch-wrapper">
+      
+      <i class="fa fa-globe" aria-hidden="true"></i> 
+      
+      <a href="http://docsen.gizwits.com/hc/" class="lang-switch">English</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>  
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">目录</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">STM32CubeMX移植机智云自动生成代码详解</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
+      </div>
+      <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>本文介绍如何使用STM32CubeMX将机智云自动生成的stm32源码程序移植到其他的MCU平台。</p>
+<p> <strong>STM32CubeMX</strong>工具请在<a href="http://www.st.com/en/development-tools/stm32cubemx.html" target="_blank" rel="external">STM官网</a>注册账号后自行下载安装，本文不做详细说明。</p>
+<p> 本示例使用在机智云自助开发中心生成的STM32F103源码工程，通过STM32Cube 移植到 <strong>STM32L496ZGT6 </strong>平台（其他STM32平台的移植也与此相似），我们选择的开发板为<strong>NUCLEO-L496ZG</strong>：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N01.png" alt="name"> </p>
+<p>(NUCLEO-L496ZG是ST官方推出的Nucleo系列开发板NUCLEO144系列家族的新品，L4系列综合了低功耗与高性能的优势，其上集成了ST-LINK/V2-1，使用的是<strong>STM32L496ZGT6</strong>作为主控，具有超低功耗、丰富外设等特性。)</p>
+<p>我们可以通过机智云自动生成工具生成STM32F103平台的工程源码(详情查看文档：<a href="http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html" target="_blank" rel="external">GoKit3二次开发-代码自动生成工具介绍</a>)，下面是生成的源码目录结构说明：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N02.png" alt="name"> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">文件名</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Driver</td>
+<td style="text-align:left">其中包含了所有的库文件</td>
+</tr>
+<tr>
+<td style="text-align:center">Gizwits</td>
+<td style="text-align:left">机智云协议处理文件</td>
+</tr>
+<tr>
+<td style="text-align:center">Hal</td>
+<td style="text-align:left">外设驱动文件</td>
+</tr>
+<tr>
+<td style="text-align:center">MDK-ARM</td>
+<td style="text-align:left">MDK 的工程文件</td>
+</tr>
+<tr>
+<td style="text-align:center">Inc</td>
+<td style="text-align:left">STM32源文件的头文件</td>
+</tr>
+<tr>
+<td style="text-align:center">Src</td>
+<td style="text-align:left">STM32源文件的 C 文件</td>
+</tr>
+<tr>
+<td style="text-align:center">Utils</td>
+<td style="text-align:left">公用工具库文件</td>
+</tr>
+<tr>
+<td style="text-align:center">.mxproject</td>
+<td style="text-align:left">STM32Cube 的配置文件</td>
+</tr>
+<tr>
+<td style="text-align:center">STM32F103C8.ioc</td>
+<td style="text-align:left">STM32CubeMX 的工程文件(已STM32F103C8平台为例)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：需要移植的目录为Gizwits、Hal、Utils三个文件。</p>
+</blockquote>
+<p>#<strong>移植到其他STM32平台</strong></p>
+<p> 移植分为以下几步：</p>
+<p>1.创建STM32CubeMX 工程文件</p>
+<p>在STM32CubeMX中直接选择您所使用的 MCU（比如这里我们选择STM32L496ZGTx） ，如下：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N03.png" alt="name"> </p>
+<p>点击“Project → Setting”设置工程目录位置以及相应参数如下所示：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N04.png" alt="name"> </p>
+<blockquote>
+<p>注：这里编译器选择为Keil 5</p>
+</blockquote>
+<p>2.导入机智云模板配置文件</p>
+<p>因为机智云自动生成的源码中已经包含了对应平台的STM32CubeMX工程配置文件，相关驱动参数已经是配置过的，为方便开发者将STM32的源码移植到其他的平台，我们可以使用STM32CubeMX的配置文件导入功能，将STM32F103平台的配置参数导入到STM32L496ZGT6平台，如下：</p>
+<p>选择File &gt; Import Project </p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N05.png" alt="name"> </p>
+<p>选择在“前言”中介绍过的STM32F103C8.ioc配置文件，如下图所示：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N06.png" alt="name"> </p>
+<p>点击“OK”之后可以看到，在STM32L496ZGT6的工程中已经导入的机智云预先完成的配置文件了。</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N07.png" alt="name"> </p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N08.png" alt="name"> </p>
+<p><strong><em>3.特殊处理（只针对STM32 L系类的低功耗平台，其他平台的开发可跳过此步）</em></strong></p>
+<p>由于NUCLEO-L496ZG开发板的USB串口默认连接的是MCU上的低功耗串口(LPUART1)，而不是我们在F103平台上的UART1，故将配置中的UART1换为LPUART1，如下图：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N09.png" alt="name"> </p>
+<blockquote>
+<p>注：需手动将管脚PG8/PG7设置为LPUART_RX/LPUART_TX类型</p>
+</blockquote>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N10.png" alt="name"> </p>
+<p>4.生成工程代码</p>
+<p>点击Project &gt; Generate Code或者点击快捷图标生成工程代码。</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N11.png" alt="name"> </p>
+<p>5.编译并配置工程</p>
+<p>点击“rebuild”编译工程</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N12.png" alt="name"> </p>
+<p>点击下载到STM32L496ZGT开发板。如果提示错误，可以点击图标对Option for Target 的Dubug选项进行修改。</p>
+<blockquote>
+<p>注：图上选的是ST-LINK</p>
+</blockquote>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N13.png" alt="name"> </p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N14.png" alt="name"> </p>
+<p>点击Settings-&gt;Flash Download勾选 Reset and Run选项。这样程序下载后自动启动运行，不用再按一下复位或者重新上电才能运行。</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N15.png" alt="name"> </p>
+<p>点击“DownLoad”烧录按钮如图所示证明烧录成功：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N16.png" alt="name"> </p>
+<p>6.移植代码</p>
+<p>此时的工程中只有STM32L496ZGT相关的驱动代码，若要使用机智云的联网能力就需要移植相关的协议源码（即前文介绍的已自动生成的STM32F103工程中的<strong>三个文件：Gizwits、Hal、Utils</strong>）</p>
+<p>移植前的STM32L496ZGT工程目录如下：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N17.png" alt="name"> </p>
+<p>移植后（即从<strong>STM32F103中复制Gizwits、Hal、Utils到STM32L496ZGT</strong>下）如下：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N18.png" alt="name"> </p>
+<p>接下来我们在STM32L496ZGT的keill5工程中添加如下的目录结构：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N19.png" alt="name"> </p>
+<p>同理加入相应的编译路径：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N20.png" alt="name"> </p>
+<p>7.添加、修改代码</p>
+<p>首先，为了适配对应的平台应在<strong>gizwits_product.h / hal_key.h</strong> 中替换为对应平台的头文件，例如：</p>
+<p>将原来F103C8平台的头文件 <strong>#include “stm32f1xx_hal.h”**</strong> <strong>替换为L496ZGT平台的</strong> <strong>**#include “stm32l4xx_it.h”</strong></p>
+<blockquote>
+<p>注：可以在根目录下的 <strong>Drivers\STM32F1xx_HAL_Driver\Inc</strong> 中找到对应平台的头文件。</p>
+</blockquote>
+<p>接下来在<strong>main.c</strong>中添加与机智云协议处理相关的代码：</p>
+<ul>
+<li><strong>首先是引用的相关头文件：</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* USER CODE BEGIN Includes */</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"hal_key.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"gizwits_product.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"common.h"</span></span></div><div class="line"></div><div class="line"><span class="comment">/* USER CODE END Includes */</span></div></pre></td></tr></table></figure>
+<ul>
+<li><strong>接下来是相关全局变量：</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* USER CODE BEGIN PV */</span></div><div class="line"></div><div class="line"><span class="comment">/* Private variables ---------------------------------------------------------*/</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> GPIO_KEY_NUM 2 <span class="comment">///&lt; Defines the total number of key member</span></span></div><div class="line">keyTypedef_t singleKey[GPIO_KEY_NUM]; <span class="comment">///&lt; Defines a single key member array pointer</span></div><div class="line">keysTypedef_t keys;   </div><div class="line"></div><div class="line"><span class="comment">/* USER CODE END PV */</span></div></pre></td></tr></table></figure>
+<ul>
+<li><strong>下面是长短按按键回调函数的定义：</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* USER CODE BEGIN 0 */</span></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* key1 short press handle</span></div><div class="line"><span class="comment">* @param none</span></div><div class="line"><span class="comment">* @return none</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">key1ShortPress</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    GIZWITS_LOG(<span class="string">"KEY1 PRESS ,Production Mode\n"</span>);</div><div class="line">    gizwitsSetMode(WIFI_PRODUCTION_TEST);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* key1 long press handle</span></div><div class="line"><span class="comment">* @param none</span></div><div class="line"><span class="comment">* @return none</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">key1LongPress</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    GIZWITS_LOG(<span class="string">"KEY1 PRESS LONG ,Wifi Reset\n"</span>);</div><div class="line">    gizwitsSetMode(WIFI_RESET_MODE);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* key2 short press handle</span></div><div class="line"><span class="comment">* @param none</span></div><div class="line"><span class="comment">* @return none</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">key2ShortPress</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    GIZWITS_LOG(<span class="string">"KEY2 PRESS ,Soft AP mode\n"</span>);</div><div class="line">    <span class="meta">#<span class="meta-keyword">if</span> !MODULE_TYPE</span></div><div class="line">    gizwitsSetMode(WIFI_SOFTAP_MODE);</div><div class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* key2 long press handle</span></div><div class="line"><span class="comment">* @param none</span></div><div class="line"><span class="comment">* @return none</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">key2LongPress</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="comment">//AirLink mode</span></div><div class="line">    GIZWITS_LOG(<span class="string">"KEY2 PRESS LONG ,AirLink mode\n"</span>);</div><div class="line">    <span class="meta">#<span class="meta-keyword">if</span> !MODULE_TYPE</span></div><div class="line">    gizwitsSetMode(WIFI_AIRLINK_MODE);</div><div class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* Key init function</span></div><div class="line"><span class="comment">* @param none</span></div><div class="line"><span class="comment">* @return none</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">keyInit</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    singleKey[<span class="number">0</span>] = keyInitOne(<span class="literal">NULL</span>, KEY1_GPIO_Port, KEY1_Pin, key1ShortPress, key1LongPress);</div><div class="line">    singleKey[<span class="number">1</span>] = keyInitOne(<span class="literal">NULL</span>, KEY2_GPIO_Port, KEY2_Pin, key2ShortPress, key2LongPress);</div><div class="line">    keys.singleKey = (keyTypedef_t *)&amp;singleKey;</div><div class="line">    keyParaInit(&amp;keys); </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* USER CODE END 0 */</span></div></pre></td></tr></table></figure>
+<ul>
+<li><strong>接下来是对相关驱动模块以及机智云协议模块的初始化：**</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* USER CODE BEGIN 2 */</span></div><div class="line"></div><div class="line">  timerInit();</div><div class="line">  uartInit();</div><div class="line"></div><div class="line">  userInit();</div><div class="line">  gizwitsInit();</div><div class="line">  keyInit();</div><div class="line">  GIZWITS_LOG(<span class="string">"MCU Init Success \n"</span>);</div><div class="line"></div><div class="line"><span class="comment">/* USER CODE END 2 */</span></div></pre></td></tr></table></figure>
+<ul>
+<li><strong>最后是在main函数中的循环处理函数调用：</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* USER CODE BEGIN 3 */</span></div><div class="line"></div><div class="line">      userHandle();</div><div class="line">      gizwitsHandle((dataPoint_t *)¤tDataPoint);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* USER CODE END 3 */</span></div></pre></td></tr></table></figure>
+<p><strong><em>以下是针对L496ZGT平台的特殊修改，其他非低功耗STM32平台可跳过以下内容</em></strong></p>
+<p>由于NUCLEO-L496ZG 串口使用了LPUART1，而不是我们在F103平台上的UART1，故需在部分代码。</p>
+<p>将“Gizwits/gizwits_product.c”中的两处 ”huart1” 改为main.c中已自动生成的 ”hlpuart1”</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N21.png" alt="name"> </p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N22.png" alt="name"> </p>
+<p>7.编译源码烧录测试</p>
+<p>移植完毕相关代码后我们运行编译，编译无错后烧录到NUCLEO-L496ZG开发板。根据CubeMX工程配置文件可知串口波特率为:<strong>115200</strong>。</p>
+<p>进而我们可以连接日志输出管脚来进一步调试我们的源码。</p>
+<hr>
+<p>#<strong>进阶开发</strong></p>
+<p>##<strong>应用相关开发</strong></p>
+<p>完成STM32相关平台的移植后，我们可以使用机智云提供的各种工具来开发自己的项目，相关介绍请查看<a href="http://docs.gizwits.com/zh-cn/deviceDev/GoKit3%20DEV%20SDK%20Common%E7%89%88%E7%A7%BB%E6%A4%8D%E8%AF%B4%E6%98%8E.html" target="_blank" rel="external">机智云文档中心</a>中的<strong>Gokit-MCU</strong>发开教程等相关章节。</p>
+<p>##<strong>驱动相关开发</strong></p>
+<p>当硬件配置需要更改时，可以使用<strong>STM32CubeMX</strong>进行相关硬件驱动的配置开发，进而最大限度的减少源码上的重复开发，提高开发效率，这里以按键IO配置为例：</p>
+<p>在源码根目录打开对应平台的STM32CubeMX工程文件</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N23.png" alt="name">  </p>
+<p>在管脚配置（Pinout）界面修改管脚IO配置，例如将原先的KEY1(PB10)改为PE3，类型为<strong>GPIO_Input</strong>。</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N24.png" alt="name">  </p>
+<p>进入配置选项（Configuration），将新配置的管脚名称与之前的名称保持一致（这样就不需要更改源码中的宏定义），再选择OK</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N25.png" alt="name">  </p>
+<p>最后点击源码生成按钮，更新源码中的IO驱动（并不会影响到之前添加的代码）</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N26.png" alt="name">  </p>
+<p>由于NUCLEO-L496ZG硬件连接的方式与F103中的方式不同（下拉），要修改部分按键驱动中的程序，在 ” Hal/hal_key.c ”中，将：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N27.png" alt="name">  </p>
+<p>改为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(HAL_GPIO_ReadPin((GPIO_TypeDef\*)keyS-&gt;singleKey[i].keyPort,keyS-&gt;singleKey[i].keyGpio))</div></pre></td></tr></table></figure>
+<p>编译烧录后，测试按键效果。</p>
+<p>#<strong>相关支持</strong></p>
+<p>1) 如果您是创客</p>
+<p>GoKit是面向智能硬件开发者限量免费开放，注册我们的论坛或关注我们的官方微信均可发起申请即可。</p>
+<p>官方网站地址：<a href="http://site.gizwits.com/developer/activity/gokit/request" target="_blank" rel="external">http://site.gizwits.com/developer/activity/gokit/request</a></p>
+<p>官方二维码：</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/CubeMX/20171025N28.png" alt="name">  </p>
+<p>2) 如果您是团体</p>
+<p>GizWits针对团体有很多支持计划，您可以和GizWtis联系，快速得到GoKit以及技术支持；</p>
+<p>网站地址：<a href="http://www.gizwits.com/about-us" target="_blank" rel="external">http://www.gizwits.com/about-us</a></p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="分享">
+          <span>分享</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="项目登记">
+      <span>项目登记</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="问题反馈">
+      <span>问题反馈</span>
+    </a>
+    <a href="#" title="返回顶部"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">机智云首页</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">关于我们</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">联系我们</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">加入我们</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=fa1376e1d7301caad0eaad3833d277cf"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>

@@ -4,14 +4,14 @@
   <head>
   <meta charset="utf-8">
 
-  <title>GoKit3 DEV SDK Common版移植说明 - 机智云</title>
+  <title>机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="GoKit3 DEV SDK Common版移植说明-机智云">
-  <meta name="keywords" content="GoKit3 DEV SDK Common版移植说明 docs 文档中心 Gizwits">
+  <meta name="Description" content="-机智云">
+  <meta name="keywords" content=" docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -214,7 +214,9 @@
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/DevSDK/代码自动生成工具.html">MCU代码自动生成工具使用教程</a></li>
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3 DEV SDK Common版移植说明.html">MCU SDK 通用平台移植教程</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3_DEV_SDK_Common_transplant.html">MCU SDK 通用平台移植教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/STM32CubeMX_transplant.html">STM32CubeMX移植机智云自动生成代码详解</a></li>
                         
                       </ul>
                     </li>
@@ -237,7 +239,9 @@
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html">GoKit3(S)开发环境搭建</a></li>
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S程序详解.html">Gokit3(S)源码详解</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html">GoKit-SoC程序详解</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit-MCU-explanation.html">GoKit-MCU程序详解</a></li>
                         
                       </ul>
                     </li>
@@ -248,11 +252,11 @@
                       开发套件Arduino资料 &#9656;
                       <ul class="levelC-wrapper">
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/intro.html">ArduinoUNOWiFi接入机智云介绍</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi.html">ArduinoUNOWiFi接入机智云介绍</a></li>
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/Tutorial.html">ArduinoUnoWiFi 之ESP8266固件烧写教程</a></li>
                         
-                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/sdk.html">ArduinoUnoWiFi SDK之API介绍</a></li>
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi_SDK_API.html">ArduinoUnoWiFi SDK之API介绍</a></li>
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/example.html">Arduino Uno WiFi智能小夜灯</a></li>
                         
@@ -450,111 +454,13 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">GoKit3 DEV SDK Common版移植说明</div>
+        <div class="title"></div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="前文需知"><a href="#前文需知" class="headerlink" title="前文需知"></a>前文需知</h1><h2 id="1-什么是-quot-代码自动生成工具-quot-？"><a href="#1-什么是-quot-代码自动生成工具-quot-？" class="headerlink" title="1.什么是&quot;代码自动生成工具&quot;？"></a>1.什么是&quot;代码自动生成工具&quot;？</h2><p>为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。</p>
-<p>自动生成的代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的API，且提供了多种平台的实例代码。当设备收到云端或APP端的数据后，程序会将数据转换成对应的事件并通知到应用层，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。</p>
-<p>MCU方案默认支持 <strong>STM32F103C8x</strong> 平台，如果是其他MCU芯片，可以将我们生成好的 <strong>通用平台版代码</strong> 移植到符合条件的平台，从而实现机智云所提供的各种功能。</p>
-<p>本文将主要说明 <strong>通用平台版</strong> 的移植。</p>
-<h2 id="2-如何自动生成-quot-通用平台代码-quot-？"><a href="#2-如何自动生成-quot-通用平台代码-quot-？" class="headerlink" title="2.如何自动生成&quot;通用平台代码&quot;？"></a>2.如何自动生成&quot;通用平台代码&quot;？</h2><p>在机智云平台定义一个产品后，选择左侧服务中的&quot;MCU开发&quot;，选中硬件方案中的&quot;独立MCU方案&quot;，再选中&quot;硬件平台&quot;中的&quot;其他平台&quot;，最后点击&quot;生成代码包&quot;，等待生成完毕下载即可。</p>
-<p><img src="/assets/zh-cn/deviceDev/DevSDK/common/image3.png" alt="Alt text"></p>
-<p>下载完成后解压如下：</p>
-<p> <img src="/assets/zh-cn/deviceDev/DevSDK/common/image4.png" alt="Alt text"></p>
-<h2 id="3-通用平台移植需知"><a href="#3-通用平台移植需知" class="headerlink" title="3.通用平台移植需知"></a>3.通用平台移植需知</h2><p>开发者在移植前要确保被移植平台的硬件参数满足以下的要求：</p>
-<p>A. 平台支持两个串口接口（至少一个），一个负责与wifi模组间的数据收发（必须），一个用于调试信息打印（可复用数据收发串口）。</p>
-<p>B.平台支持定时器功能（1ms精确定时）。</p>
-<p>C.平台支持至少2K的RAM空间（可调整环形缓冲区大小来解决此问题，但易导致数据协议的处理异常）。</p>
-<p>注：环形缓冲区修改位置: <strong>gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h</strong></p>
-<p> <img src="/assets/zh-cn/deviceDev/DevSDK/common/image5.png" alt="Alt text"></p>
-<p>原代码中MAX_PACKAGE_LEN = 950，即环形缓冲区所占RAM空间大小为950*2 = 1900 字节，开发者可以此来调整程序所占RAM空间的大小。</p>
-<h1 id="通用平台版代码移植说明"><a href="#通用平台版代码移植说明" class="headerlink" title="通用平台版代码移植说明"></a>通用平台版代码移植说明</h1><h2 id="1-文件介绍"><a href="#1-文件介绍" class="headerlink" title="1.文件介绍"></a>1.文件介绍</h2><p> <img src="/assets/zh-cn/deviceDev/DevSDK/common/image6.png" alt="Alt text"></p>
-<p>重要文件解读:</p>
-<ol>
-<li><p>gizwits_product.c<br>该文件为产品相关处理函数，如gizwitsEventProcess()。</p>
-</li>
-<li><p>gizwits_product.h<br>该文件为gizwits_product.c的头文件，如HARDWARE_VERSION、SOFTWARE_VERSION。</p>
-</li>
-<li><p>gizwits_protocol.c<br>该文件为SDK API接口函数定义文件。</p>
-</li>
-<li><p>gizwits_protocol.h<br>该文件为gizwits_protocol.c对应头文件，相关API的接口声明均在此文件中。</p>
-</li>
-<li><p>其他文件<br>a) User/main.c<br>MCU程序入口函数所在文件，入口函数为main(void)。</p>
-</li>
-</ol>
-<h2 id="2-API介绍"><a href="#2-API介绍" class="headerlink" title="2.API介绍"></a>2.API介绍</h2><p><strong>· void giz witsInit (void)</strong></p>
-<p>gizwits协议初始化接口。</p>
-<p>用户调用该接口可以完成Gizwits协议相关初始化（包括协议相关定时器、串口的初始化）。</p>
-<p><strong>· void gizwitsSetMode (uint8_t mode)</strong></p>
-<p>参数mode[in]：仅支持0,1和2,其他数据无效。</p>
-<p>参数为0，恢复模组出厂配置接口，调用会清空所有配置参数，恢复到出厂默认配置。</p>
-<p>参数为1或2，配置模式切换接口，支持SoftAP和AirLink模式。参数为1时配置模组进入SoftAp模式，参数为2配置模组进入AirLink模式。</p>
-<p><strong>· void gizwitsHandle(dataPoint_t *dataPoint)</strong></p>
-<p>参数dataPoint[in]:用户设备数据点。</p>
-<p>该函数中完成了相应协议数据的处理即数据上报的等相关操作。</p>
-<p><strong>· int8_t gizwitsEventProcess(eventInfo_t <em>info, uint8_t </em>data, uint32_t len)</strong></p>
-<p>参数info[in]:事件队列</p>
-<p>参数data[in]:数据</p>
-<p>参数len [in]:数据长度</p>
-<p>用户数据处理函数,包括wifi状态更新事件和控制事件。</p>
-<p> a). Wifi状态更新事件</p>
-<p>WIFI_开头的事件为wifi状态更新事件，data参数仅在WIFI_RSSI有效，data值为RSSI值,数据类型为uint8_t，取值范围0~7。</p>
-<p> b). 控制事件</p>
-<p>与数据点相关,本版本代码会打印相关事件信息，相关数值也一并打印输出，用户只需要做命令的具体执行即可。</p>
-<h2 id="3-代码结构说明"><a href="#3-代码结构说明" class="headerlink" title="3.代码结构说明"></a>3.代码结构说明</h2><p>自动化代码生成工具已经根据用户定义的产品数据点信息，生成了对应的机智云串口协议层代码，用户需要移植代码到自己的工程中，完成设备的接入工作。如图如下：</p>
-<p> <img src="/assets/zh-cn/deviceDev/DevSDK/common/image7.png" alt="Alt text"></p>
-<p>代码绿色部分的协议逻辑和程序主流程已经帮用户实现，图中用黄色字体注标的部分待用户实现并完成代码的移植。用户的移植分以下几步进行：</p>
-<p>a.搭建最小平台工程（必要）。</p>
-<p>b.实现串口驱动（必要）：包括通信与打印功能。</p>
-<p>c.实现定时器驱动（必要）。</p>
-<p>d.实现芯片复位函数（可选）。</p>
-<p>e.实现应用层逻辑开发（必要）：包括数据上下行、入网配置等。</p>
-<h1 id="移植步骤介绍"><a href="#移植步骤介绍" class="headerlink" title="移植步骤介绍"></a>移植步骤介绍</h1><p>下面我们以 <strong>MSP430平台的移植</strong> 为例来介绍移植步骤。</p>
-<h2 id="1-搭建最小平台工程（必要）"><a href="#1-搭建最小平台工程（必要）" class="headerlink" title="1.搭建最小平台工程（必要）"></a>1.搭建最小平台工程（必要）</h2><p>首先完成目标平台的最小工程搭建，以MSP430为例，我们将通信协议处理的源码文件(Gizwits目录下所有文件)导入到工程中，并将 <strong>User目录</strong> 下的示例 <strong>main.c</strong> 文件整合到工程中的主文件中，如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">/** 用户区当前设备状态结构体*/</div><div class="line"></div><div class="line">dataPoint_t currentDataPoint;</div><div class="line"></div><div class="line">void Sys_Init(void)</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">        //关软件看门狗Stop WDT</div><div class="line"></div><div class="line"> WDTCTL = WDTPW + WDTHOLD;</div><div class="line"></div><div class="line">        //设置时钟</div><div class="line"></div><div class="line"> InitClock();</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/*************************************************************</div><div class="line"></div><div class="line">** 函数名称: main(void)</div><div class="line"></div><div class="line">** 函数功能: 主函数</div><div class="line"></div><div class="line">*************************************************************/</div><div class="line"></div><div class="line">void main(void)</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">        //System space init</div><div class="line"></div><div class="line"> Sys_Init();</div><div class="line"></div><div class="line">        //Gizwits protocol init</div><div class="line"></div><div class="line"> userInit();</div><div class="line"></div><div class="line"> gizwitsInit();</div><div class="line"></div><div class="line">        while(1)</div><div class="line"></div><div class="line"> &#123;</div><div class="line"></div><div class="line">        userHandle();</div><div class="line"></div><div class="line">        gizwitsHandle((dataPoint_t *)&amp;currentDataPoint);</div><div class="line"></div><div class="line"> &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="2-实现串口驱动（必要）"><a href="#2-实现串口驱动（必要）" class="headerlink" title="2.实现串口驱动（必要）"></a>2.实现串口驱动（必要）</h2><p>MCU方案需要用户实现一个串口，用于设备MCU与WIFI模组之间数据通信。用户首先需要实现串口接收中断服务函数接口UART_IRQ_FUN（MSP430平台函数接口为：USCI0RX_ISR），该接口调用<strong>gizPutData()</strong>函数实现串口数据的接收并且写入协议层数据缓冲区。</p>
-<p>下面以MSP430平台为例，本例使用USCI0与模组通信，串口初始化实现如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">void Sys_Init(void)</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">//关软件看门狗Stop WDT</div><div class="line"></div><div class="line"> WDTCTL = WDTPW + WDTHOLD;</div><div class="line"></div><div class="line">//设置时钟</div><div class="line"></div><div class="line"> InitClock();</div><div class="line"></div><div class="line">//串口设置-9600bps</div><div class="line"></div><div class="line"> serial_init(9600);</div><div class="line"></div><div class="line">        cio_printf(&quot; Start system \n&quot;;);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>中断服务函数和串口发送报文函数实现如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">/*******************************************************************</div><div class="line"></div><div class="line">** 函数名称：void USCI0RX_ISR(void)</div><div class="line"></div><div class="line">** 函数功能：Echo back RXed character, confirm TX buffer is ready first</div><div class="line"></div><div class="line">** 入口参数：无</div><div class="line"></div><div class="line">** 出口参数: 无</div><div class="line"></div><div class="line">********************************************************************/</div><div class="line"></div><div class="line">#pragma vector=USCIAB0RX_VECTOR</div><div class="line"></div><div class="line">__interruptvoid USCI0RX_ISR(void)</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">  while (!(IFG2&amp;UCA0TXIFG));   // USCI_A0 TX buffer ready?</div><div class="line"></div><div class="line">  gizPutData((uint8_t *)&amp;UCA0RXBUF,1);</div><div class="line"></div><div class="line">  return;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>另外，用户需要实现串口的发送接口，uartWrite()函数调用该接口实现设备数据的发送。需要特别注意的是 <strong>gizwits_product.c</strong> 文件中uartWrite()函数是伪函数，用户需根据自己实现的串口发送接口完善<strong>uartWrite()</strong>，请注意相关注释信息，以防出错。实现如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"></div><div class="line">* @brief 串口写操作，发送数据到WiFi模组</div><div class="line"></div><div class="line">*</div><div class="line"></div><div class="line">* @param buf      : 数据地址</div><div class="line"></div><div class="line">* @param len       : 数据长度</div><div class="line"></div><div class="line">*</div><div class="line"></div><div class="line">* @return : 正确返回有效数据长度;-1，错误返回</div><div class="line"></div><div class="line">*/</div><div class="line"></div><div class="line">int32_t uartWrite(uint8_t *buf, uint32_t len)</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">    uint32_t i = 0;</div><div class="line"></div><div class="line">    if(NULL == buf)</div><div class="line"></div><div class="line">    &#123;</div><div class="line"></div><div class="line">        return -1;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    for(i=0; i&lt;len; i++)</div><div class="line"></div><div class="line">    &#123;</div><div class="line"></div><div class="line">            serial_send_blocking(buf[i]);</div><div class="line"></div><div class="line">            //实现串口发送函数,将buf[i]发送到模组</div><div class="line"></div><div class="line">        if(i &gt;=2 &amp;&amp; buf[i] == 0xFF)</div><div class="line"></div><div class="line">        &#123;</div><div class="line"></div><div class="line">                //实现串口发送函数,将0x55发送到模组</div><div class="line"></div><div class="line">                serial_send_blocking(0x55);</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return len;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>注：注意示例中的0x55条件处理，即出现0xFF的数据时后面要加0x55，这个操作一定要保留。</p>
-<p>如果用户需要打印日志调试信息，用户需实现GIZWITS_LOG函数，只需修改 <strong>gizwits_protocol.h</strong> 中对应的宏定义即可，如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define GIZWITS_LOG cio_printf  //&lt;运行日志打印</div></pre></td></tr></table></figure>
-<h2 id="3-实现定时器驱动（必要）"><a href="#3-实现定时器驱动（必要）" class="headerlink" title="3.实现定时器驱动（必要）"></a>3.实现定时器驱动（必要）</h2><p>协议层使用到了一个系统时间，该事件单位为毫秒，所以要求用户实现一个毫秒定时器（必须是1ms精确定时，若不准确，会影响到超时重发、定时上报等处理），并且实现中断服务函数TIMER_IRQ_FUN（MSP430平台函数接口为：Timer_A），该函数调用<strong>gizTimerMs()</strong>实现协议层系统时间的维护。</p>
-<p>下面以MSP430平台为例，本例使用Timer_A实现时间维护，定时器初始化如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">void Sys_Init(void)</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line"> //关软件看门狗Stop WDT</div><div class="line"></div><div class="line"> WDTCTL = WDTPW + WDTHOLD;</div><div class="line"></div><div class="line"> //设置时钟</div><div class="line"></div><div class="line"> InitClock();</div><div class="line"></div><div class="line"> //定时器</div><div class="line"></div><div class="line">    BCSCTL3 |= LFXT1S_2; // Set LFXT1为vol时钟即12kHZ</div><div class="line"></div><div class="line">    CCTL0|= CCIE;  //设置捕获/比较控制寄存器，CCIE=0x0010，使能捕获比较中断</div><div class="line"></div><div class="line">    CCR0 =12;  //设置捕获/比较寄存器，初始值为12000，对于ACLK时钟频率为12khz的频率，相当于1s 120相当于1ms</div><div class="line"></div><div class="line">    TA0CTL = TASSEL_1 +TACLR+MC_1; // 设置定时器A控制寄存器，</div><div class="line"></div><div class="line">  //串口设置-9600bps</div><div class="line"></div><div class="line"> serial _init(9600);</div><div class="line"></div><div class="line">        cio_printf(&quot;Start system \n&quot;);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>中断服务函数实现如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#pragma vector=TIMER0_A0_VECTOR//固定的格式</div><div class="line"></div><div class="line">__interruptvoid Timer_A (void) //定时器A的CC0中断处理程序必须是没有返回值的</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line"> gizTimerMs();</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="4-实现芯片复位（可选）"><a href="#4-实现芯片复位（可选）" class="headerlink" title="4.实现芯片复位（可选）"></a>4.实现芯片复位（可选）</h2><p>根据串口协议文档规定，模组可以发送命令复位设备MCU，所以用户需要实现 <strong>gizwits_product.c</strong> 中的<strong>mcuRestart()</strong>接口即可。下面以MSP430平台为例，实现如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"></div><div class="line">* @brief MCU复位函数</div><div class="line"></div><div class="line">* @param none</div><div class="line"></div><div class="line">* @return none</div><div class="line"></div><div class="line">*/</div><div class="line"></div><div class="line">void mcuRestart(void)</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">        ((void (*)())0xFFFE)();</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>至此便完成了平台的移植，后续的配置入网、上下行操作属于应用逻辑开发。</p>
-<h2 id="5-应用逻辑开发"><a href="#5-应用逻辑开发" class="headerlink" title="5.应用逻辑开发"></a>5.应用逻辑开发</h2><h3 id="5-1-数据下行控制"><a href="#5-1-数据下行控制" class="headerlink" title="5.1.数据下行控制"></a>5.1.数据下行控制</h3><p>数据点方式将转换成数据点事件，开发者只需要在 <strong>gizwits_product. c</strong> 文件的 <strong>gizwitsEventProcess ()</strong>相应事件下作具体处理即可。</p>
-<p>下面使用MSP430平台，以APP实现控制LED为例，如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"></div><div class="line">* @brief 事件处理接口</div><div class="line"></div><div class="line">* 说明：</div><div class="line"></div><div class="line">* 1.用户可以对WiFi模组状态的变化进行自定义的处理</div><div class="line"></div><div class="line">* 2.用户可以在该函数内添加数据点事件处理逻辑，如调用相关硬件外设的操作接口</div><div class="line"></div><div class="line">* @param[in] info : 事件队列</div><div class="line"></div><div class="line">* @param[in] data : 协议数据</div><div class="line"></div><div class="line">* @param[in] len : 协议数据长度</div><div class="line"></div><div class="line">* @return NULL</div><div class="line"></div><div class="line">* @ref gizwits_protocol.h</div><div class="line"></div><div class="line">*/</div><div class="line"></div><div class="line">int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *data, uint32_t len)</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">  uint8_t i = 0;</div><div class="line"></div><div class="line">  dataPoint_t *dataPointPtr = (dataPoint_t *)data;</div><div class="line"></div><div class="line">  moduleStatusInfo_t *wifiData = (moduleStatusInfo_t *)data;</div><div class="line">  </div><div class="line"></div><div class="line">  if((NULL == info) || (NULL == data))</div><div class="line"></div><div class="line"> &#123;</div><div class="line"></div><div class="line">   return -1;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  for(i=0; i&lt;info&gt;num; i++)</div><div class="line"></div><div class="line">  &#123;</div><div class="line"></div><div class="line">switch(info&gt;event[i])</div><div class="line">&#123;</div><div class="line"></div><div class="line">caseEVENT_LED_ONOFF:</div><div class="line"></div><div class="line">currentDataPoint.valueLED_ONOFF = dataPointPtr-&gt;valueLED_ONOFF;</div><div class="line">      </div><div class="line">if(0x01 == currentDataPoint.valueLED_ONOFF)</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">//user handle</div><div class="line"></div><div class="line">P1OUT |= BIT6;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">else</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">//user handle</div><div class="line"></div><div class="line">P1OUT &amp;= ~BIT6;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">break;</div></pre></td></tr></table></figure>
-<h3 id="5-2-数据上行控制"><a href="#5-2-数据上行控制" class="headerlink" title="5.2.数据上行控制"></a>5.2.数据上行控制</h3><p>该工程代码默认在<strong>userHandle()</strong>中实现传感器数据采集，并且该函数在while中循环执行，原则上用户只需要关心如何采集数据。</p>
-<p>特别提醒，默认while循环执行速度较快，需要针对不同的需求，用户可调整数据点数据的采集周期和接口实现位置，预防由于传感器数据采集过快引发的不必要的问题（具体可查看STM32 的详解篇）。</p>
-<p>下面使用MSP430平台，以灯的状态赋值为例（ <strong>只读型数据点</strong> 的操作会被云端自动生成），如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"></div><div class="line">* 用户数据获取</div><div class="line"></div><div class="line">* 此处需要用户实现除可写数据点之外所有传感器数据的采集,可自行定义采集频率和设计数据过滤算法</div><div class="line"></div><div class="line">* @param none</div><div class="line"></div><div class="line">* @return none</div><div class="line"></div><div class="line">*/</div><div class="line"></div><div class="line">void userHandle(void)</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">        currentDataPoint.valueLED_ONOFF = 0x01;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="5-3-配置入网功能（必要）"><a href="#5-3-配置入网功能（必要）" class="headerlink" title="5.3.配置入网功能（必要）"></a>5.3.配置入网功能（必要）</h3><p>根据串口协议文档规定，MCU可以向模组发送命令使其进入相应的配置模式，所以用户可以调用<strong>gizwitsSetMode</strong>接口（在 <strong>gizwits_protocol.c</strong> 中）完成相应的操作（例如按键控制），接口调用说明如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"></div><div class="line">* @brief WiFi配置接口</div><div class="line"></div><div class="line">* 用户可以调用该接口使WiFi模组进入相应的配置模式或者复位模组</div><div class="line"></div><div class="line">* @param[in] mode 配置模式选择：0x0，模组复位;0x01，SoftAp模式;0x02，AirLink模式</div><div class="line"></div><div class="line">* @return 错误命令码</div><div class="line"></div><div class="line">*/</div><div class="line"></div><div class="line">int32_t gizwitsSetMode(uint8_t mode)</div></pre></td></tr></table></figure>
-<h3 id="5-4-实现模组状态处理功能（可选）"><a href="#5-4-实现模组状态处理功能（可选）" class="headerlink" title="5.4.实现模组状态处理功能（可选）"></a>5.4.实现模组状态处理功能（可选）</h3><p>开发者可以在 <strong>gizwits_product. c</strong> 文件的 <strong>gizwitsEventProcess()</strong>函数内获得WIFI状态，并做相应的逻辑处理。</p>
-<p>下面使用MSP430平台为例，添加一个逻辑：当WiFi模块成功连接路由后关闭LED灯，代码中示例如下：</p>
-<pre><code>case WIFI_CON_ROUTER:
-
-              P1OUT &amp;= ~BIT6;
-
-          break;
-</code></pre><h1 id="相关支持"><a href="#相关支持" class="headerlink" title="相关支持"></a>相关支持</h1><p>1)   如果您是开发者</p>
-<p>GoKit是面向智能硬件开发者限量免费开放，注册我们的论坛或关注我们的官方微信均可发起申请即可。</p>
-<p>开发者论坛： <a href="http://club.gizwits.com/forum.php" target="_blank" rel="external">http://club.gizwits.com/forum.php</a></p>
-<p>文档中心： <a href="http://docs.gizwits.com/" target="_blank" rel="external">http://docs.gizwits.com/hc/</a></p>
-<p>2)    如果您是团体</p>
-<p>Gizwits针对团体有很多支持计划，您可以和Gizwits联系，快速得到GoKit以及技术支持；</p>
-<p>网站地址： <a href="http://www.gizwits.com/about-us" target="_blank" rel="external">http://www.gizwits.com/about-us</a></p>
-<p>官方二维码：</p>
-<p> <img src="/assets/zh-cn/deviceDev/DevSDK/common/image8.png" alt="Alt text"></p>
+      <p>正在跳转…</p>
+<!--
+用于跳转的页面，请查看“/themes/documentation/source/js/redirect.js”具体的调整页面
+-->
 
     </div>
     
