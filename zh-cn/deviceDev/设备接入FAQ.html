@@ -462,7 +462,7 @@
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <h1 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h1><p>本文列举了开发者在使用设备接入、MCU自动生成或者使用机智云开发板（Gokit）的时候所遇到的一些问题以及解答方案。</p>
-<h1 id="2、FAQ"><a href="#2、FAQ" class="headerlink" title="2、FAQ"></a>2、FAQ</h1><p><strong>Q：AirLink是什么意思，如何解释 </strong><br>A： 机智云推出的实现 Onboarding 的一套技术名称，兼容了多个 Wi-Fi 模块厂商的 Smart-Config 协议以及一套良好用户体验的标准 Onboarding 操作流程，机智云的 Wi-Fi设备接入SDK 已经内置 AirLink 技术。</p>
+<h1 id="2、FAQ"><a href="#2、FAQ" class="headerlink" title="2、FAQ"></a>2、FAQ</h1><p><strong>Q：AirLink是什么意思，如何解释</strong><br>A： 机智云推出的实现 Onboarding 的一套技术名称，兼容了多个 Wi-Fi 模块厂商的 Smart-Config 协议以及一套良好用户体验的标准 Onboarding 操作流程，机智云的 Wi-Fi设备接入SDK 已经内置 AirLink 技术。</p>
 <p><strong>Q：微信的AirKiss跟你们的AirLink有什么区别</strong><br>A：AirKiss是微信硬件平台提供的WIFI设备快速入网配置技术，AirLink是机智云提供的WIFI设备快速入网配置技术。从技术的角度上说，两者都是通过包含特定信息的UDP广播的方式使Wi-Fi模块配置连    上路由器，但二者支持的Wi-Fi模块有所差别。目前来说，机智云可提供支持AirKiss或AirLink的GAgent给开发者使用。</p>
 <p><strong>Q：WIFI设备可以配置多个路由器么</strong><br>A：可以，不过GAgent里面只能保存一组SSID和Password，如果再次配置则会覆盖之前所配置的路由器</p>
 <p><strong>Q：SoftAp配网的时候，模块的Ap密码是什么</strong><br>A：烧写了GAgent固件的模块，或者使用机智云协议的模块，AP模式的SSID均为”XPG-GAgent-xxxx”，其中”xxxx”为Wi-Fi模块的物理地址后四位，初始密码为”123456789”。</p>
@@ -484,6 +484,7 @@
 </ul>
 <p><strong>Q：如何使用自有电路板与WiFi模块连接</strong><br>A：WiFi 模块是通过串口与底板 MCU 通信的，所以只需要找到 WiFi 模块的串口引脚就可以连接到任意板子上</p>
 <p><strong>Q： gokit2 代上 stm32 软件是基于 mdk 哪个版本开发的</strong><br>A：基于 Keil uVision5，目前使用 5.12 和 5.14 没有问题。</p>
+<p><strong>Q：设备如何无按键配网？</strong><br>A：目前Gagent如果没有连接过路由器，或者重置过，打印Gagent日志就会发现，WiFi模块上电以后会自动进入airlink，10几秒以后没有配网就转为softap。只要知道模组处于什么配网模式，就可以做到无按键配网</p>
 
     </div>
     
