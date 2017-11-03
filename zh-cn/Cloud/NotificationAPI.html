@@ -477,7 +477,7 @@
 <h1 id="SNoti申请流程"><a href="#SNoti申请流程" class="headerlink" title="SNoti申请流程"></a>SNoti申请流程</h1><p>1.企业开发者登陆开发者中心，选择添加服务，如下图<br><img src="/assets/zh-cn/cloud/添加SNoti服务.png" alt="添加"></p>
 <p>2.点击上图箭头指向的SNoti服务，进入下一步，申请开通服务<br><img src="/assets/zh-cn/cloud/开通SNoti服务.png" alt="添加"></p>
 <p>3.成功添加SNoti服务后，在服务页面点击“新建授权”创建，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；<br><img src="/assets/zh-cn/cloud/添加api.png" alt="添加"></p>
-<h1 id="关键术语"><a href="#关键术语" class="headerlink" title="关键术语"></a>关键术语</h1><p>1.auth_id &amp; auth_secret: 产品授权ID和密钥，一个产品可创建多个auth_id，一个auth_id对应唯一的一个产品；SNoti客户端登陆时，会验证auth_id和auth_secret的正确性；</p>
+<h1 id="关键术语"><a href="#关键术语" class="headerlink" title="关键术语"></a>关键术语</h1><p>1.auth_id &amp; auth_secret: 产品授权ID和密钥，一款产品可创建多个auth_id，一个auth_id对应唯一的一款产品；SNoti客户端登陆时，会验证auth_id和auth_secret的正确性；</p>
 <p>2.subkey：消息分发机制，以ProductKey + subkey作为唯一主键，不同主键之间，消息互不影响（即同一个ProductKey使用不同的subkey，可产生消息副本）；subkey(subscription key)为自定义字符串，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线（即[a-zA-Z0-9]）；</p>
 <p>3.产品的12种消息类型（event_type）分别为：</p>
 <ul>
