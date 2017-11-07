@@ -472,7 +472,7 @@
 <p><strong>Q：调用云端openapi，修改用户信息的接口，返回9999的错误是怎么回事？</strong><br>A：修改用户信息的接口，返回9999是因为你修改的信息和原来的信息是一样的，所以返回改错误</p>
 <p><strong>Q：在做OTA升级GAgent的时候，出现“不是同一个系列的固件”的提示</strong><br>A：是因为填写的硬件版本号不一致导致的，先查看要升级的GAgent硬件版本号是多少，再重新填写到固件验证的信息上。</p>
 <p><strong>Q：OTA升级设备WiFi固件出现无法升级，但重新上电有恢复正常，又开始OTA升级现象</strong><br>A：OTA升级的时候，设备每重启一次都会去检查该固件的版本是否需要进行升级。如果该设备是符合升级的条件，即使第一次升级失败，重启设备后都会重新去执行一次升级的，一直到设备升级成功。</p>
-<p><strong>Q：用网页去获取设备数据可以用什么接口，OpenApi，WebSocketApi，Snoti这三种有什么区别。</strong><br>A：这三种Api都可以做到，区别不同就是，ApenApi是HTTP请求，是异步执行的（且涉及用户管理方面、分享，分组等接口），WebSocketApi是单个设备实时监控，Snoti可以做到多个设备实时监控</p>
+<p><strong>Q：用网页去获取设备数据可以用什么接口，OpenApi，WebSocketApi，Snoti这三种有什么区别。</strong><br>A：这三种Api都可以做到，区别不同就是，OpenApi是HTTP请求，是异步执行的（且涉及用户管理方面、分享，分组等接口），WebSocketApi是单个设备实时监控，Snoti可以做到多个设备实时监控</p>
 
     </div>
     
