@@ -461,12 +461,12 @@
         <div class="title">GoKit3(S) 二次开发--开发环境搭建</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <p><strong>2017年9月25日起已使用新版MCU代码生成，查看新版<a href="http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html" target="_blank" rel="external">GoKit3(S)二次开发——开发环境搭建</a></strong></p>
+      <p><strong>2017年9月25日起已使用新版MCU代码生成，查看新版<a href="http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html" target="_blank" rel="noopener">GoKit3(S)二次开发——开发环境搭建</a></strong></p>
 <h1 id="GoKit3-S-开发环境准备"><a href="#GoKit3-S-开发环境准备" class="headerlink" title="GoKit3(S)开发环境准备"></a>GoKit3(S)开发环境准备</h1><h2 id="1-开发环境搭建方式"><a href="#1-开发环境搭建方式" class="headerlink" title="1 开发环境搭建方式"></a>1 开发环境搭建方式</h2><p>GoKit3(S)有两种开发环境的搭建方式：</p>
 <p>1) 使用乐鑫官方的ESP8266开发环境 <strong>(推荐方式)</strong></p>
 <p>2) 使用自定义开发环境：虚拟机VMware(12.0版) + Ubuntu系统(14.04 <64位版>)，然后在Ubuntu下配置交叉编译工具编译源码。</64位版></p>
 <h3 id="1-1-使用乐鑫官方开发环境-推荐方式"><a href="#1-1-使用乐鑫官方开发环境-推荐方式" class="headerlink" title="1.1 使用乐鑫官方开发环境(推荐方式)"></a>1.1 使用乐鑫官方开发环境(推荐方式)</h3><p>1) 下载官方编译环境安装包：</p>
-<p>链接: <a href="https://pan.baidu.com/s/1kVn12Iz" target="_blank" rel="external">https://pan.baidu.com/s/1kVn12Iz</a></p>
+<p>链接: <a href="https://pan.baidu.com/s/1kVn12Iz" target="_blank" rel="noopener">https://pan.baidu.com/s/1kVn12Iz</a></p>
 <p>安装包说明：<br><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/dev_old/image3.png" alt="Alt text"></p>
 <p>注：<br>开发者需先安装虚拟机VirtualBox (及运行VirtualBox-4.3.12-93733-Win.exe)，然后用VirtualBox 加载编译环境的虚拟镜像（ESP8266_lubuntu_20141021.ova）。</p>
 <p>xtensa-lx106-elf.tar.bz2 是交叉编译工具，在“自定义开发环境”时使用。</p>
@@ -500,7 +500,7 @@
 <p>显示如下说明编译环境搭建成功。</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/dev_old/image16.png" alt="Alt text"></p>
 <p>如有问题请查看乐鑫官方说明：</p>
-<p><a href="https://github.com/esp8266/esp8266-wiki/wiki/Toolchain" target="_blank" rel="external">https://github.com/esp8266/esp8266-wiki/wiki/Toolchain</a></p>
+<p><a href="https://github.com/esp8266/esp8266-wiki/wiki/Toolchain" target="_blank" rel="noopener">https://github.com/esp8266/esp8266-wiki/wiki/Toolchain</a></p>
 <h3 id="1-2-使用自定义开发环境"><a href="#1-2-使用自定义开发环境" class="headerlink" title="1.2 使用自定义开发环境"></a>1.2 使用自定义开发环境</h3><p>1)安装VMware(12.0版) + Ubuntu系统，并创建共享目录”D:\share”（方法自行百度）。</p>
 <p>2)配置开发环境</p>
 <p>Step 1: 将 <strong>xtensa-lx106-elf.tar.bz2</strong>  复制到 D:\share 中。（之前创建的共享文件夹）完成后如下：</p>
@@ -532,8 +532,8 @@
 <p>echo $PATH                                    //显示红框所示表示配置正确        </p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/dev_old/image24.png" alt="Alt text"></p>
 <p>如有问题请查看<strong>乐鑫官方</strong>说明：</p>
-<p><a href="https://github.com/esp8266/esp8266-wiki/wiki/Toolchain" target="_blank" rel="external">https://github.com/esp8266/esp8266-wiki/wiki/Toolchain</a></p>
-<h2 id="2-GoKit3-S-源代码"><a href="#2-GoKit3-S-源代码" class="headerlink" title="2 GoKit3(S)源代码"></a>2 GoKit3(S)源代码</h2><p>GoKit3(S)源码下载地址，<a href="http://download.gizwits.com/zh-cn/p/92/93" target="_blank" rel="external">点击下载中</a></p>
+<p><a href="https://github.com/esp8266/esp8266-wiki/wiki/Toolchain" target="_blank" rel="noopener">https://github.com/esp8266/esp8266-wiki/wiki/Toolchain</a></p>
+<h2 id="2-GoKit3-S-源代码"><a href="#2-GoKit3-S-源代码" class="headerlink" title="2 GoKit3(S)源代码"></a>2 GoKit3(S)源代码</h2><p>GoKit3(S)源码下载地址，<a href="http://download.gizwits.com/zh-cn/p/92/93" target="_blank" rel="noopener">点击下载中</a></p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/dev_old/image25.png" alt="Alt text"></p>
 <h1 id="GoKit3-S-源码编译"><a href="#GoKit3-S-源码编译" class="headerlink" title="GoKit3(S)源码编译"></a>GoKit3(S)源码编译</h1><p>1) 将GoKit3(S)源码解压后放入share共享目录下：</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/dev_old/image26.png" alt="Alt text"></p>
@@ -552,7 +552,7 @@
 <p>Windows中显示如下</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/dev_old/image30.png" alt="Alt text"></p>
 <h1 id="GoKit3-S-固件下载"><a href="#GoKit3-S-固件下载" class="headerlink" title="GoKit3(S)固件下载"></a>GoKit3(S)固件下载</h1><h2 id="1-打开烧写软件"><a href="#1-打开烧写软件" class="headerlink" title="1 打开烧写软件"></a>1 打开烧写软件</h2><p>下载程序烧录工具“FLASH_DOWNLOAD_TOOLS_v2.4” ，下载地址：</p>
-<p><a href="http://bbs.espressif.com/viewtopic.php?f=57&amp;t=433" target="_blank" rel="external">http://bbs.espressif.com/viewtopic.php?f=57&amp;t=433</a></p>
+<p><a href="http://bbs.espressif.com/viewtopic.php?f=57&amp;t=433" target="_blank" rel="noopener">http://bbs.espressif.com/viewtopic.php?f=57&amp;t=433</a></p>
 <p>下载完毕解压后点击运行<strong>“ESP_DOWNLOAD_TOOL_V2.4.exe”</strong></p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/dev_old/image31.png" alt="Alt text"></p>
 <h2 id="2-设置烧写选项"><a href="#2-设置烧写选项" class="headerlink" title="2 设置烧写选项"></a>2 设置烧写选项</h2><p>GoKit3(S) 烧写固件分为SOC版和MCU版，开发者应根据GoKit3(S) 的模式烧写对应版本的固件，详细介绍请查看<strong>《GoKit3(S) 开发套件介绍》</strong>中的“2. 了解SOC版与MCU版的区别”一节。</p>
@@ -562,7 +562,7 @@
 <p><strong>share/gokit3_SoC_ESP8266_xxx/bin/upgrade</strong></p>
 <h3 id="2-2-GoKit3-S-MCU版"><a href="#2-2-GoKit3-S-MCU版" class="headerlink" title="2.2 GoKit3(S) MCU版"></a>2.2 GoKit3(S) MCU版</h3><p>MCU版的程序固件名称为：</p>
 <p><strong>GAgent_00ESP826_04020011_16041419.bin</strong></p>
-<p><a href="http://download.gizwits.com/zh-cn/p/92/94" target="_blank" rel="external">点击下载</a>)</p>
+<p><a href="http://download.gizwits.com/zh-cn/p/92/94" target="_blank" rel="noopener">点击下载</a>)</p>
 <p>详细介绍请查看<strong>《GoKit3(S) 开发套件介绍》</strong>中“5. 使用Gokit的MCU模式”一节。</p>
 <h3 id="2-3-确认烧写选项"><a href="#2-3-确认烧写选项" class="headerlink" title="2.3 确认烧写选项"></a>2.3 确认烧写选项</h3><p>烧写选项按如下图所示选择、填写：</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/dev_old/image32.png" alt="Alt text"></p>

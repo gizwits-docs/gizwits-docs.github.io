@@ -475,8 +475,8 @@
 <p>2、熟悉《设备快速接入机智云文档》《App快速接入机智云文档》并且能够完成整个接入</p>
 <h2 id="1-3-准备工作"><a href="#1-3-准备工作" class="headerlink" title="1.3 准备工作"></a>1.3 准备工作</h2><p>硬件设备：亚马逊Echo音箱、机智云GOKIT设备<br>软件：机智云APP<br>其他：机智云开发者账号、亚马逊开发者账号、亚马逊AWS Lambda账号</p>
 <h1 id="2、机智云配置"><a href="#2、机智云配置" class="headerlink" title="2、机智云配置"></a>2、机智云配置</h1><p>本节要点：申请机智云产品互联服务，配置机智云的产品互联，配置Alexa定向URL来绑定机智云。</p>
-<h2 id="2-1-设备接入"><a href="#2-1-设备接入" class="headerlink" title="2.1 设备接入"></a>2.1 设备接入</h2><p>按照文档中心的《设备快速接入机智云》绑定设备，获取设备did （<a href="http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html" target="_blank" rel="external">点击此处跳转</a>）</p>
-<h2 id="2-1-APP开发"><a href="#2-1-APP开发" class="headerlink" title="2.1 APP开发"></a>2.1 APP开发</h2><p>按照文档中心的《App快速接入机智云》注册登陆机智云账号获取User Token和AppId进行绑定  （<a href="http://docs.gizwits.com/zh-cn/quickstart/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C.html" target="_blank" rel="external">点击此处跳转</a>）</p>
+<h2 id="2-1-设备接入"><a href="#2-1-设备接入" class="headerlink" title="2.1 设备接入"></a>2.1 设备接入</h2><p>按照文档中心的《设备快速接入机智云》绑定设备，获取设备did （<a href="http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html" target="_blank" rel="noopener">点击此处跳转</a>）</p>
+<h2 id="2-1-APP开发"><a href="#2-1-APP开发" class="headerlink" title="2.1 APP开发"></a>2.1 APP开发</h2><p>按照文档中心的《App快速接入机智云》注册登陆机智云账号获取User Token和AppId进行绑定  （<a href="http://docs.gizwits.com/zh-cn/quickstart/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C.html" target="_blank" rel="noopener">点击此处跳转</a>）</p>
 <h2 id="2-3-申请产品互联并配置"><a href="#2-3-申请产品互联并配置" class="headerlink" title="2.3 申请产品互联并配置"></a>2.3 申请产品互联并配置</h2><p><img src="/assets/zh-cn/UserManual/Echo/1484625737500.png" alt="Alt text"></p>
 <p>点击个人项目-服务-添加服务，找到产品互联，点击进去开通服务（必须是购买了GDCS服务包的企业客户）</p>
 <p>申请完成后，点开产品互联，点击亚马逊Echo，配置你App开发中所填入的AppID，点击配置。</p>
@@ -484,7 +484,7 @@
 <p>配置Client Nname和AlexaSkill上面的Redirect URL。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484637706571.png" alt="Alt text"></p>
 <h1 id="3、AlexaSkill配置"><a href="#3、AlexaSkill配置" class="headerlink" title="3、AlexaSkill配置"></a>3、AlexaSkill配置</h1><p>本节要点：配置AlexaSkill的语音控制逻辑，配置AlexaSkill和Lambda关联，配置AlexaSkill和机智云账号互联。</p>
-<h2 id="3-1-创建Skill以及配置interaction-model页面"><a href="#3-1-创建Skill以及配置interaction-model页面" class="headerlink" title="3.1 创建Skill以及配置interaction model页面"></a>3.1 创建Skill以及配置interaction model页面</h2><p>1）打开亚马逊开发者中心（<a href="https://developer.amazon.com/home.html" target="_blank" rel="external">点击此处跳转</a>），登陆之前所注册好的亚马逊开发者账号。</p>
+<h2 id="3-1-创建Skill以及配置interaction-model页面"><a href="#3-1-创建Skill以及配置interaction-model页面" class="headerlink" title="3.1 创建Skill以及配置interaction model页面"></a>3.1 创建Skill以及配置interaction model页面</h2><p>1）打开亚马逊开发者中心（<a href="https://developer.amazon.com/home.html" target="_blank" rel="noopener">点击此处跳转</a>），登陆之前所注册好的亚马逊开发者账号。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626095613.png" alt="Alt text"><br><img src="/assets/zh-cn/UserManual/Echo/1484626099372.png" alt="Alt text"></p>
 <p>2）登陆成功后。跳转到developer console，点击ALEXA，点击Alexa Skills Kit的Get Started。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626108141.png" alt="Alt text"></p>
@@ -504,7 +504,7 @@
 <ol>
 <li>Skill type: 选择 “Custom Interaction Model”</li>
 <li>Name: 这个地方填的是要显示给一般使用者的名称, 我们填入 “Control Light of Ameba”</li>
-<li>Invocation Name: 这里填的是让Alexa识别要启动session的名称。一般来说, Alexa启动session的方式有两种, 第一种是讲出完整的内容, 让Alexa分析互动模型来决定要启动哪个session, 第二种是使用者只讲Invocation Name, 让Alexa启动特定的session。这里我们填入 “Ameba Controller”<br>Invocation Name的取名有一些限制, 要避开Alexa设定的关键字, 以及会造成误判语意的名称, 详细的限制说明可以参考这里:<br><a href="https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/choosing-the-invocation-name-for-an-alexa-skill" target="_blank" rel="external">https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/choosing-the-invocation-name-for-an-alexa-skill</a></li>
+<li>Invocation Name: 这里填的是让Alexa识别要启动session的名称。一般来说, Alexa启动session的方式有两种, 第一种是讲出完整的内容, 让Alexa分析互动模型来决定要启动哪个session, 第二种是使用者只讲Invocation Name, 让Alexa启动特定的session。这里我们填入 “Ameba Controller”<br>Invocation Name的取名有一些限制, 要避开Alexa设定的关键字, 以及会造成误判语意的名称, 详细的限制说明可以参考这里:<br><a href="https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/choosing-the-invocation-name-for-an-alexa-skill" target="_blank" rel="noopener">https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/choosing-the-invocation-name-for-an-alexa-skill</a></li>
 </ol>
 <p>设定好之后, 我们点选Next</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626142791.png" alt="Alt text"></p>
@@ -512,7 +512,7 @@
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626212536.png" alt="Alt text"></p>
 <p>一个skill里面可以填多个intent, 每个intent触发的的情况不同。 Intent里面可以填slot（也可以不填），slot就像是程式里的列举变数, 它分成两种</p>
 <p>Custom slot type: 使用者需要为slot列举可能的值<br>Built-in slot type: Amazon定义了一些常用的slot, 像是日期, 数字, 城市名……, 这类的slot会以AMAZON为前缀字</p>
-<p>详细的schema写法可以参考Amazon官网文章:<br><a href="https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface" target="_blank" rel="external">https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface</a><br>这里我们将schema填入底下的值:</p>
+<p>详细的schema写法可以参考Amazon官网文章:<br><a href="https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface" target="_blank" rel="noopener">https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface</a><br>这里我们将schema填入底下的值:</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626226815.png" alt="Alt text"></p>
 <p>其中intent的名称是 “ControlLight”, 它有一个slot名称是 “LightState”, 型态是custom slot type “LIGHT_STATE”</p>
 <p>其中LIGHT_STATE是custom slot type, 所以我们点选 “Add Slot Type”来设定</p>
@@ -525,12 +525,12 @@
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626328760.png" alt="Alt text"></p>
 <p><strong>Account Linking的配置方法：</strong></p>
 <p>将下图页面的 Redirect URLs 设置到机智云 “产品互联” 的 Redirect URL 中，”Client Name” 可以填写 “Alexa”，填入机智云“产品互联”的Client ID和Client Secret作为请求身份验证的公共字符串。</p>
-<p>Authorization URL (<a href="https://oauth.gizwits.com/oauth/authorize" target="_blank" rel="external">https://oauth.gizwits.com/oauth/authorize</a>) 获取权限<br>Access Token URL (<a href="https://oauth.gizwits.com/oauth/token" target="_blank" rel="external">https://oauth.gizwits.com/oauth/token</a>) 获取access_token</p>
+<p>Authorization URL (<a href="https://oauth.gizwits.com/oauth/authorize" target="_blank" rel="noopener">https://oauth.gizwits.com/oauth/authorize</a>) 获取权限<br>Access Token URL (<a href="https://oauth.gizwits.com/oauth/token" target="_blank" rel="noopener">https://oauth.gizwits.com/oauth/token</a>) 获取access_token</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/图片1.png" alt="Alt text"><br><img src="/assets/zh-cn/UserManual/Echo/图片2.png" alt="Alt text"></p>
 <p>有需要的用户可以填入隐私权限链接保护你的Alexa Skill，本教程选择不填，点击Next下一步。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484706885988.png" alt="Alt text"></p>
 <h1 id="4、Lambda配置"><a href="#4、Lambda配置" class="headerlink" title="4、Lambda配置"></a>4、Lambda配置</h1><p>本节要点：配置Lambda绑定AWS IOT ，配置Lambda绑定Alexa，编写Lambda逻辑代码解析AlexaSkill接收和返回的语音指令，编写OpenApi代码接入机智云云端并控制设备</p>
-<p>进入AWS Lambda的首页 <a href="https://aws.amazon.com/cn/lambda/" target="_blank" rel="external">https://aws.amazon.com/cn/lambda/</a><br>点选右边 “创建免费用户”</p>
+<p>进入AWS Lambda的首页 <a href="https://aws.amazon.com/cn/lambda/" target="_blank" rel="noopener">https://aws.amazon.com/cn/lambda/</a><br>点选右边 “创建免费用户”</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626447125.png" alt="Alt text"></p>
 <p>登陆成功后，选择美国东部。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626456752.png" alt="Alt text"></p>
@@ -567,9 +567,9 @@
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626706311.png" alt="Alt text"></p>
 <p>在light_control里面, 我们可以取得intent的slots资讯, 这边我们要取得的slot是 “LightState”<br>获取在skill上语音说话所传过来的value并传给switch_action，之后判断switch_action等于on时，则传Ture到switch_action_fun这个函数里。</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626714763.png" alt="Alt text"></p>
-<p>之后再调用机智云的openapi对设备进行控制，详情请参考openapi的使用指南<br>（<a href="http://docs.gizwits.com/zh-cn/Cloud/openapi_apps.html）" target="_blank" rel="external">http://docs.gizwits.com/zh-cn/Cloud/openapi_apps.html）</a></p>
+<p>之后再调用机智云的openapi对设备进行控制，详情请参考openapi的使用指南<br>（<a href="http://docs.gizwits.com/zh-cn/Cloud/openapi_apps.html）" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/Cloud/openapi_apps.html）</a></p>
 <h1 id="5、Alexa应用端配置"><a href="#5、Alexa应用端配置" class="headerlink" title="5、Alexa应用端配置"></a>5、Alexa应用端配置</h1><p>本节要点：Echo音箱配置入网，AlexaSkill与亚马逊账号绑定，Alexa与机智云账号绑定。</p>
-<h2 id="5-1-配置Echo音箱入网"><a href="#5-1-配置Echo音箱入网" class="headerlink" title="5.1  配置Echo音箱入网"></a>5.1  配置Echo音箱入网</h2><p>用笔记本电脑点击链接<a href="http://alexa.amazon.com/spa/index.html" target="_blank" rel="external">http://alexa.amazon.com/spa/index.html</a> 配置<br>或用手机App来进行配置：下载链接<br>（<a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201602060）" target="_blank" rel="external">https://www.amazon.com/gp/help/customer/display.html?nodeId=201602060）</a><br>登陆亚马逊账号，进入Alexa配置页面，选择Echo音箱</p>
+<h2 id="5-1-配置Echo音箱入网"><a href="#5-1-配置Echo音箱入网" class="headerlink" title="5.1  配置Echo音箱入网"></a>5.1  配置Echo音箱入网</h2><p>用笔记本电脑点击链接<a href="http://alexa.amazon.com/spa/index.html" target="_blank" rel="noopener">http://alexa.amazon.com/spa/index.html</a> 配置<br>或用手机App来进行配置：下载链接<br>（<a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201602060）" target="_blank" rel="noopener">https://www.amazon.com/gp/help/customer/display.html?nodeId=201602060）</a><br>登陆亚马逊账号，进入Alexa配置页面，选择Echo音箱</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626746300.png" alt="Alt text"></p>
 <p>选择你使用的语言</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484626759759.png" alt="Alt text"></p>
@@ -612,11 +612,11 @@
 <p>如在发布过程中遇到相关问题，可以联系机智云，我们将帮您发布你的skill</p>
 <h1 id="7、相关支持"><a href="#7、相关支持" class="headerlink" title="7、相关支持"></a>7、相关支持</h1><p>7.1 如果您是开发者</p>
 <p>GoKit是面向智能硬件开发者限量免费开放，注册我们的论坛或关注我们的官方微信均可发起申请即可。</p>
-<p>开发者论坛： <a href="http://club.gizwits.com/forum.php" target="_blank" rel="external">http://club.gizwits.com/forum.php</a></p>
-<p>文档中心：<a href="http://docs.gizwits.com/hc/" target="_blank" rel="external">http://docs.gizwits.com/hc/</a></p>
+<p>开发者论坛： <a href="http://club.gizwits.com/forum.php" target="_blank" rel="noopener">http://club.gizwits.com/forum.php</a></p>
+<p>文档中心：<a href="http://docs.gizwits.com/hc/" target="_blank" rel="noopener">http://docs.gizwits.com/hc/</a></p>
 <p>7.2 如果您是团体</p>
 <p>GizWits针对团体有很多支持计划，您可以和GizWtis联系，快速得到GoKit以及技术支持；</p>
-<p>网站地址：<a href="http://www.gizwits.com/about-us" target="_blank" rel="external">http://www.gizwits.com/about-us</a></p>
+<p>网站地址：<a href="http://www.gizwits.com/about-us" target="_blank" rel="noopener">http://www.gizwits.com/about-us</a></p>
 <p>官方二维码：</p>
 <p><img src="/assets/zh-cn/UserManual/Echo/1484704804104.png" alt="Alt te    xt"></p>
 

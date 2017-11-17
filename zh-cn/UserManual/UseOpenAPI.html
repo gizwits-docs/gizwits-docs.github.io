@@ -463,7 +463,7 @@
       </div>
       <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文档介绍了机智云云端提供api接口（openapi），应用端（PC）利用工具（postman）发送HTTP请求实现用户登陆，设备绑定，设备远程控制等功能。</p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202039422.png" alt="Alt text"></p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>设备：开发者中心-个人项目-虚拟设备<br>软件：postman<br>其他：机智云开发者账号<br>参考文档：openapi指南<br>辅助工具链接：<br><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="external">Unix时间戳</a><br><a href="http://tool.chinaz.com/Tools/md5.aspx" target="_blank" rel="external">MD5加密</a></p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>设备：开发者中心-个人项目-虚拟设备<br>软件：postman<br>其他：机智云开发者账号<br>参考文档：openapi指南<br>辅助工具链接：<br><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="noopener">Unix时间戳</a><br><a href="http://tool.chinaz.com/Tools/md5.aspx" target="_blank" rel="noopener">MD5加密</a></p>
 <h1 id="云端创建产品"><a href="#云端创建产品" class="headerlink" title="云端创建产品"></a>云端创建产品</h1><h2 id="1-新建产品"><a href="#1-新建产品" class="headerlink" title="1.新建产品"></a>1.新建产品</h2><p>注册完成后，登陆至机智云开发者中心后台后，点击开发者中心后台右上角的“创建新产品”菜单，在跳转页面新建一个名为“Openapi”的产品，选择“Wi-Fi/移动网络方案”方式接入，并完成产品创建。如下图：</p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202107571.png" alt="Alt text"></p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202114252.png" alt="Alt text"></p>
@@ -479,12 +479,12 @@
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202184575.png" alt="Alt text"></p>
 <p>点击添加后会出现一个新应用，这里注意App id就是之后HTTP请求所用到的重要参数，如下图</p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202189219.png" alt="Alt text"></p>
-<h2 id="3-Postman安装和导入"><a href="#3-Postman安装和导入" class="headerlink" title="3. Postman安装和导入"></a>3. Postman安装和导入</h2><p>1)去官网下载最新的postman客户端：postman官网:<a href="https://www.getpostman.com" target="_blank" rel="external">https://www.getpostman.com</a></p>
+<h2 id="3-Postman安装和导入"><a href="#3-Postman安装和导入" class="headerlink" title="3. Postman安装和导入"></a>3. Postman安装和导入</h2><p>1)去官网下载最新的postman客户端：postman官网:<a href="https://www.getpostman.com" target="_blank" rel="noopener">https://www.getpostman.com</a></p>
 <p>2)下载完注册后是注册进入之后是collections是只有postman自带的echo。需要点击左上角import导入，或者按照文档中心的openapi文档。根据请求类型，来填url，header，body的key和value。</p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484204845865.png" alt="Alt text"></p>
 <p>3)下面我们选择导入已经收集好的请求，如下图：</p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484204941259.png" alt="Alt text"></p>
-<p>Import From Link填入：<br><a href="https://www.getpostman.com/collections/c76186e38f06e3f4a46a" target="_blank" rel="external">https://www.getpostman.com/collections/c76186e38f06e3f4a46a</a><br>然后点击import，就会出现如下图所示的文件夹</p>
+<p>Import From Link填入：<br><a href="https://www.getpostman.com/collections/c76186e38f06e3f4a46a" target="_blank" rel="noopener">https://www.getpostman.com/collections/c76186e38f06e3f4a46a</a><br>然后点击import，就会出现如下图所示的文件夹</p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202208479.png" alt="Alt text"></p>
 <h2 id="4-使用Postman进行HTTP请求"><a href="#4-使用Postman进行HTTP请求" class="headerlink" title="4. 使用Postman进行HTTP请求"></a>4. 使用Postman进行HTTP请求</h2><p>步骤流程：</p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202220532.png" alt="Alt text"></p>
@@ -498,7 +498,7 @@
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202319341.png" alt="Alt text"></p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202323986.png" alt="Alt text"></p>
 <h3 id="4-4-通过MAC的POST请求绑定设备（注：第3步成功后，这步骤可跳过）"><a href="#4-4-通过MAC的POST请求绑定设备（注：第3步成功后，这步骤可跳过）" class="headerlink" title="4.4 通过MAC的POST请求绑定设备（注：第3步成功后，这步骤可跳过）"></a>4.4 通过MAC的POST请求绑定设备（注：第3步成功后，这步骤可跳过）</h3><p>我们这里选择用MAC的绑定方式的POST请求来绑定设备，在Headers填入之前获取的Appid和User_token，Timestamp为Unix时间戳（有效时间为五分钟），Signature的算法利用MD5加密的方法{MD5(product_secret+X-Gizwits-Timestamp).lower()}，Body填入product_key和设备的mac，点击send，发现设备在线则成功，如下图</p>
-<p>注：Timestamp和Signature获取的链接为：<br><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="external">Unix时间戳</a><br><a href="http://tool.chinaz.com/Tools/md5.aspx" target="_blank" rel="external">MD5加密</a></p>
+<p>注：Timestamp和Signature获取的链接为：<br><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="noopener">Unix时间戳</a><br><a href="http://tool.chinaz.com/Tools/md5.aspx" target="_blank" rel="noopener">MD5加密</a></p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202337484.png" alt="Alt text"></p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202344923.png" alt="Alt text"></p>
 <p><img src="/assets/zh-cn/UserManual/OpenAPI/1484202354309.png" alt="Alt text"></p>

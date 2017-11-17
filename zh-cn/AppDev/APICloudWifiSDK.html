@@ -593,7 +593,7 @@ GizWifiSubDevice类的write接口返回值
 <ul>
 <li>类型： 字符串</li>
 <li>默认值：无</li>
-<li>描述：开发者在<a href="http://site.gizwits.com" target="_blank" rel="external">机智云网站</a>申请的应用标识。</li>
+<li>描述：开发者在<a href="http://site.gizwits.com" target="_blank" rel="noopener">机智云网站</a>申请的应用标识。</li>
 </ul>
 <p>cloudServiceInfo:</p>
 <ul>
@@ -872,7 +872,7 @@ gizWifiSDK.getPhoneSSID(function(ret, err) {
 </code></pre><h3 id="可用性-7"><a href="#可用性-7" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="setDeviceOnboarding"><a href="#setDeviceOnboarding" class="headerlink" title="setDeviceOnboarding"></a>setDeviceOnboarding<div id="a9"></div></h2><p>配置设备路由。设备要能连接到WiFi网络，需要先把设备配置到WiFi路由器上。配置时，需要给设备发送要配置的路由SSID和密码。</p>
-<p>设备配置支持两种方式：SoftAP方式、AirLink方式。在设备上按不同的按键，可以使设备进入对应的配置模式。详细的操作方式，请访问<a href="http://site.gizwits.com/zh-cn/document/gokit/i_01_stared/" target="_blank" rel="external">机智云网站</a>。</p>
+<p>设备配置支持两种方式：SoftAP方式、AirLink方式。在设备上按不同的按键，可以使设备进入对应的配置模式。详细的操作方式，请访问<a href="http://site.gizwits.com/zh-cn/document/gokit/i_01_stared/" target="_blank" rel="noopener">机智云网站</a>。</p>
 <p>进行 SoftAP 配置时，设备要处于 softap 模式。此时模组会产生一个热点名称，手机 wifi 必须连接此热点后才可以配置。如果是机智云提供的固件，模组热点名称前缀为”XPG-GAgent-“，密码为”123456789”。设备处于 airlink 模式时，手机随时都可以开始配置。但无论哪种配置方式，设备上线时，手机要连接到配置的局域网 wifi 上，才能够确认设备已配置成功。设备配置成功时，在回调中会返回设备 mac 地址。如果设备重置了，设备did可能要在设备搜索回调中才能获取。</p>
 <p>setDeviceOnboarding({params}, callback(ret, err))</p>
 <h3 id="params-4"><a href="#params-4" class="headerlink" title="params"></a>params</h3><p>ssid:</p>
@@ -2247,7 +2247,7 @@ gizWifiDevice.getDeviceStatus({
 </code></pre><h3 id="可用性-32"><a href="#可用性-32" class="headerlink" title="可用性"></a>可用性</h3><p>iOS系统，Android系统</p>
 <p>可提供的1.0.0及更高版本</p>
 <h2 id="write"><a href="#write" class="headerlink" title="write"></a>write<div id="a34"></div></h2><p>给设备发送控制指令，已订阅的设备变为可控状态后才能发送控制指令。设备控制时也分为大循环和小循环（即远程和局域网环境），SDK会优先进行小循环控制。当设备只能通过大循环访问时，才进行大循环控制。APP的设备控制指令到达设备端后，设备状态变化时会上报当前状态。APP通过回调函数可以得到状态数据，包括设备的运行状态、报警、故障、透传数据等。</p>
-<p>硬件产品开发者根据产品功能来定义设备的操作命令集。在APP端，设备的操作命令以数据点形式格式化后发送到设备端。数据点可以定义布尔类型、字符串类型、数字类型、扩展类型的数据。如何定义数据点，请访问<a href="http://site.gizwits.com/zh-cn/document/m2m/i_021_editdp/" target="_blank" rel="external">机智云网站</a>。</p>
+<p>硬件产品开发者根据产品功能来定义设备的操作命令集。在APP端，设备的操作命令以数据点形式格式化后发送到设备端。数据点可以定义布尔类型、字符串类型、数字类型、扩展类型的数据。如何定义数据点，请访问<a href="http://site.gizwits.com/zh-cn/document/m2m/i_021_editdp/" target="_blank" rel="noopener">机智云网站</a>。</p>
 <p>如果开发者有需要透传的数据指令，可以通过定义扩展类型的数据点实现。如果要透传的是二进制数据，需要先用base64编码转换为字符串再写入write接口的data参数。同样，设备向APP透传的二进制数据，APP接收后，要先经过base64解码为二进制数据才能正确使用。请注意，一定要用base64编解码，否则二进制数据无法正确透传。</p>
 <p>要求：下发的指令格式需按照正确的json类型下发。例如，布尔类型的值，下发的是0或1，可能会导致无法下发。</p>
 <p>write({params}, callback(ret, err))</p>

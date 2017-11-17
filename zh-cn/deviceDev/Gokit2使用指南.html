@@ -490,7 +490,7 @@
 <p>然后利用 GizWits提供的N 种活动机会,以及 N 种投资、孵化渠道,用 GoKit 原型生动的讲述您的故事;</p>
 <p>故事被认可后,您可以利用GizWits提供的N个生产合作伙伴实现您的故事;</p>
 <h1 id="GoKit-是如何做到的"><a href="#GoKit-是如何做到的" class="headerlink" title="GoKit 是如何做到的"></a>GoKit 是如何做到的</h1><h2 id="1-GoKit背后是一个完整的产品体系"><a href="#1-GoKit背后是一个完整的产品体系" class="headerlink" title="1. GoKit背后是一个完整的产品体系"></a>1. GoKit背后是一个完整的产品体系</h2><p><img src="/assets/zh-cn/deviceDev/Gokit2/2.png" alt="Alt text"></p>
-<p>这个体系包含设备、APP、M2M服务、业务服务、以及云对接等各种环节,详细说来,还有很多很多,如果您有兴趣,可以参考我们的论坛:<a href="http://club.gizwits.com/。" target="_blank" rel="external">http://club.gizwits.com/。</a></p>
+<p>这个体系包含设备、APP、M2M服务、业务服务、以及云对接等各种环节,详细说来,还有很多很多,如果您有兴趣,可以参考我们的论坛:<a href="http://club.gizwits.com/。" target="_blank" rel="noopener">http://club.gizwits.com/。</a></p>
 <h2 id="2-GoKit在系统中的位置"><a href="#2-GoKit在系统中的位置" class="headerlink" title="2. GoKit在系统中的位置"></a>2. GoKit在系统中的位置</h2><p>GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能硬件。</p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit2/3.png" alt="Alt text"></p>
 <h1 id="GoKit-2-开箱"><a href="#GoKit-2-开箱" class="headerlink" title="GoKit 2 开箱"></a>GoKit 2 开箱</h1><p>打开包装后，你可以看到一个黄色纸皮盒包裹着一个透明亚克力盒。里面的板子就是GoKit2代。</p>
@@ -503,8 +503,8 @@
 <p><img src="/assets/zh-cn/deviceDev/Gokit2/8.png" alt="Alt text"></p>
 <p>WiFi模块方面，目前已经有二十几家国内厂商为机智云做了兼容。而且，现在所有开发者都可以拿到开发库自行开发适配。</p>
 <h1 id="玩转Gokit-2"><a href="#玩转Gokit-2" class="headerlink" title="玩转Gokit 2"></a>玩转Gokit 2</h1><h2 id="第一步：下载-IoE-Demo-App"><a href="#第一步：下载-IoE-Demo-App" class="headerlink" title="第一步：下载 IoE Demo App"></a>第一步：下载 IoE Demo App</h2><p>IoE Demo是机智云推出的智能硬件调试工具，通过IoE Demo App可以对GoKit进行绑定与远程控制等操作，也可以作为其他基于机智云开发的智能硬件项目的调试工具。</p>
-<p>你可以通过扫描说明书上的黄色二维码下载并安装IoE Demo，也可以进入机智云开发者中心进行下载，<a href="http://dev.gizwits.com/zh-cn/developer/resource/demo_app?protoc=WIFI" target="_blank" rel="external">前往下载</a></p>
-<p>为了让开发者更好的掌握客户端开发的技巧，我们提供了IoE Demo的开源版本，<a href="http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=demo_app" target="_blank" rel="external">前往下载</a></p>
+<p>你可以通过扫描说明书上的黄色二维码下载并安装IoE Demo，也可以进入机智云开发者中心进行下载，<a href="http://dev.gizwits.com/zh-cn/developer/resource/demo_app?protoc=WIFI" target="_blank" rel="noopener">前往下载</a></p>
+<p>为了让开发者更好的掌握客户端开发的技巧，我们提供了IoE Demo的开源版本，<a href="http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=demo_app" target="_blank" rel="noopener">前往下载</a></p>
 <h2 id="第二步：将GoKit连接上网"><a href="#第二步：将GoKit连接上网" class="headerlink" title="第二步：将GoKit连接上网"></a>第二步：将GoKit连接上网</h2><p>GoKit通过WiFi通信模块以无线的方式连接路由器并接入互联网，这里我们需要做的就是把可用WiFi的路由器SSID和密码告诉GoKit（就像你新买的手机需要输入家里的WiFi密码一样）,但GoKit没有键盘和屏幕，如何做到呢？GoKit提供三种配置方式：AirLink 、WebConfig、 SoftAP。下面我们分别学习三种不同的配置方式，大家人选一种即可。</p>
 <h3 id="AirLink配置入网"><a href="#AirLink配置入网" class="headerlink" title="AirLink配置入网"></a>AirLink配置入网</h3><p>AirLink配置就是说明书上介绍的方法，实现过程就是：通过按键触发开启设备“AirLink”模式，开启后设备会不断接收特定编码的WiFi广播包，手机连接可用的WiFi网络后，通过指定的App（如IoE Demo）发送编码后的WiFi网络的SSID和密码广播，设备接收到之后自动尝试连接此WiFi网络，连接成功即配置完成。下面一步步完成GoKit通过AirLink接入路由器连接网络吧。（注意：AirLink配置不支持5G的WiFi网络，请使用传统2.4G WiFi信号）</p>
 <p>1）智能手机进入“系统设置”连接您附件可用的WiFi网络。</p>
@@ -545,19 +545,19 @@
 </ul>
 <h2 id="第六步：开始您的智能硬件开发之旅"><a href="#第六步：开始您的智能硬件开发之旅" class="headerlink" title="第六步：开始您的智能硬件开发之旅"></a>第六步：开始您的智能硬件开发之旅</h2><p>到这里，你已经基本上体验了一款基于GoKit开发的智能硬件原型“微信宠物屋”。这仅仅是机智云团队基于GoKit开发的一款Demo产品，而GoKit本身就是一块功能强大的智能硬件开发板，你可以完全根据自己的想法，利用GoKit做出更好玩的产品，这就是你智能硬件创业的第一步。</p>
 <p>机智云提供“微信宠物屋”整套Demo的开源代码：</p>
-<p><a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit" target="_blank" rel="external">智能宠物屋”MCU源码 for GoKit（1代、2代STM、2代Arduino）</a></p>
-<p><a href="http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=demo_app" target="_blank" rel="external">智能宠物屋”Demo App （iOS、Android）</a></p>
+<p><a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit" target="_blank" rel="noopener">智能宠物屋”MCU源码 for GoKit（1代、2代STM、2代Arduino）</a></p>
+<p><a href="http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=demo_app" target="_blank" rel="noopener">智能宠物屋”Demo App （iOS、Android）</a></p>
 <p>为了让你更快掌握GoKit的开发，我们提供了一系列的教学视频：</p>
-<p><a href="http://dev.gizwits.com/zh-cn/developer/learn" target="_blank" rel="external">进入视频教学</a></p>
+<p><a href="http://dev.gizwits.com/zh-cn/developer/learn" target="_blank" rel="noopener">进入视频教学</a></p>
 <p>在你开发过程中，会使用到的一系列开发文档：</p>
-<p><a href="http://docs.gizwits.com" target="_blank" rel="external">进入文档中心</a></p>
+<p><a href="http://docs.gizwits.com" target="_blank" rel="noopener">进入文档中心</a></p>
 <p>如果你需要更多机智云的开发工具及其他资源，请前往下载中心：</p>
-<p><a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit" target="_blank" rel="external">进入下载中心</a></p>
+<p><a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit" target="_blank" rel="noopener">进入下载中心</a></p>
 <p>与全国各地智能硬件开发者交流，请前往机智云开发者社区：</p>
-<p><a href="http://club.gizwits.com/forum.php" target="_blank" rel="external">加入开发者社区</a></p>
+<p><a href="http://club.gizwits.com/forum.php" target="_blank" rel="noopener">加入开发者社区</a></p>
 <p>更多的开发教程请查看社区<strong>GoKit开源套件</strong>板块</p>
 <blockquote>
-<p><a href="http://club.gizwits.com/forum-133-1.html" target="_blank" rel="external"><em>GoKit开源套件</em></a></p>
+<p><a href="http://club.gizwits.com/forum-133-1.html" target="_blank" rel="noopener"><em>GoKit开源套件</em></a></p>
 </blockquote>
 <p><strong>有任何疑问或技术支持，请联系我们：</strong></p>
 <p>机智云众创联盟QQ群：104975951</p>

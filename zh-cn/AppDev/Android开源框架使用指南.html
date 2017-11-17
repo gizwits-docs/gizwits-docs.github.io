@@ -463,9 +463,9 @@
       </div>
       <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本文档为机智云物联网开源基础App套件使用说明，旨在为机智云物联网开发者提供一个快速开发模板，可在此工程基础上进行快速开发或参考相关代码进行开发。</p>
 <p>Android开源框架工程源码链接：</p>
-<p>Eclipse 版本:<a href="https://git.oschina.net/dantang/GizOpenSource_AppKit_Android" target="_blank" rel="external">https://git.oschina.net/dantang/GizOpenSource_AppKit_Android</a><br>Android Studio版本：<a href="https://github.com/gizwits/GOpenSource_AppKit_Android_AS" target="_blank" rel="external">https://github.com/gizwits/GOpenSource_AppKit_Android_AS</a></p>
+<p>Eclipse 版本:<a href="https://git.oschina.net/dantang/GizOpenSource_AppKit_Android" target="_blank" rel="noopener">https://git.oschina.net/dantang/GizOpenSource_AppKit_Android</a><br>Android Studio版本：<a href="https://github.com/gizwits/GOpenSource_AppKit_Android_AS" target="_blank" rel="noopener">https://github.com/gizwits/GOpenSource_AppKit_Android_AS</a></p>
 <p>Android Gokit App是使用开源框架工程的源码范例，源码链接：</p>
-<p><a href="https://git.oschina.net/dantang/GoKit_Demo_Android" target="_blank" rel="external">https://git.oschina.net/dantang/GoKit_Demo_Android</a></p>
+<p><a href="https://git.oschina.net/dantang/GoKit_Demo_Android" target="_blank" rel="noopener">https://git.oschina.net/dantang/GoKit_Demo_Android</a></p>
 <p>也可在下载中心下载Android Gokit App：</p>
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image1.png" alt=""></p>
 <h1 id="目录结构说明"><a href="#目录结构说明" class="headerlink" title="目录结构说明"></a>目录结构说明</h1><ul>
@@ -492,7 +492,7 @@
 <h1 id="快速集成指南"><a href="#快速集成指南" class="headerlink" title="快速集成指南"></a>快速集成指南</h1><p>默认程序入口在 UserModule 中的 GosUserLoginActivity。</p>
 <p><strong>A.     设定初始化参数</strong></p>
 <p>在工程的 GosApplication.java 文件中填写机智云AppID及AppSecret，如果使用第三方登录或推送，需要填写相应的从其他资源平台申请的参数；如果使用推送需要打开当前需要使用推送的类型的初始化，如果都为注释状态则表示当前不使用第三方推送，同时只支持一种第三方推送，不可打开多个第三方推送宏定义的注释。可配置的参数有：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">app_id：机智云 app id</div><div class="line">app_secret：机智云 app secret</div><div class="line">product_key：机智云 product key</div><div class="line">wifi_type_select：默认配置模块wifi模组选择功能是否开启</div><div class="line">tencent_app_id：qq登录 app id</div><div class="line">wechat_app_id：微信登录 app id</div><div class="line">wechat_app_secret：微信登录 app secret</div><div class="line">push_type：推送类型 【0：关闭，1：极光，2：百度】</div><div class="line">bpush_app_key：百度推送 app key</div><div class="line">openAPI_URL：openAPI 域名及端口，格式：“api.gizwits.com:80”，不写端口默认80</div><div class="line">site_URL：site 域名及端口，格式：“site.gizwits.com:80”，不写端口默认80</div><div class="line">push_URL：推送绑定服务器 域名及端口，格式：“push.gizwits.com:80”，不写端口默认80</div><div class="line">buttonColor：按钮颜色</div><div class="line">buttonTextColor：按钮文字颜色</div><div class="line">navigationBarColor：导航栏颜色</div><div class="line">navigationBarTextColor：导航栏文字颜色</div><div class="line">configProgressViewColor：配置中界面 progress view 颜色</div><div class="line">addDeviceTitle：添加设备界面 导航栏标题文字</div><div class="line">qq：是否打开QQ登录【true：打开】</div><div class="line">wechat：是否打开微信登录【true：打开】</div><div class="line">anonymousLogin：是否打开匿名登录【true：打开】</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">app_id：机智云 app id</span><br><span class="line">app_secret：机智云 app secret</span><br><span class="line">product_key：机智云 product key</span><br><span class="line">wifi_type_select：默认配置模块wifi模组选择功能是否开启</span><br><span class="line">tencent_app_id：qq登录 app id</span><br><span class="line">wechat_app_id：微信登录 app id</span><br><span class="line">wechat_app_secret：微信登录 app secret</span><br><span class="line">push_type：推送类型 【0：关闭，1：极光，2：百度】</span><br><span class="line">bpush_app_key：百度推送 app key</span><br><span class="line">openAPI_URL：openAPI 域名及端口，格式：“api.gizwits.com:80”，不写端口默认80</span><br><span class="line">site_URL：site 域名及端口，格式：“site.gizwits.com:80”，不写端口默认80</span><br><span class="line">push_URL：推送绑定服务器 域名及端口，格式：“push.gizwits.com:80”，不写端口默认80</span><br><span class="line">buttonColor：按钮颜色</span><br><span class="line">buttonTextColor：按钮文字颜色</span><br><span class="line">navigationBarColor：导航栏颜色</span><br><span class="line">navigationBarTextColor：导航栏文字颜色</span><br><span class="line">configProgressViewColor：配置中界面 progress view 颜色</span><br><span class="line">addDeviceTitle：添加设备界面 导航栏标题文字</span><br><span class="line">qq：是否打开QQ登录【true：打开】</span><br><span class="line">wechat：是否打开微信登录【true：打开】</span><br><span class="line">anonymousLogin：是否打开匿名登录【true：打开】</span><br></pre></td></tr></table></figure>
 <p><strong>需要注意:</strong></p>
 <p>1.极光推送的appid需要在AndroidManifest.xml 中填写见243行。</p>
 <p>2.微信登录需要进行在腾讯api中设置自己的md5值否则无法正常运行</p>
@@ -520,25 +520,25 @@
 <p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image6.png" alt=""></p>
 <p>修改集成推送的相应位置：</p>
 <p>在工程的AndroidManifest.xml文件中修改</p>
-<p>1)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;permission android:name=”您应用的包名.permission.JPUSH_MESSAGE” android:protectionLevel=”signature” /&gt;</div></pre></td></tr></table></figure></p>
+<p>1)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;permission android:name=”您应用的包名.permission.JPUSH_MESSAGE” android:protectionLevel=”signature” /&gt;</span><br></pre></td></tr></table></figure></p>
 <p>（详见开源APP套件的AndroidManifest.xml文件第13行）</p>
 <p>2)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=”您应用的包名.permission.JPUSH_MESSAGE” /&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=”您应用的包名.permission.JPUSH_MESSAGE” /&gt;</span><br></pre></td></tr></table></figure>
 <p>（详见开源APP套件的AndroidManifest.xml文件第17行）</p>
 <p>3)       </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DaemonService下&lt;category android:name=”您应用的包名” /&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DaemonService下&lt;category android:name=”您应用的包名” /&gt;</span><br></pre></td></tr></table></figure>
 <p>（详见开源APP套件的AndroidManifest.xml文件第159行）</p>
 <p>4)  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PushPeceiver下&lt;category android:name=”您应用的包名” /&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PushPeceiver下&lt;category android:name=”您应用的包名” /&gt;</span><br></pre></td></tr></table></figure>
 <p>（详见开源APP套件的AndroidManifest.xml文件第170行）</p>
 <p>5)        </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PushActivity下&lt;category android:name=”您应用的包名” /&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PushActivity下&lt;category android:name=”您应用的包名” /&gt;</span><br></pre></td></tr></table></figure>
 <p>（详见开源APP套件的AndroidManifest.xml文件第193行）</p>
 <p>6)       </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">JPushReceiver下&lt;category android:name=”您应用的包名” /&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JPushReceiver下&lt;category android:name=”您应用的包名” /&gt;</span><br></pre></td></tr></table></figure>
 <p>（详见开源APP套件的AndroidManifest.xml文件第224行）</p>
 <p>7)      </p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta-data android:name=”JPUSH_APPKEY” android:value=”Your AppKey” /&gt;</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta-data android:name=”JPUSH_APPKEY” android:value=”Your AppKey” /&gt;</span><br></pre></td></tr></table></figure>
 <p>（详见开源APP套件的AndroidManifest.xml文件第240行）</p>
 
     </div>

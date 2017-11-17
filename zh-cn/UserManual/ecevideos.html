@@ -469,8 +469,8 @@
 <li>MCU协议介绍</li>
 <li>脚本编写以及推送</li>
 </ul>
-<h2 id="1-机智云账号注册"><a href="#1-机智云账号注册" class="headerlink" title="1.机智云账号注册"></a>1.机智云账号注册</h2><p>目前ECE的功能只有注册了机智云的企业账号，在企业账号下的企业产品项目下创建的产品才能体验。<a href="http://docs.gizwits.com/zh-cn/quickstart/5%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E6%9C%BA%E6%99%BA%E4%BA%91.html" target="_blank" rel="external">注册教程</a></p>
-<p><strong>步骤一：</strong>点击注册链接<a href="https://accounts.gizwits.com/zh-cn/register/" target="_blank" rel="external">https://accounts.gizwits.com/zh-cn/register/</a></p>
+<h2 id="1-机智云账号注册"><a href="#1-机智云账号注册" class="headerlink" title="1.机智云账号注册"></a>1.机智云账号注册</h2><p>目前ECE的功能只有注册了机智云的企业账号，在企业账号下的企业产品项目下创建的产品才能体验。<a href="http://docs.gizwits.com/zh-cn/quickstart/5%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E6%9C%BA%E6%99%BA%E4%BA%91.html" target="_blank" rel="noopener">注册教程</a></p>
+<p><strong>步骤一：</strong>点击注册链接<a href="https://accounts.gizwits.com/zh-cn/register/" target="_blank" rel="noopener">https://accounts.gizwits.com/zh-cn/register/</a></p>
 <p><img src="http://static.zybuluo.com/AlexLin/ilfjrdsrklg3wijauq9myph8/image_1b371n1kmdhl11tflrn1ci2q6i9.png" alt="image_1b371n1kmdhl11tflrn1ci2q6i9.png-273.5kB"></p>
 <p><strong>步骤二：</strong>填写注册信息</p>
 <p><img src="http://static.zybuluo.com/AlexLin/5a0p580uy1cuolg2lkf6fbu6/image_1b371ovb3163ba7kbgj17hj10ctm.png" alt="image_1b371ovb3163ba7kbgj17hj10ctm.png-46.1kB"></p>
@@ -493,18 +493,18 @@
 <p>等待机智云开通ECE服务<br>ECE开通后如下图：</p>
 <p><img src="http://static.zybuluo.com/AlexLin/5pfs4spu2rzmy6kxptwn6ilv/image_1b54glnol15d9aporv6t611eo33.png" alt="image_1b54glnol15d9aporv6t611eo33.png-55.5kB"></p>
 <p><strong>观看链接：</strong></p>
-<p><a href="https://v.qq.com/x/page/n0362u2fgws.html" target="_blank" rel="external">企业账号注册</a></p>
+<p><a href="https://v.qq.com/x/page/n0362u2fgws.html" target="_blank" rel="noopener">企业账号注册</a></p>
 <h2 id="2-硬件准备"><a href="#2-硬件准备" class="headerlink" title="2.硬件准备"></a>2.硬件准备</h2><p>机智云ECE功能现在基于GAgent ESP8266 <strong>4M Flash</strong> 硬件平台；</p>
-<p>第一步我们得找到一个ESP8266的WiFi模组；<br>第二步拿到机智云提供的支持<a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent" target="_blank" rel="external">ECE的固件</a>。</p>
+<p>第一步我们得找到一个ESP8266的WiFi模组；<br>第二步拿到机智云提供的支持<a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent" target="_blank" rel="noopener">ECE的固件</a>。</p>
 <p>当以上两步准备好，然后进入固件烧录</p>
-<p><a href="http://docs.gizwits.com/zh-cn/deviceDev/ESP8266%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html" target="_blank" rel="external">烧录流程如下：</a></p>
+<p><a href="http://docs.gizwits.com/zh-cn/deviceDev/ESP8266%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html" target="_blank" rel="noopener">烧录流程如下：</a></p>
 <h3 id="2-1设备连接"><a href="#2-1设备连接" class="headerlink" title="2.1设备连接"></a>2.1设备连接</h3><p>将ESP8266模块按照如下原理图进行接线，注意GPIO0（18号管脚）需要输入低电平，本实验直接接地处理，KEY1实现外部复位功能</p>
 <p><img src="http://static.zybuluo.com/AlexLin/p9aokc7i7vizl644k65nxyoi/image_1b378319t74665t1j6md8t1hkg9.png" alt="image_1b378319t74665t1j6md8t1hkg9.png-25.6kB"></p>
 <p>上图为烧录固件简易原理图，在产品中实际搭建线路时，请参考官方提供线路图，如下所示：</p>
 <p><img src="http://static.zybuluo.com/AlexLin/jsxjii3qjfjsw8ipx5k5m9kt/image_1b3783s1s1e614sbvv11a1610nlm.png" alt="image_1b3783s1s1e614sbvv11a1610nlm.png-350.6kB"></p>
 <h3 id="2-2串口设置"><a href="#2-2串口设置" class="headerlink" title="2.2串口设置"></a>2.2串口设置</h3><p>将上述串口连接电脑后，通过“我的电脑”-&gt;“管理”-&gt; “设备管理器”-&gt;“端口（COM 和LPT）”选项中可以看到相应增加的COM口。</p>
 <p><img src="http://static.zybuluo.com/AlexLin/sh4ik05qtukepyouh78ltjwc/image_1b3785au5o68b8vj41ath16c513.png" alt="image_1b3785au5o68b8vj41ath16c513.png-4.1kB"></p>
-<h3 id="2-3下载烧写软件"><a href="#2-3下载烧写软件" class="headerlink" title="2.3下载烧写软件"></a>2.3下载烧写软件</h3><p>下载地址：<a href="http://pan.baidu.com/s/1mhMGSeG" target="_blank" rel="external">http://pan.baidu.com/s/1mhMGSeG</a></p>
+<h3 id="2-3下载烧写软件"><a href="#2-3下载烧写软件" class="headerlink" title="2.3下载烧写软件"></a>2.3下载烧写软件</h3><p>下载地址：<a href="http://pan.baidu.com/s/1mhMGSeG" target="_blank" rel="noopener">http://pan.baidu.com/s/1mhMGSeG</a></p>
 <p>下载解压后得到下面文件</p>
 <p><img src="http://static.zybuluo.com/AlexLin/xicp3uiv2e4ch08htiokk56p/image_1b3788adf3nd1stvnae17ts11r71g.png" alt="image_1b3788adf3nd1stvnae17ts11r71g.png-57.2kB"></p>
 <p>再次解压图中所示的文件后，双击打开烧写软件，出现如下对话框</p>
@@ -533,52 +533,52 @@
 </ul>
 <p><img src="http://static.zybuluo.com/AlexLin/99epdwavq6vodgxr2dxxco8u/image_1b3u26iv81mp21lntq0cpd41rpf13.png" alt="init.lua烧录"></p>
 <p>观看链接：</p>
-<p><a href="http://v.qq.com/x/page/r03612h7pr0.html" target="_blank" rel="external">固件烧录</a></p>
-<p><a href="http://v.qq.com/x/page/p0361baxn9z.html" target="_blank" rel="external">pk烧录</a></p>
+<p><a href="http://v.qq.com/x/page/r03612h7pr0.html" target="_blank" rel="noopener">固件烧录</a></p>
+<p><a href="http://v.qq.com/x/page/p0361baxn9z.html" target="_blank" rel="noopener">pk烧录</a></p>
 <h2 id="3-MCU协议介绍"><a href="#3-MCU协议介绍" class="headerlink" title="3.MCU协议介绍"></a>3.MCU协议介绍</h2><p>MCU与WiFi通讯以字符串形式通讯，具体命令规范如下：</p>
 <ul>
 <li>MCU 通知 WiFi进入airlink配网 <strong>cmd=2</strong>:<br>命令: </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mcu2wifi&amp;cmd=2&amp;mode=0/1</div><div class="line">//解释:</div><div class="line">//mode:0 softap配置模式; mode:1 airlink配网模式</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mcu2wifi&amp;cmd=2&amp;mode=0/1</span><br><span class="line">//解释:</span><br><span class="line">//mode:0 softap配置模式; mode:1 airlink配网模式</span><br></pre></td></tr></table></figure>
 <ul>
 <li>WiFi回复配网:<br>命令:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mcu2wifi&amp;cmd=2&amp;result=0/1</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mcu2wifi&amp;cmd=2&amp;result=0/1</span><br></pre></td></tr></table></figure>
 <ul>
 <li>MCU上传设备数据给WiFi <strong>cmd=3</strong>:<br>命令:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mcu2wifi&amp;cmd=3&amp;Infrared=1&amp;LedSwitchOnOff=1&amp;MotorSwitchOnOff=1&amp;Temperature=05</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mcu2wifi&amp;cmd=3&amp;Infrared=1&amp;LedSwitchOnOff=1&amp;MotorSwitchOnOff=1&amp;Temperature=05</span><br></pre></td></tr></table></figure>
 <ul>
 <li>WiFi发送控制指令给mcu <strong>cmd=4</strong>：<br>命令:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wifi2mcu&amp;cmd=4&amp;LedSwitchOnOff=1或者MotorSwitchOnOff=1</div></pre></td></tr></table></figure>
-<p>实现该协议的固件见机智云下载中心 <a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent" target="_blank" rel="external">ECE雾计算esp8266固件包</a> 里面的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gokit_mcu_stm32_ece.hex</div></pre></td></tr></table></figure>
-<p>固件烧录教程:<br><a href="http://club.gizwits.com/forum.php?mod=viewthread&amp;tid=3311&amp;highlight=gokit%2B%E7%83%A7%E5%BD%95" target="_blank" rel="external">http://club.gizwits.com/forum.php?mod=viewthread&amp;tid=3311&amp;highlight=gokit%2B%E7%83%A7%E5%BD%95</a></p>
-<p>观看链接：<br><a href="http://v.qq.com/x/page/a03619wrrqr.html" target="_blank" rel="external">MCU协议介绍</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wifi2mcu&amp;cmd=4&amp;LedSwitchOnOff=1或者MotorSwitchOnOff=1</span><br></pre></td></tr></table></figure>
+<p>实现该协议的固件见机智云下载中心 <a href="http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent" target="_blank" rel="noopener">ECE雾计算esp8266固件包</a> 里面的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gokit_mcu_stm32_ece.hex</span><br></pre></td></tr></table></figure>
+<p>固件烧录教程:<br><a href="http://club.gizwits.com/forum.php?mod=viewthread&amp;tid=3311&amp;highlight=gokit%2B%E7%83%A7%E5%BD%95" target="_blank" rel="noopener">http://club.gizwits.com/forum.php?mod=viewthread&amp;tid=3311&amp;highlight=gokit%2B%E7%83%A7%E5%BD%95</a></p>
+<p>观看链接：<br><a href="http://v.qq.com/x/page/a03619wrrqr.html" target="_blank" rel="noopener">MCU协议介绍</a></p>
 <h2 id="4-脚本编译及推送"><a href="#4-脚本编译及推送" class="headerlink" title="4.脚本编译及推送"></a>4.脚本编译及推送</h2><h3 id="4-1-脚本格式及编写规则"><a href="#4-1-脚本格式及编写规则" class="headerlink" title="4.1 脚本格式及编写规则*"></a>4.1 脚本格式及编写规则*</h3><p>请参照demo.lua这个脚本为模板编写自己的lua应用程序，该demo脚本需配套gokit套件及上面提到的模组及MCU固件使用，实现了下列功能：  </p>
 <p>1.当检测到上报温度大于27度时，通知MCU打开电机;<br>2.当红外对管检测到障碍物时，打开红灯;  </p>
 <p>下面我们通过注释区定义了几大块： </p>
 <p>应用程序初始化部分，程序请写到luaInit内容区，这部分的代码在整个脚本生命周期只会运行一次，比如分配应用的内存大小，请把lua应用程序需要初始化一次的部分放在这个区域内。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">----------luaInit----------</div><div class="line">---------内容------------</div><div class="line"></div><div class="line">----------luaInit end----</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">----------luaInit----------</span><br><span class="line">---------内容------------</span><br><span class="line"></span><br><span class="line">----------luaInit end----</span><br></pre></td></tr></table></figure>
 <p>应用程序公有函数部分，程序请写到luaUtils内容区。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">----------luaUtils---------</div><div class="line">---------内容------------</div><div class="line"></div><div class="line">----------luaUtils end---</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">----------luaUtils---------</span><br><span class="line">---------内容------------</span><br><span class="line"></span><br><span class="line">----------luaUtils end---</span><br></pre></td></tr></table></figure>
 <p>从app过来的数据处理，程序请写到luaHandleDataFromApp内容区。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">----------luaHandleDataFromApp----------</div><div class="line">---------------------内容--------------</div><div class="line"></div><div class="line">----------luaHandleDataFromApp end----</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">----------luaHandleDataFromApp----------</span><br><span class="line">---------------------内容--------------</span><br><span class="line"></span><br><span class="line">----------luaHandleDataFromApp end----</span><br></pre></td></tr></table></figure>
 <p>从MCU设备过来的数据处理，程序请写到luaHandleDataFromDev内容区。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">----------luaHandleDataFromDev----------</div><div class="line">---------------------内容---------------</div><div class="line"></div><div class="line">----------luaHandleDataFromDev end----</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">----------luaHandleDataFromDev----------</span><br><span class="line">---------------------内容---------------</span><br><span class="line"></span><br><span class="line">----------luaHandleDataFromDev end----</span><br></pre></td></tr></table></figure>
 <p><strong>注意：</strong>由于esp8266资源紧缺，编写的lua应用程序脚本大小不能大于10Kbytes，一次性定义的变量（table\string）不宜超过300个，总变量不宜超过500个。</p>
-<h3 id="4-2-lua-SDK版本及相关的API"><a href="#4-2-lua-SDK版本及相关的API" class="headerlink" title="4.2 lua SDK版本及相关的API"></a>4.2 lua SDK版本及相关的API</h3><p>sdk版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sdk5.1.4</div></pre></td></tr></table></figure></p>
+<h3 id="4-2-lua-SDK版本及相关的API"><a href="#4-2-lua-SDK版本及相关的API" class="headerlink" title="4.2 lua SDK版本及相关的API"></a>4.2 lua SDK版本及相关的API</h3><p>sdk版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk5.1.4</span><br></pre></td></tr></table></figure></p>
 <p>Lua SDK标准库：其中string和table为sdk5.1.4标准库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">core,math，C API，auxiliary library</div></pre></td></tr></table></figure>
-<p>不全支持，有裁剪(详细的api请查看文档):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gagent_esp8266_api</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">core,math，C API，auxiliary library</span><br></pre></td></tr></table></figure>
+<p>不全支持，有裁剪(详细的api请查看文档):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gagent_esp8266_api</span><br></pre></td></tr></table></figure></p>
 <p>tmr定时器接口用的是esp8266平台的定时器。</p>
 <p>GAgent封装给lua使用的API:　请查看文档:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gagent_esp8266_api</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gagent_esp8266_api</span><br></pre></td></tr></table></figure>
 <h3 id="4-3-验证lua应用程序的语法"><a href="#4-3-验证lua应用程序的语法" class="headerlink" title="4.3 验证lua应用程序的语法"></a>4.3 验证lua应用程序的语法</h3><p>编写好的lua应用程序，可以先用本地的IDE先进行语法编译验证，确保语法编译没有问题，对于调用到的GAgent API，可以先打桩。Window平台推荐LUA本地编译的IDE工具：<br>SciTE或 LuaForWindows:</p>
 <p><img src="http://static.zybuluo.com/AlexLin/gjmyi8ud02hjhf3vjk00oerw/image_1b52ecj9g1tsp1vli471qan1j3u9.png" alt="image_1b52ecj9g1tsp1vli471qan1j3u9.png-206.5kB"></p>
 <p><strong>Ubuntu安装lua环境：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install lua、sudo apt-get install lua5.1-0-dev</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install lua、sudo apt-get install lua5.1-0-dev</span><br></pre></td></tr></table></figure>
 <p><img src="http://static.zybuluo.com/AlexLin/mzlzoden5h1tysswp90tzxwb/image_1b52ee4viuqs1q5jcp8bf314vgm.png" alt="image_1b52ee4viuqs1q5jcp8bf314vgm.png-44kB"></p>
 <h3 id="4-4-脚本推送"><a href="#4-4-脚本推送" class="headerlink" title="4.4 脚本推送"></a>4.4 脚本推送</h3><p>把lua脚本拷贝到lua脚本录入处做推送：</p>
 <p><img src="http://static.zybuluo.com/AlexLin/dmw8f8vny4wkamzwnh9c9lmg/image_1b52efl9u4m61s98144016fj2v413.png" alt="image_1b52efl9u4m61s98144016fj2v413.png-96.7kB"></p>
@@ -589,8 +589,8 @@
 <p><img src="http://static.zybuluo.com/AlexLin/yu6scxcs2zdzlsb92n5q5gi8/image_1b52egm5f1q3951nla12lg1apm1t.png" alt="image_1b52egm5f1q3951nla12lg1apm1t.png-61kB"></p>
 <p><strong>Mac地址出错或设备未上线提示的推送失败：</strong></p>
 <p><img src="http://static.zybuluo.com/AlexLin/s1oj1xyj90avz3lippw7syzw/image_1b52eh3j657kvm6177i1k1epd42a.png" alt="image_1b52eh3j657kvm6177i1k1epd42a.png-66.4kB"></p>
-<h1 id="视频观看链接"><a href="#视频观看链接" class="headerlink" title="视频观看链接"></a>视频观看链接</h1><p><a href="http://v.qq.com/x/page/d03617dbq8p.html" target="_blank" rel="external">lua脚本讲解</a></p>
-<p><a href="http://v.qq.com/x/page/y0361kmy887.html" target="_blank" rel="external">gokit跑lua演示</a></p>
+<h1 id="视频观看链接"><a href="#视频观看链接" class="headerlink" title="视频观看链接"></a>视频观看链接</h1><p><a href="http://v.qq.com/x/page/d03617dbq8p.html" target="_blank" rel="noopener">lua脚本讲解</a></p>
+<p><a href="http://v.qq.com/x/page/y0361kmy887.html" target="_blank" rel="noopener">gokit跑lua演示</a></p>
 
     </div>
     

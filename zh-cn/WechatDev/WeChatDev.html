@@ -461,7 +461,7 @@
         <div class="title">微信应用开发教程</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="微信SDK"><a href="#微信SDK" class="headerlink" title="微信SDK"></a>微信SDK</h1><p>附件：<a href="https://github.com/gizwits/gizwits-wechat-js-sdk" target="_blank" rel="external">微信SDK包下载</a></p>
+      <h1 id="微信SDK"><a href="#微信SDK" class="headerlink" title="微信SDK"></a>微信SDK</h1><p>附件：<a href="https://github.com/gizwits/gizwits-wechat-js-sdk" target="_blank" rel="noopener">微信SDK包下载</a></p>
 <h1 id="目标驱动的教程"><a href="#目标驱动的教程" class="headerlink" title="目标驱动的教程"></a>目标驱动的教程</h1><p>本教程以目标为驱动，去除多余的细节，让机智云的小伙伴们，可以快速的搞定微信接入。好啦，我们开始吧！</p>
 <h1 id="为什么接入微信？"><a href="#为什么接入微信？" class="headerlink" title="为什么接入微信？"></a>为什么接入微信？</h1><ul>
 <li><p>微信有大量的用户</p>
@@ -525,7 +525,7 @@
 <p>微信在绑定时，发送这么一条事件消息：</p>
 <p><img src="/assets/zh-cn/WechatDev/wechat_6.5.png" alt="Alt text"></p>
 <p>我们需要的是其中的OpenID和Mac，然后我们调用机智云的Java-SDK：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">DeviceInfo deviceInfo = OpenApi.bindDevice(</div><div class="line">                                    wechatOpenId, </div><div class="line">                                    gizwitsAppId, </div><div class="line">                                    gizwitsProductKey, </div><div class="line">                                    gizwitsProductSecret, </div><div class="line">                                    mac, </div><div class="line">                                    deviceAlias, </div><div class="line">                                    deviceRemark)</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DeviceInfo deviceInfo = OpenApi.bindDevice(</span><br><span class="line">                                    wechatOpenId, </span><br><span class="line">                                    gizwitsAppId, </span><br><span class="line">                                    gizwitsProductKey, </span><br><span class="line">                                    gizwitsProductSecret, </span><br><span class="line">                                    mac, </span><br><span class="line">                                    deviceAlias, </span><br><span class="line">                                    deviceRemark)</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -580,7 +580,7 @@
 <p>gizwitsAppId是机智云中，APP的Id。由于一个产品，可能是多个APP操作的，比如IOS的APP，Android的APP，网站Web应用，甚至微信这样的轻应用，都算是一个APP。因此，在创建产品后，你还可以在为产品绑定一个或多个APP。这里的gizwitsAppId就是我们所绑定APP的Id了。注意，APP必须绑定在产品上，才能使用。</p>
 <p>当你调用该方法，就能实现注册匿名用户，已经将用户/设备绑定的操作了。是不是很方便呢？当然，为了方便起见，你还可以进一步封装这个SDK。这里就不展开了。</p>
 <h1 id="机智云设备解绑"><a href="#机智云设备解绑" class="headerlink" title="机智云设备解绑"></a>机智云设备解绑</h1><p>解绑操作也是类似的逻辑。当微信推送一条解绑事件消息，我们就会进行解绑操作。同样调用SDK：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Boolean isSuccess = OpenApi.unbindDevice(wechatOpenId, gizwitsAppId, gizwitsDid);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean isSuccess = OpenApi.unbindDevice(wechatOpenId, gizwitsAppId, gizwitsDid);</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -602,7 +602,7 @@
 </tr>
 </tbody>
 </table>
-<h1 id="获知设备的在线状态"><a href="#获知设备的在线状态" class="headerlink" title="获知设备的在线状态"></a>获知设备的在线状态</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Boolean isOnline = OpenApi.getDeviceOnlineStatus(wechatOpenId, gizwitsAppId, gizwitsDid);</div></pre></td></tr></table></figure>
+<h1 id="获知设备的在线状态"><a href="#获知设备的在线状态" class="headerlink" title="获知设备的在线状态"></a>获知设备的在线状态</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean isOnline = OpenApi.getDeviceOnlineStatus(wechatOpenId, gizwitsAppId, gizwitsDid);</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -631,7 +631,7 @@
 </table>
 <h1 id="代码样例"><a href="#代码样例" class="headerlink" title="代码样例"></a>代码样例</h1><p><img src="/assets/zh-cn/WechatDev/wechat_09.png" alt="Alt text"></p>
 <p>请注意，在服务器部署的时候，部分开发者会发现部署失败。tomcat中的catalina日志会报错：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">javax.net.ssl.SSLException:java.security.ProviderException:java.security.KeyException</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javax.net.ssl.SSLException:java.security.ProviderException:java.security.KeyException</span><br></pre></td></tr></table></figure>
 <p>这是因为SDK中采用了Https的方式进行访问。</p>
 <p>解决方法是：升级服务器环境中的库：nss。</p>
 <h1 id="微信页面操作设备"><a href="#微信页面操作设备" class="headerlink" title="微信页面操作设备"></a>微信页面操作设备</h1><p>好了，我们现在已经绑定了设备，并且也能知道设备的在线的状态了。但是具体如何操作我们的设备？一个良好的体验，当然是具有交互页面的。<br>下面我们就一步步的搭建一个交互页面，来监控我们的设备吧！</p>
@@ -695,15 +695,15 @@
 <p><img src="/assets/zh-cn/WechatDev/wechat_15.png" alt="Alt text"></p>
 <h1 id="手动读取：设备数据点"><a href="#手动读取：设备数据点" class="headerlink" title="手动读取：设备数据点"></a>手动读取：设备数据点</h1><p>获取设备的数据点，也很简单，只需调用gizwits.read()方法，不需要任何参数。调用此方法，可以马上获取一次，同样，数据也是通过回调函数 gizwits.onReceivedAttrs，或者gizwits.onReceivedRaw来获取。</p>
 <h1 id="连接错误"><a href="#连接错误" class="headerlink" title="连接错误"></a>连接错误</h1><p>当websocket连接错误时，会调用gizwits.onError函数，如有需要，可以重写该函数；回调值是错误信息：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gizwits.onError = function(value)&#123;</div><div class="line">    console.log(<span class="string">"error!!!!:::::"</span>, value.toString());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gizwits.onError = function(value)&#123;</span><br><span class="line">    console.log(<span class="string">"error!!!!:::::"</span>, value.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="设备上下线"><a href="#设备上下线" class="headerlink" title="设备上下线"></a>设备上下线</h1><p>当设备发生上线，或者下线的事件时，gizwits服务，会调用gizwits.onOnlineStatusChanged 回调函数.</p>
 <p>回调值有两个参数：did和在线状态(is_online)。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gizwits.onOnlineStatusChanged = function(value) &#123;</div><div class="line">    alert(<span class="string">"设备上下线通知，did="</span>, value.did);</div><div class="line">    alert(<span class="string">"设备上下线通知，is_online="</span>, value.is_online);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gizwits.onOnlineStatusChanged = function(value) &#123;</span><br><span class="line">    alert(<span class="string">"设备上下线通知，did="</span>, value.did);</span><br><span class="line">    alert(<span class="string">"设备上下线通知，is_online="</span>, value.is_online);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="控制设备"><a href="#控制设备" class="headerlink" title="控制设备"></a>控制设备</h1><p>最后是，设备的远程控制。</p>
 <p>  远程控制的调用方法，如果commType=custom，则使用gizwitsws.send(command)方法，如果commType=attrs_v4，则使用gizwitsws.write(command)方法。</p>
 <p>远程控制的值，如果commType=custom，请输入p0，例如[<byte>,<byte>,<byte>…]；如果commType=attrs_v4，请输入datapoints，例如{“power”:true}。</byte></byte></byte></p>
 <p>下面是远程控制RBG灯的代码样例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var command = <span class="string">'&#123;"LED_R": 0, "LED_G": 0, "LED_B": 0&#125;'</span>;</div><div class="line">gizwits.write(did, JSON.parse(command));</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var command = <span class="string">'&#123;"LED_R": 0, "LED_G": 0, "LED_B": 0&#125;'</span>;</span><br><span class="line">gizwits.write(did, JSON.parse(command));</span><br></pre></td></tr></table></figure>
 <p> 当然，使用控制设备的前提是，我们已经连接上了一台设备。</p>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>至此，我们已经实现了微信接入的核心部分。在此教程中，Java-SDK与js-SDK为我们带来了很大的，我们几乎不用关心如何调用机智云的API和websocket，而是直接调用SDK的方法就可以了。</p>
 <p>最后，希望大家能多多反馈意见，为更加便捷的开发贡献一份力量。</p>
