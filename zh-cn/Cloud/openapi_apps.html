@@ -929,6 +929,10 @@
 <li>QQ 和 Twitter 需要在开发者中心填写API_KEY和API_Secret</li>
 <li>Facebook、Twitter、Google、Amazon仅可在美东和欧洲环境使用</li>
 </ul>
+<p>密码强度要求：</p>
+<ul>
+<li>不能小于6位的大小写字母，数字，符号的组合</li>
+</ul>
 <p>请求地址及地址</p>
 <pre><code>POST
 http://api.gizwits.com/app/users
@@ -7410,6 +7414,11 @@ https://api.gizwits.com/errors
 <td style="text-align:left">9046</td>
 <td style="text-align:left">GIZ_OPENAPI_REGISTER_IS_BUSY</td>
 <td>Register already in progress!</td>
+</tr>
+<tr>
+<td style="text-align:left">9077</td>
+<td style="text-align:left">GIZ_OPENAPI</td>
+<td>email already exists but not activate!</td>
 </tr>
 <tr>
 <td style="text-align:left">9080</td>
