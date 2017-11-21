@@ -4,14 +4,14 @@
   <head>
   <meta charset="utf-8">
 
-  <title>机智云</title>
+  <title>8051平台最小资源裁剪说明 - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="-机智云">
-  <meta name="keywords" content=" docs 文档中心 Gizwits">
+  <meta name="Description" content="8051平台最小资源裁剪说明-机智云">
+  <meta name="keywords" content="8051平台最小资源裁剪说明 docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -217,6 +217,8 @@
                           <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3_DEV_SDK_Common_transplant.html">MCU SDK 通用平台移植教程</a></li>
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/STM32CubeMX_transplant.html">STM32CubeMX移植机智云自动生成代码详解</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/approach_to_tailoring_8051.html">8051平台最小资源裁剪说明</a></li>
                         
                       </ul>
                     </li>
@@ -458,10 +460,95 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title"></div>
+        <div class="title">8051平台最小资源裁剪说明</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      
+      <h1 id="前序"><a href="#前序" class="headerlink" title="前序"></a>前序</h1><p>由于8051等型号MCU片上资源有限（以 <strong>STC15F2K60S2</strong> 为例，SRAM空间大小：2K = 2048字节），当云端定义的产品中数据点较多时会导致编译后的程序剩余内存过少，进而导致串口数据解析异常、程序卡死等情况，故 <strong>STC15F2K60S2</strong> 平台的<strong>数据点长度建议<em>少于20个字节</em></strong>，对应的RAM的使用率需在60%以内。</p>
+<p>对于想进一步降低内存消耗的开发者，我们本文提供一种“资源裁剪最小集”的方式。</p>
+<p>本文档主要说明如何在自动生成的代码基础上裁剪为最小资源集的代码工程，以便节省更多的资源用于应用层的开发或是移植到更低资源的平台（如 SRAM为1K的MCU）。</p>
+<p>在阅读本文档前建议开发者已深入了解机智云MCU版的程序逻辑，请参考：<a href="http://docs.gizwits.com/zh-cn/deviceDev/Gokit3Voice/GoKit-MCU-explanation.html" target="_blank" rel="noopener">《GoKit-MCU程序详解》</a>一文。本文并不过多讲解MCU程序实现的细节。</p>
+<p>下面是裁剪的相关步骤。</p>
+<h1 id="1-查看当前源码工程资源使用情况"><a href="#1-查看当前源码工程资源使用情况" class="headerlink" title="1 查看当前源码工程资源使用情况"></a>1 查看当前源码工程资源使用情况</h1><p>首先定义相应的数据点：</p>
+<p><img src="/assets/zh-cn/deviceDev/8051/1.png" alt="1">接下来生成 <strong>STC15F2K60S2</strong> 平台的源码工程：</p>
+<p><img src="/assets/zh-cn/deviceDev/8051/2.png" alt="2"></p>
+<p>数据点长度的方式：在开发者中心下载《xxx- 机智云独立MCU方案接入通信协议文档》 ,在“3.2 WiFi模组控制设备”中可以看到“attr_flags”+“attr_vals”之和即为数据点长度的总大小（字节）：</p>
+<p><img src="/assets/zh-cn/deviceDev/8051/20.png" alt="20"></p>
+<blockquote>
+<p>可以看到占<strong>2个字节</strong>的数据点长度</p>
+</blockquote>
+<p>编译后的工程 <strong>SRAM</strong> 占用的大小如下图所示：</p>
+<p><img src="/assets/zh-cn/deviceDev/8051/3.png" alt="3"></p>
+<blockquote>
+<p>可以看到定义的数据点所对应的 <strong>SRAM</strong> 使用量为988字节（ <strong>STC15F2K60S2</strong> SRAM总量为2048字节）</p>
+</blockquote>
+<p>如果我们需要进一步降低内存使用率，就要进行资源最小集的裁剪。</p>
+<h1 id="2-裁剪资源到最小集"><a href="#2-裁剪资源到最小集" class="headerlink" title="2 裁剪资源到最小集"></a>2 裁剪资源到最小集</h1><h2 id="2-1-裁剪透传处理代码"><a href="#2-1-裁剪透传处理代码" class="headerlink" title="2.1 裁剪透传处理代码"></a>2.1 裁剪透传处理代码</h2><ul>
+<li>去除全局结构体中用于透传处理的结构体成员：</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/8051/4.png" alt="4"></p>
+<ul>
+<li>屏蔽相应的处理代码：</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/8051/5.png" alt="5"></p>
+<p><img src="/assets/zh-cn/deviceDev/8051/6.png" alt="6"></p>
+<p><code>减少内存（26字节）：</code></p>
+<p><img src="/assets/zh-cn/deviceDev/8051/7.png" alt="7"></p>
+<h2 id="2-2-裁剪”数据点事件处理“代码"><a href="#2-2-裁剪”数据点事件处理“代码" class="headerlink" title="2.2 裁剪”数据点事件处理“代码"></a>2.2 裁剪”数据点事件处理“代码</h2><ul>
+<li>去除全局结构体中用于事件处理的结构体成员：</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/8051/8.png" alt="8"></p>
+<ul>
+<li>去除相应的处理逻辑：</li>
+</ul>
+<blockquote>
+<p>提示：可以全局搜索关键字，如：issuedProcessEvent</p>
+</blockquote>
+<p><img src="/assets/zh-cn/deviceDev/8051/9.png" alt="9"></p>
+<p><img src="/assets/zh-cn/deviceDev/8051/10.png" alt="10"></p>
+<ul>
+<li>修改P0转事件的处理函数：</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/8051/12.png" alt="12"></p>
+<p><code>减少内存（19字节）：</code></p>
+<p><img src="/assets/zh-cn/deviceDev/8051/13.png" alt="13"></p>
+<ul>
+<li>裁剪用户区全局P0变量（替换为”共用协议区全局P0变量”）：</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/8051/14.png" alt="14"></p>
+<p><img src="/assets/zh-cn/deviceDev/8051/25.png" alt="15"></p>
+<p><img src="file:///D:/Gizwits_Work/%E6%96%87%E6%A1%A3%E7%9B%B8%E5%85%B3/8051%E5%B9%B3%E5%8F%B0%E6%9C%80%E5%B0%8F%E8%B5%84%E6%BA%90%E8%A3%81%E5%89%AA%E8%AF%B4%E6%98%8E/15.png?lastModify=1511148170?lastModify=1511148250" alt="img"></p>
+<p><img src="/assets/zh-cn/deviceDev/8051/24.png" alt="15"></p>
+<ul>
+<li>屏蔽控制型事件处理相关代码：</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/8051/17.png" alt="17"></p>
+<p><code>减少内存（2字节）：</code></p>
+<p><img src="/assets/zh-cn/deviceDev/8051/18.png" alt="18"></p>
+<ul>
+<li>在”P0转事件处理”函数中添加控制处理逻辑：</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/8051/19.png" alt="19"></p>
+<h2 id="2-3-裁剪日志打印功能"><a href="#2-3-裁剪日志打印功能" class="headerlink" title="2.3 裁剪日志打印功能"></a>2.3 裁剪日志打印功能</h2><p>对于类似Arduino的mcu平台，使用日志打印时会默认将打印内容存入RAM中，故会暂用大量的内存。</p>
+<blockquote>
+<p>注： <strong>STC15F2K60S2</strong> 平台并没有此问题，其打印内容会存储在 <code>code</code> 区，即FLASH中，不占用 <code>xdata</code> 区的内存空间。</p>
+</blockquote>
+<p>可以通过屏蔽打印语句或修改重定向宏来关闭日志打印功能：</p>
+<p><img src="/assets/zh-cn/deviceDev/8051/23.png" alt="23"></p>
+<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3 总结"></a>3 总结</h1><p>以上内容通过裁剪<strong>透传处理</strong>、<strong>数据点生成时间处理</strong>、<strong>用户区全局变量</strong>，来达到资源最小集的生成。</p>
+<p>由上文中的裁剪例子我们看到，当只定义一个布尔型的数据点时，协议中的数据点长度如下所示：</p>
+<p><img src="/assets/zh-cn/deviceDev/8051/20.png" alt="20"></p>
+<blockquote>
+<p>可以看到占<strong>2个字节</strong>的数据点长度</p>
+<p>裁剪后的内存消耗从 <code>988字节</code> 降低到了 <code>941字节</code> ，共减少了 <code>47字节</code> 的内存使用量。</p>
+</blockquote>
+<p>经测试，当定义20个字节的扩展型数据点时，协议中的数据点长度如下所示：</p>
+<p><img src="/assets/zh-cn/deviceDev/8051/26.png" alt="21"></p>
+<blockquote>
+<p>可以看到占<strong>21个字节</strong>的数据点长度</p>
+<p>我们使用<strong>相同的裁剪方式</strong>，裁剪后的内存消耗能从 <code>1332字节</code> 降低到了 <code>1248字节</code> ，共减少了 <code>84字节</code> 的内存使用量。</p>
+</blockquote>
+<p><strong>结论：当定义的数据点越多时，用这种方式节省出的内存越可观。</strong></p>
+
     </div>
     
     <div class="widget-wrapper">
