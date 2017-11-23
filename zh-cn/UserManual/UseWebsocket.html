@@ -483,7 +483,38 @@
 <h2 id="2-运行index-html"><a href="#2-运行index-html" class="headerlink" title="2.运行index.html"></a>2.运行index.html</h2><p><img src="/assets/zh-cn/UserManual/WebSocket/图片10.png" alt="Alt text"></p>
 <h2 id="3-Websocket网页控制界面"><a href="#3-Websocket网页控制界面" class="headerlink" title="3.Websocket网页控制界面"></a>3.Websocket网页控制界面</h2><p><a href="https://gizwits.github.io/gizwits-wechat-js-sdk/v0.2.0.html" target="_blank" rel="noopener">https://gizwits.github.io/gizwits-wechat-js-sdk/v0.2.0.html</a><br>如下：</p>
 <p><img src="/assets/zh-cn/UserManual/WebSocket/图片11.png" alt="Alt text"></p>
-<h1 id="控制设备分两种方式"><a href="#控制设备分两种方式" class="headerlink" title="控制设备分两种方式"></a>控制设备分两种方式</h1><h2 id="1-V4版本的标准数据点协议"><a href="#1-V4版本的标准数据点协议" class="headerlink" title="1.V4版本的标准数据点协议"></a>1.V4版本的标准数据点协议</h2><h3 id="1-1-初始化Gizwits-WS对象"><a href="#1-1-初始化Gizwits-WS对象" class="headerlink" title="1.1.初始化Gizwits WS对象"></a>1.1.初始化Gizwits WS对象</h3><p>上面使用的参数有：<br>| 参数      |     说明       |                数值         |<br>| ————- |:————-:|    ————-    |<br>|apiHost    |机智云OpenApi域名    |api.gizwits.com|<br>|commType    |标准数据点协议格式    |attrs_v4|<br>|wechatOpenId    |微信用户OpenID（就是手机的iPhone_id）|    String|<br>|gizwitsAppId    |机智云平台应用标识    |String|</p>
+<h1 id="控制设备分两种方式"><a href="#控制设备分两种方式" class="headerlink" title="控制设备分两种方式"></a>控制设备分两种方式</h1><h2 id="1-V4版本的标准数据点协议"><a href="#1-V4版本的标准数据点协议" class="headerlink" title="1.V4版本的标准数据点协议"></a>1.V4版本的标准数据点协议</h2><h3 id="1-1-初始化Gizwits-WS对象"><a href="#1-1-初始化Gizwits-WS对象" class="headerlink" title="1.1.初始化Gizwits WS对象"></a>1.1.初始化Gizwits WS对象</h3><p>上面使用的参数有：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apiHost</td>
+<td>机智云OpenApi域名</td>
+<td>api.gizwits.com</td>
+</tr>
+<tr>
+<td>commType</td>
+<td>标准数据点协议格式</td>
+<td>attrs_v4</td>
+</tr>
+<tr>
+<td>wechatOpenId</td>
+<td>微信用户OpenID（就是手机的iPhone_id）</td>
+<td>String</td>
+</tr>
+<tr>
+<td>gizwitsAppId</td>
+<td>机智云平台应用标识</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
 <p>初始化，如下：</p>
 <p><img src="/assets/zh-cn/UserManual/WebSocket/图片12.png" alt="Alt text"></p>
 <h3 id="1-2-获取绑定列表"><a href="#1-2-获取绑定列表" class="headerlink" title="1.2.获取绑定列表"></a>1.2.获取绑定列表</h3><p>如果该用户要获取绑定设备列表，先要确认该用户（就是该openid）是否有对要控制设备的已进行绑定了。</p>
@@ -494,6 +525,11 @@
 <p><img src="/assets/zh-cn/UserManual/WebSocket/图片15.png" alt="Alt text"></p>
 <h3 id="1-5-控制设备"><a href="#1-5-控制设备" class="headerlink" title="1.5.控制设备"></a>1.5.控制设备</h3><p>选择已连接的设备，下发控制指令<br>如下发控制指令{“Swicth”:true}，如下图：</p>
 <p><img src="/assets/zh-cn/UserManual/WebSocket/图片16.png" alt="Alt text"></p>
+<ul>
+<li>如要设置扩展类型的字段 binary 为16进制 616263 ,补齐后每组byte换成一个十进制数组的值</li>
+<li>设置布尔型需要是true和false:<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"boolean"</span>:<span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"binary"</span>: [<span class="number">97</span>,<span class="number">98</span>,<span class="number">99</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p>控制模拟设备效果：</p>
 <p><img src="/assets/zh-cn/UserManual/WebSocket/图片17.png" alt="Alt text"></p>
 <h2 id="2-V4版本的自定义格式协议"><a href="#2-V4版本的自定义格式协议" class="headerlink" title="2.V4版本的自定义格式协议"></a>2.V4版本的自定义格式协议</h2><p>V4版本的自定义格式协议（就是无法数据点透传）</p>
@@ -502,29 +538,29 @@
 <thead>
 <tr>
 <th>参数</th>
-<th style="text-align:center">说明</th>
+<th>说明</th>
 <th>数值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>apiHost</td>
-<td style="text-align:center">机智云OpenApi域名</td>
+<td>机智云OpenApi域名</td>
 <td>api.gizwits.com</td>
 </tr>
 <tr>
 <td>commType</td>
-<td style="text-align:center">标准数据点协议格式</td>
+<td>标准数据点协议格式</td>
 <td>attrs_v4</td>
 </tr>
 <tr>
 <td>wechatOpenId</td>
-<td style="text-align:center">微信用户OpenID（就是手机的iPhone_id）</td>
+<td>微信用户OpenID（就是手机的iPhone_id）</td>
 <td>String</td>
 </tr>
 <tr>
 <td>gizwitsAppId</td>
-<td style="text-align:center">机智云平台应用标识</td>
+<td>机智云平台应用标识</td>
 <td>String</td>
 </tr>
 </tbody>
