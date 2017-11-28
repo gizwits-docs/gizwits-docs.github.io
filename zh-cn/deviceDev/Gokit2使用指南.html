@@ -507,7 +507,7 @@
 <h1 id="玩转Gokit-2"><a href="#玩转Gokit-2" class="headerlink" title="玩转Gokit 2"></a>玩转Gokit 2</h1><h2 id="第一步：下载-IoE-Demo-App"><a href="#第一步：下载-IoE-Demo-App" class="headerlink" title="第一步：下载 IoE Demo App"></a>第一步：下载 IoE Demo App</h2><p>IoE Demo是机智云推出的智能硬件调试工具，通过IoE Demo App可以对GoKit进行绑定与远程控制等操作，也可以作为其他基于机智云开发的智能硬件项目的调试工具。</p>
 <p>你可以通过扫描说明书上的黄色二维码下载并安装IoE Demo，也可以进入机智云开发者中心进行下载，<a href="http://dev.gizwits.com/zh-cn/developer/resource/demo_app?protoc=WIFI" target="_blank" rel="noopener">前往下载</a></p>
 <p>为了让开发者更好的掌握客户端开发的技巧，我们提供了IoE Demo的开源版本，<a href="http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=demo_app" target="_blank" rel="noopener">前往下载</a></p>
-<h2 id="第二步：将GoKit连接上网"><a href="#第二步：将GoKit连接上网" class="headerlink" title="第二步：将GoKit连接上网"></a>第二步：将GoKit连接上网</h2><p>GoKit通过WiFi通信模块以无线的方式连接路由器并接入互联网，这里我们需要做的就是把可用WiFi的路由器SSID和密码告诉GoKit（就像你新买的手机需要输入家里的WiFi密码一样）,但GoKit没有键盘和屏幕，如何做到呢？GoKit提供三种配置方式：AirLink 、WebConfig、 SoftAP。下面我们分别学习三种不同的配置方式，大家人选一种即可。</p>
+<h2 id="第二步：将GoKit连接上网"><a href="#第二步：将GoKit连接上网" class="headerlink" title="第二步：将GoKit连接上网"></a>第二步：将GoKit连接上网</h2><p>GoKit通过WiFi通信模块以无线的方式连接路由器并接入互联网，这里我们需要做的就是把可用WiFi的路由器SSID和密码告诉GoKit（就像你新买的手机需要输入家里的WiFi密码一样）,但GoKit没有键盘和屏幕，如何做到呢？GoKit提供三种配置方式：AirLink 、WebConfig、 SoftAP。下面我们分别学习三种不同的配置方式，大家选一种即可。</p>
 <h3 id="AirLink配置入网"><a href="#AirLink配置入网" class="headerlink" title="AirLink配置入网"></a>AirLink配置入网</h3><p>AirLink配置就是说明书上介绍的方法，实现过程就是：通过按键触发开启设备“AirLink”模式，开启后设备会不断接收特定编码的WiFi广播包，手机连接可用的WiFi网络后，通过指定的App（如IoE Demo）发送编码后的WiFi网络的SSID和密码广播，设备接收到之后自动尝试连接此WiFi网络，连接成功即配置完成。下面一步步完成GoKit通过AirLink接入路由器连接网络吧。（注意：AirLink配置不支持5G的WiFi网络，请使用传统2.4G WiFi信号）</p>
 <p>1）智能手机进入“系统设置”连接您附件可用的WiFi网络。</p>
 <p>2）打开下载好的“IoE Demo” App，点击主屏幕右上角“菜单栏”中的“添加新设备”。如下图</p>
