@@ -467,27 +467,33 @@
 <h1 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h1><h2 id="1-下载ESP8266对应的固件"><a href="#1-下载ESP8266对应的固件" class="headerlink" title="1.下载ESP8266对应的固件"></a>1.下载ESP8266对应的固件</h2><p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076360990.png" alt="name"></p>
 <p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076396266.png" alt="name"></p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076409588.png" alt="name"></p>
-<h2 id="2-确认固件文件（以合并固件为例）"><a href="#2-确认固件文件（以合并固件为例）" class="headerlink" title="2.确认固件文件（以合并固件为例）"></a>2.确认固件文件（以合并固件为例）</h2><p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/new1.png" alt="name"></p>
+<h2 id="2-确认固件文件"><a href="#2-确认固件文件" class="headerlink" title="2.确认固件文件"></a>2.确认固件文件</h2><p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076417476.png" alt="name"></p>
 <p>如图所示bin文件为我们所需要的固件。</p>
 <h2 id="3-设备连接"><a href="#3-设备连接" class="headerlink" title="3.设备连接"></a>3.设备连接</h2><p>将ESP8266模块按照如下原理图进行接线，注意GPIO0（18号管脚）需要输入低电平，本实验直接接地处理，KEY1实现外部复位功能。</p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076437289.png" alt="name"></p>
 <p><strong>上图为烧录固件简易原理图，在产品中实际搭建线路时，请参考官方提供线路图，如下所示：</strong></p>
 <p><img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478158365798.png" alt="name"></p>
-<h2 id="4-串口设置"><a href="#4-串口设置" class="headerlink" title="4.串口设置"></a>4.串口设置</h2><h3 id="下载烧写软件"><a href="#下载烧写软件" class="headerlink" title="下载烧写软件"></a>下载烧写软件</h3><p>下载地址：<a href="http://pan.baidu.com/s/1mhMGSeG" target="_blank" rel="noopener">http://pan.baidu.com/s/1mhMGSeG</a></p>
-<h3 id="烧写固件"><a href="#烧写固件" class="headerlink" title="烧写固件"></a>烧写固件</h3><p> <strong>请务必依次对照下图所选的地方进行相应的填写：</strong></p>
-<h4 id="使用MCU方案烧写方式（合并烧写）："><a href="#使用MCU方案烧写方式（合并烧写）：" class="headerlink" title="使用MCU方案烧写方式（合并烧写）："></a>使用MCU方案烧写方式（合并烧写）：</h4><p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/new2.png" alt="name"></p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/new3.png" alt="name"></p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/new4.png" alt="name"></p>
-<h4 id="备注：若使用机智云官网SOC方案编译出来的固件，烧写方式如下（32Mbit方案分区烧写）："><a href="#备注：若使用机智云官网SOC方案编译出来的固件，烧写方式如下（32Mbit方案分区烧写）：" class="headerlink" title="备注：若使用机智云官网SOC方案编译出来的固件，烧写方式如下（32Mbit方案分区烧写）："></a>备注：若使用机智云官网SOC方案编译出来的固件，烧写方式如下（32Mbit方案分区烧写）：</h4><p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/new5.png" alt="name"></p>
-<h2 id="5-烧写操作"><a href="#5-烧写操作" class="headerlink" title="5.烧写操作"></a>5.烧写操作</h2><p>步骤一、选择正确的串口，当串口连接成功之后，点击如上图的“START”按钮，</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/new6.png" alt="name"></p>
+<h2 id="4-串口设置"><a href="#4-串口设置" class="headerlink" title="4.串口设置"></a>4.串口设置</h2><h3 id="4-1-确认串口参数"><a href="#4-1-确认串口参数" class="headerlink" title="4.1.确认串口参数"></a>4.1.确认串口参数</h3><p>将上述串口连接电脑后，通过“我的电脑”-&gt;“管理”-&gt; “设备管理器”-&gt;“端口（COM 和LPT）”选项中可以看到相应增加的COM口。</p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076453130.png" alt="name"></p>
+<h3 id="4-2-下载烧写软件"><a href="#4-2-下载烧写软件" class="headerlink" title="4.2 下载烧写软件"></a>4.2 下载烧写软件</h3><p>下载地址：<a href="http://pan.baidu.com/s/1mhMGSeG" target="_blank" rel="noopener">http://pan.baidu.com/s/1mhMGSeG</a></p>
+<p>下载解压后得到下面文件</p>
+<p>  <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076470142.png" alt="name"></p>
+<p>再次解压图中所示的文件后，双击 <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076503512.png" alt="name">打开烧写软件，出现如下对话框。 </p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076526115.png" alt="name"></p>
+<h3 id="4-3使用串口方式一烧写固件"><a href="#4-3使用串口方式一烧写固件" class="headerlink" title="4.3使用串口方式一烧写固件"></a>4.3使用串口方式一烧写固件</h3><p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/20161118150552.png" alt="name"></p>
+<p> 使用如上图所示固件烧录固件时，串口烧录工具参数需按照如下方式填写：</p>
+<p> <strong>请务必依次对照下图所选的地方进行相应的填写：</strong><br> 使用MCU方案烧写方式：<br> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/2017076560369.png" alt="name"><br>  使用SOC方案烧写方式：<br> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076560369.png" alt="name"></p>
+<h3 id="4-4使用串口方式二烧写固件"><a href="#4-4使用串口方式二烧写固件" class="headerlink" title="4.4使用串口方式二烧写固件"></a>4.4使用串口方式二烧写固件</h3><p><img src="/assets/zh-cn/deviceDev/debug/ESP8266/20161118150708.png" alt="name"></p>
+<p> 使用如上图所示固件烧录固件时，串口烧录工具参数需按照如下方式填写：</p>
+<p> <strong>请务必依次对照下图所选的地方进行相应的填写：</strong><br> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/20161118151656.png" alt="name"></p>
+<h2 id="5烧写操作"><a href="#5烧写操作" class="headerlink" title="5烧写操作"></a>5烧写操作</h2><p>步骤一、当串口连接成功之后，点击如上图的“START”按钮，</p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076571280.png" alt="name"></p>
 <p>会出现</p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076577320.png" alt="name"></p>
 <p>步骤二、将ESP8266进行复位（按下2.3节原理图所示的KEY1后松开）将会出现如下信息表示模块正在进行烧写。</p>
-<p>  <img src="/assets/zh-cn/deviceDev/debug/ESP8266/new7.png" alt="name"></p>
+<p>  <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076590987.png" alt="name"></p>
 <p>步骤三、等待一段时间后，出现“FINISH”字样表示烧写成功。</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/new8.png" alt="name"></p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/ESP8266/1478076247606.png" alt="name"></p>
 
     </div>
     
