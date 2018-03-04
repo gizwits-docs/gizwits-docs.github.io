@@ -4,14 +4,14 @@
   <head>
   <meta charset="utf-8">
 
-  <title>MCU OTA教程（3.0） - 机智云</title>
+  <title>MCU OTA教程（3.1） - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="MCU OTA教程（3.0）-机智云">
-  <meta name="keywords" content="MCU OTA教程（3.0） docs 文档中心 Gizwits">
+  <meta name="Description" content="MCU OTA教程（3.1）-机智云">
+  <meta name="keywords" content="MCU OTA教程（3.1） docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -460,12 +460,13 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">MCU OTA教程（3.0）</div>
+        <div class="title">MCU OTA教程（3.1）</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <p><a href="http://docs.gizwits.com/zh-cn/UserManual/OTA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">GAgent OTA教程</a></p>
 <p><a href="http://docs.gizwits.com/zh-cn/UserManual/MCUOTA2.html" target="_blank" rel="noopener">MCU OTA教程（2.0）</a></p>
-<p><a href="http://docs.gizwits.com/assets/pdf/GOKIT-OTA.zip" target="_blank" rel="noopener">源文档及源参考代码下载</a></p>
+<p><a href="http://docs.gizwits.com/zh-cn/UserManual/MCUOTA.html" target="_blank" rel="noopener">MCU OTA教程（3.0）</a></p>
+<p><a href="http://docs.gizwits.com/assets/pdf/GOKIT-OTA3.1.zip" target="_blank" rel="noopener">源文档及源参考代码下载</a></p>
 <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h1><h4 id="MCU-OTA可以对MCU程序进行无线远程升级。本文以STM32F103C8T6实现OTA作为例子。原本MCU程序软件版本号是01，想升级到02，但是设备已经量产了不可能再去一个一个设备重新烧录新的程序，这时候就需要用到MCU-OTA。"><a href="#MCU-OTA可以对MCU程序进行无线远程升级。本文以STM32F103C8T6实现OTA作为例子。原本MCU程序软件版本号是01，想升级到02，但是设备已经量产了不可能再去一个一个设备重新烧录新的程序，这时候就需要用到MCU-OTA。" class="headerlink" title="MCU OTA可以对MCU程序进行无线远程升级。本文以STM32F103C8T6实现OTA作为例子。原本MCU程序软件版本号是01，想升级到02，但是设备已经量产了不可能再去一个一个设备重新烧录新的程序，这时候就需要用到MCU OTA。"></a>MCU OTA可以对MCU程序进行无线远程升级。本文以STM32F103C8T6实现OTA作为例子。原本MCU程序软件版本号是01，想升级到02，但是设备已经量产了不可能再去一个一个设备重新烧录新的程序，这时候就需要用到MCU OTA。</h4><h4 id="STM32F103C8T6-芯片（GOKIT2-代）Flash-空间划分出-4-个区域：Bootloader、FLAG、APP-分区、APPBAK-分区。"><a href="#STM32F103C8T6-芯片（GOKIT2-代）Flash-空间划分出-4-个区域：Bootloader、FLAG、APP-分区、APPBAK-分区。" class="headerlink" title="STM32F103C8T6 芯片（GOKIT2 代）Flash 空间划分出 4 个区域：Bootloader、FLAG、APP 分区、APPBAK 分区。"></a>STM32F103C8T6 芯片（GOKIT2 代）Flash 空间划分出 4 个区域：Bootloader、FLAG、APP 分区、APPBAK 分区。</h4><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/1.png" alt="图1"></p>
 <h4 id="Bootloader-存储-Bootloader-固件，MCU-上电后首先运行该固件。"><a href="#Bootloader-存储-Bootloader-固件，MCU-上电后首先运行该固件。" class="headerlink" title="Bootloader:存储 Bootloader 固件，MCU 上电后首先运行该固件。"></a>Bootloader:存储 Bootloader 固件，MCU 上电后首先运行该固件。</h4><h4 id="FLAG-存储有关升级的相关标志位，Bootloader-和-APP-分区都需要操作该区域。"><a href="#FLAG-存储有关升级的相关标志位，Bootloader-和-APP-分区都需要操作该区域。" class="headerlink" title="FLAG:存储有关升级的相关标志位，Bootloader 和 APP 分区都需要操作该区域。"></a>FLAG:存储有关升级的相关标志位，Bootloader 和 APP 分区都需要操作该区域。</h4><h4 id="APP-分区-存储用户程序固件。"><a href="#APP-分区-存储用户程序固件。" class="headerlink" title="APP 分区:存储用户程序固件。"></a>APP 分区:存储用户程序固件。</h4><h4 id="APPBAK-分区-临时存储云端下发的新固件，升级固件的一个过渡存储区。"><a href="#APPBAK-分区-临时存储云端下发的新固件，升级固件的一个过渡存储区。" class="headerlink" title="APPBAK 分区:临时存储云端下发的新固件，升级固件的一个过渡存储区。"></a>APPBAK 分区:临时存储云端下发的新固件，升级固件的一个过渡存储区。</h4><h4 id="源代码中有BootLoader和APP-分区两部分。BootLoader稍作编译设置，不需要改动代码，就可以编译烧写到MCU中；APP-分区的OTA功能相关代码复制到mcu方案自动生成代码中，再编译烧写到MCU中，mcu程序就具有OTA功能。"><a href="#源代码中有BootLoader和APP-分区两部分。BootLoader稍作编译设置，不需要改动代码，就可以编译烧写到MCU中；APP-分区的OTA功能相关代码复制到mcu方案自动生成代码中，再编译烧写到MCU中，mcu程序就具有OTA功能。" class="headerlink" title="源代码中有BootLoader和APP 分区两部分。BootLoader稍作编译设置，不需要改动代码，就可以编译烧写到MCU中；APP 分区的OTA功能相关代码复制到mcu方案自动生成代码中，再编译烧写到MCU中，mcu程序就具有OTA功能。"></a>源代码中有BootLoader和APP 分区两部分。BootLoader稍作编译设置，不需要改动代码，就可以编译烧写到MCU中；APP 分区的OTA功能相关代码复制到mcu方案自动生成代码中，再编译烧写到MCU中，mcu程序就具有OTA功能。</h4><h4 id="下文分别是BootLoader和APP-分区的详细移植步骤。"><a href="#下文分别是BootLoader和APP-分区的详细移植步骤。" class="headerlink" title="下文分别是BootLoader和APP 分区的详细移植步骤。"></a>下文分别是BootLoader和APP 分区的详细移植步骤。</h4><h1 id="2-Bootloader-分区部分"><a href="#2-Bootloader-分区部分" class="headerlink" title="2.Bootloader 分区部分"></a>2.Bootloader 分区部分</h1><h2 id="2-1-Bootloader-程序流程"><a href="#2-1-Bootloader-程序流程" class="headerlink" title="2.1.Bootloader 程序流程"></a>2.1.Bootloader 程序流程</h2><h4 id="Bootloader-的主要职能是在有升级任务的时候将-APPBAK-分区里面的固件拷贝到-APP-区域。当然，这期间需要做很多的工作，比如升级失败的容错等等。具体的流程可以参考图示。需要注意的是，在校验-MD5-正确后开始搬运固件数据期间，MCU-出现故障（包括突然断电），MCU-应发生复位操作（FLAG-区域数据未破坏），复位后重新开始执行-Bootloader，从而避免-MCU-刷成板砖。"><a href="#Bootloader-的主要职能是在有升级任务的时候将-APPBAK-分区里面的固件拷贝到-APP-区域。当然，这期间需要做很多的工作，比如升级失败的容错等等。具体的流程可以参考图示。需要注意的是，在校验-MD5-正确后开始搬运固件数据期间，MCU-出现故障（包括突然断电），MCU-应发生复位操作（FLAG-区域数据未破坏），复位后重新开始执行-Bootloader，从而避免-MCU-刷成板砖。" class="headerlink" title="Bootloader 的主要职能是在有升级任务的时候将 APPBAK 分区里面的固件拷贝到 APP 区域。当然，这期间需要做很多的工作，比如升级失败的容错等等。具体的流程可以参考图示。需要注意的是，在校验 MD5 正确后开始搬运固件数据期间，MCU 出现故障（包括突然断电），MCU 应发生复位操作（FLAG 区域数据未破坏），复位后重新开始执行 Bootloader，从而避免 MCU 刷成板砖。"></a>Bootloader 的主要职能是在有升级任务的时候将 APPBAK 分区里面的固件拷贝到 APP 区域。当然，这期间需要做很多的工作，比如升级失败的容错等等。具体的流程可以参考图示。需要注意的是，在校验 MD5 正确后开始搬运固件数据期间，MCU 出现故障（包括突然断电），MCU 应发生复位操作（FLAG 区域数据未破坏），复位后重新开始执行 Bootloader，从而避免 MCU 刷成板砖。</h4><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/3.png" alt="图3"></p>
 <h2 id="2-2-Bootloader-编译设置"><a href="#2-2-Bootloader-编译设置" class="headerlink" title="2.2.Bootloader 编译设置"></a>2.2.Bootloader 编译设置</h2><h4 id="按照-Bootloader-流程编写好代码，需要我们对-KEIL-工程做相应配置，需要注意的是编译的-Bootloader-固件大小不超过最大可允许的-11KB。Keil-编译器需要设置如下："><a href="#按照-Bootloader-流程编写好代码，需要我们对-KEIL-工程做相应配置，需要注意的是编译的-Bootloader-固件大小不超过最大可允许的-11KB。Keil-编译器需要设置如下：" class="headerlink" title="按照 Bootloader 流程编写好代码，需要我们对 KEIL 工程做相应配置，需要注意的是编译的 Bootloader 固件大小不超过最大可允许的 11KB。Keil 编译器需要设置如下："></a>按照 Bootloader 流程编写好代码，需要我们对 KEIL 工程做相应配置，需要注意的是编译的 Bootloader 固件大小不超过最大可允许的 11KB。Keil 编译器需要设置如下：</h4><h4 id="2-2-1按照-FLASH-分区方案，设置-FLASH-固件下载地址，如下图所示："><a href="#2-2-1按照-FLASH-分区方案，设置-FLASH-固件下载地址，如下图所示：" class="headerlink" title="2.2.1按照 FLASH 分区方案，设置 FLASH 固件下载地址，如下图所示："></a>2.2.1按照 FLASH 分区方案，设置 FLASH 固件下载地址，如下图所示：</h4><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/4.png" alt="图4"></p>
@@ -478,18 +479,18 @@
 <p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/10.png" alt="图10"></p>
 <h3 id="3-2-2-设置keil烧写方式为st-link"><a href="#3-2-2-设置keil烧写方式为st-link" class="headerlink" title="3.2.2.设置keil烧写方式为st-link"></a>3.2.2.设置keil烧写方式为st-link</h3><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/23.png" alt="图23"></p>
 <h3 id="3-2-3-通过编译优化等级控制APP-分区固件大小"><a href="#3-2-3-通过编译优化等级控制APP-分区固件大小" class="headerlink" title="3.2.3.通过编译优化等级控制APP 分区固件大小"></a>3.2.3.通过编译优化等级控制APP 分区固件大小</h3><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/24.png" alt="图24"></p>
-<h3 id="3-2-4-设置编译的时候生成-bin文件（OTA的时候需要选择把-bin文件上传到机智云）"><a href="#3-2-4-设置编译的时候生成-bin文件（OTA的时候需要选择把-bin文件上传到机智云）" class="headerlink" title="3.2.4.设置编译的时候生成.bin文件（OTA的时候需要选择把.bin文件上传到机智云）"></a>3.2.4.设置编译的时候生成.bin文件（OTA的时候需要选择把.bin文件上传到机智云）</h3><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/25.png" alt="图25"></p>
+<h3 id="3-2-4-设置编译的时候生成-bin文件（OTA的时候需要选择把-bin文件上传到机智云）"><a href="#3-2-4-设置编译的时候生成-bin文件（OTA的时候需要选择把-bin文件上传到机智云）" class="headerlink" title="3.2.4.设置编译的时候生成.bin文件（OTA的时候需要选择把.bin文件上传到机智云）"></a>3.2.4.设置编译的时候生成.bin文件（OTA的时候需要选择把.bin文件上传到机智云）</h3><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/25_1.png" alt="图25"></p>
 <h3 id="3-2-5-设置按区域擦除"><a href="#3-2-5-设置按区域擦除" class="headerlink" title="3.2.5.设置按区域擦除"></a>3.2.5.设置按区域擦除</h3><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/26.png" alt="图26"></p>
-<h3 id="3-2-6-往工程目录添加Flash-c和gagent-md5-c，单击keil的build按钮展开工程目录，可以看到Flash-h和gagent-md5-h"><a href="#3-2-6-往工程目录添加Flash-c和gagent-md5-c，单击keil的build按钮展开工程目录，可以看到Flash-h和gagent-md5-h" class="headerlink" title="3.2.6.往工程目录添加Flash.c和gagent_md5.c，单击keil的build按钮展开工程目录，可以看到Flash.h和gagent_md5.h"></a>3.2.6.往工程目录添加Flash.c和gagent_md5.c，单击keil的build按钮展开工程目录，可以看到Flash.h和gagent_md5.h</h3><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/100.png" alt="图12"></p>
+<h3 id="3-2-6-往工程目录添加hal-lash-c和gagent-md5-c，单击keil的build按钮展开工程目录，可以看到hal-flash-h和gagent-md5-h"><a href="#3-2-6-往工程目录添加hal-lash-c和gagent-md5-c，单击keil的build按钮展开工程目录，可以看到hal-flash-h和gagent-md5-h" class="headerlink" title="3.2.6.往工程目录添加hal_lash.c和gagent_md5.c，单击keil的build按钮展开工程目录，可以看到hal_flash.h和gagent_md5.h"></a>3.2.6.往工程目录添加hal_lash.c和gagent_md5.c，单击keil的build按钮展开工程目录，可以看到hal_flash.h和gagent_md5.h</h3><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/100_1.png" alt="图12"></p>
 <h2 id="3-3-App-分区OTA功能代码移植"><a href="#3-3-App-分区OTA功能代码移植" class="headerlink" title="3.3.App 分区OTA功能代码移植"></a>3.3.App 分区OTA功能代码移植</h2><h3 id="3-3-1-中断向量偏移地址"><a href="#3-3-1-中断向量偏移地址" class="headerlink" title="3.3.1.中断向量偏移地址"></a>3.3.1.中断向量偏移地址</h3><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/11.png" alt="图11"></p>
 <h3 id="3-3-2-接下来是代码移植步骤，只需把图片内红框相应代码复制到开发者自动生成mcu代码，即可实现mcuOTA功能。"><a href="#3-3-2-接下来是代码移植步骤，只需把图片内红框相应代码复制到开发者自动生成mcu代码，即可实现mcuOTA功能。" class="headerlink" title="3.3.2.接下来是代码移植步骤，只需把图片内红框相应代码复制到开发者自动生成mcu代码，即可实现mcuOTA功能。"></a>3.3.2.接下来是代码移植步骤，只需把图片内红框相应代码复制到开发者自动生成mcu代码，即可实现mcuOTA功能。</h3><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/101.PNG" alt="图13"></p>
-<p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/102.png" alt="图14"></p>
+<p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/102_1.png" alt="图14"></p>
 <p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/103.png" alt="图16"></p>
 <p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/109.png" alt="图17"></p>
-<p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/105.PNG" alt="图18"></p>
+<p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/105_1.png" alt="图18"></p>
 <p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/106.PNG" alt="图19"></p>
 <p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/107.png" alt="图20"></p>
-<p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/108.png" alt="图21"></p>
+<p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/108_1.png" alt="图21"></p>
 <p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/22.png" alt="图22"></p>
 <h3 id="3-3-3-编译和烧程序"><a href="#3-3-3-编译和烧程序" class="headerlink" title="3.3.3.编译和烧程序"></a>3.3.3.编译和烧程序</h3><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/27.png" alt="图27"></p>
 <h1 id="4-MCU-OTA验证"><a href="#4-MCU-OTA验证" class="headerlink" title="4.MCU OTA验证"></a>4.MCU OTA验证</h1><h2 id="4-1-第一次用stlink烧录mcu代码后，mcu日志如图"><a href="#4-1-第一次用stlink烧录mcu代码后，mcu日志如图" class="headerlink" title="4.1.第一次用stlink烧录mcu代码后，mcu日志如图"></a>4.1.第一次用stlink烧录mcu代码后，mcu日志如图</h2><p><img src="http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/28.png" alt="图28"></p>
