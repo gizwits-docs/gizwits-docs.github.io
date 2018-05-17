@@ -555,8 +555,8 @@
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/image29.png" alt="Alt text"></p>
 <p>Windows中显示如下</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/image30.png" alt="Alt text"></p>
-<h1 id="GoKit3-S-固件下载"><a href="#GoKit3-S-固件下载" class="headerlink" title="GoKit3(S)固件下载"></a>GoKit3(S)固件下载</h1><h2 id="1-打开烧写软件"><a href="#1-打开烧写软件" class="headerlink" title="1 打开烧写软件"></a>1 打开烧写软件</h2><p>下载程序烧录工具“FLASH_DOWNLOAD_TOOLS_v2.4” ，下载地址：</p>
-<p><a href="http://bbs.espressif.com/viewtopic.php?f=57&amp;t=433" target="_blank" rel="noopener">http://bbs.espressif.com/viewtopic.php?f=57&amp;t=433</a></p>
+<h1 id="GoKit3-S-固件下载"><a href="#GoKit3-S-固件下载" class="headerlink" title="GoKit3(S)固件下载"></a>GoKit3(S)固件下载</h1><h2 id="1-打开烧写软件"><a href="#1-打开烧写软件" class="headerlink" title="1 打开烧写软件"></a>1 打开烧写软件</h2><p>下载程序烧录工具“ESPFlashDownloadTool_v3.3.4.exe” ，下载地址：</p>
+<p><a href="https://www.espressif.com/sites/default/files/tools/flash_download_tools_v3.6.4.rar" target="_blank" rel="noopener">https://www.espressif.com/sites/default/files/tools/flash_download_tools_v3.6.4.rar</a></p>
 <p>下载完毕解压后点击运行<strong>“ESP_DOWNLOAD_TOOL_V2.4.exe”</strong></p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/image31.png" alt="Alt text"></p>
 <h2 id="2-设置烧写选项"><a href="#2-设置烧写选项" class="headerlink" title="2 设置烧写选项"></a>2 设置烧写选项</h2><p>GoKit3(S) 烧写固件分为SOC版和MCU版，开发者应根据GoKit3(S) 的模式烧写对应版本的固件，详细介绍请查看<strong>《GoKit3(S) 开发套件介绍》</strong>中的“2. 了解SOC版与MCU版的区别”一节。</p>
@@ -565,15 +565,15 @@
 <p>编译后固件默认保存位置：     </p>
 <p><strong>share/SOC_ESP8266_xxM_source/bin/upgrade</strong></p>
 <h3 id="2-2-GoKit3-S-MCU版"><a href="#2-2-GoKit3-S-MCU版" class="headerlink" title="2.2 GoKit3(S) MCU版"></a>2.2 GoKit3(S) MCU版</h3><p>MCU版的程序固件名称为：</p>
-<p><strong>GAgent_00ESP826_04020011_16041419.bin</strong></p>
-<p><a href="http://download.gizwits.com/zh-cn/p/92/94" target="_blank" rel="noopener">点击下载</a>)</p>
+<p><strong>GAgent_00ESP826_04020029_32Mbitcombine.bin</strong></p>
+<p><a href="http://goms-1251025085.cosgz.myqcloud.com/GAgent_00ESP826_04020029-1524657141995.rar" target="_blank" rel="noopener">点击下载</a></p>
 <p>详细介绍请查看<strong>《GoKit3(S) 开发套件介绍》</strong>中“5. 使用Gokit的MCU模式”一节。</p>
 <h3 id="2-3-确认烧写选项"><a href="#2-3-确认烧写选项" class="headerlink" title="2.3 确认烧写选项"></a>2.3 确认烧写选项</h3><p>烧写选项按如下图所示选择、填写：</p>
 <p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/image32.png" alt="Alt text"></p>
 <p>注：<br>1).前三个 ‘.bin’ 文件都在<strong>D:\share\SoC_ESP8266_32M_source\bin</strong> 目录下，选择对应的名称的 ‘.bin’文件即可。</p>
 <p>最后一个.bin 文件默认为SOC版固件：<strong>user1.4096.new.6.bin</strong></p>
 <p>位置：<strong>D:\share\SoC_ESP8266_32M_source\bin\upgrade\user1.4096.new.6.bin</strong></p>
-<p>若烧写MCU版固件请选择 <strong>GAgent_00ESP826_04020011_16041419.bin</strong></p>
+<p>若烧写MCU版固件请选择 <strong>GAgent_00ESP826_04020029_32Mbitcombine.bin</strong></p>
 <p>2).COM PORT 为TTL转串口的COM号（下边会说明）</p>
 <p>3).BAUDRATE建议为：115200（烧写速度慢但成功率高）</p>
 <h2 id="3-连接TTL转USB接口"><a href="#3-连接TTL转USB接口" class="headerlink" title="3 连接TTL转USB接口"></a>3 连接TTL转USB接口</h2><p><img src="/assets/zh-cn/deviceDev/WiFiSOC/dev/image33.png" alt="Alt text"></p>
