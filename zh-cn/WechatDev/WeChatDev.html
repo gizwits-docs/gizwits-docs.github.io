@@ -695,7 +695,7 @@
 <p> 初始化和连接设备，并非同步操作，因此，如果只是简单的先后执行，可能会出错。因此，建议可以将连接设备的操作，放在初始化的回调函数中，保证执行的先后关系。</p>
 <p>连接成功后，我们就可以收到设备上报的数据了。上报的数据通过回调函数：gizwits.onReceivedAttrs。该回调函数会有一个回调值（参数），这个回调值的格式如下：</p>
 <p><img src="/assets/zh-cn/WechatDev/wechat_15.png" alt="Alt text"></p>
-<h1 id="手动读取：设备数据点"><a href="#手动读取：设备数据点" class="headerlink" title="手动读取：设备数据点"></a>手动读取：设备数据点</h1><p>获取设备的数据点，也很简单，只需调用gizwits.read()方法，不需要任何参数。调用此方法，可以马上获取一次，同样，数据也是通过回调函数 gizwits.onReceivedAttrs，或者gizwits.onReceivedRaw来获取。</p>
+<h1 id="手动读取：设备数据点"><a href="#手动读取：设备数据点" class="headerlink" title="手动读取：设备数据点"></a>手动读取：设备数据点</h1><p>获取设备的数据点，也很简单，只需调用gizwits.read()方法，需要传入did。调用此方法，可以马上获取一次，同样，数据也是通过回调函数 gizwits.onReceivedAttrs，或者gizwits.onReceivedRaw来获取。</p>
 <h1 id="连接错误"><a href="#连接错误" class="headerlink" title="连接错误"></a>连接错误</h1><p>当websocket连接错误时，会调用gizwits.onError函数，如有需要，可以重写该函数；回调值是错误信息：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gizwits.onError = function(value)&#123;</span><br><span class="line">    console.log(<span class="string">"error!!!!:::::"</span>, value.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="设备上下线"><a href="#设备上下线" class="headerlink" title="设备上下线"></a>设备上下线</h1><p>当设备发生上线，或者下线的事件时，gizwits服务，会调用gizwits.onOnlineStatusChanged 回调函数.</p>
