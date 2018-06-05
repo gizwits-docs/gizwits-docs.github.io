@@ -465,19 +465,15 @@
       </div>
       <h1 id="产测简介"><a href="#产测简介" class="headerlink" title="产测简介"></a>产测简介</h1><p>产测是生产环节中重要的部分，保证了产品的质量，提升自身产品形象。机智云产测工具为批量生产的产品提供了方便快捷的模块与MCU产测方式。在大型生产时，保证模块与MCU可正常使用。</p>
 <p>该文档为产测使用流程，硬件如何开启产测模式请参考产品开发资源中MCU开发资源文档。</p>
-<h1 id="产测前准备"><a href="#产测前准备" class="headerlink" title="产测前准备"></a>产测前准备</h1><h2 id="1-产品上架"><a href="#1-产品上架" class="headerlink" title="1.产品上架"></a>1.产品上架</h2><p>使用产测工具，必须让产品先上架。由产品创建者向机智云申请发布。机智云将免费为你提供人工审核以及严谨的测试。</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/test/1478080883108.png" alt="name"></p>
-<p>按要求填写发布申请表单，提交申请后寄送设备样品，我们会在5～7个工作日完成审核工作。</p>
-<p>申请发布成功后，才可进行产测文件生成以及产测App下载。</p>
-<h2 id="2-生成产测文件"><a href="#2-生成产测文件" class="headerlink" title="2.生成产测文件"></a>2.生成产测文件</h2><p>   <img src="/assets/zh-cn/deviceDev/debug/test/1478081465319.png" alt="name"></p>
+<h1 id="产测前准备"><a href="#产测前准备" class="headerlink" title="产测前准备"></a>产测前准备</h1><h2 id="1-生成产测文件"><a href="#1-生成产测文件" class="headerlink" title="1.生成产测文件"></a>1.生成产测文件</h2><p>   <img src="/assets/zh-cn/deviceDev/debug/test/1478081465319.png" alt="name"></p>
 <p>产品上架后，在产品服务中点击“添加配置文件”。</p>
 <p> <img src="/assets/zh-cn/deviceDev/debug/test/1478081489006.png" alt="name"></p>
 <p>输入配置名称后，点击“添加步骤”添加需要进行的产测步骤，产测数据点为设备定义数据点。每点击一次“添加步骤”可以添加一个数据点步骤。指令添加完成后点击保存，会生成一个产测文件。</p>
 <p><strong>注意：</strong><br><strong>当产测步骤的数据点为只读类型数据点时，如故障报警，红外监测，温度监测等数据点，需要先配置相应设备环境，触发设备产生相应状态，才能产测成功，否则产测必定失败。（如添加红外监测开启，那么需要先配置设备所处环境，在该环境下能触发设备的红外监测开启）。</strong>
  </p>
-<h2 id="3-下载产测app"><a href="#3-下载产测app" class="headerlink" title="3.下载产测app"></a>3.下载产测app</h2><p>在产测文件下方点击“产测App下载”即可扫码下载App至手机中。（产测App只提供android版本）</p>
+<h2 id="2-下载产测app"><a href="#2-下载产测app" class="headerlink" title="2.下载产测app"></a>2.下载产测app</h2><p>在产测文件下方点击“产测App下载”即可扫码下载App至手机中。（产测App只提供android版本）</p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/test/1478081515011.png" alt="name"></p>
-<h2 id="4-下载产测文件"><a href="#4-下载产测文件" class="headerlink" title="4.下载产测文件"></a>4.下载产测文件</h2><p>   <img src="/assets/zh-cn/deviceDev/debug/test/1478081550135.png" alt="name"></p>
+<h2 id="3-下载产测文件"><a href="#3-下载产测文件" class="headerlink" title="3.下载产测文件"></a>3.下载产测文件</h2><p>   <img src="/assets/zh-cn/deviceDev/debug/test/1478081550135.png" alt="name"></p>
 <p>打开产测app后，点击下载配置文件会弹出二维码扫描框，点开设备产品配置文件下载，扫描二维码，手机端即可得到产测文件。</p>
 <p> <img src="/assets/zh-cn/deviceDev/debug/test/1478081584399.png" alt="name"></p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/test/1478082019314.png" alt="name"></p>
@@ -508,10 +504,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="5-搭建路由器环境"><a href="#5-搭建路由器环境" class="headerlink" title="5.搭建路由器环境"></a>5.搭建路由器环境</h2><p>5.1.路由器允许转发局域网内的广播包，不能勾选“AP隔离”选项。</p>
-<p>5.2.路由器要用2.4GHz的频段。</p>
-<p>5.3.路由器不能对2415，12414，12416这三个端口的访问加以限制。</p>
-<p>5.4.厂测之前需要配置路由器的信息，按照如下信息配置：</p>
+<h2 id="4-搭建路由器环境"><a href="#4-搭建路由器环境" class="headerlink" title="4.搭建路由器环境"></a>4.搭建路由器环境</h2><p>4.1.路由器允许转发局域网内的广播包，不能勾选“AP隔离”选项。</p>
+<p>4.2.路由器要用2.4GHz的频段。</p>
+<p>4.3.路由器不能对2415，12414，12416这三个端口的访问加以限制。</p>
+<p>4.4.厂测之前需要配置路由器的信息，按照如下信息配置：</p>
 <table>
 <thead>
 <tr>
@@ -531,7 +527,7 @@
 </tbody>
 </table>
 <p>在产测过程中可以使用两个路由器来进行测试，分别设置ssid为GIZWITS_TEST_1或者GIZWITS_TEST_2，密码一致。测试过程中，模组会随机连接两个路由器，提高产测效率。</p>
-<p>5.5.产测路由器不能处于级联模式，必须使用独立路由器进行产测。</p>
+<p>4.5.产测路由器不能处于级联模式，必须使用独立路由器进行产测。</p>
 <h1 id="开始产测"><a href="#开始产测" class="headerlink" title="开始产测"></a>开始产测</h1><p>把设备配置成厂测模式，这时候设备的wifi模组会自动连上GIZWITS_TEST_1或者GIZWITS_TEST_2路由器。装有厂测APP的手机也需要连到这个路由器。</p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/test/1478082261395.png" alt="name"></p>
 <p>点击app端开始测试按钮，进入产测状态，界面显示正在搜索设备。当有设备被发现的时候，将对设备进行测试。</p>
