@@ -463,7 +463,7 @@
         <div class="title">企业API</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>企业API是机智云为接入机智云平台的企业开发者提供的开放API服务，使用企业API的企业将设备接入到机智云平台后，通常还有进一步基于接入机智云设备数据开展企业某个垂直领域的业务需求。企业API为企业提供企业视角全局的设备管理、数据分析等功能，让企业更关注业务管理系统本身，减少不必要的开发成本。</p>
+      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>企业API是机智云为接入机智云平台 的企业开发者提供的开放API服务，使用企业API的企业将设备接入到机智云平台后，通常还有进一步基于接入机智云设备数据开展企业某个垂直领域的业务需求。企业API为企业提供企业视角全局的设备管理、数据分析等功能，让企业更关注业务管理系统本身，减少不必要的开发成本。</p>
 <h1 id="企业API接口列表"><a href="#企业API接口列表" class="headerlink" title="企业API接口列表"></a>企业API接口列表</h1><p>根据机智云提供的服务，企业 API 提供如下功能:</p>
 <ul>
 <li><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#/授权" target="_blank" rel="noopener">授权</a>：企业开发者获取token的功能。</li>
@@ -2729,10 +2729,10 @@ http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/locations
 </table>
 <h4 id="返回例子-16"><a href="#返回例子-16" class="headerlink" title="返回例子"></a>返回例子</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"gid"</span>: <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">"total"</span>: <span class="number">4</span>,</span><br><span class="line">  <span class="attr">"location"</span>: &#123;</span><br><span class="line">    <span class="attr">"China"</span>: &#123;</span><br><span class="line">      <span class="attr">"count"</span>: <span class="number">3</span>,</span><br><span class="line">      <span class="attr">"Guangdong"</span>: &#123;</span><br><span class="line">        <span class="attr">"count"</span>: <span class="number">3</span>,</span><br><span class="line">        <span class="attr">"Guangzhou"</span>: <span class="number">3</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="设备概览"><a href="#设备概览" class="headerlink" title="设备概览"></a>设备概览</h2><p><strong>此接口仅可在国内环境使用</strong></p>
-<p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_devices_locations" target="_blank" rel="noopener">调试接口</a></p>
+<p><a href="http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_summary" target="_blank" rel="noopener">调试接口</a></p>
 <p>用于获取最近的新增激活和活跃设备数报表</p>
 <h4 id="请求类型及地址-19"><a href="#请求类型及地址-19" class="headerlink" title="请求类型及地址"></a>请求类型及地址</h4><pre><code> GET
-http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/locations
+http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/summary
 </code></pre><h4 id="请求参数-19"><a href="#请求参数-19" class="headerlink" title="请求参数"></a>请求参数</h4><table>
 <thead>
 <tr>
