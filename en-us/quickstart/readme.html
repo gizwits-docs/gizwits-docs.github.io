@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>Five Minutes to Understand Gizwits - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Five Minutes to Understand Gizwits-Gizwits">
+  <meta name="keywords" content="Five Minutes to Understand Gizwits docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+
+      <a href="http://www.gizwits.com" class="logo">
+        <img src="/images/logo.png" alt="logo"> 
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+    
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+    
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA">
+              Tutorial &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Intro in 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Device Accessing</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">App Development</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA"><a href="/en-us/quickstart.html">Device</a></li>
+          
+        
+          
+            <li class="levelA">
+              App &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">ios SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Android SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Wechat SDK</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Business Cloud</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">D3</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Global Deployment</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA"><a href="/en-us/quickstart.html">API</a></li>
+          
+        
+      </ul>
+    </span>
+  
+    <span class="pure-u-3-24 lang-switch-wrapper">
+      
+      <i class="fa fa-globe" aria-hidden="true"></i> 
+      
+        <button class="lang-switch" data-lang="zh-cn">中文</button>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>  
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Five Minutes to Understand Gizwits</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>This article mainly introduces the process of self-service access to Gizwits, and helps you to quickly understand the principle of access to the Gizwits platform through the provided practical case study “Gizwits Debugging App controls a virtual device in cloud”. Even if you have not yet developed any device, you can also get started rapidly.</p>
+<h1 id="Gizwits-Access-Process"><a href="#Gizwits-Access-Process" class="headerlink" title="Gizwits Access Process"></a>Gizwits Access Process</h1><p><img src="../../../assets/en-us/readme/readme-1.png" alt="Gizwits Access Process"></p>
+<h2 id="1-Register-as-a-developer-of-Gizwits"><a href="#1-Register-as-a-developer-of-Gizwits" class="headerlink" title="1. Register as a developer of Gizwits"></a>1. Register as a developer of Gizwits</h2><p>Before using the Gizwits platform services, you need to register a Gizwits developer account first. Click here to register</p>
+<p>Gizwits offers individual developer account and enterprise developer account, as shown in the figure below. If you are a enterprise user, please be sure to apply for a enterprise developer account (which provides more services).</p>
+<p><img src="../../../assets/en-us/readme/readme-2.png" alt="Register as a developer of Gizwits"></p>
+<h2 id="2-Create-a-product"><a href="#2-Create-a-product" class="headerlink" title="2. Create a product"></a>2. Create a product</h2><p>As shown in the figure, click “Create a new product” in the developer center, enter the product name and select the corresponding access method to complete the creation of the “new product.” The created product needs to define the product data points. The data points refers to the functional abstraction that the product has, which are represented by different data types. For example, the simplest device “switch” has the following functions: On and Off, which can be abstracted as one data point with boolean type. 0 means On, 1 means Off.</p>
+<p>Data points are an important attribute of a product. Therefore, the first step for product intellectualization is to clarify product functions and create corresponding data points on the platform to describe its functions. Subsequently, the MCU protocol for embedded development will be generated automatically based on the created data points. According to the automatically generated protocol, developers can complete the development of smart devices.</p>
+<p>Step 1: Click “Create a new product”<br><img src="../../../assets/en-us/readme/readme-3.png" alt="Create a new product"></p>
+<p>Step 2: Type the product name and select an access method<br><img src="../../../assets/en-us/readme/readme-4.png" alt="Type the product name and select an access method"></p>
+<p>Step 3: Create data points<br><img src="../../../assets/en-us/readme/readme-5.png" alt="Create data points"></p>
+<p>Click “New data point” to add switch on/off data point.</p>
+<p><img src="../../../assets/en-us/readme/readme-6.png" alt="New data point"></p>
+<p>For further information of this step, please click here for reference.</p>
+<p>Step 4: Download the automatically generated protocol by the cloud</p>
+<p>As shown in the figure, click “Development wizard” in the developer center to find the MCU development resources to view the protocol automatically generated by the cloud based on the defined data points.</p>
+<p><img src="../../../assets/en-us/readme/readme-7.png" alt="Development wizard"></p>
+<h2 id="3-Device-and-Application-Development"><a href="#3-Device-and-Application-Development" class="headerlink" title="3. Device and Application Development"></a>3. Device and Application Development</h2><p><strong>Device connection</strong><br><img src="../../../assets/en-us/readme/readme-8.png" alt="Device connection"></p>
+<p>Developers or R&amp;D personnel of enterprises simply embed the communication module burnt in with Gizwits connection protocol GAgent on the smart device that is being developed, so that devices can be connected to Gizwits cloud and intelligentized. The communication modules include Wi-Fi, GPRS and other mainstream networking types. Other connection solutions are also available, such as BLE, GSM, CDMA, Zigbee, and LoRa.</p>
+<p>The case study of this article focuses on Wi-Fi devices. To speed up R&amp;D, it is recommended to use Gizwits certified modules, models, and GAgent. Click here for reference.</p>
+<p><strong>Application connection</strong></p>
+<p>Developers or R&amp;D personnel of enterprises simply integrate the App SDK provided by Gizwits into the mobile applications being developed, which then can connect to the Gizwits platform to control smart devices.</p>
+<p>The case study of this article focuses on how to use Gizwits debugging APP to control devices. If you need to quickly develop an App,  it is recommended to use the App open source framework provided by Gizwits for rapid development. Click here for iOS open source framework. Click here for Android open source framework.</p>
+<h2 id="4-Debugging-products"><a href="#4-Debugging-products" class="headerlink" title="4. Debugging products"></a>4. Debugging products</h2><p>After product creation in the Developer Center, you can launch smart product development with the help of related technical documents in Gizwits Documentation Center. </p>
+<p>During debugging, the device will be connected to the Gizwits sandbox server (test server), which provides the developer with a complete testing environment and some functions of Gizwits. After the product development is completed, it is required to apply for roll out, and the completed product will be redeployed to the production server.</p>
+<h2 id="5-Applying-for-roll-out"><a href="#5-Applying-for-roll-out" class="headerlink" title="5. Applying for roll out"></a>5. Applying for roll out</h2><p>When the development is completed for devices, it is required to roll out the product. The product will be deployed on the servers of the official production environment of Gizwits, and an independent cloud operating environment will be allocated for your device for free, ensuring that your devices is available 24 hours a day for end users. At the same time, after the products are officially released, you will enjoy more free value-added services frome Gizwits, including statistical analysis of smart devices, open platform display, and various meticulous technical support services.</p>
+<p><img src="../../../assets/en-us/readme/readme-9.png" alt="Virtual device"></p>
+<h2 id="6-Mass-production"><a href="#6-Mass-production" class="headerlink" title="6. Mass production"></a>6. Mass production</h2><p>After rolling out product, the manufacturers and Gizwits sign the “GDCS Agreement” to formally mass-manufacture the product and connect them. The mass-manufactured products will be monitored by Gizwits technicians for 24 hours to ensure the stable operation.</p>
+<h1 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h1><p>Gizwits Self-service Development Platform provides a complete suite of simulation development tools, including virtual devices and debugging Apps. Regardless of whether you have already completed a smart device, you can understand the principle of Gizwits access through virtual devices and debugging Apps when you use Gizwits for the first time, which allows you to experience intuitive services of Gizwits access.</p>
+<p>The virtual device is a smart hardware simulator that can be automatically generated by Gizwits cloud. It can simulate the smart device to be developed or being developed to perform device control by cloud and App, and data reporting.</p>
+<p><img src="../../../assets/en-us/readme/readme-10.png" alt="Smart hardware simulator"></p>
+<p>In the course of development, if the formal smart hardware product has not yet been fully completed, developers or R&amp;D personnel of enterprises can use the “virtual device” to debug and verify its functions together with formal controlling Apps so as to accelerate R&amp;D and reduce costs.</p>
+<p>Gizwits debugging App is the world’s first-in-class debugging tool for IoT devices. Its functions can be customized according to the actual needs of smart hardware products. It can automatically generate responsive control pages with user registration, login, and logout processes, and complete the basic operations such as configuration of network access, device searching, device binding, device login, device control, remote control, status update and local/remote switching etc. for smart devices, as well as debugging.</p>
+<p>During development, if the formal controlling App of the product is not yet fully developed, developers or R&amp;D personnel of enterprises can easily use the “debugging App” to debug and verify the formal product functions, so as to accelerate the development and reduce costs.</p>
+<p>In the following, we use the actual case study “Gizwits debugging App to control cloud-based virtual device”, to get you familiar with the Gizwits connection service and complete the process of getting started. The detailed steps are as follows:</p>
+<h2 id="1-Install-Gizwits-debugging-App"><a href="#1-Install-Gizwits-debugging-App" class="headerlink" title="1. Install Gizwits debugging App"></a>1. Install Gizwits debugging App</h2><p>Click here to download and install the Gizwits debugging App.</p>
+<p><img src="../../../assets/en-us/readme/readme-11.png" alt="Install Gizwits debugging App"></p>
+<h2 id="2-Start-the-virtual-device"><a href="#2-Start-the-virtual-device" class="headerlink" title="2. Start the virtual device"></a>2. Start the virtual device</h2><p>Step 1: Go to the developer center, click on the selection bar in the upper left corner and select “Gizwits lab”:<br><img src="../../../assets/en-us/readme/readme-12.png" alt="Start the virtual device"></p>
+<p>Step 2: Select a smart hardware product(a virtual device)<br>We recommend that novices choose those in “products under development” to simulate the real development process. You can choose any one in the section of “products under development” for practice.</p>
+<p><img src="../../../assets/en-us/readme/readme-13.png" alt="Select a smart hardware product"></p>
+<p>We select “Gizwits Smart Light 2nd Generation” and click “Online device debugging” in the red box to jump to the next page “Virtual device”.</p>
+<p>Step 3: Start the virtual device</p>
+<p><img src="../../../assets/en-us/readme/readme-14.png" alt="Start the virtual device"></p>
+<p>Click “Start virtual device” in the red box to navigate to online debugging page for the virtual device, you will see three functional areas of “Debug tips”, “Simulating device data reporting”, “Communication log”:</p>
+<ul>
+<li><p>The button “Show QR Code” in the “Debug tips” is used to bind the virtual device to the Gizwits debugging App.</p>
+</li>
+<li><p>“Simulating device data reporting” is used to report data by the virtual device in the developer center.</p>
+</li>
+<li><p>“Communication log” is used to display “Accept data sent by App” and “data reporting from virtual devices”</p>
+</li>
+</ul>
+<p><img src="../../../assets/en-us/readme/readme-15.png" alt="Online debugging"></p>
+<h2 id="3-Use-Gizwits-debugging-App-to-bind-virtual-devices"><a href="#3-Use-Gizwits-debugging-App-to-bind-virtual-devices" class="headerlink" title="3. Use Gizwits debugging App to bind virtual devices"></a>3. Use Gizwits debugging App to bind virtual devices</h2><p>The following is the steps of binding the virtual device with the Gizwits debugging App. Please keep your network available during the operation:</p>
+<p><img src="../../../assets/en-us/readme/readme-16.png" alt="Use Gizwits debugging App to bind virtual devices"></p>
+<p>Step 1: Click “Show QR Code” in the red box of “Debug tips” to display the virtual device QR Code</p>
+<p><img src="../../../assets/en-us/readme/readme-17.png" alt="Show QR Code"></p>
+<p>Step 2: Login in Gizwits debugging App and bind the device</p>
+<p><img src="../../../assets/en-us/readme/readme-18.png" alt="Login in Gizwits debugging App and bind the device"></p>
+<p>After using debugging App to scan the virtual device QR Code and binding the selected virtual device successfully, “Gizwits Smart Light 2nd Generation” will be showed in the “bound devices” of “My Devices” on the debugging App.</p>
+<p>Step 3: Control the virtual device using Gizwits debugging App</p>
+<p><img src="../../../assets/en-us/readme/readme-19.png" alt="Control the virtual device using Gizwits debugging App"></p>
+<p>Click “Gizwits Smart Light 2nd Generation” in the red box to navigate to the debugging page of the virtual device. Take the “switch on/off” function as an example, set the “switch on/off” field of the smart light with 1.</p>
+<p><img src="../../../assets/en-us/readme/readme-20.png" alt="Set the &quot;switch on/off&quot; field of the smart light with 1"></p>
+<p>At this point, you can see that the “switch on/off” field of the virtual device in the cloud is enabled and displayed as “1”. Meanwhile, “Communicating log” displays “Accept data sent by App” and automatically print the corresponding communication log.</p>
+<p>(Note: Other operations can be performed following the above steps, you can try each of them one by one!)</p>
+<h2 id="4-Virtual-devices-reporting-data-to-the-debugging-App"><a href="#4-Virtual-devices-reporting-data-to-the-debugging-App" class="headerlink" title="4. Virtual devices reporting data to the debugging App"></a>4. Virtual devices reporting data to the debugging App</h2><p><img src="../../../assets/en-us/readme/readme-21.png" alt="Virtual devices reporting data to the debugging App"></p>
+<p>Set the “Adjustment mode” of the virtual device in the cloud with “Color temperature mode” option, and click the “push” button. The virtual device will report the data to the Gizwits debugging App. You can see that the “Adjustment mode” field on the Gizwits Debugging App has changed to “Color temperature mode”. At the same time, “Virtual devices reporting data” will be displayed on the “Communication log” for the virtual device in the cloud, and the communication log will be printed automatically.</p>
+<p>Gizwits Debugging App automatically updates its UI after receiving the data pushed by the virtual device.</p>
+<p><img src="../../../assets/en-us/readme/readme-22.png" alt="Gizwits Debugging App automatically updates its UI"></p>
+<p>(Note: Other operations can be performed following the above steps, you can try each of them one by one!)</p>
+<p>OK, congratulations! You have quickly understood and experienced the connection service of Gizwits through the virtual device and Gizwits Debugging App. Now get started!</p>
+<p>To learn about the fast device connection to the Gizwits cloud, please click here</p>
+<p>To learn more about the rapid App development process, please click here</p>
+<p>To apply for Gizwits open source development kit GoKit, please click here</p>
+<p>To join our developer community and interact with 10,000 developers, please click here</p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="分享">
+          <span>分享</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="项目登记">
+      <span>项目登记</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=fa1376e1d7301caad0eaad3833d277cf"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,3941 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>Enterprise API - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Enterprise API-Gizwits">
+  <meta name="keywords" content="Enterprise API docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+
+      <a href="http://www.gizwits.com" class="logo">
+        <img src="/images/logo.png" alt="logo"> 
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+    
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+    
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA">
+              Tutorial &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Intro in 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Device Accessing</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">App Development</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA"><a href="/en-us/quickstart.html">Device</a></li>
+          
+        
+          
+            <li class="levelA">
+              App &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">ios SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Android SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Wechat SDK</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Business Cloud</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">D3</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Global Deployment</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA"><a href="/en-us/quickstart.html">API</a></li>
+          
+        
+      </ul>
+    </span>
+  
+    <span class="pure-u-3-24 lang-switch-wrapper">
+      
+      <i class="fa fa-globe" aria-hidden="true"></i> 
+      
+        <button class="lang-switch" data-lang="zh-cn">中文</button>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>  
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Enterprise API</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>The Enterprise API is an open API service for those enterprise who has already connected to Gizwits cloud platform and want to go further to bring device data into some vertical industry in order to unlock its business insights. Using the data generated by the enterprise in the Gizwits cloud platform, it provides companies with device management, data analytics, and other functions at the enterprise level and with a holistic viewpoint, which allows you to focus on business management system itself and reduce unnecessary development costs and time.</p>
+<h1 id="APIs"><a href="#APIs" class="headerlink" title="APIs"></a>APIs</h1><p>Based on the services powered by Gizwits, Enterprise API accomplishes following functions:</p>
+<ul>
+<li>Authorization: Get a token for enterprise developers. </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>API List</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>post_v1_products_product_key_access_token</td>
+<td>Get required access permissions that the caller has on Enterprise API</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Product Management: Get product data points.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>API List</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get_v1_products_product_key_datapoint</td>
+<td>Get data point information for a given product</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>User Management: Search for registered users and binding users etc.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>API List</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get_v1_products_product_key_users_search</td>
+<td>Search for registered user information </td>
+</tr>
+<tr>
+<td>get_v1_users_search</td>
+<td>Search for binding user information</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Device Management: Get device did, device details, device enumeration, device online and offline records, communication logs, historical data in 2 days by default and control remote devices etc.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>API List</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get_v1_products_product_key_devices</td>
+<td>Get device did</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_device_detail</td>
+<td>Get device details</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_devices_search</td>
+<td>Enumerate devices</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_devices_did_data</td>
+<td>Get KV value of a given device in 2 days by default </td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_devices_did_online</td>
+<td>Get device online and offline records</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_devices_did_cmd</td>
+<td>Get device raw instructions of a given device in 2 days by default</td>
+</tr>
+<tr>
+<td>post_v1_products_product_key_devices_did_control</td>
+<td>Control a device remotely </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Device Grouping: Create a device group, list all devices of a device group, delete a device group, update a device group and list all MACs under a given device group etc.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>API List</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get_v1_products_product_key_device_groups</td>
+<td>Get the device group tree structure of a given product</td>
+</tr>
+<tr>
+<td>post_v1_products_product_key_device_groups</td>
+<td>Create a device group</td>
+</tr>
+<tr>
+<td>delete_v1_products_product_key_device_groups_gid</td>
+<td>Delete a device group</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_device_groups_gid</td>
+<td>List all MACs under a given device group</td>
+</tr>
+<tr>
+<td>put_v1_products_product_key_device_groups_gid</td>
+<td>Update a device group</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Binding Management: Bind and unbind devices.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>API List</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>post_v1_products_product_key_devices_bindings</td>
+<td>Bind devices</td>
+</tr>
+<tr>
+<td>delete_v1_products_product_key_devices_bindings</td>
+<td>Unbind devices</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Device Reporting: Provides device activation reports, geographical distribution, overview, activation details, activity details, device faults, and device alarm reports.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>API List</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get_v1_products_product_key_devices_report_activation</td>
+<td>Get device activation statistics report</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_devices_locations</td>
+<td>Get device geographical distribution</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_summary</td>
+<td>The number of recent activations and active devices</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_incr_devices</td>
+<td>Custom query for activated device details</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_active_devices</td>
+<td>Custom query for active device details</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_devices_report_liveness_history</td>
+<td>Query historical reports of active devices by day, week, and month</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_devices_report_rt</td>
+<td>Query device status report</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_fault_report_devices</td>
+<td>Get faulty device report</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_alert_report_devices</td>
+<td>Get alarm device report</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_fault_report_events</td>
+<td>Get device fault report</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_fault_alert_events</td>
+<td>Get device alarm report</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>User Reporting：Provides new user report, active enterprise user report, geographical distribution of users, and total number of users.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>API List</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get_v1_products_product_key_users_report_new</td>
+<td>This refers to the new users who has bound the product with its PK</td>
+</tr>
+<tr>
+<td>get_v1_users_liveness_total</td>
+<td>Active enterprise users</td>
+</tr>
+<tr>
+<td>get_v1_users_location</td>
+<td>User geographical distribution</td>
+</tr>
+<tr>
+<td>get_v1_products_product_key_users_report_total</td>
+<td>The total number of users</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Specification"><a href="#Specification" class="headerlink" title="Specification"></a>Specification</h1><h2 id="1-Request-methods"><a href="#1-Request-methods" class="headerlink" title="1. Request methods"></a>1. Request methods</h2><p>The APIs defined in this document is based on the HTTP/HTTPS protocol. Please note the request methods marked in the protocol which perform different actions through GET, PUT, and DELETE.</p>
+<h2 id="2-Request-URL"><a href="#2-Request-URL" class="headerlink" title="2. Request URL"></a>2. Request URL</h2><p>The variables included in each API URL with the ${ } need to be substituted altogether for the corresponding variables. For example, ${product_key} indicates that the product_key value needs to be assigned to the API URL, ${token value} indicates that it needs to be replaced by the token obtained through the authorization API, and ${did} indicates that it needs to be replaced with the specific did value.</p>
+<h2 id="3-Request-parameters"><a href="#3-Request-parameters" class="headerlink" title="3. Request parameters"></a>3. Request parameters</h2><p>The types of HTTP request parameters are generally categorized into three types, the names of which are Header, URL path and Body. Header indicates that the parameter is in the HTTP request header; the URL path indicates that the parameter is passed in the URL path; Body indicates that it is in the request body, and usually accepts data in JSON format.</p>
+<h2 id="4-HTTP-request-header"><a href="#4-HTTP-request-header" class="headerlink" title="4. HTTP request header"></a>4. HTTP request header</h2><p>Those APIs of device management and device reporting in this document should be accessed with the token at the request header to verify whether the caller has the permission on it. The token value is obtained by the authorization API.<br>The request header requires the following format.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Content-Type: application/json</span><br><span class="line">Authorization: token $&#123;token value&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Note: The ${} should be excluded from the ${token value}, just add the token value next to the token. For example: Authorization: token efbekskdklllsF</p>
+<h2 id="5-HTTP-response-header"><a href="#5-HTTP-response-header" class="headerlink" title="5. HTTP response header"></a>5. HTTP response header</h2><p>If the action is successful, the service sends back a response which looks like this:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">X-RateLimit-Limit: 60     //Request limit </span><br><span class="line">X-RateLimit-Remaining: 56 //Remaining visits</span><br><span class="line">X-RateLimit-Reset: 1372700873 //Request frequency reset time, TS type</span><br></pre></td></tr></table></figure></p>
+<h2 id="6-Token-lifecycle"><a href="#6-Token-lifecycle" class="headerlink" title="6. Token lifecycle"></a>6. Token lifecycle</h2><p>The Token value is valid for 7 days. The expired_at field returned by the authorization API is the expiration timestamp. If the current timestamp &gt; expired_at timestamp, you need to re-acquire the token using “Get an access token”.</p>
+<h2 id="7-Request-quota"><a href="#7-Request-quota" class="headerlink" title="7. Request quota"></a>7. Request quota</h2><p>Enterprise API allows you to make 3600 requests in one hour by default. The request will fail if it exceeds the request limit. After one hour, the API call is resumed. For details, see the system error code 5013 in the error code table.</p>
+<h1 id="Online-debugger"><a href="#Online-debugger" class="headerlink" title="Online debugger"></a>Online debugger</h1><p>We provide Enterprise API debugging tools. The corresponding debug link is given in each API description.<br>The following example uses user management to illustrate the use of API debugging tools:</p>
+<ul>
+<li>Click user management to enter the API debugging page</li>
+<li>There is a red exclamation mark on the right side of the API. After clicking it, a dialog box pops up prompting for the required header information.</li>
+<li>The API needs to enter the X-Gizwits-Application-Id, get the AppID according to the previous instructions and fill it in, click “Authorize” to authorize</li>
+<li>The page is automatically refreshed and the exclamation mark turns blue, indicating that the required header information has been filled in (filled does not necessarily indicate that the value is correct. If the value is incorrect, the corresponding result will be returned in the response)</li>
+<li>Enter the parameter value in the input box (click the Example Value yellow box to the right of the parameter to enter the sample JSON quickly)</li>
+<li>Click the “Try” button to complete the API request</li>
+<li>The request completes, displaying the equivalent curl statement of local call, request URL, response body, response code, and response header</li>
+</ul>
+<h1 id="Authorization"><a href="#Authorization" class="headerlink" title="Authorization"></a>Authorization</h1><h2 id="Get-an-access-token"><a href="#Get-an-access-token" class="headerlink" title="Get an access token"></a>Get an access token</h2><p>Debug console</p>
+<h3 id="Request-method-and-URL"><a href="#Request-method-and-URL" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/access_token</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters"><a href="#Request-parameters" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>enterprise_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>body</td>
+<td>Enterprise ID</td>
+</tr>
+<tr>
+<td>enterprise_secret</td>
+<td>string</td>
+<td>Yes</td>
+<td>body</td>
+<td>Enterprise secret</td>
+</tr>
+<tr>
+<td>product_secret</td>
+<td>string</td>
+<td>Yes</td>
+<td>body</td>
+<td>Product secret</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters"><a href="#Response-parameters" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>User token</td>
+</tr>
+<tr>
+<td>expire_at</td>
+<td>integer</td>
+<td>Token expiration time (timestamp)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response"><a href="#Example-response" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;token&quot;: &quot;89d753a234ef42cd90f75da7489e78a4&quot;,</span><br><span class="line">  &quot;expired_at&quot;: 1517897923</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Product-Management"><a href="#Product-Management" class="headerlink" title="Product Management"></a>Product Management</h1><h2 id="Get-product-data-points"><a href="#Get-product-data-points" class="headerlink" title="Get product data points"></a>Get product data points</h2><p>Debug console</p>
+<h3 id="Request-method-and-URL-1"><a href="#Request-method-and-URL-1" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/datapoint</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-1"><a href="#Request-parameters-1" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-1"><a href="#Response-parameters-1" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Product name</td>
+</tr>
+<tr>
+<td>entities</td>
+<td>Array</td>
+<td>[EntitiyList]</td>
+</tr>
+<tr>
+<td>protocolType</td>
+<td>string</td>
+<td>Fixed value: standard</td>
+</tr>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>packetVersion</td>
+<td>string</td>
+<td>Fixed value: 0x00000004</td>
+</tr>
+<tr>
+<td>ui</td>
+<td>inline_model_7</td>
+<td>Mobile client UI definition </td>
+</tr>
+<tr>
+<td>EntitiyList</td>
+<td>——————</td>
+<td>——————</td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Fixed value: 0</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Fixed value: entity0</td>
+</tr>
+<tr>
+<td>display_name</td>
+<td>string</td>
+<td>Fixed value: Gizwits development kit</td>
+</tr>
+<tr>
+<td>attrs</td>
+<td>Array</td>
+<td>[AttrItem]</td>
+</tr>
+<tr>
+<td>inline_model_7</td>
+<td>——————</td>
+<td>——————</td>
+</tr>
+<tr>
+<td>object</td>
+<td>inline_model_1</td>
+<td></td>
+</tr>
+<tr>
+<td>sections</td>
+<td>Array</td>
+<td>UI section list:[SectionItem]</td>
+</tr>
+<tr>
+<td>AttrItem</td>
+<td>——————</td>
+<td>——————</td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Data point order</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Data point name</td>
+</tr>
+<tr>
+<td>display_name</td>
+<td>string</td>
+<td>Data point display name</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>string</td>
+<td>Fixed value: …..</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Read/write type, W: Read/write, R: Read only, N: Alarm, E: Fault</td>
+</tr>
+<tr>
+<td>data_type</td>
+<td>string</td>
+<td>Data type, bool: Boolean type; ‘uint8’, ‘uint16’, ‘uint32’: numeric type; enum: enumeration type; binary: extended type]</td>
+</tr>
+<tr>
+<td>uint_spec</td>
+<td>inline_model_4</td>
+<td>This field is available when data_type is uint8/uint16/uint32 </td>
+</tr>
+<tr>
+<td>enum</td>
+<td>Array</td>
+<td>This field is available when data_type is enum</td>
+</tr>
+<tr>
+<td>position</td>
+<td>inline_model_5</td>
+<td>Byte and Bit position description</td>
+</tr>
+<tr>
+<td>inline_model_1</td>
+<td>——————</td>
+<td>——————</td>
+</tr>
+<tr>
+<td>version</td>
+<td>integer</td>
+<td>Fixed value: 4</td>
+</tr>
+<tr>
+<td>showEditButton</td>
+<td>boolean</td>
+<td>Fixed value: false</td>
+</tr>
+<tr>
+<td>SectionItem</td>
+<td>——————</td>
+<td>——————</td>
+</tr>
+<tr>
+<td>elements</td>
+<td>Array</td>
+<td>[ElementItem]</td>
+</tr>
+<tr>
+<td>inline_model_4</td>
+<td>——————</td>
+<td>——————</td>
+</tr>
+<tr>
+<td>min</td>
+<td>integer</td>
+<td>Minimum value</td>
+</tr>
+<tr>
+<td>max</td>
+<td>integer</td>
+<td>Maximum value</td>
+</tr>
+<tr>
+<td>ratio</td>
+<td>number</td>
+<td>Ratio k</td>
+</tr>
+<tr>
+<td>addition</td>
+<td>integer</td>
+<td>Increment</td>
+</tr>
+<tr>
+<td>inline_model_5</td>
+<td>——————</td>
+<td>——————</td>
+</tr>
+<tr>
+<td>bit_offset</td>
+<td>integer</td>
+<td>Bit index, fixed to 0 if it’s a variable length protocol</td>
+</tr>
+<tr>
+<td>len</td>
+<td>integer</td>
+<td>length</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>string</td>
+<td>Unit, ‘bit’, ‘byte’</td>
+</tr>
+<tr>
+<td>byte_offset</td>
+<td>integer</td>
+<td>Byte index, fixed to 0 if it’s a variable length protocol</td>
+</tr>
+<tr>
+<td>ElementItem</td>
+<td>——————</td>
+<td>——————</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Data point display name</td>
+</tr>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>entity0.{Data point name}</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>‘QBooleanElement’, ‘QFloatElement’, ‘QRadioElement’, ‘QMultilineElement’, ‘QLabelElement’</td>
+</tr>
+<tr>
+<td>keyboardType</td>
+<td>string</td>
+<td>Keyboard type, fixed value: ,”NumbersAndPunctuation”</td>
+</tr>
+<tr>
+<td>maxLength</td>
+<td>integer</td>
+<td>This field is only available for type QMultilineElement, the maximum length, which is 2 times the defined length of the data point.</td>
+</tr>
+<tr>
+<td>items</td>
+<td>Array</td>
+<td>This field is only available for type QRadioElement, enumeration value list</td>
+</tr>
+<tr>
+<td>boolValue</td>
+<td>boolean</td>
+<td>This field is only available for type QBooleanElement, fixed value: false</td>
+</tr>
+<tr>
+<td>bind</td>
+<td>string</td>
+<td>This field is only available for type QFloatElement, fixed value: floatValue:float</td>
+</tr>
+<tr>
+<td>maximumValue</td>
+<td>number</td>
+<td>This field is only available for type QFloatElement, the maximum value</td>
+</tr>
+<tr>
+<td>minimumValue</td>
+<td>number</td>
+<td>This field is only available for type QFloatElement, the minimum value</td>
+</tr>
+<tr>
+<td>value</td>
+<td>integer</td>
+<td>This field is only available for type QFloatElement. fixed value: 0</td>
+</tr>
+<tr>
+<td>object</td>
+<td>inline_model_6</td>
+<td></td>
+</tr>
+<tr>
+<td>inline_model_6</td>
+<td>——————</td>
+<td>——————</td>
+</tr>
+<tr>
+<td>action</td>
+<td>string</td>
+<td>Fixed value: entity0</td>
+</tr>
+<tr>
+<td>bind</td>
+<td>Array[string]</td>
+<td>Fixed value: entity0.{data point name}</td>
+</tr>
+<tr>
+<td>perm</td>
+<td>string</td>
+<td>Read/Write type: W: Read/Write, R: Read Only, N: Alarm, E: Fault</td>
+</tr>
+<tr>
+<td>unit_spec</td>
+<td>inline_model_2</td>
+<td>This field is only available for type QFloatElement</td>
+</tr>
+<tr>
+<td>inline_model_2</td>
+<td>——————</td>
+<td>——————</td>
+</tr>
+<tr>
+<td>max</td>
+<td>integer</td>
+<td>The maximum value</td>
+</tr>
+<tr>
+<td>step</td>
+<td>integer</td>
+<td>Step value</td>
+</tr>
+<tr>
+<td>min</td>
+<td>integer</td>
+<td>The minimum value</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-1"><a href="#Example-response-1" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;微信宠物屋&quot;,</span><br><span class="line">  &quot;entities&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;id&quot;: 0,</span><br><span class="line">      &quot;display_name&quot;: &quot;机智云开发套件&quot;,</span><br><span class="line">      &quot;attrs&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;display_name&quot;: &quot;开关&quot;,</span><br><span class="line">          &quot;name&quot;: &quot;switch&quot;,</span><br><span class="line">          &quot;data_type&quot;: &quot;bool&quot;,</span><br><span class="line">          &quot;position&quot;: &#123;</span><br><span class="line">            &quot;bit_offset&quot;: 0,</span><br><span class="line">            &quot;len&quot;: 1,</span><br><span class="line">            &quot;unit&quot;: &quot;bit&quot;,</span><br><span class="line">            &quot;byte_offset&quot;: 0</span><br><span class="line">          &#125;,</span><br><span class="line">          &quot;type&quot;: &quot;status_writable&quot;,</span><br><span class="line">          &quot;id&quot;: 0,</span><br><span class="line">          &quot;desc&quot;: &quot;.....&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      &quot;name&quot;: &quot;entity0&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;protocolType&quot;: &quot;standard&quot;,</span><br><span class="line">  &quot;product_key&quot;: &quot;4244bf2d79694a259232431b6f2ef46a&quot;,</span><br><span class="line">  &quot;packetVersion&quot;: &quot;0x00000004&quot;,</span><br><span class="line">  &quot;ui&quot;: &#123;</span><br><span class="line">    &quot;object&quot;: &#123;</span><br><span class="line">      &quot;version&quot;: 4,</span><br><span class="line">      &quot;showEditButton&quot;: false</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;sections&quot;: [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;elements&quot;: [</span><br><span class="line">          &#123;</span><br><span class="line">            &quot;boolValue&quot;: false,</span><br><span class="line">            &quot;object&quot;: &#123;</span><br><span class="line">              &quot;action&quot;: &quot;entity0&quot;,</span><br><span class="line">              &quot;bind&quot;: [</span><br><span class="line">                &quot;entity0.switch&quot;</span><br><span class="line">              ],</span><br><span class="line">              &quot;perm&quot;: &quot;W&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;type&quot;: &quot;QBooleanElement&quot;,</span><br><span class="line">            &quot;key&quot;: &quot;entity0.switch&quot;,</span><br><span class="line">            &quot;title&quot;: &quot;开关&quot;</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="User-Management"><a href="#User-Management" class="headerlink" title="User Management"></a>User Management</h1><h2 id="Search-for-registered-users"><a href="#Search-for-registered-users" class="headerlink" title="Search for registered users"></a>Search for registered users</h2><p>This API is used to search for registered user information. </p>
+<p>Debug console</p>
+<h3 id="Request-method-and-URL-2"><a href="#Request-method-and-URL-2" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/users/search</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-2"><a href="#Request-parameters-2" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Gizwits-Enterprise-ID</td>
+<td>string</td>
+<td>Yes</td>
+<td>header</td>
+<td>enterprise id</td>
+</tr>
+<tr>
+<td>X-Gizwits-Enterprise-Secret</td>
+<td>string</td>
+<td>No</td>
+<td>header</td>
+<td>enterprise secret</td>
+</tr>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>query</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>appid</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Application ID</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>User name</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Mobile phone number</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Email address</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>The number of returned records, 20 by default </td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>The number of skipped records, 0 by default</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-2"><a href="#Response-parameters-2" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of records</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>The number of records returned</td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>The number of skipped records</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>string</td>
+<td>Previous page request address</td>
+</tr>
+<tr>
+<td>next</td>
+<td>string</td>
+<td>Next page request address</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>User ID</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>User name</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>Mobile phone number</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email address</td>
+</tr>
+<tr>
+<td>birthday</td>
+<td>string</td>
+<td>Birthday date</td>
+</tr>
+<tr>
+<td>is_anonymous</td>
+<td>boolean</td>
+<td>Whether it is an anonymous user</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>string</td>
+<td>Gender</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>Address</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>string</td>
+<td>Notes</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>integer</td>
+<td>Creation time</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>integer</td>
+<td>Update time</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-2"><a href="#Example-response-2" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;meta&quot;: &#123;</span><br><span class="line">    &quot;previous&quot;: null,</span><br><span class="line">    &quot;skip&quot;: 0,</span><br><span class="line">    &quot;total&quot;: 20,</span><br><span class="line">    &quot;limit&quot;: 20,</span><br><span class="line">    &quot;next&quot;:null</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;objects&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;username&quot;: null,</span><br><span class="line">      &quot;remark&quot;: null,</span><br><span class="line">      &quot;uid&quot;: &quot;25a5324c807842348f63ade277eb413a&quot;,</span><br><span class="line">      &quot;is_anonymous&quot;: true,</span><br><span class="line">      &quot;gender&quot;: null,</span><br><span class="line">      &quot;created_at&quot;: 1513135417,</span><br><span class="line">      &quot;updated_at&quot;: 1513135417,</span><br><span class="line">      &quot;phone&quot;: null,</span><br><span class="line">      &quot;birthday&quot;: null,</span><br><span class="line">      &quot;address&quot;: null,</span><br><span class="line">      &quot;email&quot;: null</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Search-for-binding-users"><a href="#Search-for-binding-users" class="headerlink" title="Search for binding users"></a>Search for binding users</h2><p>Debug console</p>
+<p>This API is used to search for binding user information.</p>
+<ul>
+<li>Only returns the device’s owner permissions when searching by device did, true: has ownership, false: does not have ownership</li>
+</ul>
+<h3 id="Request-method-and-URL-3"><a href="#Request-method-and-URL-3" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET  </span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/users/search</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-3"><a href="#Request-parameters-3" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Group ID</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Type</td>
+</tr>
+<tr>
+<td>val</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Query condition value</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>The number of returned records </td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>The number of skipped records</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-3"><a href="#Response-parameters-3" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of records</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>The number of returned records </td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>The number of skipped records</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>string</td>
+<td>Previous page request address</td>
+</tr>
+<tr>
+<td>next</td>
+<td>string</td>
+<td>Next page request address</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>User ID</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>User name</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>Mobile phone number</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email address</td>
+</tr>
+<tr>
+<td>birthday</td>
+<td>string</td>
+<td>Birthday date</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>Address</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>string</td>
+<td>Notes</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>integer</td>
+<td>Creation time</td>
+</tr>
+<tr>
+<td>is_anonymous</td>
+<td>boolean</td>
+<td>Whether it is an anonymous user</td>
+</tr>
+<tr>
+<td>auth_src</td>
+<td>object</td>
+<td>Third-party authentication information</td>
+</tr>
+<tr>
+<td>is_owner</td>
+<td>boolean</td>
+<td>Only returns the device’s ownership when searching by device did, true: has ownership, false: does not have ownership</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-3"><a href="#Example-response-3" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;meta&quot;: &#123;</span><br><span class="line">    &quot;previous&quot;: null,</span><br><span class="line">    &quot;skip&quot;: 0,</span><br><span class="line">    &quot;total&quot;: 30,</span><br><span class="line">    &quot;limit&quot;: 20,</span><br><span class="line">    &quot;next&quot;: null</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;objects&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;username&quot;: null,</span><br><span class="line">      &quot;remark&quot;: null,</span><br><span class="line">      &quot;uid&quot;: &quot;2ac80784a695a5f88f63ade277eb413a&quot;,</span><br><span class="line">      &quot;is_anonymous&quot;: true,</span><br><span class="line">      &quot;gender&quot;: null,</span><br><span class="line">      &quot;created_at&quot;: 1513135417,</span><br><span class="line">      &quot;auth_src&quot;: null,</span><br><span class="line">      &quot;phone&quot;: null,</span><br><span class="line">      &quot;birthday&quot;: null,</span><br><span class="line">      &quot;address&quot;: null,</span><br><span class="line">      &quot;email&quot;: null,</span><br><span class="line">      &quot;name&quot;: null</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Device-Management"><a href="#Device-Management" class="headerlink" title="Device Management"></a>Device Management</h1><h2 id="Get-device-did"><a href="#Get-device-did" class="headerlink" title="Get device did"></a>Get device did</h2><p>Debug console</p>
+<h3 id="Request-method-and-URL-4"><a href="#Request-method-and-URL-4" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/devices</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-4"><a href="#Request-parameters-4" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>mac</td>
+<td>string</td>
+<td>Yes</td>
+<td>query</td>
+<td>MAC address</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-4"><a href="#Response-parameters-4" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>did</td>
+<td>string</td>
+<td>Device ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-4"><a href="#Example-response-4" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;did&quot;: &quot;cBYkSjoE2xspYMhaUHdk5k&quot;,</span><br><span class="line">  &quot;passcode&quot;: &quot;123456&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Get-device-details"><a href="#Get-device-details" class="headerlink" title="Get device details"></a>Get device details</h2><p>Debug console</p>
+<h3 id="Request-method-and-URL-5"><a href="#Request-method-and-URL-5" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/device_detail</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-5"><a href="#Request-parameters-5" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>mac</td>
+<td>string</td>
+<td>Yes</td>
+<td>query</td>
+<td>MAC address</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-5"><a href="#Response-parameters-5" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>mac</td>
+<td>string</td>
+<td>MAC address</td>
+</tr>
+<tr>
+<td>did</td>
+<td>string</td>
+<td>Device ID</td>
+</tr>
+<tr>
+<td>is_online</td>
+<td>boolean</td>
+<td>Whether the device is online, True means online, False means offline</td>
+</tr>
+<tr>
+<td>is_disabled</td>
+<td>boolean</td>
+<td>Whether the device is logged off, True means logged off, False means not logged off</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Device type</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-5"><a href="#Example-response-5" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;did&quot;: &quot;dE2xjocBhaUHkYkSspYM5k&quot;,</span><br><span class="line">  &quot;is_disabled&quot;: false,</span><br><span class="line">  &quot;product_key&quot;: &quot;6f2e214bf2d79649232431b94a25f46a&quot;,</span><br><span class="line">  &quot;mac&quot;: &quot;virtual:site&quot;,</span><br><span class="line">  &quot;is_online&quot;: false,</span><br><span class="line">  &quot;type&quot;: &quot;normal&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Enumerate-devices"><a href="#Enumerate-devices" class="headerlink" title="Enumerate devices"></a>Enumerate devices</h2><p>Debug console</p>
+<h3 id="Request-method-and-URL-6"><a href="#Request-method-and-URL-6" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET  </span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/devices/search</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-6"><a href="#Request-parameters-6" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>country</td>
+<td>strin</td>
+<td>g    No</td>
+<td>query</td>
+<td>Country</td>
+</tr>
+<tr>
+<td>region</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Province</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>City</td>
+</tr>
+<tr>
+<td>is_online</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>Whether the device is online, 1 means online, 0 means offline</td>
+</tr>
+<tr>
+<td>is_faulty</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>Whether a fault exists, 1 means yes, 0 means no</td>
+</tr>
+<tr>
+<td>is_alert</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>Whether an alarm exists, 1 means yes, 0 means no</td>
+</tr>
+<tr>
+<td>show_disabled</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>1 means to display logout devices, and 0 means to filter out logout devices</td>
+</tr>
+<tr>
+<td>liveness_start</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Most recently active timestamp</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Its value can be did, mac, uid</td>
+</tr>
+<tr>
+<td>val</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Query condition value</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>The number of returned records </td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>The number of skipped records</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-6"><a href="#Response-parameters-6" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of records</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>logout </td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>logout </td>
+</tr>
+<tr>
+<td>previous</td>
+<td>string</td>
+<td>Previous page request address</td>
+</tr>
+<tr>
+<td>next</td>
+<td>string</td>
+<td>Next page request address</td>
+</tr>
+<tr>
+<td>did</td>
+<td>string</td>
+<td>Device ID</td>
+</tr>
+<tr>
+<td>mac</td>
+<td>string</td>
+<td>MAC address</td>
+</tr>
+<tr>
+<td>is_online</td>
+<td>integer</td>
+<td>Whether the device is online</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+<tr>
+<td>region</td>
+<td>string</td>
+<td>Province</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>string</td>
+<td>Longitude</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>integer</td>
+<td>Latitude</td>
+</tr>
+<tr>
+<td>is_faulty</td>
+<td>integer</td>
+<td>Whether a fault happens</td>
+</tr>
+<tr>
+<td>is_alert</td>
+<td>integer</td>
+<td>Whether an alarm happens</td>
+</tr>
+<tr>
+<td>online_latest</td>
+<td>integer</td>
+<td>The device most recently online time</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>integer</td>
+<td>Device creation time</td>
+</tr>
+<tr>
+<td>mcu_hard_version</td>
+<td>string</td>
+<td>MCU hardware version</td>
+</tr>
+<tr>
+<td>mcu_soft_version</td>
+<td>string</td>
+<td>MCU software version</td>
+</tr>
+<tr>
+<td>wifi_hard_version</td>
+<td>string</td>
+<td>Wi-Fi hardware version</td>
+</tr>
+<tr>
+<td>wifi_soft_version</td>
+<td>string</td>
+<td>Wi-Fi software version</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-6"><a href="#Example-response-6" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;meta&quot;: &#123;</span><br><span class="line">    &quot;previous&quot;: null,</span><br><span class="line">    &quot;skip&quot;: 0,</span><br><span class="line">    &quot;total&quot;: 3,</span><br><span class="line">    &quot;limit&quot;: 20,</span><br><span class="line">    &quot;next&quot;: null</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;objects&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;city&quot;: &quot;Guangzhou&quot;,</span><br><span class="line">      &quot;mcu_hard_version&quot;: null,</span><br><span class="line">      &quot;mcu_soft_version&quot;: null,</span><br><span class="line">      &quot;did&quot;: &quot;kYkSE2xspYjocBhaUHdM5k&quot;,</span><br><span class="line">      &quot;country&quot;: &quot;China&quot;,</span><br><span class="line">      &quot;region&quot;: &quot;Guangdong&quot;,</span><br><span class="line">      &quot;mac&quot;: &quot;virtual:site&quot;,</span><br><span class="line">      &quot;longitude&quot;: 113.280637,</span><br><span class="line">      &quot;wifi_hard_version&quot;: null,</span><br><span class="line">      &quot;online_latest&quot;: 1517296665,</span><br><span class="line">      &quot;wifi_soft_version&quot;: null,</span><br><span class="line">      &quot;is_online&quot;: false,</span><br><span class="line">      &quot;latitude&quot;: 23.125178,</span><br><span class="line">      &quot;is_alert&quot;: false,</span><br><span class="line">      &quot;created_at&quot;: 1505789918,</span><br><span class="line">      &quot;is_faulty&quot;: false</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Device-remote-control"><a href="#Device-remote-control" class="headerlink" title="Device remote control"></a>Device remote control</h2><p>Debug console</p>
+<h3 id="Raw-instructions-raw"><a href="#Raw-instructions-raw" class="headerlink" title="Raw instructions (raw):"></a>Raw instructions (raw):</h3><p>The default format is a decimal array. The binary_coding parameter can be set as hex and base64.<br>If you want to send a payload of binary 011000010110001001100011, after every byte of the binary string is converted to a decimal, you will get an array: [97,98,99];<br>If you want to send a payload of hexadecimal 616263, after every byte of the binary string is converted to a decimal, you will get an array: [97,98,99].</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;raw&quot;: [97,98,99]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Data-point-attrs"><a href="#Data-point-attrs" class="headerlink" title="Data point (attrs):"></a>Data point (attrs):</h3><p>Device products must have defined data points. If you want to set the value of the extended field binary to hexadecimal 1234567, you need to pad the extended field to the given length:<br>The default type of the extended field is hex16, and base64 can be used to set the binary_coding parameter as well.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;attrs&quot;: &#123;</span><br><span class="line">    &quot;binary&quot;: &quot;1234567000&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Request-method-and-URL-7"><a href="#Request-method-and-URL-7" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/devices/&#123;did&#125;/control</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-7"><a href="#Request-parameters-7" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>did</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Device ID</td>
+</tr>
+<tr>
+<td>raw</td>
+<td>Array[integer]</td>
+<td>Yes</td>
+<td>body</td>
+<td>Raw instruction method</td>
+</tr>
+<tr>
+<td>attrs</td>
+<td>object</td>
+<td>Yes</td>
+<td>body</td>
+<td>Data point method</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-7"><a href="#Response-parameters-7" class="headerlink" title="Response parameters"></a>Response parameters</h3><p>No</p>
+<h2 id="Get-device-online-and-offline-records"><a href="#Get-device-online-and-offline-records" class="headerlink" title="Get device online and offline records"></a>Get device online and offline records</h2><p>Debug console</p>
+<p>This API is used to query online and offline records for any two days in the last 7 days.</p>
+<h3 id="Time-amp-Sorting"><a href="#Time-amp-Sorting" class="headerlink" title="Time &amp; Sorting:"></a>Time &amp; Sorting:</h3><ul>
+<li>If start_ts and end_ts fields are not filled, it is to query the communication log records within the past two days in the default way.</li>
+<li>The interval between start_ts and end_ts must be within two days</li>
+<li>It support sorting with the sort field, it is descending order by default. Pass in asc for ascending order, desc for descending order</li>
+</ul>
+<h3 id="The-offline-reason-of-the-device-reason"><a href="#The-offline-reason-of-the-device-reason" class="headerlink" title="The offline reason of the device (reason)"></a>The offline reason of the device (reason)</h3><ul>
+<li>mqtt_disconnect: The device actively disconnected from mqtt</li>
+<li>no_heartbeat: m2m did not receive any device heartbeat during the KeepAlive period<br>Tcp_closed: The device actively terminated tcp connections</li>
+<li>ssl_closed: The device actively terminated the ssl connection</li>
+<li>offline_force: The device goes online again and the original connection is terminated </li>
+<li>offline_reset: The device is logged out and disconnected</li>
+<li>offline_exception: Abnormal disconnection</li>
+<li>offline_sending_density_overflow: The client sent the message too often and disconnected</li>
+<li>offline_sending_data_size_overflow: The client sent too much traffic and disconnected</li>
+</ul>
+<h3 id="Request-method-and-URL-8"><a href="#Request-method-and-URL-8" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/devices/&#123;did&#125;/online</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-8"><a href="#Request-parameters-8" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>did</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Device did</td>
+</tr>
+<tr>
+<td>start_ts</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>Start timestamp</td>
+</tr>
+<tr>
+<td>end_ts</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>End timestamp</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>sort</td>
+<td>No</td>
+<td>query</td>
+<td>Its value can be desc or asc</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>The number of returned records </td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>The number of skipped records</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-8"><a href="#Response-parameters-8" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of records</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>The number of returned records </td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>The number of skipped records</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>string</td>
+<td>Previous page request address</td>
+</tr>
+<tr>
+<td>next</td>
+<td>string</td>
+<td>Next page request address</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>integer</td>
+<td>Device online/offline instruction received time</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Device log types, such as: dev_online/dev_offline, etc.</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>string</td>
+<td>Device raw log</td>
+</tr>
+<tr>
+<td>KeepAlive</td>
+<td>integer</td>
+<td>Heartbeat interval specified by the device (in seconds)</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>integer</td>
+<td>Online duration of the device (unit: seconds)</td>
+</tr>
+<tr>
+<td>count</td>
+<td>integer</td>
+<td>The number of heartbeats sent when online</td>
+</tr>
+<tr>
+<td>max</td>
+<td>integer</td>
+<td>Maximum interval</td>
+</tr>
+<tr>
+<td>min</td>
+<td>integer</td>
+<td>Minimum interval</td>
+</tr>
+<tr>
+<td>avg</td>
+<td>integer</td>
+<td>Average interval</td>
+</tr>
+<tr>
+<td>last</td>
+<td>integer</td>
+<td>The time span between the last time the heartbeat was received and the offline time</td>
+</tr>
+<tr>
+<td>reason</td>
+<td>string</td>
+<td>Offline reason</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-7"><a href="#Example-response-7" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;meta&quot;: &#123;</span><br><span class="line">    &quot;previous&quot;: null,</span><br><span class="line">    &quot;skip&quot;: 0,</span><br><span class="line">    &quot;total&quot;: 5,</span><br><span class="line">    &quot;limit&quot;: 20,</span><br><span class="line">    &quot;next&quot;: null</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;objects&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;timestamp&quot;: 1517384124.229,</span><br><span class="line">      &quot;type&quot;: &quot;dev_online&quot;,</span><br><span class="line">      &quot;payload&quot;: &#123;</span><br><span class="line">        &quot;keep_alive&quot;: 130</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;timestamp&quot;: 1517298056.201,</span><br><span class="line">      &quot;type&quot;: &quot;dev_offline&quot;,</span><br><span class="line">      &quot;payload&quot;: &#123;</span><br><span class="line">        &quot;duration&quot;: 1391,</span><br><span class="line">        &quot;heartbeat&quot;: &#123;</span><br><span class="line">          &quot;count&quot;: 21,</span><br><span class="line">          &quot;max&quot;: 60,</span><br><span class="line">          &quot;avg&quot;: 60,</span><br><span class="line">          &quot;last&quot;: 130,</span><br><span class="line">          &quot;min&quot;: 60</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;reason&quot;: &quot;no_heartbeat&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Get-device-communication-log"><a href="#Get-device-communication-log" class="headerlink" title="Get device communication log"></a>Get device communication log</h2><p>Debug console</p>
+<p>This API is used to query device communication log for any two days in the last 7 days (raw data).</p>
+<h3 id="Time-amp-Sorting-1"><a href="#Time-amp-Sorting-1" class="headerlink" title="Time &amp; Sorting:"></a>Time &amp; Sorting:</h3><ul>
+<li>If start_ts and end_ts fields are not filled, it is to query the communication log records within the past two days in the default way.</li>
+<li>The interval between start_ts and end_ts must be within two days</li>
+<li>It support sorting with the sort field, it is descending order by default. Pass in asc for ascending order, desc for descending order</li>
+</ul>
+<h3 id="payload："><a href="#payload：" class="headerlink" title="payload："></a>payload：</h3><ul>
+<li>payload is base64-encoded for binary.</li>
+</ul>
+<h3 id="Request-method-and-URL-9"><a href="#Request-method-and-URL-9" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/devices/&#123;did&#125;/cmd</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-9"><a href="#Request-parameters-9" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>did</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Device did</td>
+</tr>
+<tr>
+<td>start_ts</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>Start timestamp</td>
+</tr>
+<tr>
+<td>end_ts</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>End timestamp</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>sort</td>
+<td>No</td>
+<td>query</td>
+<td>Its value can be desc or asc</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>The number of returned records </td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>The number of skipped records</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-9"><a href="#Response-parameters-9" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of records</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>The number of returned records </td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>The number of skipped records</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>string</td>
+<td>Previous page request address</td>
+</tr>
+<tr>
+<td>next</td>
+<td>string</td>
+<td>Next page request address</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>integer</td>
+<td>Device online/offline instruction received time</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Device log types, such as: dev2app/app2dev, etc.</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>string</td>
+<td>Device raw log</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-8"><a href="#Example-response-8" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;meta&quot;: &#123;</span><br><span class="line">    &quot;previous&quot;: null,</span><br><span class="line">    &quot;skip&quot;: 0,</span><br><span class="line">    &quot;total&quot;: 6,</span><br><span class="line">    &quot;limit&quot;: 20,</span><br><span class="line">    &quot;next&quot;: null</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;objects&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;timestamp&quot;: 1517384252.294,</span><br><span class="line">      &quot;type&quot;: &quot;app2dev&quot;,</span><br><span class="line">      &quot;payload&quot;: &quot;0000000309000090010101000010&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;timestamp&quot;: 1517384243.044,</span><br><span class="line">      &quot;type&quot;: &quot;dev2app&quot;,</span><br><span class="line">      &quot;payload&quot;: &quot;000000030b0000910401000010000000&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Get-device-history-data"><a href="#Get-device-history-data" class="headerlink" title="Get device history data"></a>Get device history data</h2><p>Debug console</p>
+<p>This API is used to query device communication log for any two days in the last 7 days (JSON format).</p>
+<h3 id="Time-amp-Sorting-2"><a href="#Time-amp-Sorting-2" class="headerlink" title="Time &amp; Sorting:"></a>Time &amp; Sorting:</h3><ul>
+<li>If start_ts and end_ts fields are not filled, it is to query the communication log records within the past two days in the default way.</li>
+<li>The interval between start_ts and end_ts must be within two days</li>
+<li>It support sorting with the sort field, it is descending order by default. Pass in asc for ascending order, desc for descending order</li>
+</ul>
+<h3 id="Request-method-and-URL-10"><a href="#Request-method-and-URL-10" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/devices/&#123;did&#125;/data</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-10"><a href="#Request-parameters-10" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>did</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Device did</td>
+</tr>
+<tr>
+<td>start_ts</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>Start timestamp</td>
+</tr>
+<tr>
+<td>end_ts</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>End timestamp</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>sort</td>
+<td>No</td>
+<td>query</td>
+<td>Its value can be desc or asc</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>The number of returned records </td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>The number of skipped records</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-10"><a href="#Response-parameters-10" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of records</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>The number of returned records </td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>The number of skipped records</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>string</td>
+<td>Previous page request address</td>
+</tr>
+<tr>
+<td>next</td>
+<td>string</td>
+<td>Next page request address</td>
+</tr>
+<tr>
+<td>ts</td>
+<td>integer</td>
+<td>Device instruction received time</td>
+</tr>
+<tr>
+<td>attrs</td>
+<td>objects</td>
+<td>Data points</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-9"><a href="#Example-response-9" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;meta&quot;: &#123;</span><br><span class="line">    &quot;previous&quot;: null,</span><br><span class="line">    &quot;skip&quot;: 0,</span><br><span class="line">    &quot;total&quot;: 3,</span><br><span class="line">    &quot;limit&quot;: 20,</span><br><span class="line">    &quot;next&quot;: null</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;objects&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;ts&quot;: 1517384243,</span><br><span class="line">      &quot;attrs&quot;: &#123;</span><br><span class="line">        &quot;alert_full&quot;: 0,</span><br><span class="line">        &quot;alert_shutdown&quot;: 0,</span><br><span class="line">        &quot;mode&quot;: &quot;制冷&quot;,</span><br><span class="line">        &quot;fan_swing&quot;: 0,</span><br><span class="line">        &quot;switch&quot;: 1,</span><br><span class="line">        &quot;fan_speed&quot;: &quot;低风&quot;,</span><br><span class="line">        &quot;fault_roomtemp&quot;: 0,</span><br><span class="line">        &quot;room_temp&quot;: -10,</span><br><span class="line">        &quot;set_temp&quot;: 16,</span><br><span class="line">        &quot;off_timing&quot;: 0,</span><br><span class="line">        &quot;on_timing&quot;: 0</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Device-grouping"><a href="#Device-grouping" class="headerlink" title="Device grouping"></a>Device grouping</h1><h2 id="Get-the-device-group-tree-structure"><a href="#Get-the-device-group-tree-structure" class="headerlink" title="Get the device group tree structure"></a>Get the device group tree structure</h2><p>Debug console</p>
+<h3 id="Request-method-and-URL-11"><a href="#Request-method-and-URL-11" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/device_groups</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-11"><a href="#Request-parameters-11" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-11"><a href="#Response-parameters-11" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Device group ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-10"><a href="#Example-response-10" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;c8e4b5634b047dc495be4a05a39d02a3&quot;: &quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Create-a-device-group"><a href="#Create-a-device-group" class="headerlink" title="Create a device group"></a>Create a device group</h2><p>Debug console</p>
+<ul>
+<li>The parent_gid is an optional parameter. It means to create a device child group if it’s passed in.</li>
+<li>A product can have only one root device group.</li>
+</ul>
+<h3 id="Request-method-and-URL-12"><a href="#Request-method-and-URL-12" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/device_groups</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-12"><a href="#Request-parameters-12" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>parent_gid</td>
+<td>string</td>
+<td>No</td>
+<td>body</td>
+<td>Device child group ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-12"><a href="#Response-parameters-12" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Device group ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-11"><a href="#Example-response-11" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;gid&quot;: &quot;c8e4b5634b047dc495be4a05a39d02a3&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Delete-a-device-group"><a href="#Delete-a-device-group" class="headerlink" title="Delete a device group"></a>Delete a device group</h2><p>Debug console</p>
+<p>To delete a device group, you need to clear all devices and device child groups in the device group at first.</p>
+<h3 id="Request-method-and-URL-13"><a href="#Request-method-and-URL-13" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DELETE</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/device_groups/&#123;gid&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-13"><a href="#Request-parameters-13" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Device group ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-13"><a href="#Response-parameters-13" class="headerlink" title="Response parameters"></a>Response parameters</h3><p>No</p>
+<h2 id="List-all-MACs-in-a-device-group"><a href="#List-all-MACs-in-a-device-group" class="headerlink" title="List all MACs in a device group"></a>List all MACs in a device group</h2><p>Debug console</p>
+<h3 id="Request-method-and-URL-14"><a href="#Request-method-and-URL-14" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/device_groups/&#123;gid&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-14"><a href="#Request-parameters-14" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Device group ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-14"><a href="#Response-parameters-14" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>macs</td>
+<td>Array[string]</td>
+<td>MAC list</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-12"><a href="#Example-response-12" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;macs&quot;: [</span><br><span class="line">    &quot;virtual:site&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Update-a-device-group"><a href="#Update-a-device-group" class="headerlink" title="Update a device group"></a>Update a device group</h2><p>Debug console</p>
+<ul>
+<li>action: “assign” | “unassign”</li>
+<li>macs: MAC list, up to 1000 MACs at a time</li>
+<li>reassign: It’s valid when the action is “assign”. When reassign is true, the MAC will be moved to the current group if it is already under some device group; if the reassign is false, the move will fail if the MAC is already under some device group.</li>
+</ul>
+<h3 id="Request-method-and-URL-15"><a href="#Request-method-and-URL-15" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PUT</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/device_groups/&#123;gid&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-15"><a href="#Request-parameters-15" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>action</td>
+<td>string</td>
+<td>Yes</td>
+<td>body</td>
+<td>Device group assignment type: assign,unassign</td>
+</tr>
+<tr>
+<td>reassign</td>
+<td>boolean</td>
+<td>Yes</td>
+<td>body</td>
+<td></td>
+</tr>
+<tr>
+<td>macs</td>
+<td>Array[string]</td>
+<td>Yes</td>
+<td>body</td>
+<td>MAC list</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-15"><a href="#Response-parameters-15" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>failed</td>
+<td>Array[string]</td>
+<td>The MAC list of failure update</td>
+</tr>
+<tr>
+<td>success</td>
+<td>Array[string]</td>
+<td>The MAC list of successful update</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-13"><a href="#Example-response-13" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;failed&quot;: [],</span><br><span class="line">  &quot;success&quot;: [</span><br><span class="line">    &quot;virtual:site&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Binding-Management"><a href="#Binding-Management" class="headerlink" title="Binding Management"></a>Binding Management</h1><h2 id="Bind-devices"><a href="#Bind-devices" class="headerlink" title="Bind devices"></a>Bind devices</h2><p>Debug console</p>
+<h3 id="Request-method-and-URL-16"><a href="#Request-method-and-URL-16" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/devices/bindings</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-16"><a href="#Request-parameters-16" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>Yes</td>
+<td>body</td>
+<td>User ID</td>
+</tr>
+<tr>
+<td>appid</td>
+<td>string</td>
+<td>Yes</td>
+<td>body</td>
+<td>Application ID</td>
+</tr>
+<tr>
+<td>dids</td>
+<td>string</td>
+<td>Yes</td>
+<td>body</td>
+<td>did list</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-16"><a href="#Response-parameters-16" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>Array[string]</td>
+<td>MAC list of successful binding</td>
+</tr>
+<tr>
+<td>failed</td>
+<td>Array[string]</td>
+<td>MAC list of failure binding</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-14"><a href="#Example-response-14" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;failed&quot;: [],</span><br><span class="line">  &quot;success&quot;: [</span><br><span class="line">    &quot;jaUHdkYkSocBhE2xspYM5k&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Unbind-devices"><a href="#Unbind-devices" class="headerlink" title="Unbind devices"></a>Unbind devices</h2><p>Debug console</p>
+<h3 id="Request-method-and-URL-17"><a href="#Request-method-and-URL-17" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DELETE</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/devices/bindings</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-17"><a href="#Request-parameters-17" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>Yes</td>
+<td>body</td>
+<td>User ID</td>
+</tr>
+<tr>
+<td>appid</td>
+<td>string</td>
+<td>Yes</td>
+<td>body</td>
+<td>Application ID</td>
+</tr>
+<tr>
+<td>dids</td>
+<td>string</td>
+<td>Yes</td>
+<td>body</td>
+<td>did list</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-17"><a href="#Response-parameters-17" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>Array[string]</td>
+<td>MAC list of successful binding</td>
+</tr>
+<tr>
+<td>failed</td>
+<td>Array[string]</td>
+<td>MAC list of failure binding</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-15"><a href="#Example-response-15" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;failed&quot;: [],</span><br><span class="line">  &quot;success&quot;: [</span><br><span class="line">    &quot;jaUHdkYkSocBhE2xspYM5k&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Device-Reporting"><a href="#Device-Reporting" class="headerlink" title="Device Reporting"></a>Device Reporting</h1><h2 id="Get-device-geographical-distribution"><a href="#Get-device-geographical-distribution" class="headerlink" title="Get device geographical distribution"></a>Get device geographical distribution</h2><p>Debug console</p>
+<p>This API is used to get device geographical distribution report.</p>
+<h3 id="Request-method-and-URL-18"><a href="#Request-method-and-URL-18" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/devices/locations</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-18"><a href="#Request-parameters-18" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>is_online</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>Whether the device is online</td>
+</tr>
+<tr>
+<td>is_faulty</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>Whether the device is faulty</td>
+</tr>
+<tr>
+<td>is_alert</td>
+<td>integer</td>
+<td>No</td>
+<td>query</td>
+<td>Whether the device raised an alarm</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-18"><a href="#Response-parameters-18" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of devices</td>
+</tr>
+<tr>
+<td>location</td>
+<td>object</td>
+<td>Device location information</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-16"><a href="#Example-response-16" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;gid&quot;: null,</span><br><span class="line">  &quot;total&quot;: 4,</span><br><span class="line">  &quot;location&quot;: &#123;</span><br><span class="line">    &quot;China&quot;: &#123;</span><br><span class="line">      &quot;count&quot;: 3,</span><br><span class="line">      &quot;Guangdong&quot;: &#123;</span><br><span class="line">        &quot;count&quot;: 3,</span><br><span class="line">        &quot;Guangzhou&quot;: 3</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Device-overview"><a href="#Device-overview" class="headerlink" title="Device overview"></a>Device overview</h2><p><strong>This API can only be used in domestic environments</strong></p>
+<p>Debug console</p>
+<p>Used to get the latest new activation and active device report</p>
+<h3 id="Request-method-and-URL-19"><a href="#Request-method-and-URL-19" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/devices/locations</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-19"><a href="#Request-parameters-19" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-19"><a href="#Response-parameters-19" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>online</td>
+<td>integer</td>
+<td>The number of online devices </td>
+</tr>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The cumulative number of online devices</td>
+</tr>
+<tr>
+<td>active</td>
+<td>inline_model</td>
+<td>Active devices</td>
+</tr>
+<tr>
+<td>yesterday</td>
+<td>integer</td>
+<td>The number of active devices yesterday</td>
+</tr>
+<tr>
+<td>7_day</td>
+<td>integer</td>
+<td>The number of active devices in the last 7 days</td>
+</tr>
+<tr>
+<td>new</td>
+<td>inline_model</td>
+<td>Newly activated devices</td>
+</tr>
+<tr>
+<td>today</td>
+<td>integer</td>
+<td>The number of newly activated devices today</td>
+</tr>
+<tr>
+<td>yesterday</td>
+<td>integer</td>
+<td>The number of newly activated devices yesterday </td>
+</tr>
+<tr>
+<td>7_day</td>
+<td>integer</td>
+<td>The number of newly activated devices in the last 7 days </td>
+</tr>
+<tr>
+<td>30_day</td>
+<td>integer</td>
+<td>The number of newly activated devices in the last 30 days</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-17"><a href="#Example-response-17" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;active&quot;: &#123;</span><br><span class="line">    &quot;7_day&quot;: 0,</span><br><span class="line">    &quot;yesterday&quot;: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;new&quot;: &#123;</span><br><span class="line">    &quot;7_day&quot;: 0,</span><br><span class="line">    &quot;30_day&quot;: 0,</span><br><span class="line">    &quot;yesterday&quot;: 0,</span><br><span class="line">    &quot;today&quot;: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;total&quot;: 3,</span><br><span class="line">  &quot;online&quot;: 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Device-activation-details"><a href="#Device-activation-details" class="headerlink" title="Device activation details"></a>Device activation details</h2><p><strong>This API can only be used in domestic environments</strong></p>
+<p>Debug console</p>
+<p>Used to get device activation details report.</p>
+<h3 id="Query-by-date"><a href="#Query-by-date" class="headerlink" title="Query by date"></a>Query by date</h3><ul>
+<li>The format of start,end is year-month-day. For example: 2016-08-01,</li>
+<li>Note: The response returned by Bluetooth devices fills in the device_sn field</li>
+</ul>
+<h3 id="Request-method-and-URL-20"><a href="#Request-method-and-URL-20" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET  </span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/incr_devices</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-20"><a href="#Request-parameters-20" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>start</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Start date</td>
+</tr>
+<tr>
+<td>end</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>End date</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Country</td>
+</tr>
+<tr>
+<td>region</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Province</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>City</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-20"><a href="#Response-parameters-20" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of records</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>The number of returned records </td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>The number of skipped records</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>string</td>
+<td>Previous page request address</td>
+</tr>
+<tr>
+<td>next</td>
+<td>string</td>
+<td>Next page request address</td>
+</tr>
+<tr>
+<td>report_date</td>
+<td>string</td>
+<td>Report date</td>
+</tr>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>mac</td>
+<td>string</td>
+<td>MAC address</td>
+</tr>
+<tr>
+<td>device_sn</td>
+<td>string</td>
+<td>Serial number of the Bluetooth device</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+<tr>
+<td>region</td>
+<td>string</td>
+<td>Province</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>string</td>
+<td>Device creation time</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-18"><a href="#Example-response-18" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;meta&quot;: &#123;</span><br><span class="line">    &quot;previous&quot;: null,</span><br><span class="line">    &quot;skip&quot;: 0,</span><br><span class="line">    &quot;total&quot;: 4,</span><br><span class="line">    &quot;limit&quot;: 20,</span><br><span class="line">    &quot;next&quot;: null</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;objects&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;city&quot;: &quot;Guangzhou&quot;,</span><br><span class="line">      &quot;country&quot;: &quot;China&quot;,</span><br><span class="line">      &quot;region&quot;: &quot;Guangdong&quot;,</span><br><span class="line">      &quot;report_date&quot;: &quot;2017-12-07&quot;,</span><br><span class="line">      &quot;product_key&quot;: &quot;4bd8778c5aa4602e5c9a5a208a1fdcc3&quot;,</span><br><span class="line">      &quot;mac&quot;: &quot;virtual:site&quot;,</span><br><span class="line">      &quot;created_at&quot;: &quot;2017-12-07 10:12:45&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Active-device-details"><a href="#Active-device-details" class="headerlink" title="Active device details"></a>Active device details</h2><p><strong>This API can only be used in domestic environments</strong></p>
+<p>Debug console</p>
+<p>Used to get active device details report</p>
+<h3 id="Query-by-date-1"><a href="#Query-by-date-1" class="headerlink" title="Query by date"></a>Query by date</h3><ul>
+<li>The format of start,end is year-month-day. For example: 2016-08-01,</li>
+<li>Note: The response returned by Bluetooth devices fills in the device_sn field</li>
+</ul>
+<h3 id="Request-method-and-URL-21"><a href="#Request-method-and-URL-21" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET  </span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/active_devices</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-21"><a href="#Request-parameters-21" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>start</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Start date</td>
+</tr>
+<tr>
+<td>end</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>End date</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Country</td>
+</tr>
+<tr>
+<td>region</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Province</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>City</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-21"><a href="#Response-parameters-21" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of records</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>The number of returned records </td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>The number of skipped records</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>string</td>
+<td>Previous page request address</td>
+</tr>
+<tr>
+<td>next</td>
+<td>string</td>
+<td>Next page request address</td>
+</tr>
+<tr>
+<td>report_date</td>
+<td>string</td>
+<td>Report date</td>
+</tr>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>mac</td>
+<td>string</td>
+<td>MAC address</td>
+</tr>
+<tr>
+<td>device_sn</td>
+<td>string</td>
+<td>Serial number of the Bluetooth device</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Country</td>
+</tr>
+<tr>
+<td>region</td>
+<td>string</td>
+<td>Province</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>string</td>
+<td>Device creation time</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-19"><a href="#Example-response-19" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;meta&quot;: &#123;</span><br><span class="line">    &quot;previous&quot;: null,</span><br><span class="line">    &quot;skip&quot;: 0,</span><br><span class="line">    &quot;total&quot;: 19,</span><br><span class="line">    &quot;limit&quot;: 20,</span><br><span class="line">    &quot;next&quot;: null</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;objects&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;city&quot;: &quot;Guangzhou&quot;,</span><br><span class="line">      &quot;country&quot;: &quot;China&quot;,</span><br><span class="line">      &quot;region&quot;: &quot;Guangdong&quot;,</span><br><span class="line">      &quot;report_date&quot;: &quot;2017-12-28&quot;,</span><br><span class="line">      &quot;product_key&quot;: &quot;ea202c9a5bd8708a145a4678c5afdcc3&quot;,</span><br><span class="line">      &quot;mac&quot;: &quot;virtual:site&quot;,</span><br><span class="line">      &quot;created_at&quot;: &quot;2017-12-28 18:45:33&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Query-historical-reports-of-active-devices"><a href="#Query-historical-reports-of-active-devices" class="headerlink" title="Query historical reports of active devices"></a>Query historical reports of active devices</h2><p><strong>This API can only be used in domestic environments</strong></p>
+<p>Debug console</p>
+<p>Active devices: Devices with data reported within one day</p>
+<h3 id="Result-report-time-range"><a href="#Result-report-time-range" class="headerlink" title="Result report time range"></a>Result report time range</h3><ul>
+<li>The daily report can be queried up to 30 days.</li>
+<li>The weekly report can be queried up to 53 weeks.</li>
+<li>Monthly report can be queried up to 12 months.</li>
+</ul>
+<h3 id="Query-by-date-2"><a href="#Query-by-date-2" class="headerlink" title="Query by date"></a>Query by date</h3><ul>
+<li>When the cycle parameter is set with date, the format of start,end is year-month-day, example:2016-08-01,</li>
+<li>When the cycle parameter is set with week, the format of start,end is year-week, example:2016-51</li>
+<li>When the cycle parameter is set with month, the format of start,end is year-month, example:2016-12</li>
+</ul>
+<h3 id="Request-method-and-URL-22"><a href="#Request-method-and-URL-22" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET  </span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/devices/report/liveness/history</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-22"><a href="#Request-parameters-22" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>cycle</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>The reference period, date, week, month</td>
+</tr>
+<tr>
+<td>start</td>
+<td>string</td>
+<td>Yes</td>
+<td>query</td>
+<td>Start date</td>
+</tr>
+<tr>
+<td>end</td>
+<td>string</td>
+<td>Yes</td>
+<td>query</td>
+<td>End date</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-22"><a href="#Response-parameters-22" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>cycle</td>
+<td>string</td>
+<td>The reference period, date, week, month</td>
+</tr>
+<tr>
+<td>start</td>
+<td>string</td>
+<td>Start date</td>
+</tr>
+<tr>
+<td>end</td>
+<td>string</td>
+<td>End date</td>
+</tr>
+<tr>
+<td>date</td>
+<td>string</td>
+<td>Date</td>
+</tr>
+<tr>
+<td>count</td>
+<td>integer</td>
+<td>Count number</td>
+</tr>
+<tr>
+<td>location</td>
+<td>object</td>
+<td>Location information</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-20"><a href="#Example-response-20" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;start&quot;: &quot;2017-12&quot;,</span><br><span class="line">  &quot;gid&quot;: null,</span><br><span class="line">  &quot;end&quot;: &quot;2017-12&quot;,</span><br><span class="line">  &quot;data&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;count&quot;: 2,</span><br><span class="line">      &quot;location&quot;: &#123;</span><br><span class="line">        &quot;China&quot;: &#123;</span><br><span class="line">          &quot;count&quot;: 1,</span><br><span class="line">          &quot;Guangdong&quot;: &#123;</span><br><span class="line">            &quot;count&quot;: 1,</span><br><span class="line">            &quot;Guangzhou&quot;: &#123;</span><br><span class="line">              &quot;count&quot;: 1</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;month&quot;: &quot;2017-12&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;cycle&quot;: &quot;month&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Query-device-status-report"><a href="#Query-device-status-report" class="headerlink" title="Query device status report"></a>Query device status report</h2><p>Debug console</p>
+<p>This API is used to get device status report.</p>
+<h3 id="Request-method-and-URL-23"><a href="#Request-method-and-URL-23" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET  </span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/devices/report/devices/report/rt</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-23"><a href="#Request-parameters-23" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Device group ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-23"><a href="#Response-parameters-23" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>activated</td>
+<td>integer</td>
+<td>The activated devices number</td>
+</tr>
+<tr>
+<td>faulty</td>
+<td>integer</td>
+<td>The faults number</td>
+</tr>
+<tr>
+<td>alert</td>
+<td>integer</td>
+<td>The alarms number</td>
+</tr>
+<tr>
+<td>location</td>
+<td>object</td>
+<td>The device geographical distribution</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-21"><a href="#Example-response-21" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;count&quot;: &#123;</span><br><span class="line">    &quot;faulty&quot;: 0,</span><br><span class="line">    &quot;activated&quot;: 4,</span><br><span class="line">    &quot;alert&quot;: 1</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;gid&quot;: null,</span><br><span class="line">  &quot;location&quot;: &#123;</span><br><span class="line">    &quot;China&quot;: &#123;</span><br><span class="line">      &quot;count&quot;: &#123;</span><br><span class="line">        &quot;activated&quot;: 2,</span><br><span class="line">        &quot;alert&quot;: 1</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;Guangdong&quot;: &#123;</span><br><span class="line">        &quot;count&quot;: &#123;</span><br><span class="line">          &quot;faulty&quot;: 1,</span><br><span class="line">          &quot;activated&quot;: 1,</span><br><span class="line">          &quot;alert&quot;: 1</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;Guangzhou&quot;: &#123;</span><br><span class="line">          &quot;count&quot;: &#123;</span><br><span class="line">            &quot;activated&quot;: 3</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Get-faulty-device-report"><a href="#Get-faulty-device-report" class="headerlink" title="Get faulty device report"></a>Get faulty device report</h2><p><strong>This API can only be used in domestic environments</strong></p>
+<p>Debug console</p>
+<p>Get faulty device report</p>
+<h3 id="Request-method-and-URL-24"><a href="#Request-method-and-URL-24" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET  </span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/fault/report/devices</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-24"><a href="#Request-parameters-24" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Device group ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-24"><a href="#Response-parameters-24" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of faulty deices </td>
+</tr>
+<tr>
+<td>resolved</td>
+<td>integer</td>
+<td>The number of devices with all issues resolved </td>
+</tr>
+<tr>
+<td>unresolved</td>
+<td>integer</td>
+<td>The number of devices with issues unresolved</td>
+</tr>
+<tr>
+<td>location</td>
+<td>object</td>
+<td>The faulty device geographical distribution</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-22"><a href="#Example-response-22" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;gid&quot;: null,</span><br><span class="line">  &quot;count&quot;: &#123;</span><br><span class="line">    &quot;total&quot;: 2,</span><br><span class="line">    &quot;resolved&quot;: 1,</span><br><span class="line">    &quot;unresolved&quot;: 1</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;location&quot;: &#123;</span><br><span class="line">    &quot;China&quot;: &#123;</span><br><span class="line">      &quot;count&quot;: &#123;</span><br><span class="line">        &quot;total&quot;: 2,</span><br><span class="line">        &quot;resolved&quot;: 1,</span><br><span class="line">        &quot;unresolved&quot;: 1</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;Guangdong&quot;: &#123;</span><br><span class="line">        &quot;count&quot;: &#123;</span><br><span class="line">          &quot;total&quot;: 2,</span><br><span class="line">          &quot;resolved&quot;: 1,</span><br><span class="line">          &quot;unresolved&quot;: 1</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;Guangzhou&quot;: &#123;</span><br><span class="line">          &quot;count&quot;: &#123;</span><br><span class="line">            &quot;total&quot;: 2,</span><br><span class="line">            &quot;resolved&quot;: 1,</span><br><span class="line">            &quot;unresolved&quot;: 1</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Get-alarm-device-report"><a href="#Get-alarm-device-report" class="headerlink" title="Get alarm device report"></a>Get alarm device report</h2><p><strong>This API can only be used in domestic environments</strong></p>
+<p>Debug console</p>
+<p>Used to get alarm device report.</p>
+<h3 id="Request-method-and-URL-25"><a href="#Request-method-and-URL-25" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET  </span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/alert/report/devices</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-25"><a href="#Request-parameters-25" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Device group ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-25"><a href="#Response-parameters-25" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of alarm devices </td>
+</tr>
+<tr>
+<td>resolved</td>
+<td>integer</td>
+<td>The number of devices with all alarms cleared </td>
+</tr>
+<tr>
+<td>unresolved</td>
+<td>integer</td>
+<td>The number of devices with alarms not cleared</td>
+</tr>
+<tr>
+<td>location</td>
+<td>object</td>
+<td>The alarm device geographical distribution</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-23"><a href="#Example-response-23" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;gid&quot;: null,</span><br><span class="line">  &quot;count&quot;: &#123;</span><br><span class="line">    &quot;total&quot;: 2,</span><br><span class="line">    &quot;resolved&quot;: 1,</span><br><span class="line">    &quot;unresolved&quot;: 1</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;location&quot;: &#123;</span><br><span class="line">    &quot;China&quot;: &#123;</span><br><span class="line">      &quot;count&quot;: &#123;</span><br><span class="line">        &quot;total&quot;: 2,</span><br><span class="line">        &quot;resolved&quot;: 1,</span><br><span class="line">        &quot;unresolved&quot;: 1</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;Guangdong&quot;: &#123;</span><br><span class="line">        &quot;count&quot;: &#123;</span><br><span class="line">          &quot;total&quot;: 2,</span><br><span class="line">          &quot;resolved&quot;: 1,</span><br><span class="line">          &quot;unresolved&quot;: 1</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;Guangzhou&quot;: &#123;</span><br><span class="line">          &quot;count&quot;: &#123;</span><br><span class="line">            &quot;total&quot;: 2,</span><br><span class="line">            &quot;resolved&quot;: 1,</span><br><span class="line">            &quot;unresolved&quot;: 1</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Get-device-fault-report"><a href="#Get-device-fault-report" class="headerlink" title="Get device fault report"></a>Get device fault report</h2><p><strong>This API can only be used in domestic environments</strong></p>
+<p>Debug console</p>
+<p>This API is used to get device fault report</p>
+<h3 id="Request-method-and-URL-26"><a href="#Request-method-and-URL-26" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET  </span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/fault/report/events</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-26"><a href="#Request-parameters-26" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Device group ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-26"><a href="#Response-parameters-26" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>detail</td>
+<td>object</td>
+<td>Data point statistics of faults</td>
+</tr>
+<tr>
+<td>location</td>
+<td>object</td>
+<td>Geographical distribution of faults</td>
+</tr>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of faulty devices</td>
+</tr>
+<tr>
+<td>resolved</td>
+<td>integer</td>
+<td>The number of resolved issues</td>
+</tr>
+<tr>
+<td>unresolved</td>
+<td>integer</td>
+<td>The number of unresolved issues</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-24"><a href="#Example-response-24" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;count&quot;: &#123;</span><br><span class="line">    &quot;resolved&quot;: 1,</span><br><span class="line">    &quot;total&quot;: 1,</span><br><span class="line">    &quot;unresolved&quot;: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;gid&quot;: null,</span><br><span class="line">  &quot;detail&quot;: &#123;</span><br><span class="line">    &quot;fault_roomtemp&quot;: &#123;</span><br><span class="line">      &quot;resolved&quot;: 1,</span><br><span class="line">      &quot;total&quot;: 1,</span><br><span class="line">      &quot;unresolved&quot;: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;location&quot;: &#123;</span><br><span class="line">    &quot;China&quot;: &#123;</span><br><span class="line">      &quot;count&quot;: &#123;</span><br><span class="line">        &quot;resolved&quot;: 1,</span><br><span class="line">        &quot;total&quot;: 1,</span><br><span class="line">        &quot;unresolved&quot;: 0</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;detail&quot;: &#123;</span><br><span class="line">        &quot;fault_roomtemp&quot;: &#123;</span><br><span class="line">          &quot;resolved&quot;: 1,</span><br><span class="line">          &quot;total&quot;: 1,</span><br><span class="line">          &quot;unresolved&quot;: 0</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Get-device-alarm-report"><a href="#Get-device-alarm-report" class="headerlink" title="Get device alarm report"></a>Get device alarm report</h2><p>This API is used to get device alarm report</p>
+<p><strong>This API can only be used in domestic environments</strong></p>
+<p>Debug console</p>
+<h3 id="Request-method-and-URL-27"><a href="#Request-method-and-URL-27" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET  </span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/alert/report/devices</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-27"><a href="#Request-parameters-27" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Device group ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-27"><a href="#Response-parameters-27" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>detail</td>
+<td>object</td>
+<td>Data point statistics of alarms</td>
+</tr>
+<tr>
+<td>location</td>
+<td>object</td>
+<td>Geographical distribution of alarms</td>
+</tr>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of alarm devices</td>
+</tr>
+<tr>
+<td>resolved</td>
+<td>integer</td>
+<td>The number of cleared alarms</td>
+</tr>
+<tr>
+<td>unresolved</td>
+<td>integer</td>
+<td>The number of alarms not cleared</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-25"><a href="#Example-response-25" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;count&quot;: &#123;</span><br><span class="line">    &quot;resolved&quot;: 1,</span><br><span class="line">    &quot;total&quot;: 1,</span><br><span class="line">    &quot;unresolved&quot;: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;gid&quot;: null,</span><br><span class="line">  &quot;detail&quot;: &#123;</span><br><span class="line">    &quot;alert_full&quot;: &#123;</span><br><span class="line">      &quot;resolved&quot;: 1,</span><br><span class="line">      &quot;total&quot;: 1,</span><br><span class="line">      &quot;unresolved&quot;: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;location&quot;: &#123;</span><br><span class="line">    &quot;China&quot;: &#123;</span><br><span class="line">      &quot;count&quot;: &#123;</span><br><span class="line">        &quot;resolved&quot;: 1,</span><br><span class="line">        &quot;total&quot;: 1,</span><br><span class="line">        &quot;unresolved&quot;: 0</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;detail&quot;: &#123;</span><br><span class="line">        &quot;alert_full&quot;: &#123;</span><br><span class="line">          &quot;resolved&quot;: 1,</span><br><span class="line">          &quot;total&quot;: 1,</span><br><span class="line">          &quot;unresolved&quot;: 0</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="User-Reporting"><a href="#User-Reporting" class="headerlink" title="User Reporting"></a>User Reporting</h1><h2 id="Get-new-users-report"><a href="#Get-new-users-report" class="headerlink" title="Get new users report"></a>Get new users report</h2><p><strong>This API can only be used in domestic environments</strong></p>
+<p>Debug console</p>
+<p>This refers to the new users who has bound the product with the PK</p>
+<h3 id="Query-by-date-3"><a href="#Query-by-date-3" class="headerlink" title="Query by date"></a>Query by date</h3><ul>
+<li>When the cycle parameter is set with date, the format of start,end is year-month-day, example:2016-08-01,</li>
+<li>When the cycle parameter is set with week, the format of start,end is year-week, example:2016-51</li>
+<li>When the cycle parameter is set with month, the format of start,end is year-month, example:2016-12</li>
+</ul>
+<h3 id="Request-method-and-URL-28"><a href="#Request-method-and-URL-28" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/users/report/new</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-28"><a href="#Request-parameters-28" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Yes</td>
+<td>query</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>cycle</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>The reference period, date, week, month</td>
+</tr>
+<tr>
+<td>start</td>
+<td>string</td>
+<td>Yes</td>
+<td>query</td>
+<td>Start date or start week or start month</td>
+</tr>
+<tr>
+<td>end</td>
+<td>string</td>
+<td>Yes</td>
+<td>query</td>
+<td>End date or end week or end month</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-28"><a href="#Response-parameters-28" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>did</td>
+<td>string</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>cycle</td>
+<td>string</td>
+<td>The reference period, date, week, month</td>
+</tr>
+<tr>
+<td>start</td>
+<td>string</td>
+<td>Start date</td>
+</tr>
+<tr>
+<td>data</td>
+<td>string</td>
+<td>Date</td>
+</tr>
+<tr>
+<td>count</td>
+<td>string</td>
+<td>Count number</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-26"><a href="#Example-response-26" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;start&quot;: &quot;2017-12&quot;,</span><br><span class="line">  &quot;gid&quot;: null,</span><br><span class="line">  &quot;end&quot;: &quot;2017-12&quot;,</span><br><span class="line">  &quot;data&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;count&quot;: 3,</span><br><span class="line">      &quot;month&quot;: &quot;2017-12&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;cycle&quot;: &quot;month&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Get-active-enterprise-users"><a href="#Get-active-enterprise-users" class="headerlink" title="Get active enterprise users"></a>Get active enterprise users</h2><p>Debug console</p>
+<p>This API is used to get active enterprise users</p>
+<h3 id="Request-method-and-URL-29"><a href="#Request-method-and-URL-29" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/users/liveness_total</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-29"><a href="#Request-parameters-29" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Gizwits-Enterprise-ID</td>
+<td>string</td>
+<td>Yes</td>
+<td>header</td>
+<td>enterprise id</td>
+</tr>
+<tr>
+<td>X-Gizwits-Enterprise-Secret</td>
+<td>string</td>
+<td>Yes</td>
+<td>header</td>
+<td>enterprise secret</td>
+</tr>
+<tr>
+<td>product_secret</td>
+<td>string</td>
+<td>Yes</td>
+<td>query</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>appid</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Application ID</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>string</td>
+<td>Yes</td>
+<td>query</td>
+<td>Start date, like 2015-01-02</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>string</td>
+<td>Yes</td>
+<td>query</td>
+<td>End date, like 2015-01-03</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-29"><a href="#Response-parameters-29" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td>string</td>
+<td>Date</td>
+</tr>
+<tr>
+<td>count</td>
+<td>integer</td>
+<td>Count number</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-27"><a href="#Example-response-27" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;data&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;count&quot;: 2,</span><br><span class="line">      &quot;date&quot;: &quot;2017-12-13&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Get-user-geographical-distribution"><a href="#Get-user-geographical-distribution" class="headerlink" title="Get user geographical distribution"></a>Get user geographical distribution</h2><p>Debug console</p>
+<p>This API is used to get enterprise user geographical distribution</p>
+<h3 id="Request-method-and-URL-30"><a href="#Request-method-and-URL-30" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/users/location</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-30"><a href="#Request-parameters-30" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Gizwits-Enterprise-ID</td>
+<td>string</td>
+<td>Yes</td>
+<td>header</td>
+<td>enterprise id</td>
+</tr>
+<tr>
+<td>X-Gizwits-Enterprise-Secret</td>
+<td>string</td>
+<td>Yes</td>
+<td>header</td>
+<td>enterprise secret</td>
+</tr>
+<tr>
+<td>product_secret</td>
+<td>string</td>
+<td>Yes</td>
+<td>query</td>
+<td>Product key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-30"><a href="#Response-parameters-30" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>count</td>
+<td>integer</td>
+<td>Count number</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-28"><a href="#Example-response-28" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;China&quot;: &#123;</span><br><span class="line">    &quot;count&quot;: 18,</span><br><span class="line">    &quot;Beijing&quot;: &#123;</span><br><span class="line">      &quot;count&quot;: 14,</span><br><span class="line">      &quot;Beijing&quot;: &#123;</span><br><span class="line">        &quot;count&quot;: 14</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;Guangdong&quot;: &#123;</span><br><span class="line">      &quot;count&quot;: 4,</span><br><span class="line">      &quot;Guangzhou&quot;: &#123;</span><br><span class="line">        &quot;count&quot;: 4</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Get-the-total-number-of-users"><a href="#Get-the-total-number-of-users" class="headerlink" title="Get the total number of users"></a>Get the total number of users</h2><p>This API is used to query the total number of users who has bound the product with the given PK in the user table </p>
+<p>Debug console</p>
+<h3 id="Request-method-and-URL-31"><a href="#Request-method-and-URL-31" class="headerlink" title="Request method and URL"></a>Request method and URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">http://enterpriseapi.gizwits.com/v1/products/&#123;product_key&#125;/users/report/total</span><br></pre></td></tr></table></figure>
+<h3 id="Request-parameters-31"><a href="#Request-parameters-31" class="headerlink" title="Request parameters"></a>Request parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>string</td>
+<td>Yes</td>
+<td>path</td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>No</td>
+<td>query</td>
+<td>Device group ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Response-parameters-31"><a href="#Response-parameters-31" class="headerlink" title="Response parameters"></a>Response parameters</h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gid</td>
+<td>string</td>
+<td>Device group ID</td>
+</tr>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>The total number of users</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Example-response-29"><a href="#Example-response-29" class="headerlink" title="Example response"></a>Example response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;gid&quot;: null,</span><br><span class="line">  &quot;total&quot;: 31,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Error-codes"><a href="#Error-codes" class="headerlink" title="Error codes"></a>Error codes</h1><table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>System Error Code</th>
+<th>Description</th>
+<th>How to fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>5001</td>
+<td>body json invalid</td>
+<td>Check the JSON string</td>
+</tr>
+<tr>
+<td>400</td>
+<td>5002</td>
+<td>form invalid</td>
+<td>The input is incorrect</td>
+</tr>
+<tr>
+<td>404</td>
+<td>5003</td>
+<td>enterprise id not exist</td>
+<td>Eid does not exist, check whether it has been requested or incorrect input</td>
+</tr>
+<tr>
+<td>400</td>
+<td>5004</td>
+<td>enterprise secret error</td>
+<td>Esecret check failed, check if it is correct</td>
+</tr>
+<tr>
+<td>400</td>
+<td>5005</td>
+<td>product secret error</td>
+<td>Product Secret check failed, check if it is correct</td>
+</tr>
+<tr>
+<td>400</td>
+<td>5006</td>
+<td>product exist devicegroups</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td>5007</td>
+<td>association not exist</td>
+<td>Need to open enterprise API service first</td>
+</tr>
+<tr>
+<td>400</td>
+<td>5008</td>
+<td>association existed</td>
+<td>Eid is not associated with the corresponding product key, please contact customer service</td>
+</tr>
+<tr>
+<td>400</td>
+<td>5009</td>
+<td>token invalid</td>
+<td>Please pass in the token or check the token field format</td>
+</tr>
+<tr>
+<td>400</td>
+<td>5010</td>
+<td>token not match product_key</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5011</td>
+<td>token has expired</td>
+<td>Please obtain the token again</td>
+</tr>
+<tr>
+<td>400</td>
+<td>5012</td>
+<td>ip not in white list</td>
+<td>Add IP to access white list of enterprise data for IP</td>
+</tr>
+<tr>
+<td>403</td>
+<td>5013</td>
+<td>API call rate limit execeed quota</td>
+<td>Wait for a while before using this API again</td>
+</tr>
+<tr>
+<td>400</td>
+<td>5014</td>
+<td>Report has not been generated!</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td>5015</td>
+<td>Product key not exist!</td>
+<td>Check whether the product key is correct</td>
+</tr>
+<tr>
+<td>404</td>
+<td>5016</td>
+<td>Appid not exist!</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td>5016</td>
+<td>Appid not exist!</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td>5017</td>
+<td>Uid not exist!</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>5018</td>
+<td>product operation not allowed</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td>5019</td>
+<td>organization does not exist</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5020</td>
+<td>can not delete published product!</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5021</td>
+<td>enterprise is exist</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td>5022</td>
+<td>enterprise does not exist</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>5023</td>
+<td>enterprise is creating</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>5024</td>
+<td>api deny to visit!</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td>5025</td>
+<td>product does not exist</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>5201</td>
+<td>device group not belong to this product</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td>5202</td>
+<td>parent group not exist</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5203</td>
+<td>already has one root group</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5204</td>
+<td>group has subgroup</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5205</td>
+<td>group has device item</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td>5206</td>
+<td>group not exist</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5207</td>
+<td>product key not in pre assignment!</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5208</td>
+<td>create assign device in progress!</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td>5301</td>
+<td>device not exist    Check the device ID</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>5302</td>
+<td>device not belong to this product    Please bind the device to the product first</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5303</td>
+<td>device not bound</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5304</td>
+<td>device is disabled</td>
+<td>Activate the device</td>
+</tr>
+<tr>
+<td>400</td>
+<td>5305</td>
+<td>device offline!</td>
+<td>Get the device online</td>
+</tr>
+<tr>
+<td>400</td>
+<td>5401</td>
+<td>attr invalid!</td>
+<td>Check data point information</td>
+</tr>
+<tr>
+<td>404</td>
+<td>5402</td>
+<td>datapoint data not found!</td>
+<td>Define data points first and try again</td>
+</tr>
+<tr>
+<td>400</td>
+<td>5403</td>
+<td>send command failed!</td>
+<td>Please try it again</td>
+</tr>
+<tr>
+<td>403</td>
+<td>5404</td>
+<td>remote control not allowed!</td>
+<td>Remote control operation needs to be opened in the backend</td>
+</tr>
+<tr>
+<td>404</td>
+<td>5405</td>
+<td>attrs not exist!</td>
+<td></td>
+</tr>
+<tr>
+<td>500</td>
+<td>5406</td>
+<td>Datapoints malformed</td>
+<td></td>
+</tr>
+<tr>
+<td>500</td>
+<td>5407</td>
+<td>generate meta failed</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5408</td>
+<td>raw data error!</td>
+<td></td>
+</tr>
+<tr>
+<td>500</td>
+<td>5409</td>
+<td>call innerapi failed!</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td>5501</td>
+<td>firmware does not exist</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5502</td>
+<td>firmware version has created</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>5503</td>
+<td>firmware operation not allowed</td>
+<td></td>
+</tr>
+<tr>
+<td>500</td>
+<td>5601</td>
+<td>kairosdb query error!</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>5701</td>
+<td>This eid has no permission to reset pwd.</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>5702</td>
+<td>This eid has no permission to reset pwd for this appid.</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5703</td>
+<td>Cannot reset pwd for anonymous user</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5801</td>
+<td>the pks has not associate with enterprise!</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>5901</td>
+<td>x-service secret key invalid!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="分享">
+          <span>分享</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="项目登记">
+      <span>项目登记</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=fa1376e1d7301caad0eaad3833d277cf"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>

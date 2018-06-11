@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>Enterprise Application Development - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Enterprise Application Development-Gizwits">
+  <meta name="keywords" content="Enterprise Application Development docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+
+      <a href="http://www.gizwits.com" class="logo">
+        <img src="/images/logo.png" alt="logo"> 
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+    
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+    
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA">
+              Tutorial &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Intro in 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Device Accessing</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">App Development</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA"><a href="/en-us/quickstart.html">Device</a></li>
+          
+        
+          
+            <li class="levelA">
+              App &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">ios SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Android SDK</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Wechat SDK</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Business Cloud</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">D3</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart.html">Global Deployment</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA"><a href="/en-us/quickstart.html">API</a></li>
+          
+        
+      </ul>
+    </span>
+  
+    <span class="pure-u-3-24 lang-switch-wrapper">
+      
+      <i class="fa fa-globe" aria-hidden="true"></i> 
+      
+        <button class="lang-switch" data-lang="zh-cn">中文</button>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>  
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Enterprise Application Development</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Enterprise applications refer to the specific business management functionality by using the obtained data from those devices connected to Gizwits cloud in order to satisfy enterprises’ operation and management needs for devices and device users. Usually, in the process of enterprise application development, not only does it need to retrieve the data of the connected devices through the Gizwits cloud platform, but it also needs to control the devices and carry out statistical analysis of the device data using the enterprise APIs, which allows you to focus on the overall business applications.  </p>
+<h2 id="SNoti-service"><a href="#SNoti-service" class="headerlink" title="SNoti service"></a>SNoti service</h2><p>The SNoti service is a real-time device message transmission service. This service can push enterprises’ device data to enterprise application systems in real time, which helps your organization to achieve business requirements based on the device data.<br>SNoti service capabilities</p>
+<ul>
+<li>Based on message publish-subscribe model</li>
+<li>40-50ms of average device data transmission time </li>
+<li>Supports simultaneous requests from multiple clients</li>
+<li>Supports SSL transmission</li>
+<li>Device messages are cached for 3 days by default, which can be customized on your behalf</li>
+<li>Provides monitoring and early warning of device messages</li>
+</ul>
+<h2 id="Enterprise-API"><a href="#Enterprise-API" class="headerlink" title="Enterprise API"></a>Enterprise API</h2><p>The Enterprise API is based on the operation and management requirements of the enterprise connected to the Gizwits cloud platform. Using the data generated by the enterprise in the Gizwits cloud platform, it provides companies with device management, data analytics, and other functions at the enterprise level and with a holistic viewpoint, which allows you to focus on business management system itself and reduce unnecessary development costs and time.</p>
+<h1 id="User-cases"><a href="#User-cases" class="headerlink" title="User cases"></a>User cases</h1><h2 id="EV-Charger-SaaS-Platform"><a href="#EV-Charger-SaaS-Platform" class="headerlink" title="EV Charger SaaS Platform"></a>EV Charger SaaS Platform</h2><p>The EV charger SaaS platform provides charging station operators with finding electric stations, booking, charging, and payment for electric vehicle owners. The operator manages charging stations, faults, orders, billing rules and settlement through an operation management platform powered by the EV charger SaaS platform for its daily business in a closed loop, which greatly improves the operational efficiency.<br>The EV chargers is connected to Gizwits, and the EV charger SaaS platform needs to obtain the data of the chargers in real time. Based on these data, it can calculate the charge and whether there is a fault. These device data are collected by the Gizwits PaaS platform and sent to the EV charger SaaS platform in real time through the SNoti service.<br>The EV charger SaaS platform can also perform statistical analysis through the enterprise open API, such as the location query, communication log, and fault query of the charging stations.</p>
+<h2 id="Usage-based-Rental-Management-System"><a href="#Usage-based-Rental-Management-System" class="headerlink" title="Usage-based Rental Management System"></a>Usage-based Rental Management System</h2><p>The business of the usage-based rental management system is similar to that of the EV charger SaaS platform, which covers the car rental, bicycle rental. The operators need to build a usage-based rental management system to fulfill the necessary functions such as order, settlement and payment.<br>When cars and bicycles are connected to Gizwits, the operators do not need to invest in the device connection, they can access the SNoti service through related protocols to obtain device data for business development. </p>
+<h1 id="Development-Process"><a href="#Development-Process" class="headerlink" title="Development Process"></a>Development Process</h1><h2 id="SNoti-service-access"><a href="#SNoti-service-access" class="headerlink" title="SNoti service access"></a>SNoti service access</h2><h3 id="1-Access-request"><a href="#1-Access-request" class="headerlink" title="1. Access request"></a>1. Access request</h3><ul>
+<li>The SNoti service is usually open to enterprise developers. If you need real-time data ingested into Gizwits PaaS platform for secondary development, please apply to Gizwits.</li>
+<li>SNoti services are generally used together with enterprise API services, so enterprise developers also need to apply for enterprise API services.</li>
+</ul>
+<h3 id="2-Learn-about-the-protocol"><a href="#2-Learn-about-the-protocol" class="headerlink" title="2. Learn about the protocol"></a>2. Learn about the protocol</h3><p>For details, see SNoti service protocol.</p>
+<h3 id="3-Get-access-parameters"><a href="#3-Get-access-parameters" class="headerlink" title="3. Get access parameters"></a>3. Get access parameters</h3><p>Log into the developer center and obtain the account and secret key for the enterprise to access the SNoti service and the enterprise API. Choose “Company Information” as shown below.</p>
+<p><img src="../../../assets/en-us/cloud/ent_info01.png" alt="Company Information"></p>
+<p>Choose your organization on the left, and then click “API configuration” to get Eid, Esecret. You can also set the IP white list here. If you do not set the IP white list, the messaging service will fail to authenticate.</p>
+<p><img src="../../../assets/en-us/cloud/ent_info02.png" alt="API configuration"></p>
+<p>If it is in the development environment, the enterprise developers need to get the external network IP address corresponding to the development environment through some tools, which can be obtained through ip.taobao.com, and the identified IP address is supposed to be copied to the white list in the above figure. Only one IP address can be set in each line. For a production environment, the system allows multiple source IP addresses to be set to access the message service.</p>
+<h3 id="4-On-demand-implementation-of-the-client"><a href="#4-On-demand-implementation-of-the-client" class="headerlink" title="4. On-demand implementation of the client"></a>4. On-demand implementation of the client</h3><p>According to the Demo Code, the enterprise can start the development of the client functions based on its own requirements. The Demo Code can be used as a prototype to implement the business logic after capturing the device data, such as: </p>
+<ul>
+<li>Parse JSON messages pushed by SNoti service</li>
+<li>Publish the captured message in real time to the queue to which the enterprise application belongs and perform asynchronous operations;</li>
+<li>The data can also be written into the database directly after it is parsed. However, a data cleaning mechanism on a periodic basis needs to be established. </li>
+</ul>
+<h3 id="5-Simulate-a-real-device-to-push-data-through-a-virtual-device"><a href="#5-Simulate-a-real-device-to-push-data-through-a-virtual-device" class="headerlink" title="5. Simulate a real device to push data through a virtual device"></a>5. Simulate a real device to push data through a virtual device</h3><p>If the enterprise does not have any real device connected to Gizwits yet, it can use the virtual device to simulate it.</p>
+<ul>
+<li>Start Demo Code, provided that it has been modified as the correct product_key, auth_id and auth_secret</li>
+<li>Define data points under the product</li>
+<li>After the approval, you can start the virtual device and simulate the data, click “Push”</li>
+<li>Demo Code will print device state pushed by SNoti service in real time</li>
+</ul>
+<h2 id="Using-Enterprise-API"><a href="#Using-Enterprise-API" class="headerlink" title="Using Enterprise API"></a>Using Enterprise API</h2><h3 id="1-Apply-for-enterprise-API-service"><a href="#1-Apply-for-enterprise-API-service" class="headerlink" title="1. Apply for enterprise API service"></a>1. Apply for enterprise API service</h3><p>Enterprise developers log into the developer center and choose “Add services”, as shown below.</p>
+<p><img src="../../../assets/en-us/cloud/add_ent_api.png" alt="Add services"></p>
+<p>Click on the enterprise API in the red box above and jump to the next step.</p>
+<p><img src="../../../assets/en-us/cloud/add_ent_api02.png" alt="Add services"></p>
+<h3 id="2-Get-parameters"><a href="#2-Get-parameters" class="headerlink" title="2. Get parameters"></a>2. Get parameters</h3><p>Log into developer center and choose “Company Information” as shown below.</p>
+<p><img src="../../../assets/en-us/cloud/ent_info01.png" alt="Company Information"></p>
+<p>Select the organization for which you have permissions on the left, and then click “API configuration” to get Eid, Esecret, and also set IP white list here.</p>
+<p><img src="../../../assets/en-us/cloud/ent_info02.png" alt="API Configuration"></p>
+<h3 id="3-Learn-about-the-protocol"><a href="#3-Learn-about-the-protocol" class="headerlink" title="3. Learn about the protocol"></a>3. Learn about the protocol</h3><p>After the approval of using enterprise API, the enterprise can make calls according to the enterprise API protocol.<br>Enterprise API can be found here.</p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="分享">
+          <span>分享</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="项目登记">
+      <span>项目登记</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=fa1376e1d7301caad0eaad3833d277cf"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
