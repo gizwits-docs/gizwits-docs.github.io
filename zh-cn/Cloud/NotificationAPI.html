@@ -630,6 +630,24 @@
 </tr>
 </tbody>
 </table>
+<p>当设备为NB-IoT设备时，使用如下指令：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"cmd"</span>: <span class="string">"remote_control_nb_req"</span>,</span><br><span class="line"><span class="attr">"msg_id"</span>: &lt;msg id string&gt;,</span><br><span class="line"><span class="attr">"source"</span>: <span class="string">"huawei"</span>,</span><br><span class="line"><span class="attr">"did"</span>: &lt;did string&gt;,</span><br><span class="line"><span class="attr">"mac"</span>: &lt;mac string&gt;,</span><br><span class="line"><span class="attr">"product_key"</span>: &lt;product_key string&gt;,</span><br><span class="line"><span class="attr">"attrs"</span>: &#123;</span><br><span class="line">"name1": &lt;value1&gt;,("name1"指数据点的标识名(name)，&lt;value1&gt;指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))</span><br><span class="line">"name2": &lt;value2&gt;,</span><br><span class="line">… …</span><br><span class="line">&#125;</span><br><span class="line">&#125;\n</span><br></pre></td></tr></table></figure></p>
+<p>请求字段说明：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th style="text-align:center">是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td style="text-align:center">必须</td>
+<td>NB-IoT设备的来源，目前仅支持电信IoT平台</td>
+</tr>
+</tbody>
+</table>
 <p>Gizwits Platform 回复：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"cmd"</span>: <span class="string">"remote_control_res”,</span></span><br><span class="line"><span class="string">"</span>msg_id<span class="string">": &lt;msg id string&gt;,</span></span><br><span class="line"><span class="string">“result"</span>: &#123;</span><br><span class="line"><span class="attr">"succeed"</span>: [<span class="string">"did1"</span>, <span class="string">"did2"</span>, … …]</span><br><span class="line"><span class="string">"failed"</span>: [</span><br><span class="line">&#123;<span class="attr">"did3"</span>: &lt;reason str&gt;&#125;</span><br><span class="line">&#123;<span class="attr">"did4"</span>: &lt;reason str&gt;&#125;</span><br><span class="line">… …</span><br><span class="line">]</span><br><span class="line">&#125;</span><br><span class="line">&#125;\n</span><br></pre></td></tr></table></figure></p>
 <p>其中msg_id的内容为请求消息中msg_id字段的内容，如请求消息中不存在该字段，回复消息中将不会出现该字段。<br>如协议自身引起的错误，Gizwits Platform 回复 错误响应消息，该消息格式参见下文。</p>
 <h2 id="4-推送事件"><a href="#4-推送事件" class="headerlink" title="4.  推送事件"></a>4.  推送事件</h2><h3 id="数据点编辑事件"><a href="#数据点编辑事件" class="headerlink" title="数据点编辑事件"></a>数据点编辑事件</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"cmd"</span>: <span class="string">"event_push"</span>,</span><br><span class="line"><span class="attr">"delivery_id"</span>: &lt;delivery_id&gt;，(用于 ACK)</span><br><span class="line"><span class="string">"event_type"</span>: <span class="string">"datapoints_changed"</span>,</span><br><span class="line"><span class="attr">"product_key"</span>: &lt;product_key string&gt;,</span><br><span class="line">"created_at"：&lt;timestamp in seconds, float&gt;</span><br><span class="line">&#125;\n</span><br></pre></td></tr></table></figure>
