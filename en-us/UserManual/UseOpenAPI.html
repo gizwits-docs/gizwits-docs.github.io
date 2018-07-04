@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>Using Open API to control virtual device with Postman - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Using Open API to control virtual device with Postman-Gizwits">
+  <meta name="keywords" content="Using Open API to control virtual device with Postman docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quickly &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/readme.html">Intro in 5 mins</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Using Open API to control virtual device with Postman</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>This guide explains how to leverage postman on the PC side to work with Open API provided by Gizwits on the cloud side, and walk you through user login, device binding, and device remote control etc. via HTTP requests. </p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/101.png" alt="Overview"></p>
+<h1 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h1><ul>
+<li>Device: Developer Center - Personal Project - Virtual Device</li>
+<li>Software: Postman</li>
+<li>Other: developer account of Gizwits</li>
+<li>Reference document: Open API guide</li>
+<li>Helper links:<ul>
+<li><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="noopener">Unix timestamp</a></li>
+<li><a href="http://tool.chinaz.com/Tools/md5.aspx" target="_blank" rel="noopener">MD5 encryption</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="Product-Creation-in-Gizwits-cloud"><a href="#Product-Creation-in-Gizwits-cloud" class="headerlink" title="Product Creation in Gizwits cloud"></a>Product Creation in Gizwits cloud</h1><h2 id="1-Create-a-product"><a href="#1-Create-a-product" class="headerlink" title="1. Create a product"></a>1. Create a product</h2><p>After the registration is completed, log in to the Gizwits Developer Center and click on the “Create Product” menu in the upper right corner. Create a new product called “Openapi” on the next page and choose “Wi-Fi/Mobile network access”, then complete product creation, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/311.png" alt="Create a product"></p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/312.png" alt="Create a product"></p>
+<h2 id="2-Create-data-points-product-function-points"><a href="#2-Create-data-points-product-function-points" class="headerlink" title="2. Create data points (product function points)"></a>2. Create data points (product function points)</h2><h3 id="2-1-Introduction-to-Data-Points"><a href="#2-1-Introduction-to-Data-Points" class="headerlink" title="2.1 Introduction to Data Points"></a>2.1 Introduction to Data Points</h3><p>Data point: An abstraction of the functionality of a device product that describes the product’s functionality and its parameters. After the data point is created, the data format of the communication between the device and the cloud is determined, and the device and Gizwits cloud can mutually identify the data that the device interacts with the Gizwits Cloud. For more details, see “data point definition tutorial” in the upper right corner of the Developer Center Data Points page, which helps you create data points that belong to your own product, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/321.png" alt="Introduction to Data Points"></p>
+<h3 id="2-2-Create-data-points"><a href="#2-2-Create-data-points" class="headerlink" title="2.2 Create data points"></a>2.2 Create data points</h3><p>Take the project “Openapi” as an example to briefly describe the relationship between cloud data points and product function points. Project “Openapi” is supposed to implement the function that turns on and off a light remotely. You need to create a “Boolean” writable data point in the cloud to work out it, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/322.png" alt="Create data points"></p>
+<p>After adding the data point, click “Apply” as shown in the figure below to complete entire data point creation work for the product.</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/322-1.png" alt="Apply data points"></p>
+<h3 id="2-3-Application-configuration"><a href="#2-3-Application-configuration" class="headerlink" title="2.3 Application configuration"></a>2.3 Application configuration</h3><p>Take the “Openapi” personal project as an example, click on Service - Application Configuration - Add New Application, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/323.png" alt="Add New Application"></p>
+<p>After filling in the application name which can be cusomizable, select Android for the platform, click Add, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/323-1.png" alt="select Android for the platform"></p>
+<p>Then a new application will appear. Note that App ID is an important parameter to be used by the subsequent HTTP request, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/323-2.png" alt="New Application"></p>
+<h2 id="3-Postman-installation-and-import"><a href="#3-Postman-installation-and-import" class="headerlink" title="3. Postman installation and import"></a>3. Postman installation and import</h2><p>1) Go to the official website to download the latest postman client.</p>
+<p>Postman official website: <a href="https://www.getpostman.com" target="_blank" rel="noopener">https://www.getpostman.com</a></p>
+<p>2) After the registration is done, there only exists Postman own Echo in the left collections pane. You need to click “import” in the upper left corner, or follow the Open API documentation in the documentation center to proceed. For example, you can fill in such fields like url, header, key and value in the body according to the request type. </p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/331.png" alt="Postman"></p>
+<p>3) Choose to import the prepared requests, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/332.png" alt="import the prepared requests"></p>
+<p>Fill in Import From Link:</p>
+<p><a href="https://www.getpostman.com/collections/d6c5981977683526877f" target="_blank" rel="noopener">https://www.getpostman.com/collections/d6c5981977683526877f</a></p>
+<p>Then click “import” and the folder shown below will appear:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/333.png" alt="import result"></p>
+<h2 id="4-Use-Postman-for-HTTP-requests"><a href="#4-Use-Postman-for-HTTP-requests" class="headerlink" title="4. Use Postman for HTTP requests"></a>4. Use Postman for HTTP requests</h2><p>Steps:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/340.png" alt="Steps"></p>
+<h3 id="4-1-Obtaining-User-token-via-anonymous-login-POST-request"><a href="#4-1-Obtaining-User-token-via-anonymous-login-POST-request" class="headerlink" title="4.1 Obtaining User_token via anonymous login POST request"></a>4.1 Obtaining User_token via anonymous login POST request</h3><p>First, use the anonymous login with POST request to obtain the Token. App ID can be found in section 2.3) Application configuration. Fill in the App ID in the Headers page, and phone_id in the Body page. Then click “Send” to send request, the result will pop up in the bottom box. If you get User_token in the Body, the request is successful, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/341.png" alt="anonymous login POST request"></p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/341-1.png" alt="anonymous login POST response"></p>
+<h3 id="4-2-Obtain-did-and-passcode-of-virtual-device"><a href="#4-2-Obtain-did-and-passcode-of-virtual-device" class="headerlink" title="4.2 Obtain did and passcode of virtual device"></a>4.2 Obtain did and passcode of virtual device</h3><p>Go to the Personal Project - Virtual Device, click “start virtual device”, get the virtual device did and passcode as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/342.png" alt="start virtual device"></p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/342-1.png" alt="start virtual device"></p>
+<h3 id="4-3-Bind-device-through-POST-request-with-did-and-passcode"><a href="#4-3-Bind-device-through-POST-request-with-did-and-passcode" class="headerlink" title="4.3 Bind device through POST request with did and passcode"></a>4.3 Bind device through POST request with did and passcode</h3><p>Choose to use the POST request with did and passcode to bind the device. Fill in App ID and User_token obtained before in Headers, and above did and passcode in Body. If returning success, the binding is successful, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/343.png" alt="Bind device through POST request with did and passcode"></p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/343-1.png" alt="Bind device through POST request with did and passcode"></p>
+<h3 id="4-4-Bind-device-through-POST-request-with-MAC-Note-this-step-can-be-skipped-if-above-step-is-successful"><a href="#4-4-Bind-device-through-POST-request-with-MAC-Note-this-step-can-be-skipped-if-above-step-is-successful" class="headerlink" title="4.4 Bind device through POST request with MAC (Note: this step can be skipped if above step is successful)"></a>4.4 Bind device through POST request with MAC (Note: this step can be skipped if above step is successful)</h3><p>Choose to use the POST request with MAC to bind the device. Fill in the App ID and User_token obtained before in the Headers. The Timestamp is a Unix timestamp (its expiration time is 5 minutes). You can get Signature using MD5 encryption method {MD5 (product_secret+X-Gizwits-Timestamp).lower()}. Fill in the product_key and the device MAC in the Body, then click “send”. If the action is successful, you will find that the device is online as shown below:</p>
+<p>Note: The links for obtaining Timestamp and Signature are</p>
+<ul>
+<li><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="noopener">Unix timestamp</a></li>
+<li><a href="http://tool.chinaz.com/Tools/md5.aspx" target="_blank" rel="noopener">MD5 encryption</a></li>
+</ul>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/344.png" alt="Bind device through POST request with MAC"></p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/344-1.png" alt="Bind device through POST request with MAC"></p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/344-2.png" alt="Bind device through POST request with MAC"></p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/344-3.png" alt="Bind device through POST request with MAC"></p>
+<h3 id="4-5-List-bound-devices-through-GET-request-to-check-device-online-offline-state"><a href="#4-5-List-bound-devices-through-GET-request-to-check-device-online-offline-state" class="headerlink" title="4.5 List bound devices through GET request to check device online/offline state"></a>4.5 List bound devices through GET request to check device online/offline state</h3><p>Choose “Get request for listing bound devices”. Fill in App ID and User_token in the Headers. Click “Send”, then a JSON string will be returned. The value of “is_online” is true to indicate that the device is online, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/345.png" alt="List bound devices through GET request to check device online/offline state "></p>
+<h3 id="4-6-Control-device-remotely-through-POST-Request"><a href="#4-6-Control-device-remotely-through-POST-Request" class="headerlink" title="4.6 Control device remotely through POST Request"></a>4.6 Control device remotely through POST Request</h3><p>Choose “Control devices remotely through POST Request”. Fill in the App ID and User_token in the Headers, device ID (did) at the end of Url and the data point name and its value in the Body with JSON format. Click “Send”, and return empty to indicate success, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/346.png" alt="Control device remotely through POST Request"></p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/346-1.png" alt="Control device remotely through POST Request"></p>
+<h3 id="4-7-Verify-whether-the-device-is-under-control"><a href="#4-7-Verify-whether-the-device-is-under-control" class="headerlink" title="4.7 Verify whether the device is under control"></a>4.7 Verify whether the device is under control</h3><p>Return to the personal project, and you can find that the Boolean data point named Led_onoff of the virtual device has been set to true according to the communication log, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/347.png" alt="Verify whether the device is under control"></p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>

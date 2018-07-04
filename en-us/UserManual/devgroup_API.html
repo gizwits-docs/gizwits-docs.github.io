@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>Device Grouping API Tutorial - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Device Grouping API Tutorial-Gizwits">
+  <meta name="keywords" content="Device Grouping API Tutorial docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quickly &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/readme.html">Intro in 5 mins</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Device Grouping API Tutorial</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>The device grouping API can group multiple devices. As long as instructions are sent to a device group, multiple devices under the group can be controlled collectively.</p>
+<p>To use device grouping API, you must first create a group. After creating a group, bind a device with its MAC address, and then add the device to the group with the device did that corresponds to its MAC address in the device log. Then send an instruction to the group. The devices in the group receive the instruction and responds, and device grouping is completed.</p>
+<p>For example, a company has multiple departments, each of which has multiple smart lights. Every morning anyone of a department comes in, he can just open all smart lights of his department at once. Every evening anyone of a department leaves, all smart lights of his department can be turned off at once.</p>
+<h1 id="Device-grouping-API-usage"><a href="#Device-grouping-API-usage" class="headerlink" title="Device grouping API usage"></a>Device grouping API usage</h1><p>The device grouping API is used to group and control multiple devices. When you has set up device grouping API, this API can be called to add multiple devices to a group, so that multiple devices can be controlled collectively.</p>
+<p><strong>1. Open the document center of Gizwits official website -&gt; Cloud API -&gt; OPEN API guide, click any “Debug console” hyperlink.</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/11.png" alt="Device grouping API usage"></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/12.png" alt="Device grouping API usage"></p>
+<p><strong>2. Click Device Grouping -&gt; Create a Group</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/13.png" alt="Device grouping API usage"></p>
+<p><strong>3. Click Create a Group -&gt; Exclamation Point</strong></p>
+<p>Fill in App ID and token which can be referred to the section “2.3 Create Application Configuration” and “3. Postman Installation and Import” in the document “ Using Open API to control virtual device with Postman “. The document link is </p>
+<p><a href="http://docs.gizwits.com/en-us/UserManual/UseOpenAPI.html" target="_blank" rel="noopener">http://docs.gizwits.com/en-us/UserManual/UseOpenAPI.html</a></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/14.png" alt="Device grouping API usage"></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/15.png" alt="Device grouping API usage"></p>
+<p><strong>4. Fill in the body after completing the App ID and token</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/16.png" alt="Device grouping API usage"></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/17.png" alt="Device grouping API usage"></p>
+<p><strong>5. After getting the group id, check if there is any device in the group</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/18.png" alt="Device grouping API usage"></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/19.png" alt="Device grouping API usage"></p>
+<p><strong>6. Bind a device with its MAC address</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/20.png" alt="Device grouping API usage"></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/21.png" alt="Device grouping API usage"></p>
+<p>Timestamp helper link</p>
+<p><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/Tools/unixtime.aspx</a></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/22.png" alt="Device grouping API usage"></p>
+<p>Signature helper link</p>
+<p><a href="http://tool.chinaz.com/Tools/md5.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/Tools/md5.aspx</a></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/23.png" alt="Device grouping API usage"></p>
+<p>After the device binding is successful, there will be a response body as follows </p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/24.png" alt="Device grouping API usage"></p>
+<p><strong>7. After binding the device, we go back to the device group and add the device to the group</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/25.png" alt="Device grouping API usage"></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/26.png" alt="Device grouping API usage"></p>
+<p><strong>8. Check the device log</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/27.png" alt="Device grouping API usage"></p>
+<p><strong>9. After successfully adding the device to the group, you will get the following response body</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/28.png" alt="Device grouping API usage"></p>
+<p><strong>10. Then you send instructions to the device group to control the device remotely</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/29.png" alt="Device grouping API usage"></p>
+<p><strong>11. In this way we can control a device in a group (RGB light on and off). Add multiple devices to a group in the same way, and we can control multiple devices in a group at the same time.</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/30.png" alt="Device grouping API usage"></p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>

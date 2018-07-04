@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>Control device using Web Socket - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Control device using Web Socket-Gizwits">
+  <meta name="keywords" content="Control device using Web Socket docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quickly &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/readme.html">Intro in 5 mins</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Control device using Web Socket</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Remote device control with JavaScript in Web page is implemented by calling the open API and Web Socket API of Gizwits. Open API accomplishes operations such as anonymous user login, device binding, and listing bound devices. While Web Socket API accomplishes operations such as user login, device online and offline notification, data exchange between the browser and the cloud (data transparent transmission), heartbeat, and invalid message notification. </p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/101.png" alt="Overview"></p>
+<p>When the device is successfully connected to the cloud, you can use the following process to control the device:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/102.png" alt="process to control the device"></p>
+<h1 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h1><p>Call Open API to log in as an anonymous user and bind devices.</p>
+<h2 id="1-Get-phone-id"><a href="#1-Get-phone-id" class="headerlink" title="1. Get phone_id"></a>1. Get phone_id</h2><p>phone_id can be the unique identifier of user’s phone. Otherwise when you already have your own user system and don’t want users to sign up for a Gizwits account again, you can use this API to create a corresponding Gizwits anonymous account for each of your users. In this case, phone_id can be the unique identifier of the user in your system. For example, when integrating with WeChat application, phone_id can be set to the openid of the WeChat user.</p>
+<h2 id="2-Create-user"><a href="#2-Create-user" class="headerlink" title="2. Create user"></a>2. Create user</h2><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_users" target="_blank" rel="noopener">http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_users</a></p>
+<h3 id="2-1-Fill-in-the-appid"><a href="#2-1-Fill-in-the-appid" class="headerlink" title="2.1. Fill in the appid"></a>2.1. Fill in the appid</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/201.png" alt="Fill in the appid"></p>
+<h3 id="2-2-Fill-in-the-body"><a href="#2-2-Fill-in-the-body" class="headerlink" title="2.2. Fill in the body"></a>2.2. Fill in the body</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/202.png" alt="Fill in the body"></p>
+<h3 id="2-3-Log-in-as-an-anonymous-user-and-get-a-token"><a href="#2-3-Log-in-as-an-anonymous-user-and-get-a-token" class="headerlink" title="2.3. Log in as an anonymous user and get a token"></a>2.3. Log in as an anonymous user and get a token</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/203.png" alt="Log in as an anonymous user and get a token"></p>
+<h2 id="3-Binding-equipment"><a href="#3-Binding-equipment" class="headerlink" title="3. Binding equipment"></a>3. Binding equipment</h2><p>POST request URL:</p>
+<p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_mac" target="_blank" rel="noopener">http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_mac</a></p>
+<h3 id="3-1-Fill-in-the-appid"><a href="#3-1-Fill-in-the-appid" class="headerlink" title="3.1. Fill in the appid"></a>3.1. Fill in the appid</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/204.png" alt="Fill in the appid"></p>
+<h3 id="3-2-Fill-in-the-returned-token-when-logged-as-an-anonymous-user"><a href="#3-2-Fill-in-the-returned-token-when-logged-as-an-anonymous-user" class="headerlink" title="3.2. Fill in the returned token when logged as an anonymous user"></a>3.2. Fill in the returned token when logged as an anonymous user</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/205.png" alt="Fill in the returned token when logged as an anonymous user"></p>
+<h3 id="3-3-Fill-in-Timestamp-Signature-and-Body-parameters"><a href="#3-3-Fill-in-Timestamp-Signature-and-Body-parameters" class="headerlink" title="3.3. Fill in Timestamp, Signature and Body parameters"></a>3.3. Fill in Timestamp, Signature and Body parameters</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/206.png" alt="Fill in Timestamp, Signature and Body parameters"></p>
+<p>Note: </p>
+<ul>
+<li>Timestamp helper link, <a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/Tools/unixtime.aspx</a></li>
+<li>MD5 helper link, <a href="http://tool.oschina.net/encrypt?type=2" target="_blank" rel="noopener">http://tool.oschina.net/encrypt?type=2</a></li>
+</ul>
+<p>As shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/207.png" alt="MD5 helper"></p>
+<h1 id="Control-device-using-Web-Socket"><a href="#Control-device-using-Web-Socket" class="headerlink" title="Control device using Web Socket"></a>Control device using Web Socket</h1><h2 id="1-SDK-for-Web-Socket-API"><a href="#1-SDK-for-Web-Socket-API" class="headerlink" title="1. SDK for Web Socket API"></a>1. SDK for Web Socket API</h2><p>Its link is as follows:</p>
+<p><a href="https://github.com/gizwits/gizwits-wechat-js-sdk" target="_blank" rel="noopener">https://github.com/gizwits/gizwits-wechat-js-sdk</a></p>
+<h2 id="2-Run-index-html"><a href="#2-Run-index-html" class="headerlink" title="2. Run index.html"></a>2. Run index.html</h2><p><img src="../../../assets/en-us/UserManual/WebSocket/301.png" alt="Run index.html"></p>
+<h2 id="3-Control-device-using-Web-Socket"><a href="#3-Control-device-using-Web-Socket" class="headerlink" title="3. Control device using Web Socket"></a>3. Control device using Web Socket</h2><p><a href="https://gizwits.github.io/gizwits-wechat-js-sdk/v0.2.0.html" target="_blank" rel="noopener">https://gizwits.github.io/gizwits-wechat-js-sdk/v0.2.0.html</a></p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/302.png" alt="Control device using Web Socket"></p>
+<h1 id="Control-device-in-two-ways"><a href="#Control-device-in-two-ways" class="headerlink" title="Control device in two ways"></a>Control device in two ways</h1><h2 id="1-Standard-data-point-protocol-V4"><a href="#1-Standard-data-point-protocol-V4" class="headerlink" title="1. Standard data point protocol V4"></a>1. Standard data point protocol V4</h2><h3 id="1-1-Initialize-Gizwits-WS-Object"><a href="#1-1-Initialize-Gizwits-WS-Object" class="headerlink" title="1.1. Initialize Gizwits WS Object"></a>1.1. Initialize Gizwits WS Object</h3><p>The request parameters are:</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apiHost</td>
+<td>Gizwits Open API domain</td>
+<td>api.gizwits.com</td>
+</tr>
+<tr>
+<td>commType</td>
+<td>Standard data point format protocol</td>
+<td>attrs_v4</td>
+</tr>
+<tr>
+<td>wechatOpenId</td>
+<td>OpenID of WeChat user (i.e. phone_id)</td>
+<td>String</td>
+</tr>
+<tr>
+<td>gizwitsAppId</td>
+<td>Gizwits application identifier</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p>Initialize as follows:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/401.png" alt="Initialize"></p>
+<h3 id="1-2-Get-a-bound-device-list"><a href="#1-2-Get-a-bound-device-list" class="headerlink" title="1.2. Get a bound device list"></a>1.2. Get a bound device list</h3><p>If you want to obtain the bound device list, first confirm whether the user (i.e. openid) has bound the devices to be controlled.</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/402.png" alt="Get a bound device list"></p>
+<h3 id="1-3-Create-a-Web-Socket-Connection"><a href="#1-3-Create-a-Web-Socket-Connection" class="headerlink" title="1.3. Create a Web Socket Connection"></a>1.3. Create a Web Socket Connection</h3><p>Select a device to control, and create a Web Socket connection.</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/403.png" alt="Create a Web Socket Connection"></p>
+<h3 id="1-4-Read-the-current-state-of-the-device"><a href="#1-4-Read-the-current-state-of-the-device" class="headerlink" title="1.4. Read the current state of the device"></a>1.4. Read the current state of the device</h3><p>Select the connected device and read the current state of the device.</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/404.png" alt="Read the current state of the device"></p>
+<h3 id="1-5-Control-device"><a href="#1-5-Control-device" class="headerlink" title="1.5. Control device"></a>1.5. Control device</h3><p>Select the connected devices and issue control instructions.</p>
+<p>For example, send the control instruction {“Swicth”:true} as follows:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/405.png" alt="Control device"></p>
+<ul>
+<li>If you want to set the value of the extended binary field to hexadecimal value 616263, each byte of the binary string is converted to a decimal element of an array after padding the extended field to the given length</li>
+<li>Set the Boolean type field to true or false</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;boolean&quot;:true,</span><br><span class="line">    &quot;binary&quot;: [97,98,99,0,0,0,0,0,0,0]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Control the virtual device:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/406.png" alt="Control the virtual device"></p>
+<h2 id="2-Custom-format-protocol-V4"><a href="#2-Custom-format-protocol-V4" class="headerlink" title="2. Custom format protocol V4"></a>2. Custom format protocol V4</h2><p>The custom format protocol V4 is also called transparent transmission without data points.</p>
+<h3 id="2-1-Initialize-Gizwits-WS-Object"><a href="#2-1-Initialize-Gizwits-WS-Object" class="headerlink" title="2.1. Initialize Gizwits WS Object"></a>2.1. Initialize Gizwits WS Object</h3><p>The request parameters are:</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apiHost</td>
+<td>Gizwits Open API domain</td>
+<td>api.gizwits.com</td>
+</tr>
+<tr>
+<td>commType</td>
+<td>Custom format protocol</td>
+<td>custom</td>
+</tr>
+<tr>
+<td>wechatOpenId</td>
+<td>OpenID of WeChat user (i.e. phone_id)</td>
+<td>String</td>
+</tr>
+<tr>
+<td>gizwitsAppId</td>
+<td>Gizwits application identifier</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/407.png" alt="Initialize Gizwits WS Object"></p>
+<h3 id="2-2-Get-a-bound-device-list"><a href="#2-2-Get-a-bound-device-list" class="headerlink" title="2.2. Get a bound device list"></a>2.2. Get a bound device list</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/408.png" alt="Get a bound device list"></p>
+<h3 id="2-3-Create-a-Web-Socket-connection"><a href="#2-3-Create-a-Web-Socket-connection" class="headerlink" title="2.3 Create a Web Socket connection"></a>2.3 Create a Web Socket connection</h3><p>Select a device to control, and create a Web Socket connection.</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/409.png" alt="Create a Web Socket connection"></p>
+<h3 id="2-4-Read-the-current-state-of-the-device"><a href="#2-4-Read-the-current-state-of-the-device" class="headerlink" title="2.4. Read the current state of the device"></a>2.4. Read the current state of the device</h3><p>Select the connected device and read the current state of the device:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/410.png" alt="Read the current state of the device"></p>
+<h3 id="2-5-Issue-control-instructions"><a href="#2-5-Issue-control-instructions" class="headerlink" title="2.5. Issue control instructions"></a>2.5. Issue control instructions</h3><p>Select the connected device and issue the control instruction: [0,0,0,3,9,0,0,144,1,0,1,2,3,4] (Note: The instruction payload is decimal, of which 0,0,0,3 is for header, 9 for len, 0 for flag, 0,144 for cmd, 1 for action, 0, 1, 2, 3, 4 for business instruction), as follows:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/411.png" alt="Issue control instructions"></p>
+<p>The virtual device receives the instruction as follows:</p>
+<p>FF FF 00 0B 03 1E 00 00 01 00 01 02 03 04 37</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/412.png" alt="The virtual device receives the instruction"></p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>

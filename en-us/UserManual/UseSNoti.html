@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>Real-time data synchronization demo for SNoti service - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Real-time data synchronization demo for SNoti service-Gizwits">
+  <meta name="keywords" content="Real-time data synchronization demo for SNoti service docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quickly &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/readme.html">Intro in 5 mins</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Real-time data synchronization demo for SNoti service</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><p>SNoti provides enterprises with an SSL communication API for pushing device-related events in real time and controlling the corresponding devices.</p>
+<p>Note: Before using the SNoti service, you must first apply for the SNoti service access and set the whitelist.</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/101.png" alt="Overview"></p>
+<h1 id="2-Set-up-development-environment"><a href="#2-Set-up-development-environment" class="headerlink" title="2. Set up development environment"></a>2. Set up development environment</h1><h2 id="2-1-Download-Eclipse-and-JDK"><a href="#2-1-Download-Eclipse-and-JDK" class="headerlink" title="2.1. Download Eclipse and JDK"></a>2.1. Download Eclipse and JDK</h2><p>Download link:<br>Http://jingyan.baidu.com/article/bea41d435bc695b4c41be648.html</p>
+<h2 id="2-2-Install-JDK"><a href="#2-2-Install-JDK" class="headerlink" title="2.2. Install JDK"></a>2.2. Install JDK</h2><p>Installation process:<br>Http://jingyan.baidu.com/article/d7130635194f1513fcf47557.html</p>
+<h2 id="2-3-Install-Eclipse"><a href="#2-3-Install-Eclipse" class="headerlink" title="2.3. Install Eclipse"></a>2.3. Install Eclipse</h2><p>Installation process:<br>Http://jingyan.baidu.com/article/d7130635194f1513fcf47557.html</p>
+<h1 id="3-SNoti-service-Access"><a href="#3-SNoti-service-Access" class="headerlink" title="3. SNoti service Access"></a>3. SNoti service Access</h1><h2 id="3-1-Access-request"><a href="#3-1-Access-request" class="headerlink" title="3.1. Access request"></a>3.1. Access request</h2><p>If you decide to use SNoti for your product, you need to contact Gizwits technical support and provide the following information for the product, including product key and product name.</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/311.png" alt="Overview"><br><img src="../../../assets/en-us/UserManual/SNotiAPI/311-1.png" alt="Overview"> </p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/312.png" alt="Overview"></p>
+<h2 id="3-2-Create-credentials"><a href="#3-2-Create-credentials" class="headerlink" title="3.2. Create credentials"></a>3.2. Create credentials</h2><p><img src="../../../assets/en-us/UserManual/SNotiAPI/321.png" alt="Create credentials"></p>
+<h1 id="4-Run-the-demo"><a href="#4-Run-the-demo" class="headerlink" title="4. Run the demo"></a>4. Run the demo</h1><h2 id="4-1-Download-SNoti-demo-source-code"><a href="#4-1-Download-SNoti-demo-source-code" class="headerlink" title="4.1. Download SNoti demo source code"></a>4.1. Download SNoti demo source code</h2><p>SNoti demo source code download link:  </p>
+<p><a href="https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty" target="_blank" rel="noopener">https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty</a></p>
+<p>Gizwits provides two sets of SNoti demo source code:</p>
+<ul>
+<li>V2.0.0-netty has a framework with its own dependency libraries.</li>
+<li>V2.0.0 has no framework, which will be explained below. Download it as shown below:</li>
+</ul>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/411.png" alt="SNoti demo source code"> </p>
+<h2 id="4-2-Update-settings-in-the-source-code"><a href="#4-2-Update-settings-in-the-source-code" class="headerlink" title="4.2. Update settings in the source code"></a>4.2. Update settings in the source code</h2><p><img src="../../../assets/en-us/UserManual/SNotiAPI/421.png" alt="Update settings in the source code"></p>
+<p>Find AuthId and AuthSecret as follows:</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/422.png" alt="AuthId and AuthSecret"></p>
+<h2 id="4-3-Control-device"><a href="#4-3-Control-device" class="headerlink" title="4.3. Control device"></a>4.3. Control device</h2><p>Note: </p>
+<ol>
+<li>If you attempt to test the virtual device on Gizwits official website, the MAC address should be assigned with virtual:site</li>
+<li>If you need to access SNoti servers in US East region, the domain name should be changed to ussnoti.gizwits.com</li>
+<li>The JSON data of issued control instructions follows UTF-8 format</li>
+</ol>
+<h3 id="4-3-1-Issue-control-instructions-in-V4-product-data-point-format"><a href="#4-3-1-Issue-control-instructions-in-V4-product-data-point-format" class="headerlink" title="4.3.1. Issue control instructions in V4 product data point format"></a>4.3.1. Issue control instructions in V4 product data point format</h3><p><img src="../../../assets/en-us/UserManual/SNotiAPI/431.png" alt="Issue control instructions in V4 product data point format"></p>
+<p>Types of writable data points include: Boolean, enumeration, numeric, and extended type. The format is “name1”: value1, of which “name1” refers to the name of the data point, and value1 refers to the value of the data point. The value might be true/false (bool), a Unicode encoded string such as \u62bd(enum), a number or byte array (such as [23,2,3], for extended type). See the following examples:</p>
+<ul>
+<li>a. Boolean type, e.g. attrs={“Switch”:false}</li>
+<li>b. Enumeration types, e.g. attrs={“Mode”:”Sleep Mode”}//If issuing the enumeration type data point value with its original text string directly, it will fail. Thus, check if the format of the delivered text is UTF-8. If not, please send it after conversion. Take attrs={“Mode”:”休眠模式”} as an example, since the delivered JSON data “休眠模式” is not in UTF-8 format, it should be converted to attrs={“Mode”:”&#x4F11;&#x7720;&#x6A21;&#x5F0F;”}. </li>
+</ul>
+<p>Following online UTF-8 encoder is recommended:</p>
+<p><a href="http://tool.chinaz.com/tools/utf-8.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/tools/utf-8.aspx</a></p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/431-1.png" alt="online UTF-8 encoder"></p>
+<ul>
+<li>c. Numeric type, e.g. attrs={“Motor_Speed”: 5}</li>
+<li>d. Extended type, e.g. attrs={“extension”:[1,2,3,4,5,6,7,8,9,0]}</li>
+</ul>
+<h3 id="4-3-2-Issue-control-instructions-in-V4-product-custom-format-for-transparent-transmission-without-data-points"><a href="#4-3-2-Issue-control-instructions-in-V4-product-custom-format-for-transparent-transmission-without-data-points" class="headerlink" title="4.3.2. Issue control instructions in V4 product custom format (for transparent transmission without data points)"></a>4.3.2. Issue control instructions in V4 product custom format (for transparent transmission without data points)</h3><p>(1) Issue SNoti control instructions</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/432.png" alt="Issue SNoti control instructions"></p>
+<p>The format for sending raw data looks like this: raw={1,22,33}<br>Note: the binary data should be converted to a byte array. If you want to send 010203, it should be</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;raw&quot;: [1, 2, 3]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In general, a protocol payload is a hexadecimal array, such as [0x00, 0x00, 0x1a, …].</p>
+<p>Here you need to convert it into a decimal array. For example, the payload of decimal 123 is supposed to be raw=[123]</p>
+<p>(2) Device reports its state<br>After the device receives a control instruction issued by the cloud, the device actively reports its current state.</p>
+<p>FF FF 00 09 05 00 00 00 04 01 02 03 18</p>
+<p>Because the data received is transparently transmitted, it is base64 encoded, and you have to decode it yourself. </p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/432-1.png" alt="Device reports its state"></p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/432-2.png" alt="Online base64 decoder"></p>
+<p>Online base64 decoder link:</p>
+<p> <a href="http://www1.tc711.com/tool/BASE64.htm" target="_blank" rel="noopener">http://www1.tc711.com/tool/BASE64.htm</a></p>
+<h2 id="4-4-Run-Maven-project"><a href="#4-4-Run-Maven-project" class="headerlink" title="4.4. Run Maven project"></a>4.4. Run Maven project</h2><p>(1) Right-click the project, select Run As-&gt;Maven Install, and then click Run.</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/441.png" alt="Run Maven project"></p>
+<p>(2) Run cmd.exe and open the target directory. Run java -jar gizwits-noti-demo-2.0.0-jar-with-dependencies.jar</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/442.png" alt="Run Maven project"></p>
+<p>(3) Input rc to issue a control instruction. Check the cloud communication log to see if it succeeds.</p>
+<p>Figure 1: The project uses V4 product data point format to issue a control instruction</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/443.png" alt="Run Maven project"></p>
+<p>Figure 2: The project uses V4 product custom format (transparent transmission without data points) to issue a control instruction</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/444.png" alt="Run Maven project"></p>
+<p>(4) The device actively reports its current state.</p>
+<p>FF FF 00 09 05 00 00 00 04 01 02 03 18</p>
+<p>Because the data received is transparently transmitted, it is base64 encoded, and you have to decode it yourself.</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/445.png" alt="Run Maven project"></p>
+<p>Base64 decoding as follows</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/446.png" alt="Base64 decoding"></p>
+<h1 id="5-Reference-guide"><a href="#5-Reference-guide" class="headerlink" title="5. Reference guide"></a>5. Reference guide</h1><p>SNoti API:<br><a href="http://docs.gizwits.com/en-us/Cloud/NotificationAPI.html" target="_blank" rel="noopener">http://docs.gizwits.com/en-us/Cloud/NotificationAPI.html</a></p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>

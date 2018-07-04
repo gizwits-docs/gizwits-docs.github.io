@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>Generating device QR code for App binding - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Generating device QR code for App binding-Gizwits">
+  <meta name="keywords" content="Generating device QR code for App binding docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quickly &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/readme.html">Intro in 5 mins</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Generating device QR code for App binding</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>A QR code scanning API for App binding is reserved in the Gizwits App SDK, which can be used to directly bind devices by App through scanning the GPRS devices (or Wi-Fi devices). This article describes how to generate the device QR code through the API.</p>
+<h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><h2 id="1-Navigate-to-the-QR-Code-Generation-Website"><a href="#1-Navigate-to-the-QR-Code-Generation-Website" class="headerlink" title="1. Navigate to the QR Code Generation Website"></a>1. Navigate to the QR Code Generation Website</h2><p>Open this URL in your browser <a href="http://qrcode.gizwitsapi.com:1800/doc/" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/doc/</a></p>
+<h2 id="2-Enter-the-authorization-code"><a href="#2-Enter-the-authorization-code" class="headerlink" title="2. Enter the authorization code"></a>2. Enter the authorization code</h2><p>Click “Authorize” in the upper right corner, enter “G” in the dialog box that pops up, and click the “Authorize” button.</p>
+<p><img src="../../../assets/en-us/UserManual/qrcode/11.png" alt="Generating device QR code for App binding"> </p>
+<h2 id="3-Enter-PK-and-MAC-Address"><a href="#3-Enter-PK-and-MAC-Address" class="headerlink" title="3. Enter PK and MAC Address"></a>3. Enter PK and MAC Address</h2><p>Open the “Create QR Code Generation Task” API.</p>
+<p><img src="../../../assets/en-us/UserManual/qrcode/12.png" alt="Generating device QR code for App binding"> </p>
+<p>Enter product_key and the MAC address sequence used to generate QR code.</p>
+<p><img src="../../../assets/en-us/UserManual/qrcode/13.png" alt="Generating device QR code for App binding"> </p>
+<h2 id="4-Generate-QR-code"><a href="#4-Generate-QR-code" class="headerlink" title="4. Generate QR code"></a>4. Generate QR code</h2><p>Click “Try it out!” to create a generation task. If it returns 201, the QR code is generated successfully.</p>
+<p><img src="../../../assets/en-us/UserManual/qrcode/14.png" alt="Generating device QR code for App binding"> </p>
+<h2 id="5-Query-the-generated-QR-code"><a href="#5-Query-the-generated-QR-code" class="headerlink" title="5. Query the generated QR code"></a>5. Query the generated QR code</h2><p>Open the “Query All QR Code Generation Tasks” API.</p>
+<p><img src="../../../assets/en-us/UserManual/qrcode/15.png" alt="Generating device QR code for App binding"> </p>
+<p>Enter product_key, click “Try it out!” to query the generation task.</p>
+<p><img src="../../../assets/en-us/UserManual/qrcode/16.png" alt="Generating device QR code for App binding"> </p>
+<p>The generated results include the relative path of the file download URLs.</p>
+<p><img src="../../../assets/en-us/UserManual/qrcode/17.png" alt="Generating device QR code for App binding"> </p>
+<h2 id="6-Download-the-QR-code"><a href="#6-Download-the-QR-code" class="headerlink" title="6. Download the QR code"></a>6. Download the QR code</h2><p>In the browser, enter the full URL (<a href="http://qrcode.gizwitsapi.com:1800/+" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/+</a> URL in the figure above) to download the generated QR code images. </p>
+<p>The download URL in this case is: </p>
+<p><a href="http://qrcode.gizwitsapi" target="_blank" rel="noopener">http://qrcode.gizwitsapi</a> .com:1800/static/zipfiles/1474.zip</p>
+<p><img src="../../../assets/en-us/UserManual/qrcode/18.png" alt="Generating device QR code for App binding"> </p>
+<p>The downloaded QR code is packaged in a zip file, as shown below.</p>
+<p><img src="../../../assets/en-us/UserManual/qrcode/19.png" alt="Generating device QR code for App binding"> </p>
+<h2 id="7-Binding-device-using-App"><a href="#7-Binding-device-using-App" class="headerlink" title="7. Binding device using App"></a>7. Binding device using App</h2><p>After decompressing QR code zip file, you can use the Gizwits debugging App to directly scan the QR code and bind the device.</p>
+<p><img src="../../../assets/en-us/UserManual/qrcode/20.png" alt="Generating device QR code for App binding"> </p>
+<p>In the App development, you need to call the device binding API through QR code in the Gizwits App SDK. QR code scanning can be implemented through a third-party framework (such as zxing). You can refer to the Gizwits open source framework code. The specific device binding API call in SDK is as follows, taking Android as an example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//Call device binding API</span><br><span class="line">GizWifiSDK.sharedInstance().bindDeviceByQRCode(user id,user token,QR code);</span><br><span class="line">//Callback for device binding</span><br><span class="line">GizWifiSDKListener sdkListener=new GizWifiSDKListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void didBindDevice(GizWifiErrorCode result, String did) &#123;</span><br><span class="line">        super.didBindDevice(result, did);</span><br><span class="line">	//Callback for successful binding</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>

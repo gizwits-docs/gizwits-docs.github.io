@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>Device Linkage API Tutorial - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Device Linkage API Tutorial-Gizwits">
+  <meta name="keywords" content="Device Linkage API Tutorial docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quickly &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/readme.html">Intro in 5 mins</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Device Linkage API Tutorial</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><p>The Wi-Fi device linkage is implemented by creating a linkage rule between devices. When a device triggers the rule, the cloud issues control instructions to the associated devices. For example, the customer has a smart light and a smart air conditioner, for which a rule can be created based on the device linkage function provided by the Gizwits cloud. When the smart light is turned on, the smart air conditioner will be turned on, whose diagram is as follows.</p>
+<p><img src="../../../assets/en-us/UserManual/LinkageAPI/11.png" alt="Overview"></p>
+<p>Note: When creating linkage between two products, the two products must be associated with the same appid, otherwise, the error of appid does not exist will occur when requesting.</p>
+<h1 id="2-Device-linkage-process"><a href="#2-Device-linkage-process" class="headerlink" title="2. Device linkage process"></a>2. Device linkage process</h1><p>Pre-condition: The source device and target device must be associated to a same user. Then a rule set under the user will enable the linkage between devices.</p>
+<p>The following is the flowchart of device linkage:</p>
+<p><img src="../../../assets/en-us/UserManual/LinkageAPI/12.png" alt="flowchart of device linkage"></p>
+<h1 id="3-Device-linkage-rules"><a href="#3-Device-linkage-rules" class="headerlink" title="3. Device linkage rules"></a>3. Device linkage rules</h1><h2 id="3-1-Get-available-variables"><a href="#3-1-Get-available-variables" class="headerlink" title="3.1. Get available variables"></a>3.1. Get available variables</h2><p>Description: Get all data point names and related variables of the device and product under the same pk associated with appid that can be used when creating rules.</p>
+<ol>
+<li><p>Request URL: <a href="http://api.gizwits.com/app/rules/params?product_key=pk1,pk2" target="_blank" rel="noopener">http://api.gizwits.com/app/rules/params?product_key=pk1,pk2</a></p>
+</li>
+<li><p>Request method: GET</p>
+</li>
+<li><p>Request Header:</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_key</td>
+<td>String</td>
+<td>Yes</td>
+<td>params</td>
+<td>Provide a comma separated list of pk. When leaving blank, all pk associated to the appid are in use by default. When passing a pk that is not associated to the appid, the pk will be invalid.</td>
+</tr>
+<tr>
+<td>X-Gizwits-Application-Id</td>
+<td>String</td>
+<td>Yes</td>
+<td>header</td>
+<td>Gizwits APPID</td>
+</tr>
+<tr>
+<td>X-Gizwits-User-Token</td>
+<td>String</td>
+<td>Yes</td>
+<td>header</td>
+<td>User token</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-2-Create-a-rule"><a href="#3-2-Create-a-rule" class="headerlink" title="3.2. Create a rule"></a>3.2. Create a rule</h2><p>Description: Create a device linkage rule.</p>
+<p>1.Request URL: <a href="http://api.gizwits.com/app/rules" target="_blank" rel="noopener">http://api.gizwits.com/app/rules</a></p>
+<p>2.Request method: POST</p>
+<p>3.Request parameters</p>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Gizwits-Application-Id</td>
+<td>String</td>
+<td>Yes</td>
+<td>header</td>
+<td></td>
+<td>Gizwits APPID</td>
+</tr>
+<tr>
+<td>X-Gizwits-User-Token</td>
+<td>String</td>
+<td>Yes</td>
+<td>header</td>
+<td></td>
+<td>User token</td>
+</tr>
+<tr>
+<td>product_key</td>
+<td>String</td>
+<td>Yes</td>
+<td>body</td>
+<td></td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>did</td>
+<td>String</td>
+<td>Yes</td>
+<td>body</td>
+<td></td>
+<td>Device did</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>No</td>
+<td>body</td>
+<td></td>
+<td>Product name</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>String</td>
+<td>No</td>
+<td>body</td>
+<td></td>
+<td>Device alias</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>Integer</td>
+<td>No</td>
+<td>body</td>
+<td></td>
+<td>The minimum trigger interval in seconds. After a rule with the parameter specified is triggered, it must wait until the specified interval elapses before next triggering.</td>
+</tr>
+<tr>
+<td>event</td>
+<td>String</td>
+<td>Yes</td>
+<td>body</td>
+<td>online/offline/alert/fault/data/extern</td>
+<td>Trigger mode. If this parameter is not set or set to empty, its value will be data by default.</td>
+</tr>
+<tr>
+<td>event_attr</td>
+<td>Object</td>
+<td>No</td>
+<td>body</td>
+<td></td>
+<td>It’s required when the event parameter is set to alert or fault.</td>
+</tr>
+<tr>
+<td>input</td>
+<td>Array</td>
+<td>No</td>
+<td>body</td>
+<td></td>
+<td>Each object in the array represents the data of one device. Omit when you do not need to use device data.</td>
+</tr>
+<tr>
+<td>condition</td>
+<td>Array</td>
+<td>No</td>
+<td>body</td>
+<td></td>
+<td>Each sub array in the array represents a set of conditions. If this parameter is not set or set to empty, it means to trigger directly.</td>
+</tr>
+<tr>
+<td>output</td>
+<td>Array</td>
+<td>Yes</td>
+<td>body</td>
+<td></td>
+<td>Each sub array in the array represents a set of actions, of which at least one is required.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tips</strong></p>
+<p><strong>a.event</strong></p>
+<p>Indicates the triggering method of the rule. The following is the meaning of the optional value:</p>
+<ul>
+<li>online  - Device comes online</li>
+<li>offline – Device goes offline</li>
+<li>alert   - An alarm occurred on one of the alarm data points of the device</li>
+<li>fault   - An fault occurred on one of the fault data points of the device</li>
+<li>data    - Device reports its state</li>
+<li>extern  - External API call fired</li>
+</ul>
+<p>If this parameter is not set or set to empty, its value will be data by default.</p>
+<p><strong>b.event_attr</strong></p>
+<p>When the trigger mode is alert/fault, the data point name for this alarm/fault, and the occurrence/recovery of the alarm/fault, are specified by this parameter:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;event_attr&quot;: &#123;</span><br><span class="line">    &quot;attr_name&quot;: &quot;datapoint_alert&quot;, ---- Data point at which this alarm/failure occurred </span><br><span class="line">    &quot;value&quot;: &quot;1&quot;                    ---- The occurrence/cancellation of an alarm/failure. 1 indicates occurrence. 0 indicates cancellation.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Note: </p>
+<p>The “occurrence” of the alarm/fault mentioned here means that the reported data point value of the last alarm/failure of the device is 0, and its reported value is 1 this time, then the alarm/failure occurs.</p>
+<p>The “recovery” of the alarm/failure mentioned here means that the reported data point value of the last alarm/failure of the device is 1, and its reported value is 0 this time, then the alarm/failure recoveries.</p>
+<p>Other cases are not “occurrence” and “recovery”.</p>
+<p><strong>c.did</strong></p>
+<p>When the trigger mode is online/offline/alert/fault/data, the device that fires this rule is specified by this parameter. The device is designated as the master device in the following.</p>
+<p><strong>d.input</strong></p>
+<p>Specifies the device data to be used in the rule. Each object in the array represents the data of one device. Omit if you do not need to use device data:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[&#123;</span><br><span class="line">    &quot;product_key&quot;: &quot;pk1&quot;, ---- Product key to which the device belongs</span><br><span class="line">    &quot;did&quot;: &quot;did1&quot;,        ---- Device did</span><br><span class="line">    &quot;prefix&quot;: &quot;device1&quot;   ---- the prefix which is used to refer to the data point of the device in condition and output. If this parameter is set to device1, then device1.datapoint1 indicates referring to the data point datapoint1 of the device device1.</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+<p><strong>e.condition</strong></p>
+<p>Specify the conditions to be satisfied by the trigger rule. The conditions in the array will be checked on a group-by-group basis in the cloud processing. When any set of conditions is met, the rule is triggered.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    [&#123;</span><br><span class="line">        &quot;left&quot;: &quot;device1.datapoint1&quot;, ---- Left operand, whose value type needs to be the same as the right operand</span><br><span class="line">        &quot;opt&quot;: &quot;==&quot;,                  ---- Comparison operator, Available values are: &gt;, &gt;=, &lt;, &lt;=, ==, != (Note: Only numeric values can be compared)</span><br><span class="line">        &quot;right&quot;: &quot;1&quot;                  ---- Right operand, whose value type needs to be the same as the left operand. When using a constant, note that &quot;1&quot; represents the number 1, &quot;&apos;1&apos;&quot; or &quot;\&quot;1\&quot; &quot;is the string &quot;1&quot;</span><br><span class="line">	&#125;],</span><br><span class="line">    [&#123;                                ---- Each sub array represents a set of conditions, a set of conditions is satisfied only when all the conditions in this set are satisfied </span><br><span class="line">        &quot;left&quot;: &quot;device1.datapoint1&quot;,</span><br><span class="line">        &quot;opt&quot;: &quot;==&quot;,</span><br><span class="line">        &quot;right&quot;: &quot;1&quot;</span><br><span class="line">    &#125;,&#123;</span><br><span class="line">        &quot;left&quot;: &quot;device2.datapoint2&quot;,</span><br><span class="line">        &quot;opt&quot;: &quot;&gt;&quot;,</span><br><span class="line">        &quot;right&quot;: &quot;25&quot;</span><br><span class="line">    &#125;]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p><strong>f.output</strong></p>
+<p>Specify what needs to be done when the conditions are met. The cloud can be thought of as performing all groups of actions in parallel. Each group does not affect each other.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    [&#123;                            ---- Each sub array represents a set of actions, which are executed in sequence. If an action fails, subsequent actions will not be executed.</span><br><span class="line">        &quot;type&quot;: &quot;devctrl&quot;,        ---- type of output, devctrl indicates to control the device</span><br><span class="line">        &quot;did&quot;: &quot;did1&quot;,            ---- Specify the did of the device to be controlled</span><br><span class="line">        &quot;attrs&quot;: &#123;                 ---- key-value format</span><br><span class="line">            &quot;datapoint1&quot;: 1,      ---- set datapoint1 to 1</span><br><span class="line">            &quot;datapoint2&quot;: 25,</span><br><span class="line">            &quot;datapoint3&quot;: &quot;黄色&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,&#123;</span><br><span class="line">        &quot;type&quot;: &quot;delay&quot;,          ---- type of output </span><br><span class="line">        &quot;delay&quot;: 5                ---- Delay time in seconds</span><br><span class="line">    &#125;,&#123;</span><br><span class="line">        &quot;type&quot;: &quot;devctrl&quot;,</span><br><span class="line">        &quot;did&quot;: &quot;did3&quot;,</span><br><span class="line">        &quot;raw&quot;: &quot;1111111100000111&quot; ---- raw format</span><br><span class="line">    &#125;],</span><br><span class="line">    [&#123;</span><br><span class="line">        &quot;type&quot;: &quot;devctrl&quot;,</span><br><span class="line">        &quot;did&quot;: &quot;did2&quot;,</span><br><span class="line">        &quot;attrs&quot;: &#123;</span><br><span class="line">            &quot;datapoint1&quot;: 1,</span><br><span class="line">            &quot;datapoint2&quot;: 25,</span><br><span class="line">            &quot;datapoint3&quot;: &quot;黄色&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p><strong>g.Body sample</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;product_key&quot;: &quot;pk1&quot;,</span><br><span class="line">    &quot;did&quot;: &quot;did1&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;name1&quot;,</span><br><span class="line">    &quot;remark&quot;: &quot;remark1&quot;,</span><br><span class="line">    &quot;event&quot;: &quot;data&quot;,</span><br><span class="line">    &quot;event_attr&quot;: &#123;</span><br><span class="line">        &quot;attr_name&quot;: &quot;datapoint_alert&quot;,</span><br><span class="line">        &quot;value&quot;: &quot;1&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;input&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;product_key&quot;: &quot;pk1&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;did1&quot;,</span><br><span class="line">            &quot;prefix&quot;: &quot;device1&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;product_key&quot;: &quot;pk2&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;did2&quot;,</span><br><span class="line">            &quot;prefix&quot;: &quot;device2&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;condition&quot;: [</span><br><span class="line">        [&#123;</span><br><span class="line">            &quot;left&quot;: &quot;device1.datapoint1&quot;, ---- Boolean type</span><br><span class="line">            &quot;opt&quot;: &quot;==&quot;,</span><br><span class="line">            &quot;right&quot;: &quot;1&quot;</span><br><span class="line">        &#125;],</span><br><span class="line">        [&#123;</span><br><span class="line">            &quot;left&quot;: &quot;device2.datapoint2&quot;, ---- Numeric</span><br><span class="line">            &quot;opt&quot;: &quot;&gt;&quot;,</span><br><span class="line">            &quot;right&quot;: &quot;25&quot;</span><br><span class="line">        &#125;],</span><br><span class="line">        [&#123;</span><br><span class="line">            &quot;left&quot;: &quot;device2.datapoint3&quot;, ---- Enumeration</span><br><span class="line">            &quot;opt&quot;: &quot;!=&quot;,</span><br><span class="line">            &quot;right&quot;: &quot;&apos;黄色&apos;&quot;</span><br><span class="line">        &#125;,&#123;</span><br><span class="line">            &quot;left&quot;: &quot;device2.datapoint4&quot;, ---- Extended type</span><br><span class="line">            &quot;opt&quot;: &quot;==&quot;,</span><br><span class="line">            &quot;right&quot;: &quot;0xFF00&quot;</span><br><span class="line">        &#125;]</span><br><span class="line">    ],</span><br><span class="line">    &quot;output&quot;: [</span><br><span class="line">        [&#123;</span><br><span class="line">            &quot;type&quot;: &quot;devctrl&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;did1&quot;, </span><br><span class="line">            &quot;attrs&quot;: &#123;</span><br><span class="line">                &quot;datapoint1&quot;: 1,</span><br><span class="line">                &quot;datapoint2&quot;: 25,</span><br><span class="line">                &quot;datapoint3&quot;: &quot;黄色&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,&#123;</span><br><span class="line">            &quot;type&quot;: &quot;delay&quot;,</span><br><span class="line">            &quot;delay&quot;: 5</span><br><span class="line">        &#125;,&#123;</span><br><span class="line">            &quot;type&quot;: &quot;devctrl&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;did3&quot;,</span><br><span class="line">            &quot;raw&quot;: &quot;1111111100000111&quot;</span><br><span class="line">        &#125;],</span><br><span class="line">        [&#123;</span><br><span class="line">            &quot;type&quot;: &quot;devctrl&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;did2&quot;,</span><br><span class="line">            &quot;attrs&quot;: &#123;</span><br><span class="line">                &quot;datapoint1&quot;: 1,</span><br><span class="line">                &quot;datapoint2&quot;: 25,</span><br><span class="line">                &quot;datapoint3&quot;: &quot;黄色&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.Sample rule</p>
+<p>When the data point Power_Switch of source device is switched on, the rule will be triggered to turn on the data point OnOff of the target device.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;product_key&quot;: &quot;9005ab8399bb4338b6131a0522b3a57c&quot;,</span><br><span class="line">    &quot;did&quot;: &quot;7qSv5w62GK36NkUWFQu8AP&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;&quot;,</span><br><span class="line">    &quot;remark&quot;: &quot;&quot;,</span><br><span class="line">    &quot;event&quot;: &quot;data&quot;,</span><br><span class="line">      &quot;input&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;product_key&quot;:&quot;9005ab8399bb4338b6131a0522b3a57c&quot;,</span><br><span class="line">            &quot;did&quot;:&quot;7qSv5w62GK36NkUWFQu8AP&quot;,</span><br><span class="line">            &quot;prefix&quot;:&quot;device1&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;product_key&quot;:&quot;98b133ecaa314d9d8224cd8cbc935c06&quot;,</span><br><span class="line">            &quot;did&quot;:&quot;qkDCqFiW3s4mbXWAqpFUnW&quot;,</span><br><span class="line">            &quot;prefix&quot;:&quot;device2&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;condition&quot;: [</span><br><span class="line">    	 [&#123;</span><br><span class="line">            &quot;left&quot;: &quot;device1.Power_Switch&quot;, </span><br><span class="line">            &quot;opt&quot;: &quot;==&quot;,</span><br><span class="line">            &quot;right&quot;: &quot;1&quot;</span><br><span class="line">        &#125;]</span><br><span class="line">	],</span><br><span class="line">    &quot;output&quot;: [</span><br><span class="line">        [&#123;</span><br><span class="line">            &quot;type&quot;:&quot;devctrl&quot;,</span><br><span class="line">            &quot;did&quot;:&quot;qkDCqFiW3s4mbXWAqpFUnW&quot;, </span><br><span class="line">            &quot;attrs&quot;:&#123;</span><br><span class="line">                &quot;OnOff&quot;:1</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-Get-user-rules"><a href="#3-3-Get-user-rules" class="headerlink" title="3.3. Get user rules"></a>3.3. Get user rules</h2><p>Description: Get all rules created by a user.</p>
+<p>1.Request URL: <a href="http://api.gizwits.com/app/rules" target="_blank" rel="noopener">http://api.gizwits.com/app/rules</a></p>
+<p>2.Request method: GET</p>
+<p>3.Request parameters</p>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Gizwits-Application-Id</td>
+<td>String</td>
+<td>Yes</td>
+<td>Header</td>
+<td>Gizwits APPID</td>
+</tr>
+<tr>
+<td>X-Gizwits-User-Token</td>
+<td>String</td>
+<td>Yes</td>
+<td>Header</td>
+<td>User token</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-4-Update-a-rule"><a href="#3-4-Update-a-rule" class="headerlink" title="3.4. Update a rule"></a>3.4. Update a rule</h2><p>Description: Update a rule whose identifier value is rule_id.</p>
+<p>1.Request URL: <a href="http://api.gizwits.com/app/rules/{rule_id}" target="_blank" rel="noopener">http://api.gizwits.com/app/rules/{rule_id}</a></p>
+<p>2.Request method: PUT</p>
+<p>3.Request parameters</p>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Gizwits-Application-Id</td>
+<td>String</td>
+<td>Yes</td>
+<td>header</td>
+<td></td>
+<td>Gizwits APPID</td>
+</tr>
+<tr>
+<td>X-Gizwits-User-Token</td>
+<td>String</td>
+<td>Yes</td>
+<td>header</td>
+<td></td>
+<td>User token</td>
+</tr>
+<tr>
+<td>product_key</td>
+<td>String</td>
+<td>Yes</td>
+<td>body</td>
+<td></td>
+<td>Product key</td>
+</tr>
+<tr>
+<td>did</td>
+<td>String</td>
+<td>Yes</td>
+<td>body</td>
+<td></td>
+<td>Device did</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>No</td>
+<td>body</td>
+<td></td>
+<td>Product name</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>String</td>
+<td>No</td>
+<td>body</td>
+<td></td>
+<td>Device alias</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>Integer</td>
+<td>No</td>
+<td>body</td>
+<td></td>
+<td>The minimum trigger interval in seconds. After a rule with the parameter specified is triggered, it must wait until the specified interval elapses before next triggering.</td>
+</tr>
+<tr>
+<td>event</td>
+<td>String</td>
+<td>Yes</td>
+<td>body</td>
+<td>online/offline/alert/fault/data/extern</td>
+<td>Trigger mode. If this parameter is not set or set to empty, its value will be data by default.</td>
+</tr>
+<tr>
+<td>event_attr</td>
+<td>Object</td>
+<td>No</td>
+<td>body</td>
+<td></td>
+<td>It’s required when the event parameter is set to alert or fault.</td>
+</tr>
+<tr>
+<td>input</td>
+<td>Array</td>
+<td>No</td>
+<td>body</td>
+<td></td>
+<td>Each object in the array represents the data of one device. Omit when you do not need to use device data.</td>
+</tr>
+<tr>
+<td>condition</td>
+<td>Array</td>
+<td>No</td>
+<td>body</td>
+<td></td>
+<td>Each sub array in the array represents a set of conditions. If this parameter is not set or set to empty, it means to trigger directly.</td>
+</tr>
+<tr>
+<td>output</td>
+<td>Array</td>
+<td>Yes</td>
+<td>body</td>
+<td></td>
+<td>Each sub array in the array represents a set of actions, of which at least one is required.</td>
+</tr>
+</tbody>
+</table>
+<p>4.Sample rule</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;product_key&quot;: &quot;pk1&quot;,</span><br><span class="line">    &quot;did&quot;: &quot;did1&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;name1&quot;,</span><br><span class="line">    &quot;remark&quot;: &quot;remark1&quot;,</span><br><span class="line">    &quot;event&quot;: &quot;data&quot;,</span><br><span class="line">    &quot;event_attr&quot;: &#123;</span><br><span class="line">        &quot;attr_name&quot;: &quot;datapoint_alert&quot;,</span><br><span class="line">        &quot;value&quot;: &quot;1&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;input&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;product_key&quot;: &quot;pk1&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;did1&quot;,</span><br><span class="line">            &quot;prefix&quot;: &quot;device1&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;product_key&quot;: &quot;pk2&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;did2&quot;,</span><br><span class="line">            &quot;prefix&quot;: &quot;device2&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;condition&quot;: [</span><br><span class="line">        [&#123;</span><br><span class="line">            &quot;left&quot;: &quot;device1.datapoint1&quot;,</span><br><span class="line">            &quot;opt&quot;: &quot;==&quot;,</span><br><span class="line">            &quot;right&quot;: 1</span><br><span class="line">        &#125;],</span><br><span class="line">        [&#123;</span><br><span class="line">            &quot;left&quot;: &quot;device2.datapoint2&quot;,</span><br><span class="line">            &quot;opt&quot;: &quot;&gt;&quot;,</span><br><span class="line">            &quot;right&quot;: 25</span><br><span class="line">        &#125;],</span><br><span class="line">        [&#123;</span><br><span class="line">            &quot;left&quot;: &quot;device2.datapoint3&quot;,</span><br><span class="line">            &quot;opt&quot;: &quot;!=&quot;,</span><br><span class="line">            &quot;right&quot;: &quot;黄色&quot;</span><br><span class="line">        &#125;,&#123;</span><br><span class="line">            &quot;left&quot;: &quot;device2.datapoint4&quot;,</span><br><span class="line">            &quot;opt&quot;: &quot;==&quot;,</span><br><span class="line">            &quot;right&quot;: &quot;0xFF00&quot;</span><br><span class="line">        &#125;]</span><br><span class="line">    ],</span><br><span class="line">    &quot;output&quot;: [</span><br><span class="line">        [&#123;</span><br><span class="line">            &quot;type&quot;: &quot;devctrl&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;did1&quot;, </span><br><span class="line">            &quot;attrs&quot;: &#123;</span><br><span class="line">                &quot;datapoint1&quot;: 1,</span><br><span class="line">                &quot;datapoint2&quot;: 25,</span><br><span class="line">                &quot;datapoint3&quot;: &quot;黄色&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,&#123;</span><br><span class="line">            &quot;type&quot;: &quot;delay&quot;,</span><br><span class="line">            &quot;delay&quot;: 5</span><br><span class="line">        &#125;,&#123;</span><br><span class="line">            &quot;type&quot;: &quot;devctrl&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;did3&quot;,</span><br><span class="line">            &quot;raw&quot;: &quot;1111111100000111&quot;</span><br><span class="line">        &#125;],</span><br><span class="line">        [&#123;</span><br><span class="line">            &quot;type&quot;: &quot;devctrl&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;did2&quot;,</span><br><span class="line">            &quot;attrs&quot;: &#123;</span><br><span class="line">                &quot;datapoint1&quot;: 1,</span><br><span class="line">                &quot;datapoint2&quot;: 25,</span><br><span class="line">                &quot;datapoint3&quot;: &quot;黄色&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5.Sample for updating a rule</p>
+<p>When the data point Power_Switch of source device is switched on, the rule will be triggered to turn on the data point OnOff of the target device, and then wait 5s, and then set the data point Lightness of the target device to 25.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;product_key&quot;: &quot;9005ab8399bb4338b6131a0522b3a57c&quot;,</span><br><span class="line">    &quot;did&quot;: &quot;7qSv5w62GK36NkUWFQu8AP&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;&quot;,</span><br><span class="line">    &quot;remark&quot;: &quot;&quot;,</span><br><span class="line">    &quot;event&quot;: &quot;data&quot;,</span><br><span class="line">    &quot;input&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;product_key&quot;: &quot;9005ab8399bb4338b6131a0522b3a57c&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;7qSv5w62GK36NkUWFQu8AP&quot;,</span><br><span class="line">            &quot;prefix&quot;: &quot;device1&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;product_key&quot;: &quot;98b133ecaa314d9d8224cd8cbc935c06&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;qkDCqFiW3s4mbXWAqpFUnW&quot;,</span><br><span class="line">            &quot;prefix&quot;: &quot;device2&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;condition&quot;: [</span><br><span class="line">        [&#123;</span><br><span class="line">            &quot;left&quot;: &quot;device1.Power_Switch&quot;,</span><br><span class="line">            &quot;opt&quot;: &quot;==&quot;,</span><br><span class="line">            &quot;right&quot;: &quot;1&quot;</span><br><span class="line">        &#125;]</span><br><span class="line">    ],</span><br><span class="line">    &quot;output&quot;: [</span><br><span class="line">        [&#123;</span><br><span class="line">            &quot;type&quot;: &quot;devctrl&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;qkDCqFiW3s4mbXWAqpFUnW&quot;, </span><br><span class="line">            &quot;attrs&quot;: &#123;</span><br><span class="line">                &quot;OnOff&quot;: 1</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,&#123;</span><br><span class="line">            &quot;type&quot;: &quot;delay&quot;,</span><br><span class="line">            &quot;delay&quot;: 5</span><br><span class="line">        &#125;,&#123;</span><br><span class="line">            &quot;type&quot;: &quot;devctrl&quot;,</span><br><span class="line">            &quot;did&quot;: &quot;qkDCqFiW3s4mbXWAqpFUnW&quot;,</span><br><span class="line">             &quot;attrs&quot;: &#123;</span><br><span class="line">                &quot;Lightness&quot;: 25</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-5-Delete-a-rule"><a href="#3-5-Delete-a-rule" class="headerlink" title="3.5. Delete a rule"></a>3.5. Delete a rule</h2><p>Description: Delete a rule whose identifier value is rule_id.</p>
+<ol>
+<li><p>Request URL: <a href="http://api.gizwits.com/app/rules/{rule_id}" target="_blank" rel="noopener">http://api.gizwits.com/app/rules/{rule_id}</a></p>
+</li>
+<li><p>Request method: DELETE</p>
+</li>
+<li><p>Request parameters:</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Param Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Gizwits-Application-Id</td>
+<td>String</td>
+<td>Yes</td>
+<td>Header</td>
+<td></td>
+<td>Gizwits APPID</td>
+</tr>
+<tr>
+<td>X-Gizwits-User-Token</td>
+<td>String</td>
+<td>Yes</td>
+<td>Header</td>
+<td></td>
+<td>User token</td>
+</tr>
+<tr>
+<td>rule_id</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>url</td>
+<td></td>
+<td>Rule ID</td>
+</tr>
+</tbody>
+</table>
+<h1 id="4-See-Also"><a href="#4-See-Also" class="headerlink" title="4. See Also"></a>4. See Also</h1><ul>
+<li>Open API documentation: <a href="http://docs.gizwits.com/en/Cloud/openapi_apps.html" target="_blank" rel="noopener">http://docs.gizwits.com/en/Cloud/openapi_apps.html</a></li>
+<li>Swagger link:<br><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/设备联动" target="_blank" rel="noopener">http://swagger.gizwits.com/doc/index/openapi_apps#/设备联动</a></li>
+</ul>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
