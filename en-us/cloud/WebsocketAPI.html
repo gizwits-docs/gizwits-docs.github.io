@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>Web Socket API - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Web Socket API-Gizwits">
+  <meta name="keywords" content="Web Socket API docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quickly &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/readme.html">Intro in 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/Glossary.html">Glossary</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              App Dev &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDev_FAQ.html">App Dev FAQ</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/iOS_AuthReSkin.html">iOS Auth Re Skin</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/ios_frame.html">iOS frame</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/iOS_Push_Notification.html">iOS Push Notification</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/WeChatDev/WeChatDev.html">WeChatDev</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/WeChatDev/WeChatDev_InTro.html">WeChat Dev Intro</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/CloudFAQ.html">Cloud FAQ</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/NotificationAPI.html">Notification API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/OpenAPI.html">Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/WebsocketAPI.html">WebsocketAPI</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              User Manual &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/DataAPI.html">Data API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/devApp.html">dev App</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/devgroup_API.html">dev group_API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/LinkageAPI.html">Linkage API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/UseOpenAPI.html">Use Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/UseQRCAPI.html">Use QRC API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/UseSNoti.html">Use SNoti</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/UseWebsocket.html">Use Websocket</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Web Socket API</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h1><p><a href="https://github.com/gizwits/gizwits-wechat-js-sdk" target="_blank" rel="noopener">https://github.com/gizwits/gizwits-wechat-js-sdk</a></p>
+<h1 id="Communication-Model"><a href="#Communication-Model" class="headerlink" title="Communication Model"></a>Communication Model</h1><p>Browsers (JavaScript) can communicate directly with Gizwits cloud via the Web Socket API. Thus browser (JavaScript) can control the device and receive device reported data through the Web Socket API.</p>
+<p><img src="../../../assets/en-us/cloud/通信模型.jpg" alt="Communication Model"></p>
+<h1 id="Communication-process"><a href="#Communication-process" class="headerlink" title="Communication process"></a>Communication process</h1><p>The communication between JavaScript and the cloud with Web Socket API mainly includes the following steps.</p>
+<ul>
+<li>User login: The user logs in to the cloud through the uid and token obtained from the HTTP API.</li>
+<li>Receiving device online and offline state messages: The device can be controlled only after the device is bound.</li>
+<li>Send and receive device data.</li>
+<li>Heartbeat: The browser (JavaScript) periodically sends heartbeats to the cloud, and the cloud responds to heartbeat.</li>
+</ul>
+<h1 id="Agreement"><a href="#Agreement" class="headerlink" title="Agreement"></a>Agreement</h1><h2 id="1-Tips"><a href="#1-Tips" class="headerlink" title="1. Tips"></a>1. Tips</h2><p><code>&lt;str&gt; represents a string placeholder, and &lt;int&gt; represents an integer placeholder</code>.</p>
+<h2 id="2-Web-Socket-service-address"><a href="#2-Web-Socket-service-address" class="headerlink" title="2. Web Socket service address"></a>2. Web Socket service address</h2><p><code>ws://&lt;host&gt;:&lt;ws_port&gt;/ws/app/v1 (unencrypted connection)</code></p>
+<p><code>wss://&lt;host&gt;:&lt;wss_port&gt;/ws/app/v1 (encrypted connection)</code></p>
+<p>Of which <host> is the value of the host field in the bound device list, &lt;ws_port&gt; is the value of the ws_port field in the bound device list, and &lt;wss_port&gt; is the value of the wss_port field in the bound device list. See the HTTP API of Get bound device list.</host></p>
+<h2 id="3-Notes"><a href="#3-Notes" class="headerlink" title="3. Notes"></a>3. Notes</h2><ul>
+<li>Before the Web Socket interaction with the cloud, the user must be registered and have already bound the device.</li>
+<li>The data that interacts with the cloud follows JSON format and is encoded in UTF-8. You can use JSON.stringify(json) to convert JavaScript objects into strings and send them to the cloud, or convert the received string data into JavaScript objects via var res = JSON.parse(evt.data).</li>
+<li>The Web Socket test program should use <code>http://&lt;m2m_host&gt;:8080/app (&lt;m2m_host&gt; is the value of the host field in the bound device list)</code>. You can also view the source code of this web page as an example for reference.</li>
+</ul>
+<h1 id="Specification"><a href="#Specification" class="headerlink" title="Specification"></a>Specification</h1><h2 id="1-User-login"><a href="#1-User-login" class="headerlink" title="1. User login"></a>1. User login</h2><p>Browsers (JavaScript) must log in for further interaction with the cloud.</p>
+<p>Browser ⇒ Cloud. The browser sends the following JSON string to the cloud.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;login_req&quot;,</span><br><span class="line">    &quot;data&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;appid&quot;: &lt;str&gt;,</span><br><span class="line">        &quot;uid&quot;: &lt;str&gt;,</span><br><span class="line">        &quot;token&quot;: &lt;str&gt;,</span><br><span class="line">        &quot;p0_type&quot;: &quot;attrs_v4&quot;|&quot;custom&quot;, (&quot;attrs_v4&quot; refers to the interaction with the cloud through standard data point protocol, see the &quot;Standard data point operations&quot; section below. &quot;custom&quot; means to use a custom business logic protocol to interact with the cloud. See the &quot;Browser and cloud data exchange&quot; section below.)</span><br><span class="line">        &quot;heartbeat_interval&quot;: &lt;int&gt;, (Heartbeat interval in seconds. The value must be less than or equal to 180)</span><br><span class="line">        &quot;auto_subscribe&quot;: true | false (True means that after the login is successful, the server automatically subscribes to all the bound devices; if false, you need to select the devices to be subscribed to through the following &quot;User subscribes to device messages&quot; API. The default value is true. Recommend to set to false, then subscribe the devices as needed to save costs)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Cloud ⇒ Browser. The cloud responds to the browser with the following JSON string.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;login_res&quot;,</span><br><span class="line">    &quot;data&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;success&quot;: true | false （True for successful login, false for failed login）</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-User-subscribes-to-device-messages"><a href="#2-User-subscribes-to-device-messages" class="headerlink" title="2. User subscribes to device messages"></a>2. User subscribes to device messages</h2><p>Users can receive device-related messages only if they have subscribed to the bound device messages. This API only applies to scenarios where the login parameter auto_subscribe is set to false.</p>
+<p>Browser ⇒ Cloud. The browser sends the following JSON string to the cloud so as to subscribe device messages.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;subscribe_req&quot;,</span><br><span class="line">    &quot;data&quot;:</span><br><span class="line">    [</span><br><span class="line">        &#123;&quot;did&quot;: &lt;str&gt; &#125;,（did of the first device to be subscribed to）</span><br><span class="line">        &#123;&quot;did&quot;: &lt;str&gt; &#125;,（did of the second device to be subscribed to）</span><br><span class="line">        ……</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Cloud ⇒ Browser. The cloud sends the following JSON string to the browser to return the results.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;subscribe_res&quot;,</span><br><span class="line">    &quot;data&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;success&quot;:</span><br><span class="line">        [</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;did&quot;: &lt;str&gt;,（corresponding to the first device did）</span><br><span class="line">                &quot;error_code&quot;: 0,（0 for success）</span><br><span class="line">                &quot;msg&quot;: &lt;str&gt;（description）</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;did&quot;: &lt;str&gt;,（corresponding to the second device did）</span><br><span class="line">                &quot;error_code&quot;: 0,（0 for success）</span><br><span class="line">                &quot;msg&quot;: &lt;str&gt;（description）</span><br><span class="line">            &#125;,</span><br><span class="line">            ……</span><br><span class="line">         ],</span><br><span class="line">         “failed”:</span><br><span class="line">         [</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;did&quot;: &lt;str&gt;,（corresponding to the first device did）</span><br><span class="line">                &quot;error_code&quot;: &lt;int&gt;,（error code of failed subscription）</span><br><span class="line">                &quot;msg&quot;: &lt;str&gt;（description）</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;did&quot;: &lt;str&gt;,（corresponding to the second device did）</span><br><span class="line">                &quot;error_code&quot;: &lt;int&gt;,（error code of failed subscription）</span><br><span class="line">                &quot;msg&quot;: &lt;str&gt;（description）</span><br><span class="line">            &#125;,</span><br><span class="line">            ……</span><br><span class="line">         ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-Get-notified-when-device-goes-offline-or-comes-online"><a href="#3-Get-notified-when-device-goes-offline-or-comes-online" class="headerlink" title="3. Get notified when device goes offline or comes online"></a>3. Get notified when device goes offline or comes online</h2><p>When the device goes online or offline, the cloud will send a notification to the browser.</p>
+<p>Cloud ⇒ Browser. The cloud sends the following JSON string to the browser to notify the browser that the device goes online or offline.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;s2c_online_status&quot;,</span><br><span class="line">    &quot;data&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;did&quot;: &lt;str&gt;,（did of the device goes offline or comes online）</span><br><span class="line">        &quot;passcode&quot;: &lt;str&gt;,（passcode of the device goes offline or comes online）</span><br><span class="line">        &quot;mac&quot;: &lt;str&gt;,（mac of the device goes offline or comes online）</span><br><span class="line">        &quot;online&quot;: true | false （true for online，false for offline）</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-device-state-change-notification-for-binding-unbinding"><a href="#4-device-state-change-notification-for-binding-unbinding" class="headerlink" title="4. device state change notification for binding/unbinding"></a>4. device state change notification for binding/unbinding</h2><p>After the device is bound or unbound by the user, the cloud sends this message to notify the browser.</p>
+<p>Cloud ⇒ Browser. The cloud sends the following JSON string to the browser to notify that a binding or unbinding event has occurred.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;s2c_binding_changed&quot;,</span><br><span class="line">    &quot;data&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;did&quot;: &lt;str&gt;, (device did)</span><br><span class="line">        &quot;bind&quot;: true | false (true for binding, false for unbinding)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-Data-exchange-between-browser-and-cloud-data-transparent-transmission"><a href="#5-Data-exchange-between-browser-and-cloud-data-transparent-transmission" class="headerlink" title="5. Data exchange between browser and cloud (data transparent transmission)"></a>5. Data exchange between browser and cloud (data transparent transmission)</h2><p>The browser can exchange with the cloud any data that conforms to the protocol. Be sure to refer to the API documentation for full details about the protocol format.</p>
+<p>Please note that when the user logs in with the parameter “p0_type” set to “custom”, data can only be exchanged with the cloud in this way.</p>
+<p>Browser ⇒ Cloud. The browser sends the following JSON string to the cloud.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;c2s_raw&quot;,</span><br><span class="line">    &quot;data&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;did&quot;: &lt;str&gt;, （target device did）</span><br><span class="line">        &quot;raw&quot;: [&lt;byte&gt;, &lt;byte&gt;, ...] (The contents of custom business logic instructions, which are transmitted in byte arrays. The range of each byte must be 0~255. The content must begin with [0, 0, 0, 3, varLen(1~4B), 0, 0, 144])</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If you want the cloud to forward data to the device, the raw value needs to add the following protocol prefix and then concatenate the data sent to the device, i.e., [0, 0, 0, 3, varLen(1 ~ 4B), 0, 0, 144] + Data sent to the device, where varLen is a variable length, and represents the number of bytes with 1~4 bytes (B) after the variable length field until the end of the packet. If the length is less than 128B, directly with one byte (B) to indicate the length. For the encoding and decoding method with the length of 128B or more, refer to the definition of the Remaining Length of the MQTT V3.1 protocol. cmd can be 0x90/0x93/0x94 and so on.</p>
+<p>Cloud ⇒ Browser. After the cloud receives the data uploaded by the device, the cloud forwards the following JSON string to the browser. The data is passed in the raw field. Note that even if the value of the login parameter “p0_type” is set to “attrs_v4”, the data command reported by the device with the “business instruction via transparent transmission” or the operation command related to central control will also be sent to the browser with this command.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;s2c_raw&quot;,</span><br><span class="line">    &quot;data&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;did&quot;: &lt;str&gt;,（source device did）</span><br><span class="line">        &quot;raw&quot;: [&lt;byte&gt;, &lt;byte&gt;, ...] (The contents of custom business logic instructions, which are transmitted in byte array. The range of each byte must be 0~255)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If the data is reported by the device, the raw value will have a prefix, i.e., [0, 0, 0, 3, varLen(1~4B), 0, 0, 145] + device data, where varLen is a variable length. For its definition, please refer to above. cmd can be 0x91/0x93/0x94 and so on.</p>
+<h2 id="6-Standard-data-point-operations-read-write-notification-ACK"><a href="#6-Standard-data-point-operations-read-write-notification-ACK" class="headerlink" title="6. Standard data point operations (read, write, notification, ACK)"></a>6. Standard data point operations (read, write, notification, ACK)</h2><p>When the user logs in with the parameter “p0_type” set to “attrs_v4”, the cloud will interact with the browser in the way of the standard data point protocol.</p>
+<p>Browser ⇒ Cloud. The browser sends the following JSON string to the cloud to read the current state of the target device. It is not allowed to use this instruction when the value of the parameter “p0_type” is set to “custom”.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;c2s_read&quot;,</span><br><span class="line">    &quot;req_sn&quot;: &lt;int&gt;, (Optional, if there is a value, indicates that it is a business instruction with ACK by transparent transmission [0x0093], if not, it is a business instruction without ACK by transparent transmission[0x0090])</span><br><span class="line">    &quot;data&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;did&quot;: &lt;str&gt;,（target device did）</span><br><span class="line">        &quot;names&quot;: [&lt;str&gt;, &lt;str&gt;, …] （optional for data points with variable length: Pass in the names of the data points to be read, omit to read all data points; For read operation of data points with fixed length, ignore this parameter）</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Browser ⇒ Cloud. The browser sends the following JSON string to the cloud to control the target device (changing the state of the target device). It is not allowed to use this command when the value of login parameter “p0_type” is set to “custom”.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;c2s_write&quot;,</span><br><span class="line">    &quot;req_sn&quot;: &lt;int&gt;, (Optional, if there is a value, indicates that it is a business instruction with ACK by transparent transmission [0x0093], if not, it is a business instruction without ACK by transparent transmission[0x0090])</span><br><span class="line">    &quot;data&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;did&quot;: &lt;str&gt;,（target device did）</span><br><span class="line">        &quot;attrs&quot;:</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name1&quot;: &lt;value1&gt;, (&quot;name1&quot; refers to the name of the data point, and &lt;value1&gt; refers to the value of the data point, which can be true/false (Boolean), Unicode-encoded string like \u62bd (enumeration), number (numeric), byte array [23,2,3] (extension type))</span><br><span class="line">            &quot;name2&quot;: &lt;value2&gt;,</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Cloud ⇒ Browser. After the device receives the read command or the state changes, it will actively send the current state to the cloud, and the cloud forwards the following JSON string to the browser. When the login parameter “p0_type” is set to “custom”, this instruction will not be received.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;s2c_noti&quot;,</span><br><span class="line">    &quot;req_sn&quot;: &lt;int&gt;, (Optional. If the device sends a business instruction with ACK via transparent transmission [0x0093], this field is required. Then the browser must reply with c2s_ack and the value of this field. res_sn and req_sn parameters cannot coexist at the same time)</span><br><span class="line">    &quot;res_sn&quot;: &lt;int&gt;, (Optional. If the c2s_read or c2s_write request command sent by the browser has the req_sn parameter, the corresponding response command s2c_noti contains the res_sn field and its value is consistent with req_sn. res_sn and req_sn parameters cannot coexist at the same time)</span><br><span class="line">    &quot;data&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;did&quot;: &lt;str&gt;,（source device did）         </span><br><span class="line">        &quot;attrs&quot;:</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name1&quot;: &lt;value1&gt;, (&quot;name1&quot; refers to the name of the data point, and &lt;value1&gt; refers to the value of the data point, which can be true/false (Boolean), Unicode-encoded string like \u62bd (enumeration), number (numeric), byte array [23,2,3] (extension type))</span><br><span class="line">            &quot;name2&quot;: &lt;value2&gt;,</span><br><span class="line">             ...          </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Cloud ⇒ Browser. After the browser sends a read or write command with req_sn [0x0093], it may receive ACK 0x0094 for the transparent transmission command from the device, and the cloud forwards the following JSON string to the browser. This instruction is not used when the value of login parameter “p0_type” is set to “custom”.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;s2c_ack&quot;,</span><br><span class="line">    &quot;res_sn&quot;: &lt;int&gt;, (corresponding to the req_sn value of the browser read or write instruction)</span><br><span class="line">    &quot;did&quot;: &lt;str&gt;(device did)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Browser ⇒ Cloud. After the browser receives the s2c_noti message with req_sn [0x0093], the browser is required to send the following JSON string [0x0094] to the cloud. It is not allowed to use this command when the value of login parameter “p0_type” is set to “custom”.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;c2s_ack&quot;,</span><br><span class="line">    &quot;res_sn&quot;: &lt;int&gt;, (corresponding to the req_sn value of s2c_noti instruction received by the browser)</span><br><span class="line">    &quot;did&quot;: &lt;str&gt;(target device did)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7-Heartbeat"><a href="#7-Heartbeat" class="headerlink" title="7. Heartbeat"></a>7. Heartbeat</h2><p>After a Web Socket connection is established between the browser and the cloud, the heartbeat needs to be periodically sent to the cloud within the time interval specified by the login parameter “heartbeat_interval”. The cloud will reply to the heartbeat after receiving it.</p>
+<p>Browser ⇒ Cloud. The browser sends the following JSON string to the cloud.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;ping&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Cloud ⇒ Browser. The cloud responds to the browser with the following JSON string.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;pong&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="8-Invalid-message-notification"><a href="#8-Invalid-message-notification" class="headerlink" title="8. Invalid message notification"></a>8. Invalid message notification</h2><p>When the browser sends an invalid message to the cloud or the data reported by the device is invalid, the cloud sends this message to inform the browser.</p>
+<p>Cloud ⇒ Browser. The cloud sends the following JSON string to the browser to notify that there is an invalid message.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;cmd&quot;: &quot;s2c_invalid_msg&quot;,</span><br><span class="line">    &quot;data&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;error_code&quot;: &lt;int&gt; (error code)</span><br><span class="line">        &quot;msg&quot;: &lt;str&gt; (description)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
