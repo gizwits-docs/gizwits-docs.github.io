@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>Guide of Android App push notification integration - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Guide of Android App push notification integration-Gizwits">
+  <meta name="keywords" content="Guide of Android App push notification integration docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quick Start &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/readme.html">Intro in 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/Glossary.html">Glossary</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              App Dev &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDev_FAQ.html">App Dev FAQ</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/iOS_AuthReSkin.html">iOS Auth Re Skin</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/ios_frame.html">iOS frame</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/iOS_Push_Notification.html">iOS Push Notification</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/WeChatDev/WeChatDev.html">WeChatDev</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/WeChatDev/WeChatDev_InTro.html">WeChat Dev Intro</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/CloudFAQ.html">Cloud FAQ</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/NotificationAPI.html">Notification API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/OpenAPI.html">Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/WebsocketAPI.html">WebsocketAPI</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              User Manual &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/DataAPI.html">Data API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/devApp.html">dev App</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/devgroup_API.html">dev group_API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/LinkageAPI.html">Linkage API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/UseOpenAPI.html">Use Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/UseQRCAPI.html">Use QRC API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/UseSNoti.html">Use SNoti</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/UseWebsocket.html">Use Websocket</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Guide of Android App push notification integration</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>The Gizwits App open source framework (hereinafter referred as Framework) integrates Baidu push notification and Jiguang push notification, which help rapid development with few modifciation. This document describes how to integreate push notification based on the Framework. For more information on the Framework, please refer to the Quick Start documentation.</p>
+<h1 id="Quick-integration-with-Jiguang-push-notification"><a href="#Quick-integration-with-Jiguang-push-notification" class="headerlink" title="Quick integration with Jiguang push notification"></a>Quick integration with Jiguang push notification</h1><h2 id="1-Apply-for-Jiguang-AppKey-and-Master-Secret"><a href="#1-Apply-for-Jiguang-AppKey-and-Master-Secret" class="headerlink" title="1. Apply for Jiguang AppKey and Master Secret"></a>1. Apply for Jiguang AppKey and Master Secret</h2><p>You need to create an application on Jiguang official website and fill in the appropriate information based on the package name of the Framework, as shown below:</p>
+<p>1). Find the package name of the Framework</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/11.png" alt="Android Push Notification"></p>
+<p>2). Create an application on Jiguang platform</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/12.png" alt="Android Push Notification"></p>
+<p>3). Find the corresponding AppKey and Master Secret</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/13.png" alt="Android Push Notification"></p>
+<h2 id="2-Bind-third-party-push-notification-in-the-Gizwits-cloud"><a href="#2-Bind-third-party-push-notification-in-the-Gizwits-cloud" class="headerlink" title="2. Bind third-party push notification in the Gizwits cloud"></a>2. Bind third-party push notification in the Gizwits cloud</h2><h3 id="2-1-Applying-for-D3-Engine-service"><a href="#2-1-Applying-for-D3-Engine-service" class="headerlink" title="2.1 Applying for D3 Engine service"></a>2.1 Applying for D3 Engine service</h3><ol>
+<li>Find D3 Engine</li>
+</ol>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/14.png" alt="Android Push Notification"></p>
+<ol start="2">
+<li>Request to access D3 Engine</li>
+</ol>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/15.png" alt="Android Push Notification"></p>
+<p>The use of D3 Engine service requires the approval of Gizwits. After request to access the service, you need to contact the Gizwits FAE for assistant.</p>
+<h3 id="2-2-Binding-Jiguang-push-notification-in-Gizwits-cloud"><a href="#2-2-Binding-Jiguang-push-notification-in-Gizwits-cloud" class="headerlink" title="2.2 Binding Jiguang push notification in Gizwits cloud"></a>2.2 Binding Jiguang push notification in Gizwits cloud</h3><p>After approval, you can see the D3 Engine under the Services column, click “Configuration” -&gt; “Edit Push Notification Platform”</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/16.png" alt="Android Push Notification"></p>
+<p>Type the App Key and Master Secret you applied to Jiguang as the following figure and choose “Bind”.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/17.png" alt="Android Push Notification"></p>
+<p>The following figure shows the successful binding of Jiguang push notification.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/18.png" alt="Android Push Notification"></p>
+<h3 id="2-3-Create-a-push-notification-rule-using-D3-Engine"><a href="#2-3-Create-a-push-notification-rule-using-D3-Engine" class="headerlink" title="2.3 Create a push notification rule using D3 Engine"></a>2.3 Create a push notification rule using D3 Engine</h3><p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/19.png" alt="Android Push Notification"></p>
+<p>Choose Project List -&gt; New Project. The following shows how to create a rule that will push a notification message to the App after your device comes online.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/20.png" alt="Android Push Notification"></p>
+<p>Drag the “Device Data” box to the right and double click it.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/21.png" alt="Android Push Notification"></p>
+<p>Set the trigger mode to “Device comes online” and click OK.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/22.png" alt="Android Push Notification"></p>
+<p>Double-click “Push for App” and set the notification content.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/23.png" alt="Android Push Notification"></p>
+<p>Click “Save” to save the push notification rule.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/24.png" alt="Android Push Notification"></p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/25.png" alt="Android Push Notification"></p>
+<p>The following figure shows that the push notification rule has been successfully saved.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/26.png" alt="Android Push Notification"></p>
+<h2 id="3-Update-UIConfig-json"><a href="#3-Update-UIConfig-json" class="headerlink" title="3. Update UIConfig.json"></a>3. Update UIConfig.json</h2><ol>
+<li>Fill in the Gizwits app_id and product_key and modify the push_type.</li>
+</ol>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/27.png" alt="Android Push Notification"></p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/28.png" alt="Android Push Notification"></p>
+<h2 id="4-Update-AndroidManifest-xml"><a href="#4-Update-AndroidManifest-xml" class="headerlink" title="4. Update AndroidManifest.xml"></a>4. Update AndroidManifest.xml</h2><p>Update the APP KEY in AndroidManifest.xml.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/29.png" alt="Android Push Notification"></p>
+<h2 id="5-Start-the-virtual-device"><a href="#5-Start-the-virtual-device" class="headerlink" title="5. Start the virtual device"></a>5. Start the virtual device</h2><p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/30.png" alt="Android Push Notification"></p>
+<h2 id="6-Run-the-APP"><a href="#6-Run-the-APP" class="headerlink" title="6. Run the APP"></a>6. Run the APP</h2><p>Through the above steps, the App is equipped with Jiguang push notification function. After being deployed to a mobile phone, register a user and login in, then bind the cloud virtual device by scanning its QR code.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/31.png" alt="Android Push Notification"></p>
+<h2 id="7-Test-push-notification"><a href="#7-Test-push-notification" class="headerlink" title="7. Test push notification"></a>7. Test push notification</h2><p>Restart the virtual device to see whether your phone receives a push message.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/32.png" alt="Android Push Notification"></p>
+<h1 id="Quick-integration-with-Baidu-push-notification"><a href="#Quick-integration-with-Baidu-push-notification" class="headerlink" title="Quick integration with Baidu push notification"></a>Quick integration with Baidu push notification</h1><h2 id="1-Apply-for-Baidu-API-KEY"><a href="#1-Apply-for-Baidu-API-KEY" class="headerlink" title="1. Apply for Baidu API KEY"></a>1. Apply for Baidu API KEY</h2><p>You need to create an application on Jiguang official website and fill in the appropriate information based on the package name of the Framework, as shown below:</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/33.png" alt="Android Push Notification"></p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/34.png" alt="Android Push Notification"></p>
+<p>Find the corresponding API KEY and SECRET KEY.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/35.png" alt="Android Push Notification"></p>
+<h2 id="2-Bind-third-party-authentication-in-Gizwits-cloud"><a href="#2-Bind-third-party-authentication-in-Gizwits-cloud" class="headerlink" title="2. Bind third-party authentication in Gizwits cloud"></a>2. Bind third-party authentication in Gizwits cloud</h2><h3 id="2-1-Apply-for-D3-Engine"><a href="#2-1-Apply-for-D3-Engine" class="headerlink" title="2.1 Apply for D3 Engine"></a>2.1 Apply for D3 Engine</h3><p>For this step, refer to section 2.1 of Quick integration with Jiguang push notification.</p>
+<h3 id="2-2-Bind-Baidu-push-notification-in-Gizwits-cloud"><a href="#2-2-Bind-Baidu-push-notification-in-Gizwits-cloud" class="headerlink" title="2.2 Bind Baidu push notification in Gizwits cloud"></a>2.2 Bind Baidu push notification in Gizwits cloud</h3><p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/36.png" alt="Android Push Notification"></p>
+<p>Type the API Key and Secret Key you applied to Baidu as the following figure and choose “Bind”.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/37.png" alt="Android Push Notification"></p>
+<p>The following figure shows the successful binding of Baidu push notification.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/38.png" alt="Android Push Notification"></p>
+<h3 id="2-3-Create-a-push-notification-rule-using-D3-Engine-1"><a href="#2-3-Create-a-push-notification-rule-using-D3-Engine-1" class="headerlink" title="2.3 Create a push notification rule using D3 Engine"></a>2.3 Create a push notification rule using D3 Engine</h3><p>For this step, refer to section 2.3 of Quick integration with Jiguang push notification.</p>
+<h2 id="3-Update-UIConfig-json-1"><a href="#3-Update-UIConfig-json-1" class="headerlink" title="3. Update UIConfig.json"></a>3. Update UIConfig.json</h2><p>Fill in app_id, app_secret, product_key, and set push_type to 2. Update the application API key of Baidu push notification you obtained in step 1.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/39.png" alt="Android Push Notification"></p>
+<h2 id="4-Start-the-virtual-device"><a href="#4-Start-the-virtual-device" class="headerlink" title="4. Start the virtual device"></a>4. Start the virtual device</h2><p>This step can refer to section 5 of Quick integration with Jiguang push notification.</p>
+<h2 id="5-Run-the-App"><a href="#5-Run-the-App" class="headerlink" title="5. Run the App"></a>5. Run the App</h2><p>Through the above steps, the App is equipped with Baidu push notification function. After being deployed to a mobile phone, register a user and login in, then bind the cloud virtual device by scanning its QR code. </p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/40.png" alt="Android Push Notification"></p>
+<h2 id="6-Test-push-notification"><a href="#6-Test-push-notification" class="headerlink" title="6. Test push notification"></a>6. Test push notification</h2><p>Restart the virtual device to see whether your phone receives a push message.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/41.png" alt="Android Push Notification"></p>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h2 id="1-Need-I-request-to-access-D3-Engine-to-use-push-notification"><a href="#1-Need-I-request-to-access-D3-Engine-to-use-push-notification" class="headerlink" title="1. Need I request to access D3 Engine to use push notification?"></a>1. Need I request to access D3 Engine to use push notification?</h2><p>Answer: Yes, D3 Engine currently only targets at enterprise developers. Therefore, only enterprise developers can request to access it.</p>
+<h2 id="2-I-completed-the-above-steps-using-Jiguang-push-notification-but-cannot-receive-the-expected-push-notification"><a href="#2-I-completed-the-above-steps-using-Jiguang-push-notification-but-cannot-receive-the-expected-push-notification" class="headerlink" title="2. I completed the above steps using Jiguang push notification, but cannot receive the expected push notification."></a>2. I completed the above steps using Jiguang push notification, but cannot receive the expected push notification.</h2><p>Answer:</p>
+<p>Follow the steps below to troubleshoot the issue:</p>
+<p>i. Confirm whether the App package name has been modified. The default package name is “com.gizwits.opensource.appkit”. If the package name has been modified, you need to update AndroidManifest.xml. Please refer to Jiguang document:</p>
+<p><a href="http://docs.jiguang.cn/jpush/client/Android/android_guide/" target="_blank" rel="noopener">http://docs.jiguang.cn/jpush/client/Android/android_guide/</a></p>
+<p>Then it is necessary to test whether it is successful to push messages to the App using Jiguang platform alone. Receiving Gizwits push messages hinges on the successful push from Jiguang platform. </p>
+<p>ii. For the case that the App still can’t receive the message when the push from Jiguang platform is successful. </p>
+<p>First, confirm that Gizwits platform successfully binds Jiguang push notification with its App Key and Master Secret.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/42.png" alt="Android Push Notification"></p>
+<p>Second, confirm that Gizwits platform successfully creates the rule.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/43.png" alt="Android Push Notification"></p>
+<p>Third, if you still can’t receive the message following the two steps above, check the following code:</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/44.png" alt="Android Push Notification"></p>
+<p>Check whether the Result value arg0 in the callback of JPushInterface.setAlias ​​method is 0. If it is not 0, it means that the Jiguang alias is incorrect. You need to call this method to set the alias.</p>
+<p><img src="../../../assets/en-us/AppDev/AppFrame/android/push/45.png" alt="Android Push Notification"></p>
+<p>Check whether the Result value in the didChannelIDBind callback interface is GIZ_SDK_SUCCESS, and debug your code.</p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
