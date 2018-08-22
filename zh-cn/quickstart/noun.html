@@ -497,7 +497,7 @@
 <p>开发者或企业研发人员在机智云平台开发时，如果正式的智能硬件产品产品还未完全开发完成，就可以很方便地使用该“虚拟设备”与正式产品的控制APP进行调试和验证，加快研发周期，降低研发成本。<br>开发者或企业研发人员在机智云平台开发时，如果正式产品的控制APP还未完全开发好，就可以很方便地使用该“调试APP”对正式产品进行调试和验证，加快研发周期，降低研发成本。</p>
 <p>使用教程：<a href="http://docs.gizwits.com/zh-cn/quickstart/README.html#%E6%96%B0%E6%89%8B%E5%88%9D%E4%BD%93%E9%AA%8C" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/quickstart/README.html#%E6%96%B0%E6%89%8B%E5%88%9D%E4%BD%93%E9%AA%8C</a></p>
 <h2 id="2-MCU代码自动生成器"><a href="#2-MCU代码自动生成器" class="headerlink" title="2.MCU代码自动生成器"></a>2.MCU代码自动生成器</h2><p>为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。<br>自动生成的代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的API，且提供了多种平台的实例代码。当设备收到云端或APP端的数据后，程序会将数据转换成对应的事件并通知到应用层，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。<br>使用自动生成的代码开发产品，就不必再处理协议相关的部分了，开发者可以将节省出来的精力集中在产品的核心功能开发上。</p>
-<p>MCU代码自动生成功能特性如下:</p>
+<p><img src="/assets/zh-cn/deviceDev/DevSDK/tool/1478159645300.png" alt="生成MCU方案代码"><br>MCU代码自动生成功能特性如下:</p>
 <ul>
 <li>自动生成服务支持的硬件方案有：独立MCU方案、SOC方案。</li>
 <li>独立MCU方案支持的硬件平台有：51单片机、MSP430、STM32、arduino，含正点原子等，支持生成支持8位、16位、32位的MCU</li>
@@ -508,6 +508,7 @@
 <h2 id="3-APP代码自动生成器"><a href="#3-APP代码自动生成器" class="headerlink" title="3.APP代码自动生成器"></a>3.APP代码自动生成器</h2><p>APP的代码自动生成工具：当开发者在产品项目上创建对应的数据点后，云端会根据产品定义的数据点生成对应产品的APP参考代码，一键点击生成下载，编译安装即可完成专属物联网APP。</p>
 <p>开发者下载源码后，只需要优化UI和设计设备控制界面控制逻辑，源码的控制页面编写了机智云SDK控制设备的标准流程，APP源码二次开发过程中只需按照该流程进行相关代码的优化即可快速完成针对自身产品的智能控制APP。</p>
 <p>目前APP生成的源码支持 Andriod、iOS、APICloud平台。</p>
+<p><img src="/assets/zh-cn/UserManual/App/1490685455353.png" alt="Alt text"></p>
 <p>自动生成的APP代码模块化集成了一个智能硬件APP必备功能，主要包括：</p>
 <ul>
 <li>1.用户部分：用户注册，找回密码、第三方登录（微信登录、QQ登录）</li>
@@ -525,9 +526,11 @@
 <li>3）灵活的输出：除了App推送、邮件、短信等服务，还可以支持回调服务以及存储服务；存储服务通过数据平台的计算与开放API服务对各类应用提供数据服务，降低各类应用的开发成本以及面对海量数据的性能处理风险。</li>
 </ul>
 <p>目前D3 Engine仅支持企业开发者试用或购买GDCS的客户使用。</p>
+<p><img src="/assets/zh-cn/UserManual/D3/image8.png" alt="Alt text"></p>
 <p>使用教程：<a href="http://docs.gizwits.com/zh-cn/UserManual/D3.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/UserManual/D3.html</a></p>
 <h2 id="5-产测工具"><a href="#5-产测工具" class="headerlink" title="5.产测工具"></a>5.产测工具</h2><p>机智云产测工具是一个对产品进行批量测试的工具App，使用产测工具，可以快速检验工厂生产线上的成品或者半成品。</p>
 <p>您可以在页面中定义产品产测的测试项，再对工厂的设备进行相关定义项的自动测试。设备针对测试项测试通过后，表示产品合格。在大型生产中，通过产测工具，能够有效的监测批量产品质量，保证产品功能。</p>
+<p>   <img src="/assets/zh-cn/deviceDev/debug/test/1478081465319.png" alt="name"></p>
 <p>使用教程：<a href="http://docs.gizwits.com/zh-cn/deviceDev/%E4%BA%A7%E6%B5%8B%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/deviceDev/%E4%BA%A7%E6%B5%8B%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.html</a></p>
 <h2 id="6-OTA固件升级"><a href="#6-OTA固件升级" class="headerlink" title="6.OTA固件升级"></a>6.OTA固件升级</h2><p>OTA 英文全称是Over-the-Air Technology，即空间下载技术。当设备连上云端时会收到OTA升级通知，再通过HTTP完成固件升级。<br>机智云的OTA服务主要提供以下功能：</p>
 <ul>
