@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>ESP8266EX Datasheet - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="ESP8266EX Datasheet-Gizwits">
+  <meta name="keywords" content="ESP8266EX Datasheet docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quick Start &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/readme.html">Intro in 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/glossary.html">Glossary</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              App Dev &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/AppDevPrepare.html">App development preparation and guidance</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/devApp.html">App code auto-generator</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      APPFrame &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSSDKA2.html">iOS SDK A2</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/quickstart/iOSPushNotification.html">iOS Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSAuthReSkin.html">iOS Auth Re Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSAPPFrame.html">Quick start of iOS App development</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidSDKA2.html">Android SDK A2</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/androidframe.html">Android frame</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidPushNotification.html">Android Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/quickstart/AndroidAppFrame.html">Quick start of Android App development</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudFrame.html">API Cloud Frame</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/VideoTutorial.html">Video tutorial of the App open source framework</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/WeChatDev/WeChatDev.html">WeChat Dev</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/WeChatDev/WeChatDevInTro.html">WeChat Dev Intro</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevFAQ.html">App Dev FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/OpenAPI.html">Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/NotificationAPI.html">Notification API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/WebsocketAPI.html">WebsocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API Tutorial &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseOpenAPI.html">Using Open API to control virtual device with Postman</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseSNoti.html">Real-time data synchronization demo for SNoti service</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseWebsocket.html">Control device using WebSocket</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/DataAPI.html">Aggregation API Guide</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/LinkageAPI.html">Device Linkage API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/devgroup_API.html">Device Grouping API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseQRCode.html">Generating device QR code for App binding</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/CloudFAQ.html">Cloud FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              User Manual &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/ST_IoT.html">Gizwits and ST Make IoT Development Easy</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">ESP8266EX Datasheet</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1.Overview"></a>1.Overview</h1><p>Espressif’s ESP8266EX delivers highly integrated Wi-Fi SoC solution to meet users’ continuous demands for efficient power usage, compact design and reliable performance in the Internet of Things industry.</p>
+<p>With the complete and self-contained Wi-Fi networking capabilities, ESP8266EX can perform either as a standalone application or as the slave to a host MCU. When ESP8266EX hosts the application, it promptly boots up from the flash. The integrated high- speed cache helps to increase the system performance and optimize the system memory. Also, ESP8266EX can be applied to any microcontroller design as a Wi-Fi adaptor through SPI/SDIO or UART interfaces.</p>
+<p>ESP8266EX integrates antenna switches, RF balun, power amplifier, low noise receive amplifier, filters and power management modules. The compact design minimizes the PCB size and requires minimal external circuitries.</p>
+<p>Besides the Wi-Fi functionalities, ESP8266EX also integrates an enhanced version of Tensilica’s L106 Diamond series 32-bit processor and on-chip SRAM. It can be interfaced with external sensors and other devices through the GPIOs. Software Development Kit (SDK) provides sample codes for various applications.</p>
+<p>Espressif Systems’ Smart Connectivity Platform (ESCP) enables sophisticated features including:</p>
+<ul>
+<li>Fast switch between sleep and wakeup mode for energy-efficient purpose;</li>
+<li>Adaptive radio biasing for low-power operation</li>
+<li>Advance signal processing</li>
+<li>Spur cancellation and RF co-existence mechanisms for common cellular, Bluetooth, DDR, LVDS, LCD interference mitigation</li>
+</ul>
+<h2 id="1-1-Wi-Fi-Key-Features"><a href="#1-1-Wi-Fi-Key-Features" class="headerlink" title="1.1 Wi-Fi Key Features"></a>1.1 Wi-Fi Key Features</h2><ul>
+<li>802.11 b/g/n support</li>
+<li>802.11n support (2.4 GHz), up to 72.2 Mbps</li>
+<li>Defragmentation</li>
+<li>2 x virtual Wi-Fi interface</li>
+<li>Automatic beacon monitoring (hardware TSF)</li>
+<li>Support Infrastructure BSS Station mode/SoftAP mode/Promiscuous mode</li>
+<li>Antenna diversity</li>
+</ul>
+<h2 id="1-2-Specifications"><a href="#1-2-Specifications" class="headerlink" title="1.2 Specifications"></a>1.2 Specifications</h2><p><img src="../../../../assets/en-us/module_source/esp8266/11.png" alt="ESP8266EX Datasheet"></p>
+<h2 id="1-3-Applications"><a href="#1-3-Applications" class="headerlink" title="1.3 Applications"></a>1.3 Applications</h2><ul>
+<li>Home appliances</li>
+<li>Home automation</li>
+<li>Smart plugs and lights</li>
+<li>Industrial wireless control</li>
+<li>Baby monitors</li>
+<li>IP cameras</li>
+<li>Sensor networks</li>
+<li>Wearable electronics</li>
+<li>Wi-Fi location-aware devices</li>
+<li>Security ID tags</li>
+<li>Wi-Fi position system beacons</li>
+</ul>
+<h1 id="2-Pin-Definitions"><a href="#2-Pin-Definitions" class="headerlink" title="2. Pin Definitions"></a>2. Pin Definitions</h1><p>Figure 2-1 shows the pin layout for 32-pin QFN package.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/12.png" alt="ESP8266EX Datasheet"></p>
+<p>Table 2-1 lists the definitions and functions of each pin.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/13.png" alt="ESP8266EX Datasheet"></p>
+<h1 id="3-Functional-Description"><a href="#3-Functional-Description" class="headerlink" title="3. Functional Description"></a>3. Functional Description</h1><p>The functional diagram of ESP8266EX is shown as in Figure 3-1.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/14.png" alt="ESP8266EX Datasheet"></p>
+<h2 id="3-1-CPU-Memory-and-Flash"><a href="#3-1-CPU-Memory-and-Flash" class="headerlink" title="3.1 CPU, Memory, and Flash"></a>3.1 CPU, Memory, and Flash</h2><h3 id="3-1-1-CPU"><a href="#3-1-1-CPU" class="headerlink" title="3.1.1 CPU"></a>3.1.1 CPU</h3><p>The ESP8266EX integrates a Tensilica L106 32-bit RISC processor, which achieves extra- low power consumption and reaches a maximum clock speed of 160 MHz. The Real-Time Operating System (RTOS) and Wi-Fi stack allow 80% of the processing power to be available for user application programming and development. The CPU includes the interfaces as below:</p>
+<ul>
+<li>Programmable RAM/ROM interfaces (iBus), which can be connected with memory controller, and can also be used to visit flash.</li>
+<li>Data RAM interface (dBus), which can connected with memory controller.</li>
+<li>AHB interface which can be used to visit the register.</li>
+</ul>
+<h3 id="3-1-2-Memory"><a href="#3-1-2-Memory" class="headerlink" title="3.1.2 Memory"></a>3.1.2 Memory</h3><p>ESP8266EX Wi-Fi SoC integrates memory controller and memory units including SRAM and ROM. MCU can access the memory units through iBus, dBus, and AHB interfaces. All memory units can be accessed upon request, while a memory arbiter will decide the running sequence according to the time when these requests are received by the processor.</p>
+<p>According to our current version of SDK, SRAM space available to users is assigned as below.</p>
+<ul>
+<li>RAM size &lt; 50 kB, that is, when ESP8266EX is working under the Station mode and connects to the router, the maximum programmable space accessible in Heap + Data section is around 50 kB.</li>
+<li>There is no programmable ROM in the SoC. Therefore, user program must be stored in an external SPI flash.</li>
+</ul>
+<h3 id="3-1-3-External-Flash"><a href="#3-1-3-External-Flash" class="headerlink" title="3.1.3 External Flash"></a>3.1.3 External Flash</h3><p>ESP8266EX uses external SPI flash to store user programs, and supports up to 16 MB memory capacity theoretically.<br>The minimum flash memory of ESP8266EX is shown below:</p>
+<ul>
+<li>OTA disabled: 512 kB at least</li>
+<li>OTA enabled: 1 MB at least</li>
+</ul>
+<h2 id="3-2-Clock"><a href="#3-2-Clock" class="headerlink" title="3.2 Clock"></a>3.2 Clock</h2><h3 id="3-2-1-High-Frequency-Clock"><a href="#3-2-1-High-Frequency-Clock" class="headerlink" title="3.2.1 High Frequency Clock"></a>3.2.1 High Frequency Clock</h3><p>The high frequency clock on ESP8266EX is used to drive both transmit and receive mixers. This clock is generated from internal crystal oscillator and external crystal. The crystal frequency ranges from 24 MHz to 52 MHz.</p>
+<p>The internal calibration inside the crystal oscillator ensures that a wide range of crystals can be used, nevertheless the quality of the crystal is still a factor to consider to have reasonable phase noise and good Wi-Fi sensitivity. Refer to Table 3-1 to measure the frequency offset.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/15.png" alt="ESP8266EX Datasheet"></p>
+<h3 id="3-2-2-External-Clock-Requirements"><a href="#3-2-2-External-Clock-Requirements" class="headerlink" title="3.2.2 External Clock Requirements"></a>3.2.2 External Clock Requirements</h3><p>An externally generated clock is available with the frequency ranging from 24 MHz to 52 MHz. The following characteristics are expected to achieve good performance of radio.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/16.png" alt="ESP8266EX Datasheet"></p>
+<h2 id="3-3-Radio"><a href="#3-3-Radio" class="headerlink" title="3.3 Radio"></a>3.3 Radio</h2><p>ESP8266EX radio consists of the following blocks.</p>
+<ul>
+<li>2.4 GHz receiver</li>
+<li>2.4 GHz transmitter</li>
+<li>High speed clock generators and crystal oscillator</li>
+<li>Bias and regulators</li>
+<li>Power management</li>
+</ul>
+<h3 id="3-3-1-Channel-Frequencies"><a href="#3-3-1-Channel-Frequencies" class="headerlink" title="3.3.1 Channel Frequencies"></a>3.3.1 Channel Frequencies</h3><p>The RF transceiver supports the following channels according to IEEE802.11b/g/n standards.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/17.png" alt="ESP8266EX Datasheet"></p>
+<h3 id="3-3-2-2-4-GHz-Receiver"><a href="#3-3-2-2-4-GHz-Receiver" class="headerlink" title="3.3.2 2.4 GHz Receiver"></a>3.3.2 2.4 GHz Receiver</h3><p>The 2.4 GHz receiver down-converts the RF signals to quadrature baseband signals and converts them to the digital domain with 2 high resolution high speed ADCs. To adapt to varying signal channel conditions, RF filters, automatic gain control (AGC), DC offset cancelation circuits and baseband filters are integrated within ESP8266EX.</p>
+<h3 id="3-3-3-2-4-GHz-Transmitter"><a href="#3-3-3-2-4-GHz-Transmitter" class="headerlink" title="3.3.3 2.4 GHz Transmitter"></a>3.3.3 2.4 GHz Transmitter</h3><p>The 2.4 GHz transmitter up-converts the quadrature baseband signals to 2.4 GHz, and drives the antenna with a high-power CMOS power amplifier. The function of digital calibration further improves the linearity of the power amplifier, enabling a state of art performance of delivering +19.5 dBm average TX power for 802.11b transmission and +18 dBm for 802.11n (MSC0) transmission.</p>
+<p>Additional calibrations are integrated to offset any imperfections of the radio, such as:</p>
+<ul>
+<li>Carrier leakage</li>
+<li>I/Q phase matching</li>
+<li>Baseband nonlinearities</li>
+</ul>
+<p>These built-in calibration functions reduce the product test time and make the test equipment unnecessary.</p>
+<h3 id="3-3-4-Clock-Generator"><a href="#3-3-4-Clock-Generator" class="headerlink" title="3.3.4 Clock Generator"></a>3.3.4 Clock Generator</h3><p>The clock generator generates quadrature 2.4 GHz clock signals for the receiver and transmitter. All components of the clock generator are integrated on the chip, including all inductors, varactors, loop filters, linear voltage regulators and dividers.</p>
+<p>The clock generator has built-in calibration and self test circuits. Quadrature clock phases and phase noise are optimized on-chip with patented calibration algorithms to ensure the best performance of the receiver and transmitter.</p>
+<h2 id="3-4-Wi-Fi"><a href="#3-4-Wi-Fi" class="headerlink" title="3.4 Wi-Fi"></a>3.4 Wi-Fi</h2><p>ESP8266EX implements TCP/IP and full 802.11 b/g/n WLAN MAC protocol. It supports Basic Service Set (BSS) STA and SoftAP operations under the Distributed Control Function (DCF). Power management is handled with minimum host interaction to minimize active- duty period.</p>
+<h3 id="3-4-1-Wi-Fi-Radio-and-Baseband"><a href="#3-4-1-Wi-Fi-Radio-and-Baseband" class="headerlink" title="3.4.1 Wi-Fi Radio and Baseband"></a>3.4.1 Wi-Fi Radio and Baseband</h3><p>The ESP8266EX Wi-Fi Radio and Baseband support the following features:</p>
+<ul>
+<li>802.11b and 802.11g</li>
+<li>802.11n MCS0-7 in 20 MHz bandwidth</li>
+<li>802.11n 0.4 μs guard-interval</li>
+<li>up to 72.2 Mbps of data rate</li>
+<li>Receiving STBC 2x1</li>
+<li>Up to 20.5 dBm of transmitting power</li>
+<li>Adjustable transmitting power</li>
+<li>Antenna diversity</li>
+</ul>
+<h3 id="3-4-2-Wi-Fi-MAC"><a href="#3-4-2-Wi-Fi-MAC" class="headerlink" title="3.4.2 Wi-Fi MAC"></a>3.4.2 Wi-Fi MAC</h3><p>The ESP8266EX Wi-Fi MAC applies low-level protocol functions automatically, as follows:</p>
+<ul>
+<li>2 × virtual Wi-Fi interfaces</li>
+<li>Infrastructure BSS Station mode/SoftAP mode/Promiscuous mode</li>
+<li>Request To Send (RTS), Clear To Send (CTS) and Immediate Block ACK</li>
+<li>Defragmentation</li>
+<li>CCMP (CBC-MAC, counter mode), TKIP (MIC, RC4), WEP (RC4) and CRC</li>
+<li>Automatic beacon monitoring (hardware TSF)</li>
+<li>Dual and single antenna Bluetooth co-existence support with optional simultaneous receive (Wi-Fi/Bluetooth) capability</li>
+</ul>
+<h2 id="3-5-Power-Management"><a href="#3-5-Power-Management" class="headerlink" title="3.5 Power Management"></a>3.5 Power Management</h2><p>ESP8266EX is designed with advanced power management technologies and intended for mobile devices, wearable electronics and the Internet of Things applications.</p>
+<p>The low-power architecture operates in the following modes:</p>
+<ul>
+<li>Active mode: The chip radio is powered on. The chip can receive, transmit, or listen.</li>
+<li>Modem-sleep mode: The CPU is operational. The Wi-Fi and radio are disabled.</li>
+<li>Light-sleep mode: The CPU and all peripherals are paused. Any wake-up events (MAC, host, RTC timer, or external interrupts) will wake up the chip.</li>
+<li>Deep-sleep mode: Only the RTC is operational and all other part of the chip are powered off.</li>
+</ul>
+<p><img src="../../../../assets/en-us/module_source/esp8266/18.png" alt="ESP8266EX Datasheet"></p>
+<h1 id="4-Peripheral-Interface"><a href="#4-Peripheral-Interface" class="headerlink" title="4 Peripheral Interface"></a>4 Peripheral Interface</h1><h2 id="4-1-General-Purpose-Input-Output-Interface-GPIO"><a href="#4-1-General-Purpose-Input-Output-Interface-GPIO" class="headerlink" title="4.1 General Purpose Input/Output Interface (GPIO)"></a>4.1 General Purpose Input/Output Interface (GPIO)</h2><p>ESP8266EX has 17 GPIO pins which can be assigned to various functions by programming the appropriate registers.</p>
+<p>Each GPIO PAD can be configured with internal pull-up or pull-down (XPD_DCDC can only be configured with internal pull-down, other GPIO PAD can only be configured with internal pull-up), or set to high impedance. When configured as an input, the data are stored in software registers; the input can also be set to edge-trigger or level trigger CPU interrupts. In short, the IO pads are bi-directional, non-inverting and tristate, which includes input and output buffer with tristate control inputs.</p>
+<p>These pins, when working as GPIOs, can be multiplexed with other functions such as I2C, I2S, UART, PWM, and IR Remote Control, etc.</p>
+<p>For low power operations, the GPIOs can also be set to hold their state. For instance, when the IOs are not driven by internal and external circuits, all outputs will hold their states before the chip entered the low power modes.</p>
+<p>The required drive strength is small— 5 μA or more is enough to pull apart the latch.</p>
+<h2 id="4-2-Secure-Digital-Input-Output-Interface-SDIO"><a href="#4-2-Secure-Digital-Input-Output-Interface-SDIO" class="headerlink" title="4.2 Secure Digital Input/Output Interface (SDIO)"></a>4.2 Secure Digital Input/Output Interface (SDIO)</h2><p>ESP8266EX has one Slave SDIO, the definitions of which are described as Table 4-1, which supports 25 MHz SDIO v1.1 and 50 MHz SDIO v2.0, and 1 bit/4 bit SD mode and SPI mode.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/19.png" alt="ESP8266EX Datasheet"></p>
+<h2 id="4-3-Serial-Peripheral-Interface-SPI-HSPI"><a href="#4-3-Serial-Peripheral-Interface-SPI-HSPI" class="headerlink" title="4.3 Serial Peripheral Interface (SPI/HSPI)"></a>4.3 Serial Peripheral Interface (SPI/HSPI)</h2><p>ESP8266EX has two SPIs.</p>
+<ul>
+<li>One general Slave/Master SPI</li>
+<li>One general Slave HSPI</li>
+</ul>
+<p>Functions of all these pins can be implemented via hardware.</p>
+<h3 id="4-3-1-General-SPI-Master-Slave"><a href="#4-3-1-General-SPI-Master-Slave" class="headerlink" title="4.3.1 General SPI (Master/Slave)"></a>4.3.1 General SPI (Master/Slave)</h3><p><img src="../../../../assets/en-us/module_source/esp8266/20.png" alt="ESP8266EX Datasheet"></p>
+<h3 id="4-3-2-HSPI-Slave"><a href="#4-3-2-HSPI-Slave" class="headerlink" title="4.3.2 HSPI (Slave)"></a>4.3.2 HSPI (Slave)</h3><p><img src="../../../../assets/en-us/module_source/esp8266/21.png" alt="ESP8266EX Datasheet"></p>
+<h2 id="4-4-I2C-Interface"><a href="#4-4-I2C-Interface" class="headerlink" title="4.4 I2C Interface"></a>4.4 I2C Interface</h2><p>ESP8266EX has one I2C, which is realized via software programming, used to connect with other microcontrollers and other peripheral equipments such as sensors. The pin definition of I2C is as below.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/22.png" alt="ESP8266EX Datasheet"></p>
+<p>Both I2C Master and I2C Slave are supported. I2C interface functionality can be realized via software programming, and the clock frequency is 100 kHz at maximum.</p>
+<h2 id="4-5-I2S-Interface"><a href="#4-5-I2S-Interface" class="headerlink" title="4.5 I2S Interface"></a>4.5 I2S Interface</h2><p>ESP8266EX has one I2S data input interface and one I2S data output interface, and supports the linked list DMA. I2S interfaces are mainly used in applications such as data collection, processing, and transmission of audio data, as well as the input and output of serial data. For example, LED lights (WS2812 series) are supported. The pin definition of I2S is shown in Table 4-5.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/23.png" alt="ESP8266EX Datasheet"></p>
+<h2 id="4-6-Universal-Asynchronous-Receiver-Transmitter-UART"><a href="#4-6-Universal-Asynchronous-Receiver-Transmitter-UART" class="headerlink" title="4.6 Universal Asynchronous Receiver Transmitter (UART)"></a>4.6 Universal Asynchronous Receiver Transmitter (UART)</h2><p>ESP8266EX has two UART interfaces UART0 and UART1, the definitions are shown in Table 4-6.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/24.png" alt="ESP8266EX Datasheet"></p>
+<p>Data transfers to/from UART interfaces can be implemented via hardware. The data transmission speed via UART interfaces reaches 115200 x 40 (4.5 Mbps).</p>
+<p>UART0 can be used for communication. It supports flow control. Since UART1 features only data transmit signal (TX), it is usually used for printing log.</p>
+<h2 id="4-7-Pulse-Width-Modulation-PWM"><a href="#4-7-Pulse-Width-Modulation-PWM" class="headerlink" title="4.7 Pulse-Width Modulation (PWM)"></a>4.7 Pulse-Width Modulation (PWM)</h2><p>ESP8266EX has four PWM output interfaces. They can be extended by users themselves. The pin definitions of the PWM interfaces are defined as below.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/25.png" alt="ESP8266EX Datasheet"></p>
+<p>The functionality of PWM interfaces can be implemented via software programming. For example, in the LED smart light demo, the function of PWM is realized by interruption of the timer, the minimum resolution reaches as high as 44 ns. PWM frequency range is adjustable from 1000 μs to 10000 μs, i.e., between 100 Hz and 1 kHz. When the PWM frequency is 1 kHz, the duty ratio will be 1/22727, and a resolution of over 14 bits will be achieved at 1 kHz refresh rate.</p>
+<h2 id="4-8-IR-Remote-Control"><a href="#4-8-IR-Remote-Control" class="headerlink" title="4.8 IR Remote Control"></a>4.8 IR Remote Control</h2><p>ESP8266EX currently supports one infrared remote control interface. For detailed pin definitions, please see Table 4-8 below.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/26.png" alt="ESP8266EX Datasheet"></p>
+<p>The functionality of Infrared remote control interface can be implemented via software programming. NEC coding, modulation, and demodulation are supported by this interface. The frequency of modulated carrier signal is 38 kHz, while the duty ratio of the square wave is 1/3. The transmission range is around 1m which is determined by two factors: one is the maximum current drive output, the other is internal current-limiting resistance value in the infrared receiver. The larger the resistance value, the lower the current, so is the power, and vice versa.</p>
+<h2 id="4-9-ADC-Analog-to-Digital-Converter"><a href="#4-9-ADC-Analog-to-Digital-Converter" class="headerlink" title="4.9 ADC (Analog-to-Digital Converter)"></a>4.9 ADC (Analog-to-Digital Converter)</h2><p>ESP8266EX is embedded with a 10-bit precision SAR ADC. TOUT (Pin6) is defined as below:</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/27.png" alt="ESP8266EX Datasheet"></p>
+<p>The following two measurements can be implemented using ADC (Pin6). However, they cannot be implemented at the same time.</p>
+<ul>
+<li>Measure the power supply voltage of VDD3P3 (Pin3 and Pin4).</li>
+</ul>
+<p><img src="../../../../assets/en-us/module_source/esp8266/28.png" alt="ESP8266EX Datasheet"></p>
+<ul>
+<li>Measure the input voltage of TOUT (Pin6).</li>
+</ul>
+<p><img src="../../../../assets/en-us/module_source/esp8266/29.png" alt="ESP8266EX Datasheet"></p>
+<h1 id="5-Electrical-Specifications"><a href="#5-Electrical-Specifications" class="headerlink" title="5 Electrical Specifications"></a>5 Electrical Specifications</h1><h2 id="5-1-Electrical-Characteristics"><a href="#5-1-Electrical-Characteristics" class="headerlink" title="5.1 Electrical Characteristics"></a>5.1 Electrical Characteristics</h2><p><img src="../../../../assets/en-us/module_source/esp8266/30.png" alt="ESP8266EX Datasheet"></p>
+<h2 id="5-2-RF-Power-Consumption"><a href="#5-2-RF-Power-Consumption" class="headerlink" title="5.2 RF Power Consumption"></a>5.2 RF Power Consumption</h2><p>Unless otherwise specified, the power consumption measurements are taken with a 3.0V supply at 25°C of ambient temperature. All transmitters’ measurements are based on a 50% duty cycle.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/31.png" alt="ESP8266EX Datasheet"></p>
+<h2 id="5-3-Wi-Fi-Radio-Characteristics"><a href="#5-3-Wi-Fi-Radio-Characteristics" class="headerlink" title="5.3 Wi-Fi Radio Characteristics"></a>5.3 Wi-Fi Radio Characteristics</h2><p>The following data are from tests conducted at room temperature, with a 3.3V power supply.</p>
+<p><img src="../../../../assets/en-us/module_source/esp8266/32.png" alt="ESP8266EX Datasheet"></p>
+<h1 id="6-Package-Information"><a href="#6-Package-Information" class="headerlink" title="6 Package Information"></a>6 Package Information</h1><p><img src="../../../../assets/en-us/module_source/esp8266/33.png" alt="ESP8266EX Datasheet"></p>
+<h1 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h1><ul>
+<li>Firmware download for ESP8266</li>
+<li>Log check for ESP8266 Gagent</li>
+<li>Download Agent for ESP8266 04020025</li>
+</ul>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
