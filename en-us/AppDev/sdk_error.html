@@ -1,0 +1,725 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+
+  <title>SDK error codes - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="SDK error codes-Gizwits">
+  <meta name="keywords" content="SDK error codes docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header"v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quick Start &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/readme.html">Intro in 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/glossary.html">Glossary</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              App Dev &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/AppDevPrepare.html">App development preparation and guidance</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/devApp.html">App code auto-generator</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      APPFrame &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSSDKA2.html">iOS SDK A2</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/quickstart/iOSPushNotification.html">iOS Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSAuthReSkin.html">iOS Auth Re Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSAPPFrame.html">Quick start of iOS App development</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidSDKA2.html">Android SDK A2</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/androidframe.html">Android frame</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidPushNotification.html">Android Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/quickstart/AndroidAppFrame.html">Quick start of Android App development</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudFrame.html">API Cloud Frame</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/VideoTutorial.html">Video tutorial of the App open source framework</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/WeChatDev/WeChatDev.html">WeChat Dev</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/WeChatDev/WeChatDevInTro.html">WeChat Dev Intro</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevFAQ.html">App Dev FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/OpenAPI.html">Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/NotificationAPI.html">Notification API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/WebsocketAPI.html">WebsocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API Tutorial &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseOpenAPI.html">Using Open API to control virtual device with Postman</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseSNoti.html">Real-time data synchronization demo for SNoti service</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseWebsocket.html">Control device using WebSocket</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/DataAPI.html">Aggregation API Guide</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/LinkageAPI.html">Device Linkage API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/devgroup_API.html">Device Grouping API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseQRCode.html">Generating device QR code for App binding</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/CloudFAQ.html">Cloud FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              User Manual &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/ST_IoT.html">Gizwits and ST Make IoT Development Easy</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">SDK error codes</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>This article mainly lists the error code information returned by the Gizwits SDK which is called.</p>
+<h1 id="Error-codes-definition"><a href="#Error-codes-definition" class="headerlink" title="Error codes definition"></a>Error codes definition</h1><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Definition</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>GIZ_SDK_SUCCESS</td>
+<td>The request from the client was executed successfully</td>
+</tr>
+<tr>
+<td>8001</td>
+<td>GIZ_SDK_PARAM_FORM_INVALID</td>
+<td>The format of the JSON sent by Client to Daemon was invalid</td>
+</tr>
+<tr>
+<td>8002</td>
+<td>GIZ_SDK_CLIENT_NOT_AUTHEN</td>
+<td>If there is no handshake authentication between Client and Daemon, any data interaction is invalid</td>
+</tr>
+<tr>
+<td>8003</td>
+<td>GIZ_SDK_CLIENT_VERSION_INVALID</td>
+<td>Client version number is invalid</td>
+</tr>
+<tr>
+<td>8004</td>
+<td>GIZ_SDK_UDP_PORT_BIND_FAILED</td>
+<td>UDP port binding failed</td>
+</tr>
+<tr>
+<td>8005</td>
+<td>GIZ_SDK_DAEMON_EXCEPTION</td>
+<td>System error of Daemon </td>
+</tr>
+<tr>
+<td>8006</td>
+<td>GIZ_SDK_PARAM_INVALID</td>
+<td>JSON format of the data request sent by Client is correct, but the parameters are invalid; the parameters passed by the App are invalid</td>
+</tr>
+<tr>
+<td>8007</td>
+<td>GIZ_SDK_APPID_LENGTH_ERROR</td>
+<td>Error of Appid length </td>
+</tr>
+<tr>
+<td>8008</td>
+<td>GIZ_SDK_LOG_PATH_INVALID</td>
+<td>Invalid log path</td>
+</tr>
+<tr>
+<td>8009</td>
+<td>GIZ_SDK_LOG_LEVEL_INVALID</td>
+<td>Invalid log level</td>
+</tr>
+<tr>
+<td>8020</td>
+<td>GIZ_SDK_NO_AVAILABLE_DEVICE</td>
+<td>No devices are available when setting device domain name in batch</td>
+</tr>
+<tr>
+<td>8021</td>
+<td>GIZ_SDK_DEVICE_CONFIG_SEND_FAILED</td>
+<td>Device configuration failed to be sent</td>
+</tr>
+<tr>
+<td>8022</td>
+<td>GIZ_SDK_DEVICE_CONFIG_IS_RUNNING</td>
+<td>Device is being configured</td>
+</tr>
+<tr>
+<td>8023</td>
+<td>GIZ_SDK_DEVICE_CONFIG_TIMEOUT</td>
+<td>Device configuration timed out</td>
+</tr>
+<tr>
+<td>8024</td>
+<td>GIZ_SDK_DEVICE_DID_INVALID</td>
+<td>Device did is invalid</td>
+</tr>
+<tr>
+<td>8025</td>
+<td>GIZ_SDK_DEVICE_MAC_INVALID</td>
+<td>Device mac is invalid</td>
+</tr>
+<tr>
+<td>8026</td>
+<td>GIZ_SDK_SUBDEVICE_DID_INVALID</td>
+<td>Child device did invalid</td>
+</tr>
+<tr>
+<td>8027</td>
+<td>GIZ_SDK_DEVICE_PASSCODE_INVALID</td>
+<td>Device passcode is invalid</td>
+</tr>
+<tr>
+<td>8028</td>
+<td>GIZ_SDK_DEVICE_NOT_CENTERCONTROL</td>
+<td>It is not a central control device</td>
+</tr>
+<tr>
+<td>8029</td>
+<td>GIZ_SDK_DEVICE_NOT_SUBSCRIBED</td>
+<td>The device is not subscribed</td>
+</tr>
+<tr>
+<td>8030</td>
+<td>GIZ_SDK_DEVICE_NO_RESPONSE</td>
+<td>No respond from the device</td>
+</tr>
+<tr>
+<td>8031</td>
+<td>GIZ_SDK_DEVICE_NOT_READY</td>
+<td>The device is not ready</td>
+</tr>
+<tr>
+<td>8032</td>
+<td>GIZ_SDK_DEVICE_NOT_BINDED</td>
+<td>The device is not bound</td>
+</tr>
+<tr>
+<td>8033</td>
+<td>GIZ_SDK_DEVICE_CONTROL_WITH_INVALID_COMMAND</td>
+<td>The device control command contains invalid instructions</td>
+</tr>
+<tr>
+<td>8034</td>
+<td>GIZ_SDK_DEVICE_CONTROL_FAILED</td>
+<td>Device control command failed to execute</td>
+</tr>
+<tr>
+<td>8035</td>
+<td>GIZ_SDK_DEVICE_GET_STATUS_FAILED</td>
+<td>Device status query failed</td>
+</tr>
+<tr>
+<td>8036</td>
+<td>GIZ_SDK_DEVICE_CONTROL_VALUE_TYPE_ERROR</td>
+<td>The parameter type of device control command is incorrect</td>
+</tr>
+<tr>
+<td>8037</td>
+<td>GIZ_SDK_DEVICE_CONTROL_VALUE_OUT_OF_RANGE</td>
+<td>The parameter value of device control command is not within the valid range</td>
+</tr>
+<tr>
+<td>8038</td>
+<td>GIZ_SDK_DEVICE_CONTROL_NOT_WRITABLE_COMMAND</td>
+<td>Device control command contains non-writable instructions</td>
+</tr>
+<tr>
+<td>8039</td>
+<td>GIZ_SDK_BIND_DEVICE_FAILED</td>
+<td>Device binding failed</td>
+</tr>
+<tr>
+<td>8040</td>
+<td>GIZ_SDK_UNBIND_DEVICE_FAILED</td>
+<td>Device unbinding failed</td>
+</tr>
+<tr>
+<td>8041</td>
+<td>GIZ_SDK_DNS_FAILED</td>
+<td>Domain name resolution failed</td>
+</tr>
+<tr>
+<td>8042</td>
+<td>GIZ_SDK_M2M_CONNECTION_SUCCESS</td>
+<td>M2M connection succeeded</td>
+</tr>
+<tr>
+<td>8043</td>
+<td>GIZ_SDK_SET_SOCKET_NON_BLOCK_FAILED</td>
+<td>Non-blocking socket connection failed</td>
+</tr>
+<tr>
+<td>8044</td>
+<td>GIZ_SDK_CONNECTION_TIMEOUT</td>
+<td>Connection timed out</td>
+</tr>
+<tr>
+<td>8045</td>
+<td>GIZ_SDK_CONNECTION_REFUSED</td>
+<td>Connection refused</td>
+</tr>
+<tr>
+<td>8046</td>
+<td>GIZ_SDK_CONNECTION_ERROR</td>
+<td>Connection error</td>
+</tr>
+<tr>
+<td>8047</td>
+<td>GIZ_SDK_CONNECTION_CLOSED</td>
+<td>Connection is closed</td>
+</tr>
+<tr>
+<td>8048</td>
+<td>GIZ_SDK_SSL_HANDSHAKE_FAILED</td>
+<td>SSL handshake failed</td>
+</tr>
+<tr>
+<td>8049</td>
+<td>GIZ_SDK_DEVICE_LOGIN_VERIFY_FAILED</td>
+<td>Device login verification failed</td>
+</tr>
+<tr>
+<td>8050</td>
+<td>GIZ_SDK_INTERNET_NOT_REACHABLE</td>
+<td>The current external network is unreachable</td>
+</tr>
+<tr>
+<td>8095</td>
+<td>GIZ_SDK_HTTP_SERVER_NOT_SUPPORT_API</td>
+<td>HTTP service does not support this API</td>
+</tr>
+<tr>
+<td>8096</td>
+<td>GIZ_SDK_HTTP_ANSWER_FORMAT_ERROR</td>
+<td>OpenAPI response format is wrong</td>
+</tr>
+<tr>
+<td>8097</td>
+<td>GIZ_SDK_HTTP_ANSWER_PARAM_ERROR</td>
+<td>HTTP response parameter is incorrect</td>
+</tr>
+<tr>
+<td>8098</td>
+<td>GIZ_SDK_HTTP_SERVER_NO_ANSWER</td>
+<td>HTTP service is not responding</td>
+</tr>
+<tr>
+<td>8099</td>
+<td>GIZ_SDK_HTTP_REQUEST_FAILED</td>
+<td>HTTP request failed, such as returned 404, etc.</td>
+</tr>
+<tr>
+<td>8101</td>
+<td>GIZ_SDK_MEMORY_MALLOC_FAILED</td>
+<td>Daemon memory allocation failed</td>
+</tr>
+<tr>
+<td>8102</td>
+<td>GIZ_SDK_THREAD_CREATE_FAILED</td>
+<td>Daemon internal thread creation failed</td>
+</tr>
+<tr>
+<td>8150</td>
+<td>GIZ_SDK_USER_ID_INVALID</td>
+<td>User ID is invalid</td>
+</tr>
+<tr>
+<td>8151</td>
+<td>GIZ_SDK_TOKEN_INVALID</td>
+<td>User token is invalid</td>
+</tr>
+<tr>
+<td>8152</td>
+<td>GIZ_SDK_GROUP_ID_INVALID</td>
+<td>Invalid group id</td>
+</tr>
+<tr>
+<td>8153</td>
+<td>GIZ_SDK_GROUPNAME_INVALID</td>
+<td>Invalid group name</td>
+</tr>
+<tr>
+<td>8154</td>
+<td>GIZ_SDK_GROUP_PRODUCTKEY_INVALID</td>
+<td>Invalid group type</td>
+</tr>
+<tr>
+<td>8155</td>
+<td>GIZ_SDK_GROUP_FAILED_DELETE_DEVICE</td>
+<td>Group device deletion failed</td>
+</tr>
+<tr>
+<td>8156</td>
+<td>GIZ_SDK_GROUP_FAILED_ADD_DEVICE</td>
+<td>Group device addition failed</td>
+</tr>
+<tr>
+<td>8157</td>
+<td>GIZ_SDK_GROUP_GET_DEVICE_FAILED</td>
+<td>Failed to get device group</td>
+</tr>
+<tr>
+<td>8201</td>
+<td>GIZ_SDK_DATAPOINT_NOT_DOWNLOAD</td>
+<td>Profile is not yet downloaded</td>
+</tr>
+<tr>
+<td>8202</td>
+<td>GIZ_SDK_DATAPOINT_SERVICE_UNAVAILABLE</td>
+<td>Profile service is not available</td>
+</tr>
+<tr>
+<td>8203</td>
+<td>GIZ_SDK_DATAPOINT_PARSE_FAILED</td>
+<td>Failed to parse profile</td>
+</tr>
+<tr>
+<td>8300</td>
+<td>GIZ_SDK_SDK_NOT_INITIALIZED</td>
+<td>SDK not initialized</td>
+</tr>
+<tr>
+<td>8301</td>
+<td>GIZ_SDK_APK_CONTEXT_IS_NULL</td>
+<td>Context is invalid and cannot be started</td>
+</tr>
+<tr>
+<td>8302</td>
+<td>GIZ_SDK_APK_PERMISSION_NOT_SET</td>
+<td>Insufficient App permissions</td>
+</tr>
+<tr>
+<td>8303</td>
+<td>GIZ_SDK_CHMOD_DAEMON_REFUSED</td>
+<td>Unable to modify daemon’s execution permission</td>
+</tr>
+<tr>
+<td>8304</td>
+<td>GIZ_SDK_EXEC_DAEMON_FAILED</td>
+<td>Daemon execution failed</td>
+</tr>
+<tr>
+<td>8305</td>
+<td>GIZ_SDK_EXEC_CATCH_EXCEPTION</td>
+<td>An exception occurred while trying to run the daemon</td>
+</tr>
+<tr>
+<td>8306</td>
+<td>GIZ_SDK_APPID_IS_EMPTY</td>
+<td>APPID is empty</td>
+</tr>
+<tr>
+<td>8307</td>
+<td>GIZ_SDK_UNSUPPORTED_API</td>
+<td>Unsupported API</td>
+</tr>
+<tr>
+<td>8308</td>
+<td>GIZ_SDK_REQUEST_TIMEOUT</td>
+<td>If Client does not get Daemon’s reply, it will return timeout to the App</td>
+</tr>
+<tr>
+<td>8309</td>
+<td>GIZ_SDK_DAEMON_VERSION_INVALID</td>
+<td>Daemon version number is invalid</td>
+</tr>
+<tr>
+<td>8310</td>
+<td>GIZ_SDK_PHONE_NOT_CONNECT_TO_SOFTAP_SSID</td>
+<td>The phone is not connected to a Soft AP hotspot</td>
+</tr>
+<tr>
+<td>8311</td>
+<td>GIZ_SDK_DEVICE_CONFIG_SSID_NOT_MATCHED</td>
+<td>The phone hotspot does not match the router SSID to be configured </td>
+</tr>
+<tr>
+<td>8312</td>
+<td>GIZ_SDK_NOT_IN_SOFTAPMODE</td>
+<td>Device is not in SoftAP mode</td>
+</tr>
+<tr>
+<td>8313</td>
+<td>GIZ_SDK_CONFIG_NO_AVAILABLE_WIFI</td>
+<td>Wi-Fi is unavailable when configuring device</td>
+</tr>
+<tr>
+<td>8314</td>
+<td>GIZ_SDK_RAW_DATA_TRANSMIT</td>
+<td>Indicating that the device reports data by transparent transmission</td>
+</tr>
+<tr>
+<td>8315</td>
+<td>GIZ_SDK_PRODUCT_IS_DOWNLOADING</td>
+<td>Downloading device product definition</td>
+</tr>
+<tr>
+<td>8316</td>
+<td>GIZ_SDK_START_SUCCESS</td>
+<td>SDK started successfully</td>
+</tr>
+<tr>
+<td>10003</td>
+<td>GIZ_SITE_PRODUCTKEY_INVALID</td>
+<td>Product identifier is invalid</td>
+</tr>
+<tr>
+<td>10010</td>
+<td>GIZ_SITE_DATAPOINTS_NOT_DEFINED</td>
+<td>Data point not defined</td>
+</tr>
+<tr>
+<td>10011</td>
+<td>GIZ_SITE_DATAPOINTS_NOT_MALFORME</td>
+<td>Data point exception</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
