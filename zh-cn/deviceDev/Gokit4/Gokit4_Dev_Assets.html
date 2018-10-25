@@ -4,14 +4,14 @@
   <head>
   <meta charset="utf-8">
 
-  <title>机智云</title>
+  <title>机智云GoKit4（G） SoC环境搭建教程及开发指南 - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="-机智云">
-  <meta name="keywords" content=" docs 文档中心 Gizwits">
+  <meta name="Description" content="机智云GoKit4（G） SoC环境搭建教程及开发指南-机智云">
+  <meta name="keywords" content="机智云GoKit4（G） SoC环境搭建教程及开发指南 docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -464,10 +464,10 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title"></div>
+        <div class="title">机智云GoKit4（G） SoC环境搭建教程及开发指南</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="机智云GoKit4（G）-SoC环境搭建教程"><a href="#机智云GoKit4（G）-SoC环境搭建教程" class="headerlink" title="机智云GoKit4（G） SoC环境搭建教程"></a>机智云GoKit4（G） SoC环境搭建教程</h1><h3 id="开发工具包"><a href="#开发工具包" class="headerlink" title="开发工具包"></a>开发工具包</h3><p>网盘下载开发环境所需安装包：</p>
+      <h3 id="开发工具包"><a href="#开发工具包" class="headerlink" title="开发工具包"></a>开发工具包</h3><p>网盘下载开发环境所需安装包：</p>
 <p>链接：<a href="https://pan.baidu.com/s/1dvTfeQQNdgHlxEsCdbOYHA" target="_blank" rel="noopener">https://pan.baidu.com/s/1dvTfeQQNdgHlxEsCdbOYHA</a></p>
 <p>提取码: 86vs</p>
 <table>
@@ -560,10 +560,10 @@
 <p>at+csq;+qnwinfo;+cereg?;</p>
 <p>模组返回信息，CEREG为0,1 或 0,5就说明注册成功了</p>
 <p><img src="/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/ATForNB.png" alt="ATForNB"></p>
-<h3 id="6、编码及编译"><a href="#6、编码及编译" class="headerlink" title="6、编码及编译"></a>6、编码及编译</h3><p>​    借助机智云自助开发平台，开发者可以快速实现产品设计、开发、调试、发布的完整流程，请先阅读先阅读<a href="http://docs.gizwits.com/zh-cn/quickstart/README.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/quickstart/README.html</a> 五分钟 五分钟了解机智云自助开发平台。</p>
+<h3 id="6、编码及编译"><a href="#6、编码及编译" class="headerlink" title="6、编码及编译"></a>6、编码及编译</h3><p>​借助机智云自助开发平台，开发者可以快速实现产品设计、开发、调试、发布的完整流程，请先阅读<a href="http://docs.gizwits.com/zh-cn/quickstart/README.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/quickstart/README.html</a> 五分钟了解机智云自助开发平台。</p>
 <p>6.1 创建产品，选择通讯方式为移动网络，如下图：</p>
 <p>备注：本次高通开发者大赛标配的物联网卡支持NB-IoT网络，但请勿选择“WiFi”或“NB-IoT”通讯方式</p>
-<p><img src="D:\GizwitsBusiness\for_market\20180901_GOKIT4\site\Gokit4 SoC开发环境搭建教程.assets/TXLXXZ.png" alt="TXLXXZ"></p>
+<p><img src="/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/TXLXXZ.png" alt="TXLXXZ"></p>
 <p>6.2 根据产品需求编辑数据点</p>
 <p>6.3 选择MCU开发，选择SOC方案，选择硬件平台MDM9206,输入Product Secret，利用代码自动生成开发框架，进行二次开发完善自己的产品逻辑。注意：若出现无此平台的生成支持，网盘资源包中提供了一个例程SoC_MDM9206_Source_Demo，修改数据点协议相关部分，也可以完成产品开发。可参考的协议文档见开发向导-&gt;MCU开发资源中的通信协议，注意该文档默认是MCU方案的串口协议文档，本次开发是SOC方案，所以该文档只需关注3.3和3.4 flag和action相关部分即可。</p>
 <p>6.4 双击源码根目录中的llvm_build.bat批处理文件，喝水等会，如果出现红色Error那就恭喜你成功编写了BUG。一切顺利的话，在源码目录target下生成三个文件表示成功，如下图</p>
