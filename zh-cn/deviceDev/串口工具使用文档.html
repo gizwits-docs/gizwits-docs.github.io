@@ -476,42 +476,54 @@
 <h2 id="4-将模组连接上电脑"><a href="#4-将模组连接上电脑" class="headerlink" title="4.将模组连接上电脑"></a>4.将模组连接上电脑</h2><p>按照以下原理图设计好硬件原理图，并用USB转串口工具将模组连接上电脑。</p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/Serial/2.png" alt="name"></p>
 <h2 id="5-下载机智云串口调试助手"><a href="#5-下载机智云串口调试助手" class="headerlink" title="5.下载机智云串口调试助手"></a>5.下载机智云串口调试助手</h2><p>下载地址：<a href="https://download.gizwits.com/zh-cn/p/98/119" target="_blank" rel="noopener">https://download.gizwits.com/zh-cn/p/98/119</a></p>
-<h2 id="6-配置串口工具"><a href="#6-配置串口工具" class="headerlink" title="6.配置串口工具"></a>6.配置串口工具</h2><p>  <img src="/assets/zh-cn/deviceDev/debug/Serial/1478158566189.png" alt="name"></p>
-<p>在机智云开发者中心找到项目对应的productkey，并填写到串口工具对应的位置。</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478158758049.png" alt="name"></p>
-<h1 id="串口工具界面说明"><a href="#串口工具界面说明" class="headerlink" title="串口工具界面说明"></a>串口工具界面说明</h1><h2 id="1-主界面说明"><a href="#1-主界面说明" class="headerlink" title="1.主界面说明"></a>1.主界面说明</h2><p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478158776038.png" alt="name"></p>
-<h2 id="2-指令界面说明"><a href="#2-指令界面说明" class="headerlink" title="2.指令界面说明"></a>2.指令界面说明</h2><p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478158805756.png" alt="name"></p>
-<h2 id="3-参数界面说明"><a href="#3-参数界面说明" class="headerlink" title="3.参数界面说明"></a>3.参数界面说明</h2><p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478158826206.png" alt="name"></p>
+<h2 id="6-配置串口工具"><a href="#6-配置串口工具" class="headerlink" title="6.配置串口工具"></a>6.配置串口工具</h2><p>  <img src="/assets/zh-cn/deviceDev/debug/Serial/3.png" alt="name"><br>  <img src="/assets/zh-cn/deviceDev/debug/Serial/4.png" alt="name"></p>
+<p>在机智云开发者中心找到项目对应的product key，进入企业项目中，在基本信息可以查看到Product Secret，并填写到串口工具对应的位置。</p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/5.png" alt="name"></p>
+<h1 id="串口工具界面说明"><a href="#串口工具界面说明" class="headerlink" title="串口工具界面说明"></a>串口工具界面说明</h1><h2 id="1-主界面说明"><a href="#1-主界面说明" class="headerlink" title="1.主界面说明"></a>1.主界面说明</h2><p> <img src="/assets/zh-cn/deviceDev/debug/Serial/6.png" alt="name"></p>
+<h2 id="2-指令界面说明"><a href="#2-指令界面说明" class="headerlink" title="2.指令界面说明"></a>2.指令界面说明</h2><p> <img src="/assets/zh-cn/deviceDev/debug/Serial/7.png" alt="name"></p>
+<h2 id="3-参数界面说明"><a href="#3-参数界面说明" class="headerlink" title="3.参数界面说明"></a>3.参数界面说明</h2><p> <img src="/assets/zh-cn/deviceDev/debug/Serial/8.png" alt="name"></p>
+<h2 id="4-其他按键说明"><a href="#4-其他按键说明" class="headerlink" title="4.其他按键说明"></a>4.其他按键说明</h2><h3 id="4-1-透传业务指令和自由组包指令说明"><a href="#4-1-透传业务指令和自由组包指令说明" class="headerlink" title="4.1 透传业务指令和自由组包指令说明"></a>4.1 透传业务指令和自由组包指令说明</h3><p><img src="/assets/zh-cn/deviceDev/debug/Serial/9.png" alt="name"></p>
+<p>在填写产品信息上方的预留了一个可以自行组包给WIFI发送数据的发送框<br>透传业务指令：选择该选项时，发送的数据默认为FF FF XX XX 05………XX，也就是包头、长度字节、cmd和效验和不需要用户自行填写，只需填写从action位开始的业务数据即可，例如要发送“FF FF 00 09 05 01 00 00 14 00 00 00 23 ”时，只需要发送“01 00 00 14 00 00 00”。<br>自由组包指令：当选择该选项时，软件不会对用户的数据做任何处理，所以发送的数据需要自行组包，例如要发送“FF FF 00 09 05 01 00 00 14 00 00 00 23 ”时，需要发送“FF FF 00 09 05 01 00 00 14 00 00 00 23”。</p>
+<h3 id="4-2-保存日志按键说明"><a href="#4-2-保存日志按键说明" class="headerlink" title="4.2 保存日志按键说明"></a>4.2 保存日志按键说明</h3><p> <img src="/assets/zh-cn/deviceDev/debug/Serial/10.png" alt="name"></p>
+<p>点击该按钮后可以自行选择文件夹位置，导出通信日志窗口的内容到文件中。</p>
+<h3 id="4-3-上传数据说明"><a href="#4-3-上传数据说明" class="headerlink" title="4.3 上传数据说明"></a>4.3 上传数据说明</h3><p> <img src="/assets/zh-cn/deviceDev/debug/Serial/11.png" alt="name"></p>
+<p>1.上报数据：点击按键，MCU主动上报设备状态<br>2.定时上报开：打开时，按参数界面设置的“上报间隔”时间进行定时上报<br>3.自动上报开：打开时，app端数据点数据发生改变时，MCU上报设备状态</p>
 <h1 id="配置模组入网"><a href="#配置模组入网" class="headerlink" title="配置模组入网"></a>配置模组入网</h1><h2 id="1-模组首次上电"><a href="#1-模组首次上电" class="headerlink" title="1.模组首次上电"></a>1.模组首次上电</h2><p>如图所示，ESP8266模组首次上电将会在串口工具接收框内打印如下信息。</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478158993395.png" alt="name"></p>
-<h2 id="2-打开“机智云APP”"><a href="#2-打开“机智云APP”" class="headerlink" title="2.打开“机智云APP”"></a>2.打开“机智云APP”</h2><p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478159098727.png" alt="name"></p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/12.png" alt="name"></p>
+<h2 id="2-打开“机智云APP”"><a href="#2-打开“机智云APP”" class="headerlink" title="2.打开“机智云APP”"></a>2.打开“机智云APP”</h2><p> <img src="/assets/zh-cn/deviceDev/debug/Serial/13.png" alt="name"></p>
 <h2 id="3-注册帐号并登录"><a href="#3-注册帐号并登录" class="headerlink" title="3.注册帐号并登录"></a>3.注册帐号并登录</h2><p>此处可以使用手机号码注册帐号登录或者直接点击“跳过”，进行下一步操作</p>
-<p>  <img src="/assets/zh-cn/deviceDev/debug/Serial/1478159122052.png" alt="name"></p>
-<h2 id="4-点击添加设备"><a href="#4-点击添加设备" class="headerlink" title="4.点击添加设备"></a>4.点击添加设备</h2><p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478159220891.png" alt="name"></p>
-<h2 id="5-输入路由器的ssid名称和密码"><a href="#5-输入路由器的ssid名称和密码" class="headerlink" title="5.输入路由器的ssid名称和密码"></a>5.输入路由器的ssid名称和密码</h2><p>选择对应的模组型号，这里默认选择乐鑫，并在app上输入你手机连接的路由器的ssid名称和密码，点击下一步。</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478159260016.png" alt="name"></p>
-<h2 id="6-发送进入Airlink命令"><a href="#6-发送进入Airlink命令" class="headerlink" title="6.发送进入Airlink命令"></a>6.发送进入Airlink命令</h2><p>点击指令界面的Airlink，电脑模拟MCU会发送一条命令通知模组进入Airlink模式。</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478159490480.png" alt="name"></p>
+<p>  <img src="/assets/zh-cn/deviceDev/debug/Serial/14.png" alt="name"></p>
+<h2 id="4-点击添加设备"><a href="#4-点击添加设备" class="headerlink" title="4.点击添加设备"></a>4.点击添加设备</h2><p> <img src="/assets/zh-cn/deviceDev/debug/Serial/15.png" alt="name"></p>
+<h2 id="5-输入路由器的ssid名称和密码"><a href="#5-输入路由器的ssid名称和密码" class="headerlink" title="5.输入路由器的ssid名称和密码"></a>5.输入路由器的ssid名称和密码</h2><p>在app上输入你手机连接的路由器的ssid名称和密码，点击下一步。<br> <img src="/assets/zh-cn/deviceDev/debug/Serial/16.png" alt="name"></p>
+<h2 id="6-选择对应的模组型号"><a href="#6-选择对应的模组型号" class="headerlink" title="6.选择对应的模组型号"></a>6.选择对应的模组型号</h2><p> <img src="/assets/zh-cn/deviceDev/debug/Serial/17.png" alt="name"></p>
+<h2 id="7-发送进入Airlink命令"><a href="#7-发送进入Airlink命令" class="headerlink" title="7.发送进入Airlink命令"></a>7.发送进入Airlink命令</h2><p>点击指令界面的Airlink，电脑模拟MCU会发送一条命令通知模组进入Airlink模式。</p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/18.png" alt="name"></p>
 <p>下图为Wifi模组进入Airlink后输出信息。</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478159597086.png" alt="name"></p>
-<h2 id="7-APP发送配置信息"><a href="#7-APP发送配置信息" class="headerlink" title="7.APP发送配置信息"></a>7.APP发送配置信息</h2><p>上述步骤完成后在app上“已完成上述操作”打勾，点击下一步。</p>
-<p>  <img src="/assets/zh-cn/deviceDev/debug/Serial/1478159644921.png" alt="name"></p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/19.png" alt="name"></p>
+<h2 id="8-APP发送配置信息"><a href="#8-APP发送配置信息" class="headerlink" title="8.APP发送配置信息"></a>8.APP发送配置信息</h2><p>上述步骤完成后在app上点击“我已完成上述操作”。</p>
+<p>  <img src="/assets/zh-cn/deviceDev/debug/Serial/20.png" alt="name"></p>
 <p>此时app会发出配置包，并提示正在搜索设备。</p>
-<p>  <img src="/assets/zh-cn/deviceDev/debug/Serial/1478159663800.png" alt="name"></p>
-<h2 id="8-配置成功"><a href="#8-配置成功" class="headerlink" title="8.配置成功"></a>8.配置成功</h2><p>注意观察串口工具接收窗口，当输出以下两条命令的时候，表示Wifi模组成功接收到了手机发送的配置信息，而且成功连接了路由器，并连接上了云端。</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478159708201.png" alt="name"></p>
+<p>  <img src="/assets/zh-cn/deviceDev/debug/Serial/21.png" alt="name"></p>
+<h2 id="9-配置成功"><a href="#9-配置成功" class="headerlink" title="9.配置成功"></a>9.配置成功</h2><p>注意观察串口工具接收窗口，当输出以下两条命令的时候，表示Wifi模组成功接收到了手机发送的配置信息，而且成功连接了路由器，并连接上了云端。</p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/22.png" alt="name"></p>
 <p>Wifi模组成功连接上路由器后，会广播配置成功包，此时app接收到配置成功包后会返回设备列表界面并显示出该设备。</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478160008176.png" alt="name"></p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/23.png" alt="name"></p>
 <h1 id="控制设备"><a href="#控制设备" class="headerlink" title="控制设备"></a>控制设备</h1><h2 id="1-进入控制页面"><a href="#1-进入控制页面" class="headerlink" title="1.进入控制页面"></a>1.进入控制页面</h2><p> 点击APP上显示的设备，将进入设备控制页面。</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478160046539.png" alt="name"></p>
-<h2 id="2-发送控制命令"><a href="#2-发送控制命令" class="headerlink" title="2.发送控制命令"></a>2.发送控制命令</h2><p>点击APP界面上“开启/关闭红色灯”控件，将下发控制红色灯的控制命令。</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478160138975.png" alt="name"></p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/24.png" alt="name"></p>
+<h2 id="2-发送控制命令"><a href="#2-发送控制命令" class="headerlink" title="2.发送控制命令"></a>2.发送控制命令</h2><p>点击APP界面上“开启/关闭红色灯”控件和改变“设定LED红色值”数值，将下发控制红色灯和改变LED红色值的控制命令。</p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/25.png" alt="name"></p>
 <h2 id="3-成功控制"><a href="#3-成功控制" class="headerlink" title="3.成功控制"></a>3.成功控制</h2><p>当看到串口工具中出现以下命令，表示APP成功控制设备</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478160177355.png" alt="name"></p>
-<h2 id="4-上报数据"><a href="#4-上报数据" class="headerlink" title="4.上报数据"></a>4.上报数据</h2><p>将串口工具中红外探测改为“1”，点击上报数据，模拟MCU将主动上报设备状态。</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478160228985.png" alt="name"></p>
-<p>APP收到上报的数据后，显示“红外探测”被打开，模拟mcu主动向APP上报数据成功。</p>
-<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/1478160242377.png" alt="name"></p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/26.png" alt="name"></p>
+<h2 id="4-上报数据"><a href="#4-上报数据" class="headerlink" title="4.上报数据"></a>4.上报数据</h2><p>将串口工具中红外探测改为“1”，环境湿度改为“10”，点击上报数据，模拟MCU将主动上报设备状态。</p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/27.png" alt="name"></p>
+<p>APP收到上报的数据后，显示“红外探测”被打开，环境湿度为”10”，模拟mcu主动向APP上报数据成功。</p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/28.png" alt="name"></p>
+<h1 id="串口调试助手小工具使用说明"><a href="#串口调试助手小工具使用说明" class="headerlink" title="串口调试助手小工具使用说明"></a>串口调试助手小工具使用说明</h1><h2 id="1-校验和计算"><a href="#1-校验和计算" class="headerlink" title="1.校验和计算"></a>1.校验和计算</h2><p>输入内容不包括包头和效验和，例如想验证“FF FF 00 09 05 01 00 00 14 00 00 00 23 ”这段数据的效验和是否正确，可以在输入框中输入“00 09 05 01 00 00 14 00 00 00”，然后点击计算，界面就会出现正确的效验和的值。</p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/29.png" alt="name"></p>
+<h2 id="2-二维码生成"><a href="#2-二维码生成" class="headerlink" title="2.二维码生成"></a>2.二维码生成</h2><p>这里是生成绑定设备使用的二维码，供APP绑定GPRS等没有局域网功能的模组，输入Product Key和MAC/IMEI后点击获取二维码，稍候便会在下方生成设备所对应的二维码。</p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/30.png" alt="name"></p>
+<h2 id="3-Signature计算"><a href="#3-Signature计算" class="headerlink" title="3.Signature计算"></a>3.Signature计算</h2><p>这是在使用open api根据mac接口绑定设备接口中需要填写的参数，这里提供快速计算方便开发者进行调试，填写Product Secret后点击按钮即可生成Timestamp和对应的Signature。参考公式：lower(md5(product_secret + timestamp))。</p>
+<p> <img src="/assets/zh-cn/deviceDev/debug/Serial/31.png" alt="name"></p>
 
     </div>
     
