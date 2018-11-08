@@ -433,7 +433,8 @@
 <h2 id="3-1-General-description"><a href="#3-1-General-description" class="headerlink" title="3.1 General description"></a><strong>3.1 General description</strong></h2><p>The I-CUBE-GIZWITS package provides a GIZWITS® GAgent stack middleware for STM32 microcontrollers.</p>
 <p>It is built to run on the B-L475E-IOT01 boards and connects to the Internet through the on-board network interface:</p>
 <p>• B-L475E-IOT01 supports Wi-Fi® connectivity with an on-board Inventek® WiFi module.This board is equipped with a set of sensors able to report humidity,temperature,3D-axis magneticdata,3D accelerations,3D gyroscope data,atmospheric pressure,proximity and gesture detection(I-CUBE-GIZWITS does not use the gesture detection capability).</p>
-<p><strong>Figure 2. B-L475E-IOT01A board</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/4.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 2. B-L475E-IOT01A board</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/4.png" alt="I CUBE GIZWITS"></p>
 <p>The package is split into the following software components:</p>
 <p>• Client libraries and samples for connecting to GIZWITS® IoT cloud platform.</p>
 <p>• FreeRTOS™</p>
@@ -470,9 +471,11 @@
 </ol>
 <p>It is a real-time operating system required for simulating the Linux environment that was originally used to develop the GAgent client stack and GIZWITS application.</p>
 <p>Figure 3 outlines I-CUBE-GIZWITS software architecture.</p>
-<p><strong>Figure 3. I-CUBE-GIZWITS software architecture</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/5.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 3. I-CUBE-GIZWITS software architecture</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/5.png" alt="I CUBE GIZWITS"></p>
 <h2 id="3-3-Folderstructure"><a href="#3-3-Folderstructure" class="headerlink" title="3.3 Folderstructure"></a><strong>3.3</strong> Folderstructure</h2><p>Figure 4 presents the folder structure of the I-CUBE-GIZWITS package.</p>
-<p><strong>Figure 4. Project file structure</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/6.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 4. Project file structure</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/6.png" alt="I CUBE GIZWITS"></p>
 <h2 id="3-4-B-L475E-IOT01boardsensors"><a href="#3-4-B-L475E-IOT01boardsensors" class="headerlink" title="3.4 B-L475E-IOT01boardsensors"></a><strong>3.4</strong> B-L475E-IOT01boardsensors</h2><p>The sensors that are present on the board that can be used by the sample application are:</p>
 <p>• Capacitive digital sensor for relative humidity and temperature(HTS221)</p>
 <p>• High-performance 3-axis magnetometer(LIS3MDL)</p>
@@ -497,14 +500,16 @@
 <p>• Interact with the board via a UART console</p>
 <p>• Debug</p>
 <p>The B-L475E-IOT01 must be connected to a Wi-Fi® access point as illustrated in Figure 5.</p>
-<p><strong>Figure 5. Hardware and software setup environment</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/7.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 5. Hardware and software setup environment</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/7.png" alt="I CUBE GIZWITS"></p>
 <p>The prerequisites for running the examples are:</p>
 <p>•    A Wi-Fi® access point, with a transparent Internet connectivity meaning that neither a proxy, nor a firewall are blocking the outgoing traffic. It has to run a DHCP server delivering the IP and DNS configuration to the board.</p>
 <p>•    A development PC for building the application, programming through ST-Link, and running the virtual console.</p>
 <p>•    A USB-TTL (USB to serial port transmission) board used for the pre-authorization of client board. Showed in Figure 6. </p>
 <p>• A GIZWITS® account. Once registered a Product Key and Product secret for GIZWITS® IoT services will be provided.</p>
 <p>To register and create an account, go to <a href="https://accounts.gizwits.com/en/register/" target="_blank" rel="noopener">https://accounts.gizwits.com/en/register/</a></p>
-<p><strong>Figure 6. USB TTL Board</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/8.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 6. USB TTL Board</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/8.png" alt="I CUBE GIZWITS"></p>
 <h1 id="5-Interacting-with-the-boards"><a href="#5-Interacting-with-the-boards" class="headerlink" title="5.Interacting with the boards"></a>5.Interacting with the boards</h1><p>A serial terminal is required to:</p>
 <p>•    Configure the board</p>
 <p>•    Display locally the received GIZWITS® IoT cloud-to-device messages</p>
@@ -513,16 +518,19 @@
 <p>•    Open a virtual terminal on the PC and connect it to the above virtual COM port.</p>
 <p>A Tera Term initialization script is provided in the package utility directory (refer to Figure 3). This script sets the correct parameters. To use it, open Tera Term, select Setup and then restore setup.</p>
 <p>Note:<br>The information provided below in this chapter can be used to configure the UART terminal as an alternative to using the Tera Term initialization script.<br>Terminal setup is illustrated in Figure 7, which shows the terminal setup and the New-line recommended parameters.<br>The virtual terminal New-line transmit configuration must be set to LineFeed (\n or LF) in order to allow copy-paste from UNIX type text files. The Local echo option makes copy- paste visible on the console.</p>
-<p><strong>Figure 7. Terminal Setup</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/9.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 7. Terminal Setup</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/9.png" alt="I CUBE GIZWITS"></p>
 <p>The serial port must be configured with:<br>•    COM port number<br>•    115200 baud rate<br>•    8-bit data<br>•    Parity none<br>•    1 stop bit<br>•    No flow control</p>
 <p>Serial port setup is illustrated in Figure 8.</p>
-<p><strong>Figure 8. Serial port setup</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/10.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 8. Serial port setup</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/10.png" alt="I CUBE GIZWITS"></p>
 <p>Once the UART terminal and the serial port are set up, press the board reset button (black). Follow the indications on the UART terminal to upload Wi-Fi® and GIZWITS® data. Those data remain in Flash and are reused the next time.</p>
 <h1 id="6-Application-example"><a href="#6-Application-example" class="headerlink" title="6.Application example"></a>6.Application example</h1><p>This section introduces how to register and log on the GIZWITS® IoT cloud platform, and how to use the GIZWITS® client application from the I-CUBE-GIZWITS package.</p>
 <h2 id="6-1-Applicationdescription"><a href="#6-1-Applicationdescription" class="headerlink" title="6.1 Applicationdescription"></a><strong>6.1</strong> Applicationdescription</h2><p>The GIZWITS® sample application illustrates the various way for a device to interact with the GIZWITZ® IoT hub, using the GIZWITS® GAgent stack on the device.</p>
 <p>The application connects to the GIZWITZ® IoT hub thanks to the credential provided by the user in the code.</p>
 <h2 id="6-2-GIZWITS®-IoT-account-creation"><a href="#6-2-GIZWITS®-IoT-account-creation" class="headerlink" title="6.2 GIZWITS® IoT account creation"></a><strong>6.2</strong> GIZWITS® IoT account creation</h2><p>Toregister and create an account,goto:<a href="https://accounts.gizwits.com/en/register/" target="_blank" rel="noopener">https://accounts.gizwits.com/en/register/</a></p>
-<p><strong>Figure 9. GIZWITS account creation</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/11.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 9. GIZWITS account creation</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/11.png" alt="I CUBE GIZWITS"></p>
 <h2 id="6-3-Product-creation-on-the-GIZWITS®-IoT-Cloud-platform"><a href="#6-3-Product-creation-on-the-GIZWITS®-IoT-Cloud-platform" class="headerlink" title="6.3 Product creation on the GIZWITS® IoT Cloud platform"></a>6.3 Product creation on the GIZWITS® IoT Cloud platform</h2><p>Once an account has been created:</p>
 <ol>
 <li>Create a new product.</li>
@@ -530,57 +538,82 @@
 <li>Give it a name, select the type of node, and the Product Key and Product Secret will be generated.</li>
 <li>Then select &quot;Save&quot;</li>
 </ol>
-<p><strong>Figure 10. Product creation</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/12.png" alt="I CUBE GIZWITS"></p>
-<p><strong>Figure 11. Product Secret generation</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/13.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 10. Product creation</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/12.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 11. Product Secret generation</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/13.png" alt="I CUBE GIZWITS"></p>
 <p>Create the datapoint by specifying its name, I/O Type, Data Type, Range and Steps (ratio). The datapoint set and used in this example application is showed in Figure 12.</p>
-<p><strong>Figure 12. Datapoint creation</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/14.png" alt="I CUBE GIZWITS"><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/15.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 12. Datapoint creation</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/14.png" alt="I CUBE GIZWITS"></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/15.png" alt="I CUBE GIZWITS"></p>
 <p>Go to the Resources page to:</p>
 <ol>
 <li>Download the GIZWITS PC application that generates a QR code</li>
 <li>Download the GIZWITS mobile app</li>
 <li>Download the GIZWITS PC application which is used for pre-</li>
 </ol>
-<p><strong>Figure 13. GIZWITS PC and Mobile app</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/16.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 13. GIZWITS PC and Mobile app</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/16.png" alt="I CUBE GIZWITS"></p>
 <h2 id="6-4-Applicationbuildandflash"><a href="#6-4-Applicationbuildandflash" class="headerlink" title="6.4 Applicationbuildandflash"></a><strong>6.4</strong> Applicationbuildandflash</h2><p><strong>Caution:</strong>    Before opening the project with any tool chain, make sure that the folder installation path is not too deep since the tool chain may report errors after the build otherwise.</p>
 <p>Enter the Product Key and Product Secret at the specified position gagent_iot_test_basic_connectivity.c which is located &quot;\Projects\Common\Gizwits\Src\ <strong>&quot;</strong></p>
-<p><strong>Figure 14. Product Key and Product Secret provisioning</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/17.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 14. Product Key and Product Secret provisioning</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/17.png" alt="I CUBE GIZWITS"></p>
 <p>Open and build the project with one of the supported development tool chains (see the release note for detailed information about the version requirements).</p>
 <p>Program the firmware on the STM32 board: you can copy (or drag and drop) the generated bin file to the USB mass storage location created when you plug the STM32 board to your PC.<br>Alternatively, you can program the STM32 board directly through one of the supported development tool chains.</p>
 <p>Note: In the case of B-L475E-IOT01 using, because of the existence of dual flash banks the user must make sure that the BFB2 option byte bit is in reset status in order to switch the booting bank to flash bank 1 before manually program the firmware on the board. This can be done by STM32 ST-LINK Utility which is a free software in <a href="http://www.st.com" target="_blank" rel="noopener">www.st.com</a>. The configuration in STM32 ST-LINK Utility is showed in Figure 15.</p>
-<p><strong>Figure 15. Configure STM32 ST-LINK Utility about BFB2</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/18.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 15. Configure STM32 ST-LINK Utility about BFB2</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/18.png" alt="I CUBE GIZWITS"></p>
 <h2 id="6-5-Application-first-launch"><a href="#6-5-Application-first-launch" class="headerlink" title="6.5 Application first launch"></a><strong>6.5</strong> Application first launch</h2><ol>
-<li>Each product (like the one created at the beginning of section 6.3) has the capability of 10 free connected devices. If the number of devices under this product exceeds 10, the exceeding devices have to be activated by a pre-authorization process at the first launch. In this case, a USB-TTL (as Figure 6) should be connected to the PC (as Figure 16). The port connected with the grey wire is UART_RX, which should be connected to the UART_TX port of USB-TTL board. The other port has the opposite usage (TX to RX).<br>At the PC end, launch GIZWITS pre-authorization software, and set the port information. Make sure that the communication of PC to the Internet is OK and not blocked by a firewall. To obtain the PIN and CODE in this PC software, contact GIZWITS at <a href="https://dev.gizwits.com/en/developer/product/" target="_blank" rel="noopener">https://dev.gizwits.com/en/developer/product/</a>.<br>The pre-authorization process is only needed for the first time of accessing GIZWITS server for one given board. Once succeed (showed in Figure 17), the pre-authorization information will be saved into the flash so there is no need to do it for the second time on this board.<br>But if a full flash bank erasing procedure is done, the pre-authorization should be processed again.<br><strong>Figure 16. Connection during pre-authorization</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/19.png" alt="I CUBE GIZWITS"><br><strong>Figure 17. Pre-authorization software at PC end</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/20.png" alt="I CUBE GIZWITS"></li>
-<li>Launch the GIZWITZ mobile app and scan the QR code generated from the GIZWITS PC application. The MAC address can be retrieved at the beginning, after system boot (as in step 4).<br><strong>Figure 18. Launching GIZWITS mobile app</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/21.png" alt="I CUBE GIZWITS"><br>3.The board must be connected to a PC through USB (ST-LINK USB port). Open the console through a serial terminal emulator (such as Tera Term), select the ST-LINK COM port of the board, and configure it with:<br>–    8N1, 115200 bauds, no HW flow control<br>–    Line endings set to LF<br>For more details, see Chapter 5: Interacting with the boards.<br>4.After the system boot up,entertheWi-Fi configuration (SSID,encryptionmodeandpassword) via theconsole. If successfully connected to the WIFI access point, some information like MAC address and IP address will be showed as Figure 19.<br><strong>Figure 19. WiFi connection information input</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/22.png" alt="I CUBE GIZWITS"><br>Note: After the parameters are configured, it is possible to change Wi-Fi network configuration by restarting the board and pressing User button (blue button) just after boot.</li>
+<li>Each product (like the one created at the beginning of section 6.3) has the capability of 10 free connected devices. If the number of devices under this product exceeds 10, the exceeding devices have to be activated by a pre-authorization process at the first launch. In this case, a USB-TTL (as Figure 6) should be connected to the PC (as Figure 16). The port connected with the grey wire is UART_RX, which should be connected to the UART_TX port of USB-TTL board. The other port has the opposite usage (TX to RX).<br>At the PC end, launch GIZWITS pre-authorization software, and set the port information. Make sure that the communication of PC to the Internet is OK and not blocked by a firewall. To obtain the PIN and CODE in this PC software, contact GIZWITS at <a href="https://dev.gizwits.com/en/developer/product/" target="_blank" rel="noopener">https://dev.gizwits.com/en/developer/product/</a>.<br>The pre-authorization process is only needed for the first time of accessing GIZWITS server for one given board. Once succeed (showed in Figure 17), the pre-authorization information will be saved into the flash so there is no need to do it for the second time on this board.<br>But if a full flash bank erasing procedure is done, the pre-authorization should be processed again.<br><strong>Figure 16. Connection during pre-authorization</strong></li>
 </ol>
-<h2 id="6-6-Application-runtime"><a href="#6-6-Application-runtime" class="headerlink" title="6.6 Application runtime"></a><strong>6.6</strong> Application runtime</h2><p>Once the connection to GIZWITS IoT cloud is established, the board will keep publishing the data from the sensors and LED to the cloud. The GIZWITS mobile app will then display the value of sensors and the status of LED on the mobile phone.<br><strong>Figure 20. Device to Cloud message</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/23.png" alt="I CUBE GIZWITS"></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/19.png" alt="I CUBE GIZWITS"><br><strong>Figure 17. Pre-authorization software at PC end</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/20.png" alt="I CUBE GIZWITS"></p>
+<ol start="2">
+<li>Launch the GIZWITZ mobile app and scan the QR code generated from the GIZWITS PC application. The MAC address can be retrieved at the beginning, after system boot (as in step 4).<br><strong>Figure 18. Launching GIZWITS mobile app</strong></li>
+</ol>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/21.png" alt="I CUBE GIZWITS"><br>3.The board must be connected to a PC through USB (ST-LINK USB port). Open the console through a serial terminal emulator (such as Tera Term), select the ST-LINK COM port of the board, and configure it with:<br>–    8N1, 115200 bauds, no HW flow control<br>–    Line endings set to LF<br>For more details, see Chapter 5: Interacting with the boards.<br>4.After the system boot up,entertheWi-Fi configuration (SSID,encryptionmodeandpassword) via theconsole. If successfully connected to the WIFI access point, some information like MAC address and IP address will be showed as Figure 19.<br><strong>Figure 19. WiFi connection information input</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/22.png" alt="I CUBE GIZWITS"><br>Note: After the parameters are configured, it is possible to change Wi-Fi network configuration by restarting the board and pressing User button (blue button) just after boot.</p>
+<h2 id="6-6-Application-runtime"><a href="#6-6-Application-runtime" class="headerlink" title="6.6 Application runtime"></a><strong>6.6</strong> Application runtime</h2><p>Once the connection to GIZWITS IoT cloud is established, the board will keep publishing the data from the sensors and LED to the cloud. The GIZWITS mobile app will then display the value of sensors and the status of LED on the mobile phone.<br><strong>Figure 20. Device to Cloud message</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/23.png" alt="I CUBE GIZWITS"></p>
 <p>The user can also push the virtual button in mobile App to change the status of LED on the client board. The frequency of controlling the client board should not be more than 1 time per second because the reaction of the board may not catch up user&#39;s high frequency controlling due to network delay.</p>
-<p><strong>Figure 21. Cloud to Device message</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/24.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 21. Cloud to Device message</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/24.png" alt="I CUBE GIZWITS"></p>
 <p>The sensor data and LED status are also visible on the GIZWITS WEB console</p>
-<p><strong>Figure 22. WEB Console</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/25.png" alt="I CUBE GIZWITS"><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/26.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 22. WEB Console</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/25.png" alt="I CUBE GIZWITS"></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/26.png" alt="I CUBE GIZWITS"></p>
 <h2 id="6-7-OTA"><a href="#6-7-OTA" class="headerlink" title="6.7 OTA"></a><strong>6.7</strong> OTA</h2><p>The network connectivity to GIZWITS cloud server allows the client board to download and run a new version of the firmware without connection to any development tool.</p>
 <p>Here an example is given to illustrate how to upgrade a new firmware onto the client board.</p>
 <p>The provided example is implemented for the STM32L4 Series, and relies on specific<br>capabilities of this core:<br>•Dual-boot from the dual-bank internal Flash memory, as detailed in the application note&quot;STM32 microcontroller system memory boot mode&quot;(AN2606) available at <em><a href="http://www.st.com" target="_blank" rel="noopener">www.st.com</a></em> and illustrated in this STM32Cube example:<br>STM32Cube_FW_L4_V1.6.0\Projects\STM32L476GDiscovery\Examples\FLASH\FLASH_DualBoot</p>
 <p>• 2k-paged internal Flash memory</p>
 <p>The example <strong>consists in</strong> :<br>• Downloading the new firmware binary through HTTP<br>• Flashing on-the-fly the downloaded payload to the other flash bank which is not running with the current application.<br>• After flashing, a reboot will be executed to switch the boot flash bank to the one which is just flashed with the new firmware.</p>
 <p>First, a new firmware is needed to be generated. In this case, format type of .bin file was chosen. In IAR, .bin file can be generated after project compilation if the following configuration is checked as Figure 23.</p>
-<p><strong>Figure 23. Configuration to generate bin file</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/27.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 23. Configuration to generate bin file</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/27.png" alt="I CUBE GIZWITS"></p>
 <p>The version of software should be modified in the new firmware because the OTA will not be executed if the software version in cloud is lower than the one which is currently running in the client board. The software version includes 8 bits. The first 6 bits must be &quot;040300&quot;, which is already defined in the project and can&#39;t be modified. However, the last 2 bits, which is defined as a macro &quot;GIZ_VER&quot; in the location of &quot;\Projects\Common\Gizwits\Src\gagent_iot_test_basic_connectivity.c&quot;, showed in <em>Figure 24</em>, can be modified by the users. The range can be from &quot;00&quot; to &quot;FF&quot; in hex format so 255 choices are available. In this example, the currently running version is chosen as &quot;04030001&quot;, and the new one which will be flashed to the client board contains the version of &quot;04030002&quot;.</p>
-<p><strong>Figure 24. The 2 bits used to configure software version</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/28.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 24. The 2 bits used to configure software version</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/28.png" alt="I CUBE GIZWITS"></p>
 <p>Another point which should be noticed is that the flash mapping. The size of code section and data section (like the section to save the WIFI configuration and GIZWITS configuration) can&#39; t <strong>exceed the range</strong> of any one flash bank (in this case, each flash bank has the size of 512K). For IAR, stm32l475xx_flash.icf, located at &quot;Projects\B-L475E-IOT01\Applications\Cloud\Gizwits\EWARM&quot; can be configured for flash mapping issue. For KEIL and SystemWorkbench (AC6), other files need to be modified.</p>
 <ul>
 <li>For KEIL, the file &quot;Projects\B-L475E-IOT01\Applications\Cloud\Gizwits\MDK-ARM\B-L475E-IOT01\Exe\B-L475E-IOT01.sct&quot; can be configured.</li>
 <li>For AC6, the file &quot;Projects\B-L475E-IOT01\Applications\Cloud\Gizwits\SW4STM32\B-L475E-IOT01\STM32L475VGTx_FLASH.ld&quot; can be configured.</li>
 </ul>
-<p>The program entry address of current running flash bank should normally be @ 0x08000000, and the start address for the other flash bank which is not chosen to boot should always be (0x08000000 + FLASH_BANK_SIZE), 0x08080000 in this case. For example, if the current booting bank is flash bank 2, the program will regard 0x08000000 as the start address of flash bank 2, and 0x08080000 as the start address of flash bank 1. The memory map diagram in this case is showed in Figure 25.<br><strong>Figure 25. The memory map diagram in this example</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/29.png" alt="I CUBE GIZWITS"></p>
+<p>The program entry address of current running flash bank should normally be @ 0x08000000, and the start address for the other flash bank which is not chosen to boot should always be (0x08000000 + FLASH_BANK_SIZE), 0x08080000 in this case. For example, if the current booting bank is flash bank 2, the program will regard 0x08000000 as the start address of flash bank 2, and 0x08080000 as the start address of flash bank 1. The memory map diagram in this case is showed in Figure 25.<br><strong>Figure 25. The memory map diagram in this example</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/29.png" alt="I CUBE GIZWITS"></p>
 <p>Run the application, at the beginning of debug information the booting flash bank can be seen, as Figure 26. In this case, flash bank 1 is firstly set as booting flash bank. Now the running software version should be &quot;04030001&quot;.</p>
 <p>Find the bin file at &quot;Projects\B-L475E-IOT01\Applications\Cloud\Gizwits\EWARM\B-L475E-IOT01\Exe\Project.bin&quot;, whose version should be modified before and assigned as &quot;04030002&quot;. Rename it (or just leave it alone) as Project_2_IAR.bin for example.</p>
-<p><strong>Figure 26. The beginning of debug information</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/30.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 26. The beginning of debug information</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/30.png" alt="I CUBE GIZWITS"></p>
 <p>Open the OTA panel in GIZWITS official website and edit the OTA information, as Figure 27. The new firmware should be uploaded.</p>
-<p><strong>Figure 27. Edit OTA information at GIZWITS webpage</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/31.png" alt="I CUBE GIZWITS"><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/32.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 27. Edit OTA information at GIZWITS webpage</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/31.png" alt="I CUBE GIZWITS"></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/32.png" alt="I CUBE GIZWITS"></p>
 <p>Enter the MAC address of the board and then click &quot;Push&quot; button. The program running on the board will automatically download the firmware from the server. After the whole firmware has been downloaded and written to the spare flash bank (flash bank 2 in this case), the board will automatically reboot, and showed the information as Figure 28. This time, flash bank 2 is the booting bank, with software version &quot;04030002&quot;.</p>
-<p><strong>Figure 28. Debug information after OTA downloading and rebooting</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/33.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 28. Debug information after OTA downloading and rebooting</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/33.png" alt="I CUBE GIZWITS"></p>
 <p>Then a message on the webpage appear to inform the user the upgrading has been completed, as Figure 29.</p>
-<p><strong>Figure 29. Message on the webpage after upgrading</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/34.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 29. Message on the webpage after upgrading</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/34.png" alt="I CUBE GIZWITS"></p>
 <p>After clicking on the button &quot;Finish&quot;, the firmware on the cloud can be trusted, and it is possible to push new firmware to more devices for the user.</p>
 <p>In order to minimize the RAM footprint without relying on a local storage, the firmware file is downloaded through ranged HTTP requests. Record after record, the program data are retrieved in chunks, and immediately written to their destination Flash page.</p>
 <p>Whenever the download session is interrupted, the application could resume the download without having to download again from the beginning of the file.</p>
@@ -591,9 +624,11 @@
 <h2 id="6-8-Useful-APIs-for-developer"><a href="#6-8-Useful-APIs-for-developer" class="headerlink" title="6.8 Useful APIs for developer"></a><strong>6.8</strong> Useful APIs for developer</h2><p>The client board can upload data to the cloud and mobile App, and also receive the command sent from App to make some actions.</p>
 <p>For uploading data to mobile App, API gagentUploadData() can be used. An example has been given in &quot;\Projects\Common\Gizwits\Src\sensors_data.c&quot;.</p>
 <p>For dealing with the command sent from App, API gizIssuedProcess() can be used. An example has been given in &quot;\Projects\Common\Gizwits\Src\gagent_iot_test_basic_connectivity.c&quot;.</p>
-<p>All the communication must comply with GIZWITS defined protocol, which can be found in the document &quot;XXX (product name) - Document for communication protocol on Gizwits SOC program&quot; in the location showed in Figure 30.<br><strong>Figure 30. The location of GIZWITS communicating protocol document</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/35.png" alt="I CUBE GIZWITS"></p>
+<p>All the communication must comply with GIZWITS defined protocol, which can be found in the document &quot;XXX (product name) - Document for communication protocol on Gizwits SOC program&quot; in the location showed in Figure 30.<br><strong>Figure 30. The location of GIZWITS communicating protocol document</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/35.png" alt="I CUBE GIZWITS"></p>
 <h1 id="7-Frequently-ask-edquestions"><a href="#7-Frequently-ask-edquestions" class="headerlink" title="7.Frequently ask edquestions"></a>7.Frequently ask edquestions</h1><p><strong>Q:</strong> Why do I get this pop-up(refer to Figure 31) when I open the project with IAR™?</p>
-<p><strong>Figure 31. Pop-up when the IAR™ IDE version is not compatible with the one used for I-CUBE-GIZWITS</strong><br><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/36.png" alt="I CUBE GIZWITS"></p>
+<p><strong>Figure 31. Pop-up when the IAR™ IDE version is not compatible with the one used for I-CUBE-GIZWITS</strong></p>
+<p><img src="/assets/en-us/DeviceDev/STICUBEGIZWITS/36.png" alt="I CUBE GIZWITS"></p>
 <p><strong>A:</strong>  It is very likely that the IAR™ IDE version is older than the one used to develop the package (refer to the release note available in the package root folder for the IDE versions supported), hence the compatibility is not ensured. In this case, the IAR™ IDE version needs to be updated.</p>
 <p><strong>Q:</strong>  My device does not connect to the Wi-Fi® access point. How shall I proceed?</p>
 <p><strong>A:</strong> Make sure that another device can connect to the Wi-Fi® access point. If it can, enter the Wi-Fi® credentials by pressing the user button (blue) up to five seconds after board reset.</p>
