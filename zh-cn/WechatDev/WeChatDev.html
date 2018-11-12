@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+  <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
 
   <title>微信应用开发教程 - 机智云</title>
@@ -33,7 +33,7 @@
       <a class="text" href="/">文档中心</a>
     </span>
 
-    <div class="mobile-header"v>
+    <div class="mobile-header" v="">
       <span class="title">机智云 文档中心</span>
       <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
     </div>
@@ -711,7 +711,7 @@
 <p>  远程控制的调用方法，如果commType=custom，则使用gizwitsws.send(command)方法，如果commType=attrs_v4，则使用gizwitsws.write(command)方法。</p>
 <p>远程控制的值，如果commType=custom，请输入p0，例如[<byte>,<byte>,<byte>…]；如果commType=attrs_v4，请输入datapoints，例如{“power”:true}。</byte></byte></byte></p>
 <p>下面是远程控制RBG灯的代码样例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var command = <span class="string">'&#123;"LED_R": 0, "LED_G": 0, "LED_B": 0&#125;'</span>;</span><br><span class="line">gizwits.write(did, JSON.parse(command));</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> command = <span class="string">'&#123;"LED_R": 0, "LED_G": 0, "LED_B": 0&#125;'</span>;</span><br><span class="line">gizwits.write(did, JSON.parse(command));</span><br></pre></td></tr></table></figure>
 <p> 当然，使用控制设备的前提是，我们已经连接上了一台设备。</p>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>至此，我们已经实现了微信接入的核心部分。在此教程中，Java-SDK与js-SDK为我们带来了很大的，我们几乎不用关心如何调用机智云的API和websocket，而是直接调用SDK的方法就可以了。</p>
 <p>最后，希望大家能多多反馈意见，为更加便捷的开发贡献一份力量。</p>
@@ -721,7 +721,7 @@
     <div class="widget-wrapper">
   <span class="widget">
     <div>
-        <a id='share' target="_blank" title="分享">
+        <a id="share" target="_blank" title="分享">
           <span>分享</span>
         </a>
         <div class="social-share" data-initialized="true">
@@ -765,7 +765,7 @@
 <script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
 
 
-<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async="async"></script>
 
 
 <script>
