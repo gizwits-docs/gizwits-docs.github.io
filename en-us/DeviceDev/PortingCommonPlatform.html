@@ -1,0 +1,509 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <title>Guide to porting Common Platform Edition of MCU SDK - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Guide to porting Common Platform Edition of MCU SDK-Gizwits">
+  <meta name="keywords" content="Guide to porting Common Platform Edition of MCU SDK docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header" v="">
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quick Start &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/GizwitsQuickStart.html">Gizwits Quick Start within 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/glossary.html">Glossary</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              App Dev Guide &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevGetStarted.html">Get Started with APP Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppCodeAutoGenerator.html">Gizwits App Code Auto-Generator</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      APP Frame Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSFramework.html">Gizwits App Framework for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSPushNotification.html">iOS Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSAuthReSkin.html">iOS Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSDevQuickStart.html">iOS APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidFramework.html">Gizwits App Framework for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidPushNotification.html">Android Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidAuthReSkin.html">Android Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidDevQuickStart.html">Android APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudFramework.html">Gizwits App Framework for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/VideoTutorials.html">How-to videos on Gizwits App Framework</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App SDK Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSSDKA2.html">Gizwits App SDK for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidSDKA2.html">Gizwits App SDK for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudSDK.html">Gizwits App SDK for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/TransparentTransmission.html">Data Transparent Transmission</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKLogCapture.html">SDK Debug Log Capture</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKErrorCodes.html">SDK Error Codes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WeChatDev.html">WeChat SDK Guide</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WechatDevIntro.html">WeChat Dev Intro</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      More Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SharingSDK.html">Gizwits Device Sharing</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/ThirdpartyAuth.html">Set Up Third-party Authentication</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevFAQ.html">App Dev FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              DeviceDev &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/DeviceDevGetStarted.html">Get Started with Device Development</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Device Connection &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/MCUScheme.html">Standalone MCU Scheme</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/SoCScheme.html">SoC Scheme</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ModuleResources.html">Module Resources</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      GAgent Guides &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/GAgent.html">GAgent</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/DebugTool.html">Gizwits Serial Port Debugger</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/HF-LPB100.html">HF-LPB100</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/HF-LPT120.html">HF-LPT120</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/MXCHIP.html">MXCHIP</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/ESP8266.html">ESP8266</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/DebugLog.html">Debug Log Capture</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/OpenAPI.html">Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/NotificationAPI.html">Notification API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/WebsocketAPI.html">WebsocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API Tutorial &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseOpenAPI.html">Using Open API to control virtual device with Postman</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseSNoti.html">Real-time data synchronization demo for SNoti service</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseWebsocket.html">Control device using WebSocket</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/DataAPI.html">Aggregation API Guide</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/LinkageAPI.html">Device Linkage API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/devgroup_API.html">Device Grouping API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseQRCode.html">Generating device QR code for App binding</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/CloudFAQ.html">Cloud FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              User Manual &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/ST_IoT.html">Gizwits and ST Make IoT Development Easy</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ST/ICUBEGIZWITS.html">Getting Started with I-CUBE-GiZWITS</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Guide to porting Common Platform Edition of MCU SDK</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><h2 id="1-What-is-Gizwits-MCU-Code-Auto-Generator"><a href="#1-What-is-Gizwits-MCU-Code-Auto-Generator" class="headerlink" title="1. What is Gizwits MCU Code Auto-Generator?"></a>1. What is Gizwits MCU Code Auto-Generator?</h2><p>In order to lower the development barrier, shorten the development cycle, and reduce the development investment, Gizwits has rolled out Gizwits MCU Code Auto-Generator, which generates the device-side code for the corresponding product based on Data Points defined for the product.</p>
+<p>The automatically generated MCU code implements the packet encapsulation and parsing of the Gizwits communication protocol, the conversion logic of sensor data and communication data. All of these functions are integrated into a simple API set. When the device receives data from the cloud or the App, the program converts the data into corresponding events and notifies the application layer. You only needs to add the sensor control functions to the corresponding event handlers to complete the product development.</p>
+<p>With the automatically generated code, you don’t have to deal with protocol-related issues, and focus on the core functional development of the product, which allows you to save time and effort.</p>
+<p>The standalone MCU scheme supports the STM32F103C8x platform by default. For other MCU chips, you can port the generated Common Platform Edition of MCU SDK to the qualified platform to implement the various functions provided by Gizwits.<br>This document will focus on the porting to the Common Platform Edition of MCU SDK.</p>
+<h2 id="2-How-to-use-Gizwits-MCU-Code-Auto-Generator-for-the-Common-Platform-Edition-of-MCU-SDK"><a href="#2-How-to-use-Gizwits-MCU-Code-Auto-Generator-for-the-Common-Platform-Edition-of-MCU-SDK" class="headerlink" title="2. How to use Gizwits MCU Code Auto-Generator for the Common Platform Edition of MCU SDK?"></a>2. How to use Gizwits MCU Code Auto-Generator for the Common Platform Edition of MCU SDK?</h2><p>After defining a product in Gizwits IoT Cloud, click “MCU Development” in the left navigation pane, and choose the standalone MCU scheme for the hardware scheme. In the hardware platform drop-down list, select Other platforms. Then click “Generate Code” and wait to download the generated code package.</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/common/11.png" alt="Porting instructions"></p>
+<p>After downloading the code package, unpack it.</p>
+<h2 id="3-Know-before-you-go"><a href="#3-Know-before-you-go" class="headerlink" title="3. Know before you go"></a>3. Know before you go</h2><p>Before the porting, you must ensure that the target hardware platform meets the following requirements:</p>
+<p>A. The platform supports two serial ports (at least one), one for data transmission and reception with the Wi-Fi module (required), and the other for debugging information printing (the former port can be reused for this purpose).</p>
+<p>B. The platform supports the timer function (with 1ms accuracy).</p>
+<p>C. The platform supports at least 2K RAM (the ring buffer size can be adjusted to solve this problem, but it is likely to induce abnormalities when processing the data protocol).</p>
+<p>Note: Set the ring buffer here: Gizwits\gizwits_protocol.h</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/common/12.png" alt="Porting instructions"></p>
+<p>In the above code snippet, MAX_PACKAGE_LEN = 950, that is, the size of the ring buffer is 950*2 = 1900 bytes. Here you can adjust the RAM usage of the program.</p>
+<h1 id="Porting-instructions"><a href="#Porting-instructions" class="headerlink" title="Porting instructions"></a>Porting instructions</h1><h2 id="1-Introduction-to-the-related-files"><a href="#1-Introduction-to-the-related-files" class="headerlink" title="1. Introduction to the related files"></a>1. Introduction to the related files</h2><p>1). gizwits_product.c</p>
+<p>This file contains product-related processing functions such as gizwitsEventProcess().</p>
+<p>2). gizwits_product.h</p>
+<p>This file is the header file for gizwits_product.c, which contains macro definitions of HARDWARE_VERSION, SOFTWARE_VERSION etc.</p>
+<p>3). gizwits_protocol.c</p>
+<p>This file is for function definitions of the SDK API.</p>
+<p>4). gizwits_protocol.h</p>
+<p>This file is the header file of gizwits_protocol.c, which contains the function declarations of the SDK API.</p>
+<p>5). Other files</p>
+<p>a) User/main.c</p>
+<p>The file is where the MCU program entry point is located. The entry point is main(void) function.</p>
+<h2 id="2-Introduction-to-the-related-API"><a href="#2-Introduction-to-the-related-API" class="headerlink" title="2. Introduction to the related API"></a>2. Introduction to the related API</h2><ul>
+<li>void gizwitsInit (void)</li>
+</ul>
+<p>The initialization API for the Gizwits protocol.</p>
+<p>You can call the API to accomplish the Gizwits protocol-related initialization (including protocol-related timers and serial port initialization).</p>
+<ul>
+<li>void gizwitsSetMode (uint8_t mode)</li>
+</ul>
+<p>The parameter mode has three choices of 0, 1, and 2, and other input is invalid.</p>
+<p>When the parameter is set to 0, it is used for restoring manufacture defaults, which will clear all settings and restore the module to the factory defaults. </p>
+<p>When the parameter is set to 1 or 2, it is used for SoftAP and AirLink mode switch. 1 for entering the SoftAP mode, and 2 for entering the AirLink mode.</p>
+<ul>
+<li>void gizwitsHandle(dataPoint_t *dataPoint)</li>
+</ul>
+<p>The parameter dataPoint is the device Data Point.</p>
+<p>This function completes the processing of the corresponding protocol data, that is, the related operations of data reporting.</p>
+<ul>
+<li>int8_t gizwitsEventProcess(eventInfo_t info, uint8_t data, uint32_t len)</li>
+</ul>
+<p>Parameter info: event queue</p>
+<p>Parameter data: data</p>
+<p>Parameter len: data length</p>
+<p>User data processing function, including Wi-Fi status update events and control-type events.</p>
+<p>a). Wi-Fi status update events</p>
+<p>The events whose name begins with WIFI_ are the Wi-Fi status update events. The parameter data is valid only when the event name is WIFI_RSSI, and its value is RSSI value, its data type is uint8_t, and its value range is 0~7. </p>
+<p>b). Control-type events</p>
+<p>They are related to the Data Points. This version of the code will print the relevant event information and the relevant values. You only need to implement the specific execution of the command.</p>
+<h2 id="3-Code-structure"><a href="#3-Code-structure" class="headerlink" title="3. Code structure"></a>3. Code structure</h2><p>Gizwits MCU Code Auto-Generator has produced the corresponding Gizwits serial protocol layer code according to the user-defined product Data Points, and you need to port the code into your own project to complete the device connection as shown below:</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/common/13.png" alt="Porting instructions"></p>
+<p>The protocol logic and the main program flow in the green blocks of the above figure have been implemented for you. The blocks marked with the yellow text in the figure is to be implemented. The porting process is composed of the following steps:</p>
+<p>a. Set up a minimum platform project (required).</p>
+<p>b. Implement serial port driver (required): including communication and printing functions.</p>
+<p>c. Implement timer driver (required).</p>
+<p>d. Implement the chip reset function (optional).</p>
+<p>e. Implement application layer logic (required): including uplink processing, downlink processing and network access configuration, etc.</p>
+<h1 id="Porting-steps"><a href="#Porting-steps" class="headerlink" title="Porting steps"></a>Porting steps</h1><p>Below we take the MSP430 platform as an example to introduce the porting steps.</p>
+<h2 id="1-Set-up-a-minimum-platform-project-required"><a href="#1-Set-up-a-minimum-platform-project-required" class="headerlink" title="1. Set up a minimum platform project (required)"></a>1. Set up a minimum platform project (required)</h2><p>First, set up the minimum project for the target platform. Take MSP430 as an example. We import the source files responsible for the communication protocol processing (all files in the Gizwits directory) into the project, and consolidate the sample main.c file under the User directory into the project as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">/** device status structure of current user area */</span><br><span class="line">dataPoint_t currentDataPoint;</span><br><span class="line"></span><br><span class="line">void Sys_Init(void)</span><br><span class="line">&#123;</span><br><span class="line">    //stop watchdog timer</span><br><span class="line"></span><br><span class="line">    WDTCTL = WDTPW + WDTHOLD;</span><br><span class="line"></span><br><span class="line">    //set clock</span><br><span class="line"></span><br><span class="line">    InitClock();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*************************************************************</span><br><span class="line"></span><br><span class="line">** Function name: main(void)</span><br><span class="line"></span><br><span class="line">** Description: main function</span><br><span class="line"></span><br><span class="line">*************************************************************/</span><br><span class="line">void main(void)</span><br><span class="line">&#123;</span><br><span class="line">    //System space init</span><br><span class="line"></span><br><span class="line">    Sys_Init();</span><br><span class="line"></span><br><span class="line">    //Gizwits protocol init</span><br><span class="line"></span><br><span class="line">    userInit();</span><br><span class="line"></span><br><span class="line">    gizwitsInit();</span><br><span class="line"></span><br><span class="line">    while (1)</span><br><span class="line">    &#123;</span><br><span class="line">        userHandle();</span><br><span class="line"></span><br><span class="line">        gizwitsHandle((dataPoint_t *)&amp;currentDataPoint);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-Implement-serial-port-driver-required"><a href="#2-Implement-serial-port-driver-required" class="headerlink" title="2. Implement serial port driver (required)"></a>2. Implement serial port driver (required)</h2><p>The standalone MCU scheme requires you to implement a serial port for data communication between the device MCU and the WIFI module. You first need to implement the interrupt handler function for serial receive UART_IRQ_FUN (For MSP430 platform, it is USCI0RX_ISR), which calls gizPutData() function to receive the serial port data and write it to the protocol layer data buffer.</p>
+<p>The following takes the MSP430 platform as an example. In this example, USCI0 is used to communicate with the module. The serial port initialization is implemented as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void Sys_Init(void)</span><br><span class="line">&#123;</span><br><span class="line">	//stop watchdog timer </span><br><span class="line"></span><br><span class="line">    WDTCTL = WDTPW + WDTHOLD;</span><br><span class="line"></span><br><span class="line">	//set clock</span><br><span class="line"></span><br><span class="line">    InitClock();</span><br><span class="line"></span><br><span class="line">	//set serial port -9600bps</span><br><span class="line"></span><br><span class="line">    serial_init(9600);</span><br><span class="line"></span><br><span class="line">    cio_printf(&quot; Start system \n&quot;; );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The interrupt handler function for serial receive is implemented as follow：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/*******************************************************************</span><br><span class="line"></span><br><span class="line">** Function name: void USCI0RX_ISR(void)</span><br><span class="line"></span><br><span class="line">** Description: Echo back RXed character, confirm TX buffer is ready first</span><br><span class="line"></span><br><span class="line">** Input parameters: none</span><br><span class="line"></span><br><span class="line">** Output parameters: none</span><br><span class="line"></span><br><span class="line">********************************************************************/</span><br><span class="line"></span><br><span class="line">#pragma vector=USCIAB0RX_VECTOR</span><br><span class="line"></span><br><span class="line">__interruptvoid USCI0RX_ISR(void)</span><br><span class="line">&#123;</span><br><span class="line">    while (!(IFG2&amp;UCA0TXIFG));   // USCI_A0 TX buffer ready?</span><br><span class="line"></span><br><span class="line">    gizPutData((uint8_t *)&amp;UCA0RXBUF,1);</span><br><span class="line"></span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In addition, you need to implement the function for serial transmit, which is called by the uartWrite() function to accomplish the device data transmission. It is important to note that the uartWrite() function in the gizwits_product.c file is a pseudo-function. You need to complete uartWrite() according to the function for serial transmit. Please pay attention to the relevant comment as following to prevent errors from occurring.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"></span><br><span class="line">* @brief function for device data transmission, send data to the Wi-Fi module </span><br><span class="line"></span><br><span class="line">*</span><br><span class="line"></span><br><span class="line">* @param buf     : data storage address</span><br><span class="line"></span><br><span class="line">* @param len     : data length</span><br><span class="line"></span><br><span class="line">*</span><br><span class="line"></span><br><span class="line">* @return : Return valid data length; -1 for errors</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">int32_t uartWrite(uint8_t * buf, uint32_t len)</span><br><span class="line">&#123;</span><br><span class="line">    uint32_t i = 0;</span><br><span class="line"></span><br><span class="line">    if (NULL == buf)</span><br><span class="line">    &#123;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (i = 0; i &lt; len; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        serial_send_blocking(buf[i]);</span><br><span class="line"></span><br><span class="line">        // implement the function for serial transmit, which sends buf[i] to the module</span><br><span class="line"></span><br><span class="line">        if (i &gt;= 2 &amp;&amp; buf[i] == 0xFF)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            // implement the function for serial transmit, which sends 0x55 to the module</span><br><span class="line"></span><br><span class="line">            serial_send_blocking(0x55);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return len;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Note the conditional statement for 0x55 in the example, that is, every time 0xFF appears, 0x55 is appended to it.</p>
+<p>If you want to print debugging log, the GIZWITS_LOG function is needed to be implemented, and just update the corresponding macro definition in gizwits_protocol.h, as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define GIZWITS_LOG cio_printf  // log print</span><br></pre></td></tr></table></figure>
+<h2 id="3-Implement-timer-driver"><a href="#3-Implement-timer-driver" class="headerlink" title="3. Implement timer driver"></a>3. Implement timer driver</h2><p>The protocol layer uses a system time in milliseconds. Therefore, you are required to implement a millisecond timer (It must have an accuracy of 1ms. If it is inaccurate, it will affect the processing of retransmission timeout, regular reporting, etc.) and the interrupt handler function TIMER_IRQ_FUN (For MSP430 platform, it is Timer_A), which calls gizTimerMs () to accomplish the maintenance of the protocol layer system time.</p>
+<p>The following takes the MSP430 platform as an example, where Timer_A is used to implement the system time maintenance and the timer initialization as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">void Sys_Init(void)</span><br><span class="line">&#123;</span><br><span class="line">    //stop watchdog timer</span><br><span class="line"></span><br><span class="line">    WDTCTL = WDTPW + WDTHOLD;</span><br><span class="line"></span><br><span class="line">    //set clock</span><br><span class="line"></span><br><span class="line">    InitClock();</span><br><span class="line"></span><br><span class="line">    //timer</span><br><span class="line"></span><br><span class="line">    BCSCTL3 |= LFXT1S_2; // set LFXT1 to the VLO @ 12kHz</span><br><span class="line"></span><br><span class="line">    CCTL0 |= CCIE;  // set the capture/compare control register, CCIE=0x0010, capture/compare interrupt enable</span><br><span class="line"></span><br><span class="line">    CCR0 = 12;  // set the capture/compare control register. The initial value is </span><br><span class="line">12000, which is equivalent to 1s and 12 likewise is equivalent to 1ms.</span><br><span class="line"></span><br><span class="line">    TA0CTL = TASSEL_1 + TACLR + MC_1; // set the timer A control register，</span><br><span class="line"></span><br><span class="line">    //set serial port-9600bps </span><br><span class="line"></span><br><span class="line">    serial _init(9600);</span><br><span class="line"></span><br><span class="line">    cio_printf(&quot;Start system \n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The interrupt handler function is implemented as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#pragma vector=TIMER0_A0_VECTOR // fixed format</span><br><span class="line"></span><br><span class="line">__interruptvoid Timer_A (void) // Timer A&apos;s CC0 interrupt handler must have a return type of void</span><br><span class="line">&#123;</span><br><span class="line"> 	gizTimerMs();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-Implement-chip-reset-function"><a href="#4-Implement-chip-reset-function" class="headerlink" title="4. Implement chip reset function"></a>4. Implement chip reset function</h2><p>According to the serial protocol document, the module can send a command to reset the device MCU, so you need to implement the mcuRestart() function in gizwits_product.c. The following takes the MSP430 platform as an example.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"></span><br><span class="line">* @brief MCU reset function</span><br><span class="line"></span><br><span class="line">* @param none</span><br><span class="line"></span><br><span class="line">* @return none</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">void mcuRestart(void)</span><br><span class="line">&#123;</span><br><span class="line">    ((void (*)(void))0xFFFE)();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>At this point, the porting is completed, and the subsequent operations of the network access configuration, uplink processing and downlink processing belong to the application logic development.</p>
+<h2 id="5-Implement-application-layer-logic-required"><a href="#5-Implement-application-layer-logic-required" class="headerlink" title="5. Implement application layer logic (required)"></a>5. Implement application layer logic (required)</h2><h3 id="5-1-Downlink-processing"><a href="#5-1-Downlink-processing" class="headerlink" title="5.1 Downlink processing"></a>5.1 Downlink processing</h3><p>The Data Point operation will be converted into a Data Point event, and you only need to do specific processing under the corresponding event of gizwitsEventProcess() in the gizwits_product.c file.</p>
+<p>The following takes the MSP430 platform to implement the LED control as an example.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"></span><br><span class="line">* @brief Event handler function</span><br><span class="line"></span><br><span class="line">* Description</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">* 1. Users can customize the changes of Wi-Fi module status</span><br><span class="line"></span><br><span class="line">* 2. Users can add Data Point event processing logic to the function, such as calling the operation interfaces of the relevant hardware peripherals.</span><br><span class="line"></span><br><span class="line">* @param[in] info: Event queue</span><br><span class="line"></span><br><span class="line">* @param[in] data: Protocol data</span><br><span class="line"></span><br><span class="line">* @param[in] len: Protocol data length</span><br><span class="line"></span><br><span class="line">* @return NULL</span><br><span class="line"></span><br><span class="line">* @ref gizwits_protocol.h</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">int8_t gizwitsEventProcess(eventInfo_t * info, uint8_t * data, uint32_t len)</span><br><span class="line">&#123;</span><br><span class="line">    uint8_t i = 0;</span><br><span class="line">    dataPoint_t * dataPointPtr = (dataPoint_t *)data;</span><br><span class="line">    moduleStatusInfo_t * wifiData = (moduleStatusInfo_t *)data;</span><br><span class="line"></span><br><span class="line">    if ((NULL == info) || (NULL == data))</span><br><span class="line">    &#123;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (i = 0; i&lt;info&gt;num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        switch (info &gt; event[i])</span><br><span class="line">        &#123;</span><br><span class="line">        caseEVENT_LED_ONOFF:</span><br><span class="line"></span><br><span class="line">            currentDataPoint.valueLED_ONOFF = dataPointPtr-&gt;valueLED_ONOFF;</span><br><span class="line"></span><br><span class="line">            if (0x01 == currentDataPoint.valueLED_ONOFF)</span><br><span class="line">            &#123;</span><br><span class="line">                //user handle</span><br><span class="line"></span><br><span class="line">                P1OUT |= BIT6;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                //user handle</span><br><span class="line"></span><br><span class="line">                P1OUT &amp;= ~BIT6;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            break;</span><br><span class="line"></span><br><span class="line">		//to do</span><br><span class="line"></span><br><span class="line">        default:</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-2-Uplink-processing"><a href="#5-2-Uplink-processing" class="headerlink" title="5.2 Uplink processing"></a>5.2 Uplink processing</h3><p>The project source code implements the sensor data collection in userHandle() of Gizwits\gizwits_product.c. A while loop loops through the userHandle() function. In principle, you only need to care about how to collect the sensor data.</p>
+<p>In particular, the default while loop execution speed is fast, and you can adjust the data collection period and the interface implementation location according to different needs to prevent unnecessary issues caused by the fast sensor data collection (see STM32 for details).</p>
+<p>The MSP430 platform is used below, taking the state of the lamp as an example (the operation code for the read-only Data Point is automatically generated by the cloud), as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"></span><br><span class="line">* user data collection</span><br><span class="line"></span><br><span class="line">* Here you need to implement the collection of all sensor data except the writable Data Points, and can customize the acquisition frequency and design data filtering algorithm. </span><br><span class="line"></span><br><span class="line">* @param none</span><br><span class="line"></span><br><span class="line">* @return none</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">void userHandle(void)</span><br><span class="line">&#123;</span><br><span class="line">    currentDataPoint.valueLED_ONOFF = 0x01;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-3-Network-access-configuration-required"><a href="#5-3-Network-access-configuration-required" class="headerlink" title="5.3 Network access configuration (required)"></a>5.3 Network access configuration (required)</h3><p>According to the serial protocol document, the MCU can send commands to the module to enter the corresponding configuration mode by calling the gizwitsSetMode function (in gizwits_protocol.c) through the corresponding operation (such as key press). The function is as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"></span><br><span class="line">* @brief Wi-Fi configuration function</span><br><span class="line"></span><br><span class="line">* You can call the function to enable the Wi-Fi module to enter the corresponding configuration mode or reset module.</span><br><span class="line"></span><br><span class="line">* @param[in] mode configuration mode choices: 0x0, reset; 0x01, SoftAP mode; 0x02, AirLink mode</span><br><span class="line"></span><br><span class="line">* @return Error code</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">int32_t gizwitsSetMode(uint8_t mode);</span><br></pre></td></tr></table></figure>
+<h3 id="5-4-Handle-module-state-changes-optional"><a href="#5-4-Handle-module-state-changes-optional" class="headerlink" title="5.4 Handle module state changes (optional)"></a>5.4 Handle module state changes (optional)</h3><p>You can get the Wi-Fi state in gizwitsEventProcess() of gizwits_product.c and do the corresponding logic processing.</p>
+<p>The following takes the MSP430 platform as an example to add a logic: When the Wi-Fi module successfully connects to the router, turn off the LED light. The code example is as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">case WIFI_CON_ROUTER:</span><br><span class="line">		P1OUT &amp;= ~BIT6;</span><br><span class="line">break;</span><br></pre></td></tr></table></figure>
+<h1 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h1><h2 id="For-individual-developers"><a href="#For-individual-developers" class="headerlink" title="For individual developers"></a>For individual developers</h2><p>Gokit is free, but only a limited number are available for individual developers. Register in our forum or follow our official WeChat to request for provision.</p>
+<p>Community: <a href="http://club.gizwits.com/forum.php" target="_blank" rel="noopener">http://club.gizwits.com/forum.php</a></p>
+<p>Documentation Center: <a href="http://docs.gizwits.com/hc/" target="_blank" rel="noopener">http://docs.gizwits.com/hc/</a></p>
+<h2 id="For-organizations"><a href="#For-organizations" class="headerlink" title="For organizations"></a>For organizations</h2><p>Gizwits has a lot of support programs for organizations, you can contact Gizwits to get Gokit and timely technical support.</p>
+<p>Website: <a href="http://www.gizwits.com/about-us" target="_blank" rel="noopener">http://www.gizwits.com/about-us</a></p>
+<p>WeChat Official Account QR code of Gizwits:</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/common/14.png" alt="Porting instructions"> </p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id="share" target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async="async"></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
