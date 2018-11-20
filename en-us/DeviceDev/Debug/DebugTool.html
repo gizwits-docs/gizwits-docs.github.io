@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <title>Guide to Gizwits Serial Port Debugger - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Guide to Gizwits Serial Port Debugger-Gizwits">
+  <meta name="keywords" content="Guide to Gizwits Serial Port Debugger docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header" v="">
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quick Start &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/GizwitsQuickStart.html">Gizwits Quick Start within 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/glossary.html">Glossary</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              App Dev Guide &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevGetStarted.html">Get Started with APP Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppCodeAutoGenerator.html">Gizwits App Code Auto-Generator</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      APP Frame Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSFramework.html">Gizwits App Framework for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSPushNotification.html">iOS Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSAuthReSkin.html">iOS Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSDevQuickStart.html">iOS APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidFramework.html">Gizwits App Framework for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidPushNotification.html">Android Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidAuthReSkin.html">Android Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidDevQuickStart.html">Android APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudFramework.html">Gizwits App Framework for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/VideoTutorials.html">How-to videos on Gizwits App Framework</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App SDK Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSSDKA2.html">Gizwits App SDK for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidSDKA2.html">Gizwits App SDK for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudSDK.html">Gizwits App SDK for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/TransparentTransmission.html">Data Transparent Transmission</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKLogCapture.html">SDK Debug Log Capture</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKErrorCodes.html">SDK Error Codes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WeChatDev.html">WeChat SDK Guide</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WechatDevIntro.html">WeChat Dev Intro</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      More Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SharingSDK.html">Gizwits Device Sharing</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/ThirdpartyAuth.html">Set Up Third-party Authentication</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevFAQ.html">App Dev FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              DeviceDev &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/DeviceDevIntro.html">Get started with device connection</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gizwits Cloud access &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/quickstart/UseMCU.html">MCU scheme</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/UseSOC.html">ESP8266-SoC scheme</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/module_source/module_source.html">Module Documents</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      GAgent Documents &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/gagent_info.html">Detailed annotation of GAgent</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/DebugTool.html">Firmware downloading on modules</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/debug/HF-LPB100.html">HF-LPB100</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/debug/HF-LPT120.html">HF-LPT120</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/debug/MXCHIP.html">MXCHIP</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/debug/ESP8266.html">ESP8266</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/OpenAPI.html">Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/NotificationAPI.html">Notification API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/WebsocketAPI.html">WebsocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API Tutorial &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseOpenAPI.html">Using Open API to control virtual device with Postman</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseSNoti.html">Real-time data synchronization demo for SNoti service</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseWebsocket.html">Control device using WebSocket</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/DataAPI.html">Aggregation API Guide</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/LinkageAPI.html">Device Linkage API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/devgroup_API.html">Device Grouping API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseQRCode.html">Generating device QR code for App binding</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/CloudFAQ.html">Cloud FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              User Manual &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/ST_IoT.html">Gizwits and ST Make IoT Development Easy</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ST/ICUBEGIZWITS.html">Getting Started with I-CUBE-GiZWITS</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Guide to Gizwits Serial Port Debugger</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Get-ready"><a href="#Get-ready" class="headerlink" title="Get ready"></a>Get ready</h1><h2 id="1-Sign-up-for-a-developer-account-and-create-a-product"><a href="#1-Sign-up-for-a-developer-account-and-create-a-product" class="headerlink" title="1. Sign up for a developer account and create a product"></a>1. Sign up for a developer account and create a product</h2><p>To use the Gizwits Serial Port Debugger, you need to create a product in Gizwits Developer Center. See here for reference.</p>
+<h2 id="2-Download-Gizwits-Debugging-App"><a href="#2-Download-Gizwits-Debugging-App" class="headerlink" title="2. Download Gizwits Debugging App"></a>2. Download Gizwits Debugging App</h2><p><img src="../../../assets/en-us/DeviceDev/debug/Serial/11.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h2 id="3-Download-GAgent-firmware"><a href="#3-Download-GAgent-firmware" class="headerlink" title="3. Download GAgent firmware"></a>3. Download GAgent firmware</h2><p>Take ESP8266 as an example. On how to download GAgent firmware, please refer to: Firmware downloading for ESP8266 via serial port.</p>
+<h2 id="4-Connect-the-module-to-the-computer"><a href="#4-Connect-the-module-to-the-computer" class="headerlink" title="4. Connect the module to the computer"></a>4. Connect the module to the computer</h2><p>According to the following schematic, connect ESP8266 to your PC using a USB-to-TTL converter.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/12.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h2 id="5-Download-Gizwits-Serial-Port-Debugger"><a href="#5-Download-Gizwits-Serial-Port-Debugger" class="headerlink" title="5. Download Gizwits Serial Port Debugger"></a>5. Download Gizwits Serial Port Debugger</h2><p>Download it here: <a href="https://download.gizwits.com/en-us/p/98/119" target="_blank" rel="noopener">https://download.gizwits.com/en-us/p/98/119</a></p>
+<h2 id="6-Configure-Gizwits-Serial-Port-Debugger"><a href="#6-Configure-Gizwits-Serial-Port-Debugger" class="headerlink" title="6. Configure Gizwits Serial Port Debugger"></a>6. Configure Gizwits Serial Port Debugger</h2><p><img src="../../../assets/en-us/DeviceDev/debug/Serial/13.png" alt="Gizwits Serial Port Debug Tool"></p>
+<p>Find the productkey corresponding to the product in Gizwits Developer Center and fill in the blank of Gizwits Serial Port Debugger and save it.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/14.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h1 id="UI-description-for-Gizwits-Serial-Port-Debugger"><a href="#UI-description-for-Gizwits-Serial-Port-Debugger" class="headerlink" title="UI description for Gizwits Serial Port Debugger"></a>UI description for Gizwits Serial Port Debugger</h1><h2 id="1-Home-Screen"><a href="#1-Home-Screen" class="headerlink" title="1. Home Screen"></a>1. Home Screen</h2><p><img src="../../../assets/en-us/DeviceDev/debug/Serial/15.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h2 id="2-Command-Screen"><a href="#2-Command-Screen" class="headerlink" title="2. Command Screen"></a>2. Command Screen</h2><p><img src="../../../assets/en-us/DeviceDev/debug/Serial/16.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h2 id="3-Parameter-Screen"><a href="#3-Parameter-Screen" class="headerlink" title="3. Parameter Screen"></a>3. Parameter Screen</h2><p><img src="../../../assets/en-us/DeviceDev/debug/Serial/17.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h1 id="Configure-the-module-to-access-Gizwits-IoT-Cloud"><a href="#Configure-the-module-to-access-Gizwits-IoT-Cloud" class="headerlink" title="Configure the module to access Gizwits IoT Cloud"></a>Configure the module to access Gizwits IoT Cloud</h1><h2 id="1-Power-on-the-module-for-the-first-time"><a href="#1-Power-on-the-module-for-the-first-time" class="headerlink" title="1. Power on the module for the first time"></a>1. Power on the module for the first time</h2><p>As shown in the figure, when the ESP8266 module is powered on for the first time, the following message will be printed in the receiving box.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/18.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h2 id="2-Start-Gizwits-Debugging-App"><a href="#2-Start-Gizwits-Debugging-App" class="headerlink" title="2. Start Gizwits Debugging App"></a>2. Start Gizwits Debugging App</h2><p><img src="../../../assets/en-us/DeviceDev/debug/Serial/19.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h2 id="3-Register-for-an-account-and-log-in"><a href="#3-Register-for-an-account-and-log-in" class="headerlink" title="3. Register for an account and log in"></a>3. Register for an account and log in</h2><p>Here you can use your mobile phone number to register for an account or simply click Skip to jump to the next step.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/20.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h2 id="4-Add-Device"><a href="#4-Add-Device" class="headerlink" title="4. Add Device"></a>4. Add Device</h2><p><img src="../../../assets/en-us/DeviceDev/debug/Serial/21.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h2 id="5-Input-the-router-SSID-and-password"><a href="#5-Input-the-router-SSID-and-password" class="headerlink" title="5. Input the router SSID and password"></a>5. Input the router SSID and password</h2><p>Select the corresponding module model which defaults to Espressif, and enter the SSID and password of the router that your mobile phone connected to. Then click Next.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/22.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h2 id="6-Send-to-the-Airlink-command"><a href="#6-Send-to-the-Airlink-command" class="headerlink" title="6. Send to the Airlink command"></a>6. Send to the Airlink command</h2><p>Click AirLink on the Command Screen, and the PC simulates the MCU function of sending a command to inform the module to enter AirLink mode.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/23.png" alt="Gizwits Serial Port Debug Tool"></p>
+<p>The figure below shows the output of the Wi-Fi module after entering the AirLink mode.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/24.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h2 id="7-App-sends-configuration-information"><a href="#7-App-sends-configuration-information" class="headerlink" title="7. App sends configuration information"></a>7. App sends configuration information</h2><p>After the above steps are completed, check the “Done above operations” on the App and click Next.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/25.png" alt="Gizwits Serial Port Debug Tool"></p>
+<p>At this point the App will issue a configuration package and display that it is discovering devices.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/26.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h2 id="8-Configuration-result"><a href="#8-Configuration-result" class="headerlink" title="8. Configuration result"></a>8. Configuration result</h2><p>Observe the receiving box of the serial port tool. When the following two commands are output, it indicates that the Wi-Fi module has successfully received the configuration information sent by the App, and connected to the router and Gizwits IoT Cloud.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/27.png" alt="Gizwits Serial Port Debug Tool"></p>
+<p>After the Wi-Fi module is successfully connected to the router, it will broadcast a success message. After App receives the success message, it will show a device list page in which the Wi-Fi device locates.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/28.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h1 id="Control-device"><a href="#Control-device" class="headerlink" title="Control device"></a>Control device</h1><h2 id="1-Go-to-the-device-control-page"><a href="#1-Go-to-the-device-control-page" class="headerlink" title="1. Go to the device control page"></a>1. Go to the device control page</h2><p>Clicking the device on the device list page will take you to the device control page.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/29.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h2 id="2-Send-commands"><a href="#2-Send-commands" class="headerlink" title="2. Send commands"></a>2. Send commands</h2><p>Toggle “Turn on/off red light” button on the App to issue commands to control the red light.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/30.png" alt="Gizwits Serial Port Debug Tool"></p>
+<h2 id="3-Control-result"><a href="#3-Control-result" class="headerlink" title="3. Control result"></a>3. Control result</h2><p>When you see the following command in Gizwits Serial Port Debugger, it means that the App controlled the device successfully.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/31.png" alt="Gizwits Serial Port Debug Tool"> </p>
+<h2 id="4-Report-data"><a href="#4-Report-data" class="headerlink" title="4. Report data"></a>4. Report data</h2><p>Change the infrared detection value on Gizwits Serial Port Debugger to “1”, click Report Data to mimic the MCU behavior of reporting the device status actively.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/32.png" alt="Gizwits Serial Port Debug Tool"></p>
+<p>After the App received the reported data, the “Infrared Detection” toggle button is switched on, which indicates that the MCU reported data to the App successfully.</p>
+<p><img src="../../../assets/en-us/DeviceDev/debug/Serial/33.png" alt="Gizwits Serial Port Debug Tool"></p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id="share" target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async="async"></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
