@@ -1,0 +1,581 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <title>Set up Gokit3(S) development environment - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Set up Gokit3(S) development environment-Gizwits">
+  <meta name="keywords" content="Set up Gokit3(S) development environment docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header" v="">
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quick Start &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/GizwitsQuickStart.html">Gizwits Quick Start within 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/glossary.html">Glossary</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              App Dev Guide &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevGetStarted.html">Get Started with APP Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppCodeAutoGenerator.html">Gizwits App Code Auto-Generator</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      APP Frame Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSFramework.html">Gizwits App Framework for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSPushNotification.html">iOS Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSAuthReSkin.html">iOS Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSDevQuickStart.html">iOS APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidFramework.html">Gizwits App Framework for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidPushNotification.html">Android Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidAuthReSkin.html">Android Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidDevQuickStart.html">Android APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudFramework.html">Gizwits App Framework for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/VideoTutorials.html">How-to videos on Gizwits App Framework</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App SDK Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSSDKA2.html">Gizwits App SDK for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidSDKA2.html">Gizwits App SDK for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudSDK.html">Gizwits App SDK for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/TransparentTransmission.html">Data Transparent Transmission</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKLogCapture.html">SDK Debug Log Capture</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKErrorCodes.html">SDK Error Codes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WeChatDev.html">WeChat SDK Guide</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WechatDevIntro.html">WeChat Dev Intro</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      More Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SharingSDK.html">Gizwits Device Sharing</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/ThirdpartyAuth.html">Set Up Third-party Authentication</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevFAQ.html">App Dev FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              DeviceDev &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/DeviceDevGetStarted.html">Get Started with Device Development</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Device Connection &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/MCUScheme.html">Standalone MCU Scheme</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/SoCScheme.html">SoC Scheme</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ModuleResources.html">Module Resources</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      GAgent Guides &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/GAgent.html">GAgent</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/DebugTool.html">Gizwits Serial Port Debugger</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/HF-LPB100.html">HF-LPB100</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/HF-LPT120.html">HF-LPT120</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/MXCHIP.html">MXCHIP</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/ESP8266.html">ESP8266</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/DebugLog.html">Debug Log Capture</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gizwits MCU Code Auto-generator &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/MCUCodeAutoGenerator.html">Gizwits MCU Code Auto-generator</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/PortingCommonPlatform.html">Porting Common Platform Edition of MCU SDK</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/PortingUsingSTM32CubeMX.html">Porting Using STM32CubeMX</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/TailoringMCUCode.html">Tailoring MCU SDK to Resource-Limited Platform</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/OpenAPI.html">Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/NotificationAPI.html">Notification API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/WebsocketAPI.html">WebsocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API Tutorial &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseOpenAPI.html">Using Open API to control virtual device with Postman</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseSNoti.html">Real-time data synchronization demo for SNoti service</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseWebsocket.html">Control device using WebSocket</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/DataAPI.html">Aggregation API Guide</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/LinkageAPI.html">Device Linkage API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/devgroup_API.html">Device Grouping API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseQRCode.html">Generating device QR code for App binding</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/CloudFAQ.html">Cloud FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              User Manual &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/ST_IoT.html">Gizwits and ST Make IoT Development Easy</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ST/ICUBEGIZWITS.html">Getting Started with I-CUBE-GiZWITS</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Set up Gokit3(S) development environment</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Get-ready"><a href="#Get-ready" class="headerlink" title="Get ready"></a>Get ready</h1><h2 id="1-Choose-your-development-environment"><a href="#1-Choose-your-development-environment" class="headerlink" title="1. Choose your development environment"></a>1. Choose your development environment</h2><p>Gokit3(S) supports two development environments:</p>
+<p>1) Use Espressif official ESP8266 development environment (recommended)<br>2) Use a custom development environment: virtual machine VMware (version 12.0) + Ubuntu OS (14.04 64-bit&gt;), then configure the cross-compiler to compile the source code on Ubuntu.</p>
+<h3 id="1-1-Using-Espressif-official-development-environment-recommended"><a href="#1-1-Using-Espressif-official-development-environment-recommended" class="headerlink" title="1.1 Using Espressif official development environment (recommended)"></a>1.1 Using Espressif official development environment (recommended)</h3><p>1) Download Espressif official development environment installation package</p>
+<p>Download here: <a href="https://pan.baidu.com/s/1kVn12Iz" target="_blank" rel="noopener">https://pan.baidu.com/s/1kVn12Iz</a></p>
+<p>Installation package description:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/11.png" alt="Gokit3"></p>
+<p>Note:</p>
+<p>You need to install the virtual machine VirtualBox (VirtualBox-4.3.12-93733-Win.exe), and then start VirtualBox to load the OS image of the development environment (ESP8266_lubuntu_20141021.ova).</p>
+<p>xtensa-lx106-elf.tar.bz2 is a cross-compiler that is used in a custom development environment.</p>
+<p>2) Configure VirtualBox</p>
+<p>After installing VirtualBox 4.3.12, launch it and go through the following steps:</p>
+<p>Step 1: Open the “Preferences” dialog.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/12.png" alt="Gokit3"></p>
+<p>Step 2: Select “General” tab to set the Default Machine Folder, for example: D:\vm</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/13.png" alt="Gokit3"> </p>
+<p>Step 3: Select the “Import Appliance” option.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/14.png" alt="Gokit3"> </p>
+<p>Step 4: Select the OS image file to load, for example: D:\vm\ ESP8266_lubuntu_20141021.ova</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/15.png" alt="Gokit3"> </p>
+<p>Step 5: Import the virtual image file.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/16.png" alt="Gokit3"></p>
+<p>After importing, you can find the corresponding file D:\vm\ ESP8266_lubuntu_1:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/54.png" alt="Gokit3"> </p>
+<p>Step 6: Create a shared folder</p>
+<p>Create a new folder named “share” under Windows, so that the file transfer between VirtualBox and Windows is convenient. The operation steps are as follows:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/17.png" alt="Gokit3"> </p>
+<p>Step 7: Verify the development environment</p>
+<p>Run the script: “./mount.sh”</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/18.png" alt="Gokit3"> </p>
+<p>Enter the user password: “espressif” and press Enter.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/19.png" alt="Gokit3"> </p>
+<p>Go into the Gokit3(S) directory (see the section “Gokit3(S) source code compilation”).</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/20.png" alt="Gokit3"> </p>
+<p>Run the compilation script: ./gen_misc.sh</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/21.png" alt="Gokit3"> </p>
+<p>The following messages show that the development environment has been successfully set up.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/22.png" alt="Gokit3"> </p>
+<p>If you have any questions, please check the official instructions of Espressif:</p>
+<p><a href="https://github.com/esp8266/esp8266-wiki/wiki/Toolchain" target="_blank" rel="noopener">https://github.com/esp8266/esp8266-wiki/wiki/Toolchain</a></p>
+<h3 id="1-2-Using-a-custom-development-environment"><a href="#1-2-Using-a-custom-development-environment" class="headerlink" title="1.2 Using a custom development environment"></a>1.2 Using a custom development environment</h3><p>1) Install VMware (version 12.0) + Ubuntu OS, and create a shared directory “D:\share”.</p>
+<p>2) Configure the development environment</p>
+<p>Step 1: Copy xtensa-lx106-elf.tar.bz2 to D:\share (The previously created shared folder) as follows:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/55.png" alt="Gokit3"></p>
+<p>Step 2: Start Ubuntu and run Terminal in the following order.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/23.png" alt="Gokit3"> </p>
+<p>First enter sudo su to get a root shell, then enter the password and press Enter.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/24.png" alt="Gokit3"> </p>
+<p>Update the package lists from the repositories.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/25.png" alt="Gokit3"></p>
+<p>Install related software libraries:</p>
+<p>For 32-bit virtual machine: apt-get install vim git // press Enter all the way through to confirm</p>
+<p>For 64-bit virtual machine: apt-get install vim git libc6-dev-amd64 // press Enter all the way though to confirm</p>
+<p>Go to the shared folder:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /mnt/hgfs/share</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/26.png" alt="Gokit3"></p>
+<p>Run the commands in the following order:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp xtensa-lx106-elf.tar.bz2 /opt/</span><br><span class="line">cd /opt/</span><br><span class="line">tar -jxvf xtensa-lx106-elf.tar.bz2  // it is shown below after unpacking</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/27.png" alt="Gokit3"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/$ username // $username is the login username</span><br><span class="line">vim .profile</span><br><span class="line">export PATH=”/opt/xtensa-lx106-elf/bin:$PATH” // append it to the file, save and exit</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/28.png" alt="Gokit3"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exit // note that you need to leave the root shell</span><br><span class="line">source .profile // execute this script with the current user privilege</span><br><span class="line">echo $PATH // the following red box indicates that the configuration is correct</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/29.png" alt="Gokit3"></p>
+<p>If you have any questions, please check the official instructions of Espressif:</p>
+<p><a href="https://github.com/esp8266/esp8266-wiki/wiki/Toolchain" target="_blank" rel="noopener">https://github.com/esp8266/esp8266-wiki/wiki/Toolchain</a></p>
+<h2 id="2-Gokit3-S-source-code"><a href="#2-Gokit3-S-source-code" class="headerlink" title="2. Gokit3(S) source code"></a>2. Gokit3(S) source code</h2><p>For the SoC source code of Gokit3(S), please refer to the section Generate the source code for SoC scheme in Guide to Gizwits MCU Code Auto-Generator.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/30.png" alt="Gokit3"> </p>
+<h1 id="Gokit3-S-source-code-compilation"><a href="#Gokit3-S-source-code-compilation" class="headerlink" title="Gokit3 (S) source code compilation"></a>Gokit3 (S) source code compilation</h1><p>1) Unpack the Gokit3(S) source code and copy it to the shared directory:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/31.png" alt="Gokit3"> </p>
+<p>Note: The source code of the ESP8266 32M module is taken as an example, and 16M and 8M ones are the same.</p>
+<p>2) Change the directory of compilation:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /mnt/hgfs/share/SoC_ESP8266_32M_source/app/</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/32.png" alt="Gokit3"></p>
+<p>3) Set the compiling script to Unix format to prevent the Windows OS from affecting the script (Note: This method can be used once the script cannot be run):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim gen_misc.sh</span><br><span class="line">:set ff=unix // this is a vim command, not added content</span><br><span class="line">:wq! // this is a vim command, not added content</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/33.png" alt="Gokit3"> </p>
+<p>4) Run the compiling script:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gen_misc.sh</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/34.png" alt="Gokit3"> </p>
+<p>Note: As shown in the figure, the compilation is successful.</p>
+<p>5) The generated binaries location:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">share/SOC_ESP8266_32M_source/bin/upgrade</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/35.png" alt="Gokit3"> </p>
+<p>It shows the following operation result on Windows.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/36.png" alt="Gokit3"></p>
+<h1 id="Gokit3-S-firmware-downloading"><a href="#Gokit3-S-firmware-downloading" class="headerlink" title="Gokit3(S) firmware downloading"></a>Gokit3(S) firmware downloading</h1><p>1 Run the flash download tool<br>Download the flash download tool “ESPFlashDownloadTool_v3.3.4.exe” at:</p>
+<p><a href="https://www.espressif.com/sites/default/files/tools/flash_download_tools_v3.6.4.rar" target="_blank" rel="noopener">https://www.espressif.com/sites/default/files/tools/flash_download_tools_v3.6.4.rar</a></p>
+<p>After downloading, unpack and click to run “ESPFlashDownloadTool_v3.3.4.exe”</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/37.png" alt="Gokit3"> </p>
+<h2 id="2-Flash-configuration"><a href="#2-Flash-configuration" class="headerlink" title="2. Flash configuration"></a>2. Flash configuration</h2><p>Gokit3(S) firmware has SoC edition and MCU edition. Developers should download the corresponding edition of firmware according to Gokit3(S) mode. For details, please refer to the section “2. Difference between SoC mode and MCU mode” of Introduction to Gokit3(S) development kit.</p>
+<h3 id="2-1-Gokit3-S-SoC-Edition"><a href="#2-1-Gokit3-S-SoC-Edition" class="headerlink" title="2.1 Gokit3(S) SoC Edition"></a>2.1 Gokit3(S) SoC Edition</h3><p>The firmware file name for the SoC edition is:</p>
+<p>user1.4096.new.6.bin</p>
+<p>The default save location of the firmware file after compilation is:</p>
+<p>share/SOC_ESP8266_xxM_source/bin/upgrade</p>
+<h3 id="2-2-Gokit3-S-MCU-Edition"><a href="#2-2-Gokit3-S-MCU-Edition" class="headerlink" title="2.2 Gokit3(S) MCU Edition"></a>2.2 Gokit3(S) MCU Edition</h3><p>The firmware file name for the MCU edition is: </p>
+<p>GAgent_00ESP826_04020029_32Mbitcombine.bin</p>
+<p>Click here to download</p>
+<p>For details, please see the section “5. Using Gokit’s MCU Mode” of Introduction to Gokit3(S) development kit.</p>
+<h3 id="2-3-Confirm-flash-configuration"><a href="#2-3-Confirm-flash-configuration" class="headerlink" title="2.3 Confirm flash configuration"></a>2.3 Confirm flash configuration</h3><p>The flash options are set as follows:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/38.png" alt="Gokit3"></p>
+<p>Note:</p>
+<p>1) The first three ‘.bin’ files are in the directory<br>D:\share\SoC_ESP8266_32M_source\bin, and you can choose the ‘.bin’ files with the corresponding names.<br>The last .bin file defaults to the SoC edtion of the firmware:<br>user1.4096.new.6.bin<br>Location:<br>D:\share\SoC_ESP8266_32M_source\bin\upgrade\user1.4096.new.6.bin<br>If you are flashing the MCU edition firmware, please choose GAgent_00ESP826_04020029_32Mbitcombine.bin</p>
+<p>2) COM is set to the COM number of the TTL-to-USB converter (described below)</p>
+<p>3) BAUD is set to 115200 (slow flash speed but high success rate)</p>
+<h2 id="3-Connect-TTL-to-USB-converter"><a href="#3-Connect-TTL-to-USB-converter" class="headerlink" title="3. Connect TTL-to-USB converter"></a>3. Connect TTL-to-USB converter</h2><p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/39.png" alt="Gokit3"></p>
+<p>Connect TTL-to-USB converter to your computer:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/40.png" alt="Gokit3"> </p>
+<p>Find the corresponding serial port number in Device Manager: (here is COM4).</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/41.png" alt="Gokit3"> </p>
+<h2 id="4-Power-on-Gokit"><a href="#4-Power-on-Gokit" class="headerlink" title="4. Power on Gokit"></a>4. Power on Gokit</h2><p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/42.png" alt="Gokit3"> </p>
+<p>Note:</p>
+<p>Here the Gokit can be connected directly to the power supply via USB. If you want to check the log, connect to the computer (you need to distinguish the COM number).</p>
+<h2 id="5-Flash-firmware"><a href="#5-Flash-firmware" class="headerlink" title="5. Flash firmware"></a>5. Flash firmware</h2><p>First, toggle the switch as is shown in the following figure to the lower side to enter the download mode.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/43.png" alt="Gokit3"> </p>
+<p>Press the “START” button of the flash download tool and the “Reset” button of the Wi-Fi module to start the flash process:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/44.png" alt="Gokit3"> </p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/45.png" alt="Gokit3"></p>
+<p>If “FINISH” is displayed, the flash is successful.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/46.png" alt="Gokit3"> </p>
+<p>Note: If it is not successful, first check if COM port number is correct, and set lower BAUDRATE values and try several times.</p>
+<p>Next, set the Gokit to working mode by toggling the switch to the upper side.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/47.png" alt="Gokit3"></p>
+<p>Press the Reset button to restart the module and the program starts working.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/48.png" alt="Gokit3"> </p>
+<h2 id="6-Check-log"><a href="#6-Check-log" class="headerlink" title="6. Check log"></a>6. Check log</h2><p>After downloading firmware, you can connect the USB port (i.e. power supply interface) to the computer and check the log printed in the terminal by using Gizwits Serial Port Debugger (baud rate: 115200).</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/49.png" alt="Gokit3"> </p>
+<p>Note: If the log message is garbled, you can restart Gizwits Serial Port Debugger to work normally.</p>
+<h1 id="Firmware-Upgrade-OTA"><a href="#Firmware-Upgrade-OTA" class="headerlink" title="Firmware Upgrade (OTA)"></a>Firmware Upgrade (OTA)</h1><p>The network connectivity to Gizwits IoT Cloud server allows the development board to download and run a new version of the firmware without connection to any development tool.</p>
+<h2 id="1-Upload-firmware-file"><a href="#1-Upload-firmware-file" class="headerlink" title="1. Upload firmware file"></a>1. Upload firmware file</h2><p>Log in to the Gizwits Developer Center and find the product that needs to upgrade firmware via OTA. Go to the OTA page as shown below.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/50.jpg" alt="Gokit3"></p>
+<p>Click the “Create new firmware” button and fill out the OTA panel following the indications:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/51.jpg" alt="Gokit3"> </p>
+<p>Description:</p>
+<ol>
+<li>The directory where the firmware file is located is bin/upgrade/*bin</li>
+<li>The Changelog file has been added since the version 03000003. The OTA software version number will be described in the Changelog file.</li>
+<li>For the version 03000001, please use 040200xx as the version number.</li>
+<li>The OTA firmware version number must be greater than the version number of the firmware running in the module. </li>
+</ol>
+<h2 id="2-Verify-the-firmware"><a href="#2-Verify-the-firmware" class="headerlink" title="2. Verify the firmware"></a>2. Verify the firmware</h2><p>After the firmware is uploaded, you can see the following page:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/52.jpg" alt="Gokit3"> </p>
+<p>Clicking the “Verify firmware” button will prompt you the page as shown below.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/WiFiSOC/dev/53.jpg" alt="Gokit3"> </p>
+<p>Type the MAC, click “Push” and wait for the OTA push result.</p>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><p>Q: Why the setting of the custom development environment shared folder is unsuccessful?</p>
+<p>A: Run the following commands to reinstall VMware Tools.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove open-vm-dkms open-vm-tools –purge</span><br></pre></td></tr></table></figure>
+<p>Click on “Virtual Machine” - reinstall VMware Tools – Go to the appropriate directory in the terminal</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf VMwareTools-10.0.0-2977863.tar.gz</span><br><span class="line">sudo ./vmware-install.pl</span><br></pre></td></tr></table></figure>
+<p>Then press the Enter key all the way through until the installation is complete.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>At this point, Gokit3’s development environment setup, source code compilation and firmware download have been introduced.</p>
+<p>For a deep understanding of the Gokit3’s hardware, see:</p>
+<p>Gokit3 Hardware Manual</p>
+<p>If you want to develop your own program based on the “WeChat Pet House” code example with Gokit3, see:</p>
+<p>Gokit3(S) programming manual</p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id="share" target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async="async"></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
