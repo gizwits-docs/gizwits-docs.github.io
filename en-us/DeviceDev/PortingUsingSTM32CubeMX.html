@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <title>Porting using STM32CubeMX - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Porting using STM32CubeMX-Gizwits">
+  <meta name="keywords" content="Porting using STM32CubeMX docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header" v="">
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quick Start &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/GizwitsQuickStart.html">Gizwits Quick Start within 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/glossary.html">Glossary</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              App Dev Guide &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevGetStarted.html">Get Started with APP Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppCodeAutoGenerator.html">Gizwits App Code Auto-Generator</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      APP Frame Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSFramework.html">Gizwits App Framework for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSPushNotification.html">iOS Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSAuthReSkin.html">iOS Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSDevQuickStart.html">iOS APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidFramework.html">Gizwits App Framework for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidPushNotification.html">Android Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidAuthReSkin.html">Android Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidDevQuickStart.html">Android APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudFramework.html">Gizwits App Framework for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/VideoTutorials.html">How-to videos on Gizwits App Framework</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App SDK Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSSDKA2.html">Gizwits App SDK for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidSDKA2.html">Gizwits App SDK for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudSDK.html">Gizwits App SDK for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/TransparentTransmission.html">Data Transparent Transmission</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKLogCapture.html">SDK Debug Log Capture</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKErrorCodes.html">SDK Error Codes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WeChatDev.html">WeChat SDK Guide</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WechatDevIntro.html">WeChat Dev Intro</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      More Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SharingSDK.html">Gizwits Device Sharing</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/ThirdpartyAuth.html">Set Up Third-party Authentication</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevFAQ.html">App Dev FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              DeviceDev &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/DeviceDevGetStarted.html">Get Started with Device Development</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Device Connection &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/MCUScheme.html">Standalone MCU Scheme</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/SoCScheme.html">SoC Scheme</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ModuleResources.html">Module Resources</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      GAgent Guides &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/GAgent.html">GAgent</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/DebugTool.html">Gizwits Serial Port Debugger</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/HF-LPB100.html">HF-LPB100</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/HF-LPT120.html">HF-LPT120</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/MXCHIP.html">MXCHIP</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/ESP8266.html">ESP8266</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/DebugLog.html">Debug Log Capture</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/OpenAPI.html">Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/NotificationAPI.html">Notification API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/WebsocketAPI.html">WebsocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API Tutorial &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseOpenAPI.html">Using Open API to control virtual device with Postman</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseSNoti.html">Real-time data synchronization demo for SNoti service</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseWebsocket.html">Control device using WebSocket</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/DataAPI.html">Aggregation API Guide</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/LinkageAPI.html">Device Linkage API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/devgroup_API.html">Device Grouping API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseQRCode.html">Generating device QR code for App binding</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/CloudFAQ.html">Cloud FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              User Manual &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/ST_IoT.html">Gizwits and ST Make IoT Development Easy</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ST/ICUBEGIZWITS.html">Getting Started with I-CUBE-GiZWITS</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Porting using STM32CubeMX</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>This document describes how to use STM32CubeMX to port the automatically generated source code for STM32 platform to other MCU platforms.</p>
+<p>STM32CubeMX can be downloaded from STM website and installed after registration, this document will not elaborate on it.</p>
+<p>We will take the STM32F103 source code project generated in Gizwits Developer Center as an example, and port it to the STM32L496ZGT6 platform using STM32Cube (the way of porting to other STM32 platforms is similar). The development kit NUCLEO-L496ZG is used here:</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/11.png" alt="Porting tutorial using STM32CubeMX"></p>
+<p>Note: NUCLEO-L496ZG is a new product of the ST Nucleo series development kit. The L4 series combines the advantages of low power consumption and high performance. It integrates ST-LINK/V2-1 and uses STM32L496ZGT6 as the main control board, featuring ultra-low power consumption, a rich peripheral set and etc.</p>
+<p>We can generate the source code of STM32F103 platform through Gizwits MCU Code Auto-Generator (For details, see Guide to Gizwits MCU Code Auto-Generator). The following is the generated source code directory structure.</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/12.png" alt="Porting tutorial using STM32CubeMX"></p>
+<table>
+<thead>
+<tr>
+<th>File/folder name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Driver</td>
+<td>It contains all the library files</td>
+</tr>
+<tr>
+<td>Gizwits</td>
+<td>Gizwits protocol processing files</td>
+</tr>
+<tr>
+<td>Hal</td>
+<td>Peripheral driver files</td>
+</tr>
+<tr>
+<td>MDK-ARM</td>
+<td>MDK project file</td>
+</tr>
+<tr>
+<td>Inc</td>
+<td>Header files for STM32 source code</td>
+</tr>
+<tr>
+<td>Src</td>
+<td>C files for STM32 source code</td>
+</tr>
+<tr>
+<td>Utils</td>
+<td>Utility library files</td>
+</tr>
+<tr>
+<td>.mxproject</td>
+<td>STM32Cube configuration file</td>
+</tr>
+<tr>
+<td>STM32F103C8.ioc</td>
+<td>STM32CubeMX project file (take STM32F103C8 platform as an example)</td>
+</tr>
+</tbody>
+</table>
+<p>Note: The directories that need to be ported are: Gizwits, Hal, and Utils.</p>
+<h1 id="Porting-to-other-STM32-platforms"><a href="#Porting-to-other-STM32-platforms" class="headerlink" title="Porting to other STM32 platforms"></a>Porting to other STM32 platforms</h1><h2 id="1-Create-the-STM32CubeMX-project-file"><a href="#1-Create-the-STM32CubeMX-project-file" class="headerlink" title="1. Create the STM32CubeMX project file"></a>1. Create the STM32CubeMX project file</h2><p>Select the MCU you are using on STM32CubeMX (for example, here we choose STM32L496ZGTx), as follows:</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/13.png" alt="Porting tutorial using STM32CubeMX"></p>
+<p>Click Project - Setting to set the project location and the corresponding parameters as follows:</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/14.png" alt="Porting tutorial using STM32CubeMX"></p>
+<p>Note: Here chooses Keil 5 as the compiler.</p>
+<h2 id="2-Import-the-Gizwits-configuration-template"><a href="#2-Import-the-Gizwits-configuration-template" class="headerlink" title="2. Import the Gizwits configuration template"></a>2. Import the Gizwits configuration template</h2><p>Since the source code automatically generated by Gizwits contains the STM32CubeMX project configuration file for the corresponding platform, where the relevant driver parameters are already configured. To facilitate developers to port the STM32 source code to other platforms, you can use the project configuration file import function of STM32CubeMX to import the configuration parameters of STM32F103 platform for STM32L496ZGT6 platform, as follows: </p>
+<p>Choose File &gt; Import Project.</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/15.png" alt="Porting tutorial using STM32CubeMX"> </p>
+<p>Select the STM32F103C8.ioc configuration file metioned in the Overview section as shown below:</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/16.png" alt="Porting tutorial using STM32CubeMX"> </p>
+<p>After clicking OK, you can see the configuration file generated by Gizwits has been imported to the STM32L496ZGT6 project.</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/17.png" alt="Porting tutorial using STM32CubeMX"></p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/18.png" alt="Porting tutorial using STM32CubeMX">  </p>
+<h2 id="3-Special-processing-only-for-the-STM32-L-series-low-power-platforms-skip-this-step-for-other-platforms"><a href="#3-Special-processing-only-for-the-STM32-L-series-low-power-platforms-skip-this-step-for-other-platforms" class="headerlink" title="3. Special processing (only for the STM32 L series low-power platforms, skip this step for other platforms)"></a>3. Special processing (only for the STM32 L series low-power platforms, skip this step for other platforms)</h2><p>Since the USB serial port of the NUCLEO-L496ZG development kit is supposed to be connected to the low power serial port (LPUART1) on the MCU by default, instead of the UART1 on F103 platform, the UART1 in the configuration file should be changed to LPUART1, as shown below:</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/19.png" alt="Porting tutorial using STM32CubeMX"></p>
+<p>Note: Manually set pin PG8/PG7 to LPUART_RX/LPUART_TX type.</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/20.png" alt="Porting tutorial using STM32CubeMX"> </p>
+<h2 id="4-Generate-code"><a href="#4-Generate-code" class="headerlink" title="4. Generate code"></a>4. Generate code</h2><p>Click Project - Generate Code or click the shortcut icon to generate the code.</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/21.png" alt="Porting tutorial using STM32CubeMX"></p>
+<h2 id="5-Compile-and-configure-the-project"><a href="#5-Compile-and-configure-the-project" class="headerlink" title="5. Compile and configure the project"></a>5. Compile and configure the project</h2><p>Click Rebuild to compile the project.</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/22.png" alt="Porting tutorial using STM32CubeMX"> </p>
+<p>Choose the STM32L496ZGT development kit. If it raises errors, you can click the icon to modify on the Debug tab of Options for Target.</p>
+<p>Note: ST-LINK is selected in the figure.</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/23.png" alt="Porting tutorial using STM32CubeMX"> </p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/24.png" alt="Porting tutorial using STM32CubeMX"></p>
+<p>Click Settings-Flash Download, check the Reset and Run. After the program is downloaded, it will automatically run, no need to press reset or power on again.</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/25.png" alt="Porting tutorial using STM32CubeMX"> </p>
+<p>Click Download icon to initiate a flash download. If the following messages appear, it indicates the successful completion of the flash download:</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/26.png" alt="Porting tutorial using STM32CubeMX"> </p>
+<h2 id="6-Port-code"><a href="#6-Port-code" class="headerlink" title="6. Port code"></a>6. Port code</h2><p>At this time, only the STM32L496ZGT related driver code is used in the project. To use the Gizwits IoT Cloud access capability, you need to port the relevant protocol source code (i.e. the three directories in the automatically generated STM32F103 project mentioned above: Gizwits, Hal, Utils).</p>
+<p>The STM32L496ZGT project directory before porting is as follows:</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/27.png" alt="Porting tutorial using STM32CubeMX"> </p>
+<p>After porting (i.e. copying Gizwits, Hal, Utils to STM32L496ZGT from STM32F103) as follows:</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/28.png" alt="Porting tutorial using STM32CubeMX"> </p>
+<p>Next we add the following directories to the Keil 5 project STM32L496ZGT:</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/29.png" alt="Porting tutorial using STM32CubeMX"> </p>
+<p>Similarly, set up the corresponding paths for compilation:</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/30.png" alt="Porting tutorial using STM32CubeMX"></p>
+<h2 id="7-Modify-the-code"><a href="#7-Modify-the-code" class="headerlink" title="7. Modify the code"></a>7. Modify the code</h2><p>First, in order to adapt to the corresponding platform, replace with the header files of the corresponding platform in gizwits_product.h / hal_key.h. For example:</p>
+<p>Replace the header file #include “stm32f1xx_hal.h” of the original F103C8 platform with the #include “stm32l4xx_it.h” of the L496ZGT platform.</p>
+<p>Note: The header files for the corresponding platform can be found in Drivers\STM32F1xx_HAL_Driver\Inc in the root directory.</p>
+<p>Next add the code related to the Gizwits protocol processing in main.c:</p>
+<ul>
+<li>First incorporate references to the relevant header files:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/* USER CODE BEGIN Includes */</span><br><span class="line"></span><br><span class="line">#include &quot;hal_key.h&quot;</span><br><span class="line">#include &quot;gizwits_product.h&quot;</span><br><span class="line">#include &quot;common.h&quot;</span><br><span class="line"></span><br><span class="line">/* USER CODE END Includes */</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Next is the relevant global variable:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/* USER CODE BEGIN PV */</span><br><span class="line"></span><br><span class="line">/* Private variables ---------------------------------------------------------*/</span><br><span class="line">#define GPIO_KEY_NUM 2 ///&lt; Defines the total number of key member</span><br><span class="line">keyTypedef_t singleKey[GPIO_KEY_NUM]; ///&lt; Defines a single key member array pointer</span><br><span class="line">keysTypedef_t keys;   </span><br><span class="line"></span><br><span class="line">/* USER CODE END PV */</span><br></pre></td></tr></table></figure>
+<ul>
+<li>The following is the callback function definitions for the long press and short press on the respective keys: </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">/* USER CODE BEGIN 0 */</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* key1 short press handle</span><br><span class="line">* @param none</span><br><span class="line">* @return none</span><br><span class="line">*/</span><br><span class="line">void key1ShortPress(void)</span><br><span class="line">&#123;</span><br><span class="line">    GIZWITS_LOG(&quot;KEY1 PRESS ,Production Mode\n&quot;);</span><br><span class="line">    gizwitsSetMode(WIFI_PRODUCTION_TEST);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* key1 long press handle</span><br><span class="line">* @param none</span><br><span class="line">* @return none</span><br><span class="line">*/</span><br><span class="line">void key1LongPress(void)</span><br><span class="line">&#123;</span><br><span class="line">    GIZWITS_LOG(&quot;KEY1 PRESS LONG ,Wifi Reset\n&quot;);</span><br><span class="line">    gizwitsSetMode(WIFI_RESET_MODE);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* key2 short press handle</span><br><span class="line">* @param none</span><br><span class="line">* @return none</span><br><span class="line">*/</span><br><span class="line">void key2ShortPress(void)</span><br><span class="line">&#123;</span><br><span class="line">    GIZWITS_LOG(&quot;KEY2 PRESS ,Soft AP mode\n&quot;);</span><br><span class="line">    #if !MODULE_TYPE</span><br><span class="line">    gizwitsSetMode(WIFI_SOFTAP_MODE);</span><br><span class="line">    #endif</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* key2 long press handle</span><br><span class="line">* @param none</span><br><span class="line">* @return none</span><br><span class="line">*/</span><br><span class="line">void key2LongPress(void)</span><br><span class="line">&#123;</span><br><span class="line">    //AirLink mode</span><br><span class="line">    GIZWITS_LOG(&quot;KEY2 PRESS LONG ,AirLink mode\n&quot;);</span><br><span class="line">    #if !MODULE_TYPE</span><br><span class="line">    gizwitsSetMode(WIFI_AIRLINK_MODE);</span><br><span class="line">    #endif</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* Key init function</span><br><span class="line">* @param none</span><br><span class="line">* @return none</span><br><span class="line">*/</span><br><span class="line">void keyInit(void)</span><br><span class="line">&#123;</span><br><span class="line">    singleKey[0] = keyInitOne(NULL, KEY1_GPIO_Port, KEY1_Pin, key1ShortPress, key1LongPress);</span><br><span class="line">    singleKey[1] = keyInitOne(NULL, KEY2_GPIO_Port, KEY2_Pin, key2ShortPress, key2LongPress);</span><br><span class="line">    keys.singleKey = (keyTypedef_t *)&amp;singleKey;</span><br><span class="line">    keyParaInit(&amp;keys); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* USER CODE END 0 */</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Next is the initialization of the relevant drivers and the Gizwits protocol: </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/* USER CODE BEGIN 2 */</span><br><span class="line"></span><br><span class="line">  timerInit();</span><br><span class="line">  uartInit();</span><br><span class="line"></span><br><span class="line">  userInit();</span><br><span class="line">  gizwitsInit();</span><br><span class="line">  keyInit();</span><br><span class="line">  GIZWITS_LOG(&quot;MCU Init Success \n&quot;);</span><br><span class="line"></span><br><span class="line">/* USER CODE END 2 */</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Finally, the function calls in the loop structure of the main function are as follows:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/* USER CODE BEGIN 3 */</span><br><span class="line"></span><br><span class="line">      userHandle();</span><br><span class="line">      gizwitsHandle((dataPoint_t *)¤tDataPoint);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* USER CODE END 3 */</span><br></pre></td></tr></table></figure>
+<p>The following are special modifications for the L496ZGT platform. Skip this step for other non-low-power STM32 platforms.</p>
+<p>Since NUCLEO-L496ZG uses LPUART1 instead of UART1 on the F103 platform, it is required to replace the two “huart1” in Gizwits/gizwits_product.c to the automatically generated “hlpuart1” in main.c.</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/31.png" alt="Porting tutorial using STM32CubeMX"></p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/32.png" alt="Porting tutorial using STM32CubeMX"></p>
+<h2 id="7-Compile-and-download"><a href="#7-Compile-and-download" class="headerlink" title="7. Compile and download"></a>7. Compile and download</h2><p>After the completion of the relevant porting, compile and flash to the NUCLEO-L496ZG development kit. According to the CubeMX project configuration file, the serial port baud rate is 115200.</p>
+<p>Furthermore, connect the log output pin to debug source code.</p>
+<h1 id="Advanced-development"><a href="#Advanced-development" class="headerlink" title="Advanced development"></a>Advanced development</h1><h2 id="Application-development"><a href="#Application-development" class="headerlink" title="Application development"></a>Application development</h2><p>After completing the porting of the STM32 related platform, you can use the various tools provided by Gizwits to develop your own projects. For details, please refer to the related chapters of Guide to porting Common Platform Edition of MCU SDK in Gizwits Document Center.</p>
+<h2 id="Driver-development"><a href="#Driver-development" class="headerlink" title="Driver development"></a>Driver development</h2><p>When the hardware configuration needs to be changed, STM32CubeMX can be used to perform relevant hardware driver configuration development, thereby minimizing the repeated development of the source code and improving the development efficiency. Here, the key IO configuration is taken as an example:</p>
+<p>Open the STM32CubeMX project file of the corresponding platform in the root directory.</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/32-1.png" alt="Porting tutorial using STM32CubeMX"></p>
+<p>On the pin configuration (Pinout) tab, update the pin IO configuration. For example, change the original KEY1 (PB10) to PE3 and the type to GPIO_Input.</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/33.png" alt="Porting tutorial using STM32CubeMX"></p>
+<p>Go to the configuration option (Configuration) tab, and keep the new configured pin name consistent with the original name (so you do not need to change the macro definition in the source code), then select OK.</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/34.png" alt="Porting tutorial using STM32CubeMX"></p>
+<p>Finally click the source code generation button to update the IO driver in the source code (and will not affect the previously added code).</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/35.png" alt="Porting tutorial using STM32CubeMX"></p>
+<p>Since the NUCLEO-L496ZG hardware wiring is different from that in F103 (pull-down), it needs to update the code of some key drivers. In  Hal/hal_key.c, change</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/36.png" alt="Porting tutorial using STM32CubeMX"></p>
+<p>to</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(HAL_GPIO_ReadPin((GPIO_TypeDef\*)keyS-&gt;singleKey[i].keyPort,keyS-&gt;singleKey[i].keyGpio))</span><br></pre></td></tr></table></figure>
+<p>After compiling and download, test the key.</p>
+<h1 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h1><h2 id="For-individual-developers"><a href="#For-individual-developers" class="headerlink" title="For individual developers"></a>For individual developers</h2><p>Gokit is free, but only a limited number are available for individual developers. Register in our forum or follow our official WeChat to request for provision.</p>
+<p>Developer Forum: <a href="http://club.gizwits.com/forum.php" target="_blank" rel="noopener">http://club.gizwits.com/forum.php</a></p>
+<p>Documentation Center: <a href="http://docs.gizwits.com/hc/" target="_blank" rel="noopener">http://docs.gizwits.com/hc/</a></p>
+<h2 id="For-organizations"><a href="#For-organizations" class="headerlink" title="For organizations"></a>For organizations</h2><p>Gizwits has a lot of support programs for organizations, you can contact Gizwits to get Gokit and timely technical support.</p>
+<p>Website: <a href="http://www.gizwits.com/about-us" target="_blank" rel="noopener">http://www.gizwits.com/about-us</a></p>
+<p>WeChat Official Account QR code of Gizwits:</p>
+<p><img src="../../../assets/en-us/DeviceDev/DevSDK/CubeMX/37.png" alt="Porting tutorial using STM32CubeMX"></p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id="share" target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async="async"></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
