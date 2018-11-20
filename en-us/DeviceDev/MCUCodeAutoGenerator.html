@@ -1,0 +1,555 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <title>Guide to Gizwits MCU Code Auto-Generator - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Guide to Gizwits MCU Code Auto-Generator-Gizwits">
+  <meta name="keywords" content="Guide to Gizwits MCU Code Auto-Generator docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header" v="">
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quick Start &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/GizwitsQuickStart.html">Gizwits Quick Start within 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/glossary.html">Glossary</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              App Dev Guide &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevGetStarted.html">Get Started with APP Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppCodeAutoGenerator.html">Gizwits App Code Auto-Generator</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      APP Frame Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSFramework.html">Gizwits App Framework for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSPushNotification.html">iOS Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSAuthReSkin.html">iOS Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSDevQuickStart.html">iOS APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidFramework.html">Gizwits App Framework for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidPushNotification.html">Android Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidAuthReSkin.html">Android Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidDevQuickStart.html">Android APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudFramework.html">Gizwits App Framework for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/VideoTutorials.html">How-to videos on Gizwits App Framework</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App SDK Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSSDKA2.html">Gizwits App SDK for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidSDKA2.html">Gizwits App SDK for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudSDK.html">Gizwits App SDK for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/TransparentTransmission.html">Data Transparent Transmission</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKLogCapture.html">SDK Debug Log Capture</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKErrorCodes.html">SDK Error Codes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WeChatDev.html">WeChat SDK Guide</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WechatDevIntro.html">WeChat Dev Intro</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      More Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SharingSDK.html">Gizwits Device Sharing</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/ThirdpartyAuth.html">Set Up Third-party Authentication</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevFAQ.html">App Dev FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              DeviceDev &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/DeviceDevGetStarted.html">Get Started with Device Development</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Device Connection &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/MCUScheme.html">Standalone MCU Scheme</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/SoCScheme.html">SoC Scheme</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ModuleResources.html">Module Resources</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      GAgent Guides &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/GAgent.html">GAgent</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/DebugTool.html">Gizwits Serial Port Debugger</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/HF-LPB100.html">HF-LPB100</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/HF-LPT120.html">HF-LPT120</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/MXCHIP.html">MXCHIP</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/ESP8266.html">ESP8266</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/DebugLog.html">Debug Log Capture</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/OpenAPI.html">Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/NotificationAPI.html">Notification API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/WebsocketAPI.html">WebsocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API Tutorial &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseOpenAPI.html">Using Open API to control virtual device with Postman</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseSNoti.html">Real-time data synchronization demo for SNoti service</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseWebsocket.html">Control device using WebSocket</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/DataAPI.html">Aggregation API Guide</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/LinkageAPI.html">Device Linkage API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/devgroup_API.html">Device Grouping API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseQRCode.html">Generating device QR code for App binding</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/CloudFAQ.html">Cloud FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              User Manual &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/ST_IoT.html">Gizwits and ST Make IoT Development Easy</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ST/ICUBEGIZWITS.html">Getting Started with I-CUBE-GiZWITS</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Guide to Gizwits MCU Code Auto-Generator</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><h2 id="1-What-is-Gizwits-MCU-Code-Auto-Generator"><a href="#1-What-is-Gizwits-MCU-Code-Auto-Generator" class="headerlink" title="1. What is Gizwits MCU Code Auto-Generator?"></a>1. What is Gizwits MCU Code Auto-Generator?</h2><p>In order to lower the development barrier, shorten the development cycle, and reduce the development investment, Gizwits has rolled out Gizwits MCU Code Auto-Generator, which generates the device-side code for the corresponding product based on Data Points defined for the product.</p>
+<p>The automatically generated MCU code implements the packet encapsulation and parsing of the Gizwits communication protocol, the conversion logic of sensor data and communication data. All of these functions are integrated into a simple API set. When the device receives data from the cloud or the App, the program converts the data into corresponding events and notifies the application layer. You only needs to add the sensor control functions to the corresponding event handlers to complete the product development.</p>
+<p>With the automatically generated code, you don’t have to deal with protocol-related issues, and focus on the core functional development of the product, which allows you to save time and effort.</p>
+<h2 id="2-Supported-platforms"><a href="#2-Supported-platforms" class="headerlink" title="2. Supported platforms"></a>2. Supported platforms</h2><p>The hardware schemes supported by Gizwits MCU Code Auto-Generator are: standalone MCU scheme and SoC scheme. The hardware platforms supported by the standalone MCU scheme are: stm32f103c8x and common platform (i.e. other platforms); the hardware platform supported by the SoC scheme is: ESP8266.</p>
+<p>The difference between the standalone MCU scheme and the SoC scheme is as follow:</p>
+<table>
+<thead>
+<tr>
+<th>Scheme</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standalone MCU scheme</td>
+<td>The standalone MCU scheme adopts the form of MCU plus Wi-Fi module. The Wi-Fi module is responsible for interacting with the cloud, and communicates with the MCU through the serial port. While the MCU parses the Gizwits serial communication protocol and implements peripheral control logic and data acquisition from sensors.</td>
+</tr>
+<tr>
+<td>SoC scheme</td>
+<td>The SoC scheme only uses a Wi-Fi module. That means the internal resources of the Wi-Fi module are used to complete the sensor operation and product control logic, and simultaneously perform communication with the cloud. Compared with the standalone MCU scheme, one MCU is saved. The disadvantage is that the Wi-Fi module has less I/O resources, and the development is more complicated.</td>
+</tr>
+</tbody>
+</table>
+<p>In addition to supporting the STM32 platform, the standalone MCU scheme can also help us to port the generated Common Platform Edition of the MCU SDK to any platform that meets the requirements, so as to implement the various functions provided by Gizwits (for details, see Guide to porting Common Platform Edition of MCU SDK).</p>
+<h1 id="How-to-use-Gizwits-MCU-Code-Auto-Generator"><a href="#How-to-use-Gizwits-MCU-Code-Auto-Generator" class="headerlink" title="How to use Gizwits MCU Code Auto-Generator"></a>How to use Gizwits MCU Code Auto-Generator</h1><h2 id="1-Create-a-product"><a href="#1-Create-a-product" class="headerlink" title="1. Create a product"></a>1. Create a product</h2><p>Go to Gizwits Developer Center: <a href="http://dev.gizwits.com/" target="_blank" rel="noopener">http://dev.gizwits.com/</a></p>
+<p><img src="../../../../assets/en-us/DeviceDev/DevSDK/tool/11.png" alt="MCU Code Auto-Generator"></p>
+<p>Click “Create a new product” button at the top right corner of the Developer Center to create a new product.<br>Type the corresponding product information and click “Save”.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/DevSDK/tool/12.png" alt="MCU Code Auto-Generator"></p>
+<h2 id="2-Create-Data-Points"><a href="#2-Create-Data-Points" class="headerlink" title="2. Create Data Points"></a>2. Create Data Points</h2><p>Add corresponding Data Points for the product.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/DevSDK/tool/13.png" alt="MCU Code Auto-Generator"></p>
+<p><img src="../../../../assets/en-us/DeviceDev/DevSDK/tool/14.png" alt="MCU Code Auto-Generator"></p>
+<p>Click “Apply” after adding Data Points.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/DevSDK/tool/15.png" alt="MCU Code Auto-Generator"></p>
+<h2 id="3-Generate-code-for-the-target-platform"><a href="#3-Generate-code-for-the-target-platform" class="headerlink" title="3. Generate code for the target platform"></a>3. Generate code for the target platform</h2><p>Note: Gizwits MCU Code Auto-Generator cannot be used if no Data Points have been previously defined.</p>
+<h3 id="3-1-Generate-code-for-the-standalone-MCU-scheme"><a href="#3-1-Generate-code-for-the-standalone-MCU-scheme" class="headerlink" title="3.1 Generate code for the standalone MCU scheme"></a>3.1 Generate code for the standalone MCU scheme</h3><p>After defining Data Points, click “MCU Development” in the left navigation pane (Assume that the MCU used is STM32F103C8x) and choose the standalone MCU scheme for the hardware scheme. In the hardware platform drop-down list, select stm32f103c8x. Then click “Generate Code” and wait to download the generated code package. </p>
+<p>Note: If the MCU used is another MCU chip, please select the “Other Platforms” option, and then port the generated code package to the platform used. For details, see Guide to porting Common Platform Edition of MCU SDK.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/DevSDK/tool/16.png" alt="MCU Code Auto-Generator"></p>
+<p><img src="../../../../assets/en-us/DeviceDev/DevSDK/tool/17.png" alt="MCU Code Auto-Generator"></p>
+<h3 id="3-2-Generate-code-for-the-SoC-scheme"><a href="#3-2-Generate-code-for-the-SoC-scheme" class="headerlink" title="3.2 Generate code for the SoC scheme"></a>3.2 Generate code for the SoC scheme</h3><p>After defining Data Points, click “MCU Development” in the left navigation pane (Assume that the SoC used is ESP8266) and choose the SoC scheme for the hardware scheme. In the hardware platform drop-down list, select esp8266. Then click “Generate Code” and wait to download the generated code package.  </p>
+<p><img src="../../../../assets/en-us/DeviceDev/DevSDK/tool/18.png" alt="MCU Code Auto-Generator"></p>
+<p>After downloading the code package, unpack it.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/DevSDK/tool/19.png" alt="MCU Code Auto-Generator"></p>
+<h1 id="Explanation-of-the-generated-code"><a href="#Explanation-of-the-generated-code" class="headerlink" title="Explanation of the generated code"></a>Explanation of the generated code</h1><h2 id="1-STM32-platform"><a href="#1-STM32-platform" class="headerlink" title="1. STM32 platform"></a>1. STM32 platform</h2><p><img src="../../../../assets/en-us/DeviceDev/DevSDK/tool/20.png" alt="MCU Code Auto-Generator"></p>
+<p>The following table is the description of key code files.</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gizwits_product.c</td>
+<td>This file contains product-related processing functions, like gizEventProcess(), and platform-related hardware initialization, such as serial ports, timers, etc.</td>
+</tr>
+<tr>
+<td>gizwits_product.h</td>
+<td>This file is the header file of gizwits_product.c, which stores product-related macro definitions such as HARDWARE_VERSION, SOFTWARE_VERSION.</td>
+</tr>
+<tr>
+<td>gizwits_protocol.c</td>
+<td>This file is for function definitions of the SDK API.</td>
+</tr>
+<tr>
+<td>gizwits_protocol.h</td>
+<td>This file is the header file of gizwits_protocol.c, which contains the function declarations of the SDK API.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-ESP8266-platform"><a href="#2-ESP8266-platform" class="headerlink" title="2. ESP8266 platform"></a>2. ESP8266 platform</h2><p><img src="../../../../assets/en-us/DeviceDev/DevSDK/tool/21.png" alt="MCU Code Auto-Generator"></p>
+<p>The following table is the description of key code files.</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>libgagent.a</td>
+<td>The file is the device connection protocol library, which is located in the lib directory.</td>
+</tr>
+<tr>
+<td>gagent_external.h</td>
+<td>This file is the corresponding header file of libgagent.a, and the two files are used together.</td>
+</tr>
+<tr>
+<td>gizwits_product.c</td>
+<td>This file is for the platform-related processing, which contains the SDK API of event processing, i.e. gizwitsEventProcess().</td>
+</tr>
+<tr>
+<td>gizwits_product.h</td>
+<td>This file is the header file of gizwits_product.c, which contains product-related macro definitions such as HARDWARE_VERSION, SOFTWARE_VERSION.</td>
+</tr>
+<tr>
+<td>gizwits_protocol.c</td>
+<td>This file is for the protocol implementation, which contains functions of the SDK API.</td>
+</tr>
+<tr>
+<td>gizwits_protocol.h</td>
+<td>This file is the header file of gizwits_protocol.c, which contains protocol-related macro definitions and function declarations of the SDK API.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Secondary-development"><a href="#Secondary-development" class="headerlink" title="Secondary development"></a>Secondary development</h1><h2 id="1-Know-before-you-go"><a href="#1-Know-before-you-go" class="headerlink" title="1. Know before you go"></a>1. Know before you go</h2><p>The Gizwits IoT Cloud generates the platform-specific (STM32, ESP8266 etc.) code packages according to the Serial communication protocol for Gizwits IoT Cloud access based on the user defined product Data Points. You only needs to call the corresponding APIs or add the corresponding event handlers.</p>
+<p>The code framework is shown below:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/DevSDK/tool/22.png" alt="MCU Code Auto-Generator"></p>
+<p>The functional blocks that need to be implemented are:</p>
+<ul>
+<li>Downstream processing: For example, LED light switch, motor speed control, etc.</li>
+<li>Upstream processing: For example, temperature and humidity data acquisition, infrared sensor status acquisition, etc.</li>
+<li>Configuration processing: Configure network access and restore manufacture defaults.</li>
+</ul>
+<h2 id="2-Example"><a href="#2-Example" class="headerlink" title="2. Example"></a>2. Example</h2><p>The automatically generated code adopts a uniform protocol across the platforms, so the modifications done by the secondary development are almost the same. The STM32 platform is taken as an example below.</p>
+<h3 id="2-1-Downstream-processing"><a href="#2-1-Downstream-processing" class="headerlink" title="2.1 Downstream processing"></a>2.1 Downstream processing</h3><p>The first thing to do is sensor driver development, and then handle the corresponding event in the gizwitsEventProcess() function of gizwits_product.c under the Gizwits directory (in the following example of ledRgbControl(), which is used to control the RGB light color).</p>
+<p>Let’s take the example of controlling the RGB LED. The code example is as follows:</p>
+<p>Before modification:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if(0x01 == currentDataPoint.valueLED_ONOFF)</span><br><span class="line">&#123;</span><br><span class="line">  //user handle</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">  //user handle    </span><br><span class="line">&#125;        </span><br><span class="line">break;</span><br></pre></td></tr></table></figure>
+<p>After modification:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if(0x01 == currentDataPoint.valueLED_ONOFF)</span><br><span class="line">&#123;</span><br><span class="line">  //user handle</span><br><span class="line">ledRgbControl(254,0,0);</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">  //user handle    </span><br><span class="line">ledRgbControl(0,0,0);  </span><br><span class="line">&#125;        </span><br><span class="line">break;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-Upstream-processing"><a href="#2-2-Upstream-processing" class="headerlink" title="2.2 Upstream processing"></a>2.2 Upstream processing</h3><p>The first thing to do is sensor driver development, and then the sensor data acquisition is implemented in the userHandle() function of gizwits_product.c under the Gizwits directory. You only needs to assign the collected value to the device state structure of the corresponding user area (in the following example: currentDataPoint.valueInfrared = irHandle();).</p>
+<p>The following takes the data acquisition of the infrared sensor as an example (the operation of the read-only Data Point is automatically generated by the cloud):</p>
+<p>Before modification:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void userHandle(void)</span><br><span class="line">&#123;</span><br><span class="line">    /*</span><br><span class="line">    currentDataPoint.valueInfrared = ;//Add Sensor Data Collection</span><br><span class="line">    */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>After modification:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vvoid userHandle(void)</span><br><span class="line">&#123;</span><br><span class="line">    currentDataPoint.valueInfrared = irHandle();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Note: Since userHandle () is called in the while loop and its execution speed is fast, you can adjust the data collection cycle and the interface implementation location, to prevent unnecessary problems caused by the fast sensor data collection. However, it is not recommended to call the delay function in userHandle() to reduce the execution frequency. The correct method is as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void userHandle(void)</span><br><span class="line">&#123;</span><br><span class="line">static uint32_t irLastTimer = 0;</span><br><span class="line"></span><br><span class="line">if((gizGetTimerCount()-irLastTimer ) &gt; SAMPLING_TIME_MAX)     	&#123;</span><br><span class="line">currentDataPoint.valueInfrared = irHandle();</span><br><span class="line"></span><br><span class="line">irLastTimer = gizGetTimerCount();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-Configuration-processing"><a href="#2-3-Configuration-processing" class="headerlink" title="2.3 Configuration processing"></a>2.3 Configuration processing</h3><p>In addition to the upstream processing and downstream processing, some configuration operations need to be completed as follows:</p>
+<ul>
+<li>Configure network access</li>
+<li>Restore manufacture defaults</li>
+</ul>
+<p>An API is provided to do the above operations, which is defined below.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int32_t gizwitsSetMode(uint8_t mode)</span><br></pre></td></tr></table></figure>
+<p>The parameter mode has three choices of WIFI_RESET_MODE, WIFI_SOFTAP_MODE, and WIFI_AIRLINK_MODE (see WIFI_MODE_TYPE_T in gizwits_protocol.h for details), which are for restoring manufacture defaults, entering the SoftAP mode, and entering the AirLink mode respectively. You can implement different configuration ways according to your product requirements, e.g., pressing on button triggers your device to enter configuration mode.</p>
+<h1 id="More"><a href="#More" class="headerlink" title="More"></a>More</h1><p>As of 2017, Gizwits MCU Code Auto-Generator features:</p>
+<ul>
+<li>Supporting 8-bit, 16-bit, 32-bit MCUs</li>
+<li>Seamless docking with CubeMX</li>
+<li>Supporting four major types of MCUs: 51 MCU, MSP430, STM32, Arduino, including Alientek, etc.</li>
+<li>Compatible with ESP8266 SoC scheme, including 8M, 16M, 32M modules</li>
+</ul>
+<p>Try it now</p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id="share" target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async="async"></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
