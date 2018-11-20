@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <title>Guide to WeChat application development - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Guide to WeChat application development-Gizwits">
+  <meta name="keywords" content="Guide to WeChat application development docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header" v="">
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quick Start &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/GizwitsQuickStart.html">Gizwits Quick Start within 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/glossary.html">Glossary</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              App Dev Guide &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevGetStarted.html">Get Started with APP Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppCodeAutoGenerator.html">Gizwits App Code Auto-Generator</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      APP Frame Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSFramework.html">Gizwits App Framework for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSPushNotification.html">iOS Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSAuthReSkin.html">iOS Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSDevQuickStart.html">iOS APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidFramework.html">Gizwits App Framework for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidPushNotification.html">Android Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidAuthReSkin.html">Android Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidDevQuickStart.html">Android APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudFramework.html">Gizwits App Framework for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/VideoTutorials.html">How-to videos on Gizwits App Framework</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App SDK Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSSDKA2.html">Gizwits App SDK for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidSDKA2.html">Gizwits App SDK for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudSDK.html">Gizwits App SDK for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/TransparentTransmission.html">Data Transparent Transmission</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKLogCapture.html">SDK Debug Log Capture</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKErrorCodes.html">SDK Error Codes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/WechatDev/WeChatDev.html">WeChat SDK Guide</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/WechatDev/WechatDevIntro.html">WeChat Dev Intro</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      More Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/cloud/SharingSDK.html">Gizwits Device Sharing</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/third-party.html">Application process for third-party authentication</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevFAQ.html">App Dev FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              DeviceDev &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/DeviceDevIntro.html">Get started with device connection</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gizwits Cloud access &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/quickstart/UseMCU.html">MCU scheme</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/UseSOC.html">ESP8266-SoC scheme</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/module_source/module_source.html">Module Documents</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      GAgent Documents &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/gagent_info.html">Detailed annotation of GAgent</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/DebugTool.html">Firmware downloading on modules</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/debug/HF-LPB100.html">HF-LPB100</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/debug/HF-LPT120.html">HF-LPT120</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/debug/MXCHIP.html">MXCHIP</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/debug/ESP8266.html">ESP8266</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/OpenAPI.html">Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/NotificationAPI.html">Notification API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/WebsocketAPI.html">WebsocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API Tutorial &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseOpenAPI.html">Using Open API to control virtual device with Postman</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseSNoti.html">Real-time data synchronization demo for SNoti service</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseWebsocket.html">Control device using WebSocket</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/DataAPI.html">Aggregation API Guide</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/LinkageAPI.html">Device Linkage API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/devgroup_API.html">Device Grouping API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseQRCode.html">Generating device QR code for App binding</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/CloudFAQ.html">Cloud FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              User Manual &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/ST_IoT.html">Gizwits and ST Make IoT Development Easy</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ST/ICUBEGIZWITS.html">Getting Started with I-CUBE-GiZWITS</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Guide to WeChat application development</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Gizwits-App-SDK-for-WeChat"><a href="#Gizwits-App-SDK-for-WeChat" class="headerlink" title="Gizwits App SDK for WeChat"></a>Gizwits App SDK for WeChat</h1><p><a href="https://github.com/gizwits/gizwits-wechat-js-sdk" target="_blank" rel="noopener">WeChat SDK on Github</a></p>
+<h1 id="Goal-driven"><a href="#Goal-driven" class="headerlink" title="Goal-driven"></a>Goal-driven</h1><p>This guide is driven by the goal and removes unnecessary details so that Gizwits’s friends can quickly access WeChat. Well, let’s get started!</p>
+<h1 id="Why-access-WeChat"><a href="#Why-access-WeChat" class="headerlink" title="Why access WeChat?"></a>Why access WeChat?</h1><ul>
+<li>WeChat has a large number of users.</li>
+<li>Users are unwilling to install a new application for any vertical domain service.</li>
+<li>WeChat supports the popular operating systems, hence you applications are developed once and run everywhere.</li>
+<li>and more……</li>
+</ul>
+<p>Because of these benefits we will leverage the power of WeChat which is built on two essentials:</p>
+<ul>
+<li>User System (OpenId)</li>
+<li>Wechat App (AirKiss and built-in browser)</li>
+</ul>
+<p>In the end, we hope that customers will be able to use our smart devices just like the WeChat native features.</p>
+<h1 id="Do-you-have-a-WeChat-Official-Account"><a href="#Do-you-have-a-WeChat-Official-Account" class="headerlink" title="Do you have a WeChat Official Account?"></a>Do you have a WeChat Official Account?</h1><p>First of all, we need to sign up for a WeChat Official Account.</p>
+<p>Note that you cannot sign up for the WeChat Subscription Account which does not support WeChat authentication. We will sign up for the WeChat Service Account and complete the verification operation before we can enable the “Device Function” module and finally add a product.</p>
+<p>In the end, you will get two artifacts:</p>
+<ul>
+<li>The original ID of your Official Account</li>
+<li>QR code of your device</li>
+</ul>
+<p>Of course, you can also use a test account for debugging in the early stages of development.</p>
+<h1 id="Do-you-have-a-device"><a href="#Do-you-have-a-device" class="headerlink" title="Do you have a device?"></a>Do you have a device?</h1><p>Before WeChat access, it is necessary to ensure that the device can normally communicate with Gizwits IoT Cloud. The detailed development flow of the device is as follows.</p>
+<p><img src="../../../assets/en-us/WechatDev/wechat_02.png" alt="WeChat application development"></p>
+<p>Note that when integrating AirKiss into the Wi-Fi module, you need to configure the original ID of your WeChat Official Account. In other words, in addition to write the product_key of Gizwits into the MCU, it is also necessary to write the original ID of your WeChat Official Account into the Wi-Fi module firmware. Regarding the firmware downloading, if you have difficulties, please seek help from Gizwits Customer Service. </p>
+<h1 id="Device-QR-code"><a href="#Device-QR-code" class="headerlink" title="Device QR code"></a>Device QR code</h1><p>The WeChat App can add a device by scanning its QR code. To enable devices that have been successfully connected to Gizwits IoT Cloud to be controlled by WeChat App, check the following settings when creating a product on the WeChat Official Accounts Platform. The settings are as follows:</p>
+<p><img src="../../../assets/en-us/WechatDev/wechat_03.png" alt="Device QR code"></p>
+<p>Choose “Wi-Fi” device for the connection type;</p>
+<p>Select “Unique QR code for each product model” as the product adding method. After the product is added successfully, WeChat will generate only one QR code for each product model. After scanning this unique QR code, you can perform near-field discovery to bind devices using WeChat App. If you select “unique QR code for each product”, then a QR code will be generated for each product. Scanning the QR code can help directly bind the device, but it cannot bind the device through near-field discovery.</p>
+<p>For the product configuration mode, choose “network configuration by WeChat” and “Do not use encryption.”</p>
+<h1 id="Device-authentication"><a href="#Device-authentication" class="headerlink" title="Device authentication"></a>Device authentication</h1><p>The device must not only write the original ID of your official account (note that it is not an APPID) into the Wi-Fi firmware, but also register the MAC address of all devices to the WeChat server. In the beginning, WeChat sets the quota with the limit of 100 devices per user, which means that you can only authenticate 100 devices at most.</p>
+<p>The authentication method is to send a request to the WeChat API. For details, see WeChat Documentation - Device authentication. </p>
+<p>Many developers share the feedback that their authentication often fails. Here we give a set of examples based on Wi-Fi communication for reference.</p>
+<p><img src="../../../assets/en-us/WechatDev/wechat_04.png" alt="Device authentication"></p>
+<p>Note: The 12 characters of xxxxxxxxxxxx represents the device MAC address, and the id refers to the device ID, which is did of Gizwits. But Gizwits only assign a did value to a device until it comes online, so you cannot predict the value of did in advance. The usual practice is to set both id and MAC to the device MAC address.</p>
+<p>auth_key can be omitted, but set to an empty string, because this field cannot be absent.</p>
+<p>When the op_type is 0, it means adding one device, followed by the product_id field (product ID, which is generated after a product is added in the “device function” of WeChat Official Accounts Platform). When op_type is 1, it indicates that a device is updated, and the product_id field is omitted at the time.</p>
+<p>When performing bulk authentication, remember to update device_num at the top.</p>
+<p>In this way, the hardware (device) part of preparation are completed.</p>
+<h1 id="Primary-achievement"><a href="#Primary-achievement" class="headerlink" title="Primary achievement"></a>Primary achievement</h1><p>Well, to this point, you can reward yourself a little and enjoy the initial achievement!</p>
+<p>Open your WeChat (ensure Wi-Fi network access is in use) and scan your product QR code.</p>
+<p><img src="../../../assets/en-us/WechatDev/wechat_05.jpg" alt="Primary Achievement"></p>
+<p>There are two buttons below. The green button is for starting WeChat AirKiss, which sends the Wi-Fi SSID and password to the Wi-Fi module of the device.</p>
+<p>Some devices need to start matching mode at first in order to configure the network access, then perform the configuration on WeChat. After the configuration is complete, it will automatically jump to the device discovery page.</p>
+<p>On the discovery page, you can certainly find the device (whether it is bound or not) if you are all set to go. Click the discovered device and bind it. WeChat will automatically jump to the page of WeChat Official Account. Then, you can find an additional item on the WeChat settings page: Devices.</p>
+<p>Of course, the above operations are just for binding devices. The following part describes how to monitor the device Data Points.</p>
+<h1 id="Simplified-operation"><a href="#Simplified-operation" class="headerlink" title="Simplified operation"></a>Simplified operation</h1><p>In order to simplify the development, we have encapsulated some necessary APIs into two types of Gizwits App SDKs for WeChat: java-SDK and js-SDK, which encapsulate the Gizwits Open API and Web Socket API of Gizwits respectively. They are used for back-end and front-end development.</p>
+<p>These two SDKs will greatly simplify the operation of the API and help you take over token and user management. We only need to call related operations to bind and unbind devices.</p>
+<p>These SDKs can be downloaded in the attachment of this article.</p>
+<h1 id="Set-up-business-server"><a href="#Set-up-business-server" class="headerlink" title="Set up business server"></a>Set up business server</h1><p>What we need now is to control the devices.</p>
+<p>Since devices can communication with Gizwits IoT Cloud nomally, operations on the devices are actually how to interact with Gizwits IoT Cloud.</p>
+<h1 id="Device-Binding"><a href="#Device-Binding" class="headerlink" title="Device Binding"></a>Device Binding</h1><p>Now that you have bound the device in WeChat, you want to see the device online status. How to do?</p>
+<p>We use WeChat OpenId as a unique identifier to generate an anonymous user. When do you register the anonymous user? When WeChat binds a device, it will push a device binding event message to our business server. At this time, we will simultaneously complete the registration of anonymous users, as well as the user/device binding operation.</p>
+<p><img src="../../../assets/en-us/WechatDev/wechat_06.jpg" alt="Device Binding"></p>
+<p>When WeChat is binding a device, it sends such an event message:</p>
+<p><img src="../../../assets/en-us/WechatDev/wechat_6.5.png" alt="Device Binding"></p>
+<p>What we need are OpenID and MAC, and then we call the operation provided by the Java-SDK:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DeviceInfo deviceInfo = OpenApi.bindDevice(</span><br><span class="line">                                    wechatOpenId,</span><br><span class="line">                                    gizwitsAppId,</span><br><span class="line">                                    gizwitsProductKey,</span><br><span class="line">                                    gizwitsProductSecret,</span><br><span class="line">                                    Mac,</span><br><span class="line">                                    deviceAlias,</span><br><span class="line">                                    deviceRemark)</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wechatOpenId</td>
+<td>String</td>
+<td>WeChat OpenId, which is an anonymous user registered in Gizwits</td>
+</tr>
+<tr>
+<td>gizwitsAppId</td>
+<td>String</td>
+<td>The ID of the App with which the Gizwits product is associated</td>
+</tr>
+<tr>
+<td>gizwitsProductKey</td>
+<td>String</td>
+<td>Gizwits product key</td>
+</tr>
+<tr>
+<td>gizwitsProductSecret</td>
+<td>String</td>
+<td>Gizwits product secret</td>
+</tr>
+<tr>
+<td>mac</td>
+<td>String</td>
+<td>Device MAC address</td>
+</tr>
+<tr>
+<td>deviceAlias</td>
+<td>String</td>
+<td>Device alias</td>
+</tr>
+<tr>
+<td>deviceRemark</td>
+<td>String</td>
+<td>Device notes</td>
+</tr>
+</tbody>
+</table>
+<p>This operation solves two problems at one time: registering an anonymous user and binding the user and the device. Many parameters have to be set. All parameters are of type String.</p>
+<p>In which deviceAlias (device alias) and deviceRemark (device notes) can be set with empty string “”. gizwitsProductKey is the key of the product you created in the Developer Center.</p>
+<p><img src="../../../assets/en-us/WechatDev/wechat_07.jpg" alt="Device Binding"></p>
+<p>The gizwitsProductSecret, which is the secret corresponding to the product, can be found in the product details.</p>
+<p><img src="../../../assets/en-us/WechatDev/wechat_08.jpg" alt="Device Binding"></p>
+<p>gizwitsAppId is the ID of the App in Gizwits IoT Cloud. Because a product may be operated by multiple Apps, such as an iOS App, an Android App, a Web App, or even a light App such as WeChat, each of them is considered as a separate App. Therefore, after creating a product, you can also associate one or more Apps for the product. The gizwitsAppId here is the ID of the App that is associated with the product. Note that an App must be associated with the product before it can be used.</p>
+<p>When you call this operation, you can register an anonymous user and bind user/device. Is it convenient? Of course, you can further encapsulate this SDK for your convenience. It will not be explained here.</p>
+<h1 id="Unbind-Devices"><a href="#Unbind-Devices" class="headerlink" title="Unbind Devices"></a>Unbind Devices</h1><p>Unbinding operation is similar as binding operation. When WeChat pushes an unbinding event message, we will perform unbinding operation by calling the following method in the SDK:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean isSuccess = OpenApi.unbindDevice(wechatOpenId, gizwitsAppId, gizwitsDid);</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WechatOpenId</td>
+<td>String</td>
+<td>OpenId in WeChat, which is an anonymous user registered in Gizwits</td>
+</tr>
+<tr>
+<td>gizwitsAppId</td>
+<td>String</td>
+<td>The ID of the App with which the Gizwits product is associated</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Get-device-online-status"><a href="#Get-device-online-status" class="headerlink" title="Get device online status"></a>Get device online status</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean isOnline = OpenApi.getDeviceOnlineStatus(wechatOpenId, gizwitsAppId, gizwitsDid);</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wechatOpenId</td>
+<td>String</td>
+<td>OpenId in WeChat, which is an anonymous user registered in Gizwits IoT Cloud</td>
+</tr>
+<tr>
+<td>gizwitsAppId</td>
+<td>String</td>
+<td>The ID of the App with which the Gizwits product is associated</td>
+</tr>
+<tr>
+<td>gizwitsDid</td>
+<td>String</td>
+<td>The device ID in Gizwits IoT Cloud, which will be re-registered when the device is reset</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Code-sample"><a href="#Code-sample" class="headerlink" title="Code sample"></a>Code sample</h1><p>Please note that some developers might encounter deployment failure on server. Catalina log in tomcat will print:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javax.net.ssl.SSLException: java.security.ProviderException: java.security.KeyException</span><br></pre></td></tr></table></figure>
+<p>This is because the SDK uses HTTPS for access.</p>
+<p>The workaround is: Upgrade the nss library in the server environment.</p>
+<h1 id="Control-device-on-Wechat-page"><a href="#Control-device-on-Wechat-page" class="headerlink" title="Control device on Wechat page"></a>Control device on Wechat page</h1><p><img src="../../../assets/en-us/WechatDev/wechat_09.png" alt="Control device on Wechat page"></p>
+<p>Well, we have now bound the device and can also know the device online status. But how do we control our device? A good user experience of course depends on interactive pages.</p>
+<p>Here we will build an interactive page step by step to monitor our device!</p>
+<h1 id="Get-OpenId"><a href="#Get-OpenId" class="headerlink" title="Get OpenId"></a>Get OpenId</h1><p>When a user navigate to the page, how do we know which user is it? We need to get the current user’s OpenId to identify which user it is. How to get it? For details, see the official document of WeChat.</p>
+<p>In simple terms, we send an authentication request to WeChat’s server. WeChat will verify whether the URL we request is an authorized domain name. If the verification is successful, it will be forwarded to our URL with a few parameters.</p>
+<p>The most important parameter is “code”. We can obtain OpenId through “code”. Then we print OpenId on the page. </p>
+<p><img src="../../../assets/en-us/WechatDev/wechat_10.png" alt="Get OpenId"></p>
+<h1 id="Web-Socket-connection"><a href="#Web-Socket-connection" class="headerlink" title="Web Socket connection"></a>Web Socket connection</h1><p>For Gizwits IoT Cloud access with Web Socket API, it’s encapsulated into the JS-SDK. you only need to include it on your page.</p>
+<h1 id="Initialize-Gizwits-service"><a href="#Initialize-Gizwits-service" class="headerlink" title="Initialize Gizwits service"></a>Initialize Gizwits service</h1><p>The first is to create a Gizwits service:</p>
+<p><img src="../../../assets/en-us/WechatDev/wechat_11.png" alt="Initialize Gizwits service"></p>
+<p>This Gizwits service will be responsible for all the following operations, including: connecting devices, reading device Data Points, controlling devices, etc.</p>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiHost</td>
+<td>String</td>
+<td>The API target domain name of Web Socket</td>
+</tr>
+<tr>
+<td>CommType</td>
+<td>String</td>
+<td>Protocol type: custom (Raw Data Protocol v4); attrs_v4 (Data Point Protocol v4)</td>
+</tr>
+<tr>
+<td>wechatOpenId</td>
+<td>String</td>
+<td>WeChat user OpenId</td>
+</tr>
+<tr>
+<td>GizwitsAppId</td>
+<td>String</td>
+<td>The ID of the App with which the Gizwits product is associated</td>
+</tr>
+</tbody>
+</table>
+<p>Of course, at this time, the Gizwits service does not run. We also need to initialize it. But before that, we can set a callback function that will execute automatically after the initialization is complete.</p>
+<p><img src="../../../assets/en-us/WechatDev/wechat_12.png" alt="Initialize Gizwits service"></p>
+<p>When gizwits.init() is executed, the Gizwits service is initialized and all devices bound to the anonymous user OpenId are inserted into the array variable “devices” of the callback function. </p>
+<p>What we need to do should be written in the callback function gizwits.onInit.</p>
+<p>Each device in the devices list will have six attributes: product_key (product key), dev_alias (device alias), did (device ID), mac, is_online (online/offline state), and remark (device note). We can use them in light of circumstances.</p>
+<h1 id="Device-List"><a href="#Device-List" class="headerlink" title="Device List"></a>Device List</h1><p>In the above step, we have obtained a list of devices. In general, a customer may own multiple devices. Therefore, we can list all devices at this stage. It is up to the user to determine which device to control.</p>
+<h1 id="Connect-device"><a href="#Connect-device" class="headerlink" title="Connect device"></a>Connect device</h1><p><img src="../../../assets/en-us/WechatDev/wechat_13.png" alt="Connect device"></p>
+<p>You can connect to the device that you want to operate on by: gizwits.connect(did). Of course, after the connection is successful, there is also a callback function: gizwits.onConnected. This callback function does not have incoming arguments.</p>
+<p>Note that before connecting the device, it must be initialized at first.</p>
+<p>Since initializing and connecting devices are not synchronous operations, if you simply perform them one after the other, you may get an error. Therefore, it is recommended that the operation of connecting device be placed in the callback function of the initialization method to ensure the execution sequence.</p>
+<p>After the connection is successful, you can receive the data reported by the device. The reported data is passed to the callback function: gizwits.onReceivedAttrs, whose format is as follows:</p>
+<p><img src="../../../assets/en-us/WechatDev/wechat_14.png" alt="Connect device"></p>
+<p><img src="../../../assets/en-us/WechatDev/wechat_15.png" alt="Connect device"></p>
+<h1 id="Read-device-Data-Points"><a href="#Read-device-Data-Points" class="headerlink" title="Read device Data Points"></a>Read device Data Points</h1><p>It is also very simple to get the device Data Points. You just call the gizwits.read() method and pass in the did to get it immediately. Similarly, the data is obtained through the callback function gizwits.onReceivedAttrs, or gizwits.onReceivedRaw.</p>
+<h1 id="Connection-error"><a href="#Connection-error" class="headerlink" title="Connection error"></a>Connection error</h1><p>When a Web Socket connection error occurs, the gizwits.onError function is called. If necessary, the function can be overridden; the error message is contained in the incoming argument of the callback function:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gizwits.onError = function(value)&#123;</span><br><span class="line">    Console.log(&quot;error!!!!:::::&quot;, value.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Device-comes-online-goes-offline"><a href="#Device-comes-online-goes-offline" class="headerlink" title="Device comes online/goes offline"></a>Device comes online/goes offline</h1><p>Gizwits service will call gizwits.onOnlineStatusChanged callback function when a device comes online or goes offline.</p>
+<p>The callback function has two arguments: did and on_online.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gizwits.onOnlineStatusChanged = function(value) &#123;</span><br><span class="line">    Alert(&quot;Device oneline/offline notification, did=&quot;, value.did);</span><br><span class="line">    Alert(&quot;Device oneline/offline notification, is_online=&quot;, value.is_online);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Control-device"><a href="#Control-device" class="headerlink" title="Control device"></a>Control device</h1><p>The last is the remote control of the device.</p>
+<p>For the method calls used in remote control, use the method gizwitsws.send(command) when commType=custom, and the method gizwitsws.write(command) when the commType=attrs_v4.</p>
+<p>For the method argument, if commType=custom, pass the raw data according to Raw Data Protocol v4, for example [,,…]; if commType=attrs_v4, pass Data Point name-value pairs, for example {“power”:true}.</p>
+<p>The following is a code example of controlling a RBG lamp:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var command = &apos;&#123;&quot;LED_R&quot;: 0, &quot;LED_G&quot;: 0, &quot;LED_B&quot;: 0&#125;&apos;;</span><br><span class="line">gizwits.write(did, JSON.parse(command));</span><br></pre></td></tr></table></figure>
+<p>Of course, the premise of controlling devices is that we have connected a device to Gizwits IoT Cloud.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>At this point, we have already achieved the core part of WeChat access with the Java-SDK and js-SDK. We almost do not need to worry about how to call Gizwits IoT Cloud API as well as Web Socket operations, but directly call the SDK methods.</p>
+<p>Finally, I hope you can give more feedback so as to help us offer a more convenient development environment. </p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id="share" target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async="async"></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
