@@ -1,0 +1,965 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <title>Gokit-MCU program with explanation - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Gokit-MCU program with explanation-Gizwits">
+  <meta name="keywords" content="Gokit-MCU program with explanation docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header" v="">
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quick Start &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/GizwitsQuickStart.html">Gizwits Quick Start within 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/glossary.html">Glossary</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              App Dev Guide &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevGetStarted.html">Get Started with APP Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppCodeAutoGenerator.html">Gizwits App Code Auto-Generator</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      APP Frame Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSFramework.html">Gizwits App Framework for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSPushNotification.html">iOS Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSAuthReSkin.html">iOS Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSDevQuickStart.html">iOS APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidFramework.html">Gizwits App Framework for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidPushNotification.html">Android Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidAuthReSkin.html">Android Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidDevQuickStart.html">Android APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudFramework.html">Gizwits App Framework for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/VideoTutorials.html">How-to videos on Gizwits App Framework</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App SDK Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSSDKA2.html">Gizwits App SDK for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidSDKA2.html">Gizwits App SDK for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudSDK.html">Gizwits App SDK for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/TransparentTransmission.html">Data Transparent Transmission</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKLogCapture.html">SDK Debug Log Capture</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKErrorCodes.html">SDK Error Codes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WeChatDev.html">WeChat SDK Guide</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WechatDevIntro.html">WeChat Dev Intro</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      More Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SharingSDK.html">Gizwits Device Sharing</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/ThirdpartyAuth.html">Set Up Third-party Authentication</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevFAQ.html">App Dev FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              DeviceDev &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/DeviceDevGetStarted.html">Get Started with Device Development</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Device Connection &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/MCUScheme.html">Standalone MCU Scheme</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/SoCScheme.html">SoC Scheme</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ModuleResources.html">Module Resources</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      GAgent Guides &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/GAgent.html">GAgent</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/DebugTool.html">Gizwits Serial Port Debugger</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/HF-LPB100.html">HF-LPB100</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/HF-LPT120.html">HF-LPT120</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/MXCHIP.html">MXCHIP</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/ESP8266.html">ESP8266</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/DebugLog.html">Debug Log Capture</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gizwits MCU Code Auto-generator &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/MCUCodeAutoGenerator.html">Gizwits MCU Code Auto-generator</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/PortingCommonPlatform.html">Porting Common Platform Edition of MCU SDK</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/PortingUsingSTM32CubeMX.html">Porting Using STM32CubeMX</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/TailoringMCUCode.html">Tailoring MCU SDK to Resource-Limited Platform</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/OpenAPI.html">Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/NotificationAPI.html">Notification API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/WebsocketAPI.html">WebsocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API Tutorial &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseOpenAPI.html">Using Open API to control virtual device with Postman</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseSNoti.html">Real-time data synchronization demo for SNoti service</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseWebsocket.html">Control device using WebSocket</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/DataAPI.html">Aggregation API Guide</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/LinkageAPI.html">Device Linkage API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/devgroup_API.html">Device Grouping API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseQRCode.html">Generating device QR code for App binding</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/CloudFAQ.html">Cloud FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              User Manual &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/ST_IoT.html">Gizwits and ST Make IoT Development Easy</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ST/ICUBEGIZWITS.html">Getting Started with I-CUBE-GiZWITS</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Gokit-MCU program with explanation</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="Detailed-communication-protocol"><a href="#Detailed-communication-protocol" class="headerlink" title="Detailed communication protocol"></a>Detailed communication protocol</h1><h2 id="1-Command-format"><a href="#1-Command-format" class="headerlink" title="1. Command format"></a>1. Command format</h2><p>You first need to understand the conventions of the communication protocol, and the protocol format is:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/11.png" alt="Gokit3 MCU Program"></p>
+<p>Description:</p>
+<p>1) The header is fixed to 0xFFFF;</p>
+<p>2) The length (len) refers to the number of bytes used from cmd to the end of the entire packet;</p>
+<p>3) The command word (cmd) indicates the specific command meaning. For details, see the protocol example;</p>
+<p>4) The message sequence number (sn) is given by the sender, and returned by the receiver to the sender when responding to the command;</p>
+<p>5) Flag (flag), defaults to 0;</p>
+<p>6) payload (p0 data area), see p0 data area convention for details;</p>
+<p>7) The checksum (checksum) is calculated for len~DATA, summed by byte;</p>
+<p>8) All sent commands are ACKed. If not receiving a response within 200 milliseconds, the sender should resend at most 3 times;</p>
+<p>9) An integer with more than one byte is encoded in big endian (network byte order);</p>
+<p>10) All numbers are in hexadecimal format;</p>
+<h2 id="2-p0-data-area-convention"><a href="#2-p0-data-area-convention" class="headerlink" title="2. p0 data area convention"></a>2. p0 data area convention</h2><p>The p0 data area convention has the following clauses:</p>
+<p>1) When the module sends a command to the MCU, the p0 command, command flag and the writable data area are carried.</p>
+<p>2) The p0 command and the complete data area are carried when the MCU actively reports the status or replies the status query from the module.</p>
+<p>3) The data area will automatically merge the Boolean and enumeration variables, and have a strict order, which cannot be changed arbitrarily.</p>
+<p>How to understand the convention? Open the “XX - Serial communication protocol for Gizwits IoT Cloud access”, you will see the following commands:</p>
+<p>1) The Wi-Fi module requests device information;</p>
+<p>2) The heartbeat of the Wi-Fi module and the device MCU;</p>
+<p>3) The device MCU tells the Wi-Fi module to enter the configuration mode;</p>
+<p>4) The device MCU resets the Wi-Fi module;</p>
+<p>5) The Wi-Fi module notifies the device MCU of the working state changes of the Wi-Fi module;</p>
+<p>6) The Wi-Fi module requests to restart the MCU;</p>
+<p>7) Illegal message notification;</p>
+<p>8) The Wi-Fi module reads the current state of the device;</p>
+<p>9) The device MCU actively reports the current status to the Wi-Fi module;</p>
+<p>10) The Wi-Fi module controls the device;</p>
+<p>(The rest items are not important and thus omitted)</p>
+<p>The p0 data area convention is used to complete the uploading of valid data (4.8, 4.9) and the delivering (4.10). The format of the uploading protocol is: action(1B) + dev_status(11B); the format of the delivering protocol is: action(1B) + attr_flags(1B) + attr_vals(6B); </p>
+<table>
+<thead>
+<tr>
+<th>Fields of p0 data area</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td>Indicates the direction of the “p0 command”, i.e., Wi-Fi -&gt; MCU or MCU -&gt; Wi-Fi</td>
+</tr>
+<tr>
+<td>dev_status</td>
+<td>Indicates the status of all reported Data Points</td>
+</tr>
+<tr>
+<td>attr_flags</td>
+<td>Indicates the valid control-type Data Points</td>
+</tr>
+<tr>
+<td>attr_vals</td>
+<td>Indicates the values of the valid control-type Data Points</td>
+</tr>
+</tbody>
+</table>
+<p>It is necessary to note the third clause of the p0 data area convention. The data area will automatically merge the Boolean and enumeration variables, and have a strict order, which cannot be changed arbitrarily. </p>
+<p>Above is the explanation of the p0 data area convention. Next, this document goes into details on the MCU program.</p>
+<h1 id="Detailed-program"><a href="#Detailed-program" class="headerlink" title="Detailed program"></a>Detailed program</h1><h2 id="1-Code-folders"><a href="#1-Code-folders" class="headerlink" title="1 Code folders"></a>1 Code folders</h2><h3 id="1-1-Primary-folder"><a href="#1-1-Primary-folder" class="headerlink" title="1.1 Primary folder"></a>1.1 Primary folder</h3><p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/12.png" alt="Gokit3 MCU Program"></p>
+<table>
+<thead>
+<tr>
+<th>Folder/File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gizwits</td>
+<td>Protocol related folders</td>
+</tr>
+<tr>
+<td>Hal</td>
+<td>Peripheral driver libraries</td>
+</tr>
+<tr>
+<td>Lib</td>
+<td>STM32 driver libraries</td>
+</tr>
+<tr>
+<td>Project</td>
+<td>Project files</td>
+</tr>
+<tr>
+<td>User</td>
+<td>Code entry folder</td>
+</tr>
+<tr>
+<td>Utils</td>
+<td>Utility folder</td>
+</tr>
+<tr>
+<td>README.txt</td>
+<td>Gokit3(V) documentation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-2-Code-files"><a href="#1-2-Code-files" class="headerlink" title="1.2 Code files"></a>1.2 Code files</h3><p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/13.png" alt="Gokit3 MCU Program"></p>
+<p>The following table is the description of key code files.</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gizwits_product.c</td>
+<td>This file contains product-related processing functions, like gizEventProcess(), and platform-related hardware initialization, such as serial ports, timers, etc.</td>
+</tr>
+<tr>
+<td>gizwits_product.h</td>
+<td>This file is the header file of gizwits_product.c, which stores product-related macro definitions such as HARDWARE_VERSION, SOFTWARE_VERSION.</td>
+</tr>
+<tr>
+<td>gizwits_protocol.c</td>
+<td>This file is for function definitions of the SDK API.</td>
+</tr>
+<tr>
+<td>gizwits_protocol.h</td>
+<td>This file is the header file of gizwits_protocol.c, which contains the function declarations of the SDK API.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-3-APIs"><a href="#1-3-APIs" class="headerlink" title="1.3 APIs"></a>1.3 APIs</h3><table>
+<thead>
+<tr>
+<th>API name</th>
+<th>API function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void gizwitsInit(void)</td>
+<td>The initialization API for the Gizwits protocol.You can call the API to accomplish the Gizwits protocol-related initialization (including protocol-related timers and serial port initialization).</td>
+</tr>
+<tr>
+<td>void gizwitsSetMode(uint8_t mode)</td>
+<td>The parameter mode has three choices of 0, 1, and 2, and other input is invalid.When the parameter is set to 0, it is used for restoring manufacture defaults, which will clear all settings and restore the module to the factory defaults. When the parameter is set to 1 or 2, it is used for SoftAP and AirLink mode switch. 1 for entering the SoftAP mode, and 2 for entering the AirLink mode.</td>
+</tr>
+<tr>
+<td>void gizwitsHandle(dataPoint_t *dataPoint)</td>
+<td>The parameter dataPoint is the device Data Point.This function completes the processing of the corresponding protocol data, that is, the related operations of data reporting.</td>
+</tr>
+<tr>
+<td>int8_t gizwitsEventProcess (eventInfo_t info, uint8_t data, uint32_t len)</td>
+<td>Parameter info: event queue. Parameter data: data. Parameter len: data length. User data processing function, including Wi-Fi status update events and control-type events. a). Wi-Fi status update events. The events whose name begins with WIFI_ are the Wi-Fi status update events. The parameter data is valid only when the event name is WIFI_RSSI, and its value is RSSI value, its data type is uint8_t, and its value range is 0~7.  b). Control-type events. They are related to the Data Points. This version of the code will print the relevant event information and the relevant values. You only need to implement the specific execution of the command.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-Program-implementation-principle"><a href="#2-Program-implementation-principle" class="headerlink" title="2. Program implementation principle"></a>2. Program implementation principle</h2><p><strong>Protocol implementation mechanism:</strong></p>
+<p>After the protocol is parsed, the valid Data Points of the p0 data area generate the corresponding Data Point events, which are used to process the Data Points.</p>
+<p><strong>Description of the conversion of Data Point into event:</strong></p>
+<p>The valid Data Points are determined according to the attr_flags of the p0 data area, which are converted into the corresponding Data Point events, which then are processed in the event handler (gizwitsEventProcess).</p>
+<h2 id="3-Program-initialization"><a href="#3-Program-initialization" class="headerlink" title="3. Program initialization"></a>3. Program initialization</h2><h3 id="3-1-Data-structure-definitions"><a href="#3-1-Data-structure-definitions" class="headerlink" title="3.1 Data structure definitions"></a>3.1 Data structure definitions</h3><p>Structure: dataPoint_t</p>
+<p>Code location: MCU_STM32xxx_source\Gizwits\gizwits_protocol.h</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/14.png" alt="Gokit3 MCU Program"></p>
+<p>Description: The structure dataPoint_t is used to store the device status of the user area. After you assign a value to the corresponding data field according to the Data Point defined in the cloud, you do not need to care about the data conversion. The data field corresponds to dev_status(11B) of “4.9: The device MCU actively reports the current status to the Wi-Fi module” in the p0 data area convention.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/15.png" alt="Gokit3 MCU Program"></p>
+<p>Structure: attrFlags_t, attrVals_t</p>
+<p>Code location: MCU_STM32xxx_source\Gizwits\gizwits_protocol.h</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/16.png" alt="Gokit3 MCU Program"></p>
+<p>The structures of attrFlags_t and attrVals_t correspond to attr_flags(1B) and attr_vals(6B) of “4.10 The Wi-Fi module controls the device” in the p0 data area convention respectively:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/17.png" alt="Gokit3 MCU Program"> </p>
+<p>Structure: devStatus_t</p>
+<p>Code location: MCU_STM32xxx_source\Gizwits\gizwits_protocol.h</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/18.png" alt="Gokit3 MCU Program"> </p>
+<p>The structure devStatus_t corresponds to dev_status(11B) of “4.9 The device MCU actively reports the current status to the Wi-Fi module” in p0 data area convention:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/19.png" alt="Gokit3 MCU Program"> </p>
+<p>Note:</p>
+<p>A. Data structure description</p>
+<p>dataPoint_t is the application layer data structure that developers need to understand. (For details, see: “2.7.1 Get read-only data” section).</p>
+<p>attrFlags_t, attrVals_t, and devStatus_t are the communication layer data structures that developers need to understand in combination with the communication protocol.</p>
+<p>B. Example of bit field:</p>
+<p>uint8_t motor_switch:1; is a way of using bit field. Since the uint8_t type data occupies 8 bits of memory space, the motor_switch in the protocol occupies the bit field 0 (the first bit), so uint8_t motor_switch: 1 indicates that 1 bit memory space is used. </p>
+<p>uint8_t reserve:7; Because the minimum unit of memory request in the program is byte, and here we are using bit (8bit = 1byte), so it requires padding for the remaining 7 bits that are less than 1byte (when using n bits, it requires padding for the remaining 8-n bits).</p>
+<p>Tip: Bit field cannot be used across bytes, otherwise it causes data read and write errors.</p>
+<h3 id="3-2-Program-main-function"><a href="#3-2-Program-main-function" class="headerlink" title="3.2 Program main function"></a>3.2 Program main function</h3><p>Location: main() function in MCU_STM32xxx_source\User\main.c:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/20.png" alt="Gokit3 MCU Program"></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemInit()</td>
+<td>Platform related hardware initialization. It is not a MCU SDK API. The function name may differ on different platforms.</td>
+</tr>
+<tr>
+<td>userInit()</td>
+<td>User related initialization, such as peripheral initialization, serial port initialization for print. It is not a MCU SDK API. The function name may differ on different platforms.</td>
+</tr>
+<tr>
+<td>gizwitsInit()</td>
+<td>Platform and protocol initialization, such as user timer initialization, serial port initialization for communication. It is a MCU SDK API.</td>
+</tr>
+<tr>
+<td>userHandle()</td>
+<td>Callback function for user events. Users can customize the events in this function to complete the corresponding protocol processing. It is not a MCU SDK API. The function name may differ on different platforms.</td>
+</tr>
+<tr>
+<td>gizwitsHandle()</td>
+<td>Protocol related main function. It is a MCU SDK API.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-3-User-initialization"><a href="#3-3-User-initialization" class="headerlink" title="3.3 User initialization"></a>3.3 User initialization</h3><p>Next, look at the user related initialization code (location: userInit() function in gizwits_product.c):</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/21.png" alt="Gokit3 MCU Program"></p>
+<p>This part completes the hardware driver initialization of the RGB LED, motor, temperature and humidity, infrared sensor and the motor initial state setting. The corresponding driver code is implemented in MCU_STM32xxx_source\Hal.</p>
+<p>The code snippet accomplishes the network access configuration. You can update it according to you own needs.</p>
+<p>The following is the platform protocol related initialization (location: gizwitsInit() function in gizwits_protocol.c):</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/22.png" alt="Gokit3 MCU Program"></p>
+<p>The initialization of the timer and serial port is completed (see Sections 2.3.4 and 2.3.5 for details) and the initialization of a ring buffer.</p>
+<p>The final is the initialization of a variable of the communication processing module structure, which is a global variable of the communication module:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/23.png" alt="Gokit3 MCU Program"></p>
+<p>Definition location: Gizwits\gizwits_protocol.c</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/24.png" alt="Gokit3 MCU Program"></p>
+<p>For related structures, see the section “2.3.1 Data structure definitions” for details.</p>
+<h3 id="3-4-Timer"><a href="#3-4-Timer" class="headerlink" title="3.4 Timer"></a>3.4 Timer</h3><p>Timer initialization, code location: timerInit() function in MCU_STM32xxx_source\Gizwits\gizwits_product.c</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/25.png" alt="Gokit3 MCU Program"></p>
+<p>Note: Here we define a timer with a period of 1ms. The timing calculation formula is:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/26.png" alt="Gokit3 MCU Program"></p>
+<p>Timer interrupt handler, code location:</p>
+<p>MCU_STM32xxx_source\Gizwits\gizwits_product.c</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/27.png" alt="Gokit3 MCU Program"></p>
+<p>Note: In this interrupt handler, we have completed the timing accumulation counting with a period of 1ms.</p>
+<p>Instructions for use:</p>
+<p>Code location: MCU_STM32xxx_source\Gizwits\gizwits_product.h</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/28.png" alt="Gokit3 MCU Program"></p>
+<p>a. Here we use the timer TIM3 (#define TIMER TIM3);</p>
+<p>b. The interrupt callback handler of TIM3 is UTIM3_IRQHandler() (#define TIMER_IRQ_FUN TIM3_IRQHandler);</p>
+<p>Tip: To reuse TIMER2, modify the corresponding macros:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/29.png" alt="Gokit3 MCU Program"></p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/30.png" alt="Gokit3 MCU Program"></p>
+<h3 id="3-5-Serial-port"><a href="#3-5-Serial-port" class="headerlink" title="3.5 Serial port"></a>3.5 Serial port</h3><p>Serial port initialization, location: uartInit() in MCU_STM32xxx_source\Gizwits\gizwits_product.c</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/31.png" alt="Gokit3 MCU Program"></p>
+<p>Serial port interrupt handler, location: MCU_STM32xxx_source\Gizwits\gizwits_product.c</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/32.png" alt="Gokit3 MCU Program"> </p>
+<p>Instructions for use:</p>
+<p>Code location: MCU_STM32xxx_source\Gizwits\gizwits_product.h</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/33.png" alt="Gokit3 MCU Program"></p>
+<p>a. Here we use USART2 (#define UART USART2) as the serial port for data communication;</p>
+<p>b. Set its baud rate to 9600 (#define UART_BAUDRATE 9600)</p>
+<p>c. The serial port interrupt handler of USART2 is USART2_IRQHandler() (#define UART_IRQ_FUN USART2_IRQHandler). In this interrupt handler, we complete the reception of serial data.</p>
+<p>Tip: To reuse USART1, modify the corresponding macros:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/34.png" alt="Gokit3 MCU Program"></p>
+<h2 id="4-Configuration-mode"><a href="#4-Configuration-mode" class="headerlink" title="4. Configuration mode"></a>4. Configuration mode</h2><p>Devices need to enter the configuration mode to access Internet and communicate with the cloud. In this example project, the corresponding configuration modes are triggered by a button.</p>
+<p>Wi-Fi configuration interface description:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"></span><br><span class="line">* @brief Wi-Fi configuration function</span><br><span class="line"></span><br><span class="line">* You can call the function to enable the Wi-Fi module to enter the corresponding configuration mode or reset module.</span><br><span class="line"></span><br><span class="line">* @param[in] mode configuration mode choices: 0x0, reset; 0x01, SoftAP mode; 0x02, AirLink mode</span><br><span class="line"></span><br><span class="line">* @return Error code</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">int32_t gizwitsSetMode(uint8_t mode);</span><br></pre></td></tr></table></figure>
+<p>The interface call location in the program: MCU_STM32xxx_source\User\main.c</p>
+<p>A. Enter SoftAP mode: short press on the key2.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/35.png" alt="Gokit3 MCU Program"></p>
+<p>B. Enter AirLink mode: long press on the key2.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/36.png" alt="Gokit3 MCU Program"></p>
+<p>C. Module reset: Long press on the key1.</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/37.png" alt="Gokit3 MCU Program"></p>
+<h2 id="5-Implementation-of-protocol-processing"><a href="#5-Implementation-of-protocol-processing" class="headerlink" title="5. Implementation of protocol processing"></a>5. Implementation of protocol processing</h2><p>Location: gizwitsHandle() function in MCU_STM32xxx_source\Gizwits\gizwits_protocol.c:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/38.png" alt="Gokit3 MCU Program"></p>
+<p>The following is a detailed description of the protocol handler:</p>
+<ul>
+<li>The first is the initialization of some local variables. The more important is: “protocolHead_t *recvHead = NULL;” It is used to save the parsed protocol header.</li>
+</ul>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/39.png" alt="Gokit3 MCU Program"></p>
+<ul>
+<li>Then it is the retransmission mechanism of the protocol. It is used to determine the timeout of the transmitted protocol data. The retransmission happens after timeout of 200ms, which is repeated at most 3 times:</li>
+</ul>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/40.png" alt="Gokit3 MCU Program"> </p>
+<ul>
+<li>The program will then fetch a packet of data from the ring buffer, such as 4.9:</li>
+</ul>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/41.png" alt="Gokit3 MCU Program"></p>
+<p>The corresponding code is as follows:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/42.png" alt="Gokit3 MCU Program"></p>
+<ul>
+<li>When getting a whole packet of data, it will go to the following if determination logic to parse the protocol.</li>
+</ul>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/43.png" alt="Gokit3 MCU Program"></p>
+<p>Here it has saved the received protocol header:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/44.png" alt="Gokit3 MCU Program"></p>
+<ul>
+<li>Then is the processing flow of each protocol command:</li>
+</ul>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/45.png" alt="Gokit3 MCU Program"></p>
+<p>where the relevant protocol processing in “Serial communication protocol for Gizwits IoT Cloud access” is completed, as follows:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/46.png" alt="Gokit3 MCU Program"></p>
+<p>For example, 4.8:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/47.png" alt="Gokit3 MCU Program"></p>
+<p>Its “cmd” value is “0x03”, and the corresponding case in the code is “CMD_ISSUED_P0”</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/48.png" alt="Gokit3 MCU Program"></p>
+<p>Similarly, the location of the macro definitions corresponding to the other cmd is in Gizwits\gizwits_protocol.h:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/49.png" alt="Gokit3 MCU Program"></p>
+<p>The relevant processing of the p0 protocol is completed in the “gizProtocolIssuedProcess”. For details, refer to the sections “2.6 Implementation of control-type protocol” and “2.7 Implementation of reporting-type protocol”.</p>
+<p>The rest protocol functions are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gizProtocolGetDeviceInfo</td>
+<td>Complete “4.1 The Wi-Fi module requests the device information”.</td>
+</tr>
+<tr>
+<td>gizProtocolIssuedProcess</td>
+<td>Complete “4.8 The Wi-Fi module reads the current state of the device” and “4.10 The Wi-Fi module controls the device”. When the Wi-Fi module receives the relevant protocol data sent from the cloud or the App, it sends the data to the MCU where the protocol data is parsed. Then the relevant protocol data is passed to the secondary function to perform the further protocol processing.</td>
+</tr>
+<tr>
+<td>gizProtocolCommonAck</td>
+<td>Send common protocol packet.</td>
+</tr>
+<tr>
+<td>gizProtocolModuleStatus</td>
+<td>Complete the processing of “4.5 The Wi-Fi module notifies the device MCU of the working state changes of the Wi-Fi module”.</td>
+</tr>
+<tr>
+<td>gizProtocolWaitAckCheck</td>
+<td>Clear the ACK protocol packet from the Wi-Fi module after “4.4 The device MCU resets the Wi-Fi module”.</td>
+</tr>
+<tr>
+<td>gizProtocolReboot</td>
+<td>Complete “4.4 The device MCU resets the Wi-Fi module “. </td>
+</tr>
+<tr>
+<td>gizProtocolErrorCmd</td>
+<td>Complete “4.7 Illegal message notification”.</td>
+</tr>
+<tr>
+<td>gizwitsEventProcess</td>
+<td>Execute callback functions for user-defined events. Users can customize events and complete the corresponding processing in the function.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>After the protocol commands are identified, there are some determination statements, which are used to complete the processing of the corresponding protocol commands:</li>
+</ul>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/50.png" alt="Gokit3 MCU Program"></p>
+<p>For example, in the p0 protocol processing function (gizProtocolIssuedProcess), after the parse of the control-type protocol, set issuedFlag = 1, as follows:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/51.png" alt="Gokit3 MCU Program"></p>
+<p>Then the following processing will be performed to call the gizwitsEventProcess function:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/52.png" alt="Gokit3 MCU Program"></p>
+<p>In gizwitsEventProcess, the processing of the corresponding control-type events is completed, and other states of issuedFlag are treated the same way.</p>
+<ul>
+<li>After that, there is a data reporting judgment, which mainly executes the gizCheckReport function.</li>
+</ul>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/53.png" alt="Gokit3 MCU Program"></p>
+<p>The function gizCheckReport is used to determine the consistency between the current and last reported data. If the reporting condition is met, data reporting will be performed. The report condition should conform to the description in the protocol “4.9 the device MCU actively reports the current status to the Wi-Fi module”:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/54.png" alt="Gokit3 MCU Program"></p>
+<p>If the reporting condition is met, the data type conversion function gizDataPoints2ReportData (see section “2.8 Gizwits protocol data processing” for details) and the data reporting function gizReportData will be executed.</p>
+<ul>
+<li>The last code snippet is a timing mechanism for data reporting: </li>
+</ul>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/55.png" alt="Gokit3 MCU Program"></p>
+<p>Here is the corresponding description of protocol “4.9 the device MCU actively reports the current status to the Wi-Fi module”:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/56.png" alt="Gokit3 MCU Program"></p>
+<p>So far we have gone through the detailed explanation of the protocol processing functions.</p>
+<h2 id="6-Implementation-of-control-type-protocol"><a href="#6-Implementation-of-control-type-protocol" class="headerlink" title="6. Implementation of control-type protocol"></a>6. Implementation of control-type protocol</h2><p>The function calls related with the control-type protocol are as follows:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/57.png" alt="Gokit3 MCU Program"></p>
+<p>Function description:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gizProtocolIssuedProcess</td>
+<td>This function is called by gizwitsHandle to receive relevant protocol data from the cloud or App.</td>
+</tr>
+<tr>
+<td>ACTION_CONTROL_DEVICE</td>
+<td>Process control-type protocol</td>
+</tr>
+<tr>
+<td>gizDataPoint2Event</td>
+<td>Generate control-type events according to the protocol and complete the conversion of the corresponding data types</td>
+</tr>
+<tr>
+<td>gizwitsEventProcess</td>
+<td>Process the generated control-type events (i.e. calling the corresponding driver functions)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-1-Process-control-type-events"><a href="#6-1-Process-control-type-events" class="headerlink" title="6.1 Process control-type events"></a>6.1 Process control-type events</h3><p>Related code location:</p>
+<p>The gizwitsEventProcess() function in MCU_STM32xxx_source\Gizwits\gizwits_product.c:</p>
+<p>Function Description:</p>
+<p>Complete event processing for writable peripherals.</p>
+<p>The relevant code:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/58.png" alt="Gokit3 MCU Program"></p>
+<h3 id="6-2-Writable-data-type-conversion"><a href="#6-2-Writable-data-type-conversion" class="headerlink" title="6.2 Writable data type conversion"></a>6.2 Writable data type conversion</h3><p>After receiving the data that was specially processed from the cloud, it needs to be converted in gizDataPoint2Event.</p>
+<p>Conversion function description:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gizDecompressionValue</td>
+<td>Complete the compression of the transmitted data. For details, see section 2.8.2 Data decompression and compression.</td>
+</tr>
+<tr>
+<td>gizX2Y</td>
+<td>Convert the user area data to the data for transmission. For details, see the section “2.8.1 Data Point type conversion”.</td>
+</tr>
+</tbody>
+</table>
+<p>Relevant code:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/59.png" alt="Gokit3 MCU Program"></p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/60.png" alt="Gokit3 MCU Program"></p>
+<h2 id="7-Implementation-of-reporting-type-protocol"><a href="#7-Implementation-of-reporting-type-protocol" class="headerlink" title="7. Implementation of reporting-type protocol"></a>7. Implementation of reporting-type protocol</h2><p>The function calls related to the reporting-type protocol are as follows:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/61.png" alt="Gokit3 MCU Program"></p>
+<p>Function description:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userHandle</td>
+<td>Get reporting-type data of user area.</td>
+</tr>
+<tr>
+<td>gizCheckReport</td>
+<td>Determine whether to report the data of the current state.</td>
+</tr>
+<tr>
+<td>gizDataPoints2ReportData</td>
+<td>Complete conversion of user area data to reporting-type data.</td>
+</tr>
+<tr>
+<td>gizReportData</td>
+<td>Send the converted reporting-type data to the Wi-Fi module via serial port.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-1-Get-read-only-data"><a href="#7-1-Get-read-only-data" class="headerlink" title="7.1 Get read-only data"></a>7.1 Get read-only data</h3><p>Related code location:</p>
+<p>userHandle() function in MCU_STM32xxx_source\Gizwits\gizwits_product.c</p>
+<p>Function description:</p>
+<p>This function completes the acquisition of the reporting-type data of the user area. The user only needs to assign the read data to the current device status structure of the user area:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/62.png" alt="Gokit3 MCU Program"></p>
+<p>Note: The assigned data is reported to the cloud through gizwitsHandle (see section “2.5 Implementation of protocol processing”: Data reporting mechanism of the function gizCheckReport). You do not need to concern yourself with the changes reporting and timing reporting.</p>
+<h3 id="7-2-Reporting-time-determination"><a href="#7-2-Reporting-time-determination" class="headerlink" title="7.2 Reporting time determination"></a>7.2 Reporting time determination</h3><p>In order to make the API interface more simplified, more judgments are performed in the protocol processing module. Therefore you only need to update the device status to the protocol processing module, and do not care about when to report. The protocol processing module will handle it automatically. </p>
+<p>Related code location:</p>
+<p>The checkReport() function in MCU_STM32xxx_source\Gizwits\gizwits_protocol.c</p>
+<p>Function Description:</p>
+<p>Determine whether to report the current status according to the protocol. The determination logic is as follows:</p>
+<ol>
+<li>If it is a control-type data change, immediately reports the current status.</li>
+<li>If it is a user triggered or environmental change, the time interval of reporting should be at least 6 seconds..</li>
+</ol>
+<p>The relevant rules in the protocol are as follows: (“4.9 the device MCU actively reports the current status to the Wi-Fi module”)</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/63.png" alt="Gokit3 MCU Program"> </p>
+<p>Take the LED On/Off as an example:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/64.png" alt="Gokit3 MCU Program"></p>
+<p>Note: You can understand this part in combination with the data reporting mechanism in the section “2.5 Implementation of protocol processing”.</p>
+<h3 id="7-3-Read-only-data-type-conversion"><a href="#7-3-Read-only-data-type-conversion" class="headerlink" title="7.3 Read-only data type conversion"></a>7.3 Read-only data type conversion</h3><p>After getting the original data of the user area, the corresponding conversion is performed on the data before being transmitted to the cloud by using gizDataPoints2ReportData.</p>
+<p>The relevant functions description:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gizCompressValue</td>
+<td>Complete the data compression for transmission. For details, see section “2.8.2 Data decompression and compression”. </td>
+</tr>
+<tr>
+<td>gizY2X</td>
+<td>Convert the user area data to the data for transmission. For details, see the section “2.8.1 Data Point type conversion”.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-Gizwits-protocol-data-processing"><a href="#8-Gizwits-protocol-data-processing" class="headerlink" title="8. Gizwits protocol data processing"></a>8. Gizwits protocol data processing</h2><h3 id="8-1-Data-point-type-conversion"><a href="#8-1-Data-point-type-conversion" class="headerlink" title="8.1 Data point type conversion"></a>8.1 Data point type conversion</h3><p>In order to make the device function definition simpler and more straightforward, the user input value is converted into a uint type that the device can recognize. The core formula of the algorithm is: y=kx+m (y: display value; x: transmission value; k: ratio; m: offset)</p>
+<p>Take the temperature Data Point of WeChat Pet House project as an example:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/65.png" alt="Gokit3 MCU Program"></p>
+<p>Value range: -13 (Ymin) ~ 187 (Ymax), ratio: 1, offset: -13;</p>
+<p>The ratio and offset are defined as macros in app\Gizwits\gizwits_product.h:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/66.png" alt="Gokit3 MCU Program"></p>
+<p>According to the formula: y = kx + m, k = 1; m = -13</p>
+<p>Actual transmitted value: x = (y - m) / k</p>
+<p>Description of the conversion functions in the program:</p>
+<p>A.X2Y conversion:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/67.png" alt="Gokit3 MCU Program"></p>
+<p>B. Y2X conversion:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/68.png" alt="Gokit3 MCU Program"></p>
+<h3 id="8-2-Data-decompression-and-compression"><a href="#8-2-Data-decompression-and-compression" class="headerlink" title="8.2 Data decompression and compression"></a>8.2 Data decompression and compression</h3><p>For the data interaction between the device and the cloud, some special data types (bool and enum) can be parsed by the cloud only after being specially processed. Therefore, the device must decompress the data when receiving it from the cloud and compress the data when sending it to the cloud.</p>
+<p>Gizwits has encapsulated the corresponding processing interface:</p>
+<table>
+<thead>
+<tr>
+<th>Usage</th>
+<th>Interface name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decompression of bool and enum type Data Point</td>
+<td>gizDecompressionValue</td>
+</tr>
+<tr>
+<td>Compression of bool and enum type Data Point</td>
+<td>gizCompressValue</td>
+</tr>
+</tbody>
+</table>
+<p>Take the RGB LED of WeChat Pet House project as an example. The Data Points are defined in the cloud as follows:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/69.png" alt="Gokit3 MCU Program"> </p>
+<p>The corresponding data format in the document is as follows:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/70.png" alt="Gokit3 MCU Program"></p>
+<p>The corresponding macros of the Data Point byte order and bit order are defined as follows:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/71.png" alt="Gokit3 MCU Program"> </p>
+<p>The Data Point is decompressed as follows when it is received (located in the gizDataPoint2Event function): </p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/72.png" alt="Gokit3 MCU Program"></p>
+<p>The Data Point is compressed as follows when it is transmitted (located in the gizDataPoints2ReportData function):</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/73.png" alt="Gokit3 MCU Program"></p>
+<h1 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h1><h2 id="For-individual-developers"><a href="#For-individual-developers" class="headerlink" title="For individual developers"></a>For individual developers</h2><p>Gokit is free, but only a limited number are available for individual developers. Register in our forum or follow our official WeChat to request for provision.</p>
+<p>Community: <a href="http://club.gizwits.com/forum.php" target="_blank" rel="noopener">http://club.gizwits.com/forum.php</a></p>
+<p>Documentation Center: <a href="http://docs.gizwits.com/hc/" target="_blank" rel="noopener">http://docs.gizwits.com/hc/</a></p>
+<h2 id="For-organizations"><a href="#For-organizations" class="headerlink" title="For organizations"></a>For organizations</h2><p>Gizwits has a lot of support programs for organizations, you can contact Gizwits to get Gokit and timely technical support.</p>
+<p>Website: <a href="http://www.gizwits.com/about-us" target="_blank" rel="noopener">http://www.gizwits.com/about-us</a></p>
+<p>WeChat Official Account QR code of Gizwits:</p>
+<p><img src="../../../../assets/en-us/DeviceDev/Gokit3-MCU/source/74.png" alt="Gokit3 MCU Program"></p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id="share" target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async="async"></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
