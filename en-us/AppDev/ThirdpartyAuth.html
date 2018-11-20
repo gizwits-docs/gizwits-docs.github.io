@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <title>Set up third-party authentication with the provider of choice - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Set up third-party authentication with the provider of choice-Gizwits">
+  <meta name="keywords" content="Set up third-party authentication with the provider of choice docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header" v="">
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quick Start &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/GizwitsQuickStart.html">Gizwits Quick Start within 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/glossary.html">Glossary</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              App Dev Guide &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevGetStarted.html">Get Started with APP Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppCodeAutoGenerator.html">Gizwits App Code Auto-Generator</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      APP Frame Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSFramework.html">Gizwits App Framework for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSPushNotification.html">iOS Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSAuthReSkin.html">iOS Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSDevQuickStart.html">iOS APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidFramework.html">Gizwits App Framework for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidPushNotification.html">Android Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidAuthReSkin.html">Android Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidDevQuickStart.html">Android APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudFramework.html">Gizwits App Framework for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/VideoTutorials.html">How-to videos on Gizwits App Framework</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App SDK Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSSDKA2.html">Gizwits App SDK for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidSDKA2.html">Gizwits App SDK for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudSDK.html">Gizwits App SDK for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/TransparentTransmission.html">Data Transparent Transmission</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKLogCapture.html">SDK Debug Log Capture</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKErrorCodes.html">SDK Error Codes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WeChatDev.html">WeChat SDK Guide</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WechatDevIntro.html">WeChat Dev Intro</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      More Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/cloud/SharingSDK.html">Gizwits Device Sharing</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/third-party.html">Application process for third-party authentication</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevFAQ.html">App Dev FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              DeviceDev &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/DeviceDevIntro.html">Get started with device connection</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gizwits Cloud access &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/quickstart/UseMCU.html">MCU scheme</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/UseSOC.html">ESP8266-SoC scheme</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/module_source/module_source.html">Module Documents</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      GAgent Documents &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/gagent_info.html">Detailed annotation of GAgent</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/DebugTool.html">Firmware downloading on modules</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/debug/HF-LPB100.html">HF-LPB100</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/debug/HF-LPT120.html">HF-LPT120</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/debug/MXCHIP.html">MXCHIP</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/debug/ESP8266.html">ESP8266</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/OpenAPI.html">Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/NotificationAPI.html">Notification API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/WebsocketAPI.html">WebsocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API Tutorial &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseOpenAPI.html">Using Open API to control virtual device with Postman</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseSNoti.html">Real-time data synchronization demo for SNoti service</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseWebsocket.html">Control device using WebSocket</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/DataAPI.html">Aggregation API Guide</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/LinkageAPI.html">Device Linkage API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/devgroup_API.html">Device Grouping API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseQRCode.html">Generating device QR code for App binding</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/CloudFAQ.html">Cloud FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              User Manual &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/ST_IoT.html">Gizwits and ST Make IoT Development Easy</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ST/ICUBEGIZWITS.html">Getting Started with I-CUBE-GiZWITS</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Set up third-party authentication with the provider of choice</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="1-Providers-of-China"><a href="#1-Providers-of-China" class="headerlink" title="1.  Providers of China"></a>1.  Providers of China</h1><h2 id="WeChat"><a href="#WeChat" class="headerlink" title="WeChat"></a>WeChat</h2><p>To implement WeChat authentication in App, you must go to the WeChat Open Platform to create an application, then get the AppID and AppSecret of the application and use them in the Gizwits App Framework.</p>
+<h3 id="Sign-up-a-WeChat-Open-Platform-developer-account"><a href="#Sign-up-a-WeChat-Open-Platform-developer-account" class="headerlink" title="Sign up a WeChat Open Platform developer account"></a>Sign up a WeChat Open Platform developer account</h3><p>Skip this step if you already have the developer account.</p>
+<p>Click here to navigate to <a href="https://open.weixin.qq.com/" target="_blank" rel="noopener">WeChat Open Platform</a>.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/11.png" alt="third-party authentication"></p>
+<p>Click Sign Up to jump to the following page, type the developer basic information. </p>
+<p><img src="../../../assets/en-us/AppDev/third-party/12.png" alt="third-party authentication"></p>
+<p>Click Next, WeChat Open Platform will send an activation link to your registered Email address.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/13.png" alt="third-party authentication"></p>
+<p>Click the activation link, jump to the complete profile page, enter the related information, and click Finish to create the WeChat Open Platform developer account.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/14.png" alt="third-party authentication"></p>
+<h3 id="Create-an-application"><a href="#Create-an-application" class="headerlink" title="Create an application"></a>Create an application</h3><p>After signing up successfully, log in to the WeChat Open Platform, select Admin Center, and jump to the application creation page.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/15.png" alt="third-party authentication"></p>
+<p>Click the Create Mobile Application button, then type the basic information of the application.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/16.png" alt="third-party authentication"></p>
+<p>Fill out the form and click Next, go to the “Fill in platform info” page.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/17.png" alt="third-party authentication"></p>
+<p>Select the desired application platform (usually both iOS and Android are required). The iOS application needs Bundle ID. The Android application needs the application signature and application package name.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/18.png" alt="third-party authentication"></p>
+<p>After completing the form, click Submit for verification. WeChat will give the result within 7 days. After the verification passes, the application AppID and AppSecret will be available.</p>
+<h3 id="Get-AppID-and-AppSecret"><a href="#Get-AppID-and-AppSecret" class="headerlink" title="Get AppID and AppSecret"></a>Get AppID and AppSecret</h3><p>Click View on the mobile application list after the verification passes.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/19.png" alt="third-party authentication"></p>
+<p>AppID and AppSecret can be seen on the Application details page.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/20.png" alt="third-party authentication"></p>
+<h3 id="Configuration-of-Gizwits-App-Framework"><a href="#Configuration-of-Gizwits-App-Framework" class="headerlink" title="Configuration of Gizwits App Framework"></a>Configuration of Gizwits App Framework</h3><p>Click to view <a href="http://docs.gizwits.com/zh-cn/AppDev/iOS%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86%E4%B8%8E%E6%8D%A2%E8%82%A4.html#%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E9%85%8D%E7%BD%AE-1" target="_blank" rel="noopener">iOS SDK configuration for WeChat authentication</a>.</p>
+<p>Click to view <a href="http://docs.gizwits.com/zh-cn/AppDev/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E4%B8%8E%E6%8D%A2%E8%82%A4.html#%E4%BF%AE%E6%94%B9UIConfig-json%E6%96%87%E4%BB%B6-1" target="_blank" rel="noopener">Android SDK configuration for WeChat authentication</a>.</p>
+<h2 id="Tencent-QQ"><a href="#Tencent-QQ" class="headerlink" title="Tencent QQ"></a>Tencent QQ</h2><p>To accomplish QQ authentication in App, you need to first create an application on Tencent Open Platform, then get the AppID of the application, and use it in the Gizwits App Framework.</p>
+<h3 id="Sign-up-for-a-developer-account"><a href="#Sign-up-for-a-developer-account" class="headerlink" title="Sign up for a developer account"></a>Sign up for a developer account</h3><p>Click here to navigate to <a href="http://open.qq.com/" target="_blank" rel="noopener">Tencent Open Platform</a>.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/20-1.png" alt="third-party authentication"></p>
+<p>Click Login, enter your ID and password.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/21.png" alt="third-party authentication"></p>
+<p>After logging in successfully, you can jump to the registration page. You can choose the type of individual or enterprise on your behalf.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/22.png" alt="third-party authentication"></p>
+<p>The following picture is for individual type registration. You need to type the complete information and finish the Email verification before you successfully create a Tencent Developer account.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/23.png" alt="third-party authentication"></p>
+<h3 id="Create-an-application-1"><a href="#Create-an-application-1" class="headerlink" title="Create an application"></a>Create an application</h3><p>Go to Tencent Open Platform, click Application Connection.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/24.png" alt="third-party authentication"></p>
+<h4 id="Android-App"><a href="#Android-App" class="headerlink" title="Android App"></a>Android App</h4><p>Select the Mobile App Android, click Create Application.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/25.png" alt="third-party authentication"></p>
+<p>Fill out the pane and submit for verification.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/26.png" alt="third-party authentication"></p>
+<h4 id="iOS-App"><a href="#iOS-App" class="headerlink" title="iOS App"></a>iOS App</h4><p>Select the Mobile App iOS, click Create Application.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/27.png" alt="third-party authentication"></p>
+<p>Fill out the pane and submit for verification.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/28.png" alt="third-party authentication"></p>
+<h3 id="Get-APP-ID-and-APP-KEY"><a href="#Get-APP-ID-and-APP-KEY" class="headerlink" title="Get APP ID and APP KEY"></a>Get APP ID and APP KEY</h3><h4 id="Android-App-1"><a href="#Android-App-1" class="headerlink" title="Android App"></a>Android App</h4><p>After the verification passes, you can get the APP ID and APP KEY as the following figure to create a QQ authentication.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/29.png" alt="third-party authentication"></p>
+<h4 id="iOS-App-1"><a href="#iOS-App-1" class="headerlink" title="iOS App"></a>iOS App</h4><p>After the verification passes, you can get the APP ID and APP KEY as the following figure to create a QQ authentication. </p>
+<p><img src="../../../assets/en-us/AppDev/third-party/30.png" alt="third-party authentication"></p>
+<h3 id="Associate-the-authentication-application"><a href="#Associate-the-authentication-application" class="headerlink" title="Associate the authentication application"></a>Associate the authentication application</h3><p>Log in to the <a href="http://dev.gizwits.com/zh-cn/developer/product/" target="_blank" rel="noopener">Gizwits Developer Center</a> and select the product that need to be associated to a third party authentication application.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/31.png" alt="third-party authentication"></p>
+<p>Go to the Application Configuration page and select the Gizwits application that needs to be associated with a QQ authentication application, as shown below:</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/32.png" alt="third-party authentication"></p>
+<p>Click Associate Third Party Authentication, type the APPID applied from Tencent Open Platform, and click OK to complete the association of the Gizwits application to the QQ authentication application.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/33.png" alt="third-party authentication"></p>
+<h3 id="Configuration-of-Gizwits-App-Framework-1"><a href="#Configuration-of-Gizwits-App-Framework-1" class="headerlink" title="Configuration of Gizwits App Framework"></a>Configuration of Gizwits App Framework</h3><p>Click to view the <a href="http://docs.gizwits.com/zh-cn/AppDev/iOS%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86%E4%B8%8E%E6%8D%A2%E8%82%A4.html#%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener">iOS SDK configuration for QQ authentication</a>.</p>
+<p>Click to view the <a href="http://docs.gizwits.com/zh-cn/AppDev/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E4%B8%8E%E6%8D%A2%E8%82%A4.html#%E4%BF%AE%E6%94%B9UIConfig-json%E6%96%87%E4%BB%B6" target="_blank" rel="noopener">Android SDK configuration for QQ authentication</a>.</p>
+<h2 id="Sina-Weibo"><a href="#Sina-Weibo" class="headerlink" title="Sina Weibo"></a>Sina Weibo</h2><p>To support Sina Weibo authentication in App, you need to first create an application on the Weibo Open Platform. After getting the token and uid through Sina SDK, you can call Gizwits Open API to create a user.</p>
+<h3 id="Sign-up-for-a-developer-account-1"><a href="#Sign-up-for-a-developer-account-1" class="headerlink" title="Sign up for a developer account"></a>Sign up for a developer account</h3><p>Click here to navigate to <a href="http://open.weibo.com/" target="_blank" rel="noopener">Weibo Open Platform</a>.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/34.png" alt="third-party authentication"></p>
+<p>Click Log In, type your user name and password to sign in.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/35.png" alt="third-party authentication"></p>
+<p>Click Edit Developer Information, fill out developer information form and complete identity authentication.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/36.png" alt="third-party authentication"></p>
+<p>You can choose individual or enterprise type on your behalf.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/37.png" alt="third-party authentication"></p>
+<p>Complete identity authentication. </p>
+<p><img src="../../../assets/en-us/AppDev/third-party/38.png" alt="third-party authentication"></p>
+<h3 id="Create-an-application-2"><a href="#Create-an-application-2" class="headerlink" title="Create an application"></a>Create an application</h3><p>Go to Weibo Open Platform and click on Wei Connect &gt;&gt; Mobile Application.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/39.png" alt="third-party authentication"></p>
+<p>Click to Connect Now.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/40.png" alt="third-party authentication"></p>
+<p>Choose the App platform you need (usually both iOS and Android are required).</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/41.png" alt="third-party authentication"></p>
+<p>Fill in the blanks and submit for verification. The iOS App needs Apple ID and Bundle ID. The Android App needs the signature information and download address.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/42.png" alt="third-party authentication"></p>
+<h3 id="Get-AppID-and-AppSecret-1"><a href="#Get-AppID-and-AppSecret-1" class="headerlink" title="Get AppID and AppSecret"></a>Get AppID and AppSecret</h3><p>Click on the Application Information and view the AppID and AppSecret as shown below.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/43.png" alt="third-party authentication"></p>
+<h3 id="API-call"><a href="#API-call" class="headerlink" title="API call"></a>API call</h3><p>You can accomplish the third-party authentication via the SDK provided by Weibo, and with the returned user_id and access_token, call the <a href="http://swagger.gizwits.com/doc/index/openapi_apps#/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/post_app_users" target="_blank" rel="noopener">Gizwits Open API Create a user</a> to complete the user login.</p>
+<h2 id="Baidu"><a href="#Baidu" class="headerlink" title="Baidu"></a>Baidu</h2><p>To support Baidu authentication in App, you need to first create an application in the Baidu Developer Center. After getting the token and uid, call Gizwits Open API to create a user.</p>
+<h3 id="Sign-up-for-a-developer-account-2"><a href="#Sign-up-for-a-developer-account-2" class="headerlink" title="Sign up for a developer account"></a>Sign up for a developer account</h3><p>Click here to navigate to <a href="http://developer.baidu.com/" target="_blank" rel="noopener">Baidu Open Platform</a>.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/44.png" alt="third-party authentication"></p>
+<p>After login, update the developer information. You can choose the individual or enterprise type on your behalf. After Email verification, a Baidu developer account will be successfully created.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/45.png" alt="third-party authentication"></p>
+<h3 id="Create-an-application-3"><a href="#Create-an-application-3" class="headerlink" title="Create an application"></a>Create an application</h3><p>After completing the Email verification, go to Baidu Developer Center via the Email link and create a application.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/46.png" alt="third-party authentication"></p>
+<p>Go to Developer Service Management and click Create Project.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/47.png" alt="third-party authentication"></p>
+<p>Type the application name.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/48.png" alt="third-party authentication"></p>
+<h3 id="Get-API-Key-and-Secret-Key"><a href="#Get-API-Key-and-Secret-Key" class="headerlink" title="Get API Key and Secret Key"></a>Get API Key and Secret Key</h3><p>Click on the Basic Information and view the API Key and Secret Key as shown below.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/49.png" alt="third-party authentication"></p>
+<h3 id="API-call-1"><a href="#API-call-1" class="headerlink" title="API call"></a>API call</h3><p>You can accomplish the third-party authentication via the SDK provided by Baidu and get the access_token. After that, call the Baidu REST API and get the UID, then call the <a href="http://swagger.gizwits.com/doc/index/openapi_apps#/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/post_app_users" target="_blank" rel="noopener">Gizwits Open API Create a user</a> to complete the user login.</p>
+<h1 id="Providers-outside-China"><a href="#Providers-outside-China" class="headerlink" title="Providers outside China"></a>Providers outside China</h1><h2 id="Facebook"><a href="#Facebook" class="headerlink" title="Facebook"></a>Facebook</h2><p>To support Facebook authentication in App, you need to first create an application on Facebook for developers, then get the APPID of the application, and use it in the Gizwits App Framework.</p>
+<h3 id="Log-in-to-Facebook-for-developers"><a href="#Log-in-to-Facebook-for-developers" class="headerlink" title="Log in to Facebook for developers"></a>Log in to Facebook for developers</h3><p>Click here to navigate to <a href="https://developers.facebook.com/" target="_blank" rel="noopener">Facebook for developers</a> and log in.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/50.png" alt="third-party authentication"></p>
+<h3 id="Create-an-application-4"><a href="#Create-an-application-4" class="headerlink" title="Create an application"></a>Create an application</h3><p>Create an app after verifying your account.</p>
+<p>Click Add a New App for new users.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/51.png" alt="third-party authentication"></p>
+<p>Click Create New App for old users.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/52.png" alt="third-party authentication"></p>
+<p>Type Display Name and Contact Email, click Create App ID.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/53.png" alt="third-party authentication"></p>
+<p>Then the App details page will be automatically displayed. Select Settings &gt;&gt; Basic, click Add Platform at the bottom.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/54.png" alt="third-party authentication"></p>
+<p>Choose the application platform you need (usually both iOS and Android are required).</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/55.png" alt="third-party authentication"></p>
+<p>Fill out the application information pane.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/56.png" alt="third-party authentication"></p>
+<h3 id="Get-App-ID-and-App-Secret"><a href="#Get-App-ID-and-App-Secret" class="headerlink" title="Get App ID and App Secret"></a>Get App ID and App Secret</h3><p>Click Settings &gt;&gt; Basic to view the App ID and click Show to see the App Secret.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/57.png" alt="third-party authentication"></p>
+<h3 id="API-call-2"><a href="#API-call-2" class="headerlink" title="API call"></a>API call</h3><p>You can accomplish the third-party authentication via the SDK provided by Facebook, and with the returned user_id and access_token, call the <a href="http://swagger.gizwits.com/doc/index/openapi_apps#/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/post_app_users" target="_blank" rel="noopener">Gizwits Open API Create a user</a> to complete the user login.</p>
+<h2 id="Twitter"><a href="#Twitter" class="headerlink" title="Twitter"></a>Twitter</h2><p>To support Twitter authentication in App, you need to first create an application in Twitter Developer Platform to get the application APPID.</p>
+<h3 id="Sign-in-to-Twitter-Developer-Platform"><a href="#Sign-in-to-Twitter-Developer-Platform" class="headerlink" title="Sign in to Twitter Developer Platform"></a>Sign in to Twitter Developer Platform</h3><p>Open <a href="https://dev.twitter.com/" target="_blank" rel="noopener">Twitter Developer Platform</a> and click My apps.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/58.png" alt="third-party authentication"></p>
+<p>If you have not sign up for your Twitter account yet, you need to register for your account first. If you already have an account, please sign in directly.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/59.png" alt="third-party authentication"></p>
+<h3 id="Create-an-application-5"><a href="#Create-an-application-5" class="headerlink" title="Create an application"></a>Create an application</h3><p>Click Create New App.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/60.png" alt="third-party authentication"></p>
+<p>Type the App Name, Description and Website.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/61.png" alt="third-party authentication"></p>
+<p>Note: </p>
+<ol>
+<li>When creating a new application, you must add your mobile phone number to your Twitter account. </li>
+<li>To support Twitter login in iOS or Android App, it is required to enter the CallBack URL.</li>
+</ol>
+<h3 id="Get-API-KEY-and-API-Secret"><a href="#Get-API-KEY-and-API-Secret" class="headerlink" title="Get API KEY and API Secret"></a>Get API KEY and API Secret</h3><p>Click Keys and Access Tokens and you will get the API KEY and API Secret as shown below.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/62.png" alt="third-party authentication"></p>
+<h3 id="Associate-the-authentication-application-1"><a href="#Associate-the-authentication-application-1" class="headerlink" title="Associate the authentication application"></a>Associate the authentication application</h3><p>Log in to <a href="http://dev.gizwits.com/zh-cn/developer/product/" target="_blank" rel="noopener">Gizwits Developer Center</a> and select the product that need to be associated to a third party authentication application.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/63.png" alt="third-party authentication"></p>
+<p>Go to the Application Configuration page and select the application that needs to be associated with Twitter authentication application, as shown below:</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/64.png" alt="third-party authentication"></p>
+<p>Click Associate Third-party Authentication Application to jump to the association page. Enter the API KEY and API Secret applied from Twitter Developers, and click OK to complete the association of the Gizwits application to the Twitter authentication application.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/65.png" alt="third-party authentication"></p>
+<h3 id="API-call-3"><a href="#API-call-3" class="headerlink" title="API call"></a>API call</h3><p>You can accomplish the third-party authentication via the SDK provided by Twitter, and with the returned user_id and access_token, call the <a href="http://swagger.gizwits.com/doc/index/openapi_apps#/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/post_app_users" target="_blank" rel="noopener">Gizwits Open API Create a user</a> to complete the user login.</p>
+<h2 id="Google"><a href="#Google" class="headerlink" title="Google+"></a>Google+</h2><h3 id="Login-to-Google-APIs"><a href="#Login-to-Google-APIs" class="headerlink" title="Login to Google APIs"></a>Login to Google APIs</h3><p>Go to <a href="https://console.developers.google.com/" target="_blank" rel="noopener">Google APIs</a>. If you have not sign up for a Google account, you need to register for an account first. If you already have an account, please log in directly.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/66.png" alt="third-party authentication"></p>
+<h3 id="Create-an-application-6"><a href="#Create-an-application-6" class="headerlink" title="Create an application"></a>Create an application</h3><p>Click Select a project after successful login.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/67.png" alt="third-party authentication"></p>
+<p>Then the project selection window pops up and create a project.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/68.png" alt="third-party authentication"></p>
+<p>Type the project name and click the Create button.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/69.png" alt="third-party authentication"></p>
+<p>Under the new project, click Credentials &gt;&gt; OAuth consent screen, enter the App name in the field “Product name shown to users”, and fill in other fields.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/70.png" alt="third-party authentication"></p>
+<p>Return to the Credentials tab, click Create credentials &gt;&gt; OAuth client ID.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/71.png" alt="third-party authentication"></p>
+<p>Type the App package ID (Bundle ID) and the optional fields App Store ID and team ID.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/72.png" alt="third-party authentication"></p>
+<h3 id="Get-the-Client-ID"><a href="#Get-the-Client-ID" class="headerlink" title="Get the Client ID"></a>Get the Client ID</h3><p>Click the Credentials tab to view the client ID (Client ID) as shown below.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/73.png" alt="third-party authentication"></p>
+<h3 id="API-call-4"><a href="#API-call-4" class="headerlink" title="API call"></a>API call</h3><p>You can accomplish the third-party authentication via the SDK provided by Google, and with the returned user_id and access_token, call the <a href="http://swagger.gizwits.com/doc/index/openapi_apps#/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/post_app_users" target="_blank" rel="noopener">Gizwits Open API Create a user</a> to complete the user login.</p>
+<p>Note: The value of the API parameter token needs to start with Bearer and a space. Format: Bearer access_token</p>
+<h2 id="Amazon"><a href="#Amazon" class="headerlink" title="Amazon"></a>Amazon</h2><p>To support Amazon authentication in App, you need to first create an application on <a href="https://login.amazon.com/" target="_blank" rel="noopener">Login with Amazon</a> to get the application APPID.</p>
+<h3 id="Sign-in-to-the-Amazon-Developer-Center"><a href="#Sign-in-to-the-Amazon-Developer-Center" class="headerlink" title="Sign in to the Amazon Developer Center"></a>Sign in to the Amazon Developer Center</h3><p>Go to Login with Amazon of Amazon Developers Center and click Sign Up.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/74.png" alt="third-party authentication"></p>
+<p>If you have not sign up for your Amazon account yet, you need to register for your account first. If you already have an account, please log in directly.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/75.png" alt="third-party authentication"></p>
+<h3 id="Create-an-application-7"><a href="#Create-an-application-7" class="headerlink" title="Create an application"></a>Create an application</h3><p>Click Register new application.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/76.png" alt="third-party authentication"></p>
+<p>Enter the Application Name, Description and Privacy Notice URL.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/77.png" alt="third-party authentication"></p>
+<p>Add the required application platform (usually both iOS and Android are required).</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/78.png" alt="third-party authentication"></p>
+<p>Fill out the application Settings form.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/79.png" alt="third-party authentication"></p>
+<h3 id="Get-App-ID-and-API-Key"><a href="#Get-App-ID-and-API-Key" class="headerlink" title="Get App ID and API Key"></a>Get App ID and API Key</h3><p>See the App ID in the application settings.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/80.png" alt="third-party authentication"></p>
+<p>For API Key, you need to click Get API Key Value in iOS or Android Settings to view.</p>
+<p><img src="../../../assets/en-us/AppDev/third-party/81.png" alt="third-party authentication"></p>
+<h3 id="API-call-5"><a href="#API-call-5" class="headerlink" title="API call"></a>API call</h3><p>You can accomplish the third-party authentication via the SDK provided by Amazon, and with the returned user_id and access_token, call the <a href="http://swagger.gizwits.com/doc/index/openapi_apps#/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/post_app_users" target="_blank" rel="noopener">Gizwits Open API Create a user</a> to complete the user login.</p>
+<p>Note: The value of the API parameter token needs to start with Bearer and a space. Format: Bearer access_token</p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id="share" target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async="async"></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
