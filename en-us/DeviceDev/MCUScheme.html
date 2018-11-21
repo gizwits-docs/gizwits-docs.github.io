@@ -386,18 +386,18 @@
       <p>Click here to download LED lamp sample code for rapid development of MCU scheme.</p>
 <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Gizwits IoT Cloud is an open platform dedicated to cloud services for IoT and smart devices. Gizwits IoT Cloud concentrates on providing intelligent cloud services and IoT software and hardware solutions to help traditional device vendors upgrade their products and quickly realize product intelligence. In order to realize the hardware intelligence, in addition to the elaborative work on the hardware itself, each domain of the intelligent cloud platform, mobile Apps, networking modules needs a professional team to support. Gizwits IoT Cloud offers a complete solution that allows vendors and developers to focus solely on their own product hardware to realize hardware intelligence with minimal cost and risk and maximum added value. This document describes the basic process of device connecting to Gizwits IoT Cloud.</p>
 <h1 id="Data-interaction-between-devices-and-Gizwits-IoT-Cloud"><a href="#Data-interaction-between-devices-and-Gizwits-IoT-Cloud" class="headerlink" title="Data interaction between devices and Gizwits IoT Cloud"></a>Data interaction between devices and Gizwits IoT Cloud</h1><p>Take an air conditioner as an example. When the air conditioner manufacturer develops the air conditioner electrical control board, using a Wi-Fi/GPRS module with Gizwits GAgent, the air conditioner will be connected to Gizwits Cloud. The basic data flow between the device and Gizwits IoT Cloud is shown below.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/11.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/11.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <h1 id="Create-product-on-Gizwits-IoT-Cloud"><a href="#Create-product-on-Gizwits-IoT-Cloud" class="headerlink" title="Create product on Gizwits IoT Cloud"></a>Create product on Gizwits IoT Cloud</h1><p>Take “Smart Light” as an example to introduce the entire process of connecting a device to Gizwits IoT Cloud.</p>
 <h2 id="1-Sign-up-for-a-Gizwits-IoT-Cloud-developer-account"><a href="#1-Sign-up-for-a-Gizwits-IoT-Cloud-developer-account" class="headerlink" title="1. Sign up for a Gizwits IoT Cloud developer account"></a>1. Sign up for a Gizwits IoT Cloud developer account</h2><p>Go to the Developer Center of Gizwits IoT Cloud, and sign up for the developer account following the instructions.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/12.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<h2 id="2-Sign-in-and-create-a-product"><a href="#2-Sign-in-and-create-a-product" class="headerlink" title="2. Sign in and create a product"></a>2. Sign in and create a product</h2><p><img src="../../../assets/en-us/quickstart/dev/13.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<h2 id="3-Enter-basic-product-information"><a href="#3-Enter-basic-product-information" class="headerlink" title="3. Enter basic product information"></a>3. Enter basic product information</h2><p><img src="../../../assets/en-us/quickstart/dev/14.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/12.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<h2 id="2-Sign-in-and-create-a-product"><a href="#2-Sign-in-and-create-a-product" class="headerlink" title="2. Sign in and create a product"></a>2. Sign in and create a product</h2><p><img src="/assets/en-us/DeviceDev/MCUScheme/13.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<h2 id="3-Enter-basic-product-information"><a href="#3-Enter-basic-product-information" class="headerlink" title="3. Enter basic product information"></a>3. Enter basic product information</h2><p><img src="/assets/en-us/DeviceDev/MCUScheme/14.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <h2 id="4-Product-overview"><a href="#4-Product-overview" class="headerlink" title="4. Product overview"></a>4. Product overview</h2><p>The Smart Light product has been successfully created on Gizwits IoT Cloud, which generated the Product Key and Product Secret for the product. The Product Key needs to be written by the developer to the device MCU (device main control board) , which will notify the Wi-Fi/GPRS module when logging into Gizwits IoT Cloud. Gizwits IoT Cloud will identify the product with the Product Key. The Product Secret is used when Apps connecting to Gizwits IoT Cloud.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/15.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/15.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <h1 id="Create-Data-Points"><a href="#Create-Data-Points" class="headerlink" title="Create Data Points"></a>Create Data Points</h1><p>The Data Point refers to the functionality abstraction of a device product, which describes the product’s capabilities and its parameters. After Data Points are created, the data format of the device and the cloud communication can be determined, and the device and Gizwits IoT Cloud can mutually recognize the data exchanged between the device and Gizwits IoT Cloud.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/16.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/16.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <h2 id="1-Explore-Data-Points-in-detail"><a href="#1-Explore-Data-Points-in-detail" class="headerlink" title="1. Explore Data Points in detail"></a>1. Explore Data Points in detail</h2><p>The basic content of a Data Point definition includes: display name, identification name, read/write type, data type and remarks. The overview is as follows:</p>
-<p><img src="../../../assets/en-us/quickstart/dev/17.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/17.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <p>1.1 Display name: Customize the Data Point name.</p>
 <p>1.2 Identification name: Used for application layer transmission, which is required for client or cloud development and follows variables naming conventions of standard development languages, such as containing English letters, numbers, and underscores, starting with an English letter.</p>
 <p>1.3 Read/write type</p>
@@ -428,21 +428,21 @@
 <p>Xmin = (-30+30) / 0.1 = 0</p>
 <p>Xmax = (50+30) / 0.1 = 800</p>
 <h2 id="2-Product-requirement-analysis"><a href="#2-Product-requirement-analysis" class="headerlink" title="2. Product requirement analysis"></a>2. Product requirement analysis</h2><p>The product requirement of “Smart Light” is to synchronize the switch state and color combination of the RGB_LED light to the App, and control the light with the App remotely.</p>
-<h2 id="3-Data-Points-requirement-analysis"><a href="#3-Data-Points-requirement-analysis" class="headerlink" title="3. Data Points requirement analysis"></a>3. Data Points requirement analysis</h2><p><img src="../../../assets/en-us/quickstart/dev/18.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<h2 id="4-Create-4-Data-Points"><a href="#4-Create-4-Data-Points" class="headerlink" title="4. Create 4 Data Points"></a>4. Create 4 Data Points</h2><p><img src="../../../assets/en-us/quickstart/dev/19.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<p><img src="../../../assets/en-us/quickstart/dev/20.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<p><img src="../../../assets/en-us/quickstart/dev/21.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
-<h2 id="5-Modify-Data-Points"><a href="#5-Modify-Data-Points" class="headerlink" title="5. Modify Data Points"></a>5. Modify Data Points</h2><p><img src="../../../assets/en-us/quickstart/dev/22.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<p><img src="../../../assets/en-us/quickstart/dev/23.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<h2 id="3-Data-Points-requirement-analysis"><a href="#3-Data-Points-requirement-analysis" class="headerlink" title="3. Data Points requirement analysis"></a>3. Data Points requirement analysis</h2><p><img src="/assets/en-us/DeviceDev/MCUScheme/18.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<h2 id="4-Create-4-Data-Points"><a href="#4-Create-4-Data-Points" class="headerlink" title="4. Create 4 Data Points"></a>4. Create 4 Data Points</h2><p><img src="/assets/en-us/DeviceDev/MCUScheme/19.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/20.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/21.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<h2 id="5-Modify-Data-Points"><a href="#5-Modify-Data-Points" class="headerlink" title="5. Modify Data Points"></a>5. Modify Data Points</h2><p><img src="/assets/en-us/DeviceDev/MCUScheme/22.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/23.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <h1 id="MCU-development-for-Smart-Light"><a href="#MCU-development-for-Smart-Light" class="headerlink" title="MCU development for Smart Light"></a>MCU development for Smart Light</h1><h2 id="1-Generate-MCU-code-automatically"><a href="#1-Generate-MCU-code-automatically" class="headerlink" title="1. Generate MCU code automatically"></a>1. Generate MCU code automatically</h2><p>The automatically generated MCU code implements the packet encapsulation and parsing of the Gizwits communication protocol, the conversion logic of sensor data and communication data. All of these functions are integrated into a simple API set. When the device receives data from the cloud or the App, the program converts the data into corresponding events and notifies the application layer. You only needs to add the sensor control function to the corresponding event handler to complete the product development.</p>
 <p>Here choose the standalone MCU Scheme. In the hardware platform drop-down list, select STM32f103c8x.</p>
 <p>Then Gizwits IoT Cloud will generate the device-side project code for STM32f103c8x.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/24.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<p><img src="../../../assets/en-us/quickstart/dev/25.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<p><img src="../../../assets/en-us/quickstart/dev/26.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<p><img src="../../../assets/en-us/quickstart/dev/27.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/24.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/25.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/26.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/27.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
 <h2 id="2-Directory-structure-of-MCU-code"><a href="#2-Directory-structure-of-MCU-code" class="headerlink" title="2. Directory structure of MCU code"></a>2. Directory structure of MCU code</h2><p>As shown in the figure below, the files with comments in black text to the right are for the STM32f103cx8 hardware platform development. The files with comments in green text are for connecting Gizwits IoT Cloud and hardware drivers, such as the serial port driver, the timer driver, the key driver. Developers can write hardware actions directly in gizwits_product.c and gizwits_product.h.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/28.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/28.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <p>The following table is the description of key code files.</p>
 <table>
 <thead>
@@ -498,7 +498,7 @@
 </tbody>
 </table>
 <h2 id="3-Development-process"><a href="#3-Development-process" class="headerlink" title="3. Development process"></a>3. Development process</h2><h3 id="3-1-Main-program"><a href="#3-1-Main-program" class="headerlink" title="3.1 Main program"></a>3.1 Main program</h3><p>Location：main() function in main.c</p>
-<p><img src="../../../assets/en-us/quickstart/dev/29.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/29.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <p>Description:</p>
 <table>
 <thead>
@@ -531,29 +531,29 @@
 </tbody>
 </table>
 <h3 id="3-2-Port-RGB-LED-driver"><a href="#3-2-Port-RGB-LED-driver" class="headerlink" title="3.2 Port RGB_LED driver"></a>3.2 Port RGB_LED driver</h3><p>From the MCU code directory structure, there is no RGB_LED driver in the automatically generated MCU code. We can go to the Download Center of Gizwits Developer Center to download other projects containing the RGB_LED driver and port the driver to your own project. Take the WeChat Pet House RGB_LED driver as an example as following.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/30.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<p><img src="../../../assets/en-us/quickstart/dev/31.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<p><img src="../../../assets/en-us/quickstart/dev/32.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/30.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/31.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/32.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <p>Unpack the WeChat Pet House project package we just downloaded, and go into the following directory. You can see that there is a Hal_rgb_led driver folder. Copy the folder to your own auto-generated MCU driver directory.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/33.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<p><img src="../../../assets/en-us/quickstart/dev/34.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/33.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/34.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <p>Go back to your own MCU code project and add the rgb_led driver file to the driver directory.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/35.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<p><img src="../../../assets/en-us/quickstart/dev/36.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/35.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/36.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <p>Add #include “Hal_rgb_led/Hal_rgb_led.h” to main.c and gizwits_product.c</p>
-<p><img src="../../../assets/en-us/quickstart/dev/37.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<p><img src="../../../assets/en-us/quickstart/dev/38.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/37.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/38.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <h3 id="3-3-User-initialization"><a href="#3-3-User-initialization" class="headerlink" title="3.3 User initialization"></a>3.3 User initialization</h3><p>Location: userInit() function in main.c</p>
-<p><img src="../../../assets/en-us/quickstart/dev/39.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/39.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <h3 id="3-4-Wi-Fi-module-reset-connection"><a href="#3-4-Wi-Fi-module-reset-connection" class="headerlink" title="3.4 Wi-Fi module reset/connection"></a>3.4 Wi-Fi module reset/connection</h3><p>The device needs to enter the configuration mode to be connected to the network and communicate with the cloud. In the project, the MCU SDK is triggered through pressing the keys to enter the corresponding configuration mode. Here, we choose to make the module enter the AirLink mode and the LED will light up.</p>
 <p>A. Enter SoftAP mode: short press on key2.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/40.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/40.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <p>B. Enter AirLink mode: long press on key2. The blue LED will light up.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/41.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/41.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <p>C. Reset module: long press on key1.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/42.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/42.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <h3 id="3-5-Process-control-type-protocol-from-the-Cloud-App"><a href="#3-5-Process-control-type-protocol-from-the-Cloud-App" class="headerlink" title="3.5 Process control-type protocol from the Cloud/App"></a>3.5 Process control-type protocol from the Cloud/App</h3><p>The following figure is the flowchart of function calls related to control-type protocol.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/43.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/43.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <table>
 <thead>
 <tr>
@@ -583,10 +583,10 @@
 <p>The related code location: gizwitsEventProcess() function in …\Gizwits\gizwits_product.c </p>
 <p>Description: Handle the events for writeable peripherals.</p>
 <p>Sample code:</p>
-<p><img src="../../../assets/en-us/quickstart/dev/44.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<p><img src="../../../assets/en-us/quickstart/dev/45.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/44.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/45.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
 <h3 id="3-6-Report-device-states"><a href="#3-6-Report-device-states" class="headerlink" title="3.6 Report device states"></a>3.6 Report device states</h3><p>The following figure is the flowchart of function calls related to reporting device states.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/46.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/46.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
 <table>
 <thead>
 <tr>
@@ -615,30 +615,30 @@
 </table>
 <p>The related coce location: userHandle() function in …\User\main.c</p>
 <p>Description: This function gets the data to be reported from the user area. Developers only need to read and assign the data to the current device state data structure in the user area. Then the data structure is reported to the cloud through the gizwitsHandle, and developers does not need to pay attention to the device’s state changes as well as its periodic report.</p>
-<p><img src="../../../assets/en-us/quickstart/dev/47.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
-<h3 id="3-7-Compile-and-download-the-firmware-to-the-main-control-board-of-Gokit3"><a href="#3-7-Compile-and-download-the-firmware-to-the-main-control-board-of-Gokit3" class="headerlink" title="3.7 Compile and download the firmware to the main control board of Gokit3"></a>3.7 Compile and download the firmware to the main control board of Gokit3</h3><h1 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h1><h2 id="1-Install-Gizwits-Debugging-App"><a href="#1-Install-Gizwits-Debugging-App" class="headerlink" title="1. Install Gizwits Debugging App"></a>1. Install Gizwits Debugging App</h2><p><img src="../../../assets/en-us/quickstart/dev/48.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
-<h2 id="2-Launch-Gizwits-Debugging-App-sign-up-and-login"><a href="#2-Launch-Gizwits-Debugging-App-sign-up-and-login" class="headerlink" title="2. Launch Gizwits Debugging App, sign up and login"></a>2. Launch Gizwits Debugging App, sign up and login</h2><p><img src="../../../assets/en-us/quickstart/dev/49.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
-<h2 id="3-Configure-network-access-for-Wi-Fi-module"><a href="#3-Configure-network-access-for-Wi-Fi-module" class="headerlink" title="3. Configure network access for Wi-Fi module"></a>3. Configure network access for Wi-Fi module</h2><p><img src="../../../assets/en-us/quickstart/dev/50.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
-<p><img src="../../../assets/en-us/quickstart/dev/51.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
-<p><img src="../../../assets/en-us/quickstart/dev/52.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
-<h2 id="4-Select-the-device-in-App"><a href="#4-Select-the-device-in-App" class="headerlink" title="4. Select the device in App"></a>4. Select the device in App</h2><p><img src="../../../assets/en-us/quickstart/dev/53.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
-<h2 id="5-Send-and-receive-device-data-in-App"><a href="#5-Send-and-receive-device-data-in-App" class="headerlink" title="5. Send and receive device data in App"></a>5. Send and receive device data in App</h2><p><img src="../../../assets/en-us/quickstart/dev/54.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
-<h2 id="6-Check-communication-log-in-Gizwits-IoT-Cloud"><a href="#6-Check-communication-log-in-Gizwits-IoT-Cloud" class="headerlink" title="6. Check communication log in Gizwits IoT Cloud"></a>6. Check communication log in Gizwits IoT Cloud</h2><p><img src="../../../assets/en-us/quickstart/dev/55.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
-<p><img src="../../../assets/en-us/quickstart/dev/56.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/47.png" alt="Gizwits Cloud access for standalone MCU scheme"></p>
+<h3 id="3-7-Compile-and-download-the-firmware-to-the-main-control-board-of-Gokit3"><a href="#3-7-Compile-and-download-the-firmware-to-the-main-control-board-of-Gokit3" class="headerlink" title="3.7 Compile and download the firmware to the main control board of Gokit3"></a>3.7 Compile and download the firmware to the main control board of Gokit3</h3><h1 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h1><h2 id="1-Install-Gizwits-Debugging-App"><a href="#1-Install-Gizwits-Debugging-App" class="headerlink" title="1. Install Gizwits Debugging App"></a>1. Install Gizwits Debugging App</h2><p><img src="/assets/en-us/DeviceDev/MCUScheme/48.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<h2 id="2-Launch-Gizwits-Debugging-App-sign-up-and-login"><a href="#2-Launch-Gizwits-Debugging-App-sign-up-and-login" class="headerlink" title="2. Launch Gizwits Debugging App, sign up and login"></a>2. Launch Gizwits Debugging App, sign up and login</h2><p><img src="/assets/en-us/DeviceDev/MCUScheme/49.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<h2 id="3-Configure-network-access-for-Wi-Fi-module"><a href="#3-Configure-network-access-for-Wi-Fi-module" class="headerlink" title="3. Configure network access for Wi-Fi module"></a>3. Configure network access for Wi-Fi module</h2><p><img src="/assets/en-us/DeviceDev/MCUScheme/50.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/51.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/52.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<h2 id="4-Select-the-device-in-App"><a href="#4-Select-the-device-in-App" class="headerlink" title="4. Select the device in App"></a>4. Select the device in App</h2><p><img src="/assets/en-us/DeviceDev/MCUScheme/53.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<h2 id="5-Send-and-receive-device-data-in-App"><a href="#5-Send-and-receive-device-data-in-App" class="headerlink" title="5. Send and receive device data in App"></a>5. Send and receive device data in App</h2><p><img src="/assets/en-us/DeviceDev/MCUScheme/54.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<h2 id="6-Check-communication-log-in-Gizwits-IoT-Cloud"><a href="#6-Check-communication-log-in-Gizwits-IoT-Cloud" class="headerlink" title="6. Check communication log in Gizwits IoT Cloud"></a>6. Check communication log in Gizwits IoT Cloud</h2><p><img src="/assets/en-us/DeviceDev/MCUScheme/55.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/56.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
 <h1 id="Product-release"><a href="#Product-release" class="headerlink" title="Product release"></a>Product release</h1><p>After the product is deployed in the production environment, Gizwits will allocate a separate cloud operating environment for your devices for free, keeping your devices connected for 24/7. You will enjoy more free value-added services provided by Gizwits, including statistical analysis for your smart devices, data presentation and various meticulous technical support services.</p>
 <p>How to request for the product release? The specific steps are as follows:</p>
 <ol>
 <li>Go to the product details page. Click the Request for Release button next to the product name.</li>
 </ol>
-<p><img src="../../../assets/en-us/quickstart/dev/57.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/57.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
 <ol start="2">
 <li>Click Apply Now button. Fill out the application form as is.</li>
 </ol>
-<p><img src="../../../assets/en-us/quickstart/dev/58.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/58.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
 <ol start="3">
 <li>Click the Submit button to jump to the submission success page. Gizwits will provide you with manual review and strict testing for free. After the approval by Gizwits, the back-end server support will be provided free of charge according to the mass production plan you submitted.</li>
 </ol>
-<p><img src="../../../assets/en-us/quickstart/dev/59.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUScheme/59.png" alt="Gizwits Cloud access for standalone MCU scheme"> </p>
 <h1 id="End-of-line-test"><a href="#End-of-line-test" class="headerlink" title="End-of-line test"></a>End-of-line test</h1><p>End-of-line test is an important part of the production process to assure the product quality and enhance the product image. The Gizwits End-of-line test tool provides a convenient and quick module and MCU testing method for mass-produced products, which ensures that the modules and MCUs can be used normally. Your product must be deployed first before using the End-of-line test tool. The product creator can ask Gizwits for release. Gizwits will provide you with manual review and rigorous testing for free. For details, click here.</p>
 
     </div>
