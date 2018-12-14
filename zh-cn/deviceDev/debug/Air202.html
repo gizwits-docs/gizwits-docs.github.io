@@ -472,12 +472,14 @@
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文针对合宙Air202模组进行串口模式烧写流程整理了一篇操作流程。<strong>合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误。</strong></p>
-<h1 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h1><h2 id="1-获取对应lod固件"><a href="#1-获取对应lod固件" class="headerlink" title="1. 获取对应lod固件"></a>1. 获取对应lod固件</h2><p>以项目的形式向机智云FAE同事申请Air202 lod固件。</p>
+<h1 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h1><h2 id="1-获取对应lod固件"><a href="#1-获取对应lod固件" class="headerlink" title="1. 获取对应lod固件"></a>1. 获取对应lod固件</h2><p>以项目的形式向机智云FAE同事申请Air202 lod 固件。</p>
 <h2 id="2-解压固件压缩包"><a href="#2-解压固件压缩包" class="headerlink" title="2. 解压固件压缩包"></a>2. 解压固件压缩包</h2><p>解压之后会发现有两个文件，其中一个文件名为带有”image”的bin文件为我们所需要的固件，例如：GAgent_00HFT230_04030007_2M_image_201810311738.bin。</p>
 <p>备注：文件名带有”upgrade”的bin文件为OTA的固件，例如：GAgent_00HFT230_04030007_2M_upgrade_201810311738.bin。</p>
 <h2 id="3-设备连接"><a href="#3-设备连接" class="headerlink" title="3. 设备连接"></a>3. 设备连接</h2><p>Air202模组的UART1主串口用于与MCU进行串口通信，其简易通信接线如图3-1所示；调试串口HOST用于固件烧录和打印日志，其通信接线如图3-2所示：</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_1.png" alt="设备连接"><br>图3-1  UART1三线制连接方式示意图</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_2.png" alt="设备连接"><br>图3-2  软件调试串口连线图</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_1.png" alt="设备连接"></p>
+<p>图3-1  UART1三线制连接方式示意图</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_2.png" alt="设备连接"></p>
+<p>图3-2  软件调试串口连线图</p>
 <p>Air202模组在产品中实际搭建线路时，可参考官方转接板线路图进行连线，如图3-3所示：</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_3.png" alt="设备连接"><br><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_4.png" alt="设备连接"><br><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_5.png" alt="设备连接"><br><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_6.png" alt="设备连接"></p>
 <h2 id="4-下载LuaTools工具"><a href="#4-下载LuaTools工具" class="headerlink" title="4. 下载LuaTools工具"></a>4. 下载LuaTools工具</h2><p>打开合宙官网：<a href="http://www.openluat.com/" target="_blank" rel="noopener">http://www.openluat.com/</a></p>
@@ -492,8 +494,10 @@
 <p>我以烧录的00AIR202_04030009_Luat_V0027_8955_SSL.lod为例，首先在调试工具中确保串口选项卡的串口为你设备的串口值，点击下载LOD(core)按钮，选中之前在工具目录的lod文件：</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_9.png" alt="烧写操作"></p>
 <p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_10.png" alt="烧写操作"></p>
-<p><strong>固件烧录中</strong><br><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_11.png" alt="烧写操作"></p>
-<p><strong>烧录完成</strong><br><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_12.png" alt="烧写操作"></p>
+<p><strong>固件烧录中</strong></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_11.png" alt="烧写操作"></p>
+<p><strong>烧录完成</strong></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_12.png" alt="烧写操作"></p>
 
     </div>
     
