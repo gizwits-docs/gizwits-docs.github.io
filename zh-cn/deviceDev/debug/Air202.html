@@ -471,54 +471,24 @@
         <div class="title">合宙Air 202 串口烧写说明</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文针对汉枫HF-LPT230模块进行串口模式烧写流程整理了一篇操作流程。合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误。</p>
-<h1 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h1><h2 id="1-获取对应固件"><a href="#1-获取对应固件" class="headerlink" title="1. 获取对应固件"></a>1. 获取对应固件</h2><p>以项目的形式向机智云FAE同事申请LPT230固件压缩包。</p>
+      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文针对合宙Air202模组进行串口模式烧写流程整理了一篇操作流程。<strong>合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误。</strong></p>
+<h1 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h1><h2 id="1-获取对应lod固件"><a href="#1-获取对应lod固件" class="headerlink" title="1. 获取对应lod固件"></a>1. 获取对应lod固件</h2><p>以项目的形式向机智云FAE同事申请Air202 lod固件。</p>
 <h2 id="2-解压固件压缩包"><a href="#2-解压固件压缩包" class="headerlink" title="2. 解压固件压缩包"></a>2. 解压固件压缩包</h2><p>解压之后会发现有两个文件，其中一个文件名为带有”image”的bin文件为我们所需要的固件，例如：GAgent_00HFT230_04030007_2M_image_201810311738.bin。</p>
 <p>备注：文件名带有”upgrade”的bin文件为OTA的固件，例如：GAgent_00HFT230_04030007_2M_upgrade_201810311738.bin。</p>
-<h2 id="3-设备连接"><a href="#3-设备连接" class="headerlink" title="3. 设备连接"></a>3. 设备连接</h2><p>将HF-LPT230模块按照如下原理图进行接线，注意nReload需要输入低电平，通过按键S2控制nReload的低电平输入。S1实现外部复位功能。</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_1.png" alt="设备连接"></p>
-<p><img src="/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_10.png" alt="设备连接"></p>
-<h2 id="4-串口设置"><a href="#4-串口设置" class="headerlink" title="4. 串口设置"></a>4. 串口设置</h2><h3 id="4-1-确认串口参数"><a href="#4-1-确认串口参数" class="headerlink" title="4.1 确认串口参数"></a>4.1 确认串口参数</h3><p>将上述串口连接电脑后，通过“我的电脑”-&gt;“管理”-&gt; “设备管理器”-&gt;“端口（COM 和LPT）”选项中可以看到相应增加的COM口。</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_2.png" alt="确认串口参数"></p>
-<h3 id="4-2-下载串口工具SecureCRT"><a href="#4-2-下载串口工具SecureCRT" class="headerlink" title="4.2 下载串口工具SecureCRT"></a>4.2 下载串口工具SecureCRT</h3><p>下载地址：<a href="http://pan.baidu.com/s/1dECLxYD" target="_blank" rel="noopener">http://pan.baidu.com/s/1dECLxYD</a></p>
-<p>下载解压后双击打开SecureCRT，点击快速连接后会弹出串口配置对话框。</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_3.png" alt="串口工具SecureCRT"></p>
-<p><img src="/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_4.png" alt="串口工具SecureCRT"></p>
-<p>串口配置协议为Serial，端口为上述2.4.1中的COM口，波特率设置为230400（关键），数据位为8位，停止位为1位，无奇偶校验，最后点击连接。</p>
-<p>连接成功后，在SecureCRT工作区间会有光标闪烁。</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_6.png" alt="串口工具SecureCRT"></p>
-<p><img src="/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_5.png" alt="串口工具SecureCRT"></p>
-<h2 id="5-烧写操作"><a href="#5-烧写操作" class="headerlink" title="5. 烧写操作"></a>5. 烧写操作</h2><h3 id="5-1-进入烧写模式"><a href="#5-1-进入烧写模式" class="headerlink" title="5.1 进入烧写模式"></a>5.1 进入烧写模式</h3><p>当串口连接成功之后，将HF-LPT230的nReload接入低电平（按下第3节原理图所示的S2），然后进行复位（按下第3节原理图所示的S1后松开）或者给模块重新上电后迅速连续单击键盘空格键，<br>将会出现如下信息表示模块进入烧写模式，松开S2。</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_7.png" alt="烧写操作"></p>
-<p>备注：此步骤不易操作实现，需要多次进行试验，当进行进入烧写模式操作始终无法显示上述信息的时候要注意检查串口设置是否正确，待确保串口设置无误后再次进行连接操作。</p>
-<p>上述窗体显示信息中，各命令解释如下： </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Item</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">命令‘B’</td>
-<td style="text-align:left">清除所有设置参数，包括出厂参数等。</td>
-</tr>
-<tr>
-<td style="text-align:left">命令‘S’</td>
-<td style="text-align:left">升级应用程序；SDK等编译出来文件（需使用串口方式的升级文件）的用此选项升级。</td>
-</tr>
-<tr>
-<td style="text-align:left">命令‘G’</td>
-<td style="text-align:left">执行应用程序。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="5-2-进行烧写"><a href="#5-2-进行烧写" class="headerlink" title="5.2 进行烧写"></a>5.2 进行烧写</h3><p>输入“S”升级应用程序，再输入“Y”进入接收固件状态。</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_8.png" alt="烧写"></p>
-<p>当窗体连续打印出“CC”后选择”菜单栏” 中“传输”-&gt;”发送Xmode(N)”， 选择2.2节中所示的固件文件，点击发送。</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_9.png" alt="烧写"></p>
-<p>等待一段时候后，出现如上述信息表示烧写成功。</p>
+<h2 id="3-设备连接"><a href="#3-设备连接" class="headerlink" title="3. 设备连接"></a>3. 设备连接</h2><p>Air202模组的UART1主串口用于与MCU进行串口通信，其简易通信接线如图3-1所示；调试串口HOST用于固件烧录和打印日志，其通信接线如图3-2所示：</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_1.png" alt="设备连接"><br>图3-1  UART1三线制连接方式示意图</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_2.png" alt="设备连接"><br>图3-2  软件调试串口连线图</p>
+<p>Air202模组在产品中实际搭建线路时，可参考官方转接板线路图进行连线，如图3-3所示：</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_3.png" alt="设备连接"><br><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_4.png" alt="设备连接"><br><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_5.png" alt="设备连接"><br><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_6.png" alt="设备连接"></p>
+<h2 id="4-下载LuaTools工具"><a href="#4-下载LuaTools工具" class="headerlink" title="4. 下载LuaTools工具"></a>4. 下载LuaTools工具</h2><p>打开合宙官网：<a href="http://www.openluat.com/" target="_blank" rel="noopener">http://www.openluat.com/</a><br>选择上面的“产品中心”，随便选一个产品，如：Air202 GPRS 通信模块<br>点击模块介绍那边的“资料下载”选项卡<br>点击“[LuaTools] Luat下载调试工具x.x.x”下载<br>可以直接打开下面链接下载：<br><a href="http://www.openluat.com/Product/file/rda8955/luatools-redirect.html" target="_blank" rel="noopener">http://www.openluat.com/Product/file/rda8955/luatools-redirect.html</a><br>下载后可能会进行自动升级，这个工具基本上是持续使用，都不会出现版本过旧的问题。</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_7.png" alt="LuaTools"><br>↑软件界面<br>如果软件模式不是2G模式，点击“切换模式”→“切换至2G”</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_8.png" alt="LuaTools"></p>
+<h2 id="5-烧写操作"><a href="#5-烧写操作" class="headerlink" title="5. 烧写操作"></a>5. 烧写操作</h2><h3 id="注意：请先打开串口再将模块上电！"><a href="#注意：请先打开串口再将模块上电！" class="headerlink" title="注意：请先打开串口再将模块上电！"></a>注意：请先打开串口再将模块上电！</h3><p>模块输入电压为5V，接软件调试串口HOST。</p>
+<p>我以烧录的00AIR202_04030009_Luat_V0027_8955_SSL.lod为例，首先在调试工具中确保串口选项卡的串口为你设备的串口值，点击下载LOD(core)按钮，选中之前在工具目录的lod文件：</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_9.png" alt="烧写操作"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_10.png" alt="烧写操作"></p>
+<p><strong>固件烧录中</strong><br><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_11.png" alt="烧写操作"></p>
+<p><strong>烧录完成</strong><br><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_12.png" alt="烧写操作"></p>
 
     </div>
     
