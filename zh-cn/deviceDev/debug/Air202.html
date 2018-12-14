@@ -473,7 +473,7 @@
       </div>
       <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文针对合宙Air202模组进行串口模式烧写流程整理了一篇操作流程。<strong>合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误。</strong></p>
 <h1 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h1><h2 id="1-获取对应lod固件"><a href="#1-获取对应lod固件" class="headerlink" title="1. 获取对应lod固件"></a>1. 获取对应lod固件</h2><p>以项目的形式向机智云FAE同事申请Air202 lod 固件。</p>
-<h2 id="2-解压固件压缩包"><a href="#2-解压固件压缩包" class="headerlink" title="2. 解压固件压缩包"></a>2. 解压固件压缩包</h2><p>解压之后会发现有两个文件，其中一个文件名为带有”image”的bin文件为我们所需要的固件，例如：GAgent_00HFT230_04030007_2M_image_201810311738.bin。</p>
+<h2 id="2-解压固件压缩包"><a href="#2-解压固件压缩包" class="headerlink" title="2. 解压固件压缩包"></a>2. 解压固件压缩包</h2><p>解压之后会发现有两个文件夹，其中一个文件夹为“量产升级用.lod文件”，该文件夹中包含一个.lod文件为我们烧录所需要的固件，例如：00AIR202_04030009_Luat_V0027_8955_SSL.lod。</p>
 <p>备注：文件名带有”upgrade”的bin文件为OTA的固件，例如：GAgent_00HFT230_04030007_2M_upgrade_201810311738.bin。</p>
 <h2 id="3-设备连接"><a href="#3-设备连接" class="headerlink" title="3. 设备连接"></a>3. 设备连接</h2><p>Air202模组的UART1主串口用于与MCU进行串口通信，其简易通信接线如图3-1所示；调试串口HOST用于固件烧录和打印日志，其通信接线如图3-2所示：</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/Air202/air202programming_1.png" alt="设备连接"></p>
