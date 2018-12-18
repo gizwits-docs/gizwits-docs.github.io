@@ -389,70 +389,70 @@
 <p>Before reading this document, you are advised to have a deep understanding of the Gizwits standalone MCU scheme. Please refer to the document “Gokit-MCU program with explanation”. This document will not elaborate on the implementation of the MCU program. </p>
 <p>Below are the tailoring steps.</p>
 <h1 id="2-Check-the-resource-usage-of-the-source-code-project"><a href="#2-Check-the-resource-usage-of-the-source-code-project" class="headerlink" title="2. Check the resource usage of the source code project"></a>2. Check the resource usage of the source code project</h1><p>First, define the corresponding Data Points:</p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/11.png" alt="Tailoring MCU code"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/11.png" alt="Tailoring MCU code"></p>
 <p>Next, generate the source code project for the STC15F2K60S2 platform:</p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/12.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/12.png" alt="Tailoring MCU code"> </p>
 <p>The method to check the Data Point length: download “xxx- Gizwits standalone MCU scheme communication protocol document” in the Developer Center, and you can see that the sum of “attr_flags” + “attr_vals” in “3.2 Wi-Fi module controls device” is the total size of the Data Point length (in bytes):</p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/13.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/13.png" alt="Tailoring MCU code"> </p>
 <p>You can see that the Data Point length is 2 bytes.</p>
 <p>The SRAM usage of the compiled program is as shown in the following figure:</p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/14.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/14.png" alt="Tailoring MCU code"> </p>
 <p>It can be seen that the SRAM usage corresponding to the defined Data Points is 988 bytes (the total size of STC15F2K60S2 SRAM is 2048 bytes).</p>
 <p>If you want to further reduce memory usage, it needs to tailor the MCU SDK to meet the limited hardware resources requirement.</p>
 <h1 id="3-Tailoring-MCU-SDK-to-resource-limited-platform"><a href="#3-Tailoring-MCU-SDK-to-resource-limited-platform" class="headerlink" title="3. Tailoring MCU SDK to resource-limited platform"></a>3. Tailoring MCU SDK to resource-limited platform</h1><h2 id="3-1-Remove-transparent-transmission-code"><a href="#3-1-Remove-transparent-transmission-code" class="headerlink" title="3.1 Remove transparent transmission code"></a>3.1 Remove transparent transmission code</h2><ul>
 <li>Remove the fields for transparent transmission in the global structure:</li>
 </ul>
-<p><img src="../../../assets/en-us/DeviceDev/8051/15.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/15.png" alt="Tailoring MCU code"> </p>
 <ul>
 <li>Comment out the corresponding code:</li>
 </ul>
-<p><img src="../../../assets/en-us/DeviceDev/8051/16.png" alt="Tailoring MCU code"> </p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/17.png" alt="Tailoring MCU code"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/16.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/17.png" alt="Tailoring MCU code"></p>
 <p>Reduce memory usage by 26 bytes:</p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/18.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/18.png" alt="Tailoring MCU code"> </p>
 <h2 id="3-2-Remove-Data-Point-Event-Processing-code"><a href="#3-2-Remove-Data-Point-Event-Processing-code" class="headerlink" title="3.2 Remove Data Point Event Processing code"></a>3.2 Remove Data Point Event Processing code</h2><ul>
 <li>Remove the fields for Data Point Event Processing in the global structure:</li>
 </ul>
-<p><img src="../../../assets/en-us/DeviceDev/8051/19.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/19.png" alt="Tailoring MCU code"> </p>
 <ul>
 <li>Remove the corresponding code:</li>
 </ul>
 <p>Tip: You can search for keywords globally, such as: issuedProcessEvent.</p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/20.png" alt="Tailoring MCU code"></p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/21.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/20.png" alt="Tailoring MCU code"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/21.png" alt="Tailoring MCU code"> </p>
 <ul>
 <li>Modify the handler for converting p0 data to event:</li>
 </ul>
-<p><img src="../../../assets/en-us/DeviceDev/8051/22.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/22.png" alt="Tailoring MCU code"> </p>
 <p>Reduce memory usage by 19 bytes:</p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/23.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/23.png" alt="Tailoring MCU code"> </p>
 <ul>
 <li>Remove the global variable p0 of the user area (replaced with the global variable p0 of the common protocol area):</li>
 </ul>
-<p><img src="../../../assets/en-us/DeviceDev/8051/24.png" alt="Tailoring MCU code"> </p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/25.png" alt="Tailoring MCU code"> </p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/26.png" alt="Tailoring MCU code"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/24.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/25.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/26.png" alt="Tailoring MCU code"></p>
 <ul>
 <li>Comment out Control Event Processing code:</li>
 </ul>
-<p><img src="../../../assets/en-us/DeviceDev/8051/27.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/27.png" alt="Tailoring MCU code"> </p>
 <p>Reduce memory usage by 2 bytes:</p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/28.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/28.png" alt="Tailoring MCU code"> </p>
 <ul>
 <li>Add processing logic to the function of converting p0 data to event :</li>
 </ul>
-<p><img src="../../../assets/en-us/DeviceDev/8051/29.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/29.png" alt="Tailoring MCU code"> </p>
 <h2 id="3-3-Remove-log-output-function"><a href="#3-3-Remove-log-output-function" class="headerlink" title="3.3 Remove log output function"></a>3.3 Remove log output function</h2><p>For the MCU platforms like Arduino, when using log output, the print content will be stored in RAM by default, so it will take up a large amount of memory temporarily.</p>
 <p>Note: The STC15F2K60S2 platform does not have this problem, and its print content will be stored in the code area, i.e., FLASH, and does not occupy the memory space of the xdata area.</p>
 <p>You can comment out the log output code or modify the redirect macro to remove the log output function:</p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/30.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/30.png" alt="Tailoring MCU code"> </p>
 <h1 id="4-Summary"><a href="#4-Summary" class="headerlink" title="4. Summary"></a>4. Summary</h1><p>The section above meets the limited hardware resources requirement by tailoring transparent transmission, the conversion of Data Point into event, and user area global variables. </p>
 <p>From the tailoring example above, we see that when only one Boolean Data Point is defined, the Data Point length in the protocol is as follows:</p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/31.png" alt="Tailoring MCU code"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/31.png" alt="Tailoring MCU code"> </p>
 <p>You can see that the Data Point length is 2 bytes.</p>
 <p>The memory usage has been reduced from 988 bytes to 941 bytes, reducing the total memory usage by 47 bytes.</p>
 <p>It has been tested that when defining an extension type Data Point of 20 bytes, the Data Point length in the protocol is as follows:</p>
-<p><img src="../../../assets/en-us/DeviceDev/8051/32.png" alt="Tailoring MCU code"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/Tailoring/32.png" alt="Tailoring MCU code"></p>
 <p>You can see that the Data Point length is 21 bytes.</p>
 <p>Similarly, the memory usage can be reduced from 1332 bytes to 1248 bytes, reducing the memory usage by 84 bytes.</p>
 <p>Conclusion: The more Data Points you define, the more memory you will save by this way.</p>
