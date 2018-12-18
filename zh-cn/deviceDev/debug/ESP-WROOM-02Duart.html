@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
 
-  <title>ESP-EROOM-02D串口烧写说明 - 机智云</title>
+  <title>ESP-WROOM-02D串口烧写说明 - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="ESP-EROOM-02D串口烧写说明-机智云">
-  <meta name="keywords" content="ESP-EROOM-02D串口烧写说明 docs 文档中心 Gizwits">
+  <meta name="Description" content="ESP-WROOM-02D串口烧写说明-机智云">
+  <meta name="keywords" content="ESP-WROOM-02D串口烧写说明 docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -468,16 +468,16 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">ESP-EROOM-02D串口烧写说明</div>
+        <div class="title">ESP-WROOM-02D串口烧写说明</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文针对乐鑫ESP-EROOM-02D模块进行串口模式烧写流程整理了一篇操作流程。<strong>合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误。</strong></p>
-<h1 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h1><h2 id="1-下载ESP-EROOM-02D对应的固件"><a href="#1-下载ESP-EROOM-02D对应的固件" class="headerlink" title="1.下载ESP-EROOM-02D对应的固件"></a>1.下载ESP-EROOM-02D对应的固件</h2><p>ESP-EROOM-02D GAgent固件下载地址：<a href="https://download.gizwits.com/zh-cn/p/92/94" target="_blank" rel="noopener">https://download.gizwits.com/zh-cn/p/92/94</a><br>由于ESP-EROOM-02D与ESP8266的CPU相同，所以下载ESP8266的GAgent固件可适用于ESP-EROOM-02D。<br> <img src="/assets/zh-cn/deviceDev/debug/ESP-EROOM-02D/ESPEROOMprogramming_1.png" alt="name"></p>
+      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文针对乐鑫ESP-WROOM-02D模块进行串口模式烧写流程整理了一篇操作流程。<strong>合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误。</strong></p>
+<h1 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h1><h2 id="1-下载ESP-WROOM-02D对应的固件"><a href="#1-下载ESP-WROOM-02D对应的固件" class="headerlink" title="1.下载ESP-WROOM-02D对应的固件"></a>1.下载ESP-WROOM-02D对应的固件</h2><p>ESP-WROOM-02D GAgent固件下载地址：<a href="https://download.gizwits.com/zh-cn/p/92/94" target="_blank" rel="noopener">https://download.gizwits.com/zh-cn/p/92/94</a><br>由于ESP-WROOM-02D与ESP8266的CPU相同，所以下载ESP8266的GAgent固件可适用于ESP-WROOM-02D。<br> <img src="/assets/zh-cn/deviceDev/debug/ESP-EROOM-02D/ESPEROOMprogramming_1.png" alt="name"></p>
 <p> <img src="/assets/zh-cn/deviceDev/debug/ESP-EROOM-02D/ESPEROOMprogramming_2.png" alt="name"></p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/ESP-EROOM-02D/ESPEROOMprogramming_3.png" alt="name"></p>
 <h2 id="2-确认固件文件（以combine固件为例）"><a href="#2-确认固件文件（以combine固件为例）" class="headerlink" title="2.确认固件文件（以combine固件为例）"></a>2.确认固件文件（以combine固件为例）</h2><p> <img src="/assets/zh-cn/deviceDev/debug/ESP-EROOM-02D/ESPEROOMprogramming_4.png" alt="name"></p>
-<p>如图所示.bin文件为我们所需要的固件，由于ESP-EROO-02DM模组的flash是2MB的，使用机智云官网乐鑫8266固件的16Mbit固件。如图所示bin文件为我们所需要的固件。</p>
-<h2 id="3-设备连接"><a href="#3-设备连接" class="headerlink" title="3.设备连接"></a>3.设备连接</h2><p>将ESP-EROOM-02D模块按照如下原理图进行接线，注意GPIO0（7号管脚）需要输入低电平，本实验直接接地处理，KEY1实现外部复位功能。<br>  <img src="/assets/zh-cn/deviceDev/debug/ESP-EROOM-02D/ESPEROOMprogramming_5.png" alt="name"></p>
+<p>如图所示.bin文件为我们所需要的固件，由于ESP-WROOM-02DM模组的flash是2MB的，使用机智云官网乐鑫8266固件的16Mbit固件。如图所示bin文件为我们所需要的固件。</p>
+<h2 id="3-设备连接"><a href="#3-设备连接" class="headerlink" title="3.设备连接"></a>3.设备连接</h2><p>将ESP-WROOM-02D模块按照如下原理图进行接线，注意GPIO0（7号管脚）需要输入低电平，本实验直接接地处理，KEY1实现外部复位功能。<br>  <img src="/assets/zh-cn/deviceDev/debug/ESP-EROOM-02D/ESPEROOMprogramming_5.png" alt="name"></p>
 <p><strong>上图为烧录固件简易原理图，在产品中实际搭建线路时，请参考官方提供线路图，如下所示：</strong></p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/ESP-EROOM-02D/ESPEROOMprogramming_6.png" alt="name"></p>
 <h2 id="4-串口设置"><a href="#4-串口设置" class="headerlink" title="4.串口设置"></a>4.串口设置</h2><h3 id="下载烧写软件"><a href="#下载烧写软件" class="headerlink" title="下载烧写软件"></a>下载烧写软件</h3><p>下载地址：<a href="https://www.espressif.com/zh-hans/support/download/other-tools?keys=&amp;field_type_tid%5B%5D=14" target="_blank" rel="noopener">https://www.espressif.com/zh-hans/support/download/other-tools?keys=&amp;field_type_tid%5B%5D=14</a></p>
