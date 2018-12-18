@@ -388,14 +388,14 @@
 <p>With the automatically generated code, you don’t have to deal with protocol-related issues, and focus on the core functional development of the product, which allows you to save time and effort.</p>
 <p>The standalone MCU scheme supports the STM32F103C8x platform by default. For other MCU chips, you can port the generated Common Platform Edition of MCU SDK to the qualified platform to implement the various functions provided by Gizwits.<br>This document will focus on the porting to the Common Platform Edition of MCU SDK.</p>
 <h2 id="2-How-to-use-Gizwits-MCU-Code-Auto-Generator-for-the-Common-Platform-Edition-of-MCU-SDK"><a href="#2-How-to-use-Gizwits-MCU-Code-Auto-Generator-for-the-Common-Platform-Edition-of-MCU-SDK" class="headerlink" title="2. How to use Gizwits MCU Code Auto-Generator for the Common Platform Edition of MCU SDK?"></a>2. How to use Gizwits MCU Code Auto-Generator for the Common Platform Edition of MCU SDK?</h2><p>After defining a product in Gizwits IoT Cloud, click “MCU Development” in the left navigation pane, and choose the standalone MCU scheme for the hardware scheme. In the hardware platform drop-down list, select Other platforms. Then click “Generate Code” and wait to download the generated code package.</p>
-<p><img src="../../../assets/en-us/DeviceDev/DevSDK/common/11.png" alt="Porting instructions"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/MCUSDK/11.png" alt="Porting instructions"></p>
 <p>After downloading the code package, unpack it.</p>
 <h2 id="3-Know-before-you-go"><a href="#3-Know-before-you-go" class="headerlink" title="3. Know before you go"></a>3. Know before you go</h2><p>Before the porting, you must ensure that the target hardware platform meets the following requirements:</p>
 <p>A. The platform supports two serial ports (at least one), one for data transmission and reception with the Wi-Fi module (required), and the other for debugging information printing (the former port can be reused for this purpose).</p>
 <p>B. The platform supports the timer function (with 1ms accuracy).</p>
 <p>C. The platform supports at least 2K RAM (the ring buffer size can be adjusted to solve this problem, but it is likely to induce abnormalities when processing the data protocol).</p>
 <p>Note: Set the ring buffer here: Gizwits\gizwits_protocol.h</p>
-<p><img src="../../../assets/en-us/DeviceDev/DevSDK/common/12.png" alt="Porting instructions"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/MCUSDK/12.png" alt="Porting instructions"></p>
 <p>In the above code snippet, MAX_PACKAGE_LEN = 950, that is, the size of the ring buffer is 950*2 = 1900 bytes. Here you can adjust the RAM usage of the program.</p>
 <h1 id="Porting-instructions"><a href="#Porting-instructions" class="headerlink" title="Porting instructions"></a>Porting instructions</h1><h2 id="1-Introduction-to-the-related-files"><a href="#1-Introduction-to-the-related-files" class="headerlink" title="1. Introduction to the related files"></a>1. Introduction to the related files</h2><p>1). gizwits_product.c</p>
 <p>This file contains product-related processing functions such as gizwitsEventProcess().</p>
@@ -436,7 +436,7 @@
 <p>b). Control-type events</p>
 <p>They are related to the Data Points. This version of the code will print the relevant event information and the relevant values. You only need to implement the specific execution of the command.</p>
 <h2 id="3-Code-structure"><a href="#3-Code-structure" class="headerlink" title="3. Code structure"></a>3. Code structure</h2><p>Gizwits MCU Code Auto-Generator has produced the corresponding Gizwits serial protocol layer code according to the user-defined product Data Points, and you need to port the code into your own project to complete the device connection as shown below:</p>
-<p><img src="../../../assets/en-us/DeviceDev/DevSDK/common/13.png" alt="Porting instructions"></p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/MCUSDK/13.png" alt="Porting instructions"></p>
 <p>The protocol logic and the main program flow in the green blocks of the above figure have been implemented for you. The blocks marked with the yellow text in the figure is to be implemented. The porting process is composed of the following steps:</p>
 <p>a. Set up a minimum platform project (required).</p>
 <p>b. Implement serial port driver (required): including communication and printing functions.</p>
@@ -482,7 +482,7 @@
 <h2 id="For-organizations"><a href="#For-organizations" class="headerlink" title="For organizations"></a>For organizations</h2><p>Gizwits has a lot of support programs for organizations, you can contact Gizwits to get Gokit and timely technical support.</p>
 <p>Website: <a href="http://www.gizwits.com/about-us" target="_blank" rel="noopener">http://www.gizwits.com/about-us</a></p>
 <p>WeChat Official Account QR code of Gizwits:</p>
-<p><img src="../../../assets/en-us/DeviceDev/DevSDK/common/14.png" alt="Porting instructions"> </p>
+<p><img src="/assets/en-us/DeviceDev/MCUCode/MCUSDK/14.png" alt="Porting instructions"> </p>
 
     </div>
     
