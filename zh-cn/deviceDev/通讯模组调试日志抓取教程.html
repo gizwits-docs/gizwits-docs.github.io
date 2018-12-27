@@ -535,11 +535,11 @@
 <h3 id="（3）确保天线没问题与电信NB卡没问题。"><a href="#（3）确保天线没问题与电信NB卡没问题。" class="headerlink" title="（3）确保天线没问题与电信NB卡没问题。"></a>（3）确保天线没问题与电信NB卡没问题。</h3><p>天线问题：没插电线或者天线有问题，可以使用AT+CSQ指令查看模组信号强度，0~10 代表低； 10~20代表中； 20~31代表高；99代表未插卡。</p>
 <p> <img src="/assets/zh-cn/deviceDev/Journal/N102log_5.png" alt="name"></p>
 <p>电信NB卡有可能会有过期需要续费才能用的情况，但是从NB模组日志中是看不出来的，建议直接找真真确认卡有无问题</p>
-<h2 id="8-获取合宙Air202-日志"><a href="#8-获取合宙Air202-日志" class="headerlink" title="8. 获取合宙Air202 日志"></a>8. 获取合宙Air202 日志</h2><p><strong>步骤一、</strong>按照下图所示为合宙Air202的管脚定义图，将图中所示的25、26号管脚（HOST-RXD/HOST-TXD）（软件调试串口）通过USB转串口工具连接到电脑，串口工具GND需接模组GND，接线图如图1所示，并记录相应的com口。</p>
+<h2 id="8-获取合宙Air202-日志"><a href="#8-获取合宙Air202-日志" class="headerlink" title="8. 获取合宙Air202 日志"></a>8. 获取合宙Air202 日志</h2><p><strong>步骤一、</strong> 按照下图所示为合宙Air202的管脚定义图，将图中所示的25、26号管脚（HOST-RXD/HOST-TXD）（软件调试串口）通过USB转串口工具连接到电脑，串口工具GND需接模组GND，接线图如图1所示，并记录相应的com口。</p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/Journal/air202log_1.png" alt="nam"></p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/Journal/air202log_2.png" alt="nam"></p>
 <p>   图1 软件调试串口连线图</p>
-<p><strong>步骤二、</strong>下载LuaTools工具</p>
+<p><strong>步骤二、</strong> 下载LuaTools工具</p>
 <p>打开合宙官网：<a href="http://www.openluat.com/" target="_blank" rel="noopener">http://www.openluat.com/</a></p>
 <p>选择上面的“产品中心”，随便选一个产品，如：Air202 GPRS 通信模块</p>
 <p>点击模块介绍那边的“资料下载”选项卡</p>
@@ -552,9 +552,9 @@
 <p> <img src="/assets/zh-cn/deviceDev/debug/Journal/air202log_4.png" alt="nam"></p>
 <p> 选择对应串口，打开端口，给设备上电，开始打印。</p>
 <p> <img src="/assets/zh-cn/deviceDev/debug/Journal/air202log_5.png" alt="nam"></p>
-<p><strong>步骤三、</strong>此时串口工具的窗口将会出现日志的内容</p>
+<p><strong>步骤三、</strong> 此时串口工具的窗口将会出现日志的内容</p>
 <p> <img src="/assets/zh-cn/deviceDev/debug/Journal/air202log_6.png" alt="nam"></p>
-<p><strong>步骤四、</strong>将日志内容全选后保存在一个txt文件中发给机智云FAE团队</p>
+<p><strong>步骤四、</strong> 将日志内容全选后保存在一个txt文件中发给机智云FAE团队</p>
 
     </div>
     
