@@ -487,8 +487,9 @@
 <p>图3-2  调试串口UART0连线图</p>
 <h3 id="N102-的实际线路图如图3-3所示："><a href="#N102-的实际线路图如图3-3所示：" class="headerlink" title="N102 的实际线路图如图3-3所示："></a>N102 的实际线路图如图3-3所示：</h3><p><img src="/assets/zh-cn/deviceDev/debug/N102_DTU/N102programming_3.png" alt="设备连接"></p>
 <p>图3-3  N102 接线图</p>
-<h2 id="4-下载FLASH-TOOL工具"><a href="#4-下载FLASH-TOOL工具" class="headerlink" title="4. 下载FLASH_TOOL工具"></a>4. 下载FLASH_TOOL工具</h2><h3 id="FLASH-TOOL工具下载链接："><a href="#FLASH-TOOL工具下载链接：" class="headerlink" title="FLASH_TOOL工具下载链接："></a>FLASH_TOOL工具下载链接：</h3><p>(<a href="http://docs.gizwits.com/assets/pdf/IOT_FLASH_TOOL/IOT_Flash_Tool.rar" target="_blank" rel="noopener">http://docs.gizwits.com/assets/pdf/IOT_FLASH_TOOL/IOT_Flash_Tool.rar</a>)</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/N102_DTU/N102programming_4.png" alt="FLASH_TOOL"><br>↑软件界面</p>
+<h2 id="4-下载FLASH-TOOL工具"><a href="#4-下载FLASH-TOOL工具" class="headerlink" title="4. 下载FLASH_TOOL工具"></a>4. 下载FLASH_TOOL工具</h2><h3 id="FLASH-TOOL工具下载链接："><a href="#FLASH-TOOL工具下载链接：" class="headerlink" title="FLASH_TOOL工具下载链接："></a>FLASH_TOOL工具下载链接：</h3><p><a href="http://docs.gizwits.com/assets/pdf/IOT_FLASH_TOOL/IOT_Flash_Tool.rar" target="_blank" rel="noopener">http://docs.gizwits.com/assets/pdf/IOT_FLASH_TOOL/IOT_Flash_Tool.rar</a></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/N102_DTU/N102programming_4.png" alt="FLASH_TOOL"></p>
+<p>↑软件界面</p>
 <h2 id="5-烧写操作"><a href="#5-烧写操作" class="headerlink" title="5. 烧写操作"></a>5. 烧写操作</h2><h3 id="注意：请先打开串口再将模块上电！"><a href="#注意：请先打开串口再将模块上电！" class="headerlink" title="注意：请先打开串口再将模块上电！"></a>注意：请先打开串口再将模块上电！</h3><p>模块输入电压为5V，接软件调试串口UART0。</p>
 <p>首先在调试工具中确保串口选项卡的串口为你设备的串口值，选择下载的固件，点击start，模组上电(pwrkey先不拉低)，然后pwrkey拉低到串口烧写软件出现进度条，设备上电，出现进度条：</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/N102_DTU/N102programming_5.png" alt="烧写操作"></p>
@@ -496,19 +497,31 @@
 <h3 id="烧录完成"><a href="#烧录完成" class="headerlink" title="烧录完成"></a>烧录完成</h3><p><img src="/assets/zh-cn/deviceDev/debug/N102_DTU/N102programming_7.png" alt="烧写操作"></p>
 <h4 id="使用串口助手连接串口uart0，检查固件版本是否正确。"><a href="#使用串口助手连接串口uart0，检查固件版本是否正确。" class="headerlink" title="使用串口助手连接串口uart0，检查固件版本是否正确。"></a>使用串口助手连接串口uart0，检查固件版本是否正确。</h4><p><img src="/assets/zh-cn/deviceDev/debug/N102_DTU/N102programming_8.png" alt="版本"></p>
 <p>注：目前纸质标签模组查看模组日志波特率是9600，激光雕刻模组查看模组日志波特率是115200。</p>
-<h2 id="6-查看有无写入IMEI和AUTHCODE（授权秘钥）"><a href="#6-查看有无写入IMEI和AUTHCODE（授权秘钥）" class="headerlink" title="6. 查看有无写入IMEI和AUTHCODE（授权秘钥）"></a>6. 查看有无写入IMEI和AUTHCODE（授权秘钥）</h2><p>打开串口调试助软件，波特率115200，连接模块的串口UART0。<br>6.1查看IMEI，输入AT+CGSN=1(1后面要加回车)，输入3-4次。IMEI一般都是已经写好的<br>AT+CGSN=1</p>
+<h2 id="6-查看有无写入IMEI和AUTHCODE（授权秘钥）"><a href="#6-查看有无写入IMEI和AUTHCODE（授权秘钥）" class="headerlink" title="6. 查看有无写入IMEI和AUTHCODE（授权秘钥）"></a>6. 查看有无写入IMEI和AUTHCODE（授权秘钥）</h2><p>打开串口调试助软件，波特率115200，连接模块的串口UART0。</p>
+<h3 id="6-1-查看IMEI，输入AT-CGSN-1-1后面要加回车-，输入3-4次。IMEI一般都是已经写好的"><a href="#6-1-查看IMEI，输入AT-CGSN-1-1后面要加回车-，输入3-4次。IMEI一般都是已经写好的" class="headerlink" title="6.1 查看IMEI，输入AT+CGSN=1(1后面要加回车)，输入3-4次。IMEI一般都是已经写好的"></a>6.1 查看IMEI，输入AT+CGSN=1(1后面要加回车)，输入3-4次。IMEI一般都是已经写好的</h3><p>AT+CGSN=1</p>
 <p>+CGSN: 866061038958554</p>
-<p>OK<br>返回IMEI，模块里面已写入IMEI。<br>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
+<p>OK</p>
+<p>返回IMEI，模块里面已写入IMEI。</p>
+<p>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
 <p>AT+CGSN=1</p>
 <p>+CGSN: 000000000000000!</p>
-<p>OK<br>返回多个0，模块里面没有写入IMEI，需要写入IMEI。</p>
-<p>写入实例：<br>AT<em>MCGSN=1,”012345678912345”(IMEI在模组表面可查看)<br>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></em>/</p>
-<p>6.2查看AUTHCODE，输入AT+AUTHCODE?(?后面要加回车)<br>AT+AUTHCODE?</p>
+<p>OK</p>
+<p>返回多个0，模块里面没有写入IMEI，需要写入IMEI。</p>
+<p>写入实例：</p>
+<p>AT*MCGSN=1,”012345678912345”(IMEI在模组表面可查看)</p>
+<p>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
+<h3 id="6-2-查看AUTHCODE，输入AT-AUTHCODE-后面要加回车"><a href="#6-2-查看AUTHCODE，输入AT-AUTHCODE-后面要加回车" class="headerlink" title="6.2 查看AUTHCODE，输入AT+AUTHCODE?(?后面要加回车)"></a>6.2 查看AUTHCODE，输入AT+AUTHCODE?(?后面要加回车)</h3><p>AT+AUTHCODE?</p>
 <p>+AUTHCODE:b746XXXXXXXXXXXXXXX77</p>
-<p>OK<br>返回AUTHCODE，模块里面已写入AUTHCODE<br>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
+<p>OK</p>
+<p>返回AUTHCODE，模块里面已写入AUTHCODE</p>
+<p>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
 <p>AT+AUTHCODE?</p>
 <p>+AUTHCODE:</p>
-<p>OK<br>返回空，模块里面没有AUTHCODE，需要写入AUTHCODE。<br>写入实例：<br>AT+AUTHCODE=XXXXXXXXXXXXXXXXXXX<br>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
+<p>OK</p>
+<p>返回空，模块里面没有AUTHCODE，需要写入AUTHCODE。</p>
+<p>写入实例：</p>
+<p>AT+AUTHCODE=XXXXXXXXXXXXXXXXXXX</p>
+<p>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
 <p>注：客户编号（PIN）和授权码（Auth_Code）根据IMEI生成AUTHCODE（授权秘钥），如需使用授权密钥，可联系机智云FAE或者销售同事获取。</p>
 <h2 id="7-模组添加到产品里"><a href="#7-模组添加到产品里" class="headerlink" title="7. 模组添加到产品里"></a>7. 模组添加到产品里</h2><p>先创建NB-IOT产品，通讯方式选择NB-IOT，命令下发模式选择DRX。</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/N102_DTU/N102programming_9.png" alt="添加产品"></p>
