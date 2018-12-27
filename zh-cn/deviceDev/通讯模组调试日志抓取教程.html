@@ -506,7 +506,7 @@
 <p> <img src="/assets/zh-cn/deviceDev/Journal/N102log_1.png" alt="name"></p>
 <p> <img src="/assets/zh-cn/deviceDev/Journal/N102log_2.png" alt="name"></p>
 <p><strong>步骤二至步骤五</strong> 参考第1节所列步骤，串口工具选择的波特率为115200。</p>
-<h3 id="附：其他AT指令使用说明"><a href="#附：其他AT指令使用说明" class="headerlink" title="附：其他AT指令使用说明"></a>附：其他AT指令使用说明</h3><h4 id="打开串口调试助软件，波特率115200，连接模块的串口UART0。"><a href="#打开串口调试助软件，波特率115200，连接模块的串口UART0。" class="headerlink" title="打开串口调试助软件，波特率115200，连接模块的串口UART0。"></a>打开串口调试助软件，波特率115200，连接模块的串口UART0。</h4><h3 id="（1）查看有无写入IMEI"><a href="#（1）查看有无写入IMEI" class="headerlink" title="（1）查看有无写入IMEI"></a>（1）查看有无写入IMEI</h3><p>输入AT+CGSN=1(1后面要加回车)，输入3-4次。IMEI一般都是已经写好的</p>
+<h3 id="附：其他AT指令使用说明"><a href="#附：其他AT指令使用说明" class="headerlink" title="附：其他AT指令使用说明"></a>附：其他AT指令使用说明</h3><h4 id="打开串口调试助软件，波特率115200，连接模块的串口UART0。"><a href="#打开串口调试助软件，波特率115200，连接模块的串口UART0。" class="headerlink" title="打开串口调试助软件，波特率115200，连接模块的串口UART0。"></a>打开串口调试助软件，波特率115200，连接模块的串口UART0。</h4><h4 id="（1）查看有无写入IMEI"><a href="#（1）查看有无写入IMEI" class="headerlink" title="（1）查看有无写入IMEI"></a>（1）查看有无写入IMEI</h4><p>输入AT+CGSN=1(1后面要加回车)，输入3-4次。IMEI一般都是已经写好的</p>
 <p>AT+CGSN=1</p>
 <p>+CGSN: 866061038958554</p>
 <p>OK</p>
@@ -518,7 +518,7 @@
 <p>写入实例：</p>
 <p>AT*MCGSN=1,”012345678912345”(IMEI在模组表面可查看)</p>
 <p>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
-<h3 id="（2）查看有无写入AUTHCODE（授权秘钥）"><a href="#（2）查看有无写入AUTHCODE（授权秘钥）" class="headerlink" title="（2）查看有无写入AUTHCODE（授权秘钥）"></a>（2）查看有无写入AUTHCODE（授权秘钥）</h3><p>输入AT+AUTHCODE?(?后面要加回车)</p>
+<h4 id="（2）查看有无写入AUTHCODE（授权秘钥）"><a href="#（2）查看有无写入AUTHCODE（授权秘钥）" class="headerlink" title="（2）查看有无写入AUTHCODE（授权秘钥）"></a>（2）查看有无写入AUTHCODE（授权秘钥）</h4><p>输入AT+AUTHCODE?(?后面要加回车)</p>
 <p>AT+AUTHCODE?</p>
 <p>+AUTHCODE:b746XXXXXXXXXXXXXXX77</p>
 <p>OK</p>
@@ -532,7 +532,7 @@
 <p>AT+AUTHCODE=XXXXXXXXXXXXXXXXXXX</p>
 <p>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
 <p>注：客户编号（PIN）和授权码（Auth_Code）根据IMEI生成AUTHCODE（授权秘钥），如需使用授权密钥，可联系机智云FAE或者销售同事获取。</p>
-<h3 id="（3）确保天线没问题与电信NB卡没问题。"><a href="#（3）确保天线没问题与电信NB卡没问题。" class="headerlink" title="（3）确保天线没问题与电信NB卡没问题。"></a>（3）确保天线没问题与电信NB卡没问题。</h3><p>天线问题：没插电线或者天线有问题，可以使用AT+CSQ指令查看模组信号强度，0~10 代表低； 10~20代表中； 20~31代表高；99代表未插卡。</p>
+<h4 id="（3）确保天线没问题与电信NB卡没问题。"><a href="#（3）确保天线没问题与电信NB卡没问题。" class="headerlink" title="（3）确保天线没问题与电信NB卡没问题。"></a>（3）确保天线没问题与电信NB卡没问题。</h4><p>天线问题：没插电线或者天线有问题，可以使用AT+CSQ指令查看模组信号强度，0~10 代表低； 10~20代表中； 20~31代表高；99代表未插卡。</p>
 <p> <img src="/assets/zh-cn/deviceDev/Journal/N102log_5.png" alt="name"></p>
 <p>电信NB卡有可能会有过期需要续费才能用的情况，但是从NB模组日志中是看不出来的，建议直接找真真确认卡有无问题</p>
 <h2 id="8-获取合宙Air202-日志"><a href="#8-获取合宙Air202-日志" class="headerlink" title="8. 获取合宙Air202 日志"></a>8. 获取合宙Air202 日志</h2><p><strong>步骤一、</strong> 按照下图所示为合宙Air202的管脚定义图，将图中所示的25、26号管脚（HOST-RXD/HOST-TXD）（软件调试串口）通过USB转串口工具连接到电脑，串口工具GND需接模组GND，接线图如图1所示，并记录相应的com口。</p>
