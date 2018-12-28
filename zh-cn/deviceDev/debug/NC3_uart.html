@@ -522,13 +522,46 @@
 <tr>
 <td>67</td>
 <td style="text-align:center">TXD</td>
-<td style="text-align:right">UART发送数据</td>
+<td style="text-align:right">UART 发送数据</td>
+</tr>
+<tr>
+<td>68</td>
+<td style="text-align:center">RSD</td>
+<td style="text-align:right">UART 接收数据</td>
 </tr>
 </tbody>
 </table>
+<p><strong>日志串口：</strong></p>
+<table>
+<thead>
+<tr>
+<th>管脚号</th>
+<th style="text-align:center">管脚名</th>
+<th style="text-align:right">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>63</td>
+<td style="text-align:center">DCD</td>
+<td style="text-align:right">UART1 发送数据</td>
+</tr>
+<tr>
+<td>66</td>
+<td style="text-align:center">DRT</td>
+<td style="text-align:right">UART1 接收数据</td>
+</tr>
+</tbody>
+</table>
+<p>串口设计图：</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_8.png" alt="name"></p>
+<h2 id="4-6-开机引脚的连接"><a href="#4-6-开机引脚的连接" class="headerlink" title="4.6 开机引脚的连接"></a>4.6 开机引脚的连接</h2><p>CLM920 NC3 模块的 21 脚是开机脚，模块开机是低电平有效，PWRKEY 拉低至少500ms，模块开机，用户可通过查询 VDD_EXT 管脚的高低电平来判断模块是否开机</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_9.png" alt="name"></p>
-<p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_10.png" alt="name"><br><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_11.png" alt="name"></p>
+<h1 id="三、烧录操作步骤"><a href="#三、烧录操作步骤" class="headerlink" title="三、烧录操作步骤"></a>三、烧录操作步骤</h1><p>连接好硬件，将USB接口插入电脑的USB口，安装好驱动之后，开机，打开设备管理器，设备管理器会显示两个串口</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_10.png" alt="name"></p>
+<p>双击固件文件夹内的updateadb_9025.bat批处理文件，会打开一个命令行串口，烧写完成后，窗口会自动关闭</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_11.png" alt="name"></p>
+<p>之后设备将会重启，此时固件已烧写成功</p>
 
     </div>
     
