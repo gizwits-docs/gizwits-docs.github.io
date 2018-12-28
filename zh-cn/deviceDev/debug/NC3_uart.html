@@ -529,7 +529,9 @@
 </li>
 </ul>
 <h2 id="4-5-串口的定义和使用"><a href="#4-5-串口的定义和使用" class="headerlink" title="4.5 串口的定义和使用"></a>4.5 串口的定义和使用</h2><p>机智云对于域格NC3的模块使用了两个串口，以下为串口的作用以及管脚定义</p>
-<p><strong>通信串口：</strong></p>
+<ul>
+<li><strong>通信串口：</strong></li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -551,7 +553,9 @@
 </tr>
 </tbody>
 </table>
-<p><strong>日志串口：</strong></p>
+<ul>
+<li><strong>日志串口：</strong></li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -577,11 +581,17 @@
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_8.png" alt="name"></p>
 <h2 id="4-6-开机引脚的连接"><a href="#4-6-开机引脚的连接" class="headerlink" title="4.6 开机引脚的连接"></a>4.6 开机引脚的连接</h2><p>CLM920 NC3 模块的 21 脚是开机脚，模块开机是低电平有效，PWRKEY 拉低至少500ms，模块开机，用户可通过查询 VDD_EXT 管脚的高低电平来判断模块是否开机</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_9.png" alt="name"></p>
-<h1 id="三、烧录操作步骤"><a href="#三、烧录操作步骤" class="headerlink" title="三、烧录操作步骤"></a>三、烧录操作步骤</h1><p>连接好硬件，将USB接口插入电脑的USB口，安装好驱动之后，开机，打开设备管理器，设备管理器会显示两个串口</p>
+<h1 id="三、烧录操作步骤"><a href="#三、烧录操作步骤" class="headerlink" title="三、烧录操作步骤"></a>三、烧录操作步骤</h1><ul>
+<li>连接好硬件，将USB接口插入电脑的USB口，安装好驱动之后，开机，打开设备管理器，设备管理器会显示两个串口</li>
+</ul>
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_10.png" alt="name"></p>
-<p>双击固件文件夹内的updateadb_9025.bat批处理文件，会打开一个命令行串口，烧写完成后，窗口会自动关闭</p>
+<ul>
+<li>双击固件文件夹内的updateadb_9025.bat批处理文件，会打开一个命令行串口，烧写完成后，窗口会自动关闭</li>
+</ul>
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_11.png" alt="name"></p>
-<p>之后设备将会重启，此时固件已烧写成功</p>
+<ul>
+<li>之后设备将会重启，此时固件已烧写成功</li>
+</ul>
 
     </div>
     
