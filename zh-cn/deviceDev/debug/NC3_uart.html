@@ -488,26 +488,46 @@
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_2.png" alt="name"></p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_3.png" alt="name"></p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_4.png" alt="name"></p>
-<p>为防止浪涌及过压对模块的损坏，建议在模块 VBAT 引脚上并联一个 5.1V/500mW的齐纳二极管。</p>
-<p>建议在 VBAT 管脚增加 3 个陶瓷电容(33pF,10pF,100nF)且靠近 VBAT 管脚放置。</p>
-<p>模块最低工作电压为 3.3V，由于传输数据或 GSM 通话会产生 2A 以上电流，导致电源电压上产生纹波压降，因此实际供电电压不得低于 3.3V。</p>
+<ul>
+<li><p>为防止浪涌及过压对模块的损坏，建议在模块 VBAT 引脚上并联一个 5.1V/500mW的齐纳二极管。</p>
+</li>
+<li><p>建议在 VBAT 管脚增加 3 个陶瓷电容(33pF,10pF,100nF)且靠近 VBAT 管脚放置。</p>
+</li>
+<li><p>模块最低工作电压为 3.3V，由于传输数据或 GSM 通话会产生 2A 以上电流，导致电源电压上产生纹波压降，因此实际供电电压不得低于 3.3V。</p>
+</li>
+</ul>
 <h3 id="4-3-USIM卡参考电路"><a href="#4-3-USIM卡参考电路" class="headerlink" title="4.3 USIM卡参考电路"></a>4.3 USIM卡参考电路</h3><p>CLM920 NC3 模块不自带 USIM 卡槽，用户使用时需在自己的接口板上设计 USIM 卡槽。USIM 卡接口参考电路如下：</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_5.png" alt="name"></p>
-<p>USIM 接口线上建议选择 ONSEMI 公司的 SMF15C 器来做 ESD 防护，外围电路器件应该靠近卡座放置，SIM 卡座靠近模块布局。</p>
-<p>USIM 卡电路容易受到射频干扰引起不识卡或掉卡，因此卡槽应尽量放置在远离天</p>
-<p>线射频辐射的地方，卡走线尽量远离射频，电源和高速信号线。</p>
-<p>UIM_DATA 内部已经通过 47K 电阻上拉到 VDD_EXT，外部不需要上拉。</p>
-<p>UIM_DET 为 USIM 卡插入或未插入检测脚，默认时为高电平，热插拔应用时可通过此 PIN 脚检测 SIM 卡状态。</p>
-<p>USIM 接口为避免瞬间电压过载，需在信号线通路上各串联一个 22R 的电阻。</p>
-<p>USIM 卡座的地和模块的地要保持良好的连通性。</p>
+<ul>
+<li><p>USIM 接口线上建议选择 ONSEMI 公司的 SMF15C 器来做 ESD 防护，外围电路器件应该靠近卡座放置，SIM 卡座靠近模块布局。</p>
+</li>
+<li><p>USIM 卡电路容易受到射频干扰引起不识卡或掉卡，因此卡槽应尽量放置在远离天。</p>
+</li>
+<li><p>线射频辐射的地方，卡走线尽量远离射频，电源和高速信号线。</p>
+</li>
+<li><p>UIM_DATA 内部已经通过 47K 电阻上拉到 VDD_EXT，外部不需要上拉。</p>
+</li>
+<li><p>UIM_DET 为 USIM 卡插入或未插入检测脚，默认时为高电平，热插拔应用时可通过此 PIN 脚检测 SIM 卡状态。</p>
+</li>
+<li><p>USIM 接口为避免瞬间电压过载，需在信号线通路上各串联一个 22R 的电阻。</p>
+</li>
+<li><p>USIM 卡座的地和模块的地要保持良好的连通性。</p>
+</li>
+</ul>
 <h2 id="4-4-USB接口"><a href="#4-4-USB接口" class="headerlink" title="4.4 USB接口"></a>4.4 USB接口</h2><p>CLM920 NC3 模块的 USB 接口提供一路 USB2.0 High-Speed 接口。接口支持从设备模式，不支持 USB 充电模式。USB 接口引脚定义如下：</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_6.png" alt="name"></p>
 <p>模块作为 USB 从设备,支持 USB 休眠及唤醒机制。USB 接口应用参考电路如下：</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_7.png" alt="name"></p>
-<p>USB 接口支持高速(480Mbps)和全速(12Mbps)模式，因此走线设计需要严格遵循USB2.0 协议要求，注意对数据线的保护，差分走线，控制阻抗为 90Ω。</p>
-<p>为提高 USB 接口的抗静电性能，建议数据线上增加 ESD 保护器件，保护器件的等效电容值小于 2pF。</p>
-<p>USB 接口总线供电电压由模块内部提供，不需外部提供。同时由于模块的 USB 接口对外不提供 USB 总线电源，模块只能作为 USB 总线设备的从设备。</p>
-<p>USB 接口可支持的功能有：软件下载升级、数据通讯、AT Command、GNSS NMEA输出等功能。</p>
+<ul>
+<li><p>USB 接口支持高速(480Mbps)和全速(12Mbps)模式，因此走线设计需要严格遵循USB2.0 协议要求，注意对数据线的保护，差分走线，控制阻抗为 90Ω。</p>
+</li>
+<li><p>为提高 USB 接口的抗静电性能，建议数据线上增加 ESD 保护器件，保护器件的等效电容值小于 2pF。</p>
+</li>
+<li><p>USB 接口总线供电电压由模块内部提供，不需外部提供。同时由于模块的 USB 接口对外不提供 USB 总线电源，模块只能作为 USB 总线设备的从设备。</p>
+</li>
+<li><p>USB 接口可支持的功能有：软件下载升级、数据通讯、AT Command、GNSS NMEA输出等功能。</p>
+</li>
+</ul>
 <h2 id="4-5-串口的定义和使用"><a href="#4-5-串口的定义和使用" class="headerlink" title="4.5 串口的定义和使用"></a>4.5 串口的定义和使用</h2><p>机智云对于域格NC3的模块使用了两个串口，以下为串口的作用以及管脚定义</p>
 <p><strong>通信串口：</strong></p>
 <table>
@@ -553,7 +573,7 @@
 </tr>
 </tbody>
 </table>
-<p>串口设计图：</p>
+<p><strong>串口设计图：</strong></p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_8.png" alt="name"></p>
 <h2 id="4-6-开机引脚的连接"><a href="#4-6-开机引脚的连接" class="headerlink" title="4.6 开机引脚的连接"></a>4.6 开机引脚的连接</h2><p>CLM920 NC3 模块的 21 脚是开机脚，模块开机是低电平有效，PWRKEY 拉低至少500ms，模块开机，用户可通过查询 VDD_EXT 管脚的高低电平来判断模块是否开机</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_9.png" alt="name"></p>
