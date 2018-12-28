@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
 
-  <title>机智云</title>
+  <title>域格 NC3 串口烧写说明 - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="-机智云">
-  <meta name="keywords" content=" docs 文档中心 Gizwits">
+  <meta name="Description" content="域格 NC3 串口烧写说明-机智云">
+  <meta name="keywords" content="域格 NC3 串口烧写说明 docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -476,10 +476,45 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title"></div>
+        <div class="title">域格 NC3 串口烧写说明</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      
+      <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>本文针对域格CLM920_NC3_LTE模块(以下略称NC3)进行串口模式烧写流程整理了一篇操作流程。合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误。</p>
+<h1 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a>二、准备工作</h1><h2 id="1-获取对应固件"><a href="#1-获取对应固件" class="headerlink" title="1. 获取对应固件"></a>1. 获取对应固件</h2><p>以项目的形式向机智云FAE同事申请域格NC3固件压缩包。</p>
+<h2 id="2-解压固件压缩包"><a href="#2-解压固件压缩包" class="headerlink" title="2. 解压固件压缩包"></a>2. 解压固件压缩包</h2><p>解压之后，会得到一个文件夹，点击打开文件夹内的downloadnoefs文件夹，里面的updateadb_9025.bat和downloadqfil_9025.bat就是我们烧写所要执行的批处理文件</p>
+<h2 id="3-驱动安装"><a href="#3-驱动安装" class="headerlink" title="3. 驱动安装"></a>3. 驱动安装</h2><p>点击9x07_windows_driver_setup_v02.exe执行文件，按照步骤选择下一步，安装域格的驱动</p>
+<h2 id="4-模组硬件连接"><a href="#4-模组硬件连接" class="headerlink" title="4. 模组硬件连接"></a>4. 模组硬件连接</h2><h3 id="4-1-域格NC3模组管脚图"><a href="#4-1-域格NC3模组管脚图" class="headerlink" title="4.1 域格NC3模组管脚图"></a>4.1 域格NC3模组管脚图</h3><p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_1.png" alt="name"></p>
+<h3 id="4-2-电源接入管理"><a href="#4-2-电源接入管理" class="headerlink" title="4.2 电源接入管理"></a>4.2 电源接入管理</h3><p>实际设计电源电路可使用开关 DC 电源或线性 LDO 电源来设计 VBAT 电源,两种设计电路都需要提供足够电流。具体参考以下电路设计：</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_2.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_3.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_4.png" alt="name"></p>
+<p>为防止浪涌及过压对模块的损坏，建议在模块 VBAT 引脚上并联一个 5.1V/500mW的齐纳二极管。</p>
+<p>建议在 VBAT 管脚增加 3 个陶瓷电容(33pF,10pF,100nF)且靠近 VBAT 管脚放置。</p>
+<p>模块最低工作电压为 3.3V，由于传输数据或 GSM 通话会产生 2A 以上电流，导致电源电压上产生纹波压降，因此实际供电电压不得低于 3.3V。</p>
+<h3 id="4-3-USIM卡参考电路"><a href="#4-3-USIM卡参考电路" class="headerlink" title="4.3 USIM卡参考电路"></a>4.3 USIM卡参考电路</h3><p>CLM920 NC3 模块不自带 USIM 卡槽，用户使用时需在自己的接口板上设计 USIM 卡槽。USIM 卡接口参考电路如下：</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_5.png" alt="name"></p>
+<p>USIM 接口线上建议选择 ONSEMI 公司的 SMF15C 器来做 ESD 防护，外围电路器件应该靠近卡座放置，SIM 卡座靠近模块布局。</p>
+<p>USIM 卡电路容易受到射频干扰引起不识卡或掉卡，因此卡槽应尽量放置在远离天</p>
+<p>线射频辐射的地方，卡走线尽量远离射频，电源和高速信号线。</p>
+<p>UIM_DATA 内部已经通过 47K 电阻上拉到 VDD_EXT，外部不需要上拉。</p>
+<p>UIM_DET 为 USIM 卡插入或未插入检测脚，默认时为高电平，热插拔应用时可通过此 PIN 脚检测 SIM 卡状态。</p>
+<p>USIM 接口为避免瞬间电压过载，需在信号线通路上各串联一个 22R 的电阻。</p>
+<p>USIM 卡座的地和模块的地要保持良好的连通性。</p>
+<h2 id="4-4-USB接口"><a href="#4-4-USB接口" class="headerlink" title="4.4 USB接口"></a>4.4 USB接口</h2><p>CLM920 NC3 模块的 USB 接口提供一路 USB2.0 High-Speed 接口。接口支持从设备模式，不支持 USB 充电模式。USB 接口引脚定义如下：</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_6.png" alt="name"></p>
+<p>模块作为 USB 从设备,支持 USB 休眠及唤醒机制。USB 接口应用参考电路如下：</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_7.png" alt="name"></p>
+<p>USB 接口支持高速(480Mbps)和全速(12Mbps)模式，因此走线设计需要严格遵循USB2.0 协议要求，注意对数据线的保护，差分走线，控制阻抗为 90Ω。</p>
+<p>为提高 USB 接口的抗静电性能，建议数据线上增加 ESD 保护器件，保护器件的等效电容值小于 2pF。</p>
+<p>USB 接口总线供电电压由模块内部提供，不需外部提供。同时由于模块的 USB 接口对外不提供 USB 总线电源，模块只能作为 USB 总线设备的从设备。</p>
+<p>USB 接口可支持的功能有：软件下载升级、数据通讯、AT Command、GNSS NMEA输出等功能。</p>
+<h2 id="4-5-串口的定义和使用"><a href="#4-5-串口的定义和使用" class="headerlink" title="4.5 串口的定义和使用"></a>4.5 串口的定义和使用</h2><p>机智云对于域格NC3的模块使用了两个串口，以下为串口的作用以及管脚定义</p>
+<p><strong>通信串口：</strong></p>
+<p>管脚号 | 管脚名 | 描述<br>67    |  TXD   | UART 发送数据</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_8.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_9.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_10.png" alt="name"><br><img src="/assets/zh-cn/deviceDev/debug/NC3/NC_uart_11.png" alt="name"></p>
+
     </div>
     
     <div class="widget-wrapper">
