@@ -537,7 +537,7 @@
 <p>注：客户编号（PIN）和授权码（Auth_Code）根据IMEI生成AUTHCODE（授权秘钥），如需使用授权密钥，可联系机智云FAE或者销售同事获取。</p>
 <h4 id="（3）确保天线没问题与电信NB卡没问题。"><a href="#（3）确保天线没问题与电信NB卡没问题。" class="headerlink" title="（3）确保天线没问题与电信NB卡没问题。"></a>（3）确保天线没问题与电信NB卡没问题。</h4><p>天线问题：没插电线或者天线有问题，可以使用AT+CSQ指令查看模组信号强度，0~10 代表低； 10~20代表中； 20~31代表高；99代表未插卡。</p>
 <p> <img src="/assets/zh-cn/deviceDev/Journal/N102log_5.png" alt="name"></p>
-<p>电信NB卡有可能会有过期需要续费才能用的情况，但是从NB模组日志中是看不出来的，建议直接找真真确认卡有无问题</p>
+<p>电信NB卡有可能会有过期需要续费才能用的情况，但是从NB模组日志中是看不出来的。</p>
 <h2 id="8-获取合宙Air202-日志"><a href="#8-获取合宙Air202-日志" class="headerlink" title="8. 获取合宙Air202 日志"></a>8. 获取合宙Air202 日志</h2><p><strong>步骤一、</strong> 按照下图所示为合宙Air202的管脚定义图，将图中所示的25、26号管脚（HOST-RXD/HOST-TXD）（软件调试串口）通过USB转串口工具连接到电脑，串口工具GND需接模组GND，接线图如图1所示，并记录相应的com口。</p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/Journal/air202log_1.png" alt="nam"></p>
 <p>  <img src="/assets/zh-cn/deviceDev/debug/Journal/air202log_2.png" alt="nam"></p>
