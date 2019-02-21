@@ -33,7 +33,7 @@
       <a class="text" href="/">文档中心</a>
     </span>
 
-    <div class="mobile-header" v="">
+    <div class="mobile-header" v>
       <span class="title">机智云 文档中心</span>
       <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
     </div>
@@ -489,7 +489,7 @@
 <p>Android Gokit App是使用开源框架工程的源码范例，源码链接：</p>
 <p><a href="https://git.oschina.net/dantang/GoKit_Demo_Android" target="_blank" rel="noopener">https://git.oschina.net/dantang/GoKit_Demo_Android</a></p>
 <p>也可在下载中心下载Android Gokit App：</p>
-<p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image1.png" alt=""></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image1.png" alt></p>
 <h1 id="目录结构说明"><a href="#目录结构说明" class="headerlink" title="目录结构说明"></a>目录结构说明</h1><ul>
 <li>A.     Libs: 包括 GizWifiSDK 在内的的第三方库目录**</li>
 <li>assets: 包含 UIConfig.json 配置文件</li>
@@ -521,9 +521,9 @@
 <p>3.tencent_app_id需要在AndroidManifest.xml中89行填写</p>
 <p><strong>B.     加载控制界面</strong></p>
 <p>1）框架工程内提供的代码已经可以在不修改任何代码的前提下，进行到控制界面的跳转操作，开发者只需要关心操作界面的逻辑即可，如果需要在设备列表界面中点击某设备后，跳转到自己创建的控制器视图中，请在 GosDeviceListActivity.java  文件中修改相应跳转参数。请按照图示修改跳转视图的类定义，如果使用默认提供的空白界面（GosDeviceControlActivity）来进行编写控制界面，可略过此步骤。</p>
-<p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image2.png" alt=""></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image2.png" alt></p>
 <p>2） 在控制界面中注册设备的监听，并实现回调，如图：</p>
-<p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image3.png" alt=""></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image3.png" alt></p>
 <p>用于接收SDK上报的设备状态变化通知，将接收到的上报数据解析并更新界面。</p>
 <p>3）控制界面中对当前设备设置监听，例如：device.setListener(gizWifiDeviceListener);                                                                             </p>
 <p>4）实现控制命令下发，需要调用SDK中GizWifiDevice类实例的接口方法：device.write(concurrentHashMap ,0);     具体参数解释，请参考SDK使用文档。                                                                                                  </p>
@@ -534,12 +534,12 @@
 <p>目前支持Android 4.0及更高版本系统。</p>
 <p> <strong>B.     关于修改版本号</strong></p>
 <p>在工程的AndroidManifest.xml 文件下，修改versionNmae即可更改SettingsModule模块下，关于界面的版本号显示。示例：</p>
-<p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image4.png" alt=""></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image4.png" alt></p>
 <p><strong>C.     关于推送与包名（以下使用集成极光推送示例）</strong></p>
 <p>在新建工程下，替换框架内模块使用时。需要将AndroidManifest.xml 文件package与申请推送时所填包名相对应，并修改集成推送时相应位置。示例：</p>
-<p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image5.png" alt=""></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image5.png" alt></p>
 <p>与申请推送应用保持一致，示例：</p>
-<p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image6.png" alt=""></p>
+<p><img src="/assets/zh-cn/AppDev/AppFrame/android/Instructions//image6.png" alt></p>
 <p>修改集成推送的相应位置：</p>
 <p>在工程的AndroidManifest.xml文件中修改</p>
 <p>1)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;permission android:name=”您应用的包名.permission.JPUSH_MESSAGE” android:protectionLevel=”signature” /&gt;</span><br></pre></td></tr></table></figure></p>
