@@ -537,9 +537,7 @@
 <h2 id="7、FAQ"><a href="#7、FAQ" class="headerlink" title="7、FAQ"></a>7、FAQ</h2><p>&emsp;&emsp;1.Q：客户使用自己开发的APP给模组Airlink配网失败，用机智云demo APP给模组Airlink配网成功，怎么知道客户APP是否选错平台和选错配网模式？<br>&emsp;&emsp;A：发送SDK日志给FAE</p>
 <p>&emsp;&emsp;2.Q：乐鑫模组会跟2.4G路由器的存在兼容问题导致无法连接路由器吗？<br>&emsp;&emsp;A：目前未发现兼容性问题的案例。</p>
 <p>&emsp;&emsp;3.Q：配网时APP输入路由器的密码错误，模组会如何表现<br>&emsp;&emsp;A：APP输入错误的密码后配网，模组会正常退出配网模式并进入STA模式，开始一直搜索APP给出ssid和密码都符合的热点，有就连接上，没有就打印disconnect from ssid xxx，reason2…</p>
-<p><img src="http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/19.png" alt="19"></p>
-<center>除了密码错误，路由器不兼容，APP连接5G路由器后配网，模组解析配置包出错，模组日志都会如上打印</center>
-
+<p><img src="http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/19.png" alt="19"><br>除了密码错误，路由器不兼容，APP连接5G路由器后配网，模组解析配置包出错，模组日志都会如上打印</p>
 <p><img src="http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/20.png" alt="20"></p>
 <p>&emsp;&emsp;4.Q：路由器端口号的限制会不会影响Airlink配网和影响模组连接路由器<br>&emsp;&emsp;A：有影响，特别是一些高级写字楼，对应路由器设置有一定的限制，要确认一下端口是否禁止：<br>&emsp;&emsp;&emsp;&emsp;APP与设备服务端口的定义<br>&emsp;&emsp;&emsp;&emsp;设备监听UDP广播端口号为：12414<br>&emsp;&emsp;&emsp;&emsp;设备TCP服务器端口号为：12416<br>&emsp;&emsp;&emsp;&emsp;APP监听UDP广播端口号为：2415</p>
 <p>&emsp;&emsp;&emsp;&emsp;设备与云端服务端口的定义<br>&emsp;&emsp;&emsp;&emsp;设备与GService服务器端口号为：80<br>&emsp;&emsp;&emsp;&emsp;设备与M2M服务器端口号为：1883或8883</p>
