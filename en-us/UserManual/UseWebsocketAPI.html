@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
 
-  <title>Generate device QR code for App binding - Gizwits</title>
+  <title>Control device using Gizwits Web Socket API - Gizwits</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="Generate device QR code for App binding-Gizwits">
-  <meta name="keywords" content="Generate device QR code for App binding docs 文档中心 Gizwits">
+  <meta name="Description" content="Control device using Gizwits Web Socket API-Gizwits">
+  <meta name="keywords" content="Control device using Gizwits Web Socket API docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -380,35 +380,130 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">Generate device QR code for App binding</div>
+        <div class="title">Control device using Gizwits Web Socket API</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
       </div>
-      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>A QR code scanning API for App binding is reserved in the Gizwits App SDK, which can be used to directly bind devices by App through scanning the GPRS devices (or Wi-Fi devices). This document describes how to generate the device QR code through the API.</p>
-<h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><h2 id="1-Navigate-to-the-QR-Code-Generation-Website"><a href="#1-Navigate-to-the-QR-Code-Generation-Website" class="headerlink" title="1. Navigate to the QR Code Generation Website"></a>1. Navigate to the QR Code Generation Website</h2><p>Open this URL in your browser <a href="http://qrcode.gizwitsapi.com:1800/doc/" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/doc/</a></p>
-<h2 id="2-Enter-the-authorization-code"><a href="#2-Enter-the-authorization-code" class="headerlink" title="2. Enter the authorization code"></a>2. Enter the authorization code</h2><p>Click “Authorize” in the upper right corner, enter “G” in the dialog box that pops up, and click the “Authorize” button.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/11.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="3-Enter-PK-and-MAC-Address"><a href="#3-Enter-PK-and-MAC-Address" class="headerlink" title="3. Enter PK and MAC Address"></a>3. Enter PK and MAC Address</h2><p>Open the “Create QR Code Generation Task” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/12.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key and the MAC address sequence used to generate QR code.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/13.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="4-Generate-QR-code"><a href="#4-Generate-QR-code" class="headerlink" title="4. Generate QR code"></a>4. Generate QR code</h2><p>Click “Try it out!” to create a generation task. If it returns 201, the QR code is generated successfully.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/14.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="5-Query-the-generated-QR-code"><a href="#5-Query-the-generated-QR-code" class="headerlink" title="5. Query the generated QR code"></a>5. Query the generated QR code</h2><p>Open the “Query All QR Code Generation Tasks” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/15.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key, click “Try it out!” to query the generation task.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/16.png" alt="Generating device QR code for App binding"> </p>
-<p>The generated results include the relative path of the file download URLs.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/17.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="6-Download-the-QR-code"><a href="#6-Download-the-QR-code" class="headerlink" title="6. Download the QR code"></a>6. Download the QR code</h2><p>In the browser, enter the full URL (<a href="http://qrcode.gizwitsapi.com:1800/+" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/+</a> URL in the figure above) to download the generated QR code images. </p>
-<p>The download URL in this case is: </p>
-<p><a href="http://qrcode.gizwitsapi" target="_blank" rel="noopener">http://qrcode.gizwitsapi</a> .com:1800/static/zipfiles/1474.zip</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/18.png" alt="Generating device QR code for App binding"> </p>
-<p>The downloaded QR code is packaged in a zip file, as shown below.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/19.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="7-Binding-device-using-App"><a href="#7-Binding-device-using-App" class="headerlink" title="7. Binding device using App"></a>7. Binding device using App</h2><p>After decompressing QR code zip file, you can use the Gizwits Debugging App to directly scan the QR code and bind the device.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/20.png" alt="Generating device QR code for App binding"> </p>
-<p>In the App development, you need to call the device binding API through QR code in the Gizwits App SDK. QR code scanning can be implemented through a third-party framework (such as zxing). You can refer to the Gizwits App Framework code. The specific API call for device binding in Gizwits App SDK is as follows, taking Android as an example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//Call device binding API</span><br><span class="line">GizWifiSDK.sharedInstance().bindDeviceByQRCode(user id,user token,QR code);</span><br><span class="line">//Callback for device binding</span><br><span class="line">GizWifiSDKListener sdkListener=new GizWifiSDKListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void didBindDevice(GizWifiErrorCode result, String did) &#123;</span><br><span class="line">        super.didBindDevice(result, did);</span><br><span class="line">	//Callback for successful binding</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Remote device control with JavaScript in Web page is implemented by calling the open API and Web Socket API of Gizwits. Gizwits Open API accomplishes operations such as anonymous user login, device binding, and listing bound devices. While Web Socket API accomplishes operations such as user login, device online and offline notification, data exchange between the browser and the cloud (data transparent transmission), heartbeat, and invalid message notification. </p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/101.png" alt="Overview"></p>
+<p>When the device is successfully connected to the cloud, you can use the following process to control the device:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/102.png" alt="process to control the device"></p>
+<h1 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h1><p>Call Gizwits Open API to log in as an anonymous user and bind devices.</p>
+<h2 id="1-Get-phone-id"><a href="#1-Get-phone-id" class="headerlink" title="1. Get phone_id"></a>1. Get phone_id</h2><p>phone_id can be the unique identifier of user’s phone. Otherwise when you already have your own user system and don’t want users to sign up for a Gizwits account again, you can use this API to create a corresponding Gizwits anonymous account for each of your users. In this case, phone_id can be the unique identifier of the user in your system. For example, when integrating with WeChat application, phone_id can be set to the openid of the WeChat user.</p>
+<h2 id="2-Create-user"><a href="#2-Create-user" class="headerlink" title="2. Create user"></a>2. Create user</h2><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_users" target="_blank" rel="noopener">http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_users</a></p>
+<h3 id="2-1-Set-the-appid"><a href="#2-1-Set-the-appid" class="headerlink" title="2.1. Set the appid"></a>2.1. Set the appid</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/201.png" alt="Fill in the appid"></p>
+<h3 id="2-2-Set-the-body"><a href="#2-2-Set-the-body" class="headerlink" title="2.2. Set the body"></a>2.2. Set the body</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/202.png" alt="Fill in the body"></p>
+<h3 id="2-3-Log-in-as-an-anonymous-user-and-get-a-token"><a href="#2-3-Log-in-as-an-anonymous-user-and-get-a-token" class="headerlink" title="2.3. Log in as an anonymous user and get a token"></a>2.3. Log in as an anonymous user and get a token</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/203.png" alt="Log in as an anonymous user and get a token"></p>
+<h2 id="3-Binding-device"><a href="#3-Binding-device" class="headerlink" title="3. Binding device"></a>3. Binding device</h2><p>POST request URL:</p>
+<p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_mac" target="_blank" rel="noopener">http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_mac</a></p>
+<h3 id="3-1-Set-the-appid"><a href="#3-1-Set-the-appid" class="headerlink" title="3.1. Set the appid"></a>3.1. Set the appid</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/204.png" alt="Fill in the appid"></p>
+<h3 id="3-2-Enter-the-returned-token-when-logged-as-an-anonymous-user"><a href="#3-2-Enter-the-returned-token-when-logged-as-an-anonymous-user" class="headerlink" title="3.2. Enter the returned token when logged as an anonymous user"></a>3.2. Enter the returned token when logged as an anonymous user</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/205.png" alt="Fill in the returned token when logged as an anonymous user"></p>
+<h3 id="3-3-Set-Timestamp-Signature-and-Body-parameters"><a href="#3-3-Set-Timestamp-Signature-and-Body-parameters" class="headerlink" title="3.3. Set Timestamp, Signature and Body parameters"></a>3.3. Set Timestamp, Signature and Body parameters</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/206.png" alt="Fill in Timestamp, Signature and Body parameters"></p>
+<p>Note: </p>
+<ul>
+<li>Timestamp helper link, <a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/Tools/unixtime.aspx</a></li>
+<li>MD5 helper link, <a href="http://tool.oschina.net/encrypt?type=2" target="_blank" rel="noopener">http://tool.oschina.net/encrypt?type=2</a></li>
+</ul>
+<p>As shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/207.png" alt="MD5 helper"></p>
+<h1 id="Control-device-using-Web-Socket-API"><a href="#Control-device-using-Web-Socket-API" class="headerlink" title="Control device using Web Socket API"></a>Control device using Web Socket API</h1><h2 id="1-SDK-for-Web-Socket-API"><a href="#1-SDK-for-Web-Socket-API" class="headerlink" title="1. SDK for Web Socket API"></a>1. SDK for Web Socket API</h2><p>Its link is as follows:</p>
+<p><a href="https://github.com/gizwits/gizwits-wechat-js-sdk" target="_blank" rel="noopener">https://github.com/gizwits/gizwits-wechat-js-sdk</a></p>
+<h2 id="2-Run-index-html"><a href="#2-Run-index-html" class="headerlink" title="2. Run index.html"></a>2. Run index.html</h2><p><img src="../../../assets/en-us/UserManual/WebSocket/301.png" alt="Run index.html"></p>
+<h2 id="3-Control-device-using-Web-Socket-API"><a href="#3-Control-device-using-Web-Socket-API" class="headerlink" title="3. Control device using Web Socket API"></a>3. Control device using Web Socket API</h2><p><a href="https://gizwits.github.io/gizwits-wechat-js-sdk/v0.2.0.html" target="_blank" rel="noopener">https://gizwits.github.io/gizwits-wechat-js-sdk/v0.2.0.html</a></p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/302.png" alt="Control device using Web Socket"></p>
+<h1 id="Control-device-in-two-ways"><a href="#Control-device-in-two-ways" class="headerlink" title="Control device in two ways"></a>Control device in two ways</h1><h2 id="1-Data-Point-Protocol-v4"><a href="#1-Data-Point-Protocol-v4" class="headerlink" title="1. Data Point Protocol v4"></a>1. Data Point Protocol v4</h2><h3 id="1-1-Initialize-Gizwits-WS-Object"><a href="#1-1-Initialize-Gizwits-WS-Object" class="headerlink" title="1.1. Initialize Gizwits WS Object"></a>1.1. Initialize Gizwits WS Object</h3><p>The request parameters are:</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apiHost</td>
+<td>Gizwits Open API domain</td>
+<td>api.gizwits.com</td>
+</tr>
+<tr>
+<td>commType</td>
+<td>Data Point Protocol v4</td>
+<td>attrs_v4</td>
+</tr>
+<tr>
+<td>wechatOpenId</td>
+<td>OpenID of WeChat user (i.e. phone_id)</td>
+<td>String</td>
+</tr>
+<tr>
+<td>gizwitsAppId</td>
+<td>Gizwits application identifier</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p>Initialize as follows:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/401.png" alt="Initialize"></p>
+<h3 id="1-2-Get-a-bound-device-list"><a href="#1-2-Get-a-bound-device-list" class="headerlink" title="1.2. Get a bound device list"></a>1.2. Get a bound device list</h3><p>If you want to obtain the bound device list, first confirm whether the user (i.e. openid) has bound the devices to be controlled.</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/402.png" alt="Get a bound device list"></p>
+<h3 id="1-3-Create-a-Web-Socket-Connection"><a href="#1-3-Create-a-Web-Socket-Connection" class="headerlink" title="1.3. Create a Web Socket Connection"></a>1.3. Create a Web Socket Connection</h3><p>Select a device to control, and create a Web Socket connection.</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/403.png" alt="Create a Web Socket Connection"></p>
+<h3 id="1-4-Read-the-current-state-of-the-device"><a href="#1-4-Read-the-current-state-of-the-device" class="headerlink" title="1.4. Read the current state of the device"></a>1.4. Read the current state of the device</h3><p>Select the connected device and read the current state of the device.</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/404.png" alt="Read the current state of the device"></p>
+<h3 id="1-5-Control-device"><a href="#1-5-Control-device" class="headerlink" title="1.5. Control device"></a>1.5. Control device</h3><p>Select the connected devices and issue command.</p>
+<p>For example, send the command {“Swicth”:true} as follows:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/405.png" alt="Control device"></p>
+<ul>
+<li>If you want to set the value of the extension type field binary to hexadecimal value 616263, each byte of the binary string is converted to an integer type element of an array after padding the extension type field to the given length.</li>
+<li>Set the Boolean type field to true or false.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;boolean&quot;:true,</span><br><span class="line">    &quot;binary&quot;: [97,98,99,0,0,0,0,0,0,0]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Control the virtual device:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/406.png" alt="Control the virtual device"></p>
+<h2 id="2-Raw-Data-Protocol-v4"><a href="#2-Raw-Data-Protocol-v4" class="headerlink" title="2. Raw Data Protocol v4"></a>2. Raw Data Protocol v4</h2><p>The Raw Data Protocol v4 is also called transparent transmission protocol without Data Points.</p>
+<h3 id="2-1-Initialize-Gizwits-WS-Object"><a href="#2-1-Initialize-Gizwits-WS-Object" class="headerlink" title="2.1. Initialize Gizwits WS Object"></a>2.1. Initialize Gizwits WS Object</h3><p>The request parameters are:</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apiHost</td>
+<td>Gizwits Open API domain</td>
+<td>api.gizwits.com</td>
+</tr>
+<tr>
+<td>commType</td>
+<td>Custom format protocol</td>
+<td>custom</td>
+</tr>
+<tr>
+<td>wechatOpenId</td>
+<td>OpenID of WeChat user (i.e. phone_id)</td>
+<td>String</td>
+</tr>
+<tr>
+<td>gizwitsAppId</td>
+<td>Gizwits application identifier</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/407.png" alt="Initialize Gizwits WS Object"></p>
+<h3 id="2-2-Get-a-bound-device-list"><a href="#2-2-Get-a-bound-device-list" class="headerlink" title="2.2. Get a bound device list"></a>2.2. Get a bound device list</h3><p><img src="../../../assets/en-us/UserManual/WebSocket/408.png" alt="Get a bound device list"></p>
+<h3 id="2-3-Create-a-Web-Socket-connection"><a href="#2-3-Create-a-Web-Socket-connection" class="headerlink" title="2.3 Create a Web Socket connection"></a>2.3 Create a Web Socket connection</h3><p>Select a device to control, and create a Web Socket connection.</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/409.png" alt="Create a Web Socket connection"></p>
+<h3 id="2-4-Read-the-current-state-of-the-device"><a href="#2-4-Read-the-current-state-of-the-device" class="headerlink" title="2.4. Read the current state of the device"></a>2.4. Read the current state of the device</h3><p>Select the connected device and read the current state of the device:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/410.png" alt="Read the current state of the device"></p>
+<h3 id="2-5-Issue-command"><a href="#2-5-Issue-command" class="headerlink" title="2.5. Issue command"></a>2.5. Issue command</h3><p>Select the connected device and issue the command: [0,0,0,3,9,0,0,144,1,0,1,2,3,4] (Note: The command payload is an integer, of which 0,0,0,3 is for header, 9 for len, 0 for flag, 0,144 for cmd, 1 for action, 0, 1, 2, 3, 4 for business command), as follows:</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/411.png" alt="Issue control instructions"></p>
+<p>The virtual device receives the command as follows:</p>
+<p>FF FF 00 0B 03 1E 00 00 01 00 01 02 03 04 37</p>
+<p><img src="../../../assets/en-us/UserManual/WebSocket/412.png" alt="The virtual device receives the instruction"></p>
 
     </div>
     

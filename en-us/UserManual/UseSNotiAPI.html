@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
 
-  <title>Generate device QR code for App binding - Gizwits</title>
+  <title>Real-time data synchronization using SNoti API - Gizwits</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="Generate device QR code for App binding-Gizwits">
-  <meta name="keywords" content="Generate device QR code for App binding docs 文档中心 Gizwits">
+  <meta name="Description" content="Real-time data synchronization using SNoti API-Gizwits">
+  <meta name="keywords" content="Real-time data synchronization using SNoti API docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -380,35 +380,82 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">Generate device QR code for App binding</div>
+        <div class="title">Real-time data synchronization using SNoti API</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
       </div>
-      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>A QR code scanning API for App binding is reserved in the Gizwits App SDK, which can be used to directly bind devices by App through scanning the GPRS devices (or Wi-Fi devices). This document describes how to generate the device QR code through the API.</p>
-<h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><h2 id="1-Navigate-to-the-QR-Code-Generation-Website"><a href="#1-Navigate-to-the-QR-Code-Generation-Website" class="headerlink" title="1. Navigate to the QR Code Generation Website"></a>1. Navigate to the QR Code Generation Website</h2><p>Open this URL in your browser <a href="http://qrcode.gizwitsapi.com:1800/doc/" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/doc/</a></p>
-<h2 id="2-Enter-the-authorization-code"><a href="#2-Enter-the-authorization-code" class="headerlink" title="2. Enter the authorization code"></a>2. Enter the authorization code</h2><p>Click “Authorize” in the upper right corner, enter “G” in the dialog box that pops up, and click the “Authorize” button.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/11.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="3-Enter-PK-and-MAC-Address"><a href="#3-Enter-PK-and-MAC-Address" class="headerlink" title="3. Enter PK and MAC Address"></a>3. Enter PK and MAC Address</h2><p>Open the “Create QR Code Generation Task” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/12.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key and the MAC address sequence used to generate QR code.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/13.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="4-Generate-QR-code"><a href="#4-Generate-QR-code" class="headerlink" title="4. Generate QR code"></a>4. Generate QR code</h2><p>Click “Try it out!” to create a generation task. If it returns 201, the QR code is generated successfully.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/14.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="5-Query-the-generated-QR-code"><a href="#5-Query-the-generated-QR-code" class="headerlink" title="5. Query the generated QR code"></a>5. Query the generated QR code</h2><p>Open the “Query All QR Code Generation Tasks” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/15.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key, click “Try it out!” to query the generation task.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/16.png" alt="Generating device QR code for App binding"> </p>
-<p>The generated results include the relative path of the file download URLs.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/17.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="6-Download-the-QR-code"><a href="#6-Download-the-QR-code" class="headerlink" title="6. Download the QR code"></a>6. Download the QR code</h2><p>In the browser, enter the full URL (<a href="http://qrcode.gizwitsapi.com:1800/+" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/+</a> URL in the figure above) to download the generated QR code images. </p>
-<p>The download URL in this case is: </p>
-<p><a href="http://qrcode.gizwitsapi" target="_blank" rel="noopener">http://qrcode.gizwitsapi</a> .com:1800/static/zipfiles/1474.zip</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/18.png" alt="Generating device QR code for App binding"> </p>
-<p>The downloaded QR code is packaged in a zip file, as shown below.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/19.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="7-Binding-device-using-App"><a href="#7-Binding-device-using-App" class="headerlink" title="7. Binding device using App"></a>7. Binding device using App</h2><p>After decompressing QR code zip file, you can use the Gizwits Debugging App to directly scan the QR code and bind the device.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/20.png" alt="Generating device QR code for App binding"> </p>
-<p>In the App development, you need to call the device binding API through QR code in the Gizwits App SDK. QR code scanning can be implemented through a third-party framework (such as zxing). You can refer to the Gizwits App Framework code. The specific API call for device binding in Gizwits App SDK is as follows, taking Android as an example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//Call device binding API</span><br><span class="line">GizWifiSDK.sharedInstance().bindDeviceByQRCode(user id,user token,QR code);</span><br><span class="line">//Callback for device binding</span><br><span class="line">GizWifiSDKListener sdkListener=new GizWifiSDKListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void didBindDevice(GizWifiErrorCode result, String did) &#123;</span><br><span class="line">        super.didBindDevice(result, did);</span><br><span class="line">	//Callback for successful binding</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><p>SNoti API provides enterprises with a set of SSL communication API for pushing device-related events in real time and controlling the corresponding devices.</p>
+<p>Note: Before using the SNoti API, you must first request to access the SNoti API and set the whitelist.</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/101.png" alt="Overview"></p>
+<h1 id="2-Set-up-development-environment"><a href="#2-Set-up-development-environment" class="headerlink" title="2. Set up development environment"></a>2. Set up development environment</h1><h2 id="2-1-Download-Eclipse-and-JDK"><a href="#2-1-Download-Eclipse-and-JDK" class="headerlink" title="2.1. Download Eclipse and JDK"></a>2.1. Download Eclipse and JDK</h2><p>Download link:<br>Http://jingyan.baidu.com/article/bea41d435bc695b4c41be648.html</p>
+<h2 id="2-2-Install-JDK"><a href="#2-2-Install-JDK" class="headerlink" title="2.2. Install JDK"></a>2.2. Install JDK</h2><p>Installation process:<br>Http://jingyan.baidu.com/article/d7130635194f1513fcf47557.html</p>
+<h2 id="2-3-Install-Eclipse"><a href="#2-3-Install-Eclipse" class="headerlink" title="2.3. Install Eclipse"></a>2.3. Install Eclipse</h2><p>Installation process:<br>Http://jingyan.baidu.com/article/d7130635194f1513fcf47557.html</p>
+<h1 id="3-SNoti-API"><a href="#3-SNoti-API" class="headerlink" title="3. SNoti API"></a>3. SNoti API</h1><h2 id="3-1-Access-request"><a href="#3-1-Access-request" class="headerlink" title="3.1. Access request"></a>3.1. Access request</h2><p>If you decide to use SNoti API for your product, you need to contact Gizwits technical support and provide the following information for the product, including product key and product name.</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/311.png" alt="Overview"><br><img src="../../../assets/en-us/UserManual/SNotiAPI/311-1.png" alt="Overview"> </p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/312.png" alt="Overview"></p>
+<h2 id="3-2-Create-credentials"><a href="#3-2-Create-credentials" class="headerlink" title="3.2. Create credentials"></a>3.2. Create credentials</h2><p><img src="../../../assets/en-us/UserManual/SNotiAPI/321.png" alt="Create credentials"></p>
+<h1 id="4-Run-the-demo"><a href="#4-Run-the-demo" class="headerlink" title="4. Run the demo"></a>4. Run the demo</h1><h2 id="4-1-Download-SNoti-API-demo-source-code"><a href="#4-1-Download-SNoti-API-demo-source-code" class="headerlink" title="4.1. Download SNoti API demo source code"></a>4.1. Download SNoti API demo source code</h2><p>SNoti API demo source code download link:  </p>
+<p><a href="https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty" target="_blank" rel="noopener">https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty</a></p>
+<p>Gizwits provides two sets of SNoti API demo source code:</p>
+<ul>
+<li>V2.0.0-netty has a framework with its own dependency libraries.</li>
+<li>V2.0.0 has no framework, which will be explained below. Download it as shown below:</li>
+</ul>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/411.png" alt="SNoti demo source code"> </p>
+<h2 id="4-2-Update-settings-in-the-source-code"><a href="#4-2-Update-settings-in-the-source-code" class="headerlink" title="4.2. Update settings in the source code"></a>4.2. Update settings in the source code</h2><p><img src="../../../assets/en-us/UserManual/SNotiAPI/421.png" alt="Update settings in the source code"></p>
+<p>Find AuthId and AuthSecret as follows:</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/422.png" alt="AuthId and AuthSecret"></p>
+<h2 id="4-3-Control-device"><a href="#4-3-Control-device" class="headerlink" title="4.3. Control device"></a>4.3. Control device</h2><p>Note: </p>
+<ol>
+<li>If you attempt to test the virtual device on Gizwits official website, the MAC address should be assigned with virtual:site</li>
+<li>If you need to access SNoti API servers in US East region, the domain name should be changed to ussnoti.gizwits.com</li>
+<li>The JSON data of issued command follows UTF-8 format</li>
+</ol>
+<h3 id="4-3-1-Issue-command-using-Data-Point-Protocol-v4"><a href="#4-3-1-Issue-command-using-Data-Point-Protocol-v4" class="headerlink" title="4.3.1. Issue command using Data Point Protocol v4"></a>4.3.1. Issue command using Data Point Protocol v4</h3><p><img src="../../../assets/en-us/UserManual/SNotiAPI/431.png" alt="Issue command using Data Point Protocol v4"></p>
+<p>Types of writable Data Points include: Boolean, enumeration, numeric, and extension type. The format is “name1”: value1, of which name1 refers to the name of the Data Point, and value1 refers to the value of the Data Point. The value might be true/false (for Boolean type value), or a Unicode encoded string such as \u62bd (for enumeration type value), or a numeric, or a byte array (such as [23,2,3], for extension type). See the following examples:</p>
+<ul>
+<li>a. Boolean type, e.g. attrs={“Switch”:false}</li>
+<li>b. Enumeration type, e.g. attrs={“Mode”:”Sleep Mode”} //If issuing the enumeration type value with its original text string directly, it will fail. Thus, check if the format of the delivered text is UTF-8. If not, please send it after conversion. Take attrs={“Mode”:”休眠模式”} as an example, since the delivered JSON data “休眠模式” is not in UTF-8 format, it should be converted to attrs={“Mode”:”&#x4F11;&#x7720;&#x6A21;&#x5F0F;”}. </li>
+</ul>
+<p>Following online UTF-8 encoder is recommended:</p>
+<p><a href="http://tool.chinaz.com/tools/utf-8.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/tools/utf-8.aspx</a></p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/431-1.png" alt="online UTF-8 encoder"></p>
+<ul>
+<li>c. Numeric type, e.g., attrs={“Motor_Speed”: 5}</li>
+<li>d. Extension type, e.g., attrs={“extension”:[1,2,3,4,5,6,7,8,9,0]}</li>
+</ul>
+<h3 id="4-3-2-Issue-command-using-Raw-Data-Protocol-v4-transparent-transmission-without-Data-Points"><a href="#4-3-2-Issue-command-using-Raw-Data-Protocol-v4-transparent-transmission-without-Data-Points" class="headerlink" title="4.3.2. Issue command using Raw Data Protocol v4 (transparent transmission without Data Points)"></a>4.3.2. Issue command using Raw Data Protocol v4 (transparent transmission without Data Points)</h3><p>(1) Issue SNoti API command</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/432.png" alt="Issue SNoti control instructions"></p>
+<p>The sent raw data in the above figure is: raw={1,22,33}</p>
+<p>Note: </p>
+<p>For binary data to be sent, it should be converted to a byte array. For example, if you want to send 0x010203, it should be converted to:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;raw&quot;: [1, 2, 3]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>For a hexadecimal array like [0x00, 0x00, 0x1a, …], you need to convert it into a byte array. </p>
+<p>For a decimal number like 123, leave it as is, i.e., raw=[123].</p>
+<p>(2) Device reports its state</p>
+<p>After the device receives a command issued by the cloud, the device actively reports its current state.</p>
+<p>FF FF 00 09 05 00 00 00 04 01 02 03 18</p>
+<p>Because the data received is transparently transmitted, it is base64 encoded, and you have to decode it yourself. </p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/432-1.png" alt="Device reports its state"></p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/432-2.png" alt="Online base64 decoder"></p>
+<p>Online base64 decoder link:</p>
+<p> <a href="http://www1.tc711.com/tool/BASE64.htm" target="_blank" rel="noopener">http://www1.tc711.com/tool/BASE64.htm</a></p>
+<h2 id="4-4-Run-Maven-project"><a href="#4-4-Run-Maven-project" class="headerlink" title="4.4. Run Maven project"></a>4.4. Run Maven project</h2><p>(1) Right-click the project, select Run As-&gt;Maven Install, and then click Run.</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/441.png" alt="Run Maven project"></p>
+<p>(2) Run cmd.exe and open the target directory. Run java -jar gizwits-noti-demo-2.0.0-jar-with-dependencies.jar</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/442.png" alt="Run Maven project"></p>
+<p>(3) Input rc to issue a command. Check the cloud communication log to see if it succeeds.</p>
+<p>Figure 1: The project uses Data Point Protocol v4 to issue a command</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/443.png" alt="Run Maven project"></p>
+<p>Figure 2: The project uses Raw Data Protocol v4 (transparent transmission without Data Points) to issue a command</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/444.png" alt="Run Maven project"></p>
+<p>(4) The device actively reports its current state.</p>
+<p>FF FF 00 09 05 00 00 00 04 01 02 03 18</p>
+<p>Because the data received is transparently transmitted, it is base64 encoded, and you have to decode it yourself.</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/445.png" alt="Run Maven project"></p>
+<p>Base64 decoding as follows</p>
+<p><img src="../../../assets/en-us/UserManual/SNotiAPI/446.png" alt="Base64 decoding"></p>
+<h1 id="5-Reference-guide"><a href="#5-Reference-guide" class="headerlink" title="5. Reference guide"></a>5. Reference guide</h1><p>SNoti API:</p>
+<p><a href="http://docs.gizwits.com/en-us/Cloud/NotificationAPI.html" target="_blank" rel="noopener">http://docs.gizwits.com/en-us/Cloud/NotificationAPI.html</a></p>
 
     </div>
     

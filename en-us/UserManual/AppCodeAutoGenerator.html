@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
 
-  <title>Generate device QR code for App binding - Gizwits</title>
+  <title>Gizwits App Code Auto-Generator - Gizwits</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="Generate device QR code for App binding-Gizwits">
-  <meta name="keywords" content="Generate device QR code for App binding docs 文档中心 Gizwits">
+  <meta name="Description" content="Gizwits App Code Auto-Generator-Gizwits">
+  <meta name="keywords" content="Gizwits App Code Auto-Generator docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -380,35 +380,67 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">Generate device QR code for App binding</div>
+        <div class="title">Gizwits App Code Auto-Generator</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
       </div>
-      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>A QR code scanning API for App binding is reserved in the Gizwits App SDK, which can be used to directly bind devices by App through scanning the GPRS devices (or Wi-Fi devices). This document describes how to generate the device QR code through the API.</p>
-<h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><h2 id="1-Navigate-to-the-QR-Code-Generation-Website"><a href="#1-Navigate-to-the-QR-Code-Generation-Website" class="headerlink" title="1. Navigate to the QR Code Generation Website"></a>1. Navigate to the QR Code Generation Website</h2><p>Open this URL in your browser <a href="http://qrcode.gizwitsapi.com:1800/doc/" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/doc/</a></p>
-<h2 id="2-Enter-the-authorization-code"><a href="#2-Enter-the-authorization-code" class="headerlink" title="2. Enter the authorization code"></a>2. Enter the authorization code</h2><p>Click “Authorize” in the upper right corner, enter “G” in the dialog box that pops up, and click the “Authorize” button.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/11.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="3-Enter-PK-and-MAC-Address"><a href="#3-Enter-PK-and-MAC-Address" class="headerlink" title="3. Enter PK and MAC Address"></a>3. Enter PK and MAC Address</h2><p>Open the “Create QR Code Generation Task” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/12.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key and the MAC address sequence used to generate QR code.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/13.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="4-Generate-QR-code"><a href="#4-Generate-QR-code" class="headerlink" title="4. Generate QR code"></a>4. Generate QR code</h2><p>Click “Try it out!” to create a generation task. If it returns 201, the QR code is generated successfully.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/14.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="5-Query-the-generated-QR-code"><a href="#5-Query-the-generated-QR-code" class="headerlink" title="5. Query the generated QR code"></a>5. Query the generated QR code</h2><p>Open the “Query All QR Code Generation Tasks” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/15.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key, click “Try it out!” to query the generation task.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/16.png" alt="Generating device QR code for App binding"> </p>
-<p>The generated results include the relative path of the file download URLs.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/17.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="6-Download-the-QR-code"><a href="#6-Download-the-QR-code" class="headerlink" title="6. Download the QR code"></a>6. Download the QR code</h2><p>In the browser, enter the full URL (<a href="http://qrcode.gizwitsapi.com:1800/+" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/+</a> URL in the figure above) to download the generated QR code images. </p>
-<p>The download URL in this case is: </p>
-<p><a href="http://qrcode.gizwitsapi" target="_blank" rel="noopener">http://qrcode.gizwitsapi</a> .com:1800/static/zipfiles/1474.zip</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/18.png" alt="Generating device QR code for App binding"> </p>
-<p>The downloaded QR code is packaged in a zip file, as shown below.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/19.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="7-Binding-device-using-App"><a href="#7-Binding-device-using-App" class="headerlink" title="7. Binding device using App"></a>7. Binding device using App</h2><p>After decompressing QR code zip file, you can use the Gizwits Debugging App to directly scan the QR code and bind the device.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/20.png" alt="Generating device QR code for App binding"> </p>
-<p>In the App development, you need to call the device binding API through QR code in the Gizwits App SDK. QR code scanning can be implemented through a third-party framework (such as zxing). You can refer to the Gizwits App Framework code. The specific API call for device binding in Gizwits App SDK is as follows, taking Android as an example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//Call device binding API</span><br><span class="line">GizWifiSDK.sharedInstance().bindDeviceByQRCode(user id,user token,QR code);</span><br><span class="line">//Callback for device binding</span><br><span class="line">GizWifiSDKListener sdkListener=new GizWifiSDKListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void didBindDevice(GizWifiErrorCode result, String did) &#123;</span><br><span class="line">        super.didBindDevice(result, did);</span><br><span class="line">	//Callback for successful binding</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>In order to lower the barrier for the development of smart hardware App and reduce the investment in development resources, Gizwits has further developed the App open source code that implements the complete functions based on the Gizwits App Framework. After creating corresponding Data Points on the product project, Gizwits IoT Cloud generates an App reference code of the corresponding product according to the defined Data Points.</p>
+<p>The automatically generated App code modularly integrates the necessary functions of a smart hardware App, mainly including:</p>
+<ol>
+<li>User module: user registration, password recovery, third party anthentication (Wechat, QQ)</li>
+<li>Network access configuration (Arilink+SoftAP)</li>
+<li>Device discovery and list</li>
+<li>Device control</li>
+<li>Push notification: After the device raises the alarm, the alarm information is pushed to the App. The main push platforms we use are Jiguang Push and Baidu Push.</li>
+</ol>
+<p>After developers download the source code, they only need to optimize the UI and design the control logic and device control interface. The control page of the source code implements the standard flow of device control using Gizwits App SDK. During the secondary development of the App, you only need to optimize related code according to the process to complete the control App of your own product.</p>
+<p>Gizwits App Code Auto-Generator currently supports Andriod, iOS, and APICloud.</p>
+<h1 id="User-Guide"><a href="#User-Guide" class="headerlink" title="User Guide"></a>User Guide</h1><h2 id="1-Create-an-application"><a href="#1-Create-an-application" class="headerlink" title="1. Create an application"></a>1. Create an application</h2><p>1.1. After creating the product and Data Points in the Gizwits Developer Center, choose “Application Configuration”.</p>
+<p><img src="../../../assets/en-us/UserManual/app/11.png" alt="Create an application"></p>
+<p>Note that the naming of Data Points cannot be a common programming language keywords, such as switch, static, enum, native, etc. Otherwise, the generated code will be incorrect!</p>
+<p>1.2. Choose “New Application” on the Application Configuration page</p>
+<p><img src="../../../assets/en-us/UserManual/app/12.png" alt="Create an application"></p>
+<p>1.3. Create an Android application and an iOS application separately.</p>
+<p><img src="../../../assets/en-us/UserManual/app/13.png" alt="Create an application"></p>
+<p><img src="../../../assets/en-us/UserManual/app/14.png" alt="Create an application"></p>
+<p><img src="../../../assets/en-us/UserManual/app/15.png" alt="Create an application"></p>
+<h2 id="2-Generate-code"><a href="#2-Generate-code" class="headerlink" title="2. Generate code"></a>2. Generate code</h2><p>2.1. Check the product secret and copy it to the clipboard.</p>
+<p><img src="../../../assets/en-us/UserManual/app/16.png" alt="Generate code"></p>
+<p>2.2. Click “Application Development”, select the Android application you just created, paste the product secret you copied, and click “Generate Code Package”.</p>
+<p><img src="../../../assets/en-us/UserManual/app/17.png" alt="Generate code"></p>
+<p>2.3. After a while, you can download the source code.</p>
+<p><img src="../../../assets/en-us/UserManual/app/18.png" alt="Generate code"></p>
+<p>2.4. The downloaded source code is a compressed file. After decompression, you can see the related source code.</p>
+<p><img src="../../../assets/en-us/UserManual/app/19.png" alt="Generate code"></p>
+<p>2.5. For the guide to the source code, please refer to the appendix “source code explanation” after decompression!</p>
+<p><img src="../../../assets/en-us/UserManual/app/20.png" alt="Generate code"></p>
+<h1 id="See-Also"><a href="#See-Also" class="headerlink" title="See Also"></a>See Also</h1><p>See <a href="../UserManual/AppCodeAutoGenerator.md">Gizwits App Code Auto-Generator</a> to learn about the functionality of the automatically generated App code.</p>
+<p>See “Gizwits App Framework” to grasp</p>
+<ul>
+<li><a href="../AppDev/iOSFramework.md">Gizwits App Framework for iOS</a></li>
+<li><a href="../AppDev/iOSPushNotification.md">Push notification integration for iOS App</a></li>
+<li><a href="../AppDev/iOSAuthReSkin.md">Third-party authentication and re-skin for iOS App</a></li>
+<li><a href="../quickstart/iOSDevQuickStart.md">Quick start with iOS App development</a></li>
+<li><a href="../AppDev/AndroidFramework.md">Gizwits App Framework for Android</a></li>
+<li><a href="../AppDev/AndroidPushNotification.md">Push notification integration for Android App</a></li>
+<li><a href="../AppDev/AndroidAuthReSkin.md">Third-party authentication and re-skin for Android</a></li>
+<li><a href="../quickstart/AndroidDevQuickStart.md">Quick start with Android App development</a></li>
+<li><a href="../AppDev/APICloudFramework.md">Gizwits App Framework for APICloud</a></li>
+</ul>
+<p>See “App Development SDK” to develop your IoT App</p>
+<ul>
+<li><a href="../AppDev/AndroidSDKA2.md">Gizwits App SDK for Android</a></li>
+<li><a href="../AppDev/iOSSDKA2.md">Gizwits App SDK for iOS</a></li>
+<li><a href="../AppDev/APICloudSDK.md">Gizwits App SDK for APICloud</a></li>
+<li><a href="../AppDev/TransparentTransmission.md">Data transparent transmission</a></li>
+<li><a href="../AppDev/SDKLogCapture.md">Get Gizwits App SDK debug log</a></li>
+<li><a href="../AppDev/SDKErrorCodes.md">SDK error codes</a></li>
+</ul>
+<p>More application development guides</p>
+<ul>
+<li><a href="../AppDev/AppDevFAQ.md">FAQ of mobile application development</a></li>
+<li><a href="../cloud/DeviceSharing.md">Gizwits Device Sharing</a></li>
+<li><a href="../AppDev/ThirdpartyAuth.md">Set up third-party authentication with the provider of choice</a></li>
+</ul>
 
     </div>
     

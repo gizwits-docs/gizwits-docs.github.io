@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <title>Integration with Amazon Echo - Gizwits</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="Integration with Amazon Echo-Gizwits">
+  <meta name="keywords" content="Integration with Amazon Echo docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo_en.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">Docs</a>
+    </span>
+
+    <div class="mobile-header" v>
+      <span class="title">Gizwits Docs</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/en-us/overview/overview.html">Overview</a></li>
+          
+        
+          
+            <li class="levelA">
+              Quick Start &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/GizwitsQuickStart.html">Gizwits Quick Start within 5 mins</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/quickstart/glossary.html">Glossary</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              App Dev Guide &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevGetStarted.html">Get Started with APP Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppCodeAutoGenerator.html">Gizwits App Code Auto-Generator</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      APP Frame Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSFramework.html">Gizwits App Framework for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSPushNotification.html">iOS Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSAuthReSkin.html">iOS Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSDevQuickStart.html">iOS APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidFramework.html">Gizwits App Framework for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidPushNotification.html">Android Push Notification</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidAuthReSkin.html">Android Authentication and Re-Skin</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidDevQuickStart.html">Android APP Development Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudFramework.html">Gizwits App Framework for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/VideoTutorials.html">How-to videos on Gizwits App Framework</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App SDK Guide &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/AndroidSDKA2.html">Gizwits App SDK for Android</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/iOSSDKA2.html">Gizwits App SDK for iOS</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/APICloudSDK.html">Gizwits App SDK for APICloud</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/TransparentTransmission.html">Data Transparent Transmission</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKLogCapture.html">SDK Debug Log Capture</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/SDKErrorCodes.html">SDK Error Codes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WeChatDev.html">WeChat SDK Guide</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/WechatDevIntro.html">WeChat Dev Intro</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      More Guides &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/DeviceSharing.html">Gizwits Device Sharing</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/AppDev/ThirdpartyAuth.html">Set Up Third-party Authentication</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/AppDev/AppDevFAQ.html">App Dev FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              DeviceDev &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/DeviceDevGetStarted.html">Get Started with Device Development</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Device Connection &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/MCUScheme.html">Standalone MCU Scheme</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/SoCScheme.html">SoC Scheme</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ModuleResources.html">Module Resources</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      GAgent Guides &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/GAgent.html">GAgent</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/DebugTool.html">Gizwits Serial Port Debugger</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/HF-LPB100.html">HF-LPB100</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/HF-LPT120.html">HF-LPT120</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/MXCHIP.html">MXCHIP</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/ESP8266.html">ESP8266</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/DebugLog.html">Debug Log Capture</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      Gizwits MCU Code Auto-generator &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/MCUCodeAutoGenerator.html">Gizwits MCU Code Auto-generator</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/PortingCommonPlatform.html">Porting Common Platform Edition of MCU SDK</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/PortingUsingSTM32CubeMX.html">Porting Using STM32CubeMX</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/TailoringMCUCode.html">Tailoring MCU SDK to Resource-Limited Platform</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      GoKits &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/GoKit/Gokit3Intro.html">GoKit 3.X Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/GoKit/Gokit3Manual.html">GoKit 3.X Hardware Manual</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/GoKit/Gokit3SGetStarted.html">Gokit3(S) Development</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/GoKit/Gokit3SIntro.html">Gokit3(S) Instruction</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/GoKit/SetupGokit3SDevEnv.html">GoKit3(S) Dev Environment</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/GoKit/GokitSoCProgram.html">GoKit-SoC Program Exprience</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/DeviceDev/GoKit/GokitMCUProgram.html">GoKit-MCU Program Experience</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              Cloud API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/OpenAPI.html">Open API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/ent_dev.html">Enterprise Application Development</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/enterprise_api.html">Enterprise API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/NotificationAPI.html">SNoti API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/WebsocketAPI.html">WebsocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API Tutorial &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseOpenAPI.html">Using Open API to control virtual device with Postman</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseSNoti.html">Real-time data synchronization demo for SNoti service</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseWebsocket.html">Control device using WebSocket</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/DataAPI.html">Aggregation API Guide</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/LinkageAPI.html">Device Linkage API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/devgroup_API.html">Device Grouping API Tutorial</a></li>
+                        
+                          <li class="levelC"><a href="/en-us/UserManual/UseQRCode.html">Generating device QR code for App binding</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/cloud/CloudFAQ.html">Cloud FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              User Manual &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/en-us/UserManual/ST_IoT.html">Gizwits and ST Make IoT Development Easy</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/en-us/DeviceDev/ST/ICUBEGIZWITS.html">Getting Started with I-CUBE-GiZWITS</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">Content</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">Integration with Amazon Echo</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
+      </div>
+      <h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><p>This document describes how to connect Amazon Echo to Gizwits IoT Cloud and control Gokit devices.</p>
+<h2 id="1-1-Integration-process"><a href="#1-1-Integration-process" class="headerlink" title="1.1 Integration process"></a>1.1 Integration process</h2><p>Collaboration diagram:</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/11.png" alt="Echo">  </p>
+<ul>
+<li>Gizwits IoT Cloud: Gizwits IoT Cloud exposes a significant range of functionality via Gizwits Open API, which provides enterprise and individual developers with services such as fast device onboarding, provisioning, authentication, configuration, remote monitoring, task scheduling, and advanced data analytics. </li>
+<li>Alexa: Alexa is Amazon’s cloud-based voice service that provides a set of built-in capabilities, referred to as skills that enable customers to use voice to interact with devices in a more intuitive way. For example, Alexa’s abilities include playing music from multiple providers, answering questions, providing weather forecasts, and querying Wikipedia. </li>
+<li>Alexa Skill: The Alexa Skills is a collection of self-service APIs, tools, documentation, and code samples that makes it fast and easy for you to add skills to Alexa. ASK enables designers, developers, and brands to build engaging skills and reach customers through tens of millions of Alexa-enabled devices. With ASK, you can leverage Amazon’s knowledge and work in the field of voice design.</li>
+<li>AWS Lambda: AWS Lambda is a computing service provided by Amazon. Users can write application code in languages supported by AWS Lambda (that is, Node.js, Java, Go and C# and Python) and reach out to other AWS services as needed (Ex. AWS IoT, logger). AWS Lambda lets the user manage the resources required by the computing, such as memory, computation time, etc.</li>
+</ul>
+<p>Integration Principle: </p>
+<p>You can control Gizwits devices by calling Gizwits Open API with the Access Token returned when registering for your Gizwits Gokit App user account. Now that Gizwits Open API is also opened to Amazon users, who are able to link the Alexa Skill to their Gizwits Gokit App user accounts and call Gizwits Open API with corresponding Access Token required by Lambda so as to control devices via Open API.  </p>
+<p>Sequence diagram:</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/12.png" alt="Echo"> </p>
+<h2 id="1-2-Need-to-Know"><a href="#1-2-Need-to-Know" class="headerlink" title="1.2 Need-to-Know"></a>1.2 Need-to-Know</h2><ol>
+<li>You need to apply for the Product Interconnection Service (Applicant: Gizwits enterprise developers, who purchased GDCS service package)</li>
+<li>You need to be familiar with “Device connection to Gizwits” and “App connection to Gizwits” and are able to complete the entire process.</li>
+</ol>
+<h2 id="1-3-Development-prerequisites"><a href="#1-3-Development-prerequisites" class="headerlink" title="1.3 Development prerequisites"></a>1.3 Development prerequisites</h2><ul>
+<li>Hardware: Amazon Echo, Gizwits Gokit device</li>
+<li>Software: Gizwits Gokit App</li>
+<li>Others: Gizwits developer account, Amazon developer account, Amazon AWS Lambda account</li>
+</ul>
+<h1 id="2-Configuration-in-Gizwits-IoT-Cloud"><a href="#2-Configuration-in-Gizwits-IoT-Cloud" class="headerlink" title="2. Configuration in Gizwits IoT Cloud"></a>2. Configuration in Gizwits IoT Cloud</h1><p>Highlights: </p>
+<ul>
+<li>Apply for Gizwits Product Interconnection Service</li>
+<li>Configure Gizwits Product Interconnection Service</li>
+</ul>
+<h2 id="2-1-Device-connection"><a href="#2-1-Device-connection" class="headerlink" title="2.1 Device connection"></a>2.1 Device connection</h2><p>Follow Device Connection to Gizwits in the Document Center to connect the device to get the device did.</p>
+<h2 id="2-1-App-development"><a href="#2-1-App-development" class="headerlink" title="2.1 App development"></a>2.1 App development</h2><p>Follow App Connection to Gizwits in the Documentation Center to get the App ID.</p>
+<h2 id="2-3-Configure-Product-Interconnection-Service"><a href="#2-3-Configure-Product-Interconnection-Service" class="headerlink" title="2.3 Configure Product Interconnection Service"></a>2.3 Configure Product Interconnection Service</h2><p><img src="../../../assets/en-us/UserManual/EchoIntegration/13.png" alt="Echo"> </p>
+<p>Log in to Gizwits Developer Center and go to the product that needs to use the Product Interconnection Service. Choose Services - Add Services, and find the Product Interconnection Service. Click the [Apply] button, and wait for Gizwits to verify your request. </p>
+<p>After the verification passes, you can see [Product Interconnection Service] in the service list; click [Product Interconnection Service] to use it. </p>
+<p>Jump to the Product Interconnection Service page. Select the Amazon Echo tab and enter the App ID obtained in the above section, then click Configure.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/14.png" alt="Echo">  </p>
+<p>Set the Client Name and Redirect URL of Alexa Skill.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/15.png" alt="Echo"> </p>
+<h1 id="3-Alexa-Skill"><a href="#3-Alexa-Skill" class="headerlink" title="3. Alexa Skill"></a>3. Alexa Skill</h1><p>Highlights: </p>
+<ul>
+<li>Configure the voice control logic of Alexa Skill.</li>
+<li>Configure the association between Alexa Skill and Lambda.</li>
+<li>Configure the association between Alexa Skill and Gizwits developer account.</li>
+</ul>
+<h2 id="3-1-Interaction-Model"><a href="#3-1-Interaction-Model" class="headerlink" title="3.1 Interaction Model"></a>3.1 Interaction Model</h2><p>1) Log in to the Amazon Developer Center.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/16.png" alt="Echo">  </p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/17.png" alt="Echo"> </p>
+<p>2) Go to the Developer Console, click on the tab ALEXA, and click Get Started in Alexa Skills Kit.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/18.png" alt="Echo">  </p>
+<p>3) Click Add a New Skill.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/19.png" alt="Echo"> </p>
+<p>4) </p>
+<ol>
+<li>Skill Information: Provide basic information.</li>
+<li>Interaction Model: Choose an interaction model.</li>
+<li>Configuration: Specify the endpoint for your skill. Alexa sends requests to this endpoint when users invoke your skill. </li>
+<li>Test: Test most functionality in a skill, including dialogs, progressive responses (with limitations), and entity resolution during development.</li>
+<li>Publishing: Provide publishing information for your skill.</li>
+<li>Privacy &amp; Compliance: Some settings on privacy.</li>
+</ol>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/20.png" alt="Echo"> </p>
+<p>5）Fill out Skill Information pane.</p>
+<ol>
+<li>Skill type: Choose Custom Interaction Model.</li>
+<li>Name: Name of the skill that is displayed to customers in the Alexa App. Type “Control Gokit” here.</li>
+<li>Invocation Name: Users say a skill’s invocation name to begin an interaction with a particular custom skill. Type “Ameba Controller” here. For details, see Invocation Name Guidelines.<br><a href="https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/choosing-the-invocation-name-for-an-alexa-skill" target="_blank" rel="noopener">https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/choosing-the-invocation-name-for-an-alexa-skill</a></li>
+</ol>
+<p>Then click Next.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/21.png" alt="Echo"> </p>
+<h3 id="3-1-1-Intent-Schema"><a href="#3-1-1-Intent-Schema" class="headerlink" title="3.1.1 Intent Schema"></a>3.1.1 Intent Schema</h3><p>Intent Schema defines an intent that represents an action that fulfills a user’s spoken request in JSON format.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/22.png" alt="Echo"> </p>
+<p>One skill can have multiple intents. To define the voice interface, you map users’ spoken input to the intents your cloud-based service can handle. Intents can optionally have arguments called slots that represent variable information in the request.</p>
+<p>There are two slot types:</p>
+<ul>
+<li>Custom slot type: A custom slot type defines a list of representative values for the slot. You need to define the type and its values.</li>
+<li>Built-in slot type: The Alexa Skills Kit provides a library of built-in intents, which begin with the AMAZON namespace. These are intents for common actions that you can choose to implement in your custom skill without providing any sample utterance, such as AMAZON.DATE, AMAZON.NUMBER, and AMAZON.US_CITY.</li>
+</ul>
+<p>For details, click here:</p>
+<p><a href="https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface" target="_blank" rel="noopener">https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface</a></p>
+<p>Set the Intent Schema as follows:</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/23.png" alt="Echo"> </p>
+<p>The Intent name is “ControlLight”, which has a Slot “LightState” of custom slot type “LIGHT_STATE”.</p>
+<p>Then it pops up a window for us to input the slot type and its possible value. Type “LIGHT_STATE” for “Enter Type” and “on”, “off” for “Enter Values”, then click “Save”.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/24.png" alt="Echo"> </p>
+<h3 id="3-1-2-Sample-Utterances"><a href="#3-1-2-Sample-Utterances" class="headerlink" title="3.1.2 Sample Utterances"></a>3.1.2 Sample Utterances</h3><p>The sample utterances are set of likely spoken phrases mapped to the intents. Enter one utterance per line as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ControlLight Turn &#123;LightState&#125; the light</span><br><span class="line">ControlLight Turn the light &#123;LightState&#125;</span><br></pre></td></tr></table></figure>
+<p>The intent name is followed by a blank or tab, then followed by the user’s sentence. For the first line, it means that when the user says “Turn on the light”, it will invoke the ControlLight intent.</p>
+<p>Then, press “Next”.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/25.png" alt="Echo"> </p>
+<h2 id="3-2-Configuration"><a href="#3-2-Configuration" class="headerlink" title="3.2 Configuration"></a>3.2 Configuration</h2><p>Select Configuration in the left navigation pane. Specify the endpoint for your skill. Alexa sends requests to this endpoint when users invoke your skill. You can choose to host your service as an AWS Lambda function or as a web service. Now, we need to skip this step and then come back after creating a AWS Lambda function.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/26.png" alt="Echo"> </p>
+<h1 id="4-Account-Linking"><a href="#4-Account-Linking" class="headerlink" title="4. Account Linking"></a>4. Account Linking</h1><p>Use Account Linking to create a link between the Alexa user and the user account in Gizwits.</p>
+<p>Copy the Redirect URLs in the following picture to the Redirect URL field on the Product Interconnection Service page of Gizwits, where “Client Name” can be set to “Alexa”. Copy the Client ID and Client Secret values on the Product Interconnection Service page of Gizwits to the Client Id and Client Secret fields in the following picture respectively as unique public string used to identify the client requesting for authorization. </p>
+<ul>
+<li>Authorization URL (<a href="https://oauth.gizwits.com/oauth/authorize" target="_blank" rel="noopener">https://oauth.gizwits.com/oauth/authorize</a>) is used to get login credentials.</li>
+<li>Access Token URL (<a href="https://oauth.gizwits.com/oauth/token" target="_blank" rel="noopener">https://oauth.gizwits.com/oauth/token</a>) is used to get access_token.</li>
+</ul>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/27.png" alt="Echo"> </p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/28.png" alt="Echo">  </p>
+<p>Input Privacy Policy URL as needed, then click Next.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/29.png" alt="Echo"> </p>
+<h1 id="5-AWS-Lambda"><a href="#5-AWS-Lambda" class="headerlink" title="5. AWS Lambda"></a>5. AWS Lambda</h1><p>Highlights:</p>
+<ul>
+<li>Create a Lambda Function for the Alexa Skill</li>
+<li>Write code in AWS Lambda function to handle the voice directives received and replied by Alexa Skill</li>
+<li>Write code with Gizwits Open API to access Gizwits IoT Cloud to control your device</li>
+</ul>
+<p>If you do not already have an account on AWS, go to Amazon Web Services and create an account.</p>
+<p>Log in to the AWS Management Console and navigate to AWS Lambda.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/30.png" alt="Echo">  </p>
+<p>Click the region drop-down in the upper-right corner of the console and select US East (N. Virginia) supported for Alexa skills.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/31.png" alt="Echo"> </p>
+<p>Select Services – Lambda.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/32.png" alt="Echo"> </p>
+<h2 id="5-1-Create-a-Lambda-Function-for-the-Alexa-Skill"><a href="#5-1-Create-a-Lambda-Function-for-the-Alexa-Skill" class="headerlink" title="5.1 Create a Lambda Function for the Alexa Skill"></a>5.1 Create a Lambda Function for the Alexa Skill</h2><p>If you have no Lambda functions yet, click Get Started Now. Otherwise, click Create a Lambda Function.</p>
+<p>To start with sample code in Node.js or Python, click Blueprints, and select alexa-skills-kit-color-expert from the Alexa Skills Kit blueprints.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/33.png" alt="Echo"> </p>
+<p>Choose Configure triggers. On this page, you can set the event that triggers the Lambda function. Click the dotted box in the middle, and a list of pre-defined services will appear. Here we select “Alexa Skills Kit” and click Next.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/34.png" alt="Echo"> </p>
+<p>Choose Configure function. On this page, we need to provide the code related content. There are three fields:</p>
+<ul>
+<li>“Name” is used to identify this Lambda function, here we input “ControlLight”.</li>
+<li>“Description” is used to indicate the purpose of this Lambda function. </li>
+<li>“Runtime” sets the programming language to be used. You can also change the programming language used here.</li>
+</ul>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/35.png" alt="Echo">  </p>
+<p>In the Lambda function code, set the Code entry type. You can choose to write the code directly or upload the code. Here we select Edit code online.</p>
+<p>Here first keep the sample code and we will come back and update the code.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/36.png" alt="Echo">  </p>
+<p>Next set the Lambda function handler and role.</p>
+<p>For “Handler”, keep the default value.</p>
+<p>As “Role” is related to the permission of the Lambda function, we can set the permission of the Lambda function in order to prevent the Lambda function from using services that should not be used. In the drop-down list of “Role”, choose “Create a custom role”.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/37.png" alt="Echo"> </p>
+<p>A new page will pop up and take you to the AWS IAM settings page, where set the “Role Name” to “control_light”. Then click on “View Policy Document”. Click “Edit” for the permissions of this role. </p>
+<p>The edit the permissions of this role, you can see the default value is only for log permission. Since we need to use the AWS IoT permission, so we update it as follows.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/38.png" alt="Echo">  </p>
+<p>Then click “Allow”.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/39.png" alt="Echo">  </p>
+<p>Then the page closes and we go back to the previous Lambda function page. You can see that the fields for “Role” and “Existing Role” already have values.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/40.png" alt="Echo">  </p>
+<p>For the Advanced settings, keep the default values, then click “Next”.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/41.png" alt="Echo">  </p>
+<p>On the Review page, click “Create function”.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/42.png" alt="Echo"> </p>
+<p>Now you have completed the setup. Please note that the string “ARN - arn:aws:lambda:us-east-1:xxxxxxxxxx” in the upper right corner is the endpoint of this Lambda function, which will be used in Alexa Skill settings page.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/43.png" alt="Echo"> </p>
+<h2 id="5-2-Write-the-Lambda-code-for-the-Alexa-Skill"><a href="#5-2-Write-the-Lambda-code-for-the-Alexa-Skill" class="headerlink" title="5.2 Write the Lambda code for the Alexa Skill"></a>5.2 Write the Lambda code for the Alexa Skill</h2><p>Go back to the AWS Lambda page, and choose the Code tab.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/44.png" alt="Echo">  </p>
+<p>The onIntent function determines which intent handler will be used to process the intent request of “ControlLight” and dispatch to the function light_control.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/45.png" alt="Echo">  </p>
+<p>In the light_control function, we can get the slot information of the intent. Here the slot we want to get is “LightState”.</p>
+<p>Get the slot value of the intent and assign it to the variable switch_action. Then, if the switch_action is equal to on, pass True to the switch_action_fun function.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/46.png" alt="Echo"> </p>
+<p>Then call Gizwits Open API to control the device. For details, please refer to the Open API guide.</p>
+<h1 id="6-Set-up-your-Amazon-Echo"><a href="#6-Set-up-your-Amazon-Echo" class="headerlink" title="6. Set up your Amazon Echo"></a>6. Set up your Amazon Echo</h1><p>Highlights:</p>
+<ul>
+<li>Get your Amazon Echo connected to Wi-Fi network.</li>
+<li>Apply Alexa Skill to your Amazon Echo.</li>
+<li>Link Alexa Skill to Gizwits Gokit App user account.</li>
+</ul>
+<h2 id="6-1-Get-your-Amazon-Echo-connected-to-Wi-Fi-network"><a href="#6-1-Get-your-Amazon-Echo-connected-to-Wi-Fi-network" class="headerlink" title="6.1 Get your Amazon Echo connected to Wi-Fi network"></a>6.1 Get your Amazon Echo connected to Wi-Fi network</h2><p>Navigate to <a href="http://alexa.amazon.com/spa/index.html" target="_blank" rel="noopener">http://alexa.amazon.com/spa/index.html</a> in your PC browser to set up your Amazon Echo.</p>
+<p>Or use Alexa App to set up your Amazon Echo.</p>
+<p>To download the Alexa app, go to the app store on your mobile device and search for “Alexa app.” Then select and download the app.</p>
+<p>Log in with your Amazon account, go to the Alexa Settings page, and select your device.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/47.png" alt="Echo">  </p>
+<p>Choose the language you use.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/48.png" alt="Echo">  </p>
+<p>Click Connect to Wi-Fi.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/49.png" alt="Echo">  </p>
+<p>Make sure your Echo device is plugged into a power outlet. When the light ring turns orange, click Continue.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/50.png" alt="Echo">  </p>
+<p>Go to the Wi-Fi settings on your PC and select the network of the format Amazon-XXX to connect your PC to Echo.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/51.png" alt="Echo">  </p>
+<p>After the following page appears, click Continue.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/52.png" alt="Echo">  </p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/53.png" alt="Echo"> </p>
+<p>Select your Wi-Fi network and enter the network password (if required).</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/54.png" alt="Echo">  </p>
+<p>After your device connects to your Wi-Fi network, a confirmation message appears. Then click Continue. </p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/55.png" alt="Echo"> </p>
+<h2 id="6-2-Link-the-Alexa-Skill-to-Gizwits-Gokit-App-user-account"><a href="#6-2-Link-the-Alexa-Skill-to-Gizwits-Gokit-App-user-account" class="headerlink" title="6.2 Link the Alexa Skill to Gizwits Gokit App user account"></a>6.2 Link the Alexa Skill to Gizwits Gokit App user account</h2><p>Click Skills and jump to Your Skills page by clicking All Skills in the upper right corner. Choose Control GOKIT.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/56.png" alt="Echo">  </p>
+<p>Click Enable.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/57.png" alt="Echo">  </p>
+<p>Click Link Account.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/58.png" alt="Echo">  </p>
+<p>Now jump to the login page, where you need to input the username and password registered with Gizwits Gokit App. Then click Sign in.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/59.png" alt="Echo"> </p>
+<p>Then click Yes on the following page and the success message will appear as follows.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/60.png" alt="Echo"> </p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/61.png" alt="Echo"> </p>
+<p>Go back to the Control GOKIT page and find that the Link Account button has disappeared, indicating that the Alex Skill was linked to Gizwits Gokit App user account successfully.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/62.png" alt="Echo"> </p>
+<h1 id="7-Test-and-publish-Alexa-Skill"><a href="#7-Test-and-publish-Alexa-Skill" class="headerlink" title="7. Test and publish Alexa Skill"></a>7. Test and publish Alexa Skill</h1><p>Highlights:</p>
+<ul>
+<li>Confirm whether Alexa Skill communicates with Lambda and Gizwits successfully.</li>
+<li>Confirm whether the voice control logic is correct.</li>
+<li>How to publish the skill.</li>
+</ul>
+<h2 id="7-1-Integrate-Alexa-Skill-with-Lambda"><a href="#7-1-Integrate-Alexa-Skill-with-Lambda" class="headerlink" title="7.1 Integrate Alexa Skill with Lambda"></a>7.1 Integrate Alexa Skill with Lambda</h2><p>Go back to the Alexa page and click Configuration section. Enter the AWS Lambda ARN in the North America box. AWS Lambda ARN can be viewed in the upper right corner of the Lambda Function.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/63.png" alt="Echo"> </p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/64.png" alt="Echo">  </p>
+<h2 id="7-2-Test-your-Alexa-Skill"><a href="#7-2-Test-your-Alexa-Skill" class="headerlink" title="7.2 Test your Alexa Skill"></a>7.2 Test your Alexa Skill</h2><p>On the Test page, you can test your skill by using the Voice Simulator.</p>
+<p>In Voice Simulator, you can test how Alexa will speak a response entered in plain text or SSML tags by clicking Listen button.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/65.png" alt="Echo">  </p>
+<p>In Service Simulator, you can enter a plain text to simulate the words said by users, and let Alexa pretend to hear the message. Here input “Turn on the light”, then click “Ask Control Gokit”.</p>
+<p>This message will be handled by Alexa and sent to the Lambda function. After processed by the Lambda function, the result will be returned. If the result is returned successfully, you can ask Alexa to control your Gokit.</p>
+<p>You can listen to this result by clicking “Listen” in the bottom right corner.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/66.png" alt="Echo"> </p>
+<h2 id="7-3-Publish-Alexa-Skill"><a href="#7-3-Publish-Alexa-Skill" class="headerlink" title="7.3 Publish Alexa Skill"></a>7.3 Publish Alexa Skill</h2><p>Once you have completed testing on your device, please complete the Description and Publishing information tab, and then submit the skill for certification.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/67.png" alt="Echo"> </p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/68.png" alt="Echo"> </p>
+<p>If it passes Amazon’s testing and certification process, it will become available to Alexa end users.</p>
+<p>The skill is available in “Skills &gt; Your Skills” page of the Alexa App. You can then enable the skill and test its functionality by asking Alexa.</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/69.png" alt="Echo">  </p>
+<p>If you encounter any problems during the publish process, contact Gizwits and we will help you.</p>
+<h1 id="8-Support"><a href="#8-Support" class="headerlink" title="8. Support"></a>8. Support</h1><h2 id="For-individual-developers"><a href="#For-individual-developers" class="headerlink" title="For individual developers"></a>For individual developers</h2><p>Gokit is free, but only a limited number are available for individual developers. Register in our forum or follow our official WeChat to request for provision.</p>
+<p>Community: <a href="http://club.gizwits.com/forum.php" target="_blank" rel="noopener">http://club.gizwits.com/forum.php</a></p>
+<p>Documentation Center: <a href="http://docs.gizwits.com/hc/" target="_blank" rel="noopener">http://docs.gizwits.com/hc/</a></p>
+<h2 id="For-organizations"><a href="#For-organizations" class="headerlink" title="For organizations"></a>For organizations</h2><p>Gizwits has a lot of support programs for organizations, you can contact Gizwits to get Gokit and timely technical support.</p>
+<p>Website: <a href="http://www.gizwits.com/about-us" target="_blank" rel="noopener">http://www.gizwits.com/about-us</a></p>
+<p>WeChat Official Account QR code of Gizwits:</p>
+<p><img src="../../../assets/en-us/UserManual/EchoIntegration/70.png" alt="Echo"> </p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id="share" target="_blank" title="Share">
+          <span>Share</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="Register">
+      <span>Register</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="Feed back">
+      <span>Feed back</span>
+    </a>
+    <a href="#" title="Top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">HOME</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">ABOUT</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">CONTACT</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">JOIN</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async="async"></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>

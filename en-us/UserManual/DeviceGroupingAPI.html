@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
 
-  <title>Generate device QR code for App binding - Gizwits</title>
+  <title>Device Grouping API tutorial - Gizwits</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="Generate device QR code for App binding-Gizwits">
-  <meta name="keywords" content="Generate device QR code for App binding docs 文档中心 Gizwits">
+  <meta name="Description" content="Device Grouping API tutorial-Gizwits">
+  <meta name="keywords" content="Device Grouping API tutorial docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -380,35 +380,51 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">Generate device QR code for App binding</div>
+        <div class="title">Device Grouping API tutorial</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
       </div>
-      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>A QR code scanning API for App binding is reserved in the Gizwits App SDK, which can be used to directly bind devices by App through scanning the GPRS devices (or Wi-Fi devices). This document describes how to generate the device QR code through the API.</p>
-<h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><h2 id="1-Navigate-to-the-QR-Code-Generation-Website"><a href="#1-Navigate-to-the-QR-Code-Generation-Website" class="headerlink" title="1. Navigate to the QR Code Generation Website"></a>1. Navigate to the QR Code Generation Website</h2><p>Open this URL in your browser <a href="http://qrcode.gizwitsapi.com:1800/doc/" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/doc/</a></p>
-<h2 id="2-Enter-the-authorization-code"><a href="#2-Enter-the-authorization-code" class="headerlink" title="2. Enter the authorization code"></a>2. Enter the authorization code</h2><p>Click “Authorize” in the upper right corner, enter “G” in the dialog box that pops up, and click the “Authorize” button.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/11.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="3-Enter-PK-and-MAC-Address"><a href="#3-Enter-PK-and-MAC-Address" class="headerlink" title="3. Enter PK and MAC Address"></a>3. Enter PK and MAC Address</h2><p>Open the “Create QR Code Generation Task” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/12.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key and the MAC address sequence used to generate QR code.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/13.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="4-Generate-QR-code"><a href="#4-Generate-QR-code" class="headerlink" title="4. Generate QR code"></a>4. Generate QR code</h2><p>Click “Try it out!” to create a generation task. If it returns 201, the QR code is generated successfully.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/14.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="5-Query-the-generated-QR-code"><a href="#5-Query-the-generated-QR-code" class="headerlink" title="5. Query the generated QR code"></a>5. Query the generated QR code</h2><p>Open the “Query All QR Code Generation Tasks” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/15.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key, click “Try it out!” to query the generation task.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/16.png" alt="Generating device QR code for App binding"> </p>
-<p>The generated results include the relative path of the file download URLs.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/17.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="6-Download-the-QR-code"><a href="#6-Download-the-QR-code" class="headerlink" title="6. Download the QR code"></a>6. Download the QR code</h2><p>In the browser, enter the full URL (<a href="http://qrcode.gizwitsapi.com:1800/+" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/+</a> URL in the figure above) to download the generated QR code images. </p>
-<p>The download URL in this case is: </p>
-<p><a href="http://qrcode.gizwitsapi" target="_blank" rel="noopener">http://qrcode.gizwitsapi</a> .com:1800/static/zipfiles/1474.zip</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/18.png" alt="Generating device QR code for App binding"> </p>
-<p>The downloaded QR code is packaged in a zip file, as shown below.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/19.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="7-Binding-device-using-App"><a href="#7-Binding-device-using-App" class="headerlink" title="7. Binding device using App"></a>7. Binding device using App</h2><p>After decompressing QR code zip file, you can use the Gizwits Debugging App to directly scan the QR code and bind the device.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/20.png" alt="Generating device QR code for App binding"> </p>
-<p>In the App development, you need to call the device binding API through QR code in the Gizwits App SDK. QR code scanning can be implemented through a third-party framework (such as zxing). You can refer to the Gizwits App Framework code. The specific API call for device binding in Gizwits App SDK is as follows, taking Android as an example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//Call device binding API</span><br><span class="line">GizWifiSDK.sharedInstance().bindDeviceByQRCode(user id,user token,QR code);</span><br><span class="line">//Callback for device binding</span><br><span class="line">GizWifiSDKListener sdkListener=new GizWifiSDKListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void didBindDevice(GizWifiErrorCode result, String did) &#123;</span><br><span class="line">        super.didBindDevice(result, did);</span><br><span class="line">	//Callback for successful binding</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>The device grouping API can group multiple devices. As long as commands are sent to a device group, multiple devices under the group can be controlled collectively.</p>
+<p>To use device grouping API, you must first create a group. After creating a group, bind a device with its MAC address, and then add the device to the group with the device did that corresponds to its MAC address in the device log. Then send an command to the group. The devices in the group receive the command and responds, and device grouping is completed.</p>
+<p>For example, a company has multiple departments, each of which has multiple smart lights. Every morning anyone of a department comes in, he can just open all smart lights of his department at once. Every evening anyone of a department leaves, all smart lights of his department can be turned off at once.</p>
+<h1 id="Device-grouping-API-usage"><a href="#Device-grouping-API-usage" class="headerlink" title="Device grouping API usage"></a>Device grouping API usage</h1><p>The device grouping API is used to group and control multiple devices. When you has set up device grouping API, this API can be called to add multiple devices to a group, so that multiple devices can be controlled collectively.</p>
+<p><strong>1. Open the document center of Gizwits official website -&gt; Cloud API -&gt; OPEN API guide, click any “Debug console” hyperlink.</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/11.png" alt="Device grouping API usage"></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/12.png" alt="Device grouping API usage"></p>
+<p><strong>2. Click Device Grouping -&gt; Create a Group</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/13.png" alt="Device grouping API usage"></p>
+<p><strong>3. Click Create a Group -&gt; Exclamation Point</strong></p>
+<p>Set App ID and token which can be referred to the section “2.3 Create Application Configuration” and “3. Postman Installation and Import” in the document “Using Gizwits Open API to control virtual device with Postman”. The document link is </p>
+<p><a href="http://docs.gizwits.com/en-us/UserManual/UseOpenAPI.html" target="_blank" rel="noopener">http://docs.gizwits.com/en-us/UserManual/UseOpenAPI.html</a></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/14.png" alt="Device grouping API usage"></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/15.png" alt="Device grouping API usage"></p>
+<p><strong>4. Fill in the body field after completing the App ID and token</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/16.png" alt="Device grouping API usage"></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/17.png" alt="Device grouping API usage"></p>
+<p><strong>5. After getting the group id, check if there is any device in the group</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/18.png" alt="Device grouping API usage"></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/19.png" alt="Device grouping API usage"></p>
+<p><strong>6. Bind a device with its MAC address</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/20.png" alt="Device grouping API usage"></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/21.png" alt="Device grouping API usage"></p>
+<p>Timestamp helper link</p>
+<p><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/Tools/unixtime.aspx</a></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/22.png" alt="Device grouping API usage"></p>
+<p>Signature helper link</p>
+<p><a href="http://tool.chinaz.com/Tools/md5.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/Tools/md5.aspx</a></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/23.png" alt="Device grouping API usage"></p>
+<p>After the device binding is successful, there will be a response body as follows </p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/24.png" alt="Device grouping API usage"></p>
+<p><strong>7. After binding the device, we go back to the device group and add the device to the group</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/25.png" alt="Device grouping API usage"></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/26.png" alt="Device grouping API usage"></p>
+<p><strong>8. Check the device log</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/27.png" alt="Device grouping API usage"></p>
+<p><strong>9. After successfully adding the device to the group, you will get the following response body</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/28.png" alt="Device grouping API usage"></p>
+<p><strong>10. Then you send commands to the device group to control the device remotely</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/29.png" alt="Device grouping API usage"></p>
+<p><strong>11. In this way we can control a device in a group (RGB light on and off). Add multiple devices to a group in the same way, and we can control multiple devices in a group at the same time.</strong></p>
+<p><img src="../../../assets/en-us/UserManual/Dev_GroupAPI/30.png" alt="Device grouping API usage"></p>
 
     </div>
     

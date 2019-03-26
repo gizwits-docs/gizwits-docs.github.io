@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
 
-  <title>Generate device QR code for App binding - Gizwits</title>
+  <title>Control Gokit using Google Home - Gizwits</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="Generate device QR code for App binding-Gizwits">
-  <meta name="keywords" content="Generate device QR code for App binding docs 文档中心 Gizwits">
+  <meta name="Description" content="Control Gokit using Google Home-Gizwits">
+  <meta name="keywords" content="Control Gokit using Google Home docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -380,35 +380,172 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">Generate device QR code for App binding</div>
+        <div class="title">Control Gokit using Google Home</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
       </div>
-      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>A QR code scanning API for App binding is reserved in the Gizwits App SDK, which can be used to directly bind devices by App through scanning the GPRS devices (or Wi-Fi devices). This document describes how to generate the device QR code through the API.</p>
-<h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><h2 id="1-Navigate-to-the-QR-Code-Generation-Website"><a href="#1-Navigate-to-the-QR-Code-Generation-Website" class="headerlink" title="1. Navigate to the QR Code Generation Website"></a>1. Navigate to the QR Code Generation Website</h2><p>Open this URL in your browser <a href="http://qrcode.gizwitsapi.com:1800/doc/" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/doc/</a></p>
-<h2 id="2-Enter-the-authorization-code"><a href="#2-Enter-the-authorization-code" class="headerlink" title="2. Enter the authorization code"></a>2. Enter the authorization code</h2><p>Click “Authorize” in the upper right corner, enter “G” in the dialog box that pops up, and click the “Authorize” button.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/11.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="3-Enter-PK-and-MAC-Address"><a href="#3-Enter-PK-and-MAC-Address" class="headerlink" title="3. Enter PK and MAC Address"></a>3. Enter PK and MAC Address</h2><p>Open the “Create QR Code Generation Task” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/12.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key and the MAC address sequence used to generate QR code.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/13.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="4-Generate-QR-code"><a href="#4-Generate-QR-code" class="headerlink" title="4. Generate QR code"></a>4. Generate QR code</h2><p>Click “Try it out!” to create a generation task. If it returns 201, the QR code is generated successfully.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/14.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="5-Query-the-generated-QR-code"><a href="#5-Query-the-generated-QR-code" class="headerlink" title="5. Query the generated QR code"></a>5. Query the generated QR code</h2><p>Open the “Query All QR Code Generation Tasks” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/15.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key, click “Try it out!” to query the generation task.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/16.png" alt="Generating device QR code for App binding"> </p>
-<p>The generated results include the relative path of the file download URLs.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/17.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="6-Download-the-QR-code"><a href="#6-Download-the-QR-code" class="headerlink" title="6. Download the QR code"></a>6. Download the QR code</h2><p>In the browser, enter the full URL (<a href="http://qrcode.gizwitsapi.com:1800/+" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/+</a> URL in the figure above) to download the generated QR code images. </p>
-<p>The download URL in this case is: </p>
-<p><a href="http://qrcode.gizwitsapi" target="_blank" rel="noopener">http://qrcode.gizwitsapi</a> .com:1800/static/zipfiles/1474.zip</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/18.png" alt="Generating device QR code for App binding"> </p>
-<p>The downloaded QR code is packaged in a zip file, as shown below.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/19.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="7-Binding-device-using-App"><a href="#7-Binding-device-using-App" class="headerlink" title="7. Binding device using App"></a>7. Binding device using App</h2><p>After decompressing QR code zip file, you can use the Gizwits Debugging App to directly scan the QR code and bind the device.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/20.png" alt="Generating device QR code for App binding"> </p>
-<p>In the App development, you need to call the device binding API through QR code in the Gizwits App SDK. QR code scanning can be implemented through a third-party framework (such as zxing). You can refer to the Gizwits App Framework code. The specific API call for device binding in Gizwits App SDK is as follows, taking Android as an example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//Call device binding API</span><br><span class="line">GizWifiSDK.sharedInstance().bindDeviceByQRCode(user id,user token,QR code);</span><br><span class="line">//Callback for device binding</span><br><span class="line">GizWifiSDKListener sdkListener=new GizWifiSDKListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void didBindDevice(GizWifiErrorCode result, String did) &#123;</span><br><span class="line">        super.didBindDevice(result, did);</span><br><span class="line">	//Callback for successful binding</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><ul>
+<li>This tutorial describes the third control manner used by users to control Gokit other than the App and WeChat: Google Home.</li>
+<li>Google Home：Google Home is a voice-activated speaker powered by the Google Assistant. Use voice commands to enjoy music, get answers from Google and manage everyday tasks. Google Home is compatible with Android and iOS operating systems, and can control compatible smart devices such as Chromecast or Nest.</li>
+<li>Google Assistant: The Google Assistant is an artificial intelligence-powered virtual voice assistant developed by Google that can be integrated with various devices and operating systems to allow users to communicate with devices in a smooth voice manner. It can also be used in third-party applications and services, such as streaming music services, taxi services, and more. </li>
+<li>Action：Actions are applications that extend the functionality of the Google Assistant. Actions can be invoked by users through Google Home speaker or Android smartphone to control Internet of Things (IoT) devices and interact with your own applications.</li>
+<li>Gizwits has published an Action called “Gokit” on Google Assistant to control Gokit.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Action name</th>
+<th>Functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gokit</td>
+<td>Turn on/off Gokit LED and change Gokit LED light color.</td>
+</tr>
+<tr>
+<td>Gokit</td>
+<td>Start or stop Gokit motor</td>
+</tr>
+</tbody>
+</table>
+<h1 id="2-Development-prerequisites"><a href="#2-Development-prerequisites" class="headerlink" title="2. Development prerequisites"></a>2. Development prerequisites</h1><h2 id="Hardware"><a href="#Hardware" class="headerlink" title="Hardware"></a>Hardware</h2><ul>
+<li>Gokit2 or Gokit3 , you can buy it at <a href="https://59680395.taobao.com/" target="_blank" rel="noopener">https://59680395.taobao.com/</a></li>
+<li>Google Home</li>
+<li>Smart phone that supports Android6.0+</li>
+<li>iPhone with user account registered in US</li>
+</ul>
+<h2 id="Software"><a href="#Software" class="headerlink" title="Software"></a>Software</h2><ul>
+<li>Gizwits Gokit App</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>iOS</th>
+<th>Android</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../../../assets/en-us/UserManual/GoogleHome/11.png" alt="Gizwits Gokit App"></td>
+<td><img src="../../../assets/en-us/UserManual/GoogleHome/12.png" alt="Gizwits Gokit App"> </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Google Home App (version 1.26.93937 or later) or Google App (version 7.7 or later) </li>
+</ul>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/13.png" alt="Google Home"></p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/14.png" alt="Google Home"></p>
+<p>For Android, download it from Google Play.</p>
+<p>For iOS, download it from Apple App Store in US.</p>
+<h2 id="User-accounts"><a href="#User-accounts" class="headerlink" title="User accounts"></a>User accounts</h2><ul>
+<li>Gizwits user account (Sign up in Gizwits Gokit App)</li>
+<li>Google user account</li>
+</ul>
+<h1 id="3-Get-your-Gizwits-Gokit-connected-to-Wi-Fi-network"><a href="#3-Get-your-Gizwits-Gokit-connected-to-Wi-Fi-network" class="headerlink" title="3. Get your Gizwits Gokit connected to Wi-Fi network"></a>3. Get your Gizwits Gokit connected to Wi-Fi network</h1><p>Launch the Gizwits Gokit App, register with your phone and log in. Go to “My Devices” page, and click “No device, please add”.</p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/15.png" alt="Google Home"></p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/16.png" alt="Google Home">  </p>
+<p>Select the Wi-Fi module type of your Gokit. Select the Wi-Fi SSID you want to connect and enter the password, then click “Next”. Make RGB light turn green with long press on key2 of your Gokit, then click “Next”.</p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/17.png" alt="Google Home"></p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/18.png" alt="Google Home"> </p>
+<p>The “Connecting your device to network” page appears. After a while, the “My Devices” page displays. In the “New Devices” pane, there is an unbound device “WeChat Pet House”, whose MAC address is “ACCF2378C44A”. Click on the device.</p>
+<p>Note: If the configuration times out, check if the router uses the 2.4GHz band and is able to connect to the Internet. If no new device is discovered, please check if the product key in your Gokit MCU program matches the one in your Gokit factory default settings.</p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/19.png" alt="Google Home"></p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/20.png" alt="Google Home"></p>
+<p>Go to the device control page and click “Switch light On/Off”. If the Gokit lights up, it indicates that the configuration is successful. Then return to “My Device” page and you will find that the device is already in the “Bound Devices” pane. It means that your Gokit is successfully bound.</p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/21.png" alt="Google Home"></p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/22.png" alt="Google Home"></p>
+<h1 id="4-Set-up-Google-Home-and-link-Action-to-your-Gizwits-Gokit-App-account"><a href="#4-Set-up-Google-Home-and-link-Action-to-your-Gizwits-Gokit-App-account" class="headerlink" title="4. Set up Google Home and link Action to your Gizwits Gokit App account"></a>4. Set up Google Home and link Action to your Gizwits Gokit App account</h1><h2 id="4-1-Get-your-Google-Home-connected-to-Wi-Fi-network"><a href="#4-1-Get-your-Google-Home-connected-to-Wi-Fi-network" class="headerlink" title="4.1 Get your Google Home connected to Wi-Fi network"></a>4.1 Get your Google Home connected to Wi-Fi network</h2><h3 id="4-1-1-Set-up-Google-Home-via-Google-Home-App-Android"><a href="#4-1-1-Set-up-Google-Home-via-Google-Home-App-Android" class="headerlink" title="4.1.1 Set up Google Home via Google Home App (Android)"></a>4.1.1 Set up Google Home via Google Home App (Android)</h3><p>Plug in Google Home and its white breath light will light up (If not, press and hold the microphone mute on the back of the device for a while).</p>
+<p>Install Google Home App. Log in to the Google Home App and go to the Home page. Click on the button at the top right corner. Then jump to the “Devices” page, where you will find your Google Home, click SET UP to enter the next page.</p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/23.png" alt="Google Home"></p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/24.png" alt="Google Home">  </p>
+<p>Go to the Google Home setup page, click CONTINUE, and wait for your smart phone to connect to Google Home’s AP hotspot automatically.</p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/25.png" alt="Google Home"></p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/26.png" alt="Google Home">  </p>
+<p>After a while, the phone is connected to the hotspot of GoogleHome3232.k. Click on PLAY TEST SOUND, and Google Home will play a sound to make sure you’re setting up the right device. </p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/27.png" alt="Google Home"></p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/28.png" alt="Google Home">  </p>
+<p>When you hear the sound, tap I HEARD IT, otherwise tap TRY AGAIN. Then type your Google Home name and tap CONTINUE.</p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/29.png" alt="Google Home">  </p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/30.png" alt="Google Home"></p>
+<p>In this page, choose the Wi-Fi network you want to connect your Google Home to. Here you can choose to get the Wi-Fi password from your this mobile phone, or enter the password manually. After entering the password, click “CONTINUE” and the prompt for successful configuration displays.</p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/31.png" alt="Google Home"></p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/32.png" alt="Google Home">  </p>
+<p>After setting some basic parameters of Google Home, go back to the Home page and you will see your Google Home device.</p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/33.png" alt="Google Home"></p>
+<h3 id="4-1-2-Set-up-Google-Home-via-Google-Home-App-iOS"><a href="#4-1-2-Set-up-Google-Home-via-Google-Home-App-iOS" class="headerlink" title="4.1.2 Set up Google Home via Google Home App (iOS)"></a>4.1.2 Set up Google Home via Google Home App (iOS)</h3><p>For how to set up your Google Home with iOS device, click here.</p>
+<p><a href="https://support.google.com/googlehome/answer/7029485?hl=en&amp;ref_topic=7196250&amp;co=GENIE.Platform%3DiOS&amp;oco=0" target="_blank" rel="noopener">https://support.google.com/googlehome/answer/7029485?hl=en&amp;ref_topic=7196250&amp;co=GENIE.Platform%3DiOS&amp;oco=0</a></p>
+<h2 id="4-2-Invoke-Action-and-link-Action-to-Gizwits-Gokit-App-user-account"><a href="#4-2-Invoke-Action-and-link-Action-to-Gizwits-Gokit-App-user-account" class="headerlink" title="4.2 Invoke Action and link Action to Gizwits Gokit App user account"></a>4.2 Invoke Action and link Action to Gizwits Gokit App user account</h2><h3 id="4-2-1-Invoke-Action-using-Google-Home"><a href="#4-2-1-Invoke-Action-using-Google-Home" class="headerlink" title="4.2.1 Invoke Action using Google Home"></a>4.2.1 Invoke Action using Google Home</h3><p>Keep the Google Home microphone on and say “OK, Google. Talk to Gokit” to Google Home. After that, the DISCOVER page will pop up the Gokit terms and policies. Swipe left from the right of your DISCOVER screen to find the Link to Gokit box, and click “LINK”.</p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/34.png" alt="Google Home"></p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/35.png" alt="Google Home"></p>
+<h3 id="4-2-2-Invoke-Action-using-smart-phone"><a href="#4-2-2-Invoke-Action-using-smart-phone" class="headerlink" title="4.2.2 Invoke Action using smart phone"></a>4.2.2 Invoke Action using smart phone</h3><p>Go to the Google page. Long press the Home key will bring up the Google Assistant conversation box, where you can input “Talk to Gokit” in the form of text or voice. Then a “Link Gokit to Google” box is replied. Click it to link Action to Gizwits Gokit App user account.</p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/36.png" alt="Google Home"></p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/37.png" alt="Google Home"></p>
+<h3 id="4-2-3-Link-Action-to-Gizwits-Gokit-App-user-account"><a href="#4-2-3-Link-Action-to-Gizwits-Gokit-App-user-account" class="headerlink" title="4.2.3 Link Action to Gizwits Gokit App user account"></a>4.2.3 Link Action to Gizwits Gokit App user account</h3><p>Now jump to the login page, where you need to input the username and password registered with Gizwits Gokit App. Then click Sign in.</p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/38.png" alt="Google Home"></p>
+<p><img src="../../../assets/en-us/UserManual/GoogleHome/39.png" alt="Google Home"></p>
+<h1 id="5-Appendices"><a href="#5-Appendices" class="headerlink" title="5. Appendices"></a>5. Appendices</h1><h2 id="5-1-How-to-control-Gokit-with-“Gokit”-Action"><a href="#5-1-How-to-control-Gokit-with-“Gokit”-Action" class="headerlink" title="5.1 How to control Gokit with “Gokit” Action"></a>5.1 How to control Gokit with “Gokit” Action</h2><ul>
+<li>Utterance sample: OK Google, talk to Gokit and turn on the light</li>
+<li>OK Google -&gt; Used to wake up Google Home (Hey Google is also applicable. They are not needed for Smart phone)</li>
+<li>Talk to Gokit -&gt; Used to invoke the Action</li>
+<li>turn on the light-&gt; Command to control the Gokit</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Voice command</th>
+<th>Response of Google Home</th>
+<th>Intended effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OK Google, talk to Gokit</td>
+<td>Welcome to Gokit. I will now receive commands for your device. If you need more help, say help.</td>
+<td>Wake up Google Home.</td>
+</tr>
+<tr>
+<td>OK Google, talk to Gokit and help</td>
+<td>You can say turn on the light or motor to control the sensor on Gokit.</td>
+<td>Google Home provides users brief help information and keeps a back-and-forth conversation with the user.</td>
+</tr>
+<tr>
+<td>OK Google, talk to Gokit and turn on the light</td>
+<td>The light is on.</td>
+<td>Gokit LED is on.</td>
+</tr>
+<tr>
+<td>OK Google, talk to Gokit and turn off the light</td>
+<td>The light is off.</td>
+<td>Gokit LED is off</td>
+</tr>
+<tr>
+<td>OK Google, talk to Gokit and turn the light to red</td>
+<td>The light is red.</td>
+<td>Gokit LED light turns red.</td>
+</tr>
+<tr>
+<td>OK Google, talk to Gokit and turn the light to green</td>
+<td>The light is green.</td>
+<td>Gokit LED light turns green.</td>
+</tr>
+<tr>
+<td>OK Google, talk to Gokit and turn the light to blue</td>
+<td>The light is blue.</td>
+<td>Gokit LED light turns blue.</td>
+</tr>
+<tr>
+<td>OK Google, talk to Gokit and turn on the motor</td>
+<td>The motor is on.</td>
+<td>Gokit motor is running.</td>
+</tr>
+<tr>
+<td>OK Google, talk to Gokit and shut down the motor</td>
+<td>The motor is off.</td>
+<td>Gokit motor has stopped.</td>
+</tr>
+</tbody>
+</table>
 
     </div>
     

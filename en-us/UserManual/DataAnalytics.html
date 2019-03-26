@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
 
-  <title>Generate device QR code for App binding - Gizwits</title>
+  <title>Gizwits Real-time Big Data Analytics tutorial - Gizwits</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="Generate device QR code for App binding-Gizwits">
-  <meta name="keywords" content="Generate device QR code for App binding docs 文档中心 Gizwits">
+  <meta name="Description" content="Gizwits Real-time Big Data Analytics tutorial-Gizwits">
+  <meta name="keywords" content="Gizwits Real-time Big Data Analytics tutorial docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -380,35 +380,116 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">Generate device QR code for App binding</div>
+        <div class="title">Gizwits Real-time Big Data Analytics tutorial</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
       </div>
-      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>A QR code scanning API for App binding is reserved in the Gizwits App SDK, which can be used to directly bind devices by App through scanning the GPRS devices (or Wi-Fi devices). This document describes how to generate the device QR code through the API.</p>
-<h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><h2 id="1-Navigate-to-the-QR-Code-Generation-Website"><a href="#1-Navigate-to-the-QR-Code-Generation-Website" class="headerlink" title="1. Navigate to the QR Code Generation Website"></a>1. Navigate to the QR Code Generation Website</h2><p>Open this URL in your browser <a href="http://qrcode.gizwitsapi.com:1800/doc/" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/doc/</a></p>
-<h2 id="2-Enter-the-authorization-code"><a href="#2-Enter-the-authorization-code" class="headerlink" title="2. Enter the authorization code"></a>2. Enter the authorization code</h2><p>Click “Authorize” in the upper right corner, enter “G” in the dialog box that pops up, and click the “Authorize” button.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/11.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="3-Enter-PK-and-MAC-Address"><a href="#3-Enter-PK-and-MAC-Address" class="headerlink" title="3. Enter PK and MAC Address"></a>3. Enter PK and MAC Address</h2><p>Open the “Create QR Code Generation Task” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/12.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key and the MAC address sequence used to generate QR code.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/13.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="4-Generate-QR-code"><a href="#4-Generate-QR-code" class="headerlink" title="4. Generate QR code"></a>4. Generate QR code</h2><p>Click “Try it out!” to create a generation task. If it returns 201, the QR code is generated successfully.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/14.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="5-Query-the-generated-QR-code"><a href="#5-Query-the-generated-QR-code" class="headerlink" title="5. Query the generated QR code"></a>5. Query the generated QR code</h2><p>Open the “Query All QR Code Generation Tasks” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/15.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key, click “Try it out!” to query the generation task.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/16.png" alt="Generating device QR code for App binding"> </p>
-<p>The generated results include the relative path of the file download URLs.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/17.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="6-Download-the-QR-code"><a href="#6-Download-the-QR-code" class="headerlink" title="6. Download the QR code"></a>6. Download the QR code</h2><p>In the browser, enter the full URL (<a href="http://qrcode.gizwitsapi.com:1800/+" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/+</a> URL in the figure above) to download the generated QR code images. </p>
-<p>The download URL in this case is: </p>
-<p><a href="http://qrcode.gizwitsapi" target="_blank" rel="noopener">http://qrcode.gizwitsapi</a> .com:1800/static/zipfiles/1474.zip</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/18.png" alt="Generating device QR code for App binding"> </p>
-<p>The downloaded QR code is packaged in a zip file, as shown below.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/19.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="7-Binding-device-using-App"><a href="#7-Binding-device-using-App" class="headerlink" title="7. Binding device using App"></a>7. Binding device using App</h2><p>After decompressing QR code zip file, you can use the Gizwits Debugging App to directly scan the QR code and bind the device.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/20.png" alt="Generating device QR code for App binding"> </p>
-<p>In the App development, you need to call the device binding API through QR code in the Gizwits App SDK. QR code scanning can be implemented through a third-party framework (such as zxing). You can refer to the Gizwits App Framework code. The specific API call for device binding in Gizwits App SDK is as follows, taking Android as an example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//Call device binding API</span><br><span class="line">GizWifiSDK.sharedInstance().bindDeviceByQRCode(user id,user token,QR code);</span><br><span class="line">//Callback for device binding</span><br><span class="line">GizWifiSDKListener sdkListener=new GizWifiSDKListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void didBindDevice(GizWifiErrorCode result, String did) &#123;</span><br><span class="line">        super.didBindDevice(result, did);</span><br><span class="line">	//Callback for successful binding</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><h2 id="1-Functionality"><a href="#1-Functionality" class="headerlink" title="1. Functionality"></a>1. Functionality</h2><p>The Gizwits Real-time Big Data Analytics APIs are built by using a drag-and-drop approach, which is used to perform real-time big data analytics on product Data Points.</p>
+<h2 id="2-Set-up-Gizwits-Real-time-Big-Data-Analytics"><a href="#2-Set-up-Gizwits-Real-time-Big-Data-Analytics" class="headerlink" title="2. Set up Gizwits Real-time Big Data Analytics"></a>2. Set up Gizwits Real-time Big Data Analytics</h2><p>Step 1: Log in to Gizwits Developer Center and go to the product that needs to use [Real-time Big Data Analytics] (Applies to Gizwits enterprise developers only);</p>
+<p>Step 2: Click [Add Service], and find [Real-time Big Data Analytics];</p>
+<p><img src="../../../assets/en-us/UserManual/RTBD/11.png" alt="Real-time big data analytics">  </p>
+<p>Step 3: Click [Real-time Big Data Analytics], click the [Apply] button, and wait for Gizwits to verify your request;</p>
+<p><img src="../../../assets/en-us/UserManual/RTBD/12.png" alt="Real-time big data analytics">  </p>
+<p>Step 4: After the verification passes, you can see [Real-time Big Data Analytics] in the service list; click [Real-time Big Data Analytics] to use it.</p>
+<p><img src="../../../assets/en-us/UserManual/RTBD/13.png" alt="Real-time big data analytics"> </p>
+<h1 id="Build-APIs-of-Real-time-Big-Data-Analytics"><a href="#Build-APIs-of-Real-time-Big-Data-Analytics" class="headerlink" title="Build APIs of Real-time Big Data Analytics"></a>Build APIs of Real-time Big Data Analytics</h1><h2 id="1-API-list"><a href="#1-API-list" class="headerlink" title="1. API list"></a>1. API list</h2><p>Go to the [Real-time Big Data Analytics] page and the API list page of the current product shows by default.</p>
+<p><img src="../../../assets/en-us/UserManual/RTBD/14.png" alt="Real-time big data analytics">  </p>
+<p>When the API list is empty as shown above, click [+New API] or [Create] to jump to the API builder page.</p>
+<p><img src="../../../assets/en-us/UserManual/RTBD/15.png" alt="Real-time big data analytics">  </p>
+<p>When the API list is not empty as shown above, it shows all the APIs created of the product, including API identifier, name, enabled, operations, and so on.</p>
+<p>[+New API]: Click to jump to the API builder page;</p>
+<p>[Enabled]: Whether the API is enabled. It is enabled by default after the API is successfully created. The API cannot be called after disabled (otherwise, it shows {“err_msg”: “the viewid requested is disabled.”,”err_code”:1006});</p>
+<p>[Detail]: Click to jump to the API builder and test page to update;</p>
+<p>[Delete]: Click to delete the API. It cannot be restored after deletion.</p>
+<h2 id="2-Data-Point-nodes"><a href="#2-Data-Point-nodes" class="headerlink" title="2. Data Point nodes"></a>2. Data Point nodes</h2><ul>
+<li>Data Points support four data types: D (time stamp), S (character type), N (integer / float type), B (Boolean).</li>
+<li>created_at, did, mac are fixed fields, which apply to all products, and other fields are Data Points defined by yourself for the product.</li>
+</ul>
+<p><img src="../../../assets/en-us/UserManual/RTBD/16.png" alt="Real-time big data analytics">  </p>
+<p>When no data is reported by a device of the product, the Data Points defined by youself cannot be loaded except for the fixed fields.</p>
+<p><img src="../../../assets/en-us/UserManual/RTBD/17.png" alt="Real-time big data analytics"> </p>
+<h2 id="3-Build-API"><a href="#3-Build-API" class="headerlink" title="3. Build API"></a>3. Build API</h2><p>(1) Aggregation API</p>
+<p>Drag the Data Point nodes that participate in an aggregation operation into the aggregation input box, so as to calculate the average, minimum, maximum, and sum.</p>
+<ul>
+<li>Aggregation API only supports aggregation of one Data Point; </li>
+<li>The Data Point of an aggregation API cannot be empty;</li>
+<li>Aggregation operation only supports the data types of N (integer/float) and B (Boolean).</li>
+</ul>
+<p><img src="../../../assets/en-us/UserManual/RTBD/18.png" alt="Real-time big data analytics">  </p>
+<p>(2) Grouping API</p>
+<p>Drag the Data Point nodes that participate in a grouping operation into the group input box.</p>
+<ul>
+<li>Only one grouping field is supported, which can be empty;</li>
+<li>The grouping field can be any defined Data Point;</li>
+<li>The group type is subject to the type of the corresponding grouping field. The timestamp type grouping field only supports the time range grouping (hourly, daily, weekly, monthly), the integer type grouping field only supports the numeric range grouping (the minimum resolution value is 1), and the character and Boolean type grouping fields only support the grouping by a single value rather than a range;</li>
+<li>When testing the API, charts can be displayed only after a group is selected.</li>
+</ul>
+<p>(3) Filtering API</p>
+<p>Drag the Data Point nodes to be filtered to the filter input box.</p>
+<ul>
+<li>Support multiple conditions, which can be empty;</li>
+<li>The filtering field can be any defined Data Point;</li>
+<li>The operator type is subject to the data type of the filtering field. Character or Boolean type only supports Equal (=) operation;</li>
+<li>Constant values or expressions can be used to create a filter. The value can be empty; the expression is enclosed in ${}, where parameter values are passed in API calls.</li>
+</ul>
+<h2 id="4-Test-API"><a href="#4-Test-API" class="headerlink" title="4. Test API"></a>4. Test API</h2><p>(1) Run test with charts</p>
+<p>After building the Aggregation API, Grouping API, and filtering API, select [Chart Type] and click [Test] button.</p>
+<p><img src="../../../assets/en-us/UserManual/RTBD/19.png" alt="Real-time big data analytics"> </p>
+<p>No chart: No chart displayed when the grouping field is empty.</p>
+<p>Line chart: Line chart can be displayed only if a grouping filed is provided. The line chart is as follows:</p>
+<p><img src="../../../assets/en-us/UserManual/RTBD/20.png" alt="Real-time big data analytics">  </p>
+<p>Bar chart: Bar chart can be displayed only if a grouping filed is provided. The bar chart is as follows:</p>
+<p><img src="../../../assets/en-us/UserManual/RTBD/21.png" alt="Real-time big data analytics"> </p>
+<p>(2) Run test with data values</p>
+<p>After building the Aggregation API, Grouping API, and filtering API, click [Test] button, and then click [Display Data] button.</p>
+<p>Note: After changing API conditions, you must first click [Test], then click [Show Data] to display the updated result. [Display Data] button is only used to toggle data to be displayed or hidden.</p>
+<p><img src="../../../assets/en-us/UserManual/RTBD/22.png" alt="Real-time big data analytics"> </p>
+<p>Display data:</p>
+<p><img src="../../../assets/en-us/UserManual/RTBD/23.png" alt="Real-time big data analytics">  </p>
+<p>Hide data: Clicking [Hide Data] button will hide the box where data is displayed.</p>
+<p>(3) Save</p>
+<p>After the API is built and tested, you can save this API for the next direct call.</p>
+<p>Type the API name (up to 32 characters) and click [Create API] to generate the API URL and API parameters. At this point, the API is created successfully. You can view this API in the API list as well as edit, enable, disable, or delete it.</p>
+<p><img src="../../../assets/en-us/UserManual/RTBD/24.png" alt="Real-time big data analytics">  </p>
+<h1 id="Call-APIs-of-Real-time-Big-Data-Analytics"><a href="#Call-APIs-of-Real-time-Big-Data-Analytics" class="headerlink" title="Call APIs of Real-time Big Data Analytics"></a>Call APIs of Real-time Big Data Analytics</h1><h2 id="1-Calling-method"><a href="#1-Calling-method" class="headerlink" title="1. Calling method"></a>1. Calling method</h2><p>The APIs are invoked using HTTP GET.</p>
+<p>The URL called is ‘<a href="http://119.29.123.105:8081/dataapi/view/product/kv/{api_id}&#39;" target="_blank" rel="noopener">http://119.29.123.105:8081/dataapi/view/product/kv/{api_id}&#39;</a>.</p>
+<p>Where {api_id} is the API identifier, see the “API Identifier” column in the API list. Each API has a unique api_id. When a query requires input parameters, the input parameters are formatted in JSON and passed in the form of ‘URL?data=JSON’.</p>
+<p><img src="../../../assets/en-us/UserManual/RTBD/25.png" alt="Real-time big data analytics"> </p>
+<h2 id="2-Authorization-headers"><a href="#2-Authorization-headers" class="headerlink" title="2. Authorization headers"></a>2. Authorization headers</h2><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Gizwits-ProductKey</td>
+<td>{product_key}</td>
+<td>Product Key </td>
+</tr>
+<tr>
+<td>X-Gizwits-Timestamp</td>
+<td>{timestamp_in_seconds}</td>
+<td>The current Unix Epoch timestamp, in seconds, but please note that the difference between the submitted timestamp and standard time must be within 10 minutes, otherwise the authorization will fail.</td>
+</tr>
+<tr>
+<td>X-Gizwits-Signature</td>
+<td>{lower(MD5({product_secret} + X-Gizwits-Timestamp))}</td>
+<td>This value is the calculated signature. The algorithm is as follows: concatenate the lowercase of {product_secret} and {timestamp_in_seconds} into a single string, then calculate its MD5, which then is converted into a lowercase hexadecimal string, such as “71a78a1dd33df9e77d23a7f1171ab40”, where {product_secret} is the product secrete value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-Calling-frequency"><a href="#3-Calling-frequency" class="headerlink" title="3. Calling frequency"></a>3. Calling frequency</h2><p>Each product can call the APIs up to 10 times per minute (i.e., 10 requests/minute).</p>
+<h2 id="4-Sample"><a href="#4-Sample" class="headerlink" title="4. Sample"></a>4. Sample</h2><p>For example, the parameters of a API call are as follows:</p>
+<ul>
+<li>API identifier: AVi-5CkZNrnIcV85KPNd</li>
+<li>Product Key: 08f3e460b05b4500b9c3e698c6f241b8</li>
+<li>Product Secret: 2862c8c599fc47b2869aaf4c3efaf35e</li>
+<li>The current time is: August 8, 2016 10:05:07 (Beijing time)</li>
+<li>There is a query parameter mac with a value of c8934046a16d</li>
+</ul>
+<p><img src="../../../assets/en-us/UserManual/RTBD/26.png" alt="Real-time big data analytics">  </p>
 
     </div>
     

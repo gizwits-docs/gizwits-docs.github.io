@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
 
-  <title>Using Open API to control virtual device with Postman - Gizwits</title>
+  <title>Control device using Gizwits Open API - Gizwits</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="Using Open API to control virtual device with Postman-Gizwits">
-  <meta name="keywords" content="Using Open API to control virtual device with Postman docs 文档中心 Gizwits">
+  <meta name="Description" content="Control device using Gizwits Open API-Gizwits">
+  <meta name="keywords" content="Control device using Gizwits Open API docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -380,10 +380,10 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">Using Open API to control virtual device with Postman</div>
+        <div class="title">Control device using Gizwits Open API</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
       </div>
-      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>This guide explains how to leverage postman on the PC side to work with Open API provided by Gizwits on the cloud side, and walk you through user login, device binding, and device remote control etc. via HTTP requests. </p>
+      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>This guide explains how to leverage postman on the PC side to work with Gizwits Open API provided by Gizwits on the cloud side, and walk you through user login, device binding, and device remote control etc. via HTTP requests. </p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/101.png" alt="Overview"></p>
 <h1 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h1><ul>
 <li>Device: Developer Center - Personal Project - Virtual Device</li>
@@ -396,15 +396,15 @@
 </ul>
 </li>
 </ul>
-<h1 id="Product-Creation-in-Gizwits-cloud"><a href="#Product-Creation-in-Gizwits-cloud" class="headerlink" title="Product Creation in Gizwits cloud"></a>Product Creation in Gizwits cloud</h1><h2 id="1-Create-a-product"><a href="#1-Create-a-product" class="headerlink" title="1. Create a product"></a>1. Create a product</h2><p>After the registration is completed, log in to the Gizwits Developer Center and click on the “Create Product” menu in the upper right corner. Create a new product called “Openapi” on the next page and choose “Wi-Fi/Mobile network access”, then complete product creation, as shown below:</p>
+<h1 id="Product-Creation-in-Gizwits-IoT-Cloud"><a href="#Product-Creation-in-Gizwits-IoT-Cloud" class="headerlink" title="Product Creation in Gizwits IoT Cloud"></a>Product Creation in Gizwits IoT Cloud</h1><h2 id="1-Create-a-product"><a href="#1-Create-a-product" class="headerlink" title="1. Create a product"></a>1. Create a product</h2><p>After the registration is completed, log in to the Gizwits Developer Center and click on the “Create Product” menu in the upper right corner. Create a new product called “Openapi” on the next page and choose “Wi-Fi/Mobile network access”, then complete product creation, as shown below:</p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/311.png" alt="Create a product"></p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/312.png" alt="Create a product"></p>
-<h2 id="2-Create-data-points-product-function-points"><a href="#2-Create-data-points-product-function-points" class="headerlink" title="2. Create data points (product function points)"></a>2. Create data points (product function points)</h2><h3 id="2-1-Introduction-to-Data-Points"><a href="#2-1-Introduction-to-Data-Points" class="headerlink" title="2.1 Introduction to Data Points"></a>2.1 Introduction to Data Points</h3><p>Data point: An abstraction of the functionality of a device product that describes the product’s functionality and its parameters. After the data point is created, the data format of the communication between the device and the cloud is determined, and the device and Gizwits cloud can mutually identify the data that the device interacts with the Gizwits Cloud. For more details, see “data point definition tutorial” in the upper right corner of the Developer Center Data Points page, which helps you create data points that belong to your own product, as shown below:</p>
+<h2 id="2-Create-Data-Points"><a href="#2-Create-Data-Points" class="headerlink" title="2. Create Data Points"></a>2. Create Data Points</h2><h3 id="2-1-Introduction-to-Data-Points"><a href="#2-1-Introduction-to-Data-Points" class="headerlink" title="2.1 Introduction to Data Points"></a>2.1 Introduction to Data Points</h3><p>Data Point: An abstraction of the functionality of a device product that describes the product’s functionality and its parameters. After the Data Point is created, the data format of the communication between the device and the cloud is determined, and the device and Gizwits IoT Cloud can mutually identify the data that the device interacts with the Gizwits IoT Cloud. For more details, see “Data Point tutorial” in the upper right corner of the Developer Center Data Points page, which helps you create Data Points that belong to your own product, as shown below:</p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/321.png" alt="Introduction to Data Points"></p>
-<h3 id="2-2-Create-data-points"><a href="#2-2-Create-data-points" class="headerlink" title="2.2 Create data points"></a>2.2 Create data points</h3><p>Take the project “Openapi” as an example to briefly describe the relationship between cloud data points and product function points. Project “Openapi” is supposed to implement the function that turns on and off a light remotely. You need to create a “Boolean” writable data point in the cloud to work out it, as shown below:</p>
-<p><img src="../../../assets/en-us/UserManual/OpenAPI/322.png" alt="Create data points"></p>
-<p>After adding the data point, click “Apply” as shown in the figure below to complete entire data point creation work for the product.</p>
-<p><img src="../../../assets/en-us/UserManual/OpenAPI/322-1.png" alt="Apply data points"></p>
+<h3 id="2-2-Create-Data-Points"><a href="#2-2-Create-Data-Points" class="headerlink" title="2.2 Create Data Points"></a>2.2 Create Data Points</h3><p>Take the project “Openapi” as an example to briefly describe the relationship between cloud Data Points and product function points. Project “Openapi” is supposed to implement the function that turns on and off a light remotely. You need to create a “Boolean” writable Data Point in the cloud to work out it, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/322.png" alt="Create Data Points"></p>
+<p>After adding the Data Point, click “Apply” as shown in the figure below to complete entire Data Point creation work for the product.</p>
+<p><img src="../../../assets/en-us/UserManual/OpenAPI/322-1.png" alt="Apply Data Points"></p>
 <h3 id="2-3-Application-configuration"><a href="#2-3-Application-configuration" class="headerlink" title="2.3 Application configuration"></a>2.3 Application configuration</h3><p>Take the “Openapi” personal project as an example, click on Service - Application Configuration - Add New Application, as shown below:</p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/323.png" alt="Add New Application"></p>
 <p>After filling in the application name which can be cusomizable, select Android for the platform, click Add, as shown below:</p>
@@ -417,22 +417,22 @@
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/331.png" alt="Postman"></p>
 <p>3) Choose to import the prepared requests, as shown below:</p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/332.png" alt="import the prepared requests"></p>
-<p>Fill in Import From Link:</p>
+<p>Fill in the Import From Link tab:</p>
 <p><a href="https://www.getpostman.com/collections/d6c5981977683526877f" target="_blank" rel="noopener">https://www.getpostman.com/collections/d6c5981977683526877f</a></p>
 <p>Then click “import” and the folder shown below will appear:</p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/333.png" alt="import result"></p>
 <h2 id="4-Use-Postman-for-HTTP-requests"><a href="#4-Use-Postman-for-HTTP-requests" class="headerlink" title="4. Use Postman for HTTP requests"></a>4. Use Postman for HTTP requests</h2><p>Steps:</p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/340.png" alt="Steps"></p>
-<h3 id="4-1-Obtaining-User-token-via-anonymous-login-POST-request"><a href="#4-1-Obtaining-User-token-via-anonymous-login-POST-request" class="headerlink" title="4.1 Obtaining User_token via anonymous login POST request"></a>4.1 Obtaining User_token via anonymous login POST request</h3><p>First, use the anonymous login with POST request to obtain the Token. App ID can be found in section 2.3) Application configuration. Fill in the App ID in the Headers page, and phone_id in the Body page. Then click “Send” to send request, the result will pop up in the bottom box. If you get User_token in the Body, the request is successful, as shown below:</p>
+<h3 id="4-1-Obtaining-User-token-via-anonymous-login-POST-request"><a href="#4-1-Obtaining-User-token-via-anonymous-login-POST-request" class="headerlink" title="4.1 Obtaining User_token via anonymous login POST request"></a>4.1 Obtaining User_token via anonymous login POST request</h3><p>First, use the anonymous login with POST request to obtain the Token. App ID can be found in section 2.3) Application configuration. Set the App ID in the Headers page, and phone_id in the Body page. Then click “Send” to send request, the result will pop up in the bottom box. If you get User_token in the Body, the request is successful, as shown below:</p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/341.png" alt="anonymous login POST request"></p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/341-1.png" alt="anonymous login POST response"></p>
 <h3 id="4-2-Obtain-did-and-passcode-of-virtual-device"><a href="#4-2-Obtain-did-and-passcode-of-virtual-device" class="headerlink" title="4.2 Obtain did and passcode of virtual device"></a>4.2 Obtain did and passcode of virtual device</h3><p>Go to the Personal Project - Virtual Device, click “start virtual device”, get the virtual device did and passcode as shown below:</p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/342.png" alt="start virtual device"></p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/342-1.png" alt="start virtual device"></p>
-<h3 id="4-3-Bind-device-through-POST-request-with-did-and-passcode"><a href="#4-3-Bind-device-through-POST-request-with-did-and-passcode" class="headerlink" title="4.3 Bind device through POST request with did and passcode"></a>4.3 Bind device through POST request with did and passcode</h3><p>Choose to use the POST request with did and passcode to bind the device. Fill in App ID and User_token obtained before in Headers, and above did and passcode in Body. If returning success, the binding is successful, as shown below:</p>
+<h3 id="4-3-Bind-device-through-POST-request-with-did-and-passcode"><a href="#4-3-Bind-device-through-POST-request-with-did-and-passcode" class="headerlink" title="4.3 Bind device through POST request with did and passcode"></a>4.3 Bind device through POST request with did and passcode</h3><p>Choose to use the POST request with did and passcode to bind the device. Set App ID and User_token obtained earlier in Headers, and above did and passcode in Body. If returning success, the binding is successful, as shown below:</p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/343.png" alt="Bind device through POST request with did and passcode"></p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/343-1.png" alt="Bind device through POST request with did and passcode"></p>
-<h3 id="4-4-Bind-device-through-POST-request-with-MAC-Note-this-step-can-be-skipped-if-above-step-is-successful"><a href="#4-4-Bind-device-through-POST-request-with-MAC-Note-this-step-can-be-skipped-if-above-step-is-successful" class="headerlink" title="4.4 Bind device through POST request with MAC (Note: this step can be skipped if above step is successful)"></a>4.4 Bind device through POST request with MAC (Note: this step can be skipped if above step is successful)</h3><p>Choose to use the POST request with MAC to bind the device. Fill in the App ID and User_token obtained before in the Headers. The Timestamp is a Unix timestamp (its expiration time is 5 minutes). You can get Signature using MD5 encryption method {MD5 (product_secret+X-Gizwits-Timestamp).lower()}. Fill in the product_key and the device MAC in the Body, then click “send”. If the action is successful, you will find that the device is online as shown below:</p>
+<h3 id="4-4-Bind-device-through-POST-request-with-MAC-Note-this-step-can-be-skipped-if-above-step-is-successful"><a href="#4-4-Bind-device-through-POST-request-with-MAC-Note-this-step-can-be-skipped-if-above-step-is-successful" class="headerlink" title="4.4 Bind device through POST request with MAC (Note: this step can be skipped if above step is successful)"></a>4.4 Bind device through POST request with MAC (Note: this step can be skipped if above step is successful)</h3><p>Choose to use the POST request with MAC to bind the device. Pass the App ID and User_token obtained earlier in the Headers. The Timestamp is a Unix timestamp (its expiration time is 5 minutes). You can get Signature using MD5 encryption method {MD5 (product_secret+X-Gizwits-Timestamp).lower()}. Pass the product_key and the device MAC in the Body, then click “send”. If the action is successful, you will find that the device is online as shown below:</p>
 <p>Note: The links for obtaining Timestamp and Signature are</p>
 <ul>
 <li><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="noopener">Unix timestamp</a></li>
@@ -442,12 +442,12 @@
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/344-1.png" alt="Bind device through POST request with MAC"></p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/344-2.png" alt="Bind device through POST request with MAC"></p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/344-3.png" alt="Bind device through POST request with MAC"></p>
-<h3 id="4-5-List-bound-devices-through-GET-request-to-check-device-online-offline-state"><a href="#4-5-List-bound-devices-through-GET-request-to-check-device-online-offline-state" class="headerlink" title="4.5 List bound devices through GET request to check device online/offline state"></a>4.5 List bound devices through GET request to check device online/offline state</h3><p>Choose “Get request for listing bound devices”. Fill in App ID and User_token in the Headers. Click “Send”, then a JSON string will be returned. The value of “is_online” is true to indicate that the device is online, as shown below:</p>
+<h3 id="4-5-List-bound-devices-through-GET-request-to-check-device-online-offline-state"><a href="#4-5-List-bound-devices-through-GET-request-to-check-device-online-offline-state" class="headerlink" title="4.5 List bound devices through GET request to check device online/offline state"></a>4.5 List bound devices through GET request to check device online/offline state</h3><p>Choose “Get request for listing bound devices”. Pass App ID and User_token in the Headers. Click “Send”, then a JSON string will be returned. The value of “is_online” is true to indicate that the device is online, as shown below:</p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/345.png" alt="List bound devices through GET request to check device online/offline state "></p>
-<h3 id="4-6-Control-device-remotely-through-POST-Request"><a href="#4-6-Control-device-remotely-through-POST-Request" class="headerlink" title="4.6 Control device remotely through POST Request"></a>4.6 Control device remotely through POST Request</h3><p>Choose “Control devices remotely through POST Request”. Fill in the App ID and User_token in the Headers, device ID (did) at the end of Url and the data point name and its value in the Body with JSON format. Click “Send”, and return empty to indicate success, as shown below:</p>
+<h3 id="4-6-Control-device-remotely-through-POST-Request"><a href="#4-6-Control-device-remotely-through-POST-Request" class="headerlink" title="4.6 Control device remotely through POST Request"></a>4.6 Control device remotely through POST Request</h3><p>Choose “Control devices remotely through POST Request”. Pass the App ID and User_token in the Headers, device ID (did) at the end of Url and the Data Point name and its value in the Body with JSON format. Click “Send”, and return empty to indicate success, as shown below:</p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/346.png" alt="Control device remotely through POST Request"></p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/346-1.png" alt="Control device remotely through POST Request"></p>
-<h3 id="4-7-Verify-whether-the-device-is-under-control"><a href="#4-7-Verify-whether-the-device-is-under-control" class="headerlink" title="4.7 Verify whether the device is under control"></a>4.7 Verify whether the device is under control</h3><p>Return to the personal project, and you can find that the Boolean data point named Led_onoff of the virtual device has been set to true according to the communication log, as shown below:</p>
+<h3 id="4-7-Verify-whether-the-device-is-under-control"><a href="#4-7-Verify-whether-the-device-is-under-control" class="headerlink" title="4.7 Verify whether the device is under control"></a>4.7 Verify whether the device is under control</h3><p>Return to the personal project, and you can find that the Boolean Data Point named Led_onoff of the virtual device has been set to true according to the communication log, as shown below:</p>
 <p><img src="../../../assets/en-us/UserManual/OpenAPI/347.png" alt="Verify whether the device is under control"></p>
 
     </div>

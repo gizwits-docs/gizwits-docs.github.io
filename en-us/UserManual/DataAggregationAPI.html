@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
 
-  <title>Generate device QR code for App binding - Gizwits</title>
+  <title>Data Aggregation API tutorial - Gizwits</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="Generate device QR code for App binding-Gizwits">
-  <meta name="keywords" content="Generate device QR code for App binding docs 文档中心 Gizwits">
+  <meta name="Description" content="Data Aggregation API tutorial-Gizwits">
+  <meta name="keywords" content="Data Aggregation API tutorial docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -380,35 +380,65 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">Generate device QR code for App binding</div>
+        <div class="title">Data Aggregation API tutorial</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
       </div>
-      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>A QR code scanning API for App binding is reserved in the Gizwits App SDK, which can be used to directly bind devices by App through scanning the GPRS devices (or Wi-Fi devices). This document describes how to generate the device QR code through the API.</p>
-<h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><h2 id="1-Navigate-to-the-QR-Code-Generation-Website"><a href="#1-Navigate-to-the-QR-Code-Generation-Website" class="headerlink" title="1. Navigate to the QR Code Generation Website"></a>1. Navigate to the QR Code Generation Website</h2><p>Open this URL in your browser <a href="http://qrcode.gizwitsapi.com:1800/doc/" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/doc/</a></p>
-<h2 id="2-Enter-the-authorization-code"><a href="#2-Enter-the-authorization-code" class="headerlink" title="2. Enter the authorization code"></a>2. Enter the authorization code</h2><p>Click “Authorize” in the upper right corner, enter “G” in the dialog box that pops up, and click the “Authorize” button.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/11.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="3-Enter-PK-and-MAC-Address"><a href="#3-Enter-PK-and-MAC-Address" class="headerlink" title="3. Enter PK and MAC Address"></a>3. Enter PK and MAC Address</h2><p>Open the “Create QR Code Generation Task” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/12.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key and the MAC address sequence used to generate QR code.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/13.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="4-Generate-QR-code"><a href="#4-Generate-QR-code" class="headerlink" title="4. Generate QR code"></a>4. Generate QR code</h2><p>Click “Try it out!” to create a generation task. If it returns 201, the QR code is generated successfully.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/14.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="5-Query-the-generated-QR-code"><a href="#5-Query-the-generated-QR-code" class="headerlink" title="5. Query the generated QR code"></a>5. Query the generated QR code</h2><p>Open the “Query All QR Code Generation Tasks” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/15.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key, click “Try it out!” to query the generation task.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/16.png" alt="Generating device QR code for App binding"> </p>
-<p>The generated results include the relative path of the file download URLs.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/17.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="6-Download-the-QR-code"><a href="#6-Download-the-QR-code" class="headerlink" title="6. Download the QR code"></a>6. Download the QR code</h2><p>In the browser, enter the full URL (<a href="http://qrcode.gizwitsapi.com:1800/+" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/+</a> URL in the figure above) to download the generated QR code images. </p>
-<p>The download URL in this case is: </p>
-<p><a href="http://qrcode.gizwitsapi" target="_blank" rel="noopener">http://qrcode.gizwitsapi</a> .com:1800/static/zipfiles/1474.zip</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/18.png" alt="Generating device QR code for App binding"> </p>
-<p>The downloaded QR code is packaged in a zip file, as shown below.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/19.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="7-Binding-device-using-App"><a href="#7-Binding-device-using-App" class="headerlink" title="7. Binding device using App"></a>7. Binding device using App</h2><p>After decompressing QR code zip file, you can use the Gizwits Debugging App to directly scan the QR code and bind the device.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/20.png" alt="Generating device QR code for App binding"> </p>
-<p>In the App development, you need to call the device binding API through QR code in the Gizwits App SDK. QR code scanning can be implemented through a third-party framework (such as zxing). You can refer to the Gizwits App Framework code. The specific API call for device binding in Gizwits App SDK is as follows, taking Android as an example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//Call device binding API</span><br><span class="line">GizWifiSDK.sharedInstance().bindDeviceByQRCode(user id,user token,QR code);</span><br><span class="line">//Callback for device binding</span><br><span class="line">GizWifiSDKListener sdkListener=new GizWifiSDKListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void didBindDevice(GizWifiErrorCode result, String did) &#123;</span><br><span class="line">        super.didBindDevice(result, did);</span><br><span class="line">	//Callback for successful binding</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><p>Data Aggregation API can aggregate the numeric Data Point data reported by devices, which supports to calculate the sum/average/maximum/minimum values of Data Point data for the intervals in hours/days/weeks/months. You can get aggregated data for multiple Data Points at a time.</p>
+<p>To use this API, you must first initiate the access request. Only after your request is verified, the data reported will be aggregated.</p>
+<p>For example, for the water consumption Data Point of a smart water meter, Aggregation API can be used to get the water consumption statistics per household per month, per week, and per day, so that monthly, weekly, and daily reports are available.</p>
+<h1 id="2-Walkthrough-of-Advanced-Data-API"><a href="#2-Walkthrough-of-Advanced-Data-API" class="headerlink" title="2. Walkthrough of Advanced Data API"></a>2. Walkthrough of Advanced Data API</h1><p>The Advanced Data API of Gizwits Open API is used to obtain device aggregation data.</p>
+<p>After you have been granted the permission to use the aggregation API of Gizwits Open API, you can perform aggregation analysis of the numeric Data Point data reported by devices including calculating the sum/average/maximum/minimum values of Data Point data for the intervals in hours/days/weeks/months.</p>
+<h2 id="2-1-Create-a-User"><a href="#2-1-Create-a-User" class="headerlink" title="2.1 Create a User"></a>2.1 Create a User</h2><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_users" target="_blank" rel="noopener">http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_users</a></p>
+<p>The following figure shows how to.</p>
+<p><img src="../../../assets/en-us/UserManual/DataAPI/11.png" alt="Create a User"></p>
+<h2 id="2-2-Anonymous-user-login"><a href="#2-2-Anonymous-user-login" class="headerlink" title="2.2 Anonymous user login"></a>2.2 Anonymous user login</h2><p>The API for anonymous user login is the same as creating an anonymous login user.</p>
+<h2 id="2-3-Bind-device"><a href="#2-3-Bind-device" class="headerlink" title="2.3 Bind device"></a>2.3 Bind device</h2><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_mac" target="_blank" rel="noopener">http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_mac</a></p>
+<p><img src="../../../assets/en-us/UserManual/DataAPI/12.png" alt="Bind device"></p>
+<h2 id="2-4-Report-device-data"><a href="#2-4-Report-device-data" class="headerlink" title="2.4 Report device data"></a>2.4 Report device data</h2><p>Use the xpg tool provided by Gizwits to simulate a MCU reporting the current device data.</p>
+<p>The usage of xpg is as follows:</p>
+<p><a href="http://docs.gizwits.com/en-us/deviceDev/串口工具使用文档.html" target="_blank" rel="noopener">http://docs.gizwits.com/en-us/deviceDev/串口工具使用文档.html</a></p>
+<p><img src="../../../assets/en-us/UserManual/DataAPI/13.png" alt="Report device data"></p>
+<h2 id="2-5-Data-aggregation-query"><a href="#2-5-Data-aggregation-query" class="headerlink" title="2.5 Data aggregation query"></a>2.5 Data aggregation query</h2><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/高级数据接口" target="_blank" rel="noopener">http://swagger.gizwits.com/doc/index/openapi_apps#/高级数据接口</a></p>
+<p><img src="../../../assets/en-us/UserManual/DataAPI/14.png" alt="Data aggregation query"></p>
+<p>Query result:</p>
+<p><img src="../../../assets/en-us/UserManual/DataAPI/15.png" alt="Query result"></p>
+<h1 id="3-Walkthrough-of-Aggregation-API"><a href="#3-Walkthrough-of-Aggregation-API" class="headerlink" title="3. Walkthrough of Aggregation API"></a>3. Walkthrough of Aggregation API</h1><p>The Aggregation API only performs data aggregation query on a single device, which provides the aggregation operation for a Wi-Fi device numeric Data Point data in a certain period of time, including sum, average, maximum, and minimum.</p>
+<p>Note: Before using Enterprise API, you must first contact Gizwits technical support to grant access to Enterprise API and set the whitelist on the API configuration page. </p>
+<h2 id="3-1-Use-Enterprise-API"><a href="#3-1-Use-Enterprise-API" class="headerlink" title="3.1 Use Enterprise API"></a>3.1 Use Enterprise API</h2><p>Request to access Enterprise API:</p>
+<p><a href="http://docs.gizwits.com/en-us/Cloud/ent_dev.html" target="_blank" rel="noopener">http://docs.gizwits.com/en-us/Cloud/ent_dev.html</a></p>
+<h2 id="3-2-Set-IP-whitelist"><a href="#3-2-Set-IP-whitelist" class="headerlink" title="3.2 Set IP whitelist"></a>3.2 Set IP whitelist</h2><p><img src="../../../assets/en-us/UserManual/DataAPI/16.png" alt="Set IP whitelist"></p>
+<p>The external IP of your current server is needed.</p>
+<p><img src="../../../assets/en-us/UserManual/DataAPI/17.png" alt="Set IP whitelist"></p>
+<h2 id="3-3-Access-aggregation-API"><a href="#3-3-Access-aggregation-API" class="headerlink" title="3.3 Access aggregation API"></a>3.3 Access aggregation API</h2><p>Contact the Gizwits technical personnel and request to use Aggregation API in Enterprise API.</p>
+<h2 id="3-4-Get-a-token"><a href="#3-4-Get-a-token" class="headerlink" title="3.4 Get a token"></a>3.4 Get a token</h2><p>Request URL:</p>
+<p><a href="http://enterpriseapi.gizwits.com/v1/products/447c947fff3245a18dfc709371c34e69/access_token" target="_blank" rel="noopener">http://enterpriseapi.gizwits.com/v1/products/447c947fff3245a18dfc709371c34e69/access_token</a></p>
+<p>Body parameters:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;enterprise_id&quot;: &quot;string&quot;,</span><br><span class="line">&quot;enterprise_secret&quot;: &quot; string &quot;,</span><br><span class="line">&quot;product_secret&quot;: &quot; string &quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="../../../assets/en-us/UserManual/DataAPI/18.png" alt="Get a token"></p>
+<p>Note: It is not possible to request directly on the swagger because the IP of the swagger service is not in your IP whitelist. If you haven’t set up a backend server yet, you can use the chrome browser plugin postman to make the request.</p>
+<h2 id="3-5-Report-the-device-state"><a href="#3-5-Report-the-device-state" class="headerlink" title="3.5 Report the device state"></a>3.5 Report the device state</h2><p><img src="../../../assets/en-us/UserManual/DataAPI/19.png" alt="Report the device state"></p>
+<h2 id="3-6-Call-data-aggregation-API-for-a-single-device"><a href="#3-6-Call-data-aggregation-API-for-a-single-device" class="headerlink" title="3.6 Call data aggregation API for a single device"></a>3.6 Call data aggregation API for a single device</h2><p>Request URL:</p>
+<p><a href="http://enterpriseapi.gizwits.com/v1/products/cdfb1e7f2d31474ca10396de88491372/devices/Zb248887fhMVZ2V2Jhz2xfq/agg_data?start_ts=1485151200000&amp;end_ts=1485153000000&amp;attrs=t1%2Ct2%2Ct3%2Ct4&amp;aggregator=avg&amp;unit=HOURS" target="_blank" rel="noopener">http://enterpriseapi.gizwits.com/v1/products/cdfb1e7f2d31474ca10396de88491372/devices/Zb248887fhMVZ2V2Jhz2xfq/agg_data?start_ts=1485151200000&amp;end_ts=1485153000000&amp;attrs=t1%2Ct2%2Ct3%2Ct4&amp;aggregator=avg&amp;unit=HOURS</a></p>
+<p>The parameter values of the URL are:</p>
+<ul>
+<li>product_key</li>
+<li>did</li>
+<li>start_ts</li>
+<li>end_ts</li>
+<li>attrs</li>
+<li>aggregator</li>
+<li>unit</li>
+</ul>
+<p>Header parameters:</p>
+<ul>
+<li>Authorize token “enter token here”</li>
+<li>Content-Type application/json</li>
+</ul>
+<p><img src="../../../assets/en-us/UserManual/DataAPI/20.png" alt="Invoke data aggregation API for a single device"></p>
+<h1 id="4-Other-support"><a href="#4-Other-support" class="headerlink" title="4. Other support"></a>4. Other support</h1><p>Device data aggregation API is for enterprise developers. If you want to use, please contact us through the official website.</p>
+<p>Website address: <a href="http://www.gizwits.com/about-us" target="_blank" rel="noopener">http://www.gizwits.com/about-us</a></p>
+<p>Gizwits official QR code:</p>
+<p><img src="../../../assets/en-us/UserManual/DataAPI/21.png" alt="Gizwits official QR code"></p>
 
     </div>
     

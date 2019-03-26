@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
 
-  <title>Generate device QR code for App binding - Gizwits</title>
+  <title>Gizwits ECE development tutorial - Gizwits</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="Generate device QR code for App binding-Gizwits">
-  <meta name="keywords" content="Generate device QR code for App binding docs 文档中心 Gizwits">
+  <meta name="Description" content="Gizwits ECE development tutorial-Gizwits">
+  <meta name="keywords" content="Gizwits ECE development tutorial docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -380,35 +380,143 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">Generate device QR code for App binding</div>
+        <div class="title">Gizwits ECE development tutorial</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit</a>
       </div>
-      <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>A QR code scanning API for App binding is reserved in the Gizwits App SDK, which can be used to directly bind devices by App through scanning the GPRS devices (or Wi-Fi devices). This document describes how to generate the device QR code through the API.</p>
-<h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><h2 id="1-Navigate-to-the-QR-Code-Generation-Website"><a href="#1-Navigate-to-the-QR-Code-Generation-Website" class="headerlink" title="1. Navigate to the QR Code Generation Website"></a>1. Navigate to the QR Code Generation Website</h2><p>Open this URL in your browser <a href="http://qrcode.gizwitsapi.com:1800/doc/" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/doc/</a></p>
-<h2 id="2-Enter-the-authorization-code"><a href="#2-Enter-the-authorization-code" class="headerlink" title="2. Enter the authorization code"></a>2. Enter the authorization code</h2><p>Click “Authorize” in the upper right corner, enter “G” in the dialog box that pops up, and click the “Authorize” button.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/11.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="3-Enter-PK-and-MAC-Address"><a href="#3-Enter-PK-and-MAC-Address" class="headerlink" title="3. Enter PK and MAC Address"></a>3. Enter PK and MAC Address</h2><p>Open the “Create QR Code Generation Task” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/12.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key and the MAC address sequence used to generate QR code.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/13.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="4-Generate-QR-code"><a href="#4-Generate-QR-code" class="headerlink" title="4. Generate QR code"></a>4. Generate QR code</h2><p>Click “Try it out!” to create a generation task. If it returns 201, the QR code is generated successfully.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/14.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="5-Query-the-generated-QR-code"><a href="#5-Query-the-generated-QR-code" class="headerlink" title="5. Query the generated QR code"></a>5. Query the generated QR code</h2><p>Open the “Query All QR Code Generation Tasks” API.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/15.png" alt="Generating device QR code for App binding"> </p>
-<p>Enter product_key, click “Try it out!” to query the generation task.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/16.png" alt="Generating device QR code for App binding"> </p>
-<p>The generated results include the relative path of the file download URLs.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/17.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="6-Download-the-QR-code"><a href="#6-Download-the-QR-code" class="headerlink" title="6. Download the QR code"></a>6. Download the QR code</h2><p>In the browser, enter the full URL (<a href="http://qrcode.gizwitsapi.com:1800/+" target="_blank" rel="noopener">http://qrcode.gizwitsapi.com:1800/+</a> URL in the figure above) to download the generated QR code images. </p>
-<p>The download URL in this case is: </p>
-<p><a href="http://qrcode.gizwitsapi" target="_blank" rel="noopener">http://qrcode.gizwitsapi</a> .com:1800/static/zipfiles/1474.zip</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/18.png" alt="Generating device QR code for App binding"> </p>
-<p>The downloaded QR code is packaged in a zip file, as shown below.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/19.png" alt="Generating device QR code for App binding"> </p>
-<h2 id="7-Binding-device-using-App"><a href="#7-Binding-device-using-App" class="headerlink" title="7. Binding device using App"></a>7. Binding device using App</h2><p>After decompressing QR code zip file, you can use the Gizwits Debugging App to directly scan the QR code and bind the device.</p>
-<p><img src="../../../assets/en-us/UserManual/qrcode/20.png" alt="Generating device QR code for App binding"> </p>
-<p>In the App development, you need to call the device binding API through QR code in the Gizwits App SDK. QR code scanning can be implemented through a third-party framework (such as zxing). You can refer to the Gizwits App Framework code. The specific API call for device binding in Gizwits App SDK is as follows, taking Android as an example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//Call device binding API</span><br><span class="line">GizWifiSDK.sharedInstance().bindDeviceByQRCode(user id,user token,QR code);</span><br><span class="line">//Callback for device binding</span><br><span class="line">GizWifiSDKListener sdkListener=new GizWifiSDKListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void didBindDevice(GizWifiErrorCode result, String did) &#123;</span><br><span class="line">        super.didBindDevice(result, did);</span><br><span class="line">	//Callback for successful binding</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <p>This tutorial is used in conjunction with the ECE firmware development kit in the Download Center. This tutorial comes with a demo to teach you how to develop ECE.</p>
+<h1 id="Getting-started-with-ECE"><a href="#Getting-started-with-ECE" class="headerlink" title="Getting started with ECE"></a>Getting started with ECE</h1><ul>
+<li>Gizwits account registration</li>
+<li>Hardware preparation</li>
+<li>Introduction to MCU protocol</li>
+<li>Script compilation and push</li>
+</ul>
+<h2 id="1-Gizwits-account-registration"><a href="#1-Gizwits-account-registration" class="headerlink" title="1. Gizwits account registration"></a>1. Gizwits account registration</h2><p>At present, the function of ECE is only provided for an enterprise developer account. It applies to the products created under the enterprise account. </p>
+<p>Quick start with Gizwits IoT Cloud</p>
+<p>Step 1: Click on the registration link <a href="https://accounts.gizwits.com/en-us/register/" target="_blank" rel="noopener">https://accounts.gizwits.com/en-us/register/</a></p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/11.png" alt="ECE"></p>
+<p>Step 2: Fill out the registration information pane.</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/12.png" alt="ECE"></p>
+<p>Click Register Now and Gizwits will send an activation email to your registered email address.</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/13.png" alt="ECE"></p>
+<p>Step 3: Log in to your mailbox and check the Gizwits account activation email.</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/14.png" alt="ECE"></p>
+<p>Click Activate to jump to the developer type selection page. Enterprise developers should select the Enterprise Developer type to facilitate the later product development and support. Here we choose the Enterprise Developer. </p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/15.png" alt="ECE"></p>
+<p>Then complete the enterprise information.</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/16.png" alt="ECE"></p>
+<p>Note: You need to create products under the enterprise projects (not personal projects) to experience the ECE.</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/17.png" alt="ECE"></p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/18.png" alt="ECE"> </p>
+<p>Add ECE service:</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/19.png" alt="ECE"></p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/20.png" alt="ECE"></p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/21.png" alt="ECE"></p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/22.png" alt="ECE"> </p>
+<p>Wait for Gizwits to verify the request to use ECE.</p>
+<p>After the verification passes, the following page will appear:</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/23.png" alt="ECE"></p>
+<h2 id="2-Hardware-preparation"><a href="#2-Hardware-preparation" class="headerlink" title="2. Hardware preparation"></a>2. Hardware preparation</h2><p>The Gizwits ECE is now based on the GAgent ESP8266 4M Flash hardware platform.</p>
+<p>Step 1: You have to find an ESP8266 Wi-Fi module;</p>
+<p>Step 2: Get the firmware that supports the ECE provided by Gizwits.</p>
+<p>When the above two steps are completed, proceed the firmware downloading.</p>
+<h3 id="2-1-Connect-the-module-to-PC"><a href="#2-1-Connect-the-module-to-PC" class="headerlink" title="2.1 Connect the module to PC"></a>2.1 Connect the module to PC</h3><p>Connect the ESP8266 module to a USB-to-TTL converter according to the following schematic. Note that GPIO0 (Pin 18) needs to be set to LOW as an input. Here it is connected to ground directly. KEY1 is used for the external reset function.</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/24.png" alt="ECE"></p>
+<p>The above figure is a simplified schematic diagram for firmware downloading. When actually setting up the wiring, please refer to the official circuit diagram, as shown below:</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/25.png" alt="ECE"></p>
+<h3 id="2-2-Confirm-serial-port-parameters"><a href="#2-2-Confirm-serial-port-parameters" class="headerlink" title="2.2 Confirm serial port parameters"></a>2.2 Confirm serial port parameters</h3><p>After connecting the above USB-to-TTL converter to the PC, you can see the corresponding COM port through the “My Computer” -&gt; “Administration” -&gt; “Device Manager” -&gt; “Port (COM and LPT)”.</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/26.png" alt="ECE"></p>
+<h3 id="2-3-Get-the-firmware-downloading-tool"><a href="#2-3-Get-the-firmware-downloading-tool" class="headerlink" title="2.3 Get the firmware downloading tool"></a>2.3 Get the firmware downloading tool</h3><p>Download it here: <a href="http://pan.baidu.com/s/1mhMGSeG" target="_blank" rel="noopener">http://pan.baidu.com/s/1mhMGSeG</a></p>
+<p>Unzip the package, you will get the following files.</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/27.png" alt="ECE"></p>
+<p>After unpacking the file shown in the figure again, double-click to launch the ESP FLASH DOWNLOAD TOOL, and the following dialog box will appear.</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/28.png" alt="ECE"></p>
+<h3 id="2-4-Download-firmware-via-serial-port"><a href="#2-4-Download-firmware-via-serial-port" class="headerlink" title="2.4 Download firmware via serial port"></a>2.4 Download firmware via serial port</h3><p>Get Gizwits ESP8266 Wi-Fi firmware that supports ECE.</p>
+<p>Be sure to fill in the fields selected in the following figure in order:</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/29.png" alt="ECE"></p>
+<p><strong>Flash firmware</strong></p>
+<p>Step 1: Select the actual COM port of ESP8266 and connect it to the PC successfully. Then click START button.</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/30.png" alt="ECE"></p>
+<p>It will display as below.</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/31.png" alt="ECE"></p>
+<p>Step 2: Reset ESP8266 (Press the KEY1 shown in the schematic of section 1 and release it) to enter the download mode. It will start to download the firmware. </p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/32.png" alt="ECE"></p>
+<p>Step 3: After waiting for a while, it will display the FINISH message which indicates that the firmware downloading is successful.</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/33.png" alt="ECE"></p>
+<p>Flash product initialization information:</p>
+<ul>
+<li>Go to the product page and find the corresponding product key, as shown below:</li>
+</ul>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/34.png" alt="ECE"></p>
+<ul>
+<li>Save the product key to the init.lua script in the following format:</li>
+</ul>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/35.png" alt="ECE"></p>
+<ul>
+<li>Download the file to address 0xb0000. The process is the same as above.</li>
+</ul>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/36.png" alt="ECE"></p>
+<h2 id="3-Introduction-to-MCU-protocol"><a href="#3-Introduction-to-MCU-protocol" class="headerlink" title="3. Introduction to MCU protocol"></a>3. Introduction to MCU protocol</h2><p>The MCU communicates with the Wi-Fi module in the form of string. The specific command specification is as follows:</p>
+<ul>
+<li>The MCU tells the Wi-Fi module to enter AirLink configuration mode with cmd=2:</li>
+</ul>
+<p>Command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mcu2wifi&amp;cmd=2&amp;mode=0/1</span><br><span class="line">//mode:0 SoftAP configuration mode; mode:1 AirLink configuration mode</span><br></pre></td></tr></table></figure>
+<ul>
+<li>The Wi-Fi module responds :</li>
+</ul>
+<p>Command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mcu2wifi&amp;cmd=2&amp;result=0/1</span><br></pre></td></tr></table></figure>
+<ul>
+<li>The MCU reports device data to the Wi-Fi module with cmd=3:</li>
+</ul>
+<p>Command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mcu2wifi&amp;cmd=3&amp;Infrared=1&amp;LedSwitchOnOff=1&amp;MotorSwitchOnOff=1&amp;Temperature=05</span><br></pre></td></tr></table></figure>
+<ul>
+<li>The Wi-Fi module sends command to the MCU with cmd=4:</li>
+</ul>
+<p>Command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wifi2mcu&amp;cmd=4&amp;LedSwitchOnOff=1或者MotorSwitchOnOff=1</span><br></pre></td></tr></table></figure>
+<p>The firmware that implements the protocol can be found in Gizwits Download Center: ECE fog computing firmware for ESP8266.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gokit_mcu_stm32_ece.hex</span><br></pre></td></tr></table></figure>
+<p>Firmware downloading tutorial:</p>
+<p><a href="http://club.gizwits.com/forum.php?mod=viewthread&amp;tid=3311&amp;highlight=gokit%2B%E7%83%A7%E5%BD%95" target="_blank" rel="noopener">http://club.gizwits.com/forum.php?mod=viewthread&amp;tid=3311&amp;highlight=gokit%2B%E7%83%A7%E5%BD%95</a></p>
+<h2 id="4-Script-compilation-and-push"><a href="#4-Script-compilation-and-push" class="headerlink" title="4. Script compilation and push"></a>4. Script compilation and push</h2><h3 id="4-1-Script-format-and-programming-rules"><a href="#4-1-Script-format-and-programming-rules" class="headerlink" title="4.1 Script format and programming rules"></a>4.1 Script format and programming rules</h3><p>Please take the demo.lua script file as a template to write your own Lua application. The demo script needs to be used with the Gokit and the above mentioned module as well as the MCU firmware to accomplish the following functions:</p>
+<ol>
+<li><p>When detecting that the temperature is greater than 27 degrees, tells the MCU to turn on the motor;</p>
+</li>
+<li><p>When the infrared tube detects an obstacle, turn on the red light;</p>
+</li>
+</ol>
+<p>Below we define several code blocks by using comment areas:</p>
+<p>The application initialization code should be written in the luaInit area, which will only execute once in the entire life cycle of the script. It is used to perform the application’s memory allocation and other operations.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">----------luaInit----------</span><br><span class="line">---------To do------------</span><br><span class="line"></span><br><span class="line">----------luaInit end----</span><br></pre></td></tr></table></figure>
+<p>The application common functions should be written in the luaUtils area.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">----------luaUtils---------</span><br><span class="line">---------To do------------</span><br><span class="line"></span><br><span class="line">----------luaUtils end---</span><br></pre></td></tr></table></figure>
+<p>The processing of data from App should be written in the luaHandleDataFromApp area.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">----------luaHandleDataFromApp----------</span><br><span class="line">---------------------To do--------------</span><br><span class="line"></span><br><span class="line">----------luaHandleDataFromApp end----</span><br></pre></td></tr></table></figure>
+<p>The processing of data from device should be written in the luaHandleDataFromDev area.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">----------luaHandleDataFromDev----------</span><br><span class="line">---------------------To do---------------</span><br><span class="line"></span><br><span class="line">----------luaHandleDataFromDev end----</span><br></pre></td></tr></table></figure>
+<p>Note: Due to the limited ESP8266 resources, the script size of the Lua application cannot be greater than 10K bytes. The number of variables (table\string) defined at once should not exceed 300, and the total number of variables should not exceed 500. </p>
+<h3 id="4-2-Lua-SDK-version-and-related-APIs"><a href="#4-2-Lua-SDK-version-and-related-APIs" class="headerlink" title="4.2 Lua SDK version and related APIs"></a>4.2 Lua SDK version and related APIs</h3><p>SDK version:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk5.1.4</span><br></pre></td></tr></table></figure>
+<p>Lua SDK standard library: where string and table are from SDK 5.1.4 standard library.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">core, math, C API, auxiliary library</span><br></pre></td></tr></table></figure>
+<p>are not fully supported. There exists tailoring (see the documentation for detailed APIs: gagent_esp8266_api).</p>
+<p>APIs encapsulated by GAgent for Lua: gagent_esp8266_api</p>
+<p>The tmr timer interface leverages the timer of the ESP8266 platform.</p>
+<h3 id="4-3-Verify-the-syntax-of-the-Lua-script"><a href="#4-3-Verify-the-syntax-of-the-Lua-script" class="headerlink" title="4.3 Verify the syntax of the Lua script"></a>4.3 Verify the syntax of the Lua script</h3><p>To write a good Lua application, you can first use the local IDE to perform syntax compilation and verification to ensure that the syntax compilation is no problem. For the GAgent APIs to be called, you can first use stub code. The recommended Lua IDEs on Windows are SciTE or LuaForWindows.</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/37.png" alt="ECE"></p>
+<p>Set Lua development environment on Ubuntu:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install lua、sudo apt-get install lua5.1-0-dev</span><br></pre></td></tr></table></figure>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/38.png" alt="ECE"></p>
+<h3 id="4-4-Push-script-to-device"><a href="#4-4-Push-script-to-device" class="headerlink" title="4.4 Push script to device"></a>4.4 Push script to device</h3><p>Copy the Lua script to the Lua script push form:</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/39.png" alt="ECE"></p>
+<p>You can specify the MAC address of the target device or devices to push script:</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/40.png" alt="ECE"></p>
+<p>Push feedback:</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/41.png" alt="ECE"></p>
+<p>The script push may fail because the target device is offline or the input MAC address is wrong:</p>
+<p><img src="../../../assets/en-us/UserManual/ECEDemo/42.png" alt="ECE"></p>
 
     </div>
     
