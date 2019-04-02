@@ -442,24 +442,24 @@
 <p>For example, for the water consumption data point of a smart water meter, Aggregation API can be used to get the water consumption statistics per household per month, per week, and per day, so that monthly, weekly, and daily reports are available.</p>
 <h1 id="2-Walkthrough-for-Advanced-Data-API-of-OpenAPI"><a href="#2-Walkthrough-for-Advanced-Data-API-of-OpenAPI" class="headerlink" title="2. Walkthrough for Advanced Data API of OpenAPI"></a>2. Walkthrough for Advanced Data API of OpenAPI</h1><p>The Advanced Data API of OpenAPI is used to obtain device aggregation data.</p>
 <p>After you have been granted the permission to use the aggregation API of OpenAPI, you can perform aggregation analysis of the numeric data point data reported by devices including calculating the sum/average/maximum/minimum values of data point data for the intervals in hours/days/weeks/months.</p>
-<h2 id="2-1-Create-a-User"><a href="#2-1-Create-a-User" class="headerlink" title="2.1. Create a User"></a>2.1. Create a User</h2><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_users" target="_blank" rel="noopener">http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_users</a></p>
+<h2 id="2-1-Create-a-User"><a href="#2-1-Create-a-User" class="headerlink" title="2.1. Create a User"></a>2.1. Create a User</h2><p><a href="http://docs.gizwits.com/en-us/cloud/OpenAPI.html#APIs" target="_blank" rel="noopener">http://docs.gizwits.com/en-us/cloud/OpenAPI.html#APIs</a></p>
 <p>The following figure shows how to.</p>
 <p><img src="../../../assets/en-us/UserManual/DataAPI/11.png" alt="Create a User"></p>
 <h2 id="2-2-Anonymous-user-login"><a href="#2-2-Anonymous-user-login" class="headerlink" title="2.2. Anonymous user login"></a>2.2. Anonymous user login</h2><p>The API for anonymous user login is the same as creating an anonymous login user.</p>
-<h2 id="2-3-Bind-device"><a href="#2-3-Bind-device" class="headerlink" title="2.3. Bind device"></a>2.3. Bind device</h2><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_mac" target="_blank" rel="noopener">http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_mac</a></p>
+<h2 id="2-3-Bind-device"><a href="#2-3-Bind-device" class="headerlink" title="2.3. Bind device"></a>2.3. Bind device</h2><p><a href="http://docs.gizwits.com/en-us/cloud/OpenAPI.html#APIs" target="_blank" rel="noopener">http://docs.gizwits.com/en-us/cloud/OpenAPI.html#APIs</a></p>
 <p><img src="../../../assets/en-us/UserManual/DataAPI/12.png" alt="Bind device"></p>
 <h2 id="2-4-Report-device-data"><a href="#2-4-Report-device-data" class="headerlink" title="2.4. Report device data"></a>2.4. Report device data</h2><p>Use the xpg tool provided by Gizwits to simulate a MCU reporting the current device data.</p>
 <p>The usage of xpg is as follows:</p>
-<p><a href="http://docs.gizwits.com/en-us/deviceDev/串口工具使用文档.html" target="_blank" rel="noopener">http://docs.gizwits.com/en-us/deviceDev/串口工具使用文档.html</a></p>
+<p><a href="http://docs.gizwits.com/en-us/DeviceDev/Debug/DebugTool.html" target="_blank" rel="noopener">http://docs.gizwits.com/en-us/DeviceDev/Debug/DebugTool.html</a></p>
 <p><img src="../../../assets/en-us/UserManual/DataAPI/13.png" alt="Report device data"></p>
-<h2 id="2-5-Data-aggregation-query"><a href="#2-5-Data-aggregation-query" class="headerlink" title="2.5. Data aggregation query"></a>2.5. Data aggregation query</h2><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/高级数据接口" target="_blank" rel="noopener">http://swagger.gizwits.com/doc/index/openapi_apps#/高级数据接口</a></p>
+<h2 id="2-5-Data-aggregation-query"><a href="#2-5-Data-aggregation-query" class="headerlink" title="2.5. Data aggregation query"></a>2.5. Data aggregation query</h2><p><a href="http://docs.gizwits.com/en-us/cloud/OpenAPI.html#Advanced-Data-API" target="_blank" rel="noopener">http://docs.gizwits.com/en-us/cloud/OpenAPI.html#Advanced-Data-API</a></p>
 <p><img src="../../../assets/en-us/UserManual/DataAPI/14.png" alt="Data aggregation query"></p>
 <p>Query result:</p>
 <p><img src="../../../assets/en-us/UserManual/DataAPI/15.png" alt="Query result"></p>
 <h1 id="3-Walkthrough-for-device-data-aggregation-API-of-Enterprise-API"><a href="#3-Walkthrough-for-device-data-aggregation-API-of-Enterprise-API" class="headerlink" title="3. Walkthrough for device data aggregation API of Enterprise API"></a>3. Walkthrough for device data aggregation API of Enterprise API</h1><p>The device data aggregation API only performs data aggregation query on a single device, which provides the aggregation operation for a Wi-Fi device numeric data point data in a certain period of time, including sum, average, maximum, and minimum.</p>
 <p>Note: Before using Enterprise API, you must first contact Gizwits technical support to apply for the Enterprise API access and set the whitelist on the API configuration page. </p>
 <h2 id="3-1-Enterprise-API-access-request"><a href="#3-1-Enterprise-API-access-request" class="headerlink" title="3.1. Enterprise API access request"></a>3.1. Enterprise API access request</h2><p>Apply for Enterprise API access:</p>
-<p><a href="http://docs.gizwits.com/en-us/Cloud/ent_dev.html" target="_blank" rel="noopener">http://docs.gizwits.com/en-us/Cloud/ent_dev.html</a></p>
+<p><a href="http://docs.gizwits.com/en-us/cloud/enterprise_api.html" target="_blank" rel="noopener">http://docs.gizwits.com/en-us/cloud/enterprise_api.html</a></p>
 <h2 id="3-2-Set-IP-whitelist"><a href="#3-2-Set-IP-whitelist" class="headerlink" title="3.2. Set IP whitelist"></a>3.2. Set IP whitelist</h2><p><img src="../../../assets/en-us/UserManual/DataAPI/16.png" alt="Set IP whitelist"></p>
 <p>The external IP of your current server is needed.</p>
 <p><img src="../../../assets/en-us/UserManual/DataAPI/17.png" alt="Set IP whitelist"></p>
@@ -490,7 +490,7 @@
 </ul>
 <p><img src="../../../assets/en-us/UserManual/DataAPI/20.png" alt="Invoke data aggregation API for a single device"></p>
 <h1 id="4-Other-support"><a href="#4-Other-support" class="headerlink" title="4. Other support"></a>4. Other support</h1><p>Device data aggregation API is for enterprise developers. If you want to apply, please contact us through the official website.</p>
-<p>Website address: <a href="http://www.gizwits.com/about-us" target="_blank" rel="noopener">http://www.gizwits.com/about-us</a></p>
+<p>Website address: <a href="http://en.gizwits.com/about-us" target="_blank" rel="noopener">http://en.gizwits.com/about-us</a></p>
 <p>Gizwits official QR code:</p>
 <p><img src="../../../assets/en-us/UserManual/DataAPI/21.png" alt="Gizwits official QR code"></p>
 
