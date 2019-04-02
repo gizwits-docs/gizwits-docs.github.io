@@ -200,6 +200,8 @@
                         
                           <li class="levelC"><a href="/en-us/DeviceDev/Debug/ESP8266.html">ESP8266</a></li>
                         
+                          <li class="levelC"><a href="/en-us/DeviceDev/Debug/G510.html">G510</a></li>
+                        
                           <li class="levelC"><a href="/en-us/DeviceDev/Debug/DebugLog.html">Debug Log Capture</a></li>
                         
                       </ul>
@@ -656,33 +658,33 @@
 <p>If a sharing invitation received by the Guest has not yet been accepted, the Guest can accept or reject it.</p>
 <p>[Code sample]</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">// Set a Device Sharing delegate</span><br><span class="line">[GizDeviceSharing setDelegate:self];</span><br><span class="line"></span><br><span class="line">// Query the received sharing invitations</span><br><span class="line">[GizDeviceSharing getDeviceSharingInfos:@&quot;your_token&quot; sharingType: GizDeviceSharingToMe deviceID: @&quot;your_device_id&quot;];</span><br><span class="line"></span><br><span class="line">// Callback for getting the invitation list </span><br><span class="line">- (void)didGetDeviceSharingInfos:(NSError*)result deviceID:(NSString*)deviceID deviceSharingInfos:(NSArray*)deviceSharingInfos &#123;</span><br><span class="line">    if(result.code == GIZ_SDK_SUCCESS) &#123;</span><br><span class="line">        // Get the invitation list successfully. Find the unaccepted sharing invitations in deviceSharingInfos, and your_sharing_id represents the sharing invitation to be accepted</span><br><span class="line">        NSInteger your_sharing_id = -1;</span><br><span class="line">        for (int i = 0; i &lt; deviceSharingInfos.count; i++) &#123;</span><br><span class="line">            GizDeviceSharingInfo* mDeviceSharing = [deviceSharingInfos objectAtIndex:i];</span><br><span class="line">            if (mDeviceSharing.status == GizDeviceSharingNotAccepted) &#123;</span><br><span class="line">                your_sharing_id = mDeviceSharing.id;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">           </span><br><span class="line">        // Accept the invitation</span><br><span class="line">        if (your_sharing_id != -1) &#123;</span><br><span class="line">            [GizDeviceSharing acceptDeviceSharing:@&quot;your_token&quot; sharingID:your_sharing_id accept:YES];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        // Fail to get the invitation list</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Callback for accepting the sharing invitation	</span><br><span class="line">- (void)didAcceptDeviceSharing:(NSError*)result sharingID:(NSInteger)sharingID &#123;</span><br><span class="line">    if(result.code == GIZ_SDK_SUCCESS) &#123;</span><br><span class="line">        // success</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        // failure</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="See-Also"><a href="#See-Also" class="headerlink" title="See Also"></a>See Also</h1><p>See <a href="../UserManual/AppCodeAutoGenerator.md">Gizwits App Code Auto-Generator</a> to learn about the functionality of the automatically generated App code.</p>
+<h1 id="See-Also"><a href="#See-Also" class="headerlink" title="See Also"></a>See Also</h1><p>See <a href="http://docs.gizwits.com/en-us/AppDev/AppCodeAutoGenerator.html" target="_blank" rel="noopener">Gizwits App Code Auto-Generator</a> to learn about the functionality of the automatically generated App code.</p>
 <p>See “Gizwits App Framework” to grasp</p>
 <ul>
-<li><a href="../AppDev/iOSFramework.md">Gizwits App Framework for iOS</a></li>
-<li><a href="../AppDev/iOSPushNotification.md">Push notification integration for iOS App</a></li>
-<li><a href="../AppDev/iOSAuthReSkin.md">Third-party authentication and re-skin for iOS App</a></li>
-<li><a href="../quickstart/iOSDevQuickStart.md">Quick start with iOS App development</a></li>
-<li><a href="../AppDev/AndroidFramework.md">Gizwits App Framework for Android</a></li>
-<li><a href="../AppDev/AndroidPushNotification.md">Push notification integration for Android App</a></li>
-<li><a href="../AppDev/AndroidAuthReSkin.md">Third-party authentication and re-skin for Android</a></li>
-<li><a href="../quickstart/AndroidDevQuickStart.md">Quick start with Android App development</a></li>
-<li><a href="../AppDev/APICloudFramework.md">Gizwits App Framework for APICloud</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/iOSFramework.html" target="_blank" rel="noopener">Gizwits App Framework for iOS</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/iOSPushNotification.html" target="_blank" rel="noopener">Push notification integration for iOS App</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/iOSAuthReSkin.html" target="_blank" rel="noopener">Third-party authentication and re-skin for iOS App</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/iOSDevQuickStart.html" target="_blank" rel="noopener">Quick start with iOS App development</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/AndroidFramework.html" target="_blank" rel="noopener">Gizwits App Framework for Android</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/AndroidPushNotification.html" target="_blank" rel="noopener">Push notification integration for Android App</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/AndroidAuthReSkin.html" target="_blank" rel="noopener">Third-party authentication and re-skin for Android</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/AndroidDevQuickStart.html" target="_blank" rel="noopener">Quick start with Android App development</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/APICloudFramework.html" target="_blank" rel="noopener">Gizwits App Framework for APICloud</a></li>
 </ul>
 <p>See “App Development SDK” to develop your IoT App</p>
 <ul>
-<li><a href="../AppDev/AndroidSDKA2.md">Gizwits App SDK for Android</a></li>
-<li><a href="../AppDev/iOSSDKA2.md">Gizwits App SDK for iOS</a></li>
-<li><a href="../AppDev/APICloudSDK.md">Gizwits App SDK for APICloud</a></li>
-<li><a href="../AppDev/TransparentTransmission.md">Data transparent transmission</a></li>
-<li><a href="../AppDev/SDKLogCapture.md">Get Gizwits App SDK debug log</a></li>
-<li><a href="../AppDev/SDKErrorCodes.md">SDK error codes</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/AndroidSDKA2.html" target="_blank" rel="noopener">Gizwits App SDK for Android</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/iOSSDKA2.html" target="_blank" rel="noopener">Gizwits App SDK for iOS</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/APICloudSDK.html" target="_blank" rel="noopener">Gizwits App SDK for APICloud</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/TransparentTransmission.html" target="_blank" rel="noopener">Data transparent transmission</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/SDKLogCapture.html" target="_blank" rel="noopener">Get Gizwits App SDK debug log</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/SDKErrorCodes.html" target="_blank" rel="noopener">SDK error codes</a></li>
 </ul>
 <p>More application development guides</p>
 <ul>
-<li><a href="../AppDev/AppDevFAQ.md">FAQ of mobile application development</a></li>
-<li><a href="../cloud/DeviceSharing.md">Gizwits Device Sharing</a></li>
-<li><a href="../AppDev/ThirdpartyAuth.md">Set up third-party authentication with the provider of choice</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/AppDevFAQ.html" target="_blank" rel="noopener">FAQ of mobile application development</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/DeviceSharing.html" target="_blank" rel="noopener">Gizwits Device Sharing</a></li>
+<li><a href="http://docs.gizwits.com/en-us/AppDev/ThirdpartyAuth.html" target="_blank" rel="noopener">Set up third-party authentication with the provider of choice</a></li>
 </ul>
 
     </div>
