@@ -1454,13 +1454,13 @@ http://api.gizwits.com/app/request_token
 <td style="text-align:left">用户唯一id</td>
 </tr>
 <tr>
-<td style="text-align:left">expire_at</td>
+<td style="text-align:left">expired_at</td>
 <td style="text-align:left">integer</td>
 <td style="text-align:left">token过期时间（时间戳）</td>
 </tr>
 </tbody>
 </table>
-<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"token"</span>: <span class="string">"f8324047f20144f6914e7be19304f943"</span>,</span><br><span class="line">  <span class="attr">"expire_at"</span>: <span class="number">1504772734</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>返回例子<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"token"</span>: <span class="string">"f8324047f20144f6914e7be19304f943"</span>,</span><br><span class="line">  <span class="attr">"expired_at"</span>: <span class="number">1504772734</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="请求重置密码"><a href="#请求重置密码" class="headerlink" title="请求重置密码"></a><span id="post_app_reset_password">请求重置密码</span></h2><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_reset_password" target="_blank" rel="noopener">调试接口</a></p>
 <p>只有设置了 email 或者 phone 的用户才可以重置密码。</p>
 <ul>
@@ -1562,11 +1562,11 @@ http://api.gizwits.com/app/sms_code
 <td style="text-align:left">appid</td>
 </tr>
 <tr>
-<td style="text-align:left">X-Gizwits-User-token</td>
+<td style="text-align:left">X-Gizwits-Application-Token</td>
 <td style="text-align:left">string</td>
 <td style="text-align:center">是</td>
 <td style="text-align:left">header</td>
-<td style="text-align:left">用户token,通过<a href="#post_app_request_token">获取APP Token</a>接口取得</td>
+<td style="text-align:left">App token,通过<a href="#post_app_request_token">获取APP Token</a>接口取得</td>
 </tr>
 <tr>
 <td style="text-align:left">phone</td>
@@ -1611,11 +1611,11 @@ http://api.gizwits.com/app/verify/codes
 <td style="text-align:left">appid</td>
 </tr>
 <tr>
-<td style="text-align:left">X-Gizwits-User-token</td>
+<td style="text-align:left">X-Gizwits-Application-Token</td>
 <td style="text-align:left">string</td>
 <td style="text-align:center">是</td>
 <td style="text-align:left">header</td>
-<td style="text-align:left">用户token,通过<a href="#post_app_request_token">获取APP Token</a>接口取得</td>
+<td style="text-align:left">App token,通过<a href="#post_app_request_token">获取APP Token</a>接口取得</td>
 </tr>
 </tbody>
 </table>
@@ -1668,11 +1668,11 @@ http://api.gizwits.com/app/verify/codes
 <td style="text-align:left">appid</td>
 </tr>
 <tr>
-<td style="text-align:left">X-Gizwits-User-token</td>
+<td style="text-align:left">X-Gizwits-Application-Token</td>
 <td style="text-align:left">string</td>
 <td style="text-align:center">是</td>
 <td style="text-align:left">header</td>
-<td style="text-align:left">用户token,通过<a href="#post_app_request_token">获取APP Token</a>接口取得</td>
+<td style="text-align:left">App token,通过<a href="#post_app_request_token">获取APP Token</a>接口取得</td>
 </tr>
 <tr>
 <td style="text-align:left">captcha_id</td>
@@ -1701,7 +1701,7 @@ http://api.gizwits.com/app/verify/codes
 <pre><code>无
 </code></pre><h2 id="校验短信验证码"><a href="#校验短信验证码" class="headerlink" title="校验短信验证码"></a><span id="put_app_verify_codes">校验短信验证码</span></h2><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/put_app_verify_codes" target="_blank" rel="noopener">调试接口</a></p>
 <p>请求地址及方式</p>
-<pre><code>GET
+<pre><code>PUT
 https://api.gizwits.com/app/verify/codes
 </code></pre><p>请求参数</p>
 <table>
@@ -1723,11 +1723,11 @@ https://api.gizwits.com/app/verify/codes
 <td style="text-align:left">appid</td>
 </tr>
 <tr>
-<td style="text-align:left">X-Gizwits-User-token</td>
+<td style="text-align:left">X-Gizwits-Application-Token</td>
 <td style="text-align:left">string</td>
 <td style="text-align:center">是</td>
 <td style="text-align:left">header</td>
-<td style="text-align:left">用户token,通过<a href="#post_app_request_token">获取APP Token</a>接口取得</td>
+<td style="text-align:left">App token,通过<a href="#post_app_request_token">获取APP Token</a>接口取得</td>
 </tr>
 <tr>
 <td style="text-align:left">phone</td>

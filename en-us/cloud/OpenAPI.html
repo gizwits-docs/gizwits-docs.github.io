@@ -1398,14 +1398,14 @@
 <td>Unique user id</td>
 </tr>
 <tr>
-<td>expire_at</td>
+<td>expired_at</td>
 <td>integer</td>
 <td>Token expiration time (timestamp)</td>
 </tr>
 </tbody>
 </table>
 <p>Example Response</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;token&quot;: &quot;f8324047f20144f6914e7be19304f943&quot;,</span><br><span class="line">  &quot;expire_at&quot;: 1504772734</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;token&quot;: &quot;f8324047f20144f6914e7be19304f943&quot;,</span><br><span class="line">  &quot;expired_at&quot;: 1504772734</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Request-to-password-reset"><a href="#Request-to-password-reset" class="headerlink" title="Request to password reset"></a>Request to password reset</h2><p>Debug console</p>
 <p>Only those users who have set email or phone can reset the password.</p>
 <ul>
@@ -1502,11 +1502,11 @@
 <td>appid</td>
 </tr>
 <tr>
-<td>X-Gizwits-User-token</td>
+<td>X-Gizwits-Application-Token</td>
 <td>string</td>
 <td>Yes</td>
 <td>header</td>
-<td>User token, obtained by request an access token API</td>
+<td>App token, obtained by request an access token API</td>
 </tr>
 <tr>
 <td>phone</td>
@@ -1550,11 +1550,11 @@
 <td>appid</td>
 </tr>
 <tr>
-<td>X-Gizwits-User-token</td>
+<td>X-Gizwits-Application-Token</td>
 <td>string</td>
 <td>Yes</td>
 <td>header</td>
-<td>User token, obtained by request an access token API</td>
+<td>App token, obtained by request an access token API</td>
 </tr>
 </tbody>
 </table>
@@ -1606,11 +1606,11 @@
 <td>appid</td>
 </tr>
 <tr>
-<td>X-Gizwits-User-token</td>
+<td>X-Gizwits-Application-Token</td>
 <td>string</td>
 <td>Yes</td>
 <td>header</td>
-<td>User token, obtained by request an access token API</td>
+<td>App token, obtained by request an access token API</td>
 </tr>
 <tr>
 <td>captcha_id</td>
@@ -1639,7 +1639,7 @@
 <p>No</p>
 <h2 id="Verify-a-SMS-verification-code"><a href="#Verify-a-SMS-verification-code" class="headerlink" title="Verify a SMS verification code"></a>Verify a SMS verification code</h2><p>Debug console</p>
 <p>Request method and URL</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">https://api.gizwits.com/app/verify/codes</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PUT</span><br><span class="line">https://api.gizwits.com/app/verify/codes</span><br></pre></td></tr></table></figure>
 <p>Request paramters</p>
 <table>
 <thead>
@@ -1660,11 +1660,11 @@
 <td>appid</td>
 </tr>
 <tr>
-<td>X-Gizwits-User-token</td>
+<td>X-Gizwits-Application-Token</td>
 <td>string</td>
 <td>Yes</td>
 <td>header</td>
-<td>User token, obtained by request an access token API</td>
+<td>App token, obtained by request an access token API</td>
 </tr>
 <tr>
 <td>phone</td>
