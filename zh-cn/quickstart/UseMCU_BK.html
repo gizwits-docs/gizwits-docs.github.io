@@ -495,9 +495,9 @@
 <h2 id="1-注册机智云开发者账号"><a href="#1-注册机智云开发者账号" class="headerlink" title="1.注册机智云开发者账号"></a>1.注册机智云开发者账号</h2><p><a href="http://dev.gizwits.com/zh-cn/developer/" target="_blank" rel="noopener">进入机智云官网开发者中心</a>， 根据界面指引注册开发者账号。</p>
 <p><img src="/assets/zh-cn/quickstart/dev/new2.png" alt></p>
 <h2 id="2-登录账号，选择对应项创建新产品"><a href="#2-登录账号，选择对应项创建新产品" class="headerlink" title="2.登录账号，选择对应项创建新产品"></a>2.登录账号，选择对应项创建新产品</h2><p><img src="/assets/zh-cn/quickstart/dev/new3.png" alt="创建新产品图"></p>
-<h2 id="3-填写设备产品基本信息"><a href="#3-填写设备产品基本信息" class="headerlink" title="3.填写设备产品基本信息"></a>3.填写设备产品基本信息</h2><p><img src="/assets/zh-cn/quickstart/dev/new5.png" alt="填写设备产品基本信息图"></p>
+<h2 id="3-填写设备产品基本信息"><a href="#3-填写设备产品基本信息" class="headerlink" title="3.填写设备产品基本信息"></a>3.填写设备产品基本信息</h2><p><img src="/assets/zh-cn/quickstart/dev/new5_5.png" alt="填写设备产品基本信息图"></p>
 <h2 id="4-项目基本信息"><a href="#4-项目基本信息" class="headerlink" title="4.项目基本信息"></a>4.项目基本信息</h2><p>在机智云官网上已成功创建智能灯产品，机智云为该产品分配Product Key和Product Secret参数。Product Key参数由开发者写入设备MCU（设备主控板），并告知WiFi/GPRS模块，WiFi/GPRS模块登录机智云后，机智云将会识别该Product Key的产品。Product Secret参数是APP开发或服务器对接时所使用的参数。</p>
-<p><img src="/assets/zh-cn/quickstart/dev/new4.png" alt="项目基本信息图"></p>
+<p><img src="/assets/zh-cn/quickstart/dev/new4_4.png" alt="项目基本信息图"></p>
 <h1 id="创建数据点"><a href="#创建数据点" class="headerlink" title="创建数据点"></a>创建数据点</h1><p>数据点即设备产品的功能的抽象，用于描述产品功能及其参数。创建数据点后，设备与云端通讯的数据格式即可确定，设备、机智云可以相互识别设备与机智云互联互通的数据。</p>
 <p><img src="/assets/zh-cn/quickstart/dev/new6.png" alt="数据点概图"></p>
 <h2 id="1-数据点详解"><a href="#1-数据点详解" class="headerlink" title="1.数据点详解"></a>1.数据点详解</h2><p>数据点定义基本内容可分为显示名称，标识名，读写类型，数据类型及备注。概图如下：</p>
@@ -530,7 +530,7 @@
 <p><img src="/assets/zh-cn/quickstart/dev/new8.png" alt="创建数据点-1"></p>
 <p><img src="/assets/zh-cn/quickstart/dev/new9.png" alt="创建数据点-3"></p>
 <h1 id="智能灯MCU开发"><a href="#智能灯MCU开发" class="headerlink" title="智能灯MCU开发"></a>智能灯MCU开发</h1><h2 id="1-自动生成MCU-SDK"><a href="#1-自动生成MCU-SDK" class="headerlink" title="1.自动生成MCU SDK"></a>1.自动生成MCU SDK</h2><p>自动生成的MCU SDK代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的 API。当设备收到云端或 APP 端的数据后，程序会将数据转换成对应的事件并通知到应用层，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，便可完成产品的开发。这里选择独立MCU方案、硬件平台STM32f103c8x后，机智云直接生成适应STM32f103c8x的工程代码。</p>
-<p><img src="/assets/zh-cn/quickstart/dev/new12.png" alt="自动生成MCU SDK-1"></p>
+<p><img src="/assets/zh-cn/quickstart/dev/new12_12.png" alt="自动生成MCU SDK-1"></p>
 <p><img src="/assets/zh-cn/quickstart/dev/new14.png" alt="自动生成MCU SDK-3"></p>
 <h2 id="2-MCU-SDK文件内容目录结构"><a href="#2-MCU-SDK文件内容目录结构" class="headerlink" title="2.MCU SDK文件内容目录结构"></a>2.MCU SDK文件内容目录结构</h2><p>如下图，其中黑色标注部分为STM32f103cx8硬件平台开发基本文件，绿色标注部分为机智云逻辑部分。gokit的串口驱动、定时器驱动、按键驱动等驱动机智云的自动生成mcu代码已实现完毕，开发者可直接在gizwits_product.c&amp;gizwits_product.h文件编写硬件动作执行函数。</p>
 <p><img src="/assets/zh-cn/quickstart/dev/new16.png" alt="MCU SDK文件内容目录结构"></p>
