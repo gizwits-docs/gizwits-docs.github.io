@@ -579,18 +579,12 @@
 <li>softap配置模式 -&gt; 短按key2</li>
 </ul>
 <p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410747091.png" alt="Alt text"></p>
-<p>首先在<strong>“user_main.c”</strong>文件里面添加以下头文件</p>
+<p>首先在<strong>“gizwits_product.c”</strong>文件里面添加以下头文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"hal_motor.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"hal_rgb_led.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"hal_temp_hum.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"hal_infrared.h"</span></span></span><br></pre></td></tr></table></figure>
+<p>在 userInit( ) 函数中添加各sensor的初始化</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> ICACHE_FLASH_ATTR <span class="title">userInit</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	gizMemset((<span class="keyword">uint8_t</span> *)&amp;currentDataPoint, <span class="number">0</span>, <span class="keyword">sizeof</span>(dataPoint_t));</span><br><span class="line"></span><br><span class="line">	rgbGpioInit();     <span class="comment">///&lt; 新添加代码: RGB LED初始化</span></span><br><span class="line">	rgbLedInit();</span><br><span class="line"></span><br><span class="line">	motorInit();       <span class="comment">///&lt; 新添加代码: 电机初始化</span></span><br><span class="line">	motorControl(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	dh11Init();        <span class="comment">///&lt; 新添加代码: 温湿度初始化</span></span><br><span class="line"></span><br><span class="line">	irInit();          <span class="comment">///&lt; 新添加代码: 红外初始化</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><strong>#include “driver/hal_rgb_led.h”</strong></li>
-</ul>
-<p>接着在<strong>“user init（）”</strong>函数里面的<strong>“//user init”</strong>部分添加以下两条函数，用于初始化GoKit3上面的RGB灯，这两条函数可以在<strong>“hal_rgb_led.c”</strong>文件里找到。</p>
-<ul>
-<li><strong>//LED初始化函数</strong></li>
-<li><strong>rgbGpioInit（）</strong></li>
-<li><p><strong>rgbLedInit（）;</strong><br>@</p>
-</li>
-<li><p>添加<strong>“#include “driver/hal_rgb_led.h””</strong>头文件</p>
-</li>
+<li>添加<strong>“#include “driver/hal_rgb_led.h””</strong>头文件</li>
 </ul>
 <p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410801710.png" alt="Alt text"></p>
 <ul>
