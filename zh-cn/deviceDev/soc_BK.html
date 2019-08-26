@@ -505,7 +505,7 @@
 <p><strong>补充说明：</strong></p>
 <p>1）如果没有GoKit3的小伙伴也可以参考GoKit3的原理图基于esp8266模块（模块的Flash必须为4Mbyte，建议模块型号：安信可的esp-12f）自行搭建硬件，原理图链接如下：<a href="http://club.gizwits.com/thread-2889-1-1.html" target="_blank" rel="noopener">http://club.gizwits.com/thread-2889-1-1.html</a></p>
 <p>2）GoKit3（S）购买链接：<a href="https://shop159680395.taobao.com/" target="_blank" rel="noopener">https://shop159680395.taobao.com/</a> （机智云官方店）</p>
-<h1 id="在机智云官网创建设备产品"><a href="#在机智云官网创建设备产品" class="headerlink" title="在机智云官网创建设备产品."></a>在机智云官网创建设备产品.</h1><p>这里以Gokit“微信宠物屋”的例子介绍设备接入机智云的整个流程。</p>
+<h1 id="在机智云官网创建设备产品，创建数据点"><a href="#在机智云官网创建设备产品，创建数据点" class="headerlink" title="在机智云官网创建设备产品，创建数据点."></a>在机智云官网创建设备产品，创建数据点.</h1><p>这里以Gokit“微信宠物屋”的例子介绍设备接入机智云的整个流程。</p>
 <h2 id="1-注册机智云开发者账号"><a href="#1-注册机智云开发者账号" class="headerlink" title="1.注册机智云开发者账号"></a>1.注册机智云开发者账号</h2><p><a href="http://dev.gizwits.com/zh-cn/developer/" target="_blank" rel="noopener">进入机智云官网开发者中心</a>， 根据界面指引注册开发者账号。</p>
 <p><img src="/assets/zh-cn/quickstart/dev/new2.png" alt></p>
 <h2 id="2-登录账号，选择对应项创建新产品"><a href="#2-登录账号，选择对应项创建新产品" class="headerlink" title="2.登录账号，选择对应项创建新产品"></a>2.登录账号，选择对应项创建新产品</h2><p><img src="/assets/zh-cn/quickstart/dev/new3.png" alt="创建新产品图"></p>
@@ -515,7 +515,7 @@
 <h2 id="6-创建15个对应数据点"><a href="#6-创建15个对应数据点" class="headerlink" title="6.创建15个对应数据点"></a>6.创建15个对应数据点</h2><p><img src="/assets/zh-cn/quickstart/dev/new7_7.png" alt="创建数据点-1"></p>
 <p><img src="/assets/zh-cn/quickstart/dev/new8_8.png" alt="创建数据点-1"></p>
 <p><img src="/assets/zh-cn/quickstart/dev/new9_9.png" alt="创建数据点-3"></p>
-<h3 id="2-4-云端自动生成源码"><a href="#2-4-云端自动生成源码" class="headerlink" title="2.4 云端自动生成源码"></a>2.4 云端自动生成源码</h3><h4 id="2-4-1自动生成工具介绍："><a href="#2-4-1自动生成工具介绍：" class="headerlink" title="2.4.1自动生成工具介绍："></a>2.4.1自动生成工具介绍：</h4><p><strong>自动生成代码工具：</strong>是机智云为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。自动生成的代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的API，且提供了多种平台的实例代码。当设备收到云端或APP端的数据后，程序会将数据转换成对应的事件并通知到应用层，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。使用自动生成的代码开发产品，就不必再处理协议相关的部分了，开发者可以将节省出来的精力集中在产品的核心功能开发上。</p>
+<h1 id="下载云端自动生成代码及其介绍"><a href="#下载云端自动生成代码及其介绍" class="headerlink" title="下载云端自动生成代码及其介绍"></a>下载云端自动生成代码及其介绍</h1><h2 id="1-自动生成工具介绍："><a href="#1-自动生成工具介绍：" class="headerlink" title="1.自动生成工具介绍："></a>1.自动生成工具介绍：</h2><p><strong>自动生成代码工具：</strong>是机智云为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。自动生成的代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的API，且提供了多种平台的实例代码。当设备收到云端或APP端的数据后，程序会将数据转换成对应的事件并通知到应用层，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。使用自动生成的代码开发产品，就不必再处理协议相关的部分了，开发者可以将节省出来的精力集中在产品的核心功能开发上。</p>
 <ul>
 <li><strong>关于“自动生成代码工具”的更多介绍和帮助，请点击以下链接：</strong> <a href="/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html">自动生成代码工具</a></li>
 </ul>
@@ -523,7 +523,7 @@
 <p>完成产品的数据点新建之后，点击页面的左侧菜单栏的“MCU开发”根据页面提示选择“SOC方案”，目前SOC方案机智云云端默认的“硬件平台”为esp8266，选择完成之后下拉至页面底部，点击“生成代码包”，等待大概30秒左右即可生成基于esp8266的本次项目（Gokit）代码包，下载下来即可，由于下载下来的文件名过于长，并且在文件名里包含了产品的ProductKey，所以本次项目将下载下来的文件名修改为“Gokit”如下图：</p>
 <p><img src="/assets/zh-cn/deviceDev/UseSoc/new_soc_1.png" alt="Alt text"></p>
 <p><strong>补充说明：SOC方案自动生成代码工具目前仅支持esp8266。</strong></p>
-<h4 id="2-4-2-项目源码二次开发指引："><a href="#2-4-2-项目源码二次开发指引：" class="headerlink" title="2.4.2 项目源码二次开发指引："></a>2.4.2 项目源码二次开发指引：</h4><p>整个云端自动生成的SOC源码里面，用户只需要关心文件路径为“Gokit\app”下面的几个地方：</p>
+<h2 id="2-项目源码二次开发指引："><a href="#2-项目源码二次开发指引：" class="headerlink" title="2. 项目源码二次开发指引："></a>2. 项目源码二次开发指引：</h2><p>整个云端自动生成的SOC源码里面，用户只需要关心文件路径为“Gokit\app”下面的几个地方：</p>
 <p>如果你需要添加8266的外设，只需要在</p>
 <ul>
 <li><strong>“Gokit\app\driver”</strong>文件目录下添加相应外设的驱动的.c文件</li>
@@ -539,33 +539,7 @@
 <li><strong>“Gokit\app\user”</strong>文件目录下“user_main.c”文件里面的<strong>“userHandle（）”</strong>函数里添加数据状态上报函数即可以实现状态上报。</li>
 </ul>
 <p>在这套SOC源码里面需要关心也就这几个主要的地方，模块联网以及底层驱动均不需要开发者去处理和修改。</p>
-<h4 id="2-4-3-前往机智云下载中心，下载“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”SoC源码库"><a href="#2-4-3-前往机智云下载中心，下载“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”SoC源码库" class="headerlink" title="2.4.3 前往机智云下载中心，下载“微信宠物屋 for GoKit3(S) ESP8266 V03000003”SoC源码库"></a>2.4.3 前往机智云下载中心，下载“微信宠物屋 for GoKit3(S) ESP8266 V03000003”SoC源码库</h4><p><strong>“微信宠物屋 for GoKit3(S) ESP8266 V03000003”</strong>这个是机智云工程师使用GoKit3（S）板，基于esp8266硬件平台写的案例，案例里面包含了红外传感器，温湿度传感器，小电机，RGB灯，用户按键等几个外设的驱动，可以直接复制到任何一个GoKit3（S）的板子上使用，也可以移植至其他的8266板子上去使用，获取源码方式如下图：</p>
-<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410520403.png" alt="Alt text"></p>
-<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410527525.png" alt="Alt text"></p>
-<p><strong>备注：如需深入了解这个“微信宠物屋”这个实例源码的解析可以参考以下链接：</strong><br><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html">微信宠物屋实例源码的解析</a></p>
-<h4 id="2-4-4-从“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”案例中移植“Gokit”项目所需要的led驱动的-c和-h文件。"><a href="#2-4-4-从“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”案例中移植“Gokit”项目所需要的led驱动的-c和-h文件。" class="headerlink" title="2.4.4 从“微信宠物屋 for GoKit3(S) ESP8266 V03000003”案例中移植“Gokit”项目所需要的led驱动的.c和.h文件。"></a>2.4.4 从“微信宠物屋 for GoKit3(S) ESP8266 V03000003”案例中移植“Gokit”项目所需要的led驱动的.c和.h文件。</h4><ul>
-<li>将<strong>“GoKit_SoC_ESP8266_V03000003测试固件及开发资源2017072815\驱动库代码”</strong>文件目录下的<br> <strong>“hal_rgb_led.c”、“hal_infrared.c”、“hal_motor.c”、“hal_temp_hum.c”</strong>的c文件复制至<strong>“Gokit\app\driver”</strong>下</li>
-</ul>
-<p><img src="/assets/zh-cn/deviceDev/UseSoc/new_soc_2_1.png" alt="Alt text"></p>
-<ul>
-<li>将<strong>“GoKit_SoC_ESP8266_V03000003测试固件及开发资源2017072815\驱动库代码”</strong>文件目录下的   <strong>“hal_rgb_led.h”、“hal_infrared.h”、“hal_motor.h”、“hal_temp_hum.h”</strong>的h文件复制至<strong>“Gokit\app\include\driver”</strong>下</li>
-</ul>
-<p><img src="/assets/zh-cn/deviceDev/UseSoc/new_soc_2_2.png" alt="Alt text"></p>
-<p>完成以上动作之后就完成SOC文件的准备工作，下面进行修改相应的c文件。</p>
-<h4 id="2-4-5-修改“Gokit”的SOC源码文件"><a href="#2-4-5-修改“Gokit”的SOC源码文件" class="headerlink" title="2.4.5 修改“Gokit”的SOC源码文件"></a>2.4.5 修改“Gokit”的SOC源码文件</h4><p>这里我使用Sublime软件打开整个工程的，然后需要修改的两个文件，如下：</p>
-<ul>
-<li><p><strong>“Gokit\app\user”</strong>文件目录下<strong>“user_main.c”</strong>文件</p>
-<p>外设的驱动初始化，在这个c文件里面的<strong>“user_init（）</strong>函数中完成</p>
-</li>
-<li><p><strong>“Gokit\app\Gizwits”</strong>文件目录下<strong>“gizwits_product.c”</strong>文件</p>
-<p>云端下发的数据，在这个c文件里面的<strong>“gizwitsEventProcess（）”</strong>函数中处理</p>
-</li>
-<li><p>程序修改部分说明如下图：</p>
-</li>
-</ul>
-<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410564904.png" alt="Alt text"></p>
-<p><strong>云端自动生成SOC源码的其他说明</strong></p>
-<p>·Key1和Key2这部分的程序是由机智云工程师基于GoKit3（S）完成的，如果用户自行搭建的8266硬件（非GoKit3），则需要修改这部分的程序去驱动用自己的按键GPIO口，用户按键这部分的程序是必需的，它用于使能wifi进入相应的配置模式，然后通过机智云的app（IOE Dome）给wifi模块推送路由器的ssid和password，从而使wifi联网网络，如果没有这个功能，就无法配置wifi模块，从而无法使wifi模块联网。</p>
+<h2 id="3-云端自动生成SOC源码的其他说明"><a href="#3-云端自动生成SOC源码的其他说明" class="headerlink" title="3. 云端自动生成SOC源码的其他说明**"></a>3. 云端自动生成SOC源码的其他说明**</h2><p>·Key1和Key2这部分的程序是由机智云工程师基于GoKit3（S）完成的，如果用户自行搭建的8266硬件（非GoKit3），则需要修改这部分的程序去驱动用自己的按键GPIO口，用户按键这部分的程序是必需的，它用于使能wifi进入相应的配置模式，然后通过机智云的app（IOE Dome）给wifi模块推送路由器的ssid和password，从而使wifi联网网络，如果没有这个功能，就无法配置wifi模块，从而无法使wifi模块联网。</p>
 <p><strong>-云端自动生成SoC源码里面的用户按键Key1、Key2</strong></p>
 <p><strong>- Key1</strong></p>
 <p>用于reset wifi和使模块进入产测模式</p>
@@ -587,6 +561,31 @@
 <li>softap配置模式 -&gt; 短按key2</li>
 </ul>
 <p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410747091.png" alt="Alt text"></p>
+<h1 id="微信宠物屋开发"><a href="#微信宠物屋开发" class="headerlink" title="微信宠物屋开发"></a>微信宠物屋开发</h1><h2 id="1-前往机智云下载中心，下载“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”SoC源码库"><a href="#1-前往机智云下载中心，下载“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”SoC源码库" class="headerlink" title="1. 前往机智云下载中心，下载“微信宠物屋 for GoKit3(S) ESP8266 V03000003”SoC源码库"></a>1. 前往机智云下载中心，下载“微信宠物屋 for GoKit3(S) ESP8266 V03000003”SoC源码库</h2><p><strong>“微信宠物屋 for GoKit3(S) ESP8266 V03000003”</strong>这个是机智云工程师使用GoKit3（S）板，基于esp8266硬件平台写的案例，案例里面包含了红外传感器，温湿度传感器，小电机，RGB灯，用户按键等几个外设的驱动，可以直接复制到任何一个GoKit3（S）的板子上使用，也可以移植至其他的8266板子上去使用，获取源码方式如下图：</p>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410520403.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410527525.png" alt="Alt text"></p>
+<p><strong>备注：如需深入了解这个“微信宠物屋”这个实例源码的解析可以参考以下链接：</strong><br><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html">微信宠物屋实例源码的解析</a></p>
+<h2 id="2-从“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”案例中移植“Gokit”项目所需要的led驱动的-c和-h文件。"><a href="#2-从“微信宠物屋-for-GoKit3-S-ESP8266-V03000003”案例中移植“Gokit”项目所需要的led驱动的-c和-h文件。" class="headerlink" title="2. 从“微信宠物屋 for GoKit3(S) ESP8266 V03000003”案例中移植“Gokit”项目所需要的led驱动的.c和.h文件。"></a>2. 从“微信宠物屋 for GoKit3(S) ESP8266 V03000003”案例中移植“Gokit”项目所需要的led驱动的.c和.h文件。</h2><ul>
+<li>将<strong>“GoKit_SoC_ESP8266_V03000003测试固件及开发资源2017072815\驱动库代码”</strong>文件目录下的<br> <strong>“hal_rgb_led.c”、“hal_infrared.c”、“hal_motor.c”、“hal_temp_hum.c”</strong>的c文件复制至<strong>“Gokit\app\driver”</strong>下</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/new_soc_2_1.png" alt="Alt text"></p>
+<ul>
+<li>将<strong>“GoKit_SoC_ESP8266_V03000003测试固件及开发资源2017072815\驱动库代码”</strong>文件目录下的   <strong>“hal_rgb_led.h”、“hal_infrared.h”、“hal_motor.h”、“hal_temp_hum.h”</strong>的h文件复制至<strong>“Gokit\app\include\driver”</strong>下</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/new_soc_2_2.png" alt="Alt text"></p>
+<p>完成以上动作之后就完成SOC文件的准备工作，下面进行修改相应的c文件。</p>
+<h2 id="3-修改“Gokit”的SOC源码文件"><a href="#3-修改“Gokit”的SOC源码文件" class="headerlink" title="3. 修改“Gokit”的SOC源码文件"></a>3. 修改“Gokit”的SOC源码文件</h2><p>这里我使用Sublime软件打开整个工程的，然后需要修改的两个文件，如下：</p>
+<ul>
+<li><p><strong>“Gokit\app\user”</strong>文件目录下<strong>“user_main.c”</strong>文件</p>
+<p>外设的驱动初始化，在这个c文件里面的<strong>“user_init（）</strong>函数中完成</p>
+</li>
+<li><p><strong>“Gokit\app\Gizwits”</strong>文件目录下<strong>“gizwits_product.c”</strong>文件</p>
+<p>云端下发的数据，在这个c文件里面的<strong>“gizwitsEventProcess（）”</strong>函数中处理</p>
+</li>
+<li><p>程序修改部分说明如下图：</p>
+</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410564904.png" alt="Alt text"></p>
 <p>首先在<strong>“gizwits_product.c”</strong>文件里面添加以下头文件</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"hal_motor.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"hal_rgb_led.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"hal_temp_hum.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"hal_infrared.h"</span></span></span><br></pre></td></tr></table></figure>
 <p>在 gizwits_product.c 文件的 添加只读型传感器数据点相关的代码</p>
