@@ -547,9 +547,11 @@
 <p>完成以上动作之后就完成SOC文件的准备工作，下面进行修改相应的c文件。</p>
 <h4 id="2-4-5-修改“Gokit”的SOC源码文件"><a href="#2-4-5-修改“Gokit”的SOC源码文件" class="headerlink" title="2.4.5 修改“Gokit”的SOC源码文件"></a>2.4.5 修改“Gokit”的SOC源码文件</h4><p>这里我使用Sublime软件打开整个工程的，然后需要修改的两个文件，如下：</p>
 <ul>
-<li><p><strong>“Gokit\app\user”</strong>文件目录下<strong>“user_main.c”</strong>文件<br>外设的驱动初始化，在这个c文件里面的<strong>“user_init（）</strong>函数中完成</p>
+<li><p><strong>“Gokit\app\user”</strong>文件目录下<strong>“user_main.c”</strong>文件</p>
+<p>外设的驱动初始化，在这个c文件里面的<strong>“user_init（）</strong>函数中完成</p>
 </li>
-<li><p><strong>“Gokit\app\Gizwits”</strong>文件目录下<strong>“gizwits_product.c”</strong>文件<br>云端下发的数据，在这个c文件里面的<strong>“gizwitsEventProcess（）”</strong>函数中处理</p>
+<li><p><strong>“Gokit\app\Gizwits”</strong>文件目录下<strong>“gizwits_product.c”</strong>文件</p>
+<p>云端下发的数据，在这个c文件里面的<strong>“gizwitsEventProcess（）”</strong>函数中处理</p>
 </li>
 <li><p>程序修改部分说明如下图：</p>
 </li>
