@@ -491,13 +491,20 @@
 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>微信宠物屋，是机智云一个简单常见的体验宠物屋真实场景的智能产品，硬件电路简单，程序本身也不复杂；下面我们使用gokit3（s）开发板和机智云云端，实现微信宠物屋。</p>
 <p><strong>下面我们使用GoKit3（S）开发板，基于esp8266模块上的SoC方案，开发的微信宠物屋项目为例，示范一下如何将设备快速接入机智云，实现硬件智能化。</strong></p>
 <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h2><p><strong>硬件：</strong></p>
-<p>1）GoKit3（S）开发板<br>2）杜邦线若干<br>3）Usb转串口模块，如：ft232、cp2102、ch340均可<br>4）Micro USB线</p>
+<p>1）GoKit3（S）开发板</p>
+<p>2）杜邦线若干</p>
+<p>3）Usb转串口模块，如：ft232、cp2102、ch340均可</p>
+<p>4）Micro USB线</p>
 <p><strong>软件：</strong></p>
-<p>1）Oracle VM VirtualBox<br>2）乐鑫官方的esp8266开发环境<br><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备">开发环境准备</a></p>
+<p>1）Oracle VM VirtualBox</p>
+<p>2）乐鑫官方的esp8266开发环境<br><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备">开发环境准备</a></p>
 <p><strong>其他：</strong></p>
-<p>1）机智云开发者账号<br>2）微信宠物屋 for GoKit3(S) ESP8266 V03000003源码（机智云下载中心可获得）<br>3）智能灯项目自动生成SoC源码（请继续查看下述操作，即可生成获得）</p>
+<p>1）机智云开发者账号</p>
+<p>2）微信宠物屋 for GoKit3(S) ESP8266 V03000003源码（机智云下载中心可获得）</p>
+<p>3）智能灯项目自动生成SoC源码（请继续查看下述操作，即可生成获得）</p>
 <p><strong>补充说明：</strong></p>
-<p>1）如果没有GoKit3的小伙伴也可以参考GoKit3的原理图基于esp8266模块（模块的Flash必须为4Mbyte，建议模块型号：安信可的esp-12f）自行搭建硬件，原理图链接如下：<a href="http://club.gizwits.com/thread-2889-1-1.html" target="_blank" rel="noopener">http://club.gizwits.com/thread-2889-1-1.html</a><br>2）GoKit3（S）购买链接：<a href="https://shop159680395.taobao.com/" target="_blank" rel="noopener">https://shop159680395.taobao.com/</a> （机智云官方店）</p>
+<p>1）如果没有GoKit3的小伙伴也可以参考GoKit3的原理图基于esp8266模块（模块的Flash必须为4Mbyte，建议模块型号：安信可的esp-12f）自行搭建硬件，原理图链接如下：<a href="http://club.gizwits.com/thread-2889-1-1.html" target="_blank" rel="noopener">http://club.gizwits.com/thread-2889-1-1.html</a></p>
+<p>2）GoKit3（S）购买链接：<a href="https://shop159680395.taobao.com/" target="_blank" rel="noopener">https://shop159680395.taobao.com/</a> （机智云官方店）</p>
 <h1 id="在机智云官网创建设备产品"><a href="#在机智云官网创建设备产品" class="headerlink" title="在机智云官网创建设备产品."></a>在机智云官网创建设备产品.</h1><p>这里以Gokit“微信宠物屋”的例子介绍设备接入机智云的整个流程。</p>
 <h2 id="1-注册机智云开发者账号"><a href="#1-注册机智云开发者账号" class="headerlink" title="1.注册机智云开发者账号"></a>1.注册机智云开发者账号</h2><p><a href="http://dev.gizwits.com/zh-cn/developer/" target="_blank" rel="noopener">进入机智云官网开发者中心</a>， 根据界面指引注册开发者账号。</p>
 <p><img src="/assets/zh-cn/quickstart/dev/new2.png" alt></p>
@@ -593,28 +600,30 @@
 <p>接着在 gizwits_product.c 文件的key2ShortPress()和key2LongPress()添加配网按键指示灯</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LOCAL <span class="keyword">void</span> ICACHE_FLASH_ATTR <span class="title">key2ShortPress</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GIZWITS_LOG(<span class="string">"#### key2 short press, soft ap mode \n"</span>);</span><br><span class="line">	rgbControl(<span class="number">250</span>, <span class="number">0</span>, <span class="number">0</span>); <span class="comment">///&lt; 新添加代码: Soft AP mode, RGB red</span></span><br><span class="line">	gizwitsSetMode(WIFI_SOFTAP_MODE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LOCAL <span class="keyword">void</span> ICACHE_FLASH_ATTR <span class="title">key2LongPress</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GIZWITS_LOG(<span class="string">"#### key2 long press, airlink mode\n"</span>);</span><br><span class="line">	rgbControl(<span class="number">0</span>, <span class="number">250</span>, <span class="number">0</span>); <span class="comment">///&lt; 新添加代码: AirLink mode, RGB Green</span></span><br><span class="line">	gizwitsSetMode(WIFI_AIRLINK_MODE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>完成以上动作之后，进行SoC编译开发环境的搭建，请参考 &gt;&gt; 第6）点</p>
-<h4 id="2-4-6-搭建SoC源码编译开发环境"><a href="#2-4-6-搭建SoC源码编译开发环境" class="headerlink" title="2.4.6 搭建SoC源码编译开发环境"></a>2.4.6 搭建SoC源码编译开发环境</h4><ul>
-<li>请参考这里：<a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备">开发环境准备</a></li>
-</ul>
-<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483410993024.png" alt="Alt text"></p>
+<p>完成以上动作之后，进行SoC编译开发环境的搭建，请参考<a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备">开发环境准备</a></p>
 <p><strong>补充说明：新手入门建议使用virtualbox+乐鑫官方的开发环境，进行二次开发</strong></p>
-<h4 id="2-4-7-SOC源码编译"><a href="#2-4-7-SOC源码编译" class="headerlink" title="2.4.7 SOC源码编译"></a>2.4.7 SOC源码编译</h4><ul>
-<li>请参考这里：<a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-源码编译">源码编译</a></li>
-</ul>
-<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483411008805.png" alt="Alt text"></p>
 <h4 id="2-4-8-固件烧写"><a href="#2-4-8-固件烧写" class="headerlink" title="2.4.8 固件烧写"></a>2.4.8 固件烧写</h4><ul>
 <li>请参考这里：<a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-固件下载">固件下载</a></li>
 </ul>
 <p><img src="/assets/zh-cn/deviceDev/UseSoc/1483411027642.png" alt="Alt text"></p>
-<h2 id="3-调试与发布"><a href="#3-调试与发布" class="headerlink" title="3. 调试与发布"></a>3. 调试与发布</h2><ul>
-<li>产品调试请参考这里：<a href="/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#调试">调试</a></li>
-</ul>
-<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483411043890.png" alt="Alt text"></p>
-<ul>
-<li>产品发布请参考这里：<a href="/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#发布产品">发布产品</a></li>
-</ul>
-<p><img src="/assets/zh-cn/deviceDev/UseSoc/1483411051018.png" alt="Alt text"></p>
+<h1 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h1><h2 id="1-手机安装机智云APP"><a href="#1-手机安装机智云APP" class="headerlink" title="1. 手机安装机智云APP"></a>1. 手机安装机智云APP</h2><p><img src="/assets/zh-cn/quickstart/dev/new33.png" alt="安装机智云APP"></p>
+<h2 id="2-打开机智云APP，注册登录APP账号（或者跳过登录）"><a href="#2-打开机智云APP，注册登录APP账号（或者跳过登录）" class="headerlink" title="2. 打开机智云APP，注册登录APP账号（或者跳过登录）"></a>2. 打开机智云APP，注册登录APP账号（或者跳过登录）</h2><p><img src="/assets/zh-cn/quickstart/dev/new34.png" alt="注册登录APP账号"></p>
+<h2 id="3-短按gokit中间的key2按键，使WiFi模块进入softap配网模式，此时RGB全彩灯变红"><a href="#3-短按gokit中间的key2按键，使WiFi模块进入softap配网模式，此时RGB全彩灯变红" class="headerlink" title="3. 短按gokit中间的key2按键，使WiFi模块进入softap配网模式，此时RGB全彩灯变红"></a>3. 短按gokit中间的key2按键，使WiFi模块进入softap配网模式，此时RGB全彩灯变红</h2><p><img src="/assets/zh-cn/quickstart/dev/new35_35.png" alt="配置WiFi模块入网-1"></p>
+<h2 id="4-App将gokit配置入网"><a href="#4-App将gokit配置入网" class="headerlink" title="4. App将gokit配置入网"></a>4. App将gokit配置入网</h2><p><img src="/assets/zh-cn/quickstart/dev/new36_36.png" alt="配置WiFi模块入网-2"><img src="/assets/zh-cn/quickstart/dev/new36_37.png" alt="配置WiFi模块入网-2"><img src="/assets/zh-cn/quickstart/dev/new36_38.png" alt="配置WiFi模块入网-2"><img src="/assets/zh-cn/quickstart/dev/new36_39.png" alt="配置WiFi模块入网-2"><img src="/assets/zh-cn/quickstart/dev/new36_40.png" alt="配置WiFi模块入网-2"><img src="/assets/zh-cn/quickstart/dev/new36_41.png" alt="配置WiFi模块入网-2"><img src="/assets/zh-cn/quickstart/dev/new36_42.png" alt="配置WiFi模块入网-2"></p>
+<h2 id="5-APP控制-读取设备数据"><a href="#5-APP控制-读取设备数据" class="headerlink" title="5. APP控制/读取设备数据"></a>5. APP控制/读取设备数据</h2><p><img src="/assets/zh-cn/quickstart/dev/new39_39.png" alt="APP收发设备数据"></p>
+<h2 id="6-机智云后台查看设备交互数据"><a href="#6-机智云后台查看设备交互数据" class="headerlink" title="6. 机智云后台查看设备交互数据"></a>6. 机智云后台查看设备交互数据</h2><p><img src="/assets/zh-cn/quickstart/dev/new40_40.png" alt="机智云后台查看设备交互数据1"></p>
+<p><img src="/assets/zh-cn/quickstart/dev/new41_41.png" alt="机智云后台查看设备交互数据2"></p>
+<font color="#FF0000">特别说明：当APP与设备处于同一局域网，APP的控制指令会走小循环，因此设备日志上面看不到APP to Dev；如果想看到APP to Dev，可以将手机切换到4G流量或者连接别的路由器，再来控制设备，就能看到APP to Dev</font>
+
+<h1 id="发布产品"><a href="#发布产品" class="headerlink" title="发布产品"></a>发布产品</h1><p>产品发布到正式生产环境后，机智云将为你的设备免费分配独立的云端运行环境，确保你的设备24小时不间断在线以供用户使用，将享受更多机智云为您提供的增值服务，包括：智能设备统计分析，开放平台展示以及各种无微不至的技术支持服务。</p>
+<p>产品如何申请发布上线，具体步骤如下：</p>
+<p>1.进入产品详细信息页面，在产品名称旁边显示【申请发布】按钮</p>
+<p><img src="/assets/zh-cn/quickstart/dev/new42.png" alt="申请发布"></p>
+<p>2.点击【马上申请】按钮，如实填写申请信息审核</p>
+<p><img src="/assets/zh-cn/quickstart/dev/new43.png" alt="马上申请"></p>
+<p>3.点击【提交申请】按钮，跳转提交成功页面。机智云将免费为你提供人工审核以及严谨的测试，审核通过后，会根据你提交的量产计划免费提供后台服务器支持。</p>
+<p><img src="/assets/zh-cn/quickstart/dev/new44.png" alt="提交申请"></p>
+<h1 id="产测简介"><a href="#产测简介" class="headerlink" title="产测简介"></a>产测简介</h1><p>产测是生产环节中重要的部分，保证了产品的质量，提升自身产品形象。机智云产测工具为批量生产的产品提供了方便快捷的模块与MCU产测方式。在大型生产时，保证模块与MCU可正常使用。使用产测工具，必须让产品先上架。由产品创建者向机智云申请发布。机智云将免费为你提供人工审核以及严谨的测试。<a href="http://docs.gizwits.com/zh-cn/deviceDev/%E4%BA%A7%E6%B5%8B%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.html" target="_blank" rel="noopener">详情请点击浏览。</a></p>
 <h2 id="4-项目完成"><a href="#4-项目完成" class="headerlink" title="4. 项目完成"></a>4. 项目完成</h2><ul>
 <li>完成以上步骤，整个项目开发就完成了,如果需要关注更多的开源项目以及和其他开发者深度交流，可以到我们公司的官方论坛进行学习：<a href="http://club.gizwits.com/forum.php" target="_blank" rel="noopener">http://club.gizwits.com/forum.php</a></li>
 </ul>
