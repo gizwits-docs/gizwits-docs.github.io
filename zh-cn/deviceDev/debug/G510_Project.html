@@ -488,7 +488,11 @@
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>本文主要介绍如何使用Gokit开发板和2G/4G模块快速接入机智云，本文使用的是2G模块G510作为例子。</p>
-<h1 id="二、在机智云官网创建设备产品，定义数据点，添加设备"><a href="#二、在机智云官网创建设备产品，定义数据点，添加设备" class="headerlink" title="二、在机智云官网创建设备产品，定义数据点，添加设备"></a>二、在机智云官网创建设备产品，定义数据点，添加设备</h1><p><strong>这里以机智云的入门产品“微信宠物屋”为例子介绍设备接入机智云的整个流程。</strong></p>
+<h1 id="二、NB模块与机智云数据交互流程"><a href="#二、NB模块与机智云数据交互流程" class="headerlink" title="二、NB模块与机智云数据交互流程"></a>二、NB模块与机智云数据交互流程</h1><p>设备与机智云数据交互的基本数据流如下图。</p>
+<p>APP接收设备上报数据：设备上报数据→机智云平台→APP端</p>
+<p>APP下发设备控制数据：APP端→机智云平台→设备接收数据</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510/G510project_3_1.png" alt="name"></p>
+<h1 id="三、在机智云官网创建设备产品，定义数据点，添加设备"><a href="#三、在机智云官网创建设备产品，定义数据点，添加设备" class="headerlink" title="三、在机智云官网创建设备产品，定义数据点，添加设备"></a>三、在机智云官网创建设备产品，定义数据点，添加设备</h1><p><strong>这里以机智云的入门产品“微信宠物屋”为例子介绍设备接入机智云的整个流程。</strong></p>
 <h2 id="1-创建新产品"><a href="#1-创建新产品" class="headerlink" title="1. 创建新产品"></a>1. 创建新产品</h2><p><img src="/assets/zh-cn/deviceDev/debug/NB_project/NBproject_2.png" alt="name"></p>
 <p><img src="/assets/zh-cn/deviceDev/debug/G510/G510project_3_3.png" alt="name"></p>
 <h2 id="2-创建15个数据点"><a href="#2-创建15个数据点" class="headerlink" title="2. 创建15个数据点"></a>2. 创建15个数据点</h2><p><img src="/assets/zh-cn/quickstart/dev/new7_7.png" alt="创建数据点-1"></p>
