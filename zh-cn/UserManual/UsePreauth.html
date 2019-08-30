@@ -487,41 +487,448 @@
         <div class="title">设备授权方法</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h2 id="获取预授密钥工具"><a href="#获取预授密钥工具" class="headerlink" title="获取预授密钥工具"></a>获取预授密钥工具</h2><h2 id="获取预授密钥接口"><a href="#获取预授密钥接口" class="headerlink" title="获取预授密钥接口"></a>获取预授密钥接口</h2><h3 id="接口协议"><a href="#接口协议" class="headerlink" title="接口协议"></a>接口协议</h3><p>传输方式    为保证交易安全性，采用HTTPS传输<br>提交方式    采用POST和GET方法<br>内容类型    application/json</p>
-<h3 id="获取授权密钥（云端生成）"><a href="#获取授权密钥（云端生成）" class="headerlink" title="获取授权密钥（云端生成）"></a>获取授权密钥（云端生成）</h3><h4 id="服务地址"><a href="#服务地址" class="headerlink" title="服务地址"></a>服务地址</h4><p>    URL:  <a href="https://preauth.gizwits.com/v2/gagent" target="_blank" rel="noopener">https://preauth.gizwits.com/v2/gagent</a><br>    Method: POST</p>
-<h4 id="请求参数"><a href="#请求参数" class="headerlink" title="请求参数"></a>请求参数</h4><p>属性名称    参数    类型    参数类型    是否必填<br>客户标识码    pin    String    Body    是<br>Mac/IMEI    mac    String    Body    是<br>授权密钥    auth_code    String    Body    是<br>鉴权    Authorization    String    Header    是</p>
-<p>注：1) 鉴权的Authorization参数需要向机智云申请；<br>2) pin、auth_code由机智云提供。</p>
-<ul>
-<li>JSON请求示例：<br>···<br>{<br>“pin”: “d504fbc269cc8d2ccc8822d98310e218”,<br>“mac”: “test00101011”,<br>“auth_code”: “8318822d90c269cc8dd504fb2ccce218”<br>}<br>···</li>
+      <h1 id="一、授权密钥的来源"><a href="#一、授权密钥的来源" class="headerlink" title="一、授权密钥的来源"></a>一、授权密钥的来源</h1><h2 id="1-1-云端生成"><a href="#1-1-云端生成" class="headerlink" title="1.1. 云端生成"></a>1.1. 云端生成</h2><p>通过接口或工具，传入客户编码（PIN）、授权码（auth_code）、mac，返回授权密钥（auth_key）。将授权密钥烧录至设备。</p>
+<h2 id="1-2-预录入"><a href="#1-2-预录入" class="headerlink" title="1.2. 预录入"></a>1.2. 预录入</h2><p>通过接口或工具，传入客户编码（PIN）、授权码（auth_code）、mac，把设备预先录入到云端，设备通过与云端统一的加密算法生成授权密钥（auth_key）。</p>
+<h1 id="二、授权密钥的烧写-录入"><a href="#二、授权密钥的烧写-录入" class="headerlink" title="二、授权密钥的烧写/录入"></a>二、授权密钥的烧写/录入</h1><h2 id="2-1-获取预授密钥工具"><a href="#2-1-获取预授密钥工具" class="headerlink" title="2.1.获取预授密钥工具"></a>2.1.获取预授密钥工具</h2><h3 id="2-1-1-使用说明"><a href="#2-1-1-使用说明" class="headerlink" title="2.1.1.使用说明"></a>2.1.1.使用说明</h3><p>1）填入客户编码（PIN）、授权码（auth_code）点击“获取信息”。<br>2）选择获取方式：串口方式需要连接设备烧录；录入方式需要录入mac或IMEI列表。</p>
+<h3 id="2-1-2-下载地址"><a href="#2-1-2-下载地址" class="headerlink" title="2.1.2.下载地址"></a>2.1.2.下载地址</h3><p>机智云授权工具<a href>下载地址</a></p>
+<h2 id="2-2-获取预授密钥接口"><a href="#2-2-获取预授密钥接口" class="headerlink" title="2.2.获取预授密钥接口"></a>2.2.获取预授密钥接口</h2><h3 id="2-2-1-接口协议"><a href="#2-2-1-接口协议" class="headerlink" title="2.2.1.接口协议"></a>2.2.1.接口协议</h3><ul>
+<li>传输方式：为保证交易安全性，采用HTTPS传输</li>
+<li>提交方式：采用POST和GET方法</li>
+<li>内容类型：application/json</li>
 </ul>
-<h4 id="响应参数"><a href="#响应参数" class="headerlink" title="响应参数"></a>响应参数</h4><p>属性名称    参数    类型    参数类型<br>创建时间    created_at    String    Body<br>客户标识码    pin    String    Body<br>Mac/IMEI    mac    String    Body<br>授权密钥    auth_key    String    Body</p>
-<p>    JSON响应示例：<br>···<br>{<br>  “auth_key”: “bff12c2998274c92b36de18b019ca9ea”,<br>  “created_at”: “2018-01-23T11:06:12.840298Z”,<br>  “pin”: “d504fbc269cc8d2ccc8822d98310e218”,<br>  “mac”: “test00101011”<br>}<br>···</p>
-<h3 id="批量获取授权密钥（统一加密算法）"><a href="#批量获取授权密钥（统一加密算法）" class="headerlink" title="批量获取授权密钥（统一加密算法）"></a>批量获取授权密钥（统一加密算法）</h3><h4 id="服务地址-1"><a href="#服务地址-1" class="headerlink" title="服务地址"></a>服务地址</h4><p>    URL:  <a href="https://preauth.gizwits.com/v2/gagent/batch" target="_blank" rel="noopener">https://preauth.gizwits.com/v2/gagent/batch</a><br>    Method: POST</p>
-<h4 id="请求参数-1"><a href="#请求参数-1" class="headerlink" title="请求参数"></a>请求参数</h4><p>属性名称    参数    类型    参数类型    是否必填<br>客户标识码    pin    String    formData    是<br>Mac/IMEI列表    batch_file    File    formData    是<br>授权密钥    auth_code    String    formData    是<br>鉴权    Authorization    String    Header    是<br>注：1) 鉴权的Authorization参数需要向机智云申请；<br>2) pin、auth_code由机智云提供。</p>
-<h4 id="响应参数-1"><a href="#响应参数-1" class="headerlink" title="响应参数"></a>响应参数</h4><p>属性名称    参数    类型    参数类型<br>任务ID    Id    String    Body</p>
-<ul>
-<li>JSON响应示例：<br>···<br>{<br>“id”: “ deb54a82c22aff842a016d6e43d6de4c”<br>}<br>···<h3 id="查询批量获取任务结果"><a href="#查询批量获取任务结果" class="headerlink" title="查询批量获取任务结果"></a>查询批量获取任务结果</h3><h4 id="服务地址-2"><a href="#服务地址-2" class="headerlink" title="服务地址"></a>服务地址</h4>    URL:  <a href="https://preauth.gizwits.com/v2/gagent/batch/{id}" target="_blank" rel="noopener">https://preauth.gizwits.com/v2/gagent/batch/{id}</a><br>    Method: GET</li>
+<h3 id="2-2-2-获取授权密钥（云端生成）"><a href="#2-2-2-获取授权密钥（云端生成）" class="headerlink" title="2.2.2.获取授权密钥（云端生成）"></a>2.2.2.获取授权密钥（云端生成）</h3><h4 id="服务地址"><a href="#服务地址" class="headerlink" title="服务地址"></a>服务地址</h4><ul>
+<li>URL:  <a href="https://preauth.gizwits.com/v2/gagent" target="_blank" rel="noopener">https://preauth.gizwits.com/v2/gagent</a></li>
+<li>Method: POST</li>
 </ul>
-<h4 id="请求参数-2"><a href="#请求参数-2" class="headerlink" title="请求参数"></a>请求参数</h4><p>属性名称    参数    类型    参数类型    是否必填<br>任务id    id    String    Query    是<br>鉴权    Authorization    String    Header    是<br>注：1) 鉴权的Authorization参数需要向机智云申请；</p>
-<h4 id="响应参数-2"><a href="#响应参数-2" class="headerlink" title="响应参数"></a>响应参数</h4><p>属性名称    参数    类型    参数类型<br>失败mac/IMEI条数    Failed    String    Body<br>任务id    Id    String    Body<br>成功mac/IMEI条数    Success    String    Body<br>返回结果下载地址    auth_result_    String    Body</p>
-<ul>
-<li>JSON响应示例：<br>···<br>{<br>  “status”: 2,<br>  “failed”: 0,<br>  “id”: “deb54a82c22aff842a016d6e43d6de4c”,<br>  “success”: 10,<br>  “auth_result”: “X.X.X/deb54a82c22aff842a016d6e43d6de4c.xlsx”<br>}<br>···</li>
+<h4 id="请求参数"><a href="#请求参数" class="headerlink" title="请求参数"></a>请求参数</h4><table>
+<thead>
+<tr>
+<th>属性名称</th>
+<th>参数</th>
+<th>类型</th>
+<th>参数类型</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>客户标识码</td>
+<td>pin</td>
+<td>String</td>
+<td>Body</td>
+<td>是</td>
+</tr>
+<tr>
+<td>Mac/IMEI</td>
+<td>mac</td>
+<td>String</td>
+<td>Body</td>
+<td>是</td>
+</tr>
+<tr>
+<td>授权密钥</td>
+<td>auth_code</td>
+<td>String</td>
+<td>Body</td>
+<td>是</td>
+</tr>
+<tr>
+<td>鉴权</td>
+<td>Authorization</td>
+<td>String</td>
+<td>Header</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<p>注：<br>1) 鉴权的Authorization参数需要向机智云申请；<br>2) pin、auth_code由机智云提供。</p>
+<h5 id="JSON请求示例："><a href="#JSON请求示例：" class="headerlink" title="JSON请求示例："></a>JSON请求示例：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;pin&quot;: &quot;d504fbc269cc8d2ccc8822d98310e218&quot;,</span><br><span class="line">  &quot;mac&quot;: &quot;test00101011&quot;,</span><br><span class="line">  &quot;auth_code&quot;: &quot;8318822d90c269cc8dd504fb2ccce218&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="响应参数"><a href="#响应参数" class="headerlink" title="响应参数"></a>响应参数</h4><table>
+<thead>
+<tr>
+<th>属性名称</th>
+<th>参数</th>
+<th>类型</th>
+<th>参数类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>创建时间</td>
+<td>created_at</td>
+<td>String</td>
+<td>Body</td>
+</tr>
+<tr>
+<td>客户标识码</td>
+<td>pin</td>
+<td>String</td>
+<td>Body</td>
+</tr>
+<tr>
+<td>Mac/IMEI</td>
+<td>mac</td>
+<td>String</td>
+<td>Body</td>
+</tr>
+<tr>
+<td>授权密钥</td>
+<td>auth_key</td>
+<td>String</td>
+<td>Body</td>
+</tr>
+</tbody>
+</table>
+<h5 id="JSON响应示例："><a href="#JSON响应示例：" class="headerlink" title="JSON响应示例："></a>JSON响应示例：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;auth_key&quot;: &quot;bff12c2998274c92b36de18b019ca9ea&quot;,</span><br><span class="line">  &quot;created_at&quot;: &quot;2018-01-23T11:06:12.840298Z&quot;,</span><br><span class="line">  &quot;pin&quot;: &quot;d504fbc269cc8d2ccc8822d98310e218&quot;,</span><br><span class="line">  &quot;mac&quot;: &quot;test00101011&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-3-批量获取授权密钥"><a href="#2-2-3-批量获取授权密钥" class="headerlink" title="2.2.3.批量获取授权密钥"></a>2.2.3.批量获取授权密钥</h3><h4 id="服务地址-1"><a href="#服务地址-1" class="headerlink" title="服务地址"></a>服务地址</h4><ul>
+<li>URL:  <a href="https://preauth.gizwits.com/v2/gagent/batch" target="_blank" rel="noopener">https://preauth.gizwits.com/v2/gagent/batch</a></li>
+<li>Method: POST</li>
 </ul>
-<h3 id="查询密钥余量"><a href="#查询密钥余量" class="headerlink" title="查询密钥余量"></a>查询密钥余量</h3><h4 id="服务地址-3"><a href="#服务地址-3" class="headerlink" title="服务地址"></a>服务地址</h4><p>    URL:  <a href="https://preauth.gizwits.com/v2/package" target="_blank" rel="noopener">https://preauth.gizwits.com/v2/package</a><br>    Method: GET</p>
-<h4 id="请求参数-3"><a href="#请求参数-3" class="headerlink" title="请求参数"></a>请求参数</h4><p>属性名称    参数    类型    参数类型    是否必填<br>客户标识码    pin    String    Query    是<br>授权码    auth_code    String    Query    是<br>跳过数    skip    Integer    Body    否<br>每页条数    limit    Integer    Header    否</p>
-<h4 id="响应参数-3"><a href="#响应参数-3" class="headerlink" title="响应参数"></a>响应参数</h4><p>属性名称    参数    类型    参数类型<br>创建时间    created_at    String    Body<br>更新时间    updated_at    String    Body<br>客户标识码    pin    String    Body<br>总数量    capacity    Integer    Body<br>已使用量    size    Integer    Body<br>授权码    auth_code    String    Body<br>是否禁用    is_enabled    Integer    Body</p>
+<h4 id="请求参数-1"><a href="#请求参数-1" class="headerlink" title="请求参数"></a>请求参数</h4><table>
+<thead>
+<tr>
+<th>属性名称</th>
+<th>参数</th>
+<th>类型</th>
+<th>参数类型</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>客户标识码</td>
+<td>pin</td>
+<td>String</td>
+<td>formData</td>
+<td>是</td>
+</tr>
+<tr>
+<td>Mac/IMEI列表</td>
+<td>batch_file</td>
+<td>File</td>
+<td>formData</td>
+<td>是</td>
+</tr>
+<tr>
+<td>授权密钥</td>
+<td>auth_code</td>
+<td>String</td>
+<td>formData</td>
+<td>是</td>
+</tr>
+<tr>
+<td>鉴权</td>
+<td>Authorization</td>
+<td>String</td>
+<td>Header</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<p>注：<br>1) 鉴权的Authorization参数需要向机智云申请；<br>2) pin、auth_code由机智云提供。</p>
+<h4 id="响应参数-1"><a href="#响应参数-1" class="headerlink" title="响应参数"></a>响应参数</h4><table>
+<thead>
+<tr>
+<th>属性名称</th>
+<th>参数</th>
+<th>类型</th>
+<th>参数类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务ID</td>
+<td>Id</td>
+<td>String</td>
+<td>Body</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>JSON响应示例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;id&quot;: &quot; deb54a82c22aff842a016d6e43d6de4c&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-2-4-查询批量获取任务结果"><a href="#2-2-4-查询批量获取任务结果" class="headerlink" title="2.2.4.查询批量获取任务结果"></a>2.2.4.查询批量获取任务结果</h3><h4 id="服务地址-2"><a href="#服务地址-2" class="headerlink" title="服务地址"></a>服务地址</h4><ul>
+<li>URL:  <a href="https://preauth.gizwits.com/v2/gagent/batch/{id}" target="_blank" rel="noopener">https://preauth.gizwits.com/v2/gagent/batch/{id}</a></li>
+<li>Method: GET</li>
+</ul>
+<h4 id="请求参数-2"><a href="#请求参数-2" class="headerlink" title="请求参数"></a>请求参数</h4><table>
+<thead>
+<tr>
+<th>属性名称</th>
+<th>参数</th>
+<th>类型</th>
+<th>参数类型</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务id</td>
+<td>id</td>
+<td>String</td>
+<td>Query</td>
+<td>是</td>
+</tr>
+<tr>
+<td>鉴权</td>
+<td>Authorization</td>
+<td>String</td>
+<td>Header</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<p>注：1) 鉴权的Authorization参数需要向机智云申请；</p>
+<h4 id="响应参数-2"><a href="#响应参数-2" class="headerlink" title="响应参数"></a>响应参数</h4><table>
+<thead>
+<tr>
+<th>属性名称</th>
+<th>参数</th>
+<th>类型</th>
+<th>参数类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>失败mac/IMEI条数</td>
+<td>Failed</td>
+<td>String</td>
+<td>Body</td>
+</tr>
+<tr>
+<td>任务id</td>
+<td>Id</td>
+<td>String</td>
+<td>Body</td>
+</tr>
+<tr>
+<td>成功mac/IMEI条数</td>
+<td>Success</td>
+<td>String</td>
+<td>Body</td>
+</tr>
+<tr>
+<td>返回结果下载地址</td>
+<td>auth_result</td>
+<td>String</td>
+<td>Body</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>JSON响应示例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;status&quot;: 2,</span><br><span class="line">    &quot;failed&quot;: 0,</span><br><span class="line">    &quot;id&quot;: &quot;deb54a82c22aff842a016d6e43d6de4c&quot;,</span><br><span class="line">    &quot;success&quot;: 10,</span><br><span class="line">    &quot;auth_result&quot;: &quot;X.X.X/deb54a82c22aff842a016d6e43d6de4c.xlsx&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-2-5-查询密钥余量"><a href="#2-2-5-查询密钥余量" class="headerlink" title="2.2.5.查询密钥余量"></a>2.2.5.查询密钥余量</h3><h4 id="服务地址-3"><a href="#服务地址-3" class="headerlink" title="服务地址"></a>服务地址</h4><ul>
+<li>URL:  <a href="https://preauth.gizwits.com/v2/package" target="_blank" rel="noopener">https://preauth.gizwits.com/v2/package</a></li>
+<li>Method: GET</li>
+</ul>
+<h4 id="请求参数-3"><a href="#请求参数-3" class="headerlink" title="请求参数"></a>请求参数</h4><table>
+<thead>
+<tr>
+<th>属性名称</th>
+<th>参数</th>
+<th>类型</th>
+<th>参数类型</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>客户标识码</td>
+<td>pin</td>
+<td>String</td>
+<td>Query</td>
+<td>是</td>
+</tr>
+<tr>
+<td>授权码</td>
+<td>auth_code</td>
+<td>String</td>
+<td>Query</td>
+<td>是</td>
+</tr>
+<tr>
+<td>跳过数</td>
+<td>skip</td>
+<td>Integer</td>
+<td>Body</td>
+<td>否</td>
+</tr>
+<tr>
+<td>每页条数</td>
+<td>limit</td>
+<td>Integer</td>
+<td>Header</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h4 id="响应参数-3"><a href="#响应参数-3" class="headerlink" title="响应参数"></a>响应参数</h4><table>
+<thead>
+<tr>
+<th>属性名称</th>
+<th>参数</th>
+<th>类型</th>
+<th>参数类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>创建时间</td>
+<td>created_at</td>
+<td>String</td>
+<td>Body</td>
+</tr>
+<tr>
+<td>更新时间</td>
+<td>updated_at</td>
+<td>String</td>
+<td>Body</td>
+</tr>
+<tr>
+<td>客户标识码</td>
+<td>pin</td>
+<td>String</td>
+<td>Body</td>
+</tr>
+<tr>
+<td>总数量</td>
+<td>capacity</td>
+<td>Integer</td>
+<td>Body</td>
+</tr>
+<tr>
+<td>已使用量</td>
+<td>size</td>
+<td>Integer</td>
+<td>Body</td>
+</tr>
+<tr>
+<td>授权码</td>
+<td>auth_code</td>
+<td>String</td>
+<td>Body</td>
+</tr>
+<tr>
+<td>是否禁用</td>
+<td>is_enabled</td>
+<td>Integer</td>
+<td>Body</td>
+</tr>
+</tbody>
+</table>
 <p> </p>
-<ul>
-<li>JSON响应示例：<br>···<br>{<br>“meta”: {<br>  “total”: 1,<br>  “limit”: 20,<br>  “skip”: 0,<br>  “next”: “string”,<br>  “previous”: “string”<br>},<br>“objects”: [<br>  {<pre><code>&quot;created_at&quot;: &quot;string&quot;,
-&quot;updated_at&quot;: &quot;string&quot;,
-&quot;pin&quot;: &quot;d504fbc269cc8d2ccc8822d98310e218&quot;,
-&quot;capacity&quot;: 1000,
-&quot;size&quot;: 10,    
-&quot;auth_code&quot;: &quot;8318822d90c269cc8dd504fb2ccce218&quot;,
-&quot;is_enabled&quot;: true
-</code></pre>  }  ]<br>}<br>···</li>
-</ul>
-<h3 id="常见错误码"><a href="#常见错误码" class="headerlink" title="常见错误码"></a>常见错误码</h3><p>错误标识    HTTP状态码 接口状态码 错误原因<br>OK    200    0    OK<br>DATA_INVALID    400    1    data invalid<br>AUTH_FAILED    403    2    Authorization invalid<br>INVALID_AUTH_CODE    400    3    Invalid auth_code<br>PACKAGE_CAPACITY_NOT_ENOUGH    400    4    Package capacity not enough<br>GET_AUTH_KEY_IN_PROGRESS    400    5    Get auth_key in progress<br>GAGENT_EXIST    400    6    GAgent with this product_key and mac exist<br>INVALID_AUTH_KEY    400    7    Invalid auth_key<br>SYSTEM_ERROR    500    8    Uncaught exception<br>PACKAGE_NOT_FOUND    404    9    Package not found<br>AUTH_CODE_DISABLED    400    10    Package disabled<br>ROLES_INVALID    403    11    Roles invalid<br>MODE_INVALID    403    12    Mode invalid<br>PACKAGE_EXPIRED    400    13    Package expired<br>DECYPT_AUTH_KEY_ERROR    400    14    Decypt Auth Key Error<br>FILE_INVALID    400    15    Mac Address File Format Error<br>PACKAGE_TYPE_INVALID    400    16    Package type error, not support this method</p>
+<h5 id="JSON响应示例：-1"><a href="#JSON响应示例：-1" class="headerlink" title="JSON响应示例："></a>JSON响应示例：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;meta&quot;: &#123;</span><br><span class="line">    &quot;total&quot;: 1,</span><br><span class="line">    &quot;limit&quot;: 20,</span><br><span class="line">    &quot;skip&quot;: 0,</span><br><span class="line">    &quot;next&quot;: &quot;string&quot;,</span><br><span class="line">    &quot;previous&quot;: &quot;string&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;objects&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;created_at&quot;: &quot;string&quot;,</span><br><span class="line">      &quot;updated_at&quot;: &quot;string&quot;,</span><br><span class="line">      &quot;pin&quot;: &quot;d504fbc269cc8d2ccc8822d98310e218&quot;,</span><br><span class="line">      &quot;capacity&quot;: 1000,</span><br><span class="line">      &quot;size&quot;: 10,</span><br><span class="line">      &quot;auth_code&quot;: &quot;8318822d90c269cc8dd504fb2ccce218&quot;,</span><br><span class="line">      &quot;is_enabled&quot;: true</span><br><span class="line">    &#125;  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-6-常见错误码"><a href="#2-2-6-常见错误码" class="headerlink" title="2.2.6.常见错误码"></a>2.2.6.常见错误码</h3><table>
+<thead>
+<tr>
+<th>错误标识</th>
+<th>HTTP状态码</th>
+<th>接口状态码</th>
+<th>错误原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATA_INVALID</td>
+<td>400</td>
+<td>1</td>
+<td>data invalid</td>
+</tr>
+<tr>
+<td>AUTH_FAILED</td>
+<td>403</td>
+<td>2</td>
+<td>Authorization invalid</td>
+</tr>
+<tr>
+<td>INVALID_AUTH_CODE</td>
+<td>400</td>
+<td>3</td>
+<td>Invalid auth_code</td>
+</tr>
+<tr>
+<td>PACKAGE_CAPACITY_NOT_ENOUGH</td>
+<td>400</td>
+<td>4</td>
+<td>Package capacity not enough</td>
+</tr>
+<tr>
+<td>GET_AUTH_KEY_IN_PROGRESS</td>
+<td>400</td>
+<td>5</td>
+<td>Get auth_key in progress</td>
+</tr>
+<tr>
+<td>GAGENT_EXIST</td>
+<td>400</td>
+<td>6</td>
+<td>GAgent with this product_key and mac exist</td>
+</tr>
+<tr>
+<td>INVALID_AUTH_KEY</td>
+<td>400</td>
+<td>7</td>
+<td>Invalid auth_key</td>
+</tr>
+<tr>
+<td>SYSTEM_ERROR</td>
+<td>500</td>
+<td>8</td>
+<td>Uncaught exception</td>
+</tr>
+<tr>
+<td>PACKAGE_NOT_FOUND</td>
+<td>404</td>
+<td>9</td>
+<td>Package not found</td>
+</tr>
+<tr>
+<td>AUTH_CODE_DISABLED</td>
+<td>400</td>
+<td>10</td>
+<td>Package disabled</td>
+</tr>
+<tr>
+<td>ROLES_INVALID</td>
+<td>403</td>
+<td>11</td>
+<td>Roles invalid</td>
+</tr>
+<tr>
+<td>MODE_INVALID</td>
+<td>403</td>
+<td>12    Mode</td>
+<td>invalid</td>
+</tr>
+<tr>
+<td>PACKAGE_EXPIRED</td>
+<td>400</td>
+<td>13</td>
+<td>Package expired</td>
+</tr>
+<tr>
+<td>DECYPT_AUTH_KEY_ERROR</td>
+<td>400</td>
+<td>14</td>
+<td>Decypt Auth Key Error</td>
+</tr>
+<tr>
+<td>FILE_INVALID</td>
+<td>400</td>
+<td>15</td>
+<td>Mac Address File Format Error</td>
+</tr>
+<tr>
+<td>PACKAGE_TYPE_INVALID</td>
+<td>400</td>
+<td>16</td>
+<td>Package type error, not support this method</td>
+</tr>
+</tbody>
+</table>
 
     </div>
     
