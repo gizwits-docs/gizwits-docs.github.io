@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
 
-  <title>机智云</title>
+  <title>设备授权方法 - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="-机智云">
-  <meta name="keywords" content=" docs 文档中心 Gizwits">
+  <meta name="Description" content="设备授权方法-机智云">
+  <meta name="keywords" content="设备授权方法 docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -484,10 +484,45 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title"></div>
+        <div class="title">设备授权方法</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      
+      <h2 id="获取预授密钥工具"><a href="#获取预授密钥工具" class="headerlink" title="获取预授密钥工具"></a>获取预授密钥工具</h2><h2 id="获取预授密钥接口"><a href="#获取预授密钥接口" class="headerlink" title="获取预授密钥接口"></a>获取预授密钥接口</h2><h3 id="接口协议"><a href="#接口协议" class="headerlink" title="接口协议"></a>接口协议</h3><p>传输方式    为保证交易安全性，采用HTTPS传输<br>提交方式    采用POST和GET方法<br>内容类型    application/json</p>
+<h3 id="获取授权密钥（云端生成）"><a href="#获取授权密钥（云端生成）" class="headerlink" title="获取授权密钥（云端生成）"></a>获取授权密钥（云端生成）</h3><h4 id="服务地址"><a href="#服务地址" class="headerlink" title="服务地址"></a>服务地址</h4><p>    URL:  <a href="https://preauth.gizwits.com/v2/gagent" target="_blank" rel="noopener">https://preauth.gizwits.com/v2/gagent</a><br>    Method: POST</p>
+<h4 id="请求参数"><a href="#请求参数" class="headerlink" title="请求参数"></a>请求参数</h4><p>属性名称    参数    类型    参数类型    是否必填<br>客户标识码    pin    String    Body    是<br>Mac/IMEI    mac    String    Body    是<br>授权密钥    auth_code    String    Body    是<br>鉴权    Authorization    String    Header    是</p>
+<p>注：1) 鉴权的Authorization参数需要向机智云申请；<br>2) pin、auth_code由机智云提供。</p>
+<ul>
+<li>JSON请求示例：<br>···<br>{<br>“pin”: “d504fbc269cc8d2ccc8822d98310e218”,<br>“mac”: “test00101011”,<br>“auth_code”: “8318822d90c269cc8dd504fb2ccce218”<br>}<br>···</li>
+</ul>
+<h4 id="响应参数"><a href="#响应参数" class="headerlink" title="响应参数"></a>响应参数</h4><p>属性名称    参数    类型    参数类型<br>创建时间    created_at    String    Body<br>客户标识码    pin    String    Body<br>Mac/IMEI    mac    String    Body<br>授权密钥    auth_key    String    Body</p>
+<p>    JSON响应示例：<br>···<br>{<br>  “auth_key”: “bff12c2998274c92b36de18b019ca9ea”,<br>  “created_at”: “2018-01-23T11:06:12.840298Z”,<br>  “pin”: “d504fbc269cc8d2ccc8822d98310e218”,<br>  “mac”: “test00101011”<br>}<br>···</p>
+<h3 id="批量获取授权密钥（统一加密算法）"><a href="#批量获取授权密钥（统一加密算法）" class="headerlink" title="批量获取授权密钥（统一加密算法）"></a>批量获取授权密钥（统一加密算法）</h3><h4 id="服务地址-1"><a href="#服务地址-1" class="headerlink" title="服务地址"></a>服务地址</h4><p>    URL:  <a href="https://preauth.gizwits.com/v2/gagent/batch" target="_blank" rel="noopener">https://preauth.gizwits.com/v2/gagent/batch</a><br>    Method: POST</p>
+<h4 id="请求参数-1"><a href="#请求参数-1" class="headerlink" title="请求参数"></a>请求参数</h4><p>属性名称    参数    类型    参数类型    是否必填<br>客户标识码    pin    String    formData    是<br>Mac/IMEI列表    batch_file    File    formData    是<br>授权密钥    auth_code    String    formData    是<br>鉴权    Authorization    String    Header    是<br>注：1) 鉴权的Authorization参数需要向机智云申请；<br>2) pin、auth_code由机智云提供。</p>
+<h4 id="响应参数-1"><a href="#响应参数-1" class="headerlink" title="响应参数"></a>响应参数</h4><p>属性名称    参数    类型    参数类型<br>任务ID    Id    String    Body</p>
+<ul>
+<li>JSON响应示例：<br>···<br>{<br>“id”: “ deb54a82c22aff842a016d6e43d6de4c”<br>}<br>···<h3 id="查询批量获取任务结果"><a href="#查询批量获取任务结果" class="headerlink" title="查询批量获取任务结果"></a>查询批量获取任务结果</h3><h4 id="服务地址-2"><a href="#服务地址-2" class="headerlink" title="服务地址"></a>服务地址</h4>    URL:  <a href="https://preauth.gizwits.com/v2/gagent/batch/{id}" target="_blank" rel="noopener">https://preauth.gizwits.com/v2/gagent/batch/{id}</a><br>    Method: GET</li>
+</ul>
+<h4 id="请求参数-2"><a href="#请求参数-2" class="headerlink" title="请求参数"></a>请求参数</h4><p>属性名称    参数    类型    参数类型    是否必填<br>任务id    id    String    Query    是<br>鉴权    Authorization    String    Header    是<br>注：1) 鉴权的Authorization参数需要向机智云申请；</p>
+<h4 id="响应参数-2"><a href="#响应参数-2" class="headerlink" title="响应参数"></a>响应参数</h4><p>属性名称    参数    类型    参数类型<br>失败mac/IMEI条数    Failed    String    Body<br>任务id    Id    String    Body<br>成功mac/IMEI条数    Success    String    Body<br>返回结果下载地址    auth_result_    String    Body</p>
+<ul>
+<li>JSON响应示例：<br>···<br>{<br>  “status”: 2,<br>  “failed”: 0,<br>  “id”: “deb54a82c22aff842a016d6e43d6de4c”,<br>  “success”: 10,<br>  “auth_result”: “X.X.X/deb54a82c22aff842a016d6e43d6de4c.xlsx”<br>}<br>···</li>
+</ul>
+<h3 id="查询密钥余量"><a href="#查询密钥余量" class="headerlink" title="查询密钥余量"></a>查询密钥余量</h3><h4 id="服务地址-3"><a href="#服务地址-3" class="headerlink" title="服务地址"></a>服务地址</h4><p>    URL:  <a href="https://preauth.gizwits.com/v2/package" target="_blank" rel="noopener">https://preauth.gizwits.com/v2/package</a><br>    Method: GET</p>
+<h4 id="请求参数-3"><a href="#请求参数-3" class="headerlink" title="请求参数"></a>请求参数</h4><p>属性名称    参数    类型    参数类型    是否必填<br>客户标识码    pin    String    Query    是<br>授权码    auth_code    String    Query    是<br>跳过数    skip    Integer    Body    否<br>每页条数    limit    Integer    Header    否</p>
+<h4 id="响应参数-3"><a href="#响应参数-3" class="headerlink" title="响应参数"></a>响应参数</h4><p>属性名称    参数    类型    参数类型<br>创建时间    created_at    String    Body<br>更新时间    updated_at    String    Body<br>客户标识码    pin    String    Body<br>总数量    capacity    Integer    Body<br>已使用量    size    Integer    Body<br>授权码    auth_code    String    Body<br>是否禁用    is_enabled    Integer    Body</p>
+<p> </p>
+<ul>
+<li>JSON响应示例：<br>···<br>{<br>“meta”: {<br>  “total”: 1,<br>  “limit”: 20,<br>  “skip”: 0,<br>  “next”: “string”,<br>  “previous”: “string”<br>},<br>“objects”: [<br>  {<pre><code>&quot;created_at&quot;: &quot;string&quot;,
+&quot;updated_at&quot;: &quot;string&quot;,
+&quot;pin&quot;: &quot;d504fbc269cc8d2ccc8822d98310e218&quot;,
+&quot;capacity&quot;: 1000,
+&quot;size&quot;: 10,    
+&quot;auth_code&quot;: &quot;8318822d90c269cc8dd504fb2ccce218&quot;,
+&quot;is_enabled&quot;: true
+</code></pre>  }  ]<br>}<br>···</li>
+</ul>
+<h3 id="常见错误码"><a href="#常见错误码" class="headerlink" title="常见错误码"></a>常见错误码</h3><p>错误标识    HTTP状态码 接口状态码 错误原因<br>OK    200    0    OK<br>DATA_INVALID    400    1    data invalid<br>AUTH_FAILED    403    2    Authorization invalid<br>INVALID_AUTH_CODE    400    3    Invalid auth_code<br>PACKAGE_CAPACITY_NOT_ENOUGH    400    4    Package capacity not enough<br>GET_AUTH_KEY_IN_PROGRESS    400    5    Get auth_key in progress<br>GAGENT_EXIST    400    6    GAgent with this product_key and mac exist<br>INVALID_AUTH_KEY    400    7    Invalid auth_key<br>SYSTEM_ERROR    500    8    Uncaught exception<br>PACKAGE_NOT_FOUND    404    9    Package not found<br>AUTH_CODE_DISABLED    400    10    Package disabled<br>ROLES_INVALID    403    11    Roles invalid<br>MODE_INVALID    403    12    Mode invalid<br>PACKAGE_EXPIRED    400    13    Package expired<br>DECYPT_AUTH_KEY_ERROR    400    14    Decypt Auth Key Error<br>FILE_INVALID    400    15    Mac Address File Format Error<br>PACKAGE_TYPE_INVALID    400    16    Package type error, not support this method</p>
+
     </div>
     
     <div class="widget-wrapper">
