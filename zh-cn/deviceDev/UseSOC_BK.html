@@ -488,7 +488,7 @@
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <p>附件：<a href="/assets/pdf/gokit.zip">微信宠物屋参考代码</a></p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文所介绍的是基于8266模组做soc方法接入的流程，主要是以机智云推出的“微信宠物屋”设备为示例来说明。</p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>微信宠物屋，是机智云一个简单常见的体验宠物屋真实场景的智能产品，硬件电路简单，程序本身也不复杂；下面我们使用gokit3（s）开发板和机智云云端，实现微信宠物屋。</p>
 <p><strong>下面我们使用GoKit3（S）开发板，基于esp8266模块上的SoC方案，开发的微信宠物屋项目为例，示范一下如何将设备快速接入机智云，实现硬件智能化。</strong></p>
 <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h2><p><strong>硬件：</strong></p>
 <p>1）GoKit3（S）开发板</p>
@@ -515,6 +515,9 @@
 <h2 id="6-创建15个对应数据点"><a href="#6-创建15个对应数据点" class="headerlink" title="6.创建15个对应数据点"></a>6.创建15个对应数据点</h2><p><img src="/assets/zh-cn/quickstart/dev/new7_7.png" alt="创建数据点-1"></p>
 <p><img src="/assets/zh-cn/quickstart/dev/new8_8.png" alt="创建数据点-1"></p>
 <p><img src="/assets/zh-cn/quickstart/dev/new9_9.png" alt="创建数据点-3"></p>
+<p>或者也可以直接选择导入微信宠物屋的数据点，机智云已经创建好了微信宠物屋的数据点。</p>
+<p><img src="/assets/zh-cn/quickstart/dev/new10_10.png" alt="创建数据点-3"></p>
+<p><img src="/assets/zh-cn/quickstart/dev/new11_11.png" alt="创建数据点-3"></p>
 <h1 id="下载云端自动生成代码及其介绍"><a href="#下载云端自动生成代码及其介绍" class="headerlink" title="下载云端自动生成代码及其介绍"></a>下载云端自动生成代码及其介绍</h1><h2 id="1-自动生成工具介绍："><a href="#1-自动生成工具介绍：" class="headerlink" title="1.自动生成工具介绍："></a>1.自动生成工具介绍：</h2><p><strong>自动生成代码工具：</strong>是机智云为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。自动生成的代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的API，且提供了多种平台的实例代码。当设备收到云端或APP端的数据后，程序会将数据转换成对应的事件并通知到应用层，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。使用自动生成的代码开发产品，就不必再处理协议相关的部分了，开发者可以将节省出来的精力集中在产品的核心功能开发上。</p>
 <ul>
 <li><strong>关于“自动生成代码工具”的更多介绍和帮助，请点击以下链接：</strong> <a href="/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html">自动生成代码工具</a></li>
@@ -611,10 +614,11 @@
 <p>产品如何申请发布上线，具体步骤如下：</p>
 <p>1.进入产品详细信息页面，在产品名称旁边显示【申请发布】按钮</p>
 <p><img src="/assets/zh-cn/quickstart/dev/new42.png" alt="申请发布"></p>
-<p>2.点击【马上申请】按钮，如实填写申请信息审核</p>
+<p>2.点击【马上申请】按钮，按照界面提示填写及上传产品相关申请信息审核</p>
 <p><img src="/assets/zh-cn/quickstart/dev/new43.png" alt="马上申请"></p>
 <p>3.点击【提交申请】按钮，跳转提交成功页面。机智云将免费为你提供人工审核以及严谨的测试，审核通过后，会根据你提交的量产计划免费提供后台服务器支持。</p>
 <p><img src="/assets/zh-cn/quickstart/dev/new44.png" alt="提交申请"></p>
+<p>注：如果该项目是有跟机智云商务订单合作的，请把设备或者板卡（带电源线）寄给相关的技术人员或者商务。</p>
 <h1 id="产测简介"><a href="#产测简介" class="headerlink" title="产测简介"></a>产测简介</h1><p>产测是生产环节中重要的部分，保证了产品的质量，提升自身产品形象。机智云产测工具为批量生产的产品提供了方便快捷的模块与MCU产测方式。在大型生产时，保证模块与MCU可正常使用。使用产测工具，必须让产品先上架。由产品创建者向机智云申请发布。机智云将免费为你提供人工审核以及严谨的测试。<a href="http://docs.gizwits.com/zh-cn/deviceDev/%E4%BA%A7%E6%B5%8B%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.html" target="_blank" rel="noopener">详情请点击浏览。</a></p>
 <h1 id="项目完成"><a href="#项目完成" class="headerlink" title="项目完成"></a>项目完成</h1><ul>
 <li>完成以上步骤，整个项目开发就完成了,如果需要关注更多的开源项目以及和其他开发者深度交流，可以到我们公司的官方论坛进行学习：<a href="http://club.gizwits.com/forum.php" target="_blank" rel="noopener">http://club.gizwits.com/forum.php</a></li>
