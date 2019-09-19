@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
 
-  <title>G510 DTU RS485 1911 接入方案 - 机智云</title>
+  <title>G510 DTU RS485 1911接入机智云方案及问题排查指引 - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="G510 DTU RS485 1911 接入方案-机智云">
-  <meta name="keywords" content="G510 DTU RS485 1911 接入方案 docs 文档中心 Gizwits">
+  <meta name="Description" content="G510 DTU RS485 1911接入机智云方案及问题排查指引-机智云">
+  <meta name="keywords" content="G510 DTU RS485 1911接入机智云方案及问题排查指引 docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -484,16 +484,17 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">G510 DTU RS485 1911 接入方案</div>
+        <div class="title">G510 DTU RS485 1911接入机智云方案及问题排查指引</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>本文主要介绍如何使用G510 DTU RS485 1911快速接入机智云及以及实现简单的透传功能</p>
-<h1 id="二、在机智云官网创建设备产品，定义数据点"><a href="#二、在机智云官网创建设备产品，定义数据点" class="headerlink" title="二、在机智云官网创建设备产品，定义数据点"></a>二、在机智云官网创建设备产品，定义数据点</h1><h2 id="1-创建新产品"><a href="#1-创建新产品" class="headerlink" title="1. 创建新产品"></a>1. 创建新产品</h2><p><img src="/assets/zh-cn/deviceDev/debug/NB_project/NBproject_2.png" alt="name"></p>
-<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/G510_DTU_RS485_1911_3.png" alt="name"></p>
-<h2 id="2-定义数据点"><a href="#2-定义数据点" class="headerlink" title="2. 定义数据点"></a>2. 定义数据点</h2><p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/G510_DTU_RS485_1911_4.png" alt="name"></p>
-<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/G510_DTU_RS485_1911_5.png" alt="name"></p>
-<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/G510_DTU_RS485_1911_6.png" alt="name"></p>
-<h1 id="三、下载机智云串口调试助手模拟mcu与G510-DTU串口通讯"><a href="#三、下载机智云串口调试助手模拟mcu与G510-DTU串口通讯" class="headerlink" title="三、下载机智云串口调试助手模拟mcu与G510 DTU串口通讯"></a>三、下载机智云串口调试助手模拟mcu与G510 DTU串口通讯</h1><h2 id="1-下载机智云串口调试助手"><a href="#1-下载机智云串口调试助手" class="headerlink" title="1. 下载机智云串口调试助手"></a>1. 下载机智云串口调试助手</h2><p><a href="https://download.gizwits.com/zh-cn/p/98/119" target="_blank" rel="noopener">机智云串口调试助手下载地址</a></p>
+      <h1 id="一、本文编写背景"><a href="#一、本文编写背景" class="headerlink" title="一、本文编写背景"></a>一、本文编写背景</h1><p>本文主要介绍G510 DTU RS485 1911如何快速从零开始接入机智云，实现APP通过透传通信方式控制设备功能。文档内容包括模组硬件设计和开发资料、固件烧录工具和烧录方法，以及实现APP通过透传方式控制设备流程，及常见问题答疑。</p>
+<h1 id="二、G510-DTU-RS485-1911资料下载及获取"><a href="#二、G510-DTU-RS485-1911资料下载及获取" class="headerlink" title="二、G510 DTU RS485 1911资料下载及获取"></a>二、G510 DTU RS485 1911资料下载及获取</h1><p>链接：<a href="https://eyun.baidu.com/s/3kXcEtuf" target="_blank" rel="noopener">https://eyun.baidu.com/s/3kXcEtuf</a> 密码：NDPV</p>
+<h1 id="三、G510-DTU-RS485-1911串口烧写固件说明（含硬件电路）"><a href="#三、G510-DTU-RS485-1911串口烧写固件说明（含硬件电路）" class="headerlink" title="三、G510 DTU RS485 1911串口烧写固件说明（含硬件电路）"></a>三、G510 DTU RS485 1911串口烧写固件说明（含硬件电路）</h1><p>首先说明：G510 DTU RS485 1911上面有一个STM8芯片，该芯片暂时无用，也不需要给其烧写程序，忽略即可。</p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/00000000.png" alt="name"></p>
+<ol>
+<li>当拿到一片G510 DTU RS485 1911的时候，第一件事是要给该DTU烧写机智云的Gagent固件。机智云G510 DTU，版本号为04020040的固件<a href="http://goms-1251025085.cosgz.myqcloud.com/GAgent_00FBG510_04020040_201811071942-1542166609513.bin" target="_blank" rel="noopener">下载链接</a></li>
+</ol>
+<p><code>备注：固件版本的更高版本，请联系商务同事或FAE同事获取。</code></p>
 <h2 id="2-G510-DTU模块与mcu接线"><a href="#2-G510-DTU模块与mcu接线" class="headerlink" title="2. G510 DTU模块与mcu接线"></a>2. G510 DTU模块与mcu接线</h2><p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/G510_DTU_RS485_1911_7.png" alt="name"></p>
 <h2 id="3-G510-DTU模块与mcu通讯"><a href="#3-G510-DTU模块与mcu通讯" class="headerlink" title="3. G510 DTU模块与mcu通讯"></a>3. G510 DTU模块与mcu通讯</h2><p>填入PK、PS后点击保存，打开串口，通电让G510 DTU运行，就可以看到mcu与G510 DTU串口通讯过程，G510 DTU过十几秒会自动连接上服务器</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/G510_DTU_RS485_1911_8.png" alt="name"></p>
