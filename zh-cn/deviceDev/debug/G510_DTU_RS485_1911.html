@@ -490,21 +490,21 @@
       <h1 id="一、本文编写背景"><a href="#一、本文编写背景" class="headerlink" title="一、本文编写背景"></a>一、本文编写背景</h1><p>本文主要介绍G510 DTU RS485 1911如何快速从零开始接入机智云，实现APP通过透传通信方式控制设备功能。文档内容包括模组硬件设计和开发资料、固件烧录工具和烧录方法，以及实现APP通过透传方式控制设备流程，及常见问题答疑。</p>
 <h1 id="二、G510-DTU-RS485-1911资料下载及获取"><a href="#二、G510-DTU-RS485-1911资料下载及获取" class="headerlink" title="二、G510 DTU RS485 1911资料下载及获取"></a>二、G510 DTU RS485 1911资料下载及获取</h1><p>链接：<a href="https://eyun.baidu.com/s/3kXcEtuf" target="_blank" rel="noopener">https://eyun.baidu.com/s/3kXcEtuf</a> 密码：NDPV</p>
 <h1 id="三、G510-DTU-RS485-1911串口烧写固件说明（含硬件电路）"><a href="#三、G510-DTU-RS485-1911串口烧写固件说明（含硬件电路）" class="headerlink" title="三、G510 DTU RS485 1911串口烧写固件说明（含硬件电路）"></a>三、G510 DTU RS485 1911串口烧写固件说明（含硬件电路）</h1><p>首先说明：G510 DTU RS485 1911上面有一个STM8芯片，该芯片暂时无用，也不需要给其烧写程序，忽略即可。</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/00000000.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/1.png" alt="name"></p>
 <p>1.当拿到一片G510 DTU RS485 1911的时候，第一件事是要给该DTU烧写机智云的Gagent固件。机智云G510 DTU，版本号为04020040的固件<a href="http://goms-1251025085.cosgz.myqcloud.com/GAgent_00FBG510_04020040_201811071942-1542166609513.bin" target="_blank" rel="noopener">下载链接</a></p>
 <p><code>备注：固件版本的更高版本，请联系商务同事或FAE同事获取。</code></p>
-<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/00000000.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/2.png" alt="name"></p>
 <p>2.下载了模组固件后，还需要下载广和通提供的串口烧写软件，软件下载链接：</p>
 <p>链接：<a href="https://eyun.baidu.com/s/3dGdWptJ" target="_blank" rel="noopener">https://eyun.baidu.com/s/3dGdWptJ</a> 密码：96nB</p>
 <p>打开软件界面如下图所示</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/00000000.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/3.png" alt="name"></p>
 <p>3.使用串口工具烧写G510，先将DTU断电，用串口连接到P1口，打开Fibocom_upgrade</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/00000000.png" alt="name"></p>
-<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/00000000.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/4.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/5.png" alt="name"></p>
 <h1 id="四、如何抓取G510-DTU日志"><a href="#四、如何抓取G510-DTU日志" class="headerlink" title="四、如何抓取G510 DTU日志"></a>四、如何抓取G510 DTU日志</h1><p>1.G510 DTU的日志串口与程序烧写串口是同一串口，将G510 DTU上面的P1通过USB转TTL工具连接到电脑，P2供电5-12V，波特率115200bps，即可抓取模组日志</p>
 <p>2.下载机智云串口打印软件工具下抓取模组日志</p>
 <p>下载链接：<a href="https://eyun.baidu.com/s/3smYywot" target="_blank" rel="noopener">https://eyun.baidu.com/s/3smYywot</a> 密码：1Jd3</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/00000000.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/6.png" alt="name"></p>
 <p><code>备注：映射文件请联系机智云FAE同事获取。</code></p>
 <h1 id="五、G510-DTU接入机智云（包含创建数据点，机智云串口助手模拟mcu设备，demoAPP绑定及控制设备等等）"><a href="#五、G510-DTU接入机智云（包含创建数据点，机智云串口助手模拟mcu设备，demoAPP绑定及控制设备等等）" class="headerlink" title="五、G510 DTU接入机智云（包含创建数据点，机智云串口助手模拟mcu设备，demoAPP绑定及控制设备等等）"></a>五、G510 DTU接入机智云（包含创建数据点，机智云串口助手模拟mcu设备，demoAPP绑定及控制设备等等）</h1><p>快速接入文档参考链接：<a href="http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_DTU_RS485_1911.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_DTU_RS485_1911.html</a></p>
 <p><code>注：G510 DTU RS485 1911通讯串口使用的是RS485接口，Gokit没有集成RS485的硬件功能，故这里使用USB转RS485串口及机智云串口调试助手模拟mcu与G510 DTU串口通讯</code></p>
