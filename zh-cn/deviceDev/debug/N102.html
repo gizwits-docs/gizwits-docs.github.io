@@ -489,17 +489,17 @@
       </div>
       <h1 id="一、本文编写背景"><a href="#一、本文编写背景" class="headerlink" title="一、本文编写背景"></a>一、本文编写背景</h1><p>本文主要介绍N102 DTU如何快速从零开始接入机智云，搭配gokit实现微信宠物屋，并提供该模组的相关资料。</p>
 <h1 id="二、N102资料下载及获取"><a href="#二、N102资料下载及获取" class="headerlink" title="二、N102资料下载及获取"></a>二、N102资料下载及获取</h1><p>N102硬件设计手册下载链接：<a href="https://eyun.baidu.com/s/3mj52upy" target="_blank" rel="noopener">https://eyun.baidu.com/s/3mj52upy</a> 密码：EJwp</p>
-<h1 id="三、N102串口烧写固件说明"><a href="#三、N102串口烧写固件说明" class="headerlink" title="三、N102串口烧写固件说明"></a>三、N102串口烧写固件说明</h1><h5 id="1-获取固件"><a href="#1-获取固件" class="headerlink" title="1.获取固件"></a>1.获取固件</h5><p>当拿到一片N102的时候，第一件事是要给该模组烧写机智云的Gagent固件，解压之后文件夹中的flash_download.cfg文件就是固件。</p>
+<h1 id="三、N102串口烧写固件说明"><a href="#三、N102串口烧写固件说明" class="headerlink" title="三、N102串口烧写固件说明"></a>三、N102串口烧写固件说明</h1><h3 id="1-获取固件"><a href="#1-获取固件" class="headerlink" title="1.获取固件"></a>1.获取固件</h3><p>当拿到一片N102的时候，第一件事是要给该模组烧写机智云的Gagent固件，解压之后文件夹中的flash_download.cfg文件就是固件。</p>
 <p><code>备注：Gagent固件，请联系商务同事或FAE同事获取。</code></p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NB_project/1.png" alt="name"></p>
-<h5 id="2-下载固件烧写软件"><a href="#2-下载固件烧写软件" class="headerlink" title="2.下载固件烧写软件"></a>2.下载固件烧写软件</h5><p>软件下载链接：<a href="https://eyun.baidu.com/s/3eTqL8Qm" target="_blank" rel="noopener">https://eyun.baidu.com/s/3eTqL8Qm</a> 密码：eDVc</p>
+<h3 id="2-下载固件烧写软件"><a href="#2-下载固件烧写软件" class="headerlink" title="2.下载固件烧写软件"></a>2.下载固件烧写软件</h3><p>软件下载链接：<a href="https://eyun.baidu.com/s/3eTqL8Qm" target="_blank" rel="noopener">https://eyun.baidu.com/s/3eTqL8Qm</a> 密码：eDVc</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NB_project/2.png" alt="name"></p>
 <p>在调试工具中确保串口选项卡的串口为设备的串口值，选择下载的固件，点击start</p>
-<h5 id="3-N102与USB转TTL模块接线，烧写固件"><a href="#3-N102与USB转TTL模块接线，烧写固件" class="headerlink" title="3.N102与USB转TTL模块接线，烧写固件"></a>3.N102与USB转TTL模块接线，烧写固件</h5><p><img src="/assets/zh-cn/deviceDev/debug/NB_project/N102programming_3.png" alt="name"></p>
+<h3 id="3-N102与USB转TTL模块接线，烧写固件"><a href="#3-N102与USB转TTL模块接线，烧写固件" class="headerlink" title="3.N102与USB转TTL模块接线，烧写固件"></a>3.N102与USB转TTL模块接线，烧写固件</h3><p><img src="/assets/zh-cn/deviceDev/debug/NB_project/N102programming_3.png" alt="name"></p>
 <p>串口软件点击start以后，USB转TTL模块连接模组的POWER_IN、GND、UART0，最后PWRKEY拉低直到串口烧写软件出现进度条</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NB_project/4.png" alt="name"></p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NB_project/5.png" alt="name"></p>
-<h5 id="4-固件烧录成功后，检查固件版本是否正确。"><a href="#4-固件烧录成功后，检查固件版本是否正确。" class="headerlink" title="4.    固件烧录成功后，检查固件版本是否正确。"></a>4.    固件烧录成功后，检查固件版本是否正确。</h5><p>换友善串口助手继续连接模组的串口0接收模组输出的日志，然后重新给模组上电，看烧写的固件版本号是否正确，波特率115200</p>
+<h3 id="4-固件烧录成功后，检查固件版本是否正确。"><a href="#4-固件烧录成功后，检查固件版本是否正确。" class="headerlink" title="4.    固件烧录成功后，检查固件版本是否正确。"></a>4.    固件烧录成功后，检查固件版本是否正确。</h3><p>换友善串口助手继续连接模组的串口0接收模组输出的日志，然后重新给模组上电，看烧写的固件版本号是否正确，波特率115200</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/NB_project/6.png" alt="name"></p>
 <h1 id="四、搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等发）"><a href="#四、搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等发）" class="headerlink" title="四、搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等发）"></a>四、搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等发）</h1><p>快速接入文档参考链接：<a href="http://docs.gizwits.com/zh-cn/deviceDev/debug/NB_Project.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/deviceDev/debug/NB_Project.html</a></p>
 <p><code>备注：模组的UART1为与GoKit串口通讯串口，通讯波特率为9600bps。</code></p>
