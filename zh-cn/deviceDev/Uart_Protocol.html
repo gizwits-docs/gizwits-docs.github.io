@@ -488,8 +488,8 @@
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <h1 id="1、前言"><a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h1><p>协议主要分三部分：基本通信协议、扩展通信协议和网关扩展协议。第一，基本通信协议上面的内容，所有的mcu端开发者都要完成上面的协议；第二，扩展通信协议，是可选择完成的协议，上面主要提供的功能是大数据传输，要做mcu ota 升级的功能，就要完成上面的协议。第三，网关扩展协议，主要是做轻网关方案项目的产品，如果产品是做网关方案的，如蓝牙Mesh，就需要完成上面的协议。</p>
-<h1 id="2、协议下载流程"><a href="#2、协议下载流程" class="headerlink" title="2、协议下载流程"></a>2、协议下载流程</h1><h3 id="2-1根据已经创建好的产品，并且定义好数据点，选中产品"><a href="#2-1根据已经创建好的产品，并且定义好数据点，选中产品" class="headerlink" title="2.1根据已经创建好的产品，并且定义好数据点，选中产品"></a>2.1根据已经创建好的产品，并且定义好数据点，选中产品</h3><p><img src="/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png" alt="name"></p>
-<h3 id="2-2下载模组与mcu之间的串口通信协议"><a href="#2-2下载模组与mcu之间的串口通信协议" class="headerlink" title="2.2下载模组与mcu之间的串口通信协议"></a>2.2下载模组与mcu之间的串口通信协议</h3><p><img src="/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png" alt="name"></p>
+<h1 id="2、协议下载流程"><a href="#2、协议下载流程" class="headerlink" title="2、协议下载流程"></a>2、协议下载流程</h1><h3 id="2-1根据已经创建好的产品，并且定义好数据点，选中产品"><a href="#2-1根据已经创建好的产品，并且定义好数据点，选中产品" class="headerlink" title="2.1根据已经创建好的产品，并且定义好数据点，选中产品"></a>2.1根据已经创建好的产品，并且定义好数据点，选中产品</h3><p><img src="/assets/zh-cn/deviceDev/Uart_Protocol/1.png" alt="name"></p>
+<h3 id="2-2下载模组与mcu之间的串口通信协议"><a href="#2-2下载模组与mcu之间的串口通信协议" class="headerlink" title="2.2下载模组与mcu之间的串口通信协议"></a>2.2下载模组与mcu之间的串口通信协议</h3><p><img src="/assets/zh-cn/deviceDev/Uart_Protocol/2.png" alt="name"></p>
 <h1 id="3、协议内容说明"><a href="#3、协议内容说明" class="headerlink" title="3、协议内容说明"></a>3、协议内容说明</h1><h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h3><p>mcu与WiFi模组通过串口交互，通用固件：波特率9600/数据位8位、无奇偶校验/停止位1位/无数据流控。数据帧格式如下：</p>
 <table>
 <thead>
@@ -646,14 +646,14 @@
 <h4 id="1-APP配置WiFi模组连接云端流程（必须开发）"><a href="#1-APP配置WiFi模组连接云端流程（必须开发）" class="headerlink" title="(1)APP配置WiFi模组连接云端流程（必须开发）"></a>(1)APP配置WiFi模组连接云端流程（必须开发）</h4><p>以下3个指令是模组与mcu串口握手成功之后，会依次发送出来的。</p>
 <h5 id="·-3-1获取设备信息"><a href="#·-3-1获取设备信息" class="headerlink" title="· 3.1获取设备信息"></a>· 3.1获取设备信息</h5><h5 id="·-3-8推送WiFi模组工作状态"><a href="#·-3-8推送WiFi模组工作状态" class="headerlink" title="· 3.8推送WiFi模组工作状态"></a>· 3.8推送WiFi模组工作状态</h5><h5 id="·-3-5心跳"><a href="#·-3-5心跳" class="headerlink" title="· 3.5心跳"></a>· 3.5心跳</h5><p>然后，人为触发mcu请求WiFi模组进入配网模式。</p>
 <h5 id="·-3-6通知WiFi模组进入配网模式"><a href="#·-3-6通知WiFi模组进入配网模式" class="headerlink" title="· 3.6通知WiFi模组进入配网模式"></a>· 3.6通知WiFi模组进入配网模式</h5><p>具体流程可以查看以下时序图：</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/Uart_Protocol/3.png" alt="name"></p>
 <p>此外，如果通信模组不是WiFi模组，而是2G、4G或者NB模组的话，mcu不需要请求WiFi模组进入配网模式。2G/4G/NB模组是无线蜂窝通信模组，只要给设备插上物联网卡，模组根据蜂窝通信方式连接附近的基站，从而再连接上机智云平台。</p>
 <h4 id="2-APP获取设备当前状态（必须开发）"><a href="#2-APP获取设备当前状态（必须开发）" class="headerlink" title="(2)APP获取设备当前状态（必须开发）"></a>(2)APP获取设备当前状态（必须开发）</h4><p>主要用到的指令如下：</p>
 <h5 id="·-3-3WiFi模组读取设备的当前状态"><a href="#·-3-3WiFi模组读取设备的当前状态" class="headerlink" title="· 3.3WiFi模组读取设备的当前状态"></a>· 3.3WiFi模组读取设备的当前状态</h5><p>具体流程可以查看以下时序图：</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/Uart_Protocol/4.png" alt="name"></p>
 <h4 id="3-APP下发控制指令（必须开发）"><a href="#3-APP下发控制指令（必须开发）" class="headerlink" title="(3)APP下发控制指令（必须开发）"></a>(3)APP下发控制指令（必须开发）</h4><p>主要用到的指令如下：</p>
 <h5 id="·-3-2-WiFi模组控制设备"><a href="#·-3-2-WiFi模组控制设备" class="headerlink" title="· 3.2 WiFi模组控制设备"></a>· 3.2 WiFi模组控制设备</h5><h5 id="·-3-4-设备mcu向WiFi模组主动上报当前状态"><a href="#·-3-4-设备mcu向WiFi模组主动上报当前状态" class="headerlink" title="· 3.4 设备mcu向WiFi模组主动上报当前状态"></a>· 3.4 设备mcu向WiFi模组主动上报当前状态</h5><p>具体流程可以查看以下时序图：</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/Uart_Protocol/5.png" alt="name"></p>
 <h4 id="4-非法包处理（必须开发）"><a href="#4-非法包处理（必须开发）" class="headerlink" title="(4)非法包处理（必须开发）"></a>(4)非法包处理（必须开发）</h4><p>主要命令如下：</p>
 <h5 id="·-3-9非法数据包通知"><a href="#·-3-9非法数据包通知" class="headerlink" title="· 3.9非法数据包通知"></a>· 3.9非法数据包通知</h5><p>该包是模组发送出来的mcu回复即可。</p>
 <h4 id="5-重置WiFi模组（必须开发）"><a href="#5-重置WiFi模组（必须开发）" class="headerlink" title="(5)重置WiFi模组（必须开发）"></a>(5)重置WiFi模组（必须开发）</h4><p>主要命令如下：</p>
@@ -673,7 +673,7 @@
 <p>注意：如果设备一上电就要去获取网络时间来校对，要先判断设备是否连接上云端，判断设备已经连接上云端后，再请求获取网络时间，否则获取的时间都为0的。</p>
 <h4 id="4-mcu-ota功能（可选功能，可不开发）"><a href="#4-mcu-ota功能（可选功能，可不开发）" class="headerlink" title="(4)mcu ota功能（可选功能，可不开发）"></a>(4)mcu ota功能（可选功能，可不开发）</h4><p>主要命令如下：</p>
 <h5 id="·-4-4-大数据下发：数据发起这请求向数据接收者发送大数据"><a href="#·-4-4-大数据下发：数据发起这请求向数据接收者发送大数据" class="headerlink" title="· 4.4.大数据下发：数据发起这请求向数据接收者发送大数据"></a>· 4.4.大数据下发：数据发起这请求向数据接收者发送大数据</h5><h5 id="·-4-5-大数据下发：数据接收者告知数据发起这可以开始发送数据"><a href="#·-4-5-大数据下发：数据接收者告知数据发起这可以开始发送数据" class="headerlink" title="· 4.5.大数据下发：数据接收者告知数据发起这可以开始发送数据"></a>· 4.5.大数据下发：数据接收者告知数据发起这可以开始发送数据</h5><h5 id="·-4-6-大数据下发：数据发送者向数据接收者下发数据分片"><a href="#·-4-6-大数据下发：数据发送者向数据接收者下发数据分片" class="headerlink" title="· 4.6.大数据下发：数据发送者向数据接收者下发数据分片"></a>· 4.6.大数据下发：数据发送者向数据接收者下发数据分片</h5><h5 id="·-4-7-大数据下发：数据发起者向数据接收者通知取消数据下发"><a href="#·-4-7-大数据下发：数据发起者向数据接收者通知取消数据下发" class="headerlink" title="· 4.7.大数据下发：数据发起者向数据接收者通知取消数据下发"></a>· 4.7.大数据下发：数据发起者向数据接收者通知取消数据下发</h5><h5 id="·-4-8-大数据下发：数据接收者向数据发起者通知取消数据下发"><a href="#·-4-8-大数据下发：数据接收者向数据发起者通知取消数据下发" class="headerlink" title="· 4.8.大数据下发：数据接收者向数据发起者通知取消数据下发"></a>· 4.8.大数据下发：数据接收者向数据发起者通知取消数据下发</h5><h5 id="·-3-11-MCU重启WiFi模组"><a href="#·-3-11-MCU重启WiFi模组" class="headerlink" title="· 3.11 MCU重启WiFi模组"></a>· 3.11 MCU重启WiFi模组</h5><p>具体流程时序图：</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/Uart_Protocol/6.png" alt="name"></p>
 <p>备注说明：</p>
 <h6 id="1-mcu-ota-升级数据发起者是WiFi模组，数据接收者是MCU"><a href="#1-mcu-ota-升级数据发起者是WiFi模组，数据接收者是MCU" class="headerlink" title="1.mcu ota 升级数据发起者是WiFi模组，数据接收者是MCU"></a>1.mcu ota 升级数据发起者是WiFi模组，数据接收者是MCU</h6><h6 id="2-“2-4-4-大数据下发：数据发起这请求向数据接收者发送大数据”"><a href="#2-“2-4-4-大数据下发：数据发起这请求向数据接收者发送大数据”" class="headerlink" title="2.“2.4.4.大数据下发：数据发起这请求向数据接收者发送大数据”"></a>2.“2.4.4.大数据下发：数据发起这请求向数据接收者发送大数据”</h6><p>WiFi模组给MCU发送的，MCU只需要按照协议回复ACK（ACK为应答包，表示我已经收到请求了）</p>
 <h6 id="3-“4-5-大数据下发：数据接收者告知数据发起这可以开始发送数据”"><a href="#3-“4-5-大数据下发：数据接收者告知数据发起这可以开始发送数据”" class="headerlink" title="3.“4.5.大数据下发：数据接收者告知数据发起这可以开始发送数据”"></a>3.“4.5.大数据下发：数据接收者告知数据发起这可以开始发送数据”</h6><p>MCU给WiFi模组发送的，MCU按照协议格式规定告知WiFi模组，关于OTA大文件，WiFi模组应该以多大一片下发给MCU，以及分片的大小建议为128B。</p>
@@ -685,12 +685,12 @@
 <h5 id="·-4-9-MCU获取通讯模组的信息"><a href="#·-4-9-MCU获取通讯模组的信息" class="headerlink" title="· 4.9.MCU获取通讯模组的信息"></a>· 4.9.MCU获取通讯模组的信息</h5><p>具体流程时序图：</p>
 <p>MCU给WiFi模组发送的，MCU可以按照协议向WiFi模组获取“WiFi模组硬件版本号”、“WiFi模组软件版本号”、“WiFi模组MAC”和“WiFi模组IP”。</p>
 <h3 id="3-4-网关扩展协议"><a href="#3-4-网关扩展协议" class="headerlink" title="3.4.网关扩展协议"></a>3.4.网关扩展协议</h3><h4 id="1-机智云轻网关方案（可选功能，非轻网关产品，可忽略）"><a href="#1-机智云轻网关方案（可选功能，非轻网关产品，可忽略）" class="headerlink" title="(1)机智云轻网关方案（可选功能，非轻网关产品，可忽略）"></a>(1)机智云轻网关方案（可选功能，非轻网关产品，可忽略）</h4><p>目前轻网关方案，我们只支持用乐鑫8266模组，并且固件版本为04020035版本以上（包括04020035版本），其它模组暂时不支持。轻网关方案存在 4 个位置：模组 SDK、移动端 SDK、云端接入层、客户应用层。机智云串口协议部分为WiFi转网关部分，如下图的WiFi转蓝牙网关。</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/Uart_Protocol/7.png" alt="name"></p>
 <p>轻网关主要指令如下：</p>
 <h6 id="·-5-1MCU向通知WiFi模组请求子设备请求注册"><a href="#·-5-1MCU向通知WiFi模组请求子设备请求注册" class="headerlink" title="· 5.1MCU向通知WiFi模组请求子设备请求注册"></a>· 5.1MCU向通知WiFi模组请求子设备请求注册</h6><h6 id="·-5-2通讯模组向MCU发送子设备注册结果通知"><a href="#·-5-2通讯模组向MCU发送子设备注册结果通知" class="headerlink" title="· 5.2通讯模组向MCU发送子设备注册结果通知"></a>· 5.2通讯模组向MCU发送子设备注册结果通知</h6><h6 id="·-5-3-MCU向通讯模组发送子设备上下线状态同步"><a href="#·-5-3-MCU向通讯模组发送子设备上下线状态同步" class="headerlink" title="· 5.3 MCU向通讯模组发送子设备上下线状态同步"></a>· 5.3 MCU向通讯模组发送子设备上下线状态同步</h6><h6 id="·-5-4-通讯模组向MCU发送子设备的业务指令"><a href="#·-5-4-通讯模组向MCU发送子设备的业务指令" class="headerlink" title="· 5.4 通讯模组向MCU发送子设备的业务指令"></a>· 5.4 通讯模组向MCU发送子设备的业务指令</h6><h6 id="·-5-5-MCU向通讯模组发送子设备的业务指令"><a href="#·-5-5-MCU向通讯模组发送子设备的业务指令" class="headerlink" title="· 5.5 MCU向通讯模组发送子设备的业务指令"></a>· 5.5 MCU向通讯模组发送子设备的业务指令</h6><h6 id="·-5-7App通知网关删除子设备指令"><a href="#·-5-7App通知网关删除子设备指令" class="headerlink" title="· 5.7App通知网关删除子设备指令"></a>· 5.7App通知网关删除子设备指令</h6><h5 id="a-网关与子设备通信方式是有线方式"><a href="#a-网关与子设备通信方式是有线方式" class="headerlink" title="a.网关与子设备通信方式是有线方式"></a>a.网关与子设备通信方式是有线方式</h5><p>如果子设备与网关之间通信是通过有线连接方式，如433/458等方式，注册子设备就要通过mcu请求WiFi模组完成。轻网关控制子设备时序图如下：</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/Uart_Protocol/8.png" alt="name"></p>
 <h5 id="b-网关与子设备通信方式是无线方式"><a href="#b-网关与子设备通信方式是无线方式" class="headerlink" title="b.网关与子设备通信方式是无线方式"></a>b.网关与子设备通信方式是无线方式</h5><p>如果子设备与网关之间通信是通过无线连接方式，如蓝牙mesh、红外等方式，注册子设备通过APP注册子设备接口来完成。轻网关控制子设备时序图如下：</p>
-<p><img src="/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png" alt="name"></p>
+<p><img src="/assets/zh-cn/deviceDev/Uart_Protocol/9.png" alt="name"></p>
 <p>备注说明：</p>
 <h6 id="1-“5-1MCU向通知WiFi模组请求子设备请求注册”"><a href="#1-“5-1MCU向通知WiFi模组请求子设备请求注册”" class="headerlink" title="1.“5.1MCU向通知WiFi模组请求子设备请求注册”"></a>1.“5.1MCU向通知WiFi模组请求子设备请求注册”</h6><p>MCU给WiFi模组发送的，如果产品子设备注册请求已经通过APP来完成，该指令可以忽略。<br>该指令一般应用在网关与子设备之间的通信是通过433、232、485等本地串口方式，就可以通过这种方式来注册子设备。如果网关与子设备之间的通信是通过蓝牙、红外等无线方式，就直接用APP方式在注册子设备。</p>
 <h6 id="2-”5-2通讯模组向MCU发送子设备注册结果通知”"><a href="#2-”5-2通讯模组向MCU发送子设备注册结果通知”" class="headerlink" title="2.”5.2通讯模组向MCU发送子设备注册结果通知”"></a>2.”5.2通讯模组向MCU发送子设备注册结果通知”</h6><p>WiFi模组给MCU发送的，这个指令是与“ 5.1MCU向通知WiFi模组请求子设备请求注册”一起使用，MCU按照协议回复的数据，判断子设备是否注册成功。然后，MCU在做自己的应用处理。</p>
