@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
 
-  <title>HF-LPX30系列接入机智云方案及问题排查指引 - 机智云</title>
+  <title>域格CLM920_NC3接入机智云方案及问题排查指引 - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="HF-LPX30系列接入机智云方案及问题排查指引-机智云">
-  <meta name="keywords" content="HF-LPX30系列接入机智云方案及问题排查指引 docs 文档中心 Gizwits">
+  <meta name="Description" content="域格CLM920_NC3接入机智云方案及问题排查指引-机智云">
+  <meta name="keywords" content="域格CLM920_NC3接入机智云方案及问题排查指引 docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -484,14 +484,14 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">HF-LPX30系列接入机智云方案及问题排查指引</div>
+        <div class="title">域格CLM920_NC3接入机智云方案及问题排查指引</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <p>修订历史</p>
 <table>
 <thead>
 <tr>
-<th>版本</th>
+<th style="text-align:center">版本</th>
 <th style="text-align:center">修订内容</th>
 <th style="text-align:center">修订人</th>
 <th style="text-align:center">修订日期</th>
@@ -499,104 +499,123 @@
 </thead>
 <tbody>
 <tr>
-<td>V1.0</td>
+<td style="text-align:center">V1.0</td>
 <td style="text-align:center">起稿</td>
 <td style="text-align:center">Bobo</td>
-<td style="text-align:center">2019/07/29</td>
+<td style="text-align:center">2019/08/13</td>
 </tr>
 </tbody>
 </table>
-<h1 id="1-本文编写背景"><a href="#1-本文编写背景" class="headerlink" title="1.本文编写背景"></a>1.本文编写背景</h1><p>本文主要介绍汉枫HF-LPX30系列何快速从零开始接入机智云，实现简单的透传功能，以及常见的配网失败问题排查，还提供了该模组的相关资料。<br>本文描述的模组型号有：<br>1、HF-LPB130；<br>2、HF-LPB135；<br>3、HF-LPT130A&amp;B；<br>4、HF-LPT230；<br>5、HF-LPT330；</p>
-<h1 id="2-HF-LPX30模组资料下载及获取"><a href="#2-HF-LPX30模组资料下载及获取" class="headerlink" title="2. HF-LPX30模组资料下载及获取"></a>2. HF-LPX30模组资料下载及获取</h1><p>链接：<a href="https://eyun.baidu.com/s/3eTv5jyy" target="_blank" rel="noopener">https://eyun.baidu.com/s/3eTv5jyy</a> 密码：a2pQ</p>
-<h1 id="3-HF-LPX30外围设计原理图"><a href="#3-HF-LPX30外围设计原理图" class="headerlink" title="3. HF-LPX30外围设计原理图"></a>3. HF-LPX30外围设计原理图</h1><p>请下载第2章内容，参考《HF-LPX30系列Wi-Fi模块用户手册V2.0(20190412).pdf》推荐的外围设计原理图。</p>
-<h1 id="4-HF-LPX30串口烧写固件说明"><a href="#4-HF-LPX30串口烧写固件说明" class="headerlink" title="4. HF-LPX30串口烧写固件说明"></a>4. HF-LPX30串口烧写固件说明</h1><h2 id="4-1、HF-LPX30固件获取与确认"><a href="#4-1、HF-LPX30固件获取与确认" class="headerlink" title="4.1、HF-LPX30固件获取与确认"></a>4.1、HF-LPX30固件获取与确认</h2><p>当拿到一片HF-LPX30系列的模块的时候，若确认固件未烧写，请联系商务同事或FAE同事获取。拿到之后解压固件压缩包。</p>
-<p>解压之后会发现有两个文件，其中一个文件名为“GAgent_00HFT230_0403000A_1M_201904292027.bin”的bin文件用于串口烧录，是串口烧录所需要的固件</p>
+<h1 id="1-本文编写背景"><a href="#1-本文编写背景" class="headerlink" title="1.本文编写背景"></a>1.本文编写背景</h1><p>本文主要介绍域格CLM920_NC3（以下略称域格NC3）如何快速从零开始接入机智云，实现简单的透传功能，以及常见的问题排查，还提供了该模组的相关资料。</p>
+<h1 id="2-域格NC3模组资料下载及获取"><a href="#2-域格NC3模组资料下载及获取" class="headerlink" title="2. 域格NC3模组资料下载及获取"></a>2. 域格NC3模组资料下载及获取</h1><p>链接：<a href="https://eyun.baidu.com/s/3i6VWNzv" target="_blank" rel="noopener">https://eyun.baidu.com/s/3i6VWNzv</a> 密码：1Zvv</p>
+<h1 id="3-域格NC3外围设计原理图"><a href="#3-域格NC3外围设计原理图" class="headerlink" title="3. 域格NC3外围设计原理图"></a>3. 域格NC3外围设计原理图</h1><p>请下载第2章内容，参考《CLM920_NC3_LTE模块硬件使用指南V2.0.pdf》推荐的外围设计原理图。</p>
+<h1 id="4-域格NC3串口烧写固件说明"><a href="#4-域格NC3串口烧写固件说明" class="headerlink" title="4. 域格NC3串口烧写固件说明"></a>4. 域格NC3串口烧写固件说明</h1><h2 id="4-1、域格NC3固件获取与确认"><a href="#4-1、域格NC3固件获取与确认" class="headerlink" title="4.1、域格NC3固件获取与确认"></a>4.1、域格NC3固件获取与确认</h2><p>当拿到一片域格NC3的模块的时候，若确认固件未烧写，请联系商务同事或FAE同事获取。拿到之后解压固件压缩包。</p>
+<p>解压之后，会得到一个文件夹，点击打开文件夹，里面的GAgent_00YGNC03_04030003_512MB_201811281136.ubi就是我们烧写所要的文件</p>
 <blockquote>
-<p>备注：文件名带有“upgrade”的bin文件为OTA的固件，例如：GAgent_00HFT230_0403000A_1M_upgrade_201904292027.bin。<br>备注：本文固件名称以HFLPT230这款模块的固件为例，其他HF-LPX30系列的模组的固件名称的软硬件版本有差异</p>
+<p>备注：本文固件名称以域格NC3_04030003版本固件为例，其他版本的模组固件名称的软硬件版本名字会有差异。</p>
 </blockquote>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_1.png" alt="HFLPT-230固件获取与确认"></p>
-<h2 id="4-2、HF-LPX30系列硬件设备连接"><a href="#4-2、HF-LPX30系列硬件设备连接" class="headerlink" title="4.2、HF-LPX30系列硬件设备连接"></a>4.2、HF-LPX30系列硬件设备连接</h2><p>将HF-LPX30模块按照如下原理图进行接线，注意nReload需要输入低电平，通过按键S2控制nReload的低电平输入。S1实现外部复位功能。<br><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_2.png" alt="HFLPT-230硬件设备连接"></p>
-<h2 id="4-3、HF-LPX30确认串口参数"><a href="#4-3、HF-LPX30确认串口参数" class="headerlink" title="4.3、HF-LPX30确认串口参数"></a>4.3、HF-LPX30确认串口参数</h2><p>将上述串口连接电脑后，通过“我的电脑”-&gt;“管理”-&gt; “设备管理器”-&gt;“端口（COM 和LPT）”选项中可以看到相应增加的COM口。</p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_3.png" alt="确认串口参数"></p>
-<h2 id="4-4、HF-LPX30烧写软件获取与使用（SecureCRT）"><a href="#4-4、HF-LPX30烧写软件获取与使用（SecureCRT）" class="headerlink" title="4.4、HF-LPX30烧写软件获取与使用（SecureCRT）"></a>4.4、HF-LPX30烧写软件获取与使用（SecureCRT）</h2><p>下载地址：<a href="http://pan.baidu.com/s/1dECLxYD" target="_blank" rel="noopener">http://pan.baidu.com/s/1dECLxYD</a><br>​<br>下载解压后双击打开SecureCRT，点击快速连接后会弹出串口配置对话框。</p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_4.png" alt="串口工具SecureCRT"></p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_5.png" alt="串口工具SecureCRT"></p>
-<p>串口配置协议为Serial，端口为上述4.3中的COM口，波特率设置为230400（关键），数据位为8位，停止位为1位，无奇偶校验，最后点击连接。</p>
-<p>连接成功后，在SecureCRT工作区间会有光标闪烁。</p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_6.png" alt="串口工具SecureCRT"></p>
-<h2 id="4-5、HF-LPX30的烧写"><a href="#4-5、HF-LPX30的烧写" class="headerlink" title="4.5、HF-LPX30的烧写"></a>4.5、HF-LPX30的烧写</h2><h3 id="4-5-1-进入烧写模式"><a href="#4-5-1-进入烧写模式" class="headerlink" title="4.5.1 进入烧写模式"></a>4.5.1 进入烧写模式</h3><p>当串口连接成功之后，将HF-LPT230的nReload接入低电平（按下第3节原理图所示的S2），然后进行复位（按下第3节原理图所示的S1后松开）或者给模块重新上电后迅速连续单击键盘空格键，<br>将会出现如下信息表示模块进入烧写模式，松开S2。</p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_7.png" alt="串口工具SecureCRT"></p>
-<p>备注：此步骤不易操作实现，需要多次进行试验，当进行进入烧写模式操作始终无法显示上述信息的时候要注意检查串口设置是否正确，待确保串口设置无误后再次进行连接操作。</p>
-<p>上述窗体显示信息中，各命令解释如下： </p>
+<p><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge1.png" alt="域格NC3"></p>
+<h2 id="4-2、域格NC3硬件设备连接"><a href="#4-2、域格NC3硬件设备连接" class="headerlink" title="4.2、域格NC3硬件设备连接"></a>4.2、域格NC3硬件设备连接</h2><p>域格NC3模块烧写需要按照手册正常接出电源，USB引脚，开机引脚，具体详细的接线方法可以参考文章第2章内容，参考《CLM920_NC3_LTE模块硬件使用指南V2.0.pdf》</p>
+<h3 id="4-2-1、域格NC3-USB引脚接线"><a href="#4-2-1、域格NC3-USB引脚接线" class="headerlink" title="4.2.1、域格NC3 USB引脚接线"></a>4.2.1、域格NC3 USB引脚接线</h3><p>域格NC3 模块的 USB 接口提供一路 USB2.0 High-Speed 接口。接口支持从设备模式，不支持 USB 充电模式。USB 接口引脚定义如下：</p>
+<p><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge2.png" alt="Alt text"></p>
+<p>模块作为 USB 从设备,支持 USB 休眠及唤醒机制。USB 接口应用参考电路如下：</p>
+<p><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge3.png" alt="Alt text"></p>
+<ul>
+<li><p>USB 接口支持高速(480Mbps)和全速(12Mbps)模式，因此走线设计需要严格遵循USB2.0 协议要求，注意对数据线的保护，差分走线，控制阻抗为 90Ω。</p>
+</li>
+<li><p>为提高 USB 接口的抗静电性能，建议数据线上增加 ESD 保护器件，保护器件的等效电容值小于 2pF。</p>
+</li>
+<li><p>USB 接口总线供电电压由模块内部提供，不需外部提供。同时由于模块的 USB 接口对外不提供 USB 总线电源，模块只能作为 USB 总线设备的从设备。</p>
+</li>
+<li><p>USB 接口可支持的功能有：软件下载升级、数据通讯、AT Command、GNSS NMEA输出等功能。</p>
+</li>
+</ul>
+<h3 id="4-2-2、域格NC3-电源接线"><a href="#4-2-2、域格NC3-电源接线" class="headerlink" title="4.2.2、域格NC3 电源接线"></a>4.2.2、域格NC3 电源接线</h3><p>实际设计电源电路可使用开关 DC 电源或线性 LDO 电源来设计 VBAT 电源,两种设计电路都需要提供足够电流。具体参考以下电路设计：<br><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge4.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge5.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge6.png" alt="Alt text"></p>
+<ul>
+<li><p>为防止浪涌及过压对模块的损坏，建议在模块 VBAT 引脚上并联一个 5.1V/500mW的齐纳二极管。</p>
+</li>
+<li><p>建议在 VBAT 管脚增加 3 个陶瓷电容(33pF,10pF,100nF)且靠近 VBAT 管脚放置。</p>
+</li>
+<li><p>模块最低工作电压为 3.3V，由于传输数据或 GSM 通话会产生 2A 以上电流，导致电源电压上产生纹波压降，因此实际供电电压不得低于 3.3V。</p>
+</li>
+</ul>
+<h3 id="4-2-3、域格NC3-开机引脚接线"><a href="#4-2-3、域格NC3-开机引脚接线" class="headerlink" title="4.2.3、域格NC3 开机引脚接线"></a>4.2.3、域格NC3 开机引脚接线</h3><p>域格NC3 模块的 21 脚是开机脚，模块开机是低电平有效，PWRKEY 拉低至少500ms，模块开机，用户可通过查询 VDD_EXT 管脚的高低电平来判断模块是否开机</p>
+<p><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge7.png" alt="Alt text"></p>
+<h2 id="4-3、域格NC3-确认串口参数"><a href="#4-3、域格NC3-确认串口参数" class="headerlink" title="4.3、域格NC3 确认串口参数"></a>4.3、域格NC3 确认串口参数</h2><p>将上述USB口连接电脑后，通过“我的电脑”-&gt;“管理”-&gt; “设备管理器”-&gt;“端口（COM 和LPT）”选项中可以看到相应增加的COM口。</p>
+<blockquote>
+<p>备注：若出现未识别的端口，请打开本文章节二下载的文件，安装模组驱动文件夹内的驱动。</p>
+</blockquote>
+<p><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge8.png" alt="Alt text"></p>
+<h2 id="4-4、域格NC3的烧写"><a href="#4-4、域格NC3的烧写" class="headerlink" title="4.4、域格NC3的烧写"></a>4.4、域格NC3的烧写</h2><p>当USB正常连接成功之后，解压烧录工具目录内的CLM920_NC3_Tools.zip文件，将固件放入与其同一个目录下，如下图</p>
+<p><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge1.png" alt="域格NC3"></p>
+<p>之后双击update_SDK.bat批处理文件，将会弹出命令提示符窗口，短暂等待，烧写成功之后，窗口将会关闭。</p>
+<p><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge9.png" alt="Alt text"></p>
+<h1 id="5、域格NC3模组日志抓取"><a href="#5、域格NC3模组日志抓取" class="headerlink" title="5、域格NC3模组日志抓取"></a>5、域格NC3模组日志抓取</h1><h2 id="5-1、域格NC3模组日志接线方法"><a href="#5-1、域格NC3模组日志接线方法" class="headerlink" title="5.1、域格NC3模组日志接线方法"></a>5.1、域格NC3模组日志接线方法</h2><p>按照域格NC3的管脚定义图，将图中所示的63引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的GND，然后将USB转TTL工具连接到电脑，确认端口。</p>
+<p><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge10.png" alt="Alt text"></p>
+<ul>
+<li><strong>通信串口：</strong></li>
+</ul>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Item</th>
-<th style="text-align:left">Value</th>
+<th style="text-align:center">管脚号</th>
+<th style="text-align:center">管脚名</th>
+<th style="text-align:center">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">命令‘B’</td>
-<td style="text-align:left">清除所有设置参数，包括出厂参数等。</td>
+<td style="text-align:center">67</td>
+<td style="text-align:center">TXD</td>
+<td style="text-align:center">UART 发送数据</td>
 </tr>
 <tr>
-<td style="text-align:left">命令‘S’</td>
-<td style="text-align:left">升级应用程序；SDK等编译出来文件（需使用串口方式的升级文件）的用此选项升级。</td>
-</tr>
-<tr>
-<td style="text-align:left">命令‘G’</td>
-<td style="text-align:left">执行应用程序。</td>
+<td style="text-align:center">68</td>
+<td style="text-align:center">RSD</td>
+<td style="text-align:center">UART 接收数据</td>
 </tr>
 </tbody>
 </table>
-<h3 id="4-5-2、进行烧写"><a href="#4-5-2、进行烧写" class="headerlink" title="4.5.2、进行烧写"></a>4.5.2、进行烧写</h3><p>输入“S”升级应用程序，再输入“Y”进入接收固件状态。</p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_8.png" alt="进行烧写"></p>
-<p>当窗体连续打印出“CC”后选择”菜单栏” 中“传输”-&gt;”发送Xmode(N)”， 选择4.1节中所示的固件文件，点击发送。</p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_9.png" alt="进行烧写"></p>
-<p>等待一段时候后，出现如上述信息表示烧写成功。<br>​​</p>
-<blockquote>
-<p>若烧写过慢，可以按照下图设置，提高烧写速度</p>
-</blockquote>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_10.png" alt="进行烧写"></p>
-<h1 id="5、HF-LPX30模组日志抓取"><a href="#5、HF-LPX30模组日志抓取" class="headerlink" title="5、HF-LPX30模组日志抓取"></a>5、HF-LPX30模组日志抓取</h1><h2 id="5-1、HF-LPX30模组日志接线方法"><a href="#5-1、HF-LPX30模组日志接线方法" class="headerlink" title="5.1、HF-LPX30模组日志接线方法"></a>5.1、HF-LPX30模组日志接线方法</h2><h3 id="5-1-1、HF-LPB130模组日志接线方法"><a href="#5-1-1、HF-LPB130模组日志接线方法" class="headerlink" title="5.1.1、HF-LPB130模组日志接线方法"></a>5.1.1、HF-LPB130模组日志接线方法</h3><p>按照下图HF-LPB130的管脚定义图，将图中所示的21引脚（UART1_TX）（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的18脚GND，然后将USB转TTL工具连接到电脑，波特率921600bps。</p>
-<blockquote>
-<p>备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps</p>
-</blockquote>
-<p>​​<img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_13.png" alt="模组日志抓取"></p>
-<h3 id="5-1-2、HF-LPB135模组日志接线方法"><a href="#5-1-2、HF-LPB135模组日志接线方法" class="headerlink" title="5.1.2、HF-LPB135模组日志接线方法"></a>5.1.2、HF-LPB135模组日志接线方法</h3><p>按照下图HF-LPB135的管脚定义图，将图中所示的Debug TX引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的2脚GND，然后将USB转TTL工具连接到电脑，波特率921600bps。</p>
-<blockquote>
-<p>备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps</p>
-</blockquote>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_14.png" alt="模组日志抓取"></p>
-<h3 id="5-1-3、HF-LPT130A-amp-B模组日志接线方法"><a href="#5-1-3、HF-LPT130A-amp-B模组日志接线方法" class="headerlink" title="5.1.3、HF-LPT130A&amp;B模组日志接线方法"></a>5.1.3、HF-LPT130A&amp;B模组日志接线方法</h3><p>按照下图HF-LPT130A&amp;B的管脚定义图，将图中所示的Debug TX引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的1脚GND，然后将USB转TTL工具连接到电脑，波特率921600bps。</p>
-<blockquote>
-<p>备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps</p>
-</blockquote>
-<p>​​<img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_15.png" alt="模组日志抓取"></p>
-<h3 id="5-1-4、HF-LPT230模组日志接线方法"><a href="#5-1-4、HF-LPT230模组日志接线方法" class="headerlink" title="5.1.4、HF-LPT230模组日志接线方法"></a>5.1.4、HF-LPT230模组日志接线方法</h3><p>按照下图HF-LPT230的管脚定义图，将图中所示的Debug TX引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的16脚GND，然后将USB转TTL工具连接到电脑，波特率921600bps。</p>
-<blockquote>
-<p>备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps</p>
-</blockquote>
-<p>​​<img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_16.png" alt="模组日志抓取"></p>
-<h3 id="5-1-5、HF-LPT330模组日志接线方法"><a href="#5-1-5、HF-LPT330模组日志接线方法" class="headerlink" title="5.1.5、HF-LPT330模组日志接线方法"></a>5.1.5、HF-LPT330模组日志接线方法</h3><p>按照下图HF-LPT330的管脚定义图，将图中所示的17引脚（UART1_TX）（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的15脚GND，然后将USB转TTL工具连接到电脑，波特率115200bps。</p>
-<blockquote>
-<p>备注：因固件版本差异问题，若波特率选择115200bps出现乱码的现象，则更改串口波特率为921600bps</p>
-</blockquote>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_11.png" alt="模组日志抓取"></p>
+<ul>
+<li><strong>日志串口：</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">管脚号</th>
+<th style="text-align:center">管脚名</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">63</td>
+<td style="text-align:center">DCD</td>
+<td style="text-align:center">UART1 发送数据</td>
+</tr>
+<tr>
+<td style="text-align:center">66</td>
+<td style="text-align:center">DRT</td>
+<td style="text-align:center">UART1 接收数据</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>串口设计图：</strong></li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge11.png" alt="Alt text"></p>
 <h2 id="5-2、机智云串口打印软件工具的获取与使用"><a href="#5-2、机智云串口打印软件工具的获取与使用" class="headerlink" title="5.2、机智云串口打印软件工具的获取与使用"></a>5.2、机智云串口打印软件工具的获取与使用</h2><p>机智云串口打印软件工具下载链接：<a href="https://eyun.baidu.com/s/3oAbSruq" target="_blank" rel="noopener">https://eyun.baidu.com/s/3oAbSruq</a> 密码：pPsL</p>
-<p>下载解压之后，选择对应的端口和921600波特率，点击打开串口，右侧有日志显示则为正常。</p>
+<p>下载解压之后，选择对应的端口和115200波特率，点击打开串口，右侧有日志显示则为正常。</p>
+<p><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge12.png" alt="Alt text"></p>
+<h1 id="6-搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP扫码绑定及控制设备等等）"><a href="#6-搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP扫码绑定及控制设备等等）" class="headerlink" title="6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP扫码绑定及控制设备等等）"></a>6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP扫码绑定及控制设备等等）</h1><p>快速接入文档参考链接：<a href="http://docs.gizwits.com/zh-cn/deviceDev/debug/WIF_Project.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/deviceDev/debug/WIF_Project.html</a></p>
 <blockquote>
-<p>备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps</p>
+<p>备注：模组uart为与Gokit通讯的通讯串口，通讯波特率为9600bps，具体可参考文章5.1的模组接线方法图</p>
 </blockquote>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_12.png" alt="机智云串口打印软件工具使用"></p>
-<h1 id="6-搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）"><a href="#6-搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）" class="headerlink" title="6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）"></a>6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）</h1><p>快速接入文档参考链接：<a href="http://docs.gizwits.com/zh-cn/deviceDev/debug/WIF_Project.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/deviceDev/debug/WIF_Project.html</a></p>
-<blockquote>
-<p>备注：模组uart0为与Gokit通讯的通讯串口，通讯波特率为9600bps，具体可参考文章5.1的模组接线方法图</p>
-</blockquote>
-<h1 id="7-FAQ"><a href="#7-FAQ" class="headerlink" title="7.FAQ"></a>7.FAQ</h1><ol>
-<li>Q: 如何排查AirLink配网失败问题？<br> A: 参考链接：<a href="http://docs.gizwits.com/zh-cn/deviceDev/Onboarding.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/deviceDev/Onboarding.html</a></li>
-</ol>
+<h1 id="7-FAQ"><a href="#7-FAQ" class="headerlink" title="7.FAQ"></a>7.FAQ</h1><p>1、Q:若烧写出现error: device not found的提示如何处理</p>
+<p><img src="/assets/zh-cn/deviceDev/yugeNC3/yuge13.png" alt="Alt text"></p>
+<p> A:确认文章4.2.1的USB引脚是否正常接入，确认4.2.3，设备是否正常开机。</p>
 
     </div>
     

@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
 
-  <title>HF-LPX30系列接入机智云方案及问题排查指引 - 机智云</title>
+  <title>HF-LPX20系列接入机智云方案及问题排查指引 - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="HF-LPX30系列接入机智云方案及问题排查指引-机智云">
-  <meta name="keywords" content="HF-LPX30系列接入机智云方案及问题排查指引 docs 文档中心 Gizwits">
+  <meta name="Description" content="HF-LPX20系列接入机智云方案及问题排查指引-机智云">
+  <meta name="keywords" content="HF-LPX20系列接入机智云方案及问题排查指引 docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -484,14 +484,14 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">HF-LPX30系列接入机智云方案及问题排查指引</div>
+        <div class="title">HF-LPX20系列接入机智云方案及问题排查指引</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <p>修订历史</p>
 <table>
 <thead>
 <tr>
-<th>版本</th>
+<th style="text-align:center">版本</th>
 <th style="text-align:center">修订内容</th>
 <th style="text-align:center">修订人</th>
 <th style="text-align:center">修订日期</th>
@@ -499,33 +499,34 @@
 </thead>
 <tbody>
 <tr>
-<td>V1.0</td>
+<td style="text-align:center">V1.0</td>
 <td style="text-align:center">起稿</td>
 <td style="text-align:center">Bobo</td>
-<td style="text-align:center">2019/07/29</td>
+<td style="text-align:center">2019/08/14</td>
 </tr>
 </tbody>
 </table>
-<h1 id="1-本文编写背景"><a href="#1-本文编写背景" class="headerlink" title="1.本文编写背景"></a>1.本文编写背景</h1><p>本文主要介绍汉枫HF-LPX30系列何快速从零开始接入机智云，实现简单的透传功能，以及常见的配网失败问题排查，还提供了该模组的相关资料。<br>本文描述的模组型号有：<br>1、HF-LPB130；<br>2、HF-LPB135；<br>3、HF-LPT130A&amp;B；<br>4、HF-LPT230；<br>5、HF-LPT330；</p>
-<h1 id="2-HF-LPX30模组资料下载及获取"><a href="#2-HF-LPX30模组资料下载及获取" class="headerlink" title="2. HF-LPX30模组资料下载及获取"></a>2. HF-LPX30模组资料下载及获取</h1><p>链接：<a href="https://eyun.baidu.com/s/3eTv5jyy" target="_blank" rel="noopener">https://eyun.baidu.com/s/3eTv5jyy</a> 密码：a2pQ</p>
-<h1 id="3-HF-LPX30外围设计原理图"><a href="#3-HF-LPX30外围设计原理图" class="headerlink" title="3. HF-LPX30外围设计原理图"></a>3. HF-LPX30外围设计原理图</h1><p>请下载第2章内容，参考《HF-LPX30系列Wi-Fi模块用户手册V2.0(20190412).pdf》推荐的外围设计原理图。</p>
-<h1 id="4-HF-LPX30串口烧写固件说明"><a href="#4-HF-LPX30串口烧写固件说明" class="headerlink" title="4. HF-LPX30串口烧写固件说明"></a>4. HF-LPX30串口烧写固件说明</h1><h2 id="4-1、HF-LPX30固件获取与确认"><a href="#4-1、HF-LPX30固件获取与确认" class="headerlink" title="4.1、HF-LPX30固件获取与确认"></a>4.1、HF-LPX30固件获取与确认</h2><p>当拿到一片HF-LPX30系列的模块的时候，若确认固件未烧写，请联系商务同事或FAE同事获取。拿到之后解压固件压缩包。</p>
-<p>解压之后会发现有两个文件，其中一个文件名为“GAgent_00HFT230_0403000A_1M_201904292027.bin”的bin文件用于串口烧录，是串口烧录所需要的固件</p>
+<h1 id="1-本文编写背景"><a href="#1-本文编写背景" class="headerlink" title="1.本文编写背景"></a>1.本文编写背景</h1><p>本文主要介绍汉枫HF-LPX20系列何快速从零开始接入机智云，实现简单的透传功能，以及常见的配网失败问题排查，还提供了该模组的相关资料。<br>本文描述的模组型号有：<br>1、HF-LPB120；<br>2、HF-LPB125；<br>3、HF-LPT120；<br>4、HF-LPT220；</p>
+<h1 id="2-HF-LPX20模组资料下载及获取"><a href="#2-HF-LPX20模组资料下载及获取" class="headerlink" title="2. HF-LPX20模组资料下载及获取"></a>2. HF-LPX20模组资料下载及获取</h1><p>链接：<a href="https://eyun.baidu.com/s/3i5SYLk5" target="_blank" rel="noopener">https://eyun.baidu.com/s/3i5SYLk5</a> 密码：SgtN</p>
+<h1 id="3-HF-LPX20外围设计原理图"><a href="#3-HF-LPX20外围设计原理图" class="headerlink" title="3. HF-LPX20外围设计原理图"></a>3. HF-LPX20外围设计原理图</h1><p>请下载第2章内容，确认手上的模组型号，查找手上模组对应的用户手册，查看用户手册，使用手册内推荐的外围设计原理图。</p>
+<p><img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_1.png" alt="HFLPX20_1"></p>
+<h1 id="4-HF-LPX20串口烧写固件说明"><a href="#4-HF-LPX20串口烧写固件说明" class="headerlink" title="4. HF-LPX20串口烧写固件说明"></a>4. HF-LPX20串口烧写固件说明</h1><h2 id="4-1、HF-LPX20固件获取与确认"><a href="#4-1、HF-LPX20固件获取与确认" class="headerlink" title="4.1、HF-LPX20固件获取与确认"></a>4.1、HF-LPX20固件获取与确认</h2><p>当拿到一片HF-LPX20系列的模块的时候，若确认固件未烧写，请下载第2章内容，打开模组固件的文件夹，拿到之后解压固件压缩包。</p>
+<p>解压之后会发现有多个文件，其中一个文件名为“00HFT120_04020035_20180904_UART.bin”的bin文件用于串口烧录，是串口烧录所需要的固件</p>
 <blockquote>
-<p>备注：文件名带有“upgrade”的bin文件为OTA的固件，例如：GAgent_00HFT230_0403000A_1M_upgrade_201904292027.bin。<br>备注：本文固件名称以HFLPT230这款模块的固件为例，其他HF-LPX30系列的模组的固件名称的软硬件版本有差异</p>
+<p>备注：文件名带有“WEB”的bin文件为OTA的固件，例如：00HFT120_04020035_20180904_WEB.bin。<br>备注：本文固件名称以HF-LPB120这款模块的固件为例，其他HF-LPX20系列的模组的固件名称的软硬件版本有差异，具体以手上的模组型号为准。</p>
 </blockquote>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_1.png" alt="HFLPT-230固件获取与确认"></p>
-<h2 id="4-2、HF-LPX30系列硬件设备连接"><a href="#4-2、HF-LPX30系列硬件设备连接" class="headerlink" title="4.2、HF-LPX30系列硬件设备连接"></a>4.2、HF-LPX30系列硬件设备连接</h2><p>将HF-LPX30模块按照如下原理图进行接线，注意nReload需要输入低电平，通过按键S2控制nReload的低电平输入。S1实现外部复位功能。<br><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_2.png" alt="HFLPT-230硬件设备连接"></p>
-<h2 id="4-3、HF-LPX30确认串口参数"><a href="#4-3、HF-LPX30确认串口参数" class="headerlink" title="4.3、HF-LPX30确认串口参数"></a>4.3、HF-LPX30确认串口参数</h2><p>将上述串口连接电脑后，通过“我的电脑”-&gt;“管理”-&gt; “设备管理器”-&gt;“端口（COM 和LPT）”选项中可以看到相应增加的COM口。</p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_3.png" alt="确认串口参数"></p>
-<h2 id="4-4、HF-LPX30烧写软件获取与使用（SecureCRT）"><a href="#4-4、HF-LPX30烧写软件获取与使用（SecureCRT）" class="headerlink" title="4.4、HF-LPX30烧写软件获取与使用（SecureCRT）"></a>4.4、HF-LPX30烧写软件获取与使用（SecureCRT）</h2><p>下载地址：<a href="http://pan.baidu.com/s/1dECLxYD" target="_blank" rel="noopener">http://pan.baidu.com/s/1dECLxYD</a><br>​<br>下载解压后双击打开SecureCRT，点击快速连接后会弹出串口配置对话框。</p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_4.png" alt="串口工具SecureCRT"></p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_5.png" alt="串口工具SecureCRT"></p>
+<p><img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_2.png" alt="HFLPX20_1"></p>
+<h2 id="4-2、HF-LPX20系列硬件设备连接"><a href="#4-2、HF-LPX20系列硬件设备连接" class="headerlink" title="4.2、HF-LPX20系列硬件设备连接"></a>4.2、HF-LPX20系列硬件设备连接</h2><p>将HF-LPX20模块按照如下原理图进行接线，注意nReload需要输入低电平，通过按键S2控制nReload的低电平输入。S1实现外部复位功能。<br><img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_12.png" alt="HFLPT-230硬件设备连接"></p>
+<h2 id="4-3、HF-LPX20确认串口参数"><a href="#4-3、HF-LPX20确认串口参数" class="headerlink" title="4.3、HF-LPX20确认串口参数"></a>4.3、HF-LPX20确认串口参数</h2><p>将上述串口连接电脑后，通过“我的电脑”-&gt;“管理”-&gt; “设备管理器”-&gt;“端口（COM 和LPT）”选项中可以看到相应增加的COM口。</p>
+<p><img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_13.png" alt="确认串口参数"></p>
+<h2 id="4-4、HF-LPX20烧写软件获取与使用（SecureCRT）"><a href="#4-4、HF-LPX20烧写软件获取与使用（SecureCRT）" class="headerlink" title="4.4、HF-LPX20烧写软件获取与使用（SecureCRT）"></a>4.4、HF-LPX20烧写软件获取与使用（SecureCRT）</h2><p>从文中第2章，下载资料后打开烧录工具文件夹，解压工具并安装后双击打开SecureCRT，点击快速连接后会弹出串口配置对话框，点击快速链接。</p>
+<p><img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_11.png" alt="串口工具SecureCRT"></p>
 <p>串口配置协议为Serial，端口为上述4.3中的COM口，波特率设置为230400（关键），数据位为8位，停止位为1位，无奇偶校验，最后点击连接。</p>
+<p><img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_14.png" alt="串口工具SecureCRT"></p>
 <p>连接成功后，在SecureCRT工作区间会有光标闪烁。</p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_6.png" alt="串口工具SecureCRT"></p>
-<h2 id="4-5、HF-LPX30的烧写"><a href="#4-5、HF-LPX30的烧写" class="headerlink" title="4.5、HF-LPX30的烧写"></a>4.5、HF-LPX30的烧写</h2><h3 id="4-5-1-进入烧写模式"><a href="#4-5-1-进入烧写模式" class="headerlink" title="4.5.1 进入烧写模式"></a>4.5.1 进入烧写模式</h3><p>当串口连接成功之后，将HF-LPT230的nReload接入低电平（按下第3节原理图所示的S2），然后进行复位（按下第3节原理图所示的S1后松开）或者给模块重新上电后迅速连续单击键盘空格键，<br>将会出现如下信息表示模块进入烧写模式，松开S2。</p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_7.png" alt="串口工具SecureCRT"></p>
+<p><img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_15.png" alt="串口工具SecureCRT"></p>
+<h2 id="4-5、HF-LPX20的烧写"><a href="#4-5、HF-LPX20的烧写" class="headerlink" title="4.5、HF-LPX20的烧写"></a>4.5、HF-LPX20的烧写</h2><h3 id="4-5-1、进入烧写模式"><a href="#4-5-1、进入烧写模式" class="headerlink" title="4.5.1、进入烧写模式"></a>4.5.1、进入烧写模式</h3><p>当串口连接成功之后，将模块的nReload接入低电平（按下第3节原理图所示的S2），然后进行复位（按下第3节原理图所示的S1后松开）或者给模块重新上电后迅速连续单击键盘空格键，<br>将会出现如下信息表示模块进入烧写模式，松开S2。</p>
+<p><img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_3.png" alt="串口工具SecureCRT"></p>
 <p>备注：此步骤不易操作实现，需要多次进行试验，当进行进入烧写模式操作始终无法显示上述信息的时候要注意检查串口设置是否正确，待确保串口设置无误后再次进行连接操作。</p>
 <p>上述窗体显示信息中，各命令解释如下： </p>
 <table>
@@ -551,45 +552,18 @@
 </tbody>
 </table>
 <h3 id="4-5-2、进行烧写"><a href="#4-5-2、进行烧写" class="headerlink" title="4.5.2、进行烧写"></a>4.5.2、进行烧写</h3><p>输入“S”升级应用程序，再输入“Y”进入接收固件状态。</p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_8.png" alt="进行烧写"></p>
+<p><img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_4.png" alt="进行烧写"></p>
 <p>当窗体连续打印出“CC”后选择”菜单栏” 中“传输”-&gt;”发送Xmode(N)”， 选择4.1节中所示的固件文件，点击发送。</p>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_9.png" alt="进行烧写"></p>
-<p>等待一段时候后，出现如上述信息表示烧写成功。<br>​​</p>
-<blockquote>
-<p>若烧写过慢，可以按照下图设置，提高烧写速度</p>
-</blockquote>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_10.png" alt="进行烧写"></p>
-<h1 id="5、HF-LPX30模组日志抓取"><a href="#5、HF-LPX30模组日志抓取" class="headerlink" title="5、HF-LPX30模组日志抓取"></a>5、HF-LPX30模组日志抓取</h1><h2 id="5-1、HF-LPX30模组日志接线方法"><a href="#5-1、HF-LPX30模组日志接线方法" class="headerlink" title="5.1、HF-LPX30模组日志接线方法"></a>5.1、HF-LPX30模组日志接线方法</h2><h3 id="5-1-1、HF-LPB130模组日志接线方法"><a href="#5-1-1、HF-LPB130模组日志接线方法" class="headerlink" title="5.1.1、HF-LPB130模组日志接线方法"></a>5.1.1、HF-LPB130模组日志接线方法</h3><p>按照下图HF-LPB130的管脚定义图，将图中所示的21引脚（UART1_TX）（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的18脚GND，然后将USB转TTL工具连接到电脑，波特率921600bps。</p>
-<blockquote>
-<p>备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps</p>
-</blockquote>
-<p>​​<img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_13.png" alt="模组日志抓取"></p>
-<h3 id="5-1-2、HF-LPB135模组日志接线方法"><a href="#5-1-2、HF-LPB135模组日志接线方法" class="headerlink" title="5.1.2、HF-LPB135模组日志接线方法"></a>5.1.2、HF-LPB135模组日志接线方法</h3><p>按照下图HF-LPB135的管脚定义图，将图中所示的Debug TX引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的2脚GND，然后将USB转TTL工具连接到电脑，波特率921600bps。</p>
-<blockquote>
-<p>备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps</p>
-</blockquote>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_14.png" alt="模组日志抓取"></p>
-<h3 id="5-1-3、HF-LPT130A-amp-B模组日志接线方法"><a href="#5-1-3、HF-LPT130A-amp-B模组日志接线方法" class="headerlink" title="5.1.3、HF-LPT130A&amp;B模组日志接线方法"></a>5.1.3、HF-LPT130A&amp;B模组日志接线方法</h3><p>按照下图HF-LPT130A&amp;B的管脚定义图，将图中所示的Debug TX引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的1脚GND，然后将USB转TTL工具连接到电脑，波特率921600bps。</p>
-<blockquote>
-<p>备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps</p>
-</blockquote>
-<p>​​<img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_15.png" alt="模组日志抓取"></p>
-<h3 id="5-1-4、HF-LPT230模组日志接线方法"><a href="#5-1-4、HF-LPT230模组日志接线方法" class="headerlink" title="5.1.4、HF-LPT230模组日志接线方法"></a>5.1.4、HF-LPT230模组日志接线方法</h3><p>按照下图HF-LPT230的管脚定义图，将图中所示的Debug TX引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的16脚GND，然后将USB转TTL工具连接到电脑，波特率921600bps。</p>
-<blockquote>
-<p>备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps</p>
-</blockquote>
-<p>​​<img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_16.png" alt="模组日志抓取"></p>
-<h3 id="5-1-5、HF-LPT330模组日志接线方法"><a href="#5-1-5、HF-LPT330模组日志接线方法" class="headerlink" title="5.1.5、HF-LPT330模组日志接线方法"></a>5.1.5、HF-LPT330模组日志接线方法</h3><p>按照下图HF-LPT330的管脚定义图，将图中所示的17引脚（UART1_TX）（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的15脚GND，然后将USB转TTL工具连接到电脑，波特率115200bps。</p>
-<blockquote>
-<p>备注：因固件版本差异问题，若波特率选择115200bps出现乱码的现象，则更改串口波特率为921600bps</p>
-</blockquote>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_11.png" alt="模组日志抓取"></p>
+<p><img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_5.png" alt="进行烧写"></p>
+<p>等待一段时候后，出现如上述信息表示烧写成功。</p>
+<h1 id="5、HF-LPX20模组日志抓取"><a href="#5、HF-LPX20模组日志抓取" class="headerlink" title="5、HF-LPX20模组日志抓取"></a>5、HF-LPX20模组日志抓取</h1><h2 id="5-1、HF-LPX20模组日志接线方法"><a href="#5-1、HF-LPX20模组日志接线方法" class="headerlink" title="5.1、HF-LPX20模组日志接线方法"></a>5.1、HF-LPX20模组日志接线方法</h2><h3 id="5-1-1、HF-LPB120模组日志接线方法"><a href="#5-1-1、HF-LPB120模组日志接线方法" class="headerlink" title="5.1.1、HF-LPB120模组日志接线方法"></a>5.1.1、HF-LPB120模组日志接线方法</h3><p>按照下图HF-LPB120的管脚定义图，将图中所示的26引脚（UART1_TX）（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的18脚GND，然后将USB转TTL工具连接到电脑，波特率115200bps。<br>​​<img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_6.png" alt="模组日志抓取"></p>
+<h4 id="5-1-2、HF-LPB125模组日志接线方法"><a href="#5-1-2、HF-LPB125模组日志接线方法" class="headerlink" title="5.1.2、HF-LPB125模组日志接线方法"></a>5.1.2、HF-LPB125模组日志接线方法</h4><p>按照下图HF-LPB125的管脚定义图，将图中所示的7引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的2脚GND，然后将USB转TTL工具连接到电脑，波特率115200bps。<br>​​<img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_7.png" alt="模组日志抓取"></p>
+<h3 id="5-1-3、HF-LPT120模组日志接线方法"><a href="#5-1-3、HF-LPT120模组日志接线方法" class="headerlink" title="5.1.3、HF-LPT120模组日志接线方法"></a>5.1.3、HF-LPT120模组日志接线方法</h3><p>按照下图HF-LPT120的管脚定义图，将图中所示的7引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的1脚GND，然后将USB转TTL工具连接到电脑，波特率115200bps。<br>​​<img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_8.png" alt="模组日志抓取"></p>
+<h4 id="5-1-4、HF-LPT220模组日志接线方法"><a href="#5-1-4、HF-LPT220模组日志接线方法" class="headerlink" title="5.1.4、HF-LPT220模组日志接线方法"></a>5.1.4、HF-LPT220模组日志接线方法</h4><p>按照下图HF-LPT330的管脚定义图，将图中所示的8引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的16脚GND，然后将USB转TTL工具连接到电脑，波特率115200bps。</p>
+<p><img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_9.png" alt="模组日志抓取"></p>
 <h2 id="5-2、机智云串口打印软件工具的获取与使用"><a href="#5-2、机智云串口打印软件工具的获取与使用" class="headerlink" title="5.2、机智云串口打印软件工具的获取与使用"></a>5.2、机智云串口打印软件工具的获取与使用</h2><p>机智云串口打印软件工具下载链接：<a href="https://eyun.baidu.com/s/3oAbSruq" target="_blank" rel="noopener">https://eyun.baidu.com/s/3oAbSruq</a> 密码：pPsL</p>
-<p>下载解压之后，选择对应的端口和921600波特率，点击打开串口，右侧有日志显示则为正常。</p>
-<blockquote>
-<p>备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps</p>
-</blockquote>
-<p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_12.png" alt="机智云串口打印软件工具使用"></p>
+<p>下载解压之后，选择对应的端口和115200波特率，点击打开串口，右侧有日志显示则为正常。</p>
+<p><img src="/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_10.png" alt="机智云串口打印软件工具使用"></p>
 <h1 id="6-搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）"><a href="#6-搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）" class="headerlink" title="6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）"></a>6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）</h1><p>快速接入文档参考链接：<a href="http://docs.gizwits.com/zh-cn/deviceDev/debug/WIF_Project.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/deviceDev/debug/WIF_Project.html</a></p>
 <blockquote>
 <p>备注：模组uart0为与Gokit通讯的通讯串口，通讯波特率为9600bps，具体可参考文章5.1的模组接线方法图</p>
