@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+
+  <title>wifi模组入网之SoftAp配网方案 - 机智云</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="wifi模组入网之SoftAp配网方案-机智云">
+  <meta name="keywords" content="wifi模组入网之SoftAp配网方案 docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">文档中心</a>
+    </span>
+
+    <div class="mobile-header"v>
+      <span class="title">机智云 文档中心</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/zh-cn/overview/overview.html">平台概述</a></li>
+          
+        
+          
+            <li class="levelA">
+              快速入门 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/5分钟了解机智云.html">5分钟了解机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/noun.html">机智云名词定义解释</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              应用开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/准备工作.html">App开发准备工作及向导</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/devApp.html">App代码自动生成服务介绍</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App 开源框架 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iosframe.html">iOS 开源框架说明(含源码)</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS消息推送.html">iOS 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS第三方登陆与换肤.html">iOS 第三方登录与换肤</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/iOSAPPFrame.html">iOS开源框架的快速开发实例</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android开源框架使用指南.html">Android 开源框架说明（含源码）</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android消息推送.html">Android 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android第三方登录与换肤.html">Android 第三方登录与换肤</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/AndroidAppFrame.html">Android开源框架的快速开发实例</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/APICloudFrame.html">APICloud开源框架使用指南(含源码)</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/开源框架视频教程.html">开源框架使用视频教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App 开发 SDK &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOSSDKA2.html">iOS SDK</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/AndroidSDKA2.html">Android SDK</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/APICloudWifiSDK.html">APICloud SDK</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/SDK数据透传方法解析.html">SDK数据透传方法解析</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/SDK调试日志抓取教程.html">SDK调试日志抓取教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/sdk_error.html">SDK错误码列表</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/了解微信应用开发.html">了解微信应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/WeChatDev.html">微信应用开发教程</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      更多教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/Cloud/SharingSDK.html">设备分享功能SDK使用流程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/third-party.html">第三方登录平台申请流程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/应用开发FAQ.html">应用开发FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              设备接入 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/设备接入准备工作及向导.html">设备接入准备工作及向导</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      设备快速接入机智云 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/UseMCU.html">独立MCU接入方案</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/UseSOC.html">ESP8266-SOC接入方案</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/module_source/module_source.html">模块硬件资料</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      GAgent通讯模组使用教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/gagent_info.html">GAgent详细介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/串口工具使用文档.html">串口工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/GN511_use.html">GN511使用说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/HF-LPB100串口烧写说明.html">HF-LPB100串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/HF-LPT120.html">HF-LPT120串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/HF-LPT230.html">HF-LPT230串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/MXCHIP串口烧写说明.html">MXCHIP串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ESP8266串口烧写说明.html">ESP8266串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/ESP-WROOM-02Duart.html">ESP-WROOM-02D串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/G510.html">广和通G510模组烧写方法</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/N102_DTU.html">零零 N102 串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/Air202.html">合宙 Air202 串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/NC3_uart.html">域格 NC3 串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/NB_Project.html">NB 接入方案</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/通讯模组调试日志抓取教程.html">通讯模组调试日志抓取教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      MCU代码自动生成服务介绍 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/DevSDK/代码自动生成工具.html">MCU代码自动生成工具使用教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3_DEV_SDK_Common_transplant.html">MCU SDK 通用平台移植教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/STM32CubeMX_transplant.html">STM32CubeMX移植机智云自动生成代码详解</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/approach_to_tailoring_8051.html">8051平台最小资源裁剪说明</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      开源套件Gokit资料 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit2使用指南.html">Gokit2 使用指南</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html">Gokit3系列开发套件简介</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/GoKit3硬件手册.html">Gokit3硬件手册</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S使用说明书.html">GoKit3(S)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S开发套件介绍.html">Gokit3(S)开发套件介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html">GoKit3(S)开发环境搭建</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html">GoKit-SoC程序详解</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit-MCU-explanation.html">GoKit-MCU程序详解</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets.html">Gokit4(G) SoC开发环境搭建、开发指南</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      开发套件Arduino资料 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUNOWiFi_intro.html">ArduinoUNOWiFi接入机智云介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/Tutorial.html">ArduinoUnoWiFi 之ESP8266固件烧写教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi_SDK_API.html">ArduinoUnoWiFi SDK之API介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/example.html">Arduino Uno WiFi智能小夜灯</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      更多接入指南 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/ecevideos.html">ECE Demo开发教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/串口工具使用文档.html">串口工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/STICubeGizwits/STICubeGizwits.html">ST I-CUBE-GizWits套件快速接入指南</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/Onboarding.html">Airlink配网排查引导</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/设备接入FAQ.html">设备接入FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              云API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/openapi_apps.html">Open API 指南</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/ent_dev.html">企业应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/enterprise_api.html">企业API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/NotificationAPI.html">SNoti API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/WebsocketAPI.html">WebSocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API使用教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseOpenAPI.html">使用OpenAPI控制虚拟设备教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseSNoti.html">Snoti数据实时同步服务demo使用教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseWebsocket.html">使用Websocket 网页控制设备教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/DataAPI.html">使用聚合API教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/LinkageAPI.html">设备联动API使用教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/devgroup_API.html">设备分组API使用教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseQRCode.html">APP绑定设备二维码生成教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/CloudFAQ.html">云端应用FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              用户手册 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/change.html">个人项目产品转企业项目产品</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      OTA使用教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/OTA.html">GAgent OTA教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/MCUOTA.html">MCU OTA教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/产测工具使用文档.html">产测工具使用文档</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/D3.html">D3 Engine使用教程</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/ece.html">ECE雾计算使用教程</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      语音音箱接入教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/echo.html">接入Echo开发教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/echo.html">使用Echo音箱控制GoKit</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/Google_Home_GoKit.html">使用Google Home音箱控制GoKit</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/rtbd.html">实时大数据使用教程</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/WorldWideConnectSolution.html">全球部署方案</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/en-us/overview/overview.html" class="lang-switch">English</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">目录</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">wifi模组入网之SoftAp配网方案</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
+      </div>
+      <h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h1><p>SoftAp配网方案包括Softap配网流程、硬件开发部分和APP开发流程。其中，硬件开发部分，开发者可以根据机智云串口通信协议自行修改模组发出Softap热点名称和连接密码。如果开发者不修改，则模组发出Softap热点名称就为默认名称“XPG-GAgent-xxxx”，xxxx表示模组mac最后4位字符，密码为123456789。</p>
+<h1 id="2-SoftAp配网流程"><a href="#2-SoftAp配网流程" class="headerlink" title="2.SoftAp配网流程"></a>2.SoftAp配网流程</h1><p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png1.png" alt="Alt text"></p>
+<p>sotfap配网流程原理：</p>
+<p>(1) APP端连接目标路由器，并且获取目标路由器的ssid和手动输入的密码。</p>
+<p>(2) 触发WiFi模组进入softap配网模式。</p>
+<p>(3) 手机去请求连接WiFi模组发出来的softap热点，并且把目标路由器ssid和密码发送给模组端。</p>
+<p>(4) WiFi模组拿到路由器ssid和password信息后，发送ACK给app。同时也去连接目标路由器。</p>
+<p>(5) 模组关闭softap模式，尝试连接符合ssid和password的路由器。同时，手机断开与模组连接，自动连接上一次连接的路由器。（android手机自动连接原来记忆的路由器，iOS手机随机连接当前环境可连接的路由器。)</p>
+<p>(6) app sdk监听局域网模组广播配置成功包。同时，app sdk向云端查询设备是否配置入网成功。不管局域网收到配置成功包或者查询到设备入网成功，app sdk皆认为配网成功，并且回调配网成功。</p>
+<p>具体流程可以查看以下时序图：</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png2.png" alt="Alt text"></p>
+<h1 id="3-硬件开发部分"><a href="#3-硬件开发部分" class="headerlink" title="3.硬件开发部分"></a>3.硬件开发部分</h1><h3 id="3-1-下载机智云串口协议文档"><a href="#3-1-下载机智云串口协议文档" class="headerlink" title="3.1.下载机智云串口协议文档"></a>3.1.下载机智云串口协议文档</h3><p>(1) 根据已经创建好的产品，并且定义好数据点，选中产品。</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png3.png" alt="Alt text"></p>
+<p>(2) 下载模组与mcu之间的串口通信协议。</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png4.png" alt="Alt text"></p>
+<h3 id="3-2-自定义softap热点名称"><a href="#3-2-自定义softap热点名称" class="headerlink" title="3.2.自定义softap热点名称"></a>3.2.自定义softap热点名称</h3><p>机智云固件默认softap热点名称格式为“XPG-GAgent-xxxx”，xxxx表示模组mac最后4位字符，密码为123456789。如果客户想自定义WiFi模组softap热点名称，并且不设置密码，可以根据通信协议上面的“3.1获取设备信息”上面的data字段来修改。</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png5.png" alt="Alt text"></p>
+<p>如：设置重置WiFi模组后，默认进入softap模式，并且热点名称叫“John”，密码为空。<br>示例为：cfgMode=1&amp;apName0=John<br>以下就是串口通信包的解析图：</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png6.png" alt="Alt text"></p>
+<p>“cfgMode=1&amp;apName0=John”字符转16进制为：63 66 67 4D 6F 64 65 3D 31 26 61 70 4E 61 6D 65 30 3D 4A 6F 68 6E<br>当mcu端完成以上“3.1获取设备信息”设置后，WiFi模块与mcu的串口通信稳定下来，mcu端就可以请求WiFi模组进入softap配网模式。</p>
+<h3 id="3-3-mcu程序开发softap配网功能"><a href="#3-3-mcu程序开发softap配网功能" class="headerlink" title="3.3.mcu程序开发softap配网功能"></a>3.3.mcu程序开发softap配网功能</h3><p>(1) 打开3.1下载的机智云串口协议</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png7.png" alt="Alt text"></p>
+<p>(2) 根据协议上面的3.6通知WiFi模组进入配置模式</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png8.png" alt="Alt text"></p>
+<p>此外，softap配网说明：<br>a.把上面的配网方式字段赋值0x01<br>b.示例：FF FF 00 06 09 02 00 00 01 12<br>c.协议上面的这些参数，是可选字段，如果没有用到，可以直接不传，如下图。</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png9.png" alt="Alt text"></p>
+<h1 id="4-APP开发部分"><a href="#4-APP开发部分" class="headerlink" title="4.APP开发部分"></a>4.APP开发部分</h1><h3 id="4-1-下载机智云APP-sdk链接"><a href="#4-1-下载机智云APP-sdk链接" class="headerlink" title="4.1.下载机智云APP sdk链接"></a>4.1.下载机智云APP sdk链接</h3><p>链接为：<a href="https://download.gizwits.com/zh-cn/p/95/97" target="_blank" rel="noopener">https://download.gizwits.com/zh-cn/p/95/97</a></p>
+<h3 id="4-2-Android-APP开发softap配网流程"><a href="#4-2-Android-APP开发softap配网流程" class="headerlink" title="4.2.Android APP开发softap配网流程"></a>4.2.Android APP开发softap配网流程</h3><h6 id="4-2-1-下载SDK"><a href="#4-2-1-下载SDK" class="headerlink" title="4.2.1.下载SDK"></a>4.2.1.下载SDK</h6><p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png10.png" alt="Alt text"></p>
+<h6 id="4-2-2-集成Android-SDK流程"><a href="#4-2-2-集成Android-SDK流程" class="headerlink" title="4.2.2. 集成Android SDK流程"></a>4.2.2. 集成Android SDK流程</h6><p>（1）导入SDK<br>第一步，双击解开压缩包 GizWifiSDK-Android-xxx.zip。<br>第二步，将解压后的libs目录下所有内容拷贝到指定工程的libs目录，保证下图红框中的文件都加载到了工程中：</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png11.png" alt="Alt text"></p>
+<p>（2） 配置AndroidManifest.xml<br>请将下面权限配置代码复制到 AndroidManifest.xml 文件中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_COARSE_LOCATION&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.CHANGE_WIFI_STATE&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.CHANGE_WIFI_MULTICAST_STATE&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>权限说明：</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png29.png" alt="Alt text"></p>
+<p>（3）Android6.0系统文件读写权限设置<br>Android 6.0新增了运行时权限动态检测，GizWifiSDK中使用的以下权限需要在运行时判断：ACCESS_FINE_LOCATION，通过这个权限可以检测到手机当前wifi和可连接的wifi列表。<br>下面以这个权限申请举例说明如何编写动态检测代码：<br>Android6.0系统为targetSdkVersion小于23的应用默认授予了所申请的所有权限，所以如果App使用的targetSdkVersion低于23，可以正常运行。但如果用户在设置中取消了授予的权限，或者App使用的targetSdkVersion为23以上，需要在App代码中处理。以下以Android Studio举例：</p>
+<p>目标SDK版本</p>
+<p>在build.gradle中设置targetSdkVersion为23：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">	compileSdkVersion 23</span><br><span class="line">	buildToolsVersion &quot;23.0.1&quot;</span><br><span class="line">	defaultConfig &#123;</span><br><span class="line">		applicationId &quot;com.yourcomany.app     </span><br><span class="line">		minSdkVersion 18     </span><br><span class="line">		targetSdkVersion 23     </span><br><span class="line">		versionCode 1     </span><br><span class="line">		versionName &quot;1.0&quot;</span><br><span class="line">	&#125;</span><br><span class="line">	buildTypes &#123;</span><br><span class="line">		release &#123;</span><br><span class="line">			minifyEnabled false</span><br><span class="line">			proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>检查并申请权限<br>需要检查APP是否已经拥有ACCESS_FINE_LOCATION权限，没有则申请权限：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) &#123;          </span><br><span class="line">	ActivityCompat.requestPermissions(this, new String[] &#123; Manifest.permission.ACCESS_FINE_LOCATION &#125;, ACCESS_FINE_LOCATION_REQUEST_CODE);      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>请求权限后，系统会弹出请求权限的对话框：</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png12.png" alt="Alt text"></p>
+<p>用户选择允许后，会回调onRequestPermissionsResult方法, 该方法可类似如下处理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">onActivityResult  </span><br><span class="line">Override  </span><br><span class="line">public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) &#123;      </span><br><span class="line">	super.onRequestPermissionsResult(requestCode, permissions, grantResults);      </span><br><span class="line">	doNext(requestCode,grantResults);  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 接着根据requestCode和grantResults(授权结果)做相应的后续处理：</span><br><span class="line">private void doNext(int requestCode, int[] grantResults) &#123;</span><br><span class="line">	if (requestCode == ACCESS_FINE_LOCATION_REQUEST_CODE) &#123;</span><br><span class="line">		if (grantResults[0] == PackageManager.PERMISSION_GRANTED) &#123;</span><br><span class="line">              		// Permission Granted          </span><br><span class="line">		&#125; else &#123;</span><br><span class="line">              		// Permission Denied</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Fragment中运行时权限的特殊处理</p>
+<blockquote>
+<p>在Fragment中申请权限，不要使用ActivityCompat.requestPermissions,<br>直接使用Fragment的requestPermissions方法，否则会回调到Activity<br>onRequestPermissionsResult<br>如果在Fragment中嵌套Fragment，在子Fragment中使用requestPermissions方<br>法，onRequestPermissionsResult不会回调回来，建议使用getParentFragment().requestPermissions方法。这个方法会回调到父Fragment中的onRequestPermissionsResult，在回调中加入以下代码可以把回调透传到子Fragment：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Override  </span><br><span class="line">public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) &#123;</span><br><span class="line">	super.onRequestPermissionsResult(requestCode, permissions, grantResults);</span><br><span class="line">	List&lt;Fragment&gt; fragments = getChildFragmentManager().getFragments();      </span><br><span class="line">	if (fragments != null) &#123;</span><br><span class="line">		for (Fragment fragment : fragments) &#123;</span><br><span class="line">			if (fragment != null) &#123;</span><br><span class="line">				fragment.onRequestPermissionsResult(requestCode,permissions,grantResults);    </span><br><span class="line">			&#125;          </span><br><span class="line">  		&#125;      </span><br><span class="line"> 	&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（4）如何在AndroidStudio上使用GizWifiSDK<br>第一步、下载sdk<br>下载完成以后请自行解压。</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png13.png" alt="Alt text"></p>
+<p>第二步、导入jar包到Android Studio</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png14.png" alt="Alt text"></p>
+<p>第三步、把jar包导成库文件</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png15.png" alt="Alt text"></p>
+<p>第四步、导入so文件<br>请在main文件加下创建文件夹jniLibs,将armeabi粘贴到对应的文件夹下：</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png16.png" alt="Alt text"></p>
+<p>第五步、导入完成以后查看对应的build.gradle<br>下图中可以看到已经关联库成功：</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png17.png" alt="Alt text"></p>
+<p>第六步、测试是否成功</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png18.png" alt="Alt text"></p>
+<p>如果有下面图片中的log的话代表成功：</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png19.png" alt="Alt text"></p>
+<h5 id="4-2-3-Android-SDK-配网接口使用"><a href="#4-2-3-Android-SDK-配网接口使用" class="headerlink" title="4.2.3.Android SDK 配网接口使用"></a>4.2.3.Android SDK 配网接口使用</h5><p>当APP端完成了sdk的集成，APP工程可以正常启动sdk后，就可以调试上面的配网接口。<br>注意：接口上面第4个参数，如”XPG-GAgent-xxxx”为WiFi设备热点ssid名称,xxxx表示模组mac最后4位字符，密码为123456789。</p>
+<p>示例代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">GizWifiSDK.sharedInstance().setListener(mListener);</span><br><span class="line"></span><br><span class="line">GizWifiSDK.sharedInstance().setDeviceOnboardingDeploy(&quot;your_ssid&quot;, &quot;your_key&quot;, </span><br><span class="line"></span><br><span class="line">GizWifiConfigureMode.GizWifiSoftAP, &quot;XPG-GAgent-DF4A&quot;, 60, null, false);</span><br><span class="line"></span><br><span class="line">// 实现回调</span><br><span class="line"></span><br><span class="line">GizWifiSDKListener mListener = new GizWifiSDKListener() &#123;</span><br><span class="line"></span><br><span class="line">@Override</span><br><span class="line"></span><br><span class="line">public void didSetDeviceOnboarding(GizWifiErrorCode result, GizWifiDevice device) &#123;</span><br><span class="line"></span><br><span class="line">if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) &#123;</span><br><span class="line"></span><br><span class="line">// 配置成功</span><br><span class="line"></span><br><span class="line">&#125; else &#123;</span><br><span class="line"></span><br><span class="line">// 配置失败</span><br><span class="line"></span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-iOS-APP开发softap配网流程"><a href="#4-3-iOS-APP开发softap配网流程" class="headerlink" title="4.3.iOS APP开发softap配网流程"></a>4.3.iOS APP开发softap配网流程</h3><h5 id="4-3-1-下载SDK"><a href="#4-3-1-下载SDK" class="headerlink" title="4.3.1. 下载SDK"></a>4.3.1. 下载SDK</h5><p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png20.png" alt="Alt text"></p>
+<h5 id="4-3-2-集成ios-SDK"><a href="#4-3-2-集成ios-SDK" class="headerlink" title="4.3.2. 集成ios SDK"></a>4.3.2. 集成ios SDK</h5><p>首先双击解开压缩包 GizWifiSDK-iOS-xxx.zip。按照App开发的需要，可以选择使用动态库或者静态库。以下分别为动态库和静态库的加载方式：</p>
+<p>(1) 导入动态SDK<br>动态库在解压后的DynamicLibrary目录下。动态库加载请注意按照下图进行设置，否则应用运行后会立即崩溃：</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png21.png" alt="Alt text"></p>
+<p>(2)导入静态SDK<br>第一步，解压后，将StaticLibrary目录下的文件添加到指定的工程中：</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png22.png" alt="Alt text"></p>
+<p>第二步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png23.png" alt="Alt text"></p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png24.png" alt="Alt text"></p>
+<p>第三步，如果使用的是Xcode7.2以下版本，需要添加AudioToolbox、SystemConfiguration、CoreTelephony库。</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png25.png" alt="Alt text"></p>
+<p>第四步，一定要记得在Info.plist设置支持ATS特性，否则iOS9下某些功能无法正常使用</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png26.png" alt="Alt text"></p>
+<p>最后，确保工程里面有这些链接库，SDK就添加完成了:</p>
+<p><img src="/assets/zh-cn/deviceDev/softap_mode_png/png27.png" alt="Alt text"></p>
+<p>(3)通过cocoapods使用GizWifiSDK（可选）</p>
+<p>第一步：确认本机安装的cocoapods能正常工作 </p>
+<blockquote>
+<p>pod –help</p>
+</blockquote>
+<p>第二步：编辑工程对应的Podfile文件 </p>
+<blockquote>
+<p>comment this line to define a global platform for your project #<br>platform :ios, ‘6.0’  source ‘<a href="https://github.com/gizwits/PodSpecs.git&#39;" target="_blank" rel="noopener">https://github.com/gizwits/PodSpecs.git&#39;</a><br>Source ‘<a href="https://git.oschina.net/dantang/PodSpecs.git’" target="_blank" rel="noopener">https://git.oschina.net/dantang/PodSpecs.git’</a></p>
+</blockquote>
+<p>以上两个源选一个即可 </p>
+<blockquote>
+<p>target ‘cocoapodsTest’ do pod ‘GizWifiSDK’, ‘2.04.04’ end</p>
+</blockquote>
+<p>第三步：安装 </p>
+<blockquote>
+<p>pod install –no-repo-update</p>
+</blockquote>
+<p>第四步：打开workspace工程即可</p>
+<h5 id="4-3-3-iOS-SDK-配网接口使用"><a href="#4-3-3-iOS-SDK-配网接口使用" class="headerlink" title="4.3.3.iOS SDK 配网接口使用"></a>4.3.3.iOS SDK 配网接口使用</h5><p>当APP端完成了sdk的集成，APP工程可以正常启动sdk后，就可以调试上面的配网接口。<br>注意：接口上面第4个参数，如”your_gagent_hotspot_prefix”为WiFi设备热点ssid名称，密码为123456789。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">示例代码：</span><br><span class="line">[GizWifiSDK sharedInstance].delegate = self; </span><br><span class="line"></span><br><span class="line">// softap 配置 </span><br><span class="line">[[GizWifiSDK sharedInstance] setDeviceOnboardingDeploy:@&quot;your_ssid&quot; </span><br><span class="line">key:@&quot;your_key&quot; mode:GizWifiSoftAP softAPSSIDPrefix: </span><br><span class="line">@&quot;your_gagent_hotspot_prefix&quot; timeout:60 wifiGAgentType:nil] bind:NO]; </span><br><span class="line"></span><br><span class="line">// 实现回调 </span><br><span class="line">(void)wifiSDK:(GizWifiSDK *)wifiSDK didSetDeviceOnboarding:(NSError *)result device:(GizWifiDevice *)device &#123; </span><br><span class="line">if(result.code == GIZ_SDK_SUCCESS) &#123; </span><br><span class="line">// 配置成功 </span><br><span class="line">&#125; else &#123; </span><br><span class="line">// 配置失败 </span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="5-SoftAp配网APP开发demo参考代码"><a href="#5-SoftAp配网APP开发demo参考代码" class="headerlink" title="5.SoftAp配网APP开发demo参考代码"></a>5.SoftAp配网APP开发demo参考代码</h1><h3 id="5-1-Android-demo-代码"><a href="#5-1-Android-demo-代码" class="headerlink" title="5.1.Android demo 代码"></a>5.1.Android demo 代码</h3><p>  下载链接：<a href="https://eyun.baidu.com/s/3kWDBShT" target="_blank" rel="noopener">https://eyun.baidu.com/s/3kWDBShT</a> 密码：0UHO</p>
+<h3 id="5-2-iOS-demo-代码"><a href="#5-2-iOS-demo-代码" class="headerlink" title="5.2.iOS demo 代码"></a>5.2.iOS demo 代码</h3><p>  下载链接：<a href="https://eyun.baidu.com/s/3jKgejMe" target="_blank" rel="noopener">https://eyun.baidu.com/s/3jKgejMe</a> 密码：zVHf</p>
+<h1 id="6-参考资料"><a href="#6-参考资料" class="headerlink" title="6.参考资料"></a>6.参考资料</h1><p>（1）机智云iOS SDK接口手册，下载链接为：<a href="http://docs.gizwits.com/assets/pdf/iOS_SDK2.0_API%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C.pdf" target="_blank" rel="noopener">iOS_SDK2.0_API参考手册</a></p>
+<p>（2）机智云Android SDK接口手册，下载链接为：<a href="http://docs.gizwits.com/assets/pdf/Android_SDK2.0_API%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C.pdf" target="_blank" rel="noopener">Android_SDK2.0_API参考手册</a></p>
+<h1 id="7-FAQ"><a href="#7-FAQ" class="headerlink" title="7.FAQ"></a>7.FAQ</h1><p>7.1.  Q：产品支持Softap功能后，是不是就支持5GHz频段的路由器了？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A: 不是，Softap配网只是一种配网方式，它不能改变只支持2.4GHz的WiFi模组的频段的。所以，WiFi模组进入Softap配网，而路由器设置是5GHz频段的情况下，配网就会失败的。</span><br></pre></td></tr></table></figure>
+<p>7.2.  Q：iOS APP Softap配网返回错误码GIZ_SDK_DEVICE_CONFIG_SSID_NOT_MATCHED = 8311？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A：该错误为手机当前连接的路由器和要配置的目标路由器不一致。原因是手机APP端与WiFi模组断开连接后，iOS 11以下版本（不包括iOS 11版本）系统的手机，回到手机APPUI界面，由于iOS系统问题，手机连接的路由器是系统根据信号强弱去连接的，不一定能连接会原来的目标路由器，这个就会出现手机热点和要配置的路由ssid不匹配的错误“GIZ_SDK_DEVICE_CONFIG_SSID_NOT_MATCHED = 8311”。因此，如果iOS 11版本以下（不包括11版本）的手机，就要人为去到手机WiFi设置界面，手动连接目标路由器。iOS 11以上版本（包括iOS 11版本），由于该版本系统允许手机APP端去连接目标的路由器，所以，iOS 11 以上版本（包括iOS 11版本）可以正常连接会原来的目标路由器。</span><br></pre></td></tr></table></figure>
+<p>7.3.Q:小米手机出现Softap配网一直失败问题，而其他的Android手机Softap是正常的？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A:该问题是由于手机系统root权限导致的，只要是在APPUI界面调用获取ssid热点列表的时候，然后去连接模组Softap热点，由于手机系统root限制问题，不让去连接。出现这种情况，只能切换到手机WiFi设置界面，手动去连接WiFi模组发出来的Softap热点。</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="分享">
+          <span>分享</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="项目登记">
+      <span>项目登记</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="问题反馈">
+      <span>问题反馈</span>
+    </a>
+    <a href="#" title="返回顶部"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">机智云首页</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">关于我们</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">联系我们</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">加入我们</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
