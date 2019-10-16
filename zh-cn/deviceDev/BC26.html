@@ -503,12 +503,12 @@
 <p>（4）烧写完成后，烧写软件提示：“Write APP Successfully!!”。</p>
 <p><img src="/assets/zh-cn/deviceDev/BC26_png/png5.png" alt="Alt text"></p>
 <h1 id="5-如何抓取博实结BC26M模组日志"><a href="#5-如何抓取博实结BC26M模组日志" class="headerlink" title="5.如何抓取博实结BC26M模组日志"></a>5.如何抓取博实结BC26M模组日志</h1><h3 id="5-1-下载机智云打开模组日志工具"><a href="#5-1-下载机智云打开模组日志工具" class="headerlink" title="5.1.下载机智云打开模组日志工具"></a>5.1.下载机智云打开模组日志工具</h3><p> 机智云串口打印软件工具下载链接：<a href="https://eyun.baidu.com/s/3oAnx7AU" target="_blank" rel="noopener">https://eyun.baidu.com/s/3oAnx7AU</a> 密码：Um2J</p>
-<h3 id="5-2-打印模组日志的串口1"><a href="#5-2-打印模组日志的串口1" class="headerlink" title="5.2.打印模组日志的串口1"></a>5.2.打印模组日志的串口1</h3><p>打印模组debug日志的引脚为18和GND，然后接到USB 转 TTL 串⼝模块连接<br>上面，通信波特率为115200。</p>
+<h3 id="5-2-打印模组日志的串口1"><a href="#5-2-打印模组日志的串口1" class="headerlink" title="5.2.打印模组日志的串口1"></a>5.2.打印模组日志的串口1</h3><p>打印模组debug日志的引脚为18和GND，然后接到USB 转 TTL 串⼝模块连接<br>上面，通信波特率为115200bps。</p>
 <p><img src="/assets/zh-cn/deviceDev/BC26_png/png6.png" alt="Alt text"></p>
 <h3 id="5-3-机智云串口打印软件工具"><a href="#5-3-机智云串口打印软件工具" class="headerlink" title="5.3.机智云串口打印软件工具"></a>5.3.机智云串口打印软件工具</h3><p>固件日志已采用加密方式，需要使用机智云日志打印工具将日志解码。请使用机智云日志打印工具。</p>
 <p><img src="/assets/zh-cn/deviceDev/BC26_png/png7.png" alt="Alt text"><br>备注：映射文件，该文件在第2章资料文件夹“模组日志打印解码映射文件”下获取。不同版本固件，映射文件都不一样。该文件的作用是机智云模组打印工具，根据映射表来解码加密过的模组debug日志。</p>
 <p><img src="/assets/zh-cn/deviceDev/BC26_png/png8.png" alt="Alt text"></p>
-<h1 id="6-BC26M模组与mcu通信串口"><a href="#6-BC26M模组与mcu通信串口" class="headerlink" title="6.BC26M模组与mcu通信串口"></a>6.BC26M模组与mcu通信串口</h1><p>BC26M模组与mcu通信串口引脚为DBG_TXD和DBG_RXD，就是下图的38和39引脚，通信波特率为9600。</p>
+<h1 id="6-BC26M模组与mcu通信串口"><a href="#6-BC26M模组与mcu通信串口" class="headerlink" title="6.BC26M模组与mcu通信串口"></a>6.BC26M模组与mcu通信串口</h1><p>BC26M模组与mcu通信串口引脚为RXD_AUX和TXD_AUX，就是下图的28和29引脚，通信波特率为9600bps。</p>
 <p><img src="/assets/zh-cn/deviceDev/BC26_png/png9.png" alt="Alt text"></p>
 <h1 id="7-BC26M搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP绑定及控制设备等等）"><a href="#7-BC26M搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP绑定及控制设备等等）" class="headerlink" title="7.BC26M搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP绑定及控制设备等等）"></a>7.BC26M搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP绑定及控制设备等等）</h1><p>快速接入文档参考链接：<br><a href="http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html</a></p>
 <p>（注意：BC26M模组与gokit_st底板通信串口通信引脚请查看“6.BC26M模组与mcu通信串口”。）</p>
