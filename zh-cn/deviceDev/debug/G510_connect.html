@@ -4,14 +4,14 @@
   <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
 
-  <title>G510接入机智云方案及问题排查指引 - 机智云</title>
+  <title>G510模组接入机智云方案及问题排查指引 - 机智云</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <meta name="Description" content="G510接入机智云方案及问题排查指引-机智云">
-  <meta name="keywords" content="G510接入机智云方案及问题排查指引 docs 文档中心 Gizwits">
+  <meta name="Description" content="G510模组接入机智云方案及问题排查指引-机智云">
+  <meta name="keywords" content="G510模组接入机智云方案及问题排查指引 docs 文档中心 Gizwits">
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
   <script src="/js/redirect.js"></script>
@@ -499,21 +499,20 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <div class="title">G510接入机智云方案及问题排查指引</div>
+        <div class="title">G510模组接入机智云方案及问题排查指引</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
       <h1 id="一、本文编写背景"><a href="#一、本文编写背景" class="headerlink" title="一、本文编写背景"></a>一、本文编写背景</h1><p>本文主要介绍G510模组如何快速从零开始接入机智云，实现简单的控制设备功能，以及常见的联网失败问题排查，还提供了该模组的相关资料。</p>
 <h1 id="二、G510模组资料下载及获取"><a href="#二、G510模组资料下载及获取" class="headerlink" title="二、G510模组资料下载及获取"></a>二、G510模组资料下载及获取</h1><p>链接：<a href="https://eyun.baidu.com/s/3c3aA4us" target="_blank" rel="noopener">https://eyun.baidu.com/s/3c3aA4us</a> 密码：ZINH</p>
 <h1 id="三、G510模组串口烧写固件说明"><a href="#三、G510模组串口烧写固件说明" class="headerlink" title="三、G510模组串口烧写固件说明"></a>三、G510模组串口烧写固件说明</h1><p>G510模组管脚图</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/G510/1.png" alt="name"></p>
-<p>1.当拿到一片G510 DTU RS485 1911的时候，第一件事是要给该DTU烧写机智云的Gagent固件。机智云G510 DTU，版本号为04020040的固件<a href="http://goms-1251025085.cosgz.myqcloud.com/GAgent_00FBG510_04020040_201811071942-1542166609513.bin" target="_blank" rel="noopener">下载链接</a></p>
+<p>1.当拿到一片G510模组的时候，若模组没有烧录机智云固件，第一件事是要给该DTU烧写机智云的Gagent固件。机智云G510固件，版本号为04020040的固件<a href="http://goms-1251025085.cosgz.myqcloud.com/GAgent_00FBG510_04020040_201811071942-1542166609513.bin" target="_blank" rel="noopener">下载链接</a></p>
 <p><code>备注：固件版本的更高版本，请联系商务同事或FAE同事获取。</code></p>
 <p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/2.png" alt="name"></p>
-<p>2.下载了模组固件后，还需要下载广和通提供的串口烧写软件，软件下载链接：</p>
-<p>链接：<a href="https://eyun.baidu.com/s/3dGdWptJ" target="_blank" rel="noopener">https://eyun.baidu.com/s/3dGdWptJ</a> 密码：96nB</p>
+<p>2.下载了模组固件后，还需要下载广和通提供的串口烧写软件，请从第二章节“G510模组资料下载及获取”下载对应的烧录软件。</p>
 <p>打开软件界面如下图所示</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/3.png" alt="name"></p>
-<p>3.上述步骤1，步骤2软件部分准备好以后，需要对ESP-WROOM-02D进行硬件处理。将 ESP-WROOM-02 的如下表所示的管脚引出。</p>
+<p>3.上述步骤1，步骤2软件部分准备好以后，需要对G510模组进行硬件处理。将G510模组引脚如下表所示的管脚引出。</p>
 <table>
 <thead>
 <tr>
@@ -549,18 +548,19 @@
 <p>4.使用串口工具烧写G510，先将G510断电，USB转TTL串口模块连接G510，打开Fibocom_upgrade</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/4.png" alt="name"></p>
 <p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/5.png" alt="name"></p>
-<p>点击升级程序按钮后给G510上电即可开始烧写程序（G510在上电的时候才会检测是否有固件升级）</p>
-<h1 id="四、如何抓取G510日志"><a href="#四、如何抓取G510日志" class="headerlink" title="四、如何抓取G510日志"></a>四、如何抓取G510日志</h1><p>G510的日志串口与程序烧写串口是同一串口，波特率115200bps，下载机智云串口打印软件工具下即可抓取模组日志，下载链接：<a href="https://eyun.baidu.com/s/3smYywot" target="_blank" rel="noopener">https://eyun.baidu.com/s/3smYywot</a> 密码：1Jd3</p>
+<p>点击升级程序按钮后给G510模组上电即可开始烧写程序（G510模组在上电的时候才会检测是否有固件升级）</p>
+<h1 id="四、如何抓取G510模组日志"><a href="#四、如何抓取G510模组日志" class="headerlink" title="四、如何抓取G510模组日志"></a>四、如何抓取G510模组日志</h1><p>G510模组的日志串口与程序烧写串口是同一串口，波特率115200bps，下载机智云串口打印软件工具下即可抓取模组日志，下载链接：<a href="https://eyun.baidu.com/s/3hugOi2K" target="_blank" rel="noopener">https://eyun.baidu.com/s/3hugOi2K</a> 密码：GbgG</p>
 <p><img src="/assets/zh-cn/deviceDev/debug/G510_DTU_RS485_1911/6.png" alt="name"></p>
-<p><code>备注：映射文件请联系机智云FAE同事获取。</code></p>
-<h1 id="五、G510搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP绑定及控制设备等等）"><a href="#五、G510搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP绑定及控制设备等等）" class="headerlink" title="五、G510搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP绑定及控制设备等等）"></a>五、G510搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP绑定及控制设备等等）</h1><p>快速接入文档参考链接：<a href="http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html</a></p>
-<h1 id="六、FAQ"><a href="#六、FAQ" class="headerlink" title="六、FAQ"></a>六、FAQ</h1><ol>
-<li><p>Q: G510 DTU RS485 1911支持什么运营商的流量卡？<br>  A: 支持移动、联调；不支持电信</p>
+<blockquote>
+<p><strong><em>备注：映射文件，该文件在第二章节“G510模组资料下载及获取”下获取。不同版本固件，映射文件都不一样。该文件的作用是机智云模组打印工具，根据映射表来解码加密过的模组日志。</em></strong></p>
+</blockquote>
+<h1 id="五-G510模组与mcu通信串口"><a href="#五-G510模组与mcu通信串口" class="headerlink" title="五.G510模组与mcu通信串口"></a>五.G510模组与mcu通信串口</h1><h1 id="六、G510搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP绑定及控制设备等等）"><a href="#六、G510搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP绑定及控制设备等等）" class="headerlink" title="六、G510搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP绑定及控制设备等等）"></a>六、G510搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP绑定及控制设备等等）</h1><p>快速接入文档参考链接：<a href="http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html</a></p>
+<h1 id="七、FAQ"><a href="#七、FAQ" class="headerlink" title="七、FAQ"></a>七、FAQ</h1><ol>
+<li><p>Q: G510模组支持什么运营商的流量卡？<br>  A: 支持移动、联调；不支持电信</p>
 </li>
 <li><p>Q: GPRS模组流量的基本要求（月最低流量要求）<br>A:设备与机智云数据交互主要采用MQTT协议。设备与机智云数据交互的最小数据量是设备与机智云通讯的心跳。mqtt心跳是2个字节，tcp协议头是40字节，50秒一次，需要包括心跳和心跳回复。所以每50秒流量是：（40+2）*2=84 Bytes。一个月按30天算流量大概是：4252K。所以GPRS模组至少需要每个月有4252K流量，以保证GPRS可以正常上网。</p>
 </li>
 </ol>
-<p>（还有定时的provision和DNS耗流量补充）</p>
 
     </div>
     
