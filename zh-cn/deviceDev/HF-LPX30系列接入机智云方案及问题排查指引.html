@@ -526,7 +526,7 @@
 <h2 id="4-2、HF-LPX30系列硬件设备连接"><a href="#4-2、HF-LPX30系列硬件设备连接" class="headerlink" title="4.2、HF-LPX30系列硬件设备连接"></a>4.2、HF-LPX30系列硬件设备连接</h2><p>将HF-LPX30模块按照如下原理图进行接线，注意nReload需要输入低电平，通过按键S2控制nReload的低电平输入。S1实现外部复位功能。<br><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_2.png" alt="HFLPT-230硬件设备连接"></p>
 <h2 id="4-3、HF-LPX30确认串口参数"><a href="#4-3、HF-LPX30确认串口参数" class="headerlink" title="4.3、HF-LPX30确认串口参数"></a>4.3、HF-LPX30确认串口参数</h2><p>将上述串口连接电脑后，通过“我的电脑”-&gt;“管理”-&gt; “设备管理器”-&gt;“端口（COM 和LPT）”选项中可以看到相应增加的COM口。</p>
 <p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_3.png" alt="确认串口参数"></p>
-<h2 id="4-4、HF-LPX30烧写软件获取与使用（SecureCRT）"><a href="#4-4、HF-LPX30烧写软件获取与使用（SecureCRT）" class="headerlink" title="4.4、HF-LPX30烧写软件获取与使用（SecureCRT）"></a>4.4、HF-LPX30烧写软件获取与使用（SecureCRT）</h2><p>下载地址：<a href="https://eyun.baidu.com/s/3o9bCbqi" target="_blank" rel="noopener">https://eyun.baidu.com/s/3o9bCbqi</a> 密码：VoSn<br>​<br>下载解压后双击打开SecureCRT，点击快速连接后会弹出串口配置对话框。</p>
+<h2 id="4-4、HF-LPX30烧写软件获取与使用（SecureCRT）"><a href="#4-4、HF-LPX30烧写软件获取与使用（SecureCRT）" class="headerlink" title="4.4、HF-LPX30烧写软件获取与使用（SecureCRT）"></a>4.4、HF-LPX30烧写软件获取与使用（SecureCRT）</h2><p>从文中第2章，下载资料后打开烧录工具文件夹，解压工具并安装后双击打开SecureCRT，点击快速连接后会弹出串口配置对话框。</p>
 <p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_4.png" alt="串口工具SecureCRT"></p>
 <p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_5.png" alt="串口工具SecureCRT"></p>
 <p>串口配置协议为Serial，端口为上述4.3中的COM口，波特率设置为230400（关键），数据位为8位，停止位为1位，无奇偶校验，最后点击连接。</p>
@@ -598,7 +598,7 @@
 <p>备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps</p>
 </blockquote>
 <p><img src="/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_12.png" alt="机智云串口打印软件工具使用"></p>
-<h1 id="6-搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）"><a href="#6-搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）" class="headerlink" title="6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）"></a>6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）</h1><p>快速接入文档参考链接：<a href="http://docs.gizwits.com/zh-cn/deviceDev/debug/WIF_Project.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/deviceDev/debug/WIF_Project.html</a></p>
+<h1 id="6-搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）"><a href="#6-搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）" class="headerlink" title="6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）"></a>6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）</h1><p>快速接入文档参考链接：<a href="http://docs.gizwits.com/zh-cn/quickstart/UseMCU_BK.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/quickstart/UseMCU_BK.html</a></p>
 <blockquote>
 <p>备注：模组uart0为与Gokit通讯的通讯串口，通讯波特率为9600bps，具体可参考文章5.1的模组接线方法图</p>
 </blockquote>
