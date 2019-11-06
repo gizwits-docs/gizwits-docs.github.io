@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+
+  <title>移远EC20接入机智云方案及问题排查指引 - 机智云</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <meta name="Description" content="移远EC20接入机智云方案及问题排查指引-机智云">
+  <meta name="keywords" content="移远EC20接入机智云方案及问题排查指引 docs 文档中心 Gizwits">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <script src="/js/redirect.js"></script>
+
+  <link rel="stylesheet" href="/css/pure.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/documentation.css?v=db6111caa3d210b6cb1d2dac5119d7c5">
+  <link rel="stylesheet" href="/css/share.min.css">
+</head>
+  <body>
+    <div class="header">
+  <div class="container pure-g">
+    <span class="brand pure-u-5-24">
+      <a href="http://www.gizwits.com" class="logo">
+      
+      <img src="/images/logo.png" alt="logo">
+      
+      </a>
+      <a class="text" href="/">文档中心</a>
+    </span>
+
+    <div class="mobile-header"v>
+      <span class="title">机智云 文档中心</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+
+    <span class="menu pure-u-16-24">
+      <span class="header-search-btn" id="header-search-btn">
+        <i class="fa fa-search"></i>
+      </span>
+      <ul class="levelA-wrapper">
+        
+          
+            <li class="levelA"><a href="/zh-cn/overview/overview.html">平台概述</a></li>
+          
+        
+          
+            <li class="levelA">
+              快速入门 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/5分钟了解机智云.html">5分钟了解机智云</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/noun.html">机智云名词定义解释</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              应用开发 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/quickstart/准备工作.html">App开发准备工作及向导</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/devApp.html">App代码自动生成服务介绍</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App 开源框架 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iosframe.html">iOS 开源框架说明(含源码)</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS消息推送.html">iOS 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOS第三方登陆与换肤.html">iOS 第三方登录与换肤</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/iOSAPPFrame.html">iOS开源框架的快速开发实例</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android开源框架使用指南.html">Android 开源框架说明（含源码）</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android消息推送.html">Android 消息推送</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/Android第三方登录与换肤.html">Android 第三方登录与换肤</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/AndroidAppFrame.html">Android开源框架的快速开发实例</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/APICloudFrame.html">APICloud开源框架使用指南(含源码)</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/开源框架视频教程.html">开源框架使用视频教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      App 开发 SDK &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/iOSSDKA2.html">iOS SDK</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/AndroidSDKA2.html">Android SDK</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/APICloudWifiSDK.html">APICloud SDK</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/SDK数据透传方法解析.html">SDK数据透传方法解析</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/SDK调试日志抓取教程.html">SDK调试日志抓取教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/sdk_error.html">SDK错误码列表</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/了解微信应用开发.html">了解微信应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/WechatDev/WeChatDev.html">微信应用开发教程</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      更多教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/Cloud/SharingSDK.html">设备分享功能SDK使用流程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/AppDev/third-party.html">第三方登录平台申请流程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/AppDev/应用开发FAQ.html">应用开发FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              设备接入 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/设备接入准备工作及向导.html">设备接入准备工作及向导</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      设备快速接入机智云流程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/quickstart/UseMCU_BK.html">MCU+WiFi通讯模组接入机智云流程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/UseSOC_BK.html">通讯模组SoC方案接入机智云流程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/G510_Project.html">MCU+2G/4G通讯模组接入机智云流程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/NB_Project.html">MCU+NB通讯模组接入机智云流程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/module_source/module_source.html">模块硬件资料</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      GAgent通讯模组使用教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/gagent_info.html">GAgent详细介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/串口工具使用文档.html">串口工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/Air202.html">合宙 Air202 串口烧写说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/通讯模组调试日志抓取教程.html">通讯模组调试日志抓取教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      WiFi模组接入方案 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFi_Module/A101模组接入机智云方案及问题排查指引.html">A101模组接入机智云方案及问题排查指引</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFi_Module/ESP-WROOM-02DCUC接入机智云方案及问题排查指引.html">ESP-WROOM-02DCUC接入机智云方案及问题排查指引</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/ESP32-WROOM-32D接入机智云方案及问题排查指引.html">ESP32-WROOM-32D接入机智云方案及问题排查指引</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/安信可ESP8266接入机智云方案及问题排查指引.html">安信可ESP8266系列接入机智云方案及问题排查指引</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/HF-LPX30系列接入机智云方案及问题排查指引.html">HF-LPX30系列接入机智云方案及问题排查指引</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/HF-LPX20系列接入机智云方案及问题排查指引.html">HF-LPX20系列接入机智云方案及问题排查指引</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      2G/4G模组接入方案 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/BC20.html">博实结BC20模组接入机智云方案及问题排查指引</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/BC23M.html">博实结BC23M模组接入机智云方案及问题排查指引</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/G510.html">广和通G510模组接入方案</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/域格CLM920_NC3接入机智云方案及问题排查指引.html">域格CLM920_NC3模组接入机智云方案及问题排查指引</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/BLZ2261-P转接板.html">BLZ2261-P转接板接入机智云方案及问题排查指引</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      NB模组接入方案 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/N102.html">N102转接板接入机智云方案及问题排查指引</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/N256.html">N256模组接入机智云方案及问题排查指引</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      DTU(数据传送装置)接入方案 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GR515使用说明.html">GR515使用说明</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/debug/GN511_use.html">GN511使用说明</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      MCU代码自动生成服务介绍 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/DevSDK/代码自动生成工具.html">MCU代码自动生成工具使用教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GoKit3_DEV_SDK_Common_transplant.html">MCU SDK 通用平台移植教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/STM32CubeMX_transplant.html">STM32CubeMX移植机智云自动生成代码详解</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/approach_to_tailoring_8051.html">8051平台最小资源裁剪说明</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      开源套件Gokit资料 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit2使用指南.html">Gokit2 使用指南</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html">Gokit3系列开发套件简介</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3/GoKit3硬件手册.html">Gokit3硬件手册</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S使用说明书.html">GoKit3(S)使用说明书</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S开发套件介绍.html">Gokit3(S)开发套件介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html">GoKit3(S)开发环境搭建</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html">GoKit-SoC程序详解</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit3Voice/GoKit-MCU-explanation.html">GoKit-MCU程序详解</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets.html">Gokit4(G) SoC开发环境搭建、开发指南</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      开发套件Arduino资料 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUNOWiFi_intro.html">ArduinoUNOWiFi接入机智云介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/Tutorial.html">ArduinoUnoWiFi 之ESP8266固件烧写教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi_SDK_API.html">ArduinoUnoWiFi SDK之API介绍</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/ArduinoUNO/example.html">Arduino Uno WiFi智能小夜灯</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      更多接入指南 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/ecevideos.html">ECE Demo开发教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/串口工具使用文档.html">串口工具使用文档</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/STICubeGizwits/STICubeGizwits.html">ST I-CUBE-GizWits套件快速接入指南</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/Onboarding.html">Airlink配网排查引导</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/设备接入FAQ.html">设备接入FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              云API &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/openapi_apps.html">Open API 指南</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/ent_dev.html">企业应用开发</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/enterprise_api.html">企业API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/NotificationAPI.html">SNoti API</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/WebsocketAPI.html">WebSocketAPI</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      API使用教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseOpenAPI.html">使用OpenAPI控制虚拟设备教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseSNoti.html">Snoti数据实时同步服务demo使用教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseWebsocket.html">使用Websocket 网页控制设备教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/DataAPI.html">使用聚合API教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/LinkageAPI.html">设备联动API使用教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/devgroup_API.html">设备分组API使用教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/UseQRCode.html">APP绑定设备二维码生成教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/Cloud/CloudFAQ.html">云端应用FAQ</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="levelA">
+              用户手册 &#9662;
+              <ul class="levelB-wrapper">
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/change.html">个人项目产品转企业项目产品</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      OTA使用教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/OTA.html">GAgent OTA教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/MCUOTA.html">MCU OTA教程</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/deviceDev/产测工具使用文档.html">产测工具使用文档</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/D3.html">D3 Engine使用教程</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/ece.html">ECE雾计算使用教程</a></li>
+                  
+                
+                  
+                    <li class="levelB has-submenu">
+                      语音音箱接入教程 &#9656;
+                      <ul class="levelC-wrapper">
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/echo.html">接入Echo开发教程</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/deviceDev/echo.html">使用Echo音箱控制GoKit</a></li>
+                        
+                          <li class="levelC"><a href="/zh-cn/UserManual/Google_Home_GoKit.html">使用Google Home音箱控制GoKit</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/rtbd.html">实时大数据使用教程</a></li>
+                  
+                
+                  
+                    <li class="levelB"><a href="/zh-cn/UserManual/WorldWideConnectSolution.html">全球部署方案</a></li>
+                  
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </span>
+
+    <span class="pure-u-3-24 lang-switch-wrapper">
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      
+      <a href="/en-us/overview/overview.html" class="lang-switch">English</a>
+      
+    </span>
+  </div>
+
+  <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="header-search-input-wrap" id="header-search-input-wrap">
+      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
+      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="header-search-trend" id="header-search-trend">
+      <div class="header-search-trend-title">热搜词</div>
+      <div class="header-search-trend-items clearfix">
+        
+        <div class="header-search-trend-item" data-word="APP">APP</div>
+        
+        <div class="header-search-trend-item" data-word="SDK">SDK</div>
+        
+        <div class="header-search-trend-item" data-word="Android">Android</div>
+        
+        <div class="header-search-trend-item" data-word="ios">ios</div>
+        
+        <div class="header-search-trend-item" data-word="WIFI">WIFI</div>
+        
+      </div>
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="body">
+
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="navigation-inner">
+        <div class="nav-title">目录</div>
+        <div class="nav"></div>
+      </div>
+    </div>
+    <div class="markdown-body" data-spy="scroll" data-target=".navigation">
+      <div class="heading">
+        <div class="title">移远EC20接入机智云方案及问题排查指引</div>
+        <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
+      </div>
+      <h1 id="修订历史"><a href="#修订历史" class="headerlink" title="修订历史"></a>修订历史</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">版本</th>
+<th style="text-align:center">修订内容</th>
+<th style="text-align:center">修订人</th>
+<th style="text-align:center">修订日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">V1.0</td>
+<td style="text-align:center">起稿</td>
+<td style="text-align:center">Bobo</td>
+<td style="text-align:center">2019/10/30</td>
+</tr>
+</tbody>
+</table>
+<h1 id="1-本文编写背景"><a href="#1-本文编写背景" class="headerlink" title="1.本文编写背景"></a>1.本文编写背景</h1><p>本文主要介绍移远EC20如何快速从零开始接入机智云，实现简单的透传功能，以及常见的问题排查，还提供了该模组的相关资料。</p>
+<h1 id="2-移远EC20模组资料下载及获取"><a href="#2-移远EC20模组资料下载及获取" class="headerlink" title="2. 移远EC20模组资料下载及获取"></a>2. 移远EC20模组资料下载及获取</h1><p>链接：<a href="https://www.quectel.com/cn/product/ec20r21.htm" target="_blank" rel="noopener">https://www.quectel.com/cn/product/ec20r21.htm</a></p>
+<h1 id="3-移远EC20外围设计原理图"><a href="#3-移远EC20外围设计原理图" class="headerlink" title="3. 移远EC20外围设计原理图"></a>3. 移远EC20外围设计原理图</h1><p>请下载第2章内容，参考《Quectel_EC20_R2.1-QuecOpen硬件设计手册V1.2》推荐的外围设计原理图。</p>
+<h1 id="4-移远EC20串口烧写固件说明"><a href="#4-移远EC20串口烧写固件说明" class="headerlink" title="4. 移远EC20串口烧写固件说明"></a>4. 移远EC20串口烧写固件说明</h1><h2 id="4-1、移远EC20固件获取与确认"><a href="#4-1、移远EC20固件获取与确认" class="headerlink" title="4.1、移远EC20固件获取与确认"></a>4.1、移远EC20固件获取与确认</h2><p>当拿到一片移远EC20的模块的时候，若确认固件未烧写，请联系商务同事或FAE同事获取。拿到之后解压固件压缩包。</p>
+<p>解压之后，会得到多个文件，里面update的文件就是我们烧写所要的文件。</p>
+<blockquote>
+<p>备注：本文固件名称以移远EC20_0403000F版本固件为例，其他版本的模组固件名称的软硬件版本名字会有差异。</p>
+</blockquote>
+<p><img src="/assets/zh-cn/deviceDev/EC20/EC20_1.png" alt="移远EC20"></p>
+<h2 id="4-2、移远EC20硬件设备连接"><a href="#4-2、移远EC20硬件设备连接" class="headerlink" title="4.2、移远EC20硬件设备连接"></a>4.2、移远EC20硬件设备连接</h2><p>移远EC20模块烧写需要按照手册正常接出电源，USB引脚，开机引脚，具体详细的接线方法可以参考文章第2章内容，参考《Quectel_EC20_R2.1-QuecOpen硬件设计手册V1.2》文档。</p>
+<h3 id="4-2-1、移远EC20-USB引脚接线"><a href="#4-2-1、移远EC20-USB引脚接线" class="headerlink" title="4.2.1、移远EC20 USB引脚接线"></a>4.2.1、移远EC20 USB引脚接线</h3><p>移远EC20 模块的 USB 接口符合 USB 2.0 规范，支持高速（480Mbps）和全速（12Mbps）模式。该接口可用于 AT 命令传送、数据传输、GNSS NMEA 输出、软件调试、软件升级和 USB 语音*。</p>
+<p><img src="/assets/zh-cn/deviceDev/EC20/EC20_2.png" alt="移远EC20"></p>
+<blockquote>
+<p>以上信息来自于移远官方文档，详情请参考文章第2章节内容的《Quectel_EC20_R2.1-QuecOpen硬件设计手册V1.2》文档</p>
+</blockquote>
+<h3 id="4-2-2、移远EC20-电源参考电路"><a href="#4-2-2、移远EC20-电源参考电路" class="headerlink" title="4.2.2、移远EC20 电源参考电路"></a>4.2.2、移远EC20 电源参考电路</h3><p>电源设计对模块的性能至关重要。EC20 R2.1-QuecOpen 必须选择至少能够提供 2A 电流能力的电源。<br>若输入电压与模块供电电压之间的电压差不是很大，则建议选择 LDO 作为供电电源。若输入与输出电压之<br>间存在比较大的电压差，则建议使用开关电源转换器。<br><img src="/assets/zh-cn/deviceDev/EC20/EC20_3.png" alt="移远EC20"></p>
+<blockquote>
+<p>以上信息来自于移远官方文档，详情请参考文章第2章节内容的《Quectel_EC20_R2.1-QuecOpen硬件设计手册V1.2》文档</p>
+</blockquote>
+<h3 id="4-2-3、移远EC20-开机引脚设计"><a href="#4-2-3、移远EC20-开机引脚设计" class="headerlink" title="4.2.3、移远EC20 开机引脚设计"></a>4.2.3、移远EC20 开机引脚设计</h3><p><img src="/assets/zh-cn/deviceDev/EC20/EC20_4.png" alt="Alt text"></p>
+<blockquote>
+<p>以上信息来自于移远官方文档，详情请参考文章第2章节内容的《Quectel_EC20_R2.1-QuecOpen硬件设计手册V1.2》文档</p>
+</blockquote>
+<h2 id="4-3、移远EC20-确认串口参数"><a href="#4-3、移远EC20-确认串口参数" class="headerlink" title="4.3、移远EC20 确认串口参数"></a>4.3、移远EC20 确认串口参数</h2><p>根据文章4.2.1，将上述USB口连接电脑后，再根据文章4.2.3章节，使模组开机。通过“我的电脑”-&gt;“管理”-&gt; “设备管理器”-&gt;“端口（COM 和LPT）”选项中可以看到相应增加的COM口。</p>
+<blockquote>
+<p>备注：若出现未识别的端口，请打开本文章节二下载的文件，安装模组驱动文件夹内的驱动。</p>
+</blockquote>
+<p><img src="/assets/zh-cn/deviceDev/EC20/EC20_5.png" alt="Alt text"></p>
+<h2 id="4-4、移远EC20的烧写"><a href="#4-4、移远EC20的烧写" class="headerlink" title="4.4、移远EC20的烧写"></a>4.4、移远EC20的烧写</h2><p>1、当USB正常连接成功之后，从本文第2章节获取资料，获得烧录工具QFlash。</p>
+<p>2、解压打开之后双击&lt;QFlash_V4.10.exe&gt;应用程序文件，点击Load FW File选择固件包内的update -&gt; firehost文件夹内的&lt;partition_complete_p2K_b128K.mbn&gt;文件</p>
+<p><img src="/assets/zh-cn/deviceDev/EC20/EC20_6.png" alt="Alt text"></p>
+<p>3、选择921600的波特率，COM口选择Quectel USB DM Port（COM36）</p>
+<p><img src="/assets/zh-cn/deviceDev/EC20/EC20_7.png" alt="Alt text"></p>
+<p>4、稍等片刻，烧写完之后会重启设备，期间需要保持电源正常供电，显示PASS则固件烧写成功</p>
+<p><img src="/assets/zh-cn/deviceDev/EC20/EC20_8.png" alt="Alt text"></p>
+<h1 id="5、移远EC20模组日志抓取"><a href="#5、移远EC20模组日志抓取" class="headerlink" title="5、移远EC20模组日志抓取"></a>5、移远EC20模组日志抓取</h1><h2 id="5-1、移远EC20模组日志接线方法"><a href="#5-1、移远EC20模组日志接线方法" class="headerlink" title="5.1、移远EC20模组日志接线方法"></a>5.1、移远EC20模组日志接线方法</h2><p>按照移远EC20的管脚定义图，将图中所示的12引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的GND，然后将USB转TTL工具连接到电脑，确认端口。</p>
+<p><img src="/assets/zh-cn/deviceDev/EC20/EC20_9.png" alt="Alt text"></p>
+<blockquote>
+<p>以上信息来自于移远官方文档，详情请参考文章第2章节内容的《Quectel_EC20_R2.1-QuecOpen硬件设计手册V1.2》文档</p>
+</blockquote>
+<ul>
+<li><strong>通信串口：</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">管脚号</th>
+<th style="text-align:center">管脚名</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">67</td>
+<td style="text-align:center">TXD</td>
+<td style="text-align:center">主串口 发送数据</td>
+</tr>
+<tr>
+<td style="text-align:center">68</td>
+<td style="text-align:center">RXD</td>
+<td style="text-align:center">主串口 接收数据</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>日志串口：</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">管脚号</th>
+<th style="text-align:center">管脚名</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">11</td>
+<td style="text-align:center">DBG_RXD</td>
+<td style="text-align:center">debug 串口接收数据</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">DBG_TXD</td>
+<td style="text-align:center">debug 串口发送数据</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>串口设计图：</strong></li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/EC20/EC20_10.png" alt="Alt text"></p>
+<blockquote>
+<p>以上信息来自于移远官方文档，详情请参考文章第2章节内容的《Quectel_EC20_R2.1-QuecOpen硬件设计手册V1.2》文档</p>
+</blockquote>
+<h2 id="5-2、机智云串口打印软件工具的获取与使用"><a href="#5-2、机智云串口打印软件工具的获取与使用" class="headerlink" title="5.2、机智云串口打印软件工具的获取与使用"></a>5.2、机智云串口打印软件工具的获取与使用</h2><ol>
+<li><p>按照文章5.1的管脚定义图，将图中所示的12（DBG_TXD）（芯片调试日志信息输出口）通过USB转TTL工具连接到电脑，且USB转TTL工具的GND需接模组的GND，波特率115200bps。</p>
+</li>
+<li><p>机智云串口打印软件工具下载链接：链接：<a href="https://eyun.baidu.com/s/3oAbSruq" target="_blank" rel="noopener">https://eyun.baidu.com/s/3oAbSruq</a> 密码：pPsL</p>
+</li>
+<li>机智云 移远EC20 固件版本号为：0403000F版本或更高级版本，模组串口日志打印为加密，需要使用对应版本号的.mapTab文件解码。对应的解码文件下载链接：<a href="https://eyun.baidu.com/s/3oAodBdw" target="_blank" rel="noopener">https://eyun.baidu.com/s/3oAodBdw</a> 密码：q1Lf</li>
+</ol>
+<h1 id="6-搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP扫码绑定及控制设备等等）"><a href="#6-搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP扫码绑定及控制设备等等）" class="headerlink" title="6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP扫码绑定及控制设备等等）"></a>6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP扫码绑定及控制设备等等）</h1><p>快速接入文档参考链接：<a href="http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html</a></p>
+<blockquote>
+<p>备注：模组uart为与Gokit通讯的通讯串口，通讯波特率为9600bps，具体可参考文章5.1的模组接线方法图</p>
+</blockquote>
+<h1 id="7-FAQ"><a href="#7-FAQ" class="headerlink" title="7.FAQ"></a>7.FAQ</h1><p>1、Q:模组已经和MCU正常接线，但是无法进行通讯。</p>
+<p> A:1、确认5.1章节，模组的通讯引脚是否接对。需要使用67 68引脚和MCU进行通讯。2、确认5.1章节的串口设计图，模组的串口引脚的电平为1.8V，大部分MCU的串口是3.3V，需要做电平转换。</p>
+
+    </div>
+    
+    <div class="widget-wrapper">
+  <span class="widget">
+    <div>
+        <a id='share' target="_blank" title="分享">
+          <span>分享</span>
+        </a>
+        <div class="social-share" data-initialized="true">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo"></a>
+            <a href="#" class="social-share-icon icon-qq"></a>
+            <a href="#" class="social-share-icon icon-qzone"></a>
+            <a href="#" class="social-share-icon icon-douban"></a>
+        </div>
+    </div>
+    <a href="http://y0.cn/docs" target="_blank" title="项目登记">
+      <span>项目登记</span>
+    </a>
+    <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank" title="问题反馈">
+      <span>问题反馈</span>
+    </a>
+    <a href="#" title="返回顶部"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a>
+  </span>
+</div>
+  </div>
+</div>
+
+    <div class="footer">
+  <div class="container">
+    <p>
+      <span><a href="http://www.gizwits.com" target="_blank">机智云首页</a></span>
+      <span><a href="http://www.gizwits.com/about-us" target="_blank">关于我们</a></span>
+      <span><a href="http://www.gizwits.com/about-us#contact-us" target="_blank">联系我们</a></span>
+      <span><a href="http://www.gizwits.com/join-us" target="_blank">加入我们</a></span>
+    </p>
+    <p>&#169;2011-2017; Gizwits IoT Technology Co., Ltd. 粤ICP备11090211号</p>
+  </div>
+</div>
+
+    <script src="/js/spin.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.hashchange.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/scrollspy.js"></script>
+<script src="/js/social-share.min.js"></script>
+<script src="/js/documentation.js?v=d413cf8ceca4865c39c2dabcd3bc0077"></script>
+
+
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3787e6b3b29a084fde41f22828d89b7d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  </body>
+</html>
