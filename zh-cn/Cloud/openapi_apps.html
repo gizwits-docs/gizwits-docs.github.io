@@ -3251,7 +3251,8 @@ https://api.gizwits.com/app/devices/{did}
 </table>
 <p>返回例子</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"remark"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"ws_port"</span>: <span class="number">8080</span>,</span><br><span class="line">  <span class="attr">"did"</span>: <span class="string">"gKufzxZwYeyd3Skbsb6mzz"</span>,</span><br><span class="line">  <span class="attr">"port_s"</span>: <span class="number">8883</span>,</span><br><span class="line">  <span class="attr">"is_disabled"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"host"</span>: <span class="string">"m2m.gizwits.com"</span>,</span><br><span class="line">  <span class="attr">"product_key"</span>: <span class="string">"4214bf2d79694a259232431b6f2ef46a"</span>,</span><br><span class="line">  <span class="attr">"port"</span>: <span class="number">1883</span>,</span><br><span class="line">  <span class="attr">"mac"</span>: <span class="string">"accf2350d446"</span>,</span><br><span class="line">  <span class="attr">"role"</span>: <span class="string">"guest"</span>,</span><br><span class="line">  <span class="attr">"is_online"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"passcode"</span>: <span class="string">"JHHOOIWJBY"</span>,</span><br><span class="line">  <span class="attr">"wss_port"</span>: <span class="number">8880</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="获取设备的通信日志和上下线记录"><a href="#获取设备的通信日志和上下线记录" class="headerlink" title="获取设备的通信日志和上下线记录"></a>获取设备的通信日志和上下线记录</h2><p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/设备远程监控/get_app_devices_did_raw_data" target="_blank" rel="noopener">调试接口</a></p>
+<h2 id="获取设备的通信日志和上下线记录"><a href="#获取设备的通信日志和上下线记录" class="headerlink" title="获取设备的通信日志和上下线记录"></a>获取设备的通信日志和上下线记录</h2><p><strong><em>备注： 此接口只在产品未发布的情况下使用，产品发布后如要使用，请联系机智云工作人员。</em></strong></p>
+<p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/设备远程监控/get_app_devices_did_raw_data" target="_blank" rel="noopener">调试接口</a></p>
 <p>用于查询最近7天内任意两天的设备通讯日志和上下线记录。</p>
 <h4 id="入参的类型（type）"><a href="#入参的类型（type）" class="headerlink" title="入参的类型（type）"></a>入参的类型（type）</h4><ol>
 <li>通信日志查询, type 字段为 cmd</li>
@@ -7037,7 +7038,8 @@ https://api.gizwits.com/app/common_scheduler/{id}
 </table>
 <p>响应参数</p>
 <pre><code>无
-</code></pre><h1 id="高级数据接口"><a href="#高级数据接口" class="headerlink" title="高级数据接口"></a>高级数据接口</h1><h2 id="获取设备聚合数据"><a href="#获取设备聚合数据" class="headerlink" title="获取设备聚合数据"></a>获取设备聚合数据</h2><p>该接口可以对设备上报的数值型数据点数据进行聚合，可以按小时/天/周/月对数据点数据进行求和/平均值/最大值/最小值进行聚合。</p>
+</code></pre><h1 id="高级数据接口"><a href="#高级数据接口" class="headerlink" title="高级数据接口"></a>高级数据接口</h1><h2 id="获取设备聚合数据"><a href="#获取设备聚合数据" class="headerlink" title="获取设备聚合数据"></a>获取设备聚合数据</h2><p><strong><em>备注：<br>   1.此接口需要申请开通后才可成功调用，若需要开通，请联系机智云工作人员。<br>   2.此接口只在产品未发布的情况下使用，产品发布后如要使用，请联系机智云工作人员。</em></strong></p>
+<p>该接口可以对设备上报的数值型数据点数据进行聚合，可以按小时/天/周/月对数据点数据进行求和/平均值/最大值/最小值进行聚合。</p>
 <p>一次可以获取多个数据点的聚合数据。</p>
 <p>要使用该接口，必须先请求开通该接口。请求通过的之后上报的数据才会进行聚合运算。</p>
 <p><a href="http://swagger.gizwits.com/doc/index/openapi_apps#/高级数据接口//get_app_devdata_did_agg_data" target="_blank" rel="noopener">调试接口</a></p>
