@@ -589,6 +589,7 @@
 <h2 id="7-参考资料下载"><a href="#7-参考资料下载" class="headerlink" title="7. 参考资料下载"></a>7. 参考资料下载</h2><h4 id="参考代码下载地址：链接：https-eyun-baidu-com-s-3ggsfur5-密码：OaBy"><a href="#参考代码下载地址：链接：https-eyun-baidu-com-s-3ggsfur5-密码：OaBy" class="headerlink" title="参考代码下载地址：链接：https://eyun.baidu.com/s/3ggsfur5 密码：OaBy"></a>参考代码下载地址：链接：<a href="https://eyun.baidu.com/s/3ggsfur5" target="_blank" rel="noopener">https://eyun.baidu.com/s/3ggsfur5</a> 密码：OaBy</h4><h4 id="《GN511硬件IO说明书-V1-5》链接：https-eyun-baidu-com-s-3o9q5kwi-密码：MdSA"><a href="#《GN511硬件IO说明书-V1-5》链接：https-eyun-baidu-com-s-3o9q5kwi-密码：MdSA" class="headerlink" title="《GN511硬件IO说明书 V1.5》链接：https://eyun.baidu.com/s/3o9q5kwi 密码：MdSA"></a>《GN511硬件IO说明书 V1.5》链接：<a href="https://eyun.baidu.com/s/3o9q5kwi" target="_blank" rel="noopener">https://eyun.baidu.com/s/3o9q5kwi</a> 密码：MdSA</h4><h2 id="8-FAQ"><a href="#8-FAQ" class="headerlink" title="8. FAQ"></a>8. FAQ</h2><p>Q: NB设备连接服务器、上报数据失败<br>A: 有可能是网络或者信号问题。</p>
 <p>网络问题：模组不能使用一般的电话卡或者流量卡，要使用专门的“中国电信物联网NB卡”。如果使用电信NB卡后仍然连接服务器、上报数据失败，可能是卡过期，或者卡消费次数用完。如果卡是从机智云采购的，可以报卡的iccid号给机智云FAE查询卡的状况；如果卡是自行从其他地方采购的，要自行找运营商查询</p>
 <p>信号问题：如果电信NB卡没问题，但是连接服务器、上报数据失败，则有可能是当地信号覆盖不良。此时可以通过往串口0发送AT指令AT+CSQ指令查看模组信号强度，0~10 代表低； 10~20代表中； 20~31代表高；99代表未插卡。</p>
+<p>Q2：如果产品采用变长数据传输方式，需要修改demo工程上面的代码<br>A2：（1）修改action位，如下图<br><img src="/assets/zh-cn/deviceDev/debug/GN511/GN511_use_15.png" alt="name"><br>     (2) 增加attr_flags位，如下图<br><img src="/assets/zh-cn/deviceDev/debug/GN511/GN511_use_16.png" alt="name"></p>
 
     </div>
     
