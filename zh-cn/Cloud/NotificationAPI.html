@@ -837,6 +837,12 @@
 <p>c. 需要接收子设备的数据，就使用子设备产品对应的auth_id。</p>
 <h2 id="6-相同product-key下不同subkey的客户端都能接收到来自SNoti的消息推送吗？"><a href="#6-相同product-key下不同subkey的客户端都能接收到来自SNoti的消息推送吗？" class="headerlink" title="6. 相同product_key下不同subkey的客户端都能接收到来自SNoti的消息推送吗？"></a>6. 相同product_key下不同subkey的客户端都能接收到来自SNoti的消息推送吗？</h2><p>是的，不同的subkey就会创建不同的队列，彼此数据独立。所以当有数据需要向客户端推送的时候，所有不同subkey的客户端都可以接收到该推送消息，前提是该subkey的客户端在登陆时有设置该推送事件的监听。  </p>
 <h2 id="7-subkey最多可以创建多少个？"><a href="#7-subkey最多可以创建多少个？" class="headerlink" title="7. subkey最多可以创建多少个？"></a>7. subkey最多可以创建多少个？</h2><p>最多5个。</p>
+<h2 id="8-数据点协议产品-对扩展类型数据点以-Hex-字符串下发指令报错-“data-length-does-not-match”"><a href="#8-数据点协议产品-对扩展类型数据点以-Hex-字符串下发指令报错-“data-length-does-not-match”" class="headerlink" title="8. 数据点协议产品, 对扩展类型数据点以 Hex 字符串下发指令报错 “data length does not match” ."></a>8. 数据点协议产品, 对扩展类型数据点以 Hex 字符串下发指令报错 “data length does not match” .</h2><p>数据点协议的产品, 以 Hex 字符串下发指令:</p>
+<ol>
+<li>Hex 字符串两个字符表示一个字节</li>
+<li>下发的 Hex 字符串不足扩展类型数据点长度, 需在右补 <code>0</code> 至满足扩展类型数据点长度.</li>
+</ol>
+<p>比如, 产品A有可写的扩展类型数据点名为 <code>b</code> , 长度为4字节. 要给b数据点下发 <code>1</code> 时, <code>value</code> 应为 <code>01000000</code> .</p>
 
     </div>
     
