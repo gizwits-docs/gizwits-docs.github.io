@@ -248,6 +248,8 @@
                         
                           <li class="levelC"><a href="/zh-cn/deviceDev/GPRS_Module/GA211转接板使用说明.html">GA211转接板使用说明</a></li>
                         
+                          <li class="levelC"><a href="/zh-cn/deviceDev/GPRS_Module/GA211转接板使用说明.html">GC211转接板使用说明</a></li>
+                        
                           <li class="levelC"><a href="/zh-cn/deviceDev/GPRS_Module/中移ML302接入机智云方案及问题排查指引.html">中移ML302接入机智云方案及问题排查指引</a></li>
                         
                       </ul>
@@ -567,7 +569,211 @@
         <div class="title"></div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> 文档编辑</a>
       </div>
-      
+      <h1 id="GC211转接板使用说明"><a href="#GC211转接板使用说明" class="headerlink" title="GC211转接板使用说明"></a>GC211转接板使用说明</h1><h1 id="修订历史"><a href="#修订历史" class="headerlink" title="修订历史"></a>修订历史</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">版本</th>
+<th style="text-align:center">修订内容</th>
+<th style="text-align:center">修订人</th>
+<th style="text-align:center">修订日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">V1.0</td>
+<td style="text-align:center">起稿</td>
+<td style="text-align:center">Bobo</td>
+<td style="text-align:center">2020/08/13</td>
+</tr>
+</tbody>
+</table>
+<h1 id="1-本文编写背景"><a href="#1-本文编写背景" class="headerlink" title="1. 本文编写背景"></a>1. 本文编写背景</h1><p>本文主要介绍搭载了中国移动4G Cat.1模块ML302的GC211转接板（以下略称为GC211）如何快速从零开始接入机智云，以及常见的问题排查，还提供了该转接板的相关资料。</p>
+<h1 id="2-GC211资料下载及获取"><a href="#2-GC211资料下载及获取" class="headerlink" title="2. GC211资料下载及获取"></a>2. GC211资料下载及获取</h1><p>GC211转接板相关资料链接：<a href="https://eyun.baidu.com/s/3i7cI4KX" target="_blank" rel="noopener">https://eyun.baidu.com/s/3i7cI4KX</a> 密码：47II</p>
+<p>模组相关资料链接：<a href="https://eyun.baidu.com/s/3o9VMI4y" target="_blank" rel="noopener">https://eyun.baidu.com/s/3o9VMI4y</a> 密码：61MF</p>
+<h1 id="3-GC211使用方法"><a href="#3-GC211使用方法" class="headerlink" title="3. GC211使用方法"></a>3. GC211使用方法</h1><p>GC211可以使用GOKIT或者串口工具的模拟MCU进行调试：</p>
+<p>GC211与GOKIT调试请查看该文档：<a href="http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html" target="_blank" rel="noopener">http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html</a></p>
+<p>本文介绍的是使用串口工具的模拟MCU进行调试。</p>
+<h2 id="3-1、新建产品，定义数据点。"><a href="#3-1、新建产品，定义数据点。" class="headerlink" title="3.1、新建产品，定义数据点。"></a>3.1、新建产品，定义数据点。</h2><ul>
+<li>创建新产品</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_1.png" alt="GC211"></p>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_2.png" alt="GC211"></p>
+<ul>
+<li>创建数据点</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_3.png" alt="GC211"></p>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_4.png" alt="GC211"></p>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_5.png" alt="GC211"></p>
+<h2 id="3-2、使用串口工具连接GC211的串口"><a href="#3-2、使用串口工具连接GC211的串口" class="headerlink" title="3.2、使用串口工具连接GC211的串口"></a>3.2、使用串口工具连接GC211的串口</h2><ul>
+<li>通讯串口与电源连接方式</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_6.png" alt="GC211"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">引脚</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">VCC</td>
+<td style="text-align:center">电源输入</td>
+<td style="text-align:center">5~24V</td>
+</tr>
+<tr>
+<td style="text-align:center">GND</td>
+<td style="text-align:center">地线</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">RX</td>
+<td style="text-align:center">通讯串口接收引脚</td>
+<td style="text-align:center">3.3V</td>
+</tr>
+<tr>
+<td style="text-align:center">TX</td>
+<td style="text-align:center">通讯串口发送引脚</td>
+<td style="text-align:center">3.3V</td>
+</tr>
+<tr>
+<td style="text-align:center">RST</td>
+<td style="text-align:center">复位引脚</td>
+<td style="text-align:center">高</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-3、插入SIM卡"><a href="#3-3、插入SIM卡" class="headerlink" title="3.3、插入SIM卡"></a>3.3、插入SIM卡</h2><ul>
+<li>插入SIM卡，支持电信/移动/联通的4G卡，规格大小为MICRO或者NANO+卡套。</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_7.png" alt="GC211"></p>
+<h2 id="3-4、使用机智云串口工具与GC211通讯"><a href="#3-4、使用机智云串口工具与GC211通讯" class="headerlink" title="3.4、使用机智云串口工具与GC211通讯"></a>3.4、使用机智云串口工具与GC211通讯</h2><ul>
+<li>下载机智云串口工具，下载链接：<a href="https://eyun.baidu.com/s/3i6TVbox" target="_blank" rel="noopener">https://eyun.baidu.com/s/3i6TVbox</a> 密码：PelH</li>
+<li>点击新增，输入3.1章节创建的产品信息。</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_8.png" alt="GC211"></p>
+<ul>
+<li>选中新增的产品，切换到‘模拟MCU’的页面。</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_9.png" alt="GC211"></p>
+<ul>
+<li>选择好3.2章节的串口，波特率选择9600，点击打开串口，等待一段时间后，可以看到设备正常连上基站与M2M服务器</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_10.png" alt="GC211"></p>
+<ul>
+<li>查看产品的设备日志，即可看到设备处于一个在线状态</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_11.png" alt="GC211"></p>
+<h2 id="3-5、使用机智云调试APP进行设备绑定与控制"><a href="#3-5、使用机智云调试APP进行设备绑定与控制" class="headerlink" title="3.5、使用机智云调试APP进行设备绑定与控制"></a>3.5、使用机智云调试APP进行设备绑定与控制</h2><ul>
+<li><p>根据下载链接下载机智云调试APP，<a href="https://download.gizwits.com/zh-cn/p/98/99，" target="_blank" rel="noopener">https://download.gizwits.com/zh-cn/p/98/99，</a> 安装之后回到串口工具页面</p>
+</li>
+<li><p>打开窗口工具页面，选择‘工具’一栏，选择设备二维码一栏，输入你设备的IMEI地址以及产品信息，点击二维码生成</p>
+</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_12.png" alt="GC211"></p>
+<ul>
+<li>使用打开机智云APP，点击左上角扫码按钮，扫描二维码绑定设备，之后即可发现设备。</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_13.png" alt="GC211">                                                            </p>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_14.png" alt="GC211"></p>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_15.png" alt="GC211"></p>
+<h1 id="4-GC211本地烧写固件说明"><a href="#4-GC211本地烧写固件说明" class="headerlink" title="4. GC211本地烧写固件说明"></a>4. GC211本地烧写固件说明</h1><h2 id="4-1、GC211固件获取与确认"><a href="#4-1、GC211固件获取与确认" class="headerlink" title="4.1、GC211固件获取与确认"></a>4.1、GC211固件获取与确认</h2><p>当拿到一片GC211的转接板的时候，正常是已经烧写了最新的机智云固件，若确认固件未烧写，请联系商务同事或FAE同事获取。拿到之后解压固件压缩包。</p>
+<p>解压之后，会得到多个文件，里面.pac的文件就是我们烧写所要的文件。</p>
+<blockquote>
+<p>备注：本文固件名称以中移1M302DNL_04030003版本固件为例，其他版本的模组固件名称的软硬件版本名字会有差异。</p>
+</blockquote>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_16.png" alt="GC211"></p>
+<h2 id="4-2、GC211硬件设备连接"><a href="#4-2、GC211硬件设备连接" class="headerlink" title="4.2、GC211硬件设备连接"></a>4.2、GC211硬件设备连接</h2><ul>
+<li>GC211本地烧写模组固件是需要从USB引脚进行烧写。</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_17.png" alt="GC211"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">引脚</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">EXT</td>
+<td style="text-align:center">VDD_EXT</td>
+<td style="text-align:center">悬空</td>
+</tr>
+<tr>
+<td style="text-align:center">BOT</td>
+<td style="text-align:center">USB 下载引脚</td>
+<td style="text-align:center">接入1.8V电源</td>
+</tr>
+<tr>
+<td style="text-align:center">UDN</td>
+<td style="text-align:center">USB数据线 负</td>
+<td style="text-align:center">与USB白色线相连</td>
+</tr>
+<tr>
+<td style="text-align:center">UDP</td>
+<td style="text-align:center">USB数据线 正</td>
+<td style="text-align:center">与USB绿色线相连</td>
+</tr>
+<tr>
+<td style="text-align:center">GND</td>
+<td style="text-align:center">地线</td>
+<td style="text-align:center">与USB黑色线相连</td>
+</tr>
+<tr>
+<td style="text-align:center">USB DET</td>
+<td style="text-align:center">USB电源  5V</td>
+<td style="text-align:center">与USB红色线相连</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>将USB插入电脑，打开电脑的设备管理器，若正确安装了驱动，并且将USB_BOOT引脚上拉至1.8V，重新对模组上电即可看到一个USB引脚</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_18.png" alt="GC211"></p>
+<ul>
+<li>从第2章节下载烧录工具，解压并打开文件夹里的bin目录下的UpgradeDownload.exe，点击右上角的齿轮，选择需要烧写的固件。</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_19.png" alt="GC211"></p>
+<ul>
+<li>点击“Start downloading”进行下载，等待一段时间之后，显示Passed即烧录成功，然后必须点击停止之后才能拔掉电源或者关闭软件。</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_20.png" alt="GC211"></p>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_21.png" alt="GC211"></p>
+<h1 id="5-GC211模组日志抓取"><a href="#5-GC211模组日志抓取" class="headerlink" title="5.GC211模组日志抓取"></a>5.GC211模组日志抓取</h1><h2 id="5-1、GC211模组日志接线方法"><a href="#5-1、GC211模组日志接线方法" class="headerlink" title="5.1、GC211模组日志接线方法"></a>5.1、GC211模组日志接线方法</h2><ul>
+<li>按照文章5.1的管脚定义图，将图中所示的U2TX（UART2_TXD）（芯片调试日志信息输出口）通过USB转TTL工具连接到电脑（串口工具芯片推荐使用FT232或者CP2102），且USB转TTL工具的GND需接转接板的G（GND），波特率115200bps。</li>
+</ul>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_22.png" alt="GC211"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">转接板引脚</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">串口工具引脚</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">U2TX</td>
+<td style="text-align:center">UART_TXD</td>
+<td style="text-align:center">RXD</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:center">GND</td>
+<td style="text-align:center">GND</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-2、机智云串口打印软件工具的获取与使用"><a href="#5-2、机智云串口打印软件工具的获取与使用" class="headerlink" title="5.2、机智云串口打印软件工具的获取与使用"></a>5.2、机智云串口打印软件工具的获取与使用</h2><ol start="2">
+<li>机智云串口打印软件工具下载链接：链接：<a href="https://eyun.baidu.com/s/3oAbSruq" target="_blank" rel="noopener">https://eyun.baidu.com/s/3oAbSruq</a> 密码：pPsL</li>
+<li>机智云 中移ML302的 固件版本号为：04030003版本或更高级版本，模组串口日志打印为加密，需要使用对应版本号的.mapTab文件解码。对应的解码文件请参考第2章节的GC211转接板资料。</li>
+<li>下载好工具以及解码文件之后，按照下图步骤进行操作，获取日志。</li>
+</ol>
+<p><img src="/assets/zh-cn/deviceDev/GC211/GC211_23.png" alt="GC211"></p>
+<h1 id="6-FAQ"><a href="#6-FAQ" class="headerlink" title="6.FAQ"></a>6.FAQ</h1>
     </div>
     
     <div class="widget-wrapper">
