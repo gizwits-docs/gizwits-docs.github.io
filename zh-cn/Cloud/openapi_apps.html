@@ -1008,7 +1008,7 @@
 <p>在开发者中心的产品页面中，点击左边栏的”应用配置”菜单，创建一个应用即可获得一个 AppID:</p>
 <p><img src="/assets/zh-cn/cloud/get-appid.png" alt="Get AppID"></p>
 <h3 id="X-Gizwits-User-token"><a href="#X-Gizwits-User-token" class="headerlink" title="X-Gizwits-User-token"></a>X-Gizwits-User-token</h3><p>X-Gizwits-User-token 简称 UserToken，它代表着接口调用中的用户上下文。</p>
-<p>UserToken 具有有效期，默认为 7 天。</p>
+<p>UserToken 具有有效期，默认为 180 天。</p>
 <p>可以通过用户注册或者登录接口获取 UserToken，返回字段中的 token 就是 UserToken，expire_at 表示 UserToken 过期的时间戳：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"uid"</span>: <span class="string">"29db4f0d806e451a84264ba3da64d9de"</span>,</span><br><span class="line">  <span class="attr">"token"</span>: <span class="string">"86a0ee91548f4971832e371811702316"</span>,</span><br><span class="line">  <span class="attr">"expire_at"</span>: <span class="number">13894002020</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>每次登录可以获取一个新的 UserToken，新旧 UserToken 都可以使用。</p>
 <p>因为机智云 Open API 大多数的接口都是与用户相关的，所以一般的接口调用顺序如下：</p>
