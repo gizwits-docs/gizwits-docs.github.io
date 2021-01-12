@@ -604,12 +604,23 @@
 <li>增加设备端的数据计算算法实施与更换以及立即执行的能力。</li>
 </ul>
 <p><img src="/assets/zh-cn/UserManual/ECE/001.png" alt="Alt text"></p>
-<h2 id="3必读术语"><a href="#3必读术语" class="headerlink" title="3必读术语"></a>3必读术语</h2><h4 id="3-1-ECE"><a href="#3-1-ECE" class="headerlink" title="3.1 ECE"></a>3.1 ECE</h4><p>ECE是Edge Computing Engine的缩写，意为边缘计算引擎。</p>
+<h2 id="3-必读术语"><a href="#3-必读术语" class="headerlink" title="3.必读术语"></a>3.必读术语</h2><h4 id="3-1-ECE"><a href="#3-1-ECE" class="headerlink" title="3.1 ECE"></a>3.1 ECE</h4><p>ECE是Edge Computing Engine的缩写，意为边缘计算引擎。</p>
 <h4 id="3-2-PK"><a href="#3-2-PK" class="headerlink" title="3.2 PK"></a>3.2 PK</h4><p>PK是Pruduct Key的缩写，是企业在机智云平台开发者中心创建的某款产品的唯一编号，同一款产品的Product Key都是相同的。</p>
 <h4 id="3-3-协议脚本"><a href="#3-3-协议脚本" class="headerlink" title="3.3 协议脚本"></a>3.3 协议脚本</h4><p>协议脚本可将产品自定义协议与机智云协议进行相互转换，帮助用户产品轻松接入机智云。</p>
 <h4 id="3-4-通信配置"><a href="#3-4-通信配置" class="headerlink" title="3.4 通信配置"></a>3.4 通信配置</h4><p>通信配置可设置串口通信的通信参数（波特率等）。</p>
 <h4 id="3-5-微应用"><a href="#3-5-微应用" class="headerlink" title="3.5 微应用"></a>3.5 微应用</h4><p>微应用可设置数据通信方法（数据包格式、加密方式等），对数据的处理（取最大值、最小值等），以及设备行为参数（采样频率、心跳时间等）。</p>
 <h4 id="3-6-LUA脚本"><a href="#3-6-LUA脚本" class="headerlink" title="3.6 LUA脚本"></a>3.6 LUA脚本</h4><p>LUA是嵌入式脚本语言，实现可配置性和可扩展性。</p>
+<h2 id="4-ECE-雾计算申请流程"><a href="#4-ECE-雾计算申请流程" class="headerlink" title="4.ECE 雾计算申请流程"></a>4.ECE 雾计算申请流程</h2><p>申请条件：企业开发者</p>
+<p>第一步：登录机智云新版【开发者中心】，在组织层面开通【ECE 雾计算】服务后，全部产品均可使用该服务。</p>
+<p><a href="https://developer.gizwits.com/#/login" target="_blank" rel="noopener">https://developer.gizwits.com/#/login</a></p>
+<p>第二步：点击【账号】，选择【企业信息】页面，选择左侧组织，点击【服务中心】；</p>
+<p><img src="https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/11_1610349249501.png" alt="11"></p>
+<p>第三步：选择【ECE雾计算】，点击【立即开通】按钮，等待机智云审核；</p>
+<p><img src="https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/12_1610349250001.png" alt="12"></p>
+<p>第四步：待审核通过后，点击【返回旧版】，需返回旧版开发者中心使用此功能。（由于新版功能还在开发完善中，部分功能仍会在旧版使用中）。</p>
+<p><img src="https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/13_1610349249905.png" alt="13"></p>
+<p>第五步：选择产品，在服务列表即可看到ECE 雾计算；点击【ECE 雾计算】即可开始体验。</p>
+<p><img src="https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/14_1610349249827.png" alt="14"></p>
 <h1 id="使用场景与业务流程"><a href="#使用场景与业务流程" class="headerlink" title="使用场景与业务流程"></a>使用场景与业务流程</h1><h2 id="1-服务对象"><a href="#1-服务对象" class="headerlink" title="1.服务对象"></a>1.服务对象</h2><p>机智云ECE雾计算服务于企业开发者用户，暂不对个人开发者用户开放。</p>
 <h2 id="2-通信配置协议转换"><a href="#2-通信配置协议转换" class="headerlink" title="2.通信配置协议转换"></a>2.通信配置协议转换</h2><p>设置通信接口的设置参数，比如通信串口号、波特率、数据包格式、校验方式等，通过这些设置，可以让模组与设备正常的收发数据。</p>
 <h4 id="2-1场景描述"><a href="#2-1场景描述" class="headerlink" title="2.1场景描述"></a>2.1场景描述</h4><p><strong>场景1：波特率转换</strong><br>我们通过LUA脚本，将原来的设备通讯串口号从com3转换成com4，将波特率从9600转换成38400。</p>

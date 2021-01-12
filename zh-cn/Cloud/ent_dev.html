@@ -611,15 +611,17 @@
 <p> 充电桩SaaS平台还可以通过企业API开放的接口进行统计分析，如设备的位置服务查询，设备通信数据查询，充电桩故障数查询等功能</p>
 <h2 id="分时租赁系统"><a href="#分时租赁系统" class="headerlink" title="分时租赁系统"></a>分时租赁系统</h2><p>分时租赁平台的业务其实与充电桩SaaS平台类似，对于分时租赁的运营管理方，如运营汽车租赁、自行车租赁的企业。这些企业需要建设一套分时租赁管理平台，实现订单、结算、支付等必要功能。</p>
 <p>汽车、自行车接入到机智云，企业就无需在设备的物联接入进行投入，企业只需通过接入协议接入SNoti服务即可获取设备数据进行业务开发。</p>
-<h1 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h1><h2 id="SNoti服务接入"><a href="#SNoti服务接入" class="headerlink" title="SNoti服务接入"></a>SNoti服务接入</h2><h3 id="1、提出申请"><a href="#1、提出申请" class="headerlink" title="1、提出申请"></a>1、提出申请</h3><ul>
-<li>SNoti服务通常是向企业开发者开放，如果企业需要实时获取接入到机智云PaaS平台的数据进行二次开发，则向机智云提出申请</li>
-<li>SNoti服务一般会与企业API服务共同使用，所以企业开发者也要同步申请企业API服务</li>
-</ul>
-<h3 id="2、理解协议"><a href="#2、理解协议" class="headerlink" title="2、理解协议"></a>2、理解协议</h3><p>具体协议请点击 <a href="./NotificationAPI.html">SNoti服务接口协议</a></p>
-<h3 id="3、获取参数"><a href="#3、获取参数" class="headerlink" title="3、获取参数"></a>3、获取参数</h3><p>登录开发者中心，获取机智云为企业分配的访问SNoti服务与企业API的账号与秘钥。选择“企业信息”，如下图</p>
-<p><img src="/assets/zh-cn/cloud/ent_info01.png" alt="@企业API开通申请"></p>
-<p>选择左侧组织，然后再点击“API配置”，即可获取Eid,Esecret，也可以在此设置IP白名单，若不设置IP白名单，消息代服务将会鉴权失败。<br><img src="/assets/zh-cn/cloud/ent_info02.png" alt="@企业API开通申请"></p>
-<p>如果是在开发环境，企业开发者需要通过一些工具获取开发环境对应的外网IP，可以通过ip.taobao.com获取，将识别出的IP地址复制到上图IP白名单，一行只能设置一个IP地址，对于生产环境，系统允许设置多个源IP地址访问消息服务。</p>
+<h1 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h1><h2 id="SNoti服务接入"><a href="#SNoti服务接入" class="headerlink" title="SNoti服务接入"></a>SNoti服务接入</h2><h3 id="1、提出申请"><a href="#1、提出申请" class="headerlink" title="1、提出申请"></a>1、提出申请</h3><p>第一步：企业开发者登陆新版开发者中心</p>
+<p><a href="https://developer.gizwits.com/#/login" target="_blank" rel="noopener">https://developer.gizwits.com/#/login</a></p>
+<p>点击右上角【账号】-【企业信息】-【服务中心】，如下图</p>
+<p><img src="https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/4_1610349249206.png" alt="4"></p>
+<p>第二步：选择左侧组织，再点击【数据推送服务】，点击【立即开通】，申请开通后等待审核。</p>
+<p><img src="https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/5_1610349249197.png" alt="5"></p>
+<p>第三步：待审核通过后，点击【返回旧版】，需返回旧版开发者中心使用此功能。（由于新版功能还在开发完善中，部分功能仍会在旧版使用中）。</p>
+<p><img src="https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/6_1610349249202.png" alt="6"></p>
+<h3 id="2、获取参数"><a href="#2、获取参数" class="headerlink" title="2、获取参数"></a>2、获取参数</h3><p>选择产品，然后再点击【Snoti 服务】，点击“新建授权”创建，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；</p>
+<p><img src="https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/7_1610349249392.png" alt="7"></p>
+<h3 id="3、理解协议"><a href="#3、理解协议" class="headerlink" title="3、理解协议"></a>3、理解协议</h3><p>具体协议请点击 <a href="./NotificationAPI.html">SNoti服务接口协议</a></p>
 <h3 id="4、按需实现客户端"><a href="#4、按需实现客户端" class="headerlink" title="4、按需实现客户端"></a>4、按需实现客户端</h3><p>企业根据Demo Code，根据自己的需求实现客户端功能开发，可以以Demo Code为原型，实现接收到设备数据后的业务逻辑。如：</p>
 <ul>
 <li>解析SNoti服务推送的JSON报文</li>
@@ -637,13 +639,12 @@
 <li><p>Demo Code会实时打印SNoti服务推送的设备状态数据</p>
 </li>
 </ul>
-<h2 id="使用企业API"><a href="#使用企业API" class="headerlink" title="使用企业API"></a>使用企业API</h2><h3 id="1、申请企业API服务"><a href="#1、申请企业API服务" class="headerlink" title="1、申请企业API服务"></a>1、申请企业API服务</h3><p>企业开发者登陆开发者中心，选择添加服务，如下图<br><img src="/assets/zh-cn/cloud/add_ent_api.png" alt="@企业API申请"></p>
-<p>点击上图红色框中的企业API，进入下一步</p>
-<p><img src="/assets/zh-cn/cloud/add_ent_api02.png" alt="@企业API开通申请"></p>
-<h3 id="2、获取参数"><a href="#2、获取参数" class="headerlink" title="2、获取参数"></a>2、获取参数</h3><p>登陆开发者中心，选择“企业信息”，如下图</p>
-<p><img src="/assets/zh-cn/cloud/ent_info01.png" alt="@企业API开通申请"></p>
-<p>选择左侧有权限可管理的组织，然后点击“API配置”，即可获取Eid,Esecret，也可以在此设置IP白名单<br><img src="/assets/zh-cn/cloud/ent_info02.png" alt="@企业API开通申请"></p>
-<h3 id="3、理解协议"><a href="#3、理解协议" class="headerlink" title="3、理解协议"></a>3、理解协议</h3><p>企业API申请后，企业就可以通过理解企业API协议进行接口调用</p>
+<h2 id="使用企业API"><a href="#使用企业API" class="headerlink" title="使用企业API"></a>使用企业API</h2><h3 id="1、默认开通企业API服务"><a href="#1、默认开通企业API服务" class="headerlink" title="1、默认开通企业API服务"></a>1、默认开通企业API服务</h3><p>注册开发者中心的企业用户默认开通企业API。企业开发者登录新版开发者中心</p>
+<p><a href="https://developer.gizwits.com/#/login" target="_blank" rel="noopener">https://developer.gizwits.com/#/login</a></p>
+<p>可查看已开通的服务，如下图</p>
+<h3 id><a href="#" class="headerlink" title></a><img src="https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/2_1610349249174.png" alt="2"></h3><h3 id="2、获取参数-1"><a href="#2、获取参数-1" class="headerlink" title="2、获取参数"></a>2、获取参数</h3><p>登陆新版开发者中心，点击右上角的【账号】，选择【企业信息】，选择左侧有权限可管理的组织，然后点击【API配置】，即可获取Eid,Esecret，也可以在此设置IP白名单。如下图</p>
+<p><img src="https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/3_1610349249188.png" alt="3"></p>
+<h3 id="3、理解协议-1"><a href="#3、理解协议-1" class="headerlink" title="3、理解协议"></a>3、理解协议</h3><p>企业API申请后，企业就可以通过理解企业API协议进行接口调用</p>
 <p>点击 <a href="./enterprise_api.html">企业API</a></p>
 
     </div>
